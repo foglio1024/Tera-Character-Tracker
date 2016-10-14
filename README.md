@@ -12,3 +12,12 @@ https://github.com/Foglio1024/Tera-Character-Tracker/wiki
 
 ## **Download**
 Coming soon
+
+## TODO
+* Dungeon guild quest check upon teleporting to dungeon
+* Customizable notification types
+* Exclusion list for characters
+* Crystalbind indicator for each character
+* Hide character function
+* Auto-update
+* Error log
