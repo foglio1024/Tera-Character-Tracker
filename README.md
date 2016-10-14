@@ -6,3 +6,9 @@ It features a packet sniffer and displays data in a material-deisgn-like interfa
 Thanks to Gothos, GoneUp, neowutran, GI0 and all other people who worked on Tera data extraction, sniffing, etc.  
 
 Note: I'm not an expert developer, so there may be bugs, crashes or compatibilty issues with some systems.
+
+## **Wiki**
+https://github.com/Foglio1024/Tera-Character-Tracker/wiki
+
+## **Download**
+Coming soon
