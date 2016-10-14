@@ -59,17 +59,11 @@ namespace PacketViewer
         private static string wCforDungeons;
         private static string wCforEngage;
         private static string wCforVanguardCompleted;
-        private static string wCforNewRegion;
         private static string wCforUpdatedCreditsAfterPurchase;
         private static string wCforEarnedLaurel;
         private static List<string> wCforCcb = new List<string>();
-        private static string wCforEndingAbnormality;
-        private static string ccbString;
-        private static bool ccb;
-        private static int ccbArraySize = 0;
         private static string currentCharName;
         private static string currentCharId;
-        private static bool ccbEnding = false;
         static BasicTeraData btd = new BasicTeraData();
         static OpCodeNamer opn = new OpCodeNamer(Path.Combine(btd.ResourceDirectory, string.Format("opcodes-{0}.txt", "3907eu")));
 
