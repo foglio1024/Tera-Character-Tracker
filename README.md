@@ -11,7 +11,7 @@ Note: I'm not an expert developer, so there may be bugs, crashes or compatibilty
 https://github.com/Foglio1024/Tera-Character-Tracker/wiki
 
 ## **Download**
-Coming soon
+https://drive.google.com/open?id=0B_Cqa6A1OUxdMXJ1elNSdTM3VTg
 
 ## TODO
 * Dungeon guild quest check upon teleporting to dungeon
