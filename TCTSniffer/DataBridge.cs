@@ -491,11 +491,6 @@ namespace PacketViewer
         }
         private static void setDungs()
         {
-            int tc = 1;
-            if (Tera.TeraLogic.isTC)
-            {
-                tc = 2;
-            }
             var temp = wCforDungeons.Substring(24);
             List<string> dgList = new List<string>();
             for (int i = 0; i < temp.Length / 28; i++)
@@ -515,6 +510,7 @@ namespace PacketViewer
             Tera.TeraLogic.CharList[Tera.TeraLogic.CharList.IndexOf(Tera.TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
         }
+
         #region OldMethods
         //private static void updateRegion()
         //{
