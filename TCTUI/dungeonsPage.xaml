@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Tera.dungeonsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tera"
+             mc:Ignorable="d" 
+             d:DesignHeight="1203" d:DesignWidth="810">
+    <UserControl.Resources>
+        <GridLength x:Key="colW">*</GridLength>
+    </UserControl.Resources>
+    <Grid Height="840" >
+        <StackPanel  >
+            <Grid x:Name="dungGrid"  Margin="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+
+                <Grid x:Name="dungHeaderGrid"  Margin="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+                    <!--#region -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0" />
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="{StaticResource colW}"/>
+                     
+
+                        <ColumnDefinition Width="0"/>
+
+
+                    </Grid.ColumnDefinitions>
+                 
+                    <!--#endregion-->
+                    <Border Grid.Row="0" Grid.ColumnSpan="16" BorderThickness="0,0,0,1" BorderBrush="#19000000">
+                        <Border.CacheMode>
+                            <BitmapCache/>
+                        </Border.CacheMode>
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="1" BorderThickness="0,0,1,0" BorderBrush="#19000000"/>
+
+                    <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Character</TextBlock>
+                    <StackPanel x:Name="dungHeaderPanel" Orientation="Horizontal" Grid.Row="0" Grid.Column="2"/>
+
+
+                    <StackPanel x:Name="dungeonTableGridContent" MinHeight="50" Grid.Row="1" Grid.ColumnSpan="16" Margin="0,0,0,0">
+                        <StackPanel.CacheMode>
+                            <BitmapCache/>
+                        </StackPanel.CacheMode>
+                    </StackPanel>
+
+
+
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

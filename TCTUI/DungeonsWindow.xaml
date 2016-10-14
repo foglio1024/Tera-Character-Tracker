@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Tera.DungeonsWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tera"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" >
+    <Grid Background="White" Margin="20">
+
+        <Grid.Effect>
+            <DropShadowEffect Opacity="0.4" BlurRadius="15" ShadowDepth="3"/>
+        </Grid.Effect>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+
+        <StackPanel Name="header" VerticalAlignment="Stretch" HorizontalAlignment="Left" Height="15" Margin="5" Grid.Row="0" Grid.Column="1" Orientation="Horizontal"/>
+        <StackPanel Name="content" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Grid.Row="1" Grid.Column="1"/>
+        <StackPanel Name="chars" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,5,10,5" Grid.Row="1" Grid.Column="0"/>
+        <TextBlock Foreground="#91000000" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,5,10,5" Grid.Column="0" Grid.Row="0">Characters</TextBlock>
+
+
+    </Grid>
+
+</UserControl>

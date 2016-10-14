@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B88E035-B34C-4012-B308-46AD2E7DA43D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TCTMain</RootNamespace>
+    <AssemblyName>Tera Character Tracker</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TCTMain.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>flat_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TCTNotifier\TCTNotifier.csproj">
+      <Project>{ae9993a3-7636-4bed-9afc-f6d726bf9696}</Project>
+      <Name>TCTNotifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCTSniffer\TCTSniffer.csproj">
+      <Project>{cf031918-2ac0-4f8e-bd89-601975a9af87}</Project>
+      <Name>TCTSniffer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCTUI\TCTUI.csproj">
+      <Project>{17ec9a9a-527c-47ca-a4f3-682fc1b9163c}</Project>
+      <Name>TCTUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\data\guild_images\0.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\notifier_images\rep.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="resources\notifier_images\connected.png" />
+    <Resource Include="flat_icon.ico" />
+    <Resource Include="resources\bigLaurels\bronze.png" />
+    <Resource Include="resources\bigLaurels\champion.png" />
+    <Resource Include="resources\bigLaurels\diamond.png" />
+    <Resource Include="resources\bigLaurels\gold.png" />
+    <Resource Include="resources\bigLaurels\none.png" />
+    <Resource Include="resources\bigLaurels\silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\data\dungeons.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\data\settings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\DailyPlayGuideQuest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\EventMatching.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\NewWorldMapData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_DailyPlayGuideQuest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Dungeon-0.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-0.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-10.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-11.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-12.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-13.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-14.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-15.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-16.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-5.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-6.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-7.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-8.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Item\StrSheet_Item-9.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\tera_database\StrSheet_Region.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="resources\notifier_images\gfin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\class-icons\archer.png" />
+    <Resource Include="resources\class-icons\berserker.png" />
+    <Resource Include="resources\class-icons\brawler.png" />
+    <Resource Include="resources\class-icons\common.png" />
+    <Resource Include="resources\class-icons\gunner.png" />
+    <Resource Include="resources\class-icons\lancer.png" />
+    <Resource Include="resources\class-icons\mystic.png" />
+    <Resource Include="resources\class-icons\priest.png" />
+    <Resource Include="resources\class-icons\reaper.png" />
+    <Resource Include="resources\class-icons\slayer.png" />
+    <Resource Include="resources\class-icons\sorcerer.png" />
+    <Resource Include="resources\class-icons\warrior.png" />
+    <Resource Include="resources\classes_black_32x32\class_archer.png" />
+    <Resource Include="resources\classes_black_32x32\class_berserker.png" />
+    <Resource Include="resources\classes_black_32x32\class_brawler.png" />
+    <Resource Include="resources\classes_black_32x32\class_gunner.png" />
+    <Resource Include="resources\classes_black_32x32\class_lancer.png" />
+    <Resource Include="resources\classes_black_32x32\class_mystic.png" />
+    <Resource Include="resources\classes_black_32x32\class_ninja.png" />
+    <Resource Include="resources\classes_black_32x32\class_none.png" />
+    <Resource Include="resources\classes_black_32x32\class_priest.png" />
+    <Resource Include="resources\classes_black_32x32\class_reaper.png" />
+    <Resource Include="resources\classes_black_32x32\class_slayer.png" />
+    <Resource Include="resources\classes_black_32x32\class_sorcerer.png" />
+    <Resource Include="resources\classes_black_32x32\class_warrior.png" />
+    <Resource Include="resources\classes_hd\class_archer.png" />
+    <Resource Include="resources\classes_hd\class_berserker.png" />
+    <Resource Include="resources\classes_hd\class_brawler.png" />
+    <Resource Include="resources\classes_hd\class_gunner.png" />
+    <Resource Include="resources\classes_hd\class_lancer.png" />
+    <Resource Include="resources\classes_hd\class_mystic.png" />
+    <Resource Include="resources\classes_hd\class_ninja.png" />
+    <Resource Include="resources\classes_hd\class_priest.png" />
+    <Resource Include="resources\classes_hd\class_reaper.png" />
+    <Resource Include="resources\classes_hd\class_slayer.png" />
+    <Resource Include="resources\classes_hd\class_sorcerer.png" />
+    <Resource Include="resources\classes_hd\class_warrior.png" />
+    <Resource Include="resources\laurels\l_alt_bronze.png" />
+    <Resource Include="resources\laurels\l_alt_champion.png" />
+    <Resource Include="resources\laurels\l_alt_diamond.png" />
+    <Resource Include="resources\laurels\l_alt_gold.png" />
+    <Resource Include="resources\laurels\l_alt_silver.png" />
+    <Resource Include="resources\laurels\l_bronze.png" />
+    <Resource Include="resources\laurels\l_champion.png" />
+    <Resource Include="resources\laurels\l_diamond.png" />
+    <Resource Include="resources\laurels\l_gold.png" />
+    <Resource Include="resources\laurels\l_silver.png" />
+    <Content Include="resources\opcodes-3907eu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\regions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\servers.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\notifier_images\ccbBuff.png" />
+    <Resource Include="resources\notifier_images\default.png" />
+    <Resource Include="resources\notifier_images\marks.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

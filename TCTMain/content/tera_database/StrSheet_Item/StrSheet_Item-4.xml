@@ -1,0 +1,2102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StrSheet_Item>
+  <String id="2001" string="아카샤의 침묵 테스트" />
+  <String id="2002" string="킬리언의 저주 테스트" />
+  <String id="2003" string="언데드의 힘 테스트" />
+  <String id="2004" string="켈사이크의 빙결 테스트" />
+  <String id="2005" string="켈사이크의 화염 테스트" />
+  <String id="2006" string="유령 빙의 테스트" />
+  <String id="2007" string="볼텐의 망치 테스트" />
+  <String id="2008" string="루그리바의 오염 테스트" />
+  <String id="2009" string="샤르티의 번개 테스트" />
+  <String id="2010" string="볼카누스의 분노 테스트" />
+  <String id="2011" string="밤피르의 흡혈 테스트" />
+  <String id="2012" string="이계의 벼락 테스트" />
+  <String id="2013" string="나무뿌리의 속박 테스트" />
+  <String id="2014" string="모래 바람 테스트" />
+  <String id="2015" string="마법의 갑옷 테스트" />
+  <String id="2016" string="자연의 동화 테스트" />
+  <String id="6314" toolTip="사용하지 않음." string="질긴 야수의 가죽" />
+  <String id="6330" toolTip="사용하지 않음." string="광포한 거인의 혈흔" />
+  <String id="6331" toolTip="사용하지 않음." string="잊혀진 영웅의 영혼석" />
+  <String id="6334" toolTip="사용하지 않음." string="푸른 유령의 변신 망토" />
+  <String id="6337" toolTip="사용 안함" string="지혜의 돌" />
+  <String id="6340" toolTip="사용 안함" string="영롱한 지혜의 돌" />
+  <String id="6342" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6346" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6350" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6369" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6373" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6394" toolTip="쓰지 않음" string="영롱한 폭염의 파편" />
+  <String id="6395" toolTip="쓰지 않음" string="영롱한 심해의 파편" />
+  <String id="6405" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6409" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6423" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6427" toolTip="사용하지 않음." string="사용하지 않음" />
+  <String id="6459" toolTip="사용하지 않음." string="카슈바르의 날개 조각" />
+  <String id="6490" toolTip="사용하지 않음." string="100% 회복 영약" />
+  <String id="6491" toolTip="사용하지 않음." string="고대신의 책" />
+  <String id="6492" toolTip="사용하지 않음." string="수제 의문의 부적 주문서 - 힘 증가 IV" />
+  <String id="6493" toolTip="사용하지 않음." string="수제 의문의 부적 주문서 - 치명타 발생 증가 IV" />
+  <String id="6494" toolTip="사용하지 않음." string="수제 의문의 부적 주문서 - 공격 속도 증가 IV" />
+  <String id="6495" toolTip="사용하지 않음." string="수제 신비한 부적 주문서 - 맷집 증가 IV" />
+  <String id="6496" toolTip="사용하지 않음." string="수제 신비한 부적 주문서 - 데미지 되돌림 IV" />
+  <String id="6497" toolTip="사용하지 않음." string="수제 이상한 부적 주문서 - MP 지속 회복 IV" />
+  <String id="6506" toolTip="사용하지 않음." string="가공전 상급 칼날" />
+  <String id="6507" toolTip="사용하지 않음." string="가공전 상급 갑주" />
+  <String id="6512" toolTip="사용하지 않음." string="가공전 중급 브로치 조각" />
+  <String id="6513" toolTip="사용하지 않음." string="가공전 상급 브로치 조각" />
+  <String id="6514" toolTip="사용하지 않음." string="방패 조각" />
+  <String id="7001" toolTip="테스트 용 문장 포인트 지급 아이템" string="문장 포인트(2점)" />
+  <String id="7002" toolTip="테스트 용 문장 포인트 지급 아이템" string="문장 포인트(10점)" />
+  <String id="7003" toolTip="모아 치기 이속감소 제거 문장" string="모아 치기 이속감소 제거 문장_삭제대기" />
+  <String id="7004" toolTip="모아 치기 차지속도 증가 문장" string="모아 치기 차지속도 증가 문장_삭제대기" />
+  <String id="7005" toolTip="모아 치기 오버차지 HP 소모 감소 문장" string="모아 치기 오버차지 HP 소모 감소 문장_삭제대기" />
+  <String id="7006" toolTip="소용돌이 오버차지 공격력 보너스 증가 문장" string="소용돌이 오버차지 공격력 보너스 증가 문장_삭제대기" />
+  <String id="7007" toolTip="대지 치기 시전 MP 감소 문장" string="대지 치기 시전 MP 감소 문장_삭제대기" />
+  <String id="7008" toolTip="광신강림 HP 소모 감소 문장" string="광신강림 HP 소모 감소 문장_삭제대기" />
+  <String id="7009" toolTip="셀프힐 HP 회복량 증가 문장" string="셀프힐 HP 회복량 증가 문장_삭제대기" />
+  <String id="7010" toolTip="마력회복 MP 회복량 증가 문장" string="마력회복 MP 회복량 증가 문장_삭제대기" />
+  <String id="7011" toolTip="정령탄 적중시 HP 회복 문장" string="정령탄 적중시 HP 회복 문장_삭제대기" />
+  <String id="7012" toolTip="정기방출 MP 회복률 증가 문장" string="정기방출 MP 회복률 증가 문장_삭제대기" />
+  <String id="7013" toolTip="다중사격 락온수 증가 문장" string="다중사격 락온수 증가 문장_삭제대기" />
+  <String id="7014" toolTip="일반사격 사거리 증가 문장" string="일반사격 사거리 증가 문장_삭제대기" />
+  <String id="7015" toolTip="일도양단 공속 증가 문장" string="일도양단 공속 증가 문장_삭제대기" />
+  <String id="7016" toolTip="마비덫 쿨타임 감소 문장" string="마비덫 쿨타임 감소 문장_삭제대기" />
+  <String id="7017" toolTip="죽은척하기 시전 MP 감소 문장" string="죽은척하기 시전 MP 감소 문장_삭제대기" />
+  <String id="7018" toolTip="도발난무 쿨타임 적용 안하는 문장" string="도발난무 쿨타임 적용 안하는 문장_삭제대기" />
+  <String id="7019" toolTip="몰아치기 MP 소모 없는 문장" string="몰아치기 MP 소모 없는 문장_삭제대기" />
+  <String id="7020" toolTip="기본공격 공격력 상승 문장" string="기본공격 공격력 상승 문장_삭제대기" />
+  <String id="7021" toolTip="맹독의 일격 데미지 증가 문장" string="맹독의 일격 데미지 증가 문장_삭제대기" />
+  <String id="7022" toolTip="맹독의 일격 지속시간 증가 문장" string="맹독의 일격 지속시간 증가 문장_삭제대기" />
+  <String id="7023" toolTip="기본공격시 MP 획득 증가 문장" string="기본공격시 MP 획득 증가 문장_삭제대기" />
+  <String id="7024" toolTip="도발 위협수준 증가 문장" string="도발 위협수준 증가 문장_삭제대기" />
+  <String id="7025" toolTip="방패 치기시 광기의 정령 발동 문장" string="방패 치기시 광기의 정령 발동 문장_삭제대기" />
+  <String id="7026" toolTip="돌진시 기절 효과 추가 문장" string="돌진시 기절 효과 추가 문장_삭제대기" />
+  <String id="7112" string="삭제_부적" />
+  <String id="7113" string="삭제_부적" />
+  <String id="7114" string="삭제_부적" />
+  <String id="7115" string="삭제_부적" />
+  <String id="7116" string="삭제_부적" />
+  <String id="7403" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7420" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7447" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7458" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7479" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7573" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7582" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7591" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7654" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7671" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7689" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7706" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7707" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7712" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7721" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="7868" toolTip="$H_W_GOOD소모 문장 포인트 1000$COLOR_END$BR효과 없음" string="테스트" />
+  <String id="8856" string="[상급] 크리스탈 - 마지막 반격 I" />
+  <String id="8857" string="[상급] 크리스탈 - 마지막 반격 II" />
+  <String id="8858" string="[상급] 크리스탈 - 마지막 반격 III" />
+  <String id="8859" string="[상급] 크리스탈 - 마지막 반격 IV" />
+  <String id="8860" string="[상급] 크리스탈 - 마지막 반격 V" />
+  <String id="8861" string="[상급] 크리스탈 - 마지막 반격 VI" />
+  <String id="13017" string="테스트용_카자스탄의 쌍검" />
+  <String id="13018" string="테스트용_카자스탄의 창" />
+  <String id="13019" string="테스트용_카자스탄의 대검" />
+  <String id="13020" string="테스트용_카자스탄의 도끼" />
+  <String id="13021" string="테스트용_카자스탄의 원반" />
+  <String id="13022" string="테스트용_카자스탄의 활" />
+  <String id="13023" string="테스트용_카자스탄의 지팡이" />
+  <String id="13024" string="테스트용_카자스탄의 마법봉" />
+  <String id="13025" string="테스트용_라키누아의 쌍검" />
+  <String id="13026" string="테스트용_라키누아의 창" />
+  <String id="13027" string="테스트용_라키누아의 대검" />
+  <String id="13028" string="테스트용_라키누아의 도끼" />
+  <String id="13029" string="테스트용_라키누아의 원반" />
+  <String id="13030" string="테스트용_라키누아의 활" />
+  <String id="13031" string="테스트용_라키누아의 지팡이" />
+  <String id="13032" string="테스트용_라키누아의 마법봉" />
+  <String id="13033" string="테스트용_스내굴투스의 쌍검" />
+  <String id="13034" string="테스트용_스내굴투스의 창" />
+  <String id="13035" string="테스트용_스내굴투스의 대검" />
+  <String id="13036" string="테스트용_스내굴투스의 도끼" />
+  <String id="13037" string="테스트용_스내굴투스의 원반" />
+  <String id="13038" string="테스트용_스내굴투스의 활" />
+  <String id="13039" string="테스트용_스내굴투스의 지팡이" />
+  <String id="13040" string="테스트용_스내굴투스의 마법봉" />
+  <String id="13041" string="테스트용_저주받은 킬리언의 쌍검" />
+  <String id="13042" string="테스트용_저주받은 킬리언의 창" />
+  <String id="13043" string="테스트용_저주받은 킬리언의 대검" />
+  <String id="13044" string="테스트용_저주받은 킬리언의 도끼" />
+  <String id="13045" string="테스트용_저주받은 킬리언의 원반" />
+  <String id="13046" string="테스트용_저주받은 킬리언의 활" />
+  <String id="13047" string="테스트용_저주받은 킬리언의 지팡이" />
+  <String id="13048" string="테스트용_저주받은 킬리언의 마법봉" />
+  <String id="13049" string="테스트용_강력한 사령술사의 쌍검" />
+  <String id="13050" string="테스트용_강력한 사령술사의 창" />
+  <String id="13051" string="테스트용_강력한 사령술사의 대검" />
+  <String id="13052" string="테스트용_강력한 사령술사의 도끼" />
+  <String id="13053" string="테스트용_강력한 사령술사의 원반" />
+  <String id="13054" string="테스트용_강력한 사령술사의 활" />
+  <String id="13055" string="테스트용_강력한 사령술사의 지팡이" />
+  <String id="13056" string="테스트용_강력한 사령술사의 마법봉" />
+  <String id="13057" string="테스트용_불새의 얼음 발톱 쌍검" />
+  <String id="13058" string="테스트용_불새의 얼음 발톱 창" />
+  <String id="13059" string="테스트용_불새의 얼음 발톱 대검" />
+  <String id="13060" string="테스트용_불새의 얼음 발톱 도끼" />
+  <String id="13061" string="테스트용_불새의 얼음 발톱 원반" />
+  <String id="13062" string="테스트용_불새의 얼음 발톱 활" />
+  <String id="13063" string="테스트용_불새의 얼음 발톱 지팡이" />
+  <String id="13064" string="테스트용_불새의 얼음 발톱 마법봉" />
+  <String id="13065" string="테스트용_불새의 화염 발톱 쌍검" />
+  <String id="13066" string="테스트용_불새의 화염 발톱 창" />
+  <String id="13067" string="테스트용_불새의 화염 발톱 대검" />
+  <String id="13068" string="테스트용_불새의 화염 발톱 도끼" />
+  <String id="13069" string="테스트용_불새의 화염 발톱 원반" />
+  <String id="13070" string="테스트용_불새의 화염 발톱 활" />
+  <String id="13071" string="테스트용_불새의 화염 발톱 지팡이" />
+  <String id="13072" string="테스트용_불새의 화염 발톱 마법봉" />
+  <String id="13073" string="테스트용_춤추는 광대의 쌍검" />
+  <String id="13074" string="테스트용_춤추는 광대의 창" />
+  <String id="13075" string="테스트용_춤추는 광대의 대검" />
+  <String id="13076" string="테스트용_춤추는 광대의 도끼" />
+  <String id="13077" string="테스트용_춤추는 광대의 원반" />
+  <String id="13078" string="테스트용_춤추는 광대의 활" />
+  <String id="13079" string="테스트용_춤추는 광대의 지팡이" />
+  <String id="13080" string="테스트용_춤추는 광대의 마법봉" />
+  <String id="13081" string="테스트용_분노한 주술사의 쌍검" />
+  <String id="13082" string="테스트용_분노한 주술사의 창" />
+  <String id="13083" string="테스트용_분노한 주술사의 대검" />
+  <String id="13084" string="테스트용_분노한 주술사의 도끼" />
+  <String id="13085" string="테스트용_분노한 주술사의 원반" />
+  <String id="13086" string="테스트용_분노한 주술사의 활" />
+  <String id="13087" string="테스트용_분노한 주술사의 지팡이" />
+  <String id="13088" string="테스트용_분노한 주술사의 마법봉" />
+  <String id="13089" string="테스트용_켈사이크의 얼음 발톱 쌍검" />
+  <String id="13090" string="테스트용_켈사이크의 얼음 발톱 창" />
+  <String id="13091" string="테스트용_켈사이크의 얼음 발톱 대검" />
+  <String id="13092" string="테스트용_켈사이크의 얼음 발톱 도끼" />
+  <String id="13093" string="테스트용_켈사이크의 얼음 발톱 원반" />
+  <String id="13094" string="테스트용_켈사이크의 얼음 발톱 활" />
+  <String id="13095" string="테스트용_켈사이크의 얼음 발톱 지팡이" />
+  <String id="13096" string="테스트용_켈사이크의 얼음 발톱 마법봉" />
+  <String id="13097" string="테스트용_켈사이크의 화염 발톱 쌍검" />
+  <String id="13098" string="테스트용_켈사이크의 화염 발톱 창" />
+  <String id="13099" string="테스트용_켈사이크의 화염 발톱 대검" />
+  <String id="13100" string="테스트용_켈사이크의 화염 발톱 도끼" />
+  <String id="13101" string="테스트용_켈사이크의 화염 발톱 원반" />
+  <String id="13102" string="테스트용_켈사이크의 화염 발톱 활" />
+  <String id="13103" string="테스트용_켈사이크의 화염 발톱 지팡이" />
+  <String id="13104" string="테스트용_켈사이크의 화염 발톱 마법봉" />
+  <String id="18429" string="T3인던보상_토큰 중갑" />
+  <String id="18430" string="T3인던보상_토큰 중갑 장갑" />
+  <String id="18431" string="T3인던보상_토큰 중갑 신발" />
+  <String id="18432" string="T3인던보상_토큰 경갑" />
+  <String id="18433" string="T3인던보상_토큰 경갑 장갑" />
+  <String id="18434" string="T3인던보상_토큰 경갑 신발" />
+  <String id="18435" string="T3인던보상_토큰 로브" />
+  <String id="18436" string="T3인던보상_토큰 글러브" />
+  <String id="18437" string="T3인던보상_토큰 슈즈" />
+  <String id="21000" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 쌍검 무옵션" />
+  <String id="21001" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 창 무옵션" />
+  <String id="21002" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 대검 무옵션" />
+  <String id="21003" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 도끼 무옵션" />
+  <String id="21004" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 원반 무옵션" />
+  <String id="21005" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 활 무옵션" />
+  <String id="21006" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 지팡이 무옵션" />
+  <String id="21007" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 마법봉 무옵션" />
+  <String id="21008" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 무옵션" />
+  <String id="21009" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 장갑 무옵션" />
+  <String id="21010" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 신발 무옵션" />
+  <String id="21011" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 무옵션" />
+  <String id="21012" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 장갑 무옵션" />
+  <String id="21013" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 신발 무옵션" />
+  <String id="21014" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 로브 무옵션" />
+  <String id="21015" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 글러브 무옵션" />
+  <String id="21016" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 슈즈 무옵션" />
+  <String id="21017" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 쌍검 후방 데미지" />
+  <String id="21018" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 창 후방 데미지" />
+  <String id="21019" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 대검 후방 데미지" />
+  <String id="21020" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 도끼 후방 데미지" />
+  <String id="21021" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 원반 후방 데미지" />
+  <String id="21022" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 활 후방 데미지" />
+  <String id="21023" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 지팡이 후방 데미지" />
+  <String id="21024" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 마법봉 후방 데미지" />
+  <String id="21025" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 후방 데미지" />
+  <String id="21026" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 장갑 후방 데미지" />
+  <String id="21027" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 신발 후방 데미지" />
+  <String id="21028" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 후방 데미지" />
+  <String id="21029" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 장갑 후방 데미지" />
+  <String id="21030" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 신발 후방 데미지" />
+  <String id="21031" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 로브 후방 데미지" />
+  <String id="21032" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 글러브 후방 데미지" />
+  <String id="21033" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 슈즈 후방 데미지" />
+  <String id="21034" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 쌍검 데미지" />
+  <String id="21035" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 창 데미지" />
+  <String id="21036" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 대검 데미지" />
+  <String id="21037" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 도끼 데미지" />
+  <String id="21038" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 원반 데미지" />
+  <String id="21039" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 활 데미지" />
+  <String id="21040" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 지팡이 데미지" />
+  <String id="21041" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 마법봉 데미지" />
+  <String id="21042" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 데미지" />
+  <String id="21043" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 장갑 데미지" />
+  <String id="21044" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 신발 데미지" />
+  <String id="21045" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 데미지" />
+  <String id="21046" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 장갑 데미지" />
+  <String id="21047" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 신발 데미지" />
+  <String id="21048" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 로브 데미지" />
+  <String id="21049" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 글러브 데미지" />
+  <String id="21050" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 슈즈 데미지" />
+  <String id="21051" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 쌍검 공격 속도" />
+  <String id="21052" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 창 공격 속도" />
+  <String id="21053" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 대검 공격 속도" />
+  <String id="21054" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 도끼 공격 속도" />
+  <String id="21055" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 원반 공격 속도" />
+  <String id="21056" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 활 공격 속도" />
+  <String id="21057" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 지팡이 공격 속도" />
+  <String id="21058" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 마법봉 공격 속도" />
+  <String id="21059" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 공격 속도" />
+  <String id="21060" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 장갑 공격 속도" />
+  <String id="21061" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 신발 공격 속도" />
+  <String id="21062" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 공격 속도" />
+  <String id="21063" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 장갑 공격 속도" />
+  <String id="21064" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 신발 공격 속도" />
+  <String id="21065" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 로브 공격 속도" />
+  <String id="21066" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 글러브 공격 속도" />
+  <String id="21067" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 슈즈 공격 속도" />
+  <String id="21068" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 쌍검 치명타 확률" />
+  <String id="21069" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 창 치명타 확률" />
+  <String id="21070" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 대검 치명타 확률" />
+  <String id="21071" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 도끼 치명타 확률" />
+  <String id="21072" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 원반 치명타 확률" />
+  <String id="21073" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 활 치명타 확률" />
+  <String id="21074" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 지팡이 치명타 확률" />
+  <String id="21075" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 마법봉 치명타 확률" />
+  <String id="21076" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 치명타 확률" />
+  <String id="21077" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 장갑 치명타 확률" />
+  <String id="21078" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 신발 치명타 확률" />
+  <String id="21079" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 치명타 확률" />
+  <String id="21080" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 장갑 치명타 확률" />
+  <String id="21081" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 신발 치명타 확률" />
+  <String id="21082" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 로브 치명타 확률" />
+  <String id="21083" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 글러브 치명타 확률" />
+  <String id="21084" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 슈즈 치명타 확률" />
+  <String id="21085" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 쌍검 치명타 위력" />
+  <String id="21086" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 창 치명타 위력" />
+  <String id="21087" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 대검 치명타 위력" />
+  <String id="21088" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 도끼 치명타 위력" />
+  <String id="21089" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 원반 치명타 위력" />
+  <String id="21090" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 활 치명타 위력" />
+  <String id="21091" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 지팡이 치명타 위력" />
+  <String id="21092" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 마법봉 치명타 위력" />
+  <String id="21093" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 치명타 위력" />
+  <String id="21094" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 장갑 치명타 위력" />
+  <String id="21095" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 중갑 신발 치명타 위력" />
+  <String id="21096" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 치명타 위력" />
+  <String id="21097" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 장갑 치명타 위력" />
+  <String id="21098" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 경갑 신발 치명타 위력" />
+  <String id="21099" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 로브 치명타 위력" />
+  <String id="21100" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 글러브 치명타 위력" />
+  <String id="21101" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="옵션 테스트의 슈즈 치명타 위력" />
+  <String id="21170" string="옵션 테스트의 목걸이 무옵션" />
+  <String id="21171" string="옵션 테스트의 목걸이 후방 데미지" />
+  <String id="21172" string="옵션 테스트의 목걸이 데미지" />
+  <String id="21173" string="옵션 테스트의 목걸이 공격 속도" />
+  <String id="21174" string="옵션 테스트의 목걸이 치명타 확률" />
+  <String id="21175" string="옵션 테스트의 목걸이 치명타 위력" />
+  <String id="21176" string="옵션 테스트의 귀걸이 무옵션" />
+  <String id="21177" string="옵션 테스트의 반지 무옵션" />
+  <String id="21178" string="옵션 테스트의 귀걸이 후방 데미지" />
+  <String id="21179" string="옵션 테스트의 반지 후방 데미지" />
+  <String id="21180" string="옵션 테스트의 귀걸이 데미지" />
+  <String id="21181" string="옵션 테스트의 반지 데미지" />
+  <String id="21182" string="옵션 테스트의 귀걸이 공격 속도" />
+  <String id="21183" string="옵션 테스트의 반지 공격 소도" />
+  <String id="21184" string="옵션 테스트의 귀걸이 치명타 확률" />
+  <String id="21185" string="옵션 테스트의 반지 치명타 확률" />
+  <String id="21186" string="옵션 테스트의 귀걸이 치명타 위력" />
+  <String id="21187" string="옵션 테스트의 반지 치명타 위력" />
+  <String id="28198" toolTip="사용하지 않음" string="소모품 제작 도안: 지속 주문서 - 공격 속도 VII" />
+  <String id="28200" toolTip="사용하지 않음" string="제작 도안: 수제 의문의 부적 - 힘 증가 IV" />
+  <String id="28201" toolTip="사용하지 않음" string="제작 도안: 수제 의문의 부적 - 치명타 발생 증가 IV" />
+  <String id="28202" toolTip="사용하지 않음" string="제작 도안: 수제 의문의 부적 - 공격 속도 증가 IV" />
+  <String id="28203" toolTip="사용하지 않음" string="제작 도안: 수제 신비한 부적 - 맷집 증가 IV" />
+  <String id="28204" toolTip="사용하지 않음" string="제작 도안: 수제 신비한 부적 - 데미지 되돌림 IV" />
+  <String id="28205" toolTip="사용하지 않음" string="제작 도안: 수제 이상한 부적 - MP 지속 회복 IV" />
+  <String id="28284" toolTip="사용하지 않음" string="가공 도안: 수제 상급 칼날" />
+  <String id="28285" toolTip="사용하지 않음" string="가공 도안: 수제 상급 갑주" />
+  <String id="28286" toolTip="사용하지 않음" string="가공 도안: 중급 브로치 조각" />
+  <String id="28287" toolTip="사용하지 않음" string="가공 도안: 상급 브로치 조각" />
+  <String id="28289" toolTip="사용하지 않음" string="제작 도안: 단단한 중급 여신 브로치 (무기 제작)" />
+  <String id="28291" toolTip="사용하지 않음" string="제작 도안: 흉폭한 중급 여신 브로치 (무기 제작)" />
+  <String id="28293" toolTip="사용하지 않음" string="제작 도안: 화려한 중급 여신 브로치 (무기 제작)" />
+  <String id="28295" toolTip="사용하지 않음" string="제작 도안: 단단한 중급 여신 브로치 (방어구 제작)" />
+  <String id="28297" toolTip="사용하지 않음" string="제작 도안: 흉폭한 중급 여신 브로치 (방어구 제작)" />
+  <String id="28299" toolTip="사용하지 않음" string="제작 도안: 화려한 중급 여신 브로치 (방어구 제작)" />
+  <String id="30001" string="테스트무기_쌍검_성능레벨1" />
+  <String id="30002" string="테스트무기_창_성능레벨1" />
+  <String id="30003" string="테스트무기_대검_성능레벨1" />
+  <String id="30004" string="테스트무기_도끼_성능레벨1" />
+  <String id="30005" string="테스트무기_원반_성능레벨1" />
+  <String id="30006" string="테스트무기_활_성능레벨1" />
+  <String id="30007" string="테스트무기_지팡이_성능레벨1" />
+  <String id="30008" string="테스트무기_마법봉_성능레벨1" />
+  <String id="30009" string="테스트방어구_중갑_슈트_성능레벨1" />
+  <String id="30010" string="테스트방어구_중갑_장갑_성능레벨1" />
+  <String id="30011" string="테스트방어구_중갑_신발_성능레벨1" />
+  <String id="30012" string="테스트방어구_경갑_슈트_성능레벨1" />
+  <String id="30013" string="테스트방어구_경갑_장갑_성능레벨1" />
+  <String id="30014" string="테스트방어구_경갑_신발_성능레벨1" />
+  <String id="30015" string="테스트방어구_로브_슈트_성능레벨1" />
+  <String id="30016" string="테스트방어구_로브_장갑_성능레벨1" />
+  <String id="30017" string="테스트방어구_로브_신발_성능레벨1" />
+  <String id="30018" string="테스트무기_쌍검_성능레벨2" />
+  <String id="30019" string="테스트무기_창_성능레벨2" />
+  <String id="30020" string="테스트무기_대검_성능레벨2" />
+  <String id="30021" string="테스트무기_도끼_성능레벨2" />
+  <String id="30022" string="테스트무기_원반_성능레벨2" />
+  <String id="30023" string="테스트무기_활_성능레벨2" />
+  <String id="30024" string="테스트무기_지팡이_성능레벨2" />
+  <String id="30025" string="테스트무기_마법봉_성능레벨2" />
+  <String id="30026" string="테스트방어구_중갑_슈트_성능레벨2" />
+  <String id="30027" string="테스트방어구_중갑_장갑_성능레벨2" />
+  <String id="30028" string="테스트방어구_중갑_신발_성능레벨2" />
+  <String id="30029" string="테스트방어구_경갑_슈트_성능레벨2" />
+  <String id="30030" string="테스트방어구_경갑_장갑_성능레벨2" />
+  <String id="30031" string="테스트방어구_경갑_신발_성능레벨2" />
+  <String id="30032" string="테스트방어구_로브_슈트_성능레벨2" />
+  <String id="30033" string="테스트방어구_로브_장갑_성능레벨2" />
+  <String id="30034" string="테스트방어구_로브_신발_성능레벨2" />
+  <String id="30035" string="테스트무기_쌍검_성능레벨3" />
+  <String id="30036" string="테스트무기_창_성능레벨3" />
+  <String id="30037" string="테스트무기_대검_성능레벨3" />
+  <String id="30038" string="테스트무기_도끼_성능레벨3" />
+  <String id="30039" string="테스트무기_원반_성능레벨3" />
+  <String id="30040" string="테스트무기_활_성능레벨3" />
+  <String id="30041" string="테스트무기_지팡이_성능레벨3" />
+  <String id="30042" string="테스트무기_마법봉_성능레벨3" />
+  <String id="30043" string="테스트방어구_중갑_슈트_성능레벨3" />
+  <String id="30044" string="테스트방어구_중갑_장갑_성능레벨3" />
+  <String id="30045" string="테스트방어구_중갑_신발_성능레벨3" />
+  <String id="30046" string="테스트방어구_경갑_슈트_성능레벨3" />
+  <String id="30047" string="테스트방어구_경갑_장갑_성능레벨3" />
+  <String id="30048" string="테스트방어구_경갑_신발_성능레벨3" />
+  <String id="30049" string="테스트방어구_로브_슈트_성능레벨3" />
+  <String id="30050" string="테스트방어구_로브_장갑_성능레벨3" />
+  <String id="30051" string="테스트방어구_로브_신발_성능레벨3" />
+  <String id="30052" string="테스트무기_쌍검_성능레벨4" />
+  <String id="30053" string="테스트무기_창_성능레벨4" />
+  <String id="30054" string="테스트무기_대검_성능레벨4" />
+  <String id="30055" string="테스트무기_도끼_성능레벨4" />
+  <String id="30056" string="테스트무기_원반_성능레벨4" />
+  <String id="30057" string="테스트무기_활_성능레벨4" />
+  <String id="30058" string="테스트무기_지팡이_성능레벨4" />
+  <String id="30059" string="테스트무기_마법봉_성능레벨4" />
+  <String id="30060" string="테스트방어구_중갑_슈트_성능레벨4" />
+  <String id="30061" string="테스트방어구_중갑_장갑_성능레벨4" />
+  <String id="30062" string="테스트방어구_중갑_신발_성능레벨4" />
+  <String id="30063" string="테스트방어구_경갑_슈트_성능레벨4" />
+  <String id="30064" string="테스트방어구_경갑_장갑_성능레벨4" />
+  <String id="30065" string="테스트방어구_경갑_신발_성능레벨4" />
+  <String id="30066" string="테스트방어구_로브_슈트_성능레벨4" />
+  <String id="30067" string="테스트방어구_로브_장갑_성능레벨4" />
+  <String id="30068" string="테스트방어구_로브_신발_성능레벨4" />
+  <String id="30069" string="테스트무기_쌍검_성능레벨5" />
+  <String id="30070" string="테스트무기_창_성능레벨5" />
+  <String id="30071" string="테스트무기_대검_성능레벨5" />
+  <String id="30072" string="테스트무기_도끼_성능레벨5" />
+  <String id="30073" string="테스트무기_원반_성능레벨5" />
+  <String id="30074" string="테스트무기_활_성능레벨5" />
+  <String id="30075" string="테스트무기_지팡이_성능레벨5" />
+  <String id="30076" string="테스트무기_마법봉_성능레벨5" />
+  <String id="30077" string="테스트방어구_중갑_슈트_성능레벨5" />
+  <String id="30078" string="테스트방어구_중갑_장갑_성능레벨5" />
+  <String id="30079" string="테스트방어구_중갑_신발_성능레벨5" />
+  <String id="30080" string="테스트방어구_경갑_슈트_성능레벨5" />
+  <String id="30081" string="테스트방어구_경갑_장갑_성능레벨5" />
+  <String id="30082" string="테스트방어구_경갑_신발_성능레벨5" />
+  <String id="30083" string="테스트방어구_로브_슈트_성능레벨5" />
+  <String id="30084" string="테스트방어구_로브_장갑_성능레벨5" />
+  <String id="30085" string="테스트방어구_로브_신발_성능레벨5" />
+  <String id="30086" string="테스트무기_쌍검_성능레벨6" />
+  <String id="30087" string="테스트무기_창_성능레벨6" />
+  <String id="30088" string="테스트무기_대검_성능레벨6" />
+  <String id="30089" string="테스트무기_도끼_성능레벨6" />
+  <String id="30090" string="테스트무기_원반_성능레벨6" />
+  <String id="30091" string="테스트무기_활_성능레벨6" />
+  <String id="30092" string="테스트무기_지팡이_성능레벨6" />
+  <String id="30093" string="테스트무기_마법봉_성능레벨6" />
+  <String id="30094" string="테스트방어구_중갑_슈트_성능레벨6" />
+  <String id="30095" string="테스트방어구_중갑_장갑_성능레벨6" />
+  <String id="30096" string="테스트방어구_중갑_신발_성능레벨6" />
+  <String id="30097" string="테스트방어구_경갑_슈트_성능레벨6" />
+  <String id="30098" string="테스트방어구_경갑_장갑_성능레벨6" />
+  <String id="30099" string="테스트방어구_경갑_신발_성능레벨6" />
+  <String id="30100" string="테스트방어구_로브_슈트_성능레벨6" />
+  <String id="30101" string="테스트방어구_로브_장갑_성능레벨6" />
+  <String id="30102" string="테스트방어구_로브_신발_성능레벨6" />
+  <String id="30103" string="테스트무기_쌍검_성능레벨7" />
+  <String id="30104" string="테스트무기_창_성능레벨7" />
+  <String id="30105" string="테스트무기_대검_성능레벨7" />
+  <String id="30106" string="테스트무기_도끼_성능레벨7" />
+  <String id="30107" string="테스트무기_원반_성능레벨7" />
+  <String id="30108" string="테스트무기_활_성능레벨7" />
+  <String id="30109" string="테스트무기_지팡이_성능레벨7" />
+  <String id="30110" string="테스트무기_마법봉_성능레벨7" />
+  <String id="30111" string="테스트방어구_중갑_슈트_성능레벨7" />
+  <String id="30112" string="테스트방어구_중갑_장갑_성능레벨7" />
+  <String id="30113" string="테스트방어구_중갑_신발_성능레벨7" />
+  <String id="30114" string="테스트방어구_경갑_슈트_성능레벨7" />
+  <String id="30115" string="테스트방어구_경갑_장갑_성능레벨7" />
+  <String id="30116" string="테스트방어구_경갑_신발_성능레벨7" />
+  <String id="30117" string="테스트방어구_로브_슈트_성능레벨7" />
+  <String id="30118" string="테스트방어구_로브_장갑_성능레벨7" />
+  <String id="30119" string="테스트방어구_로브_신발_성능레벨7" />
+  <String id="30120" string="테스트무기_쌍검_성능레벨8" />
+  <String id="30121" string="테스트무기_창_성능레벨8" />
+  <String id="30122" string="테스트무기_대검_성능레벨8" />
+  <String id="30123" string="테스트무기_도끼_성능레벨8" />
+  <String id="30124" string="테스트무기_원반_성능레벨8" />
+  <String id="30125" string="테스트무기_활_성능레벨8" />
+  <String id="30126" string="테스트무기_지팡이_성능레벨8" />
+  <String id="30127" string="테스트무기_마법봉_성능레벨8" />
+  <String id="30128" string="테스트방어구_중갑_슈트_성능레벨8" />
+  <String id="30129" string="테스트방어구_중갑_장갑_성능레벨8" />
+  <String id="30130" string="테스트방어구_중갑_신발_성능레벨8" />
+  <String id="30131" string="테스트방어구_경갑_슈트_성능레벨8" />
+  <String id="30132" string="테스트방어구_경갑_장갑_성능레벨8" />
+  <String id="30133" string="테스트방어구_경갑_신발_성능레벨8" />
+  <String id="30134" string="테스트방어구_로브_슈트_성능레벨8" />
+  <String id="30135" string="테스트방어구_로브_장갑_성능레벨8" />
+  <String id="30136" string="테스트방어구_로브_신발_성능레벨8" />
+  <String id="30137" string="테스트무기_쌍검_성능레벨9" />
+  <String id="30138" string="테스트무기_창_성능레벨9" />
+  <String id="30139" string="테스트무기_대검_성능레벨9" />
+  <String id="30140" string="테스트무기_도끼_성능레벨9" />
+  <String id="30141" string="테스트무기_원반_성능레벨9" />
+  <String id="30142" string="테스트무기_활_성능레벨9" />
+  <String id="30143" string="테스트무기_지팡이_성능레벨9" />
+  <String id="30144" string="테스트무기_마법봉_성능레벨9" />
+  <String id="30145" string="테스트방어구_중갑_슈트_성능레벨9" />
+  <String id="30146" string="테스트방어구_중갑_장갑_성능레벨9" />
+  <String id="30147" string="테스트방어구_중갑_신발_성능레벨9" />
+  <String id="30148" string="테스트방어구_경갑_슈트_성능레벨9" />
+  <String id="30149" string="테스트방어구_경갑_장갑_성능레벨9" />
+  <String id="30150" string="테스트방어구_경갑_신발_성능레벨9" />
+  <String id="30151" string="테스트방어구_로브_슈트_성능레벨9" />
+  <String id="30152" string="테스트방어구_로브_장갑_성능레벨9" />
+  <String id="30153" string="테스트방어구_로브_신발_성능레벨9" />
+  <String id="30154" string="테스트무기_쌍검_성능레벨10" />
+  <String id="30155" string="테스트무기_창_성능레벨10" />
+  <String id="30156" string="테스트무기_대검_성능레벨10" />
+  <String id="30157" string="테스트무기_도끼_성능레벨10" />
+  <String id="30158" string="테스트무기_원반_성능레벨10" />
+  <String id="30159" string="테스트무기_활_성능레벨10" />
+  <String id="30160" string="테스트무기_지팡이_성능레벨10" />
+  <String id="30161" string="테스트무기_마법봉_성능레벨10" />
+  <String id="30162" string="테스트방어구_중갑_슈트_성능레벨10" />
+  <String id="30163" string="테스트방어구_중갑_장갑_성능레벨10" />
+  <String id="30164" string="테스트방어구_중갑_신발_성능레벨10" />
+  <String id="30165" string="테스트방어구_경갑_슈트_성능레벨10" />
+  <String id="30166" string="테스트방어구_경갑_장갑_성능레벨10" />
+  <String id="30167" string="테스트방어구_경갑_신발_성능레벨10" />
+  <String id="30168" string="테스트방어구_로브_슈트_성능레벨10" />
+  <String id="30169" string="테스트방어구_로브_장갑_성능레벨10" />
+  <String id="30170" string="테스트방어구_로브_신발_성능레벨10" />
+  <String id="30171" string="테스트무기_쌍검_성능레벨11" />
+  <String id="30172" string="테스트무기_창_성능레벨11" />
+  <String id="30173" string="테스트무기_대검_성능레벨11" />
+  <String id="30174" string="테스트무기_도끼_성능레벨11" />
+  <String id="30175" string="테스트무기_원반_성능레벨11" />
+  <String id="30176" string="테스트무기_활_성능레벨11" />
+  <String id="30177" string="테스트무기_지팡이_성능레벨11" />
+  <String id="30178" string="테스트무기_마법봉_성능레벨11" />
+  <String id="30179" string="테스트방어구_중갑_슈트_성능레벨11" />
+  <String id="30180" string="테스트방어구_중갑_장갑_성능레벨11" />
+  <String id="30181" string="테스트방어구_중갑_신발_성능레벨11" />
+  <String id="30182" string="테스트방어구_경갑_슈트_성능레벨11" />
+  <String id="30183" string="테스트방어구_경갑_장갑_성능레벨11" />
+  <String id="30184" string="테스트방어구_경갑_신발_성능레벨11" />
+  <String id="30185" string="테스트방어구_로브_슈트_성능레벨11" />
+  <String id="30186" string="테스트방어구_로브_장갑_성능레벨11" />
+  <String id="30187" string="테스트방어구_로브_신발_성능레벨11" />
+  <String id="30188" string="테스트무기_쌍검_성능레벨12" />
+  <String id="30189" string="테스트무기_창_성능레벨12" />
+  <String id="30190" string="테스트무기_대검_성능레벨12" />
+  <String id="30191" string="테스트무기_도끼_성능레벨12" />
+  <String id="30192" string="테스트무기_원반_성능레벨12" />
+  <String id="30193" string="테스트무기_활_성능레벨12" />
+  <String id="30194" string="테스트무기_지팡이_성능레벨12" />
+  <String id="30195" string="테스트무기_마법봉_성능레벨12" />
+  <String id="30196" string="테스트방어구_중갑_슈트_성능레벨12" />
+  <String id="30197" string="테스트방어구_중갑_장갑_성능레벨12" />
+  <String id="30198" string="테스트방어구_중갑_신발_성능레벨12" />
+  <String id="30199" string="테스트방어구_경갑_슈트_성능레벨12" />
+  <String id="30200" string="테스트방어구_경갑_장갑_성능레벨12" />
+  <String id="30201" string="테스트방어구_경갑_신발_성능레벨12" />
+  <String id="30202" string="테스트방어구_로브_슈트_성능레벨12" />
+  <String id="30203" string="테스트방어구_로브_장갑_성능레벨12" />
+  <String id="30204" string="테스트방어구_로브_신발_성능레벨12" />
+  <String id="30205" string="테스트무기_쌍검_성능레벨13" />
+  <String id="30206" string="테스트무기_창_성능레벨13" />
+  <String id="30207" string="테스트무기_대검_성능레벨13" />
+  <String id="30208" string="테스트무기_도끼_성능레벨13" />
+  <String id="30209" string="테스트무기_원반_성능레벨13" />
+  <String id="30210" string="테스트무기_활_성능레벨13" />
+  <String id="30211" string="테스트무기_지팡이_성능레벨13" />
+  <String id="30212" string="테스트무기_마법봉_성능레벨13" />
+  <String id="30213" string="테스트방어구_중갑_슈트_성능레벨13" />
+  <String id="30214" string="테스트방어구_중갑_장갑_성능레벨13" />
+  <String id="30215" string="테스트방어구_중갑_신발_성능레벨13" />
+  <String id="30216" string="테스트방어구_경갑_슈트_성능레벨13" />
+  <String id="30217" string="테스트방어구_경갑_장갑_성능레벨13" />
+  <String id="30218" string="테스트방어구_경갑_신발_성능레벨13" />
+  <String id="30219" string="테스트방어구_로브_슈트_성능레벨13" />
+  <String id="30220" string="테스트방어구_로브_장갑_성능레벨13" />
+  <String id="30221" string="테스트방어구_로브_신발_성능레벨13" />
+  <String id="30222" string="테스트무기_쌍검_성능레벨14" />
+  <String id="30223" string="테스트무기_창_성능레벨14" />
+  <String id="30224" string="테스트무기_대검_성능레벨14" />
+  <String id="30225" string="테스트무기_도끼_성능레벨14" />
+  <String id="30226" string="테스트무기_원반_성능레벨14" />
+  <String id="30227" string="테스트무기_활_성능레벨14" />
+  <String id="30228" string="테스트무기_지팡이_성능레벨14" />
+  <String id="30229" string="테스트무기_마법봉_성능레벨14" />
+  <String id="30230" string="테스트방어구_중갑_슈트_성능레벨14" />
+  <String id="30231" string="테스트방어구_중갑_장갑_성능레벨14" />
+  <String id="30232" string="테스트방어구_중갑_신발_성능레벨14" />
+  <String id="30233" string="테스트방어구_경갑_슈트_성능레벨14" />
+  <String id="30234" string="테스트방어구_경갑_장갑_성능레벨14" />
+  <String id="30235" string="테스트방어구_경갑_신발_성능레벨14" />
+  <String id="30236" string="테스트방어구_로브_슈트_성능레벨14" />
+  <String id="30237" string="테스트방어구_로브_장갑_성능레벨14" />
+  <String id="30238" string="테스트방어구_로브_신발_성능레벨14" />
+  <String id="30239" string="테스트무기_쌍검_성능레벨15" />
+  <String id="30240" string="테스트무기_창_성능레벨15" />
+  <String id="30241" string="테스트무기_대검_성능레벨15" />
+  <String id="30242" string="테스트무기_도끼_성능레벨15" />
+  <String id="30243" string="테스트무기_원반_성능레벨15" />
+  <String id="30244" string="테스트무기_활_성능레벨15" />
+  <String id="30245" string="테스트무기_지팡이_성능레벨15" />
+  <String id="30246" string="테스트무기_마법봉_성능레벨15" />
+  <String id="30247" string="테스트방어구_중갑_슈트_성능레벨15" />
+  <String id="30248" string="테스트방어구_중갑_장갑_성능레벨15" />
+  <String id="30249" string="테스트방어구_중갑_신발_성능레벨15" />
+  <String id="30250" string="테스트방어구_경갑_슈트_성능레벨15" />
+  <String id="30251" string="테스트방어구_경갑_장갑_성능레벨15" />
+  <String id="30252" string="테스트방어구_경갑_신발_성능레벨15" />
+  <String id="30253" string="테스트방어구_로브_슈트_성능레벨15" />
+  <String id="30254" string="테스트방어구_로브_장갑_성능레벨15" />
+  <String id="30255" string="테스트방어구_로브_신발_성능레벨15" />
+  <String id="30256" string="테스트무기_쌍검_성능레벨16" />
+  <String id="30257" string="테스트무기_창_성능레벨16" />
+  <String id="30258" string="테스트무기_대검_성능레벨16" />
+  <String id="30259" string="테스트무기_도끼_성능레벨16" />
+  <String id="30260" string="테스트무기_원반_성능레벨16" />
+  <String id="30261" string="테스트무기_활_성능레벨16" />
+  <String id="30262" string="테스트무기_지팡이_성능레벨16" />
+  <String id="30263" string="테스트무기_마법봉_성능레벨16" />
+  <String id="30264" string="테스트방어구_중갑_슈트_성능레벨16" />
+  <String id="30265" string="테스트방어구_중갑_장갑_성능레벨16" />
+  <String id="30266" string="테스트방어구_중갑_신발_성능레벨16" />
+  <String id="30267" string="테스트방어구_경갑_슈트_성능레벨16" />
+  <String id="30268" string="테스트방어구_경갑_장갑_성능레벨16" />
+  <String id="30269" string="테스트방어구_경갑_신발_성능레벨16" />
+  <String id="30270" string="테스트방어구_로브_슈트_성능레벨16" />
+  <String id="30271" string="테스트방어구_로브_장갑_성능레벨16" />
+  <String id="30272" string="테스트방어구_로브_신발_성능레벨16" />
+  <String id="30273" string="테스트무기_쌍검_성능레벨17" />
+  <String id="30274" string="테스트무기_창_성능레벨17" />
+  <String id="30275" string="테스트무기_대검_성능레벨17" />
+  <String id="30276" string="테스트무기_도끼_성능레벨17" />
+  <String id="30277" string="테스트무기_원반_성능레벨17" />
+  <String id="30278" string="테스트무기_활_성능레벨17" />
+  <String id="30279" string="테스트무기_지팡이_성능레벨17" />
+  <String id="30280" string="테스트무기_마법봉_성능레벨17" />
+  <String id="30281" string="테스트방어구_중갑_슈트_성능레벨17" />
+  <String id="30282" string="테스트방어구_중갑_장갑_성능레벨17" />
+  <String id="30283" string="테스트방어구_중갑_신발_성능레벨17" />
+  <String id="30284" string="테스트방어구_경갑_슈트_성능레벨17" />
+  <String id="30285" string="테스트방어구_경갑_장갑_성능레벨17" />
+  <String id="30286" string="테스트방어구_경갑_신발_성능레벨17" />
+  <String id="30287" string="테스트방어구_로브_슈트_성능레벨17" />
+  <String id="30288" string="테스트방어구_로브_장갑_성능레벨17" />
+  <String id="30289" string="테스트방어구_로브_신발_성능레벨17" />
+  <String id="30290" string="테스트무기_쌍검_성능레벨18" />
+  <String id="30291" string="테스트무기_창_성능레벨18" />
+  <String id="30292" string="테스트무기_대검_성능레벨18" />
+  <String id="30293" string="테스트무기_도끼_성능레벨18" />
+  <String id="30294" string="테스트무기_원반_성능레벨18" />
+  <String id="30295" string="테스트무기_활_성능레벨18" />
+  <String id="30296" string="테스트무기_지팡이_성능레벨18" />
+  <String id="30297" string="테스트무기_마법봉_성능레벨18" />
+  <String id="30298" string="테스트방어구_중갑_슈트_성능레벨18" />
+  <String id="30299" string="테스트방어구_중갑_장갑_성능레벨18" />
+  <String id="30300" string="테스트방어구_중갑_신발_성능레벨18" />
+  <String id="30301" string="테스트방어구_경갑_슈트_성능레벨18" />
+  <String id="30302" string="테스트방어구_경갑_장갑_성능레벨18" />
+  <String id="30303" string="테스트방어구_경갑_신발_성능레벨18" />
+  <String id="30304" string="테스트방어구_로브_슈트_성능레벨18" />
+  <String id="30305" string="테스트방어구_로브_장갑_성능레벨18" />
+  <String id="30306" string="테스트방어구_로브_신발_성능레벨18" />
+  <String id="30307" string="테스트무기_쌍검_성능레벨19" />
+  <String id="30308" string="테스트무기_창_성능레벨19" />
+  <String id="30309" string="테스트무기_대검_성능레벨19" />
+  <String id="30310" string="테스트무기_도끼_성능레벨19" />
+  <String id="30311" string="테스트무기_원반_성능레벨19" />
+  <String id="30312" string="테스트무기_활_성능레벨19" />
+  <String id="30313" string="테스트무기_지팡이_성능레벨19" />
+  <String id="30314" string="테스트무기_마법봉_성능레벨19" />
+  <String id="30315" string="테스트방어구_중갑_슈트_성능레벨19" />
+  <String id="30316" string="테스트방어구_중갑_장갑_성능레벨19" />
+  <String id="30317" string="테스트방어구_중갑_신발_성능레벨19" />
+  <String id="30318" string="테스트방어구_경갑_슈트_성능레벨19" />
+  <String id="30319" string="테스트방어구_경갑_장갑_성능레벨19" />
+  <String id="30320" string="테스트방어구_경갑_신발_성능레벨19" />
+  <String id="30321" string="테스트방어구_로브_슈트_성능레벨19" />
+  <String id="30322" string="테스트방어구_로브_장갑_성능레벨19" />
+  <String id="30323" string="테스트방어구_로브_신발_성능레벨19" />
+  <String id="30324" string="테스트무기_쌍검_성능레벨20" />
+  <String id="30325" string="테스트무기_창_성능레벨20" />
+  <String id="30326" string="테스트무기_대검_성능레벨20" />
+  <String id="30327" string="테스트무기_도끼_성능레벨20" />
+  <String id="30328" string="테스트무기_원반_성능레벨20" />
+  <String id="30329" string="테스트무기_활_성능레벨20" />
+  <String id="30330" string="테스트무기_지팡이_성능레벨20" />
+  <String id="30331" string="테스트무기_마법봉_성능레벨20" />
+  <String id="30332" string="테스트방어구_중갑_슈트_성능레벨20" />
+  <String id="30333" string="테스트방어구_중갑_장갑_성능레벨20" />
+  <String id="30334" string="테스트방어구_중갑_신발_성능레벨20" />
+  <String id="30335" string="테스트방어구_경갑_슈트_성능레벨20" />
+  <String id="30336" string="테스트방어구_경갑_장갑_성능레벨20" />
+  <String id="30337" string="테스트방어구_경갑_신발_성능레벨20" />
+  <String id="30338" string="테스트방어구_로브_슈트_성능레벨20" />
+  <String id="30339" string="테스트방어구_로브_장갑_성능레벨20" />
+  <String id="30340" string="테스트방어구_로브_신발_성능레벨20" />
+  <String id="30341" string="테스트무기_쌍검_성능레벨21" />
+  <String id="30342" string="테스트무기_창_성능레벨21" />
+  <String id="30343" string="테스트무기_대검_성능레벨21" />
+  <String id="30344" string="테스트무기_도끼_성능레벨21" />
+  <String id="30345" string="테스트무기_원반_성능레벨21" />
+  <String id="30346" string="테스트무기_활_성능레벨21" />
+  <String id="30347" string="테스트무기_지팡이_성능레벨21" />
+  <String id="30348" string="테스트무기_마법봉_성능레벨21" />
+  <String id="30349" string="테스트방어구_중갑_슈트_성능레벨21" />
+  <String id="30350" string="테스트방어구_중갑_장갑_성능레벨21" />
+  <String id="30351" string="테스트방어구_중갑_신발_성능레벨21" />
+  <String id="30352" string="테스트방어구_경갑_슈트_성능레벨21" />
+  <String id="30353" string="테스트방어구_경갑_장갑_성능레벨21" />
+  <String id="30354" string="테스트방어구_경갑_신발_성능레벨21" />
+  <String id="30355" string="테스트방어구_로브_슈트_성능레벨21" />
+  <String id="30356" string="테스트방어구_로브_장갑_성능레벨21" />
+  <String id="30357" string="테스트방어구_로브_신발_성능레벨21" />
+  <String id="30358" string="테스트무기_쌍검_성능레벨22" />
+  <String id="30359" string="테스트무기_창_성능레벨22" />
+  <String id="30360" string="테스트무기_대검_성능레벨22" />
+  <String id="30361" string="테스트무기_도끼_성능레벨22" />
+  <String id="30362" string="테스트무기_원반_성능레벨22" />
+  <String id="30363" string="테스트무기_활_성능레벨22" />
+  <String id="30364" string="테스트무기_지팡이_성능레벨22" />
+  <String id="30365" string="테스트무기_마법봉_성능레벨22" />
+  <String id="30366" string="테스트방어구_중갑_슈트_성능레벨22" />
+  <String id="30367" string="테스트방어구_중갑_장갑_성능레벨22" />
+  <String id="30368" string="테스트방어구_중갑_신발_성능레벨22" />
+  <String id="30369" string="테스트방어구_경갑_슈트_성능레벨22" />
+  <String id="30370" string="테스트방어구_경갑_장갑_성능레벨22" />
+  <String id="30371" string="테스트방어구_경갑_신발_성능레벨22" />
+  <String id="30372" string="테스트방어구_로브_슈트_성능레벨22" />
+  <String id="30373" string="테스트방어구_로브_장갑_성능레벨22" />
+  <String id="30374" string="테스트방어구_로브_신발_성능레벨22" />
+  <String id="30375" string="테스트무기_쌍검_성능레벨23" />
+  <String id="30376" string="테스트무기_창_성능레벨23" />
+  <String id="30377" string="테스트무기_대검_성능레벨23" />
+  <String id="30378" string="테스트무기_도끼_성능레벨23" />
+  <String id="30379" string="테스트무기_원반_성능레벨23" />
+  <String id="30380" string="테스트무기_활_성능레벨23" />
+  <String id="30381" string="테스트무기_지팡이_성능레벨23" />
+  <String id="30382" string="테스트무기_마법봉_성능레벨23" />
+  <String id="30383" string="테스트방어구_중갑_슈트_성능레벨23" />
+  <String id="30384" string="테스트방어구_중갑_장갑_성능레벨23" />
+  <String id="30385" string="테스트방어구_중갑_신발_성능레벨23" />
+  <String id="30386" string="테스트방어구_경갑_슈트_성능레벨23" />
+  <String id="30387" string="테스트방어구_경갑_장갑_성능레벨23" />
+  <String id="30388" string="테스트방어구_경갑_신발_성능레벨23" />
+  <String id="30389" string="테스트방어구_로브_슈트_성능레벨23" />
+  <String id="30390" string="테스트방어구_로브_장갑_성능레벨23" />
+  <String id="30391" string="테스트방어구_로브_신발_성능레벨23" />
+  <String id="30392" string="테스트무기_쌍검_성능레벨24" />
+  <String id="30393" string="테스트무기_창_성능레벨24" />
+  <String id="30394" string="테스트무기_대검_성능레벨24" />
+  <String id="30395" string="테스트무기_도끼_성능레벨24" />
+  <String id="30396" string="테스트무기_원반_성능레벨24" />
+  <String id="30397" string="테스트무기_활_성능레벨24" />
+  <String id="30398" string="테스트무기_지팡이_성능레벨24" />
+  <String id="30399" string="테스트무기_마법봉_성능레벨24" />
+  <String id="30400" string="테스트방어구_중갑_슈트_성능레벨24" />
+  <String id="30401" string="테스트방어구_중갑_장갑_성능레벨24" />
+  <String id="30402" string="테스트방어구_중갑_신발_성능레벨24" />
+  <String id="30403" string="테스트방어구_경갑_슈트_성능레벨24" />
+  <String id="30404" string="테스트방어구_경갑_장갑_성능레벨24" />
+  <String id="30405" string="테스트방어구_경갑_신발_성능레벨24" />
+  <String id="30406" string="테스트방어구_로브_슈트_성능레벨24" />
+  <String id="30407" string="테스트방어구_로브_장갑_성능레벨24" />
+  <String id="30408" string="테스트방어구_로브_신발_성능레벨24" />
+  <String id="30409" string="테스트무기_쌍검_성능레벨25" />
+  <String id="30410" string="테스트무기_창_성능레벨25" />
+  <String id="30411" string="테스트무기_대검_성능레벨25" />
+  <String id="30412" string="테스트무기_도끼_성능레벨25" />
+  <String id="30413" string="테스트무기_원반_성능레벨25" />
+  <String id="30414" string="테스트무기_활_성능레벨25" />
+  <String id="30415" string="테스트무기_지팡이_성능레벨25" />
+  <String id="30416" string="테스트무기_마법봉_성능레벨25" />
+  <String id="30417" string="테스트방어구_중갑_슈트_성능레벨25" />
+  <String id="30418" string="테스트방어구_중갑_장갑_성능레벨25" />
+  <String id="30419" string="테스트방어구_중갑_신발_성능레벨25" />
+  <String id="30420" string="테스트방어구_경갑_슈트_성능레벨25" />
+  <String id="30421" string="테스트방어구_경갑_장갑_성능레벨25" />
+  <String id="30422" string="테스트방어구_경갑_신발_성능레벨25" />
+  <String id="30423" string="테스트방어구_로브_슈트_성능레벨25" />
+  <String id="30424" string="테스트방어구_로브_장갑_성능레벨25" />
+  <String id="30425" string="테스트방어구_로브_신발_성능레벨25" />
+  <String id="30426" string="테스트무기_쌍검_성능레벨26" />
+  <String id="30427" string="테스트무기_창_성능레벨26" />
+  <String id="30428" string="테스트무기_대검_성능레벨26" />
+  <String id="30429" string="테스트무기_도끼_성능레벨26" />
+  <String id="30430" string="테스트무기_원반_성능레벨26" />
+  <String id="30431" string="테스트무기_활_성능레벨26" />
+  <String id="30432" string="테스트무기_지팡이_성능레벨26" />
+  <String id="30433" string="테스트무기_마법봉_성능레벨26" />
+  <String id="30434" string="테스트방어구_중갑_슈트_성능레벨26" />
+  <String id="30435" string="테스트방어구_중갑_장갑_성능레벨26" />
+  <String id="30436" string="테스트방어구_중갑_신발_성능레벨26" />
+  <String id="30437" string="테스트방어구_경갑_슈트_성능레벨26" />
+  <String id="30438" string="테스트방어구_경갑_장갑_성능레벨26" />
+  <String id="30439" string="테스트방어구_경갑_신발_성능레벨26" />
+  <String id="30440" string="테스트방어구_로브_슈트_성능레벨26" />
+  <String id="30441" string="테스트방어구_로브_장갑_성능레벨26" />
+  <String id="30442" string="테스트방어구_로브_신발_성능레벨26" />
+  <String id="30443" string="테스트무기_쌍검_성능레벨27" />
+  <String id="30444" string="테스트무기_창_성능레벨27" />
+  <String id="30445" string="테스트무기_대검_성능레벨27" />
+  <String id="30446" string="테스트무기_도끼_성능레벨27" />
+  <String id="30447" string="테스트무기_원반_성능레벨27" />
+  <String id="30448" string="테스트무기_활_성능레벨27" />
+  <String id="30449" string="테스트무기_지팡이_성능레벨27" />
+  <String id="30450" string="테스트무기_마법봉_성능레벨27" />
+  <String id="30451" string="테스트방어구_중갑_슈트_성능레벨27" />
+  <String id="30452" string="테스트방어구_중갑_장갑_성능레벨27" />
+  <String id="30453" string="테스트방어구_중갑_신발_성능레벨27" />
+  <String id="30454" string="테스트방어구_경갑_슈트_성능레벨27" />
+  <String id="30455" string="테스트방어구_경갑_장갑_성능레벨27" />
+  <String id="30456" string="테스트방어구_경갑_신발_성능레벨27" />
+  <String id="30457" string="테스트방어구_로브_슈트_성능레벨27" />
+  <String id="30458" string="테스트방어구_로브_장갑_성능레벨27" />
+  <String id="30459" string="테스트방어구_로브_신발_성능레벨27" />
+  <String id="30460" string="테스트무기_쌍검_성능레벨28" />
+  <String id="30461" string="테스트무기_창_성능레벨28" />
+  <String id="30462" string="테스트무기_대검_성능레벨28" />
+  <String id="30463" string="테스트무기_도끼_성능레벨28" />
+  <String id="30464" string="테스트무기_원반_성능레벨28" />
+  <String id="30465" string="테스트무기_활_성능레벨28" />
+  <String id="30466" string="테스트무기_지팡이_성능레벨28" />
+  <String id="30467" string="테스트무기_마법봉_성능레벨28" />
+  <String id="30468" string="테스트방어구_중갑_슈트_성능레벨28" />
+  <String id="30469" string="테스트방어구_중갑_장갑_성능레벨28" />
+  <String id="30470" string="테스트방어구_중갑_신발_성능레벨28" />
+  <String id="30471" string="테스트방어구_경갑_슈트_성능레벨28" />
+  <String id="30472" string="테스트방어구_경갑_장갑_성능레벨28" />
+  <String id="30473" string="테스트방어구_경갑_신발_성능레벨28" />
+  <String id="30474" string="테스트방어구_로브_슈트_성능레벨28" />
+  <String id="30475" string="테스트방어구_로브_장갑_성능레벨28" />
+  <String id="30476" string="테스트방어구_로브_신발_성능레벨28" />
+  <String id="30477" string="테스트무기_쌍검_성능레벨29" />
+  <String id="30478" string="테스트무기_창_성능레벨29" />
+  <String id="30479" string="테스트무기_대검_성능레벨29" />
+  <String id="30480" string="테스트무기_도끼_성능레벨29" />
+  <String id="30481" string="테스트무기_원반_성능레벨29" />
+  <String id="30482" string="테스트무기_활_성능레벨29" />
+  <String id="30483" string="테스트무기_지팡이_성능레벨29" />
+  <String id="30484" string="테스트무기_마법봉_성능레벨29" />
+  <String id="30485" string="테스트방어구_중갑_슈트_성능레벨29" />
+  <String id="30486" string="테스트방어구_중갑_장갑_성능레벨29" />
+  <String id="30487" string="테스트방어구_중갑_신발_성능레벨29" />
+  <String id="30488" string="테스트방어구_경갑_슈트_성능레벨29" />
+  <String id="30489" string="테스트방어구_경갑_장갑_성능레벨29" />
+  <String id="30490" string="테스트방어구_경갑_신발_성능레벨29" />
+  <String id="30491" string="테스트방어구_로브_슈트_성능레벨29" />
+  <String id="30492" string="테스트방어구_로브_장갑_성능레벨29" />
+  <String id="30493" string="테스트방어구_로브_신발_성능레벨29" />
+  <String id="30494" string="테스트무기_쌍검_성능레벨30" />
+  <String id="30495" string="테스트무기_창_성능레벨30" />
+  <String id="30496" string="테스트무기_대검_성능레벨30" />
+  <String id="30497" string="테스트무기_도끼_성능레벨30" />
+  <String id="30498" string="테스트무기_원반_성능레벨30" />
+  <String id="30499" string="테스트무기_활_성능레벨30" />
+  <String id="30500" string="테스트무기_지팡이_성능레벨30" />
+  <String id="30501" string="테스트무기_마법봉_성능레벨30" />
+  <String id="30502" string="테스트방어구_중갑_슈트_성능레벨30" />
+  <String id="30503" string="테스트방어구_중갑_장갑_성능레벨30" />
+  <String id="30504" string="테스트방어구_중갑_신발_성능레벨30" />
+  <String id="30505" string="테스트방어구_경갑_슈트_성능레벨30" />
+  <String id="30506" string="테스트방어구_경갑_장갑_성능레벨30" />
+  <String id="30507" string="테스트방어구_경갑_신발_성능레벨30" />
+  <String id="30508" string="테스트방어구_로브_슈트_성능레벨30" />
+  <String id="30509" string="테스트방어구_로브_장갑_성능레벨30" />
+  <String id="30510" string="테스트방어구_로브_신발_성능레벨30" />
+  <String id="30511" string="테스트무기_쌍검_성능레벨31" />
+  <String id="30512" string="테스트무기_창_성능레벨31" />
+  <String id="30513" string="테스트무기_대검_성능레벨31" />
+  <String id="30514" string="테스트무기_도끼_성능레벨31" />
+  <String id="30515" string="테스트무기_원반_성능레벨31" />
+  <String id="30516" string="테스트무기_활_성능레벨31" />
+  <String id="30517" string="테스트무기_지팡이_성능레벨31" />
+  <String id="30518" string="테스트무기_마법봉_성능레벨31" />
+  <String id="30519" string="테스트방어구_중갑_슈트_성능레벨31" />
+  <String id="30520" string="테스트방어구_중갑_장갑_성능레벨31" />
+  <String id="30521" string="테스트방어구_중갑_신발_성능레벨31" />
+  <String id="30522" string="테스트방어구_경갑_슈트_성능레벨31" />
+  <String id="30523" string="테스트방어구_경갑_장갑_성능레벨31" />
+  <String id="30524" string="테스트방어구_경갑_신발_성능레벨31" />
+  <String id="30525" string="테스트방어구_로브_슈트_성능레벨31" />
+  <String id="30526" string="테스트방어구_로브_장갑_성능레벨31" />
+  <String id="30527" string="테스트방어구_로브_신발_성능레벨31" />
+  <String id="30528" string="테스트무기_쌍검_성능레벨32" />
+  <String id="30529" string="테스트무기_창_성능레벨32" />
+  <String id="30530" string="테스트무기_대검_성능레벨32" />
+  <String id="30531" string="테스트무기_도끼_성능레벨32" />
+  <String id="30532" string="테스트무기_원반_성능레벨32" />
+  <String id="30533" string="테스트무기_활_성능레벨32" />
+  <String id="30534" string="테스트무기_지팡이_성능레벨32" />
+  <String id="30535" string="테스트무기_마법봉_성능레벨32" />
+  <String id="30536" string="테스트방어구_중갑_슈트_성능레벨32" />
+  <String id="30537" string="테스트방어구_중갑_장갑_성능레벨32" />
+  <String id="30538" string="테스트방어구_중갑_신발_성능레벨32" />
+  <String id="30539" string="테스트방어구_경갑_슈트_성능레벨32" />
+  <String id="30540" string="테스트방어구_경갑_장갑_성능레벨32" />
+  <String id="30541" string="테스트방어구_경갑_신발_성능레벨32" />
+  <String id="30542" string="테스트방어구_로브_슈트_성능레벨32" />
+  <String id="30543" string="테스트방어구_로브_장갑_성능레벨32" />
+  <String id="30544" string="테스트방어구_로브_신발_성능레벨32" />
+  <String id="30545" string="테스트무기_쌍검_성능레벨33" />
+  <String id="30546" string="테스트무기_창_성능레벨33" />
+  <String id="30547" string="테스트무기_대검_성능레벨33" />
+  <String id="30548" string="테스트무기_도끼_성능레벨33" />
+  <String id="30549" string="테스트무기_원반_성능레벨33" />
+  <String id="30550" string="테스트무기_활_성능레벨33" />
+  <String id="30551" string="테스트무기_지팡이_성능레벨33" />
+  <String id="30552" string="테스트무기_마법봉_성능레벨33" />
+  <String id="30553" string="테스트방어구_중갑_슈트_성능레벨33" />
+  <String id="30554" string="테스트방어구_중갑_장갑_성능레벨33" />
+  <String id="30555" string="테스트방어구_중갑_신발_성능레벨33" />
+  <String id="30556" string="테스트방어구_경갑_슈트_성능레벨33" />
+  <String id="30557" string="테스트방어구_경갑_장갑_성능레벨33" />
+  <String id="30558" string="테스트방어구_경갑_신발_성능레벨33" />
+  <String id="30559" string="테스트방어구_로브_슈트_성능레벨33" />
+  <String id="30560" string="테스트방어구_로브_장갑_성능레벨33" />
+  <String id="30561" string="테스트방어구_로브_신발_성능레벨33" />
+  <String id="30562" string="테스트무기_쌍검_성능레벨34" />
+  <String id="30563" string="테스트무기_창_성능레벨34" />
+  <String id="30564" string="테스트무기_대검_성능레벨34" />
+  <String id="30565" string="테스트무기_도끼_성능레벨34" />
+  <String id="30566" string="테스트무기_원반_성능레벨34" />
+  <String id="30567" string="테스트무기_활_성능레벨34" />
+  <String id="30568" string="테스트무기_지팡이_성능레벨34" />
+  <String id="30569" string="테스트무기_마법봉_성능레벨34" />
+  <String id="30570" string="테스트방어구_중갑_슈트_성능레벨34" />
+  <String id="30571" string="테스트방어구_중갑_장갑_성능레벨34" />
+  <String id="30572" string="테스트방어구_중갑_신발_성능레벨34" />
+  <String id="30573" string="테스트방어구_경갑_슈트_성능레벨34" />
+  <String id="30574" string="테스트방어구_경갑_장갑_성능레벨34" />
+  <String id="30575" string="테스트방어구_경갑_신발_성능레벨34" />
+  <String id="30576" string="테스트방어구_로브_슈트_성능레벨34" />
+  <String id="30577" string="테스트방어구_로브_장갑_성능레벨34" />
+  <String id="30578" string="테스트방어구_로브_신발_성능레벨34" />
+  <String id="30579" string="테스트무기_쌍검_성능레벨35" />
+  <String id="30580" string="테스트무기_창_성능레벨35" />
+  <String id="30581" string="테스트무기_대검_성능레벨35" />
+  <String id="30582" string="테스트무기_도끼_성능레벨35" />
+  <String id="30583" string="테스트무기_원반_성능레벨35" />
+  <String id="30584" string="테스트무기_활_성능레벨35" />
+  <String id="30585" string="테스트무기_지팡이_성능레벨35" />
+  <String id="30586" string="테스트무기_마법봉_성능레벨35" />
+  <String id="30587" string="테스트방어구_중갑_슈트_성능레벨35" />
+  <String id="30588" string="테스트방어구_중갑_장갑_성능레벨35" />
+  <String id="30589" string="테스트방어구_중갑_신발_성능레벨35" />
+  <String id="30590" string="테스트방어구_경갑_슈트_성능레벨35" />
+  <String id="30591" string="테스트방어구_경갑_장갑_성능레벨35" />
+  <String id="30592" string="테스트방어구_경갑_신발_성능레벨35" />
+  <String id="30593" string="테스트방어구_로브_슈트_성능레벨35" />
+  <String id="30594" string="테스트방어구_로브_장갑_성능레벨35" />
+  <String id="30595" string="테스트방어구_로브_신발_성능레벨35" />
+  <String id="30596" string="테스트무기_쌍검_성능레벨36" />
+  <String id="30597" string="테스트무기_창_성능레벨36" />
+  <String id="30598" string="테스트무기_대검_성능레벨36" />
+  <String id="30599" string="테스트무기_도끼_성능레벨36" />
+  <String id="30600" string="테스트무기_원반_성능레벨36" />
+  <String id="30601" string="테스트무기_활_성능레벨36" />
+  <String id="30602" string="테스트무기_지팡이_성능레벨36" />
+  <String id="30603" string="테스트무기_마법봉_성능레벨36" />
+  <String id="30604" string="테스트방어구_중갑_슈트_성능레벨36" />
+  <String id="30605" string="테스트방어구_중갑_장갑_성능레벨36" />
+  <String id="30606" string="테스트방어구_중갑_신발_성능레벨36" />
+  <String id="30607" string="테스트방어구_경갑_슈트_성능레벨36" />
+  <String id="30608" string="테스트방어구_경갑_장갑_성능레벨36" />
+  <String id="30609" string="테스트방어구_경갑_신발_성능레벨36" />
+  <String id="30610" string="테스트방어구_로브_슈트_성능레벨36" />
+  <String id="30611" string="테스트방어구_로브_장갑_성능레벨36" />
+  <String id="30612" string="테스트방어구_로브_신발_성능레벨36" />
+  <String id="30613" string="테스트무기_쌍검_성능레벨37" />
+  <String id="30614" string="테스트무기_창_성능레벨37" />
+  <String id="30615" string="테스트무기_대검_성능레벨37" />
+  <String id="30616" string="테스트무기_도끼_성능레벨37" />
+  <String id="30617" string="테스트무기_원반_성능레벨37" />
+  <String id="30618" string="테스트무기_활_성능레벨37" />
+  <String id="30619" string="테스트무기_지팡이_성능레벨37" />
+  <String id="30620" string="테스트무기_마법봉_성능레벨37" />
+  <String id="30621" string="테스트방어구_중갑_슈트_성능레벨37" />
+  <String id="30622" string="테스트방어구_중갑_장갑_성능레벨37" />
+  <String id="30623" string="테스트방어구_중갑_신발_성능레벨37" />
+  <String id="30624" string="테스트방어구_경갑_슈트_성능레벨37" />
+  <String id="30625" string="테스트방어구_경갑_장갑_성능레벨37" />
+  <String id="30626" string="테스트방어구_경갑_신발_성능레벨37" />
+  <String id="30627" string="테스트방어구_로브_슈트_성능레벨37" />
+  <String id="30628" string="테스트방어구_로브_장갑_성능레벨37" />
+  <String id="30629" string="테스트방어구_로브_신발_성능레벨37" />
+  <String id="30630" string="테스트무기_쌍검_성능레벨38" />
+  <String id="30631" string="테스트무기_창_성능레벨38" />
+  <String id="30632" string="테스트무기_대검_성능레벨38" />
+  <String id="30633" string="테스트무기_도끼_성능레벨38" />
+  <String id="30634" string="테스트무기_원반_성능레벨38" />
+  <String id="30635" string="테스트무기_활_성능레벨38" />
+  <String id="30636" string="테스트무기_지팡이_성능레벨38" />
+  <String id="30637" string="테스트무기_마법봉_성능레벨38" />
+  <String id="30638" string="테스트방어구_중갑_슈트_성능레벨38" />
+  <String id="30639" string="테스트방어구_중갑_장갑_성능레벨38" />
+  <String id="30640" string="테스트방어구_중갑_신발_성능레벨38" />
+  <String id="30641" string="테스트방어구_경갑_슈트_성능레벨38" />
+  <String id="30642" string="테스트방어구_경갑_장갑_성능레벨38" />
+  <String id="30643" string="테스트방어구_경갑_신발_성능레벨38" />
+  <String id="30644" string="테스트방어구_로브_슈트_성능레벨38" />
+  <String id="30645" string="테스트방어구_로브_장갑_성능레벨38" />
+  <String id="30646" string="테스트방어구_로브_신발_성능레벨38" />
+  <String id="30647" string="테스트무기_쌍검_성능레벨39" />
+  <String id="30648" string="테스트무기_창_성능레벨39" />
+  <String id="30649" string="테스트무기_대검_성능레벨39" />
+  <String id="30650" string="테스트무기_도끼_성능레벨39" />
+  <String id="30651" string="테스트무기_원반_성능레벨39" />
+  <String id="30652" string="테스트무기_활_성능레벨39" />
+  <String id="30653" string="테스트무기_지팡이_성능레벨39" />
+  <String id="30654" string="테스트무기_마법봉_성능레벨39" />
+  <String id="30655" string="테스트방어구_중갑_슈트_성능레벨39" />
+  <String id="30656" string="테스트방어구_중갑_장갑_성능레벨39" />
+  <String id="30657" string="테스트방어구_중갑_신발_성능레벨39" />
+  <String id="30658" string="테스트방어구_경갑_슈트_성능레벨39" />
+  <String id="30659" string="테스트방어구_경갑_장갑_성능레벨39" />
+  <String id="30660" string="테스트방어구_경갑_신발_성능레벨39" />
+  <String id="30661" string="테스트방어구_로브_슈트_성능레벨39" />
+  <String id="30662" string="테스트방어구_로브_장갑_성능레벨39" />
+  <String id="30663" string="테스트방어구_로브_신발_성능레벨39" />
+  <String id="30664" string="테스트무기_쌍검_성능레벨40" />
+  <String id="30665" string="테스트무기_창_성능레벨40" />
+  <String id="30666" string="테스트무기_대검_성능레벨40" />
+  <String id="30667" string="테스트무기_도끼_성능레벨40" />
+  <String id="30668" string="테스트무기_원반_성능레벨40" />
+  <String id="30669" string="테스트무기_활_성능레벨40" />
+  <String id="30670" string="테스트무기_지팡이_성능레벨40" />
+  <String id="30671" string="테스트무기_마법봉_성능레벨40" />
+  <String id="30672" string="테스트방어구_중갑_슈트_성능레벨40" />
+  <String id="30673" string="테스트방어구_중갑_장갑_성능레벨40" />
+  <String id="30674" string="테스트방어구_중갑_신발_성능레벨40" />
+  <String id="30675" string="테스트방어구_경갑_슈트_성능레벨40" />
+  <String id="30676" string="테스트방어구_경갑_장갑_성능레벨40" />
+  <String id="30677" string="테스트방어구_경갑_신발_성능레벨40" />
+  <String id="30678" string="테스트방어구_로브_슈트_성능레벨40" />
+  <String id="30679" string="테스트방어구_로브_장갑_성능레벨40" />
+  <String id="30680" string="테스트방어구_로브_신발_성능레벨40" />
+  <String id="30681" string="테스트무기_쌍검_성능레벨41" />
+  <String id="30682" string="테스트무기_창_성능레벨41" />
+  <String id="30683" string="테스트무기_대검_성능레벨41" />
+  <String id="30684" string="테스트무기_도끼_성능레벨41" />
+  <String id="30685" string="테스트무기_원반_성능레벨41" />
+  <String id="30686" string="테스트무기_활_성능레벨41" />
+  <String id="30687" string="테스트무기_지팡이_성능레벨41" />
+  <String id="30688" string="테스트무기_마법봉_성능레벨41" />
+  <String id="30689" string="테스트방어구_중갑_슈트_성능레벨41" />
+  <String id="30690" string="테스트방어구_중갑_장갑_성능레벨41" />
+  <String id="30691" string="테스트방어구_중갑_신발_성능레벨41" />
+  <String id="30692" string="테스트방어구_경갑_슈트_성능레벨41" />
+  <String id="30693" string="테스트방어구_경갑_장갑_성능레벨41" />
+  <String id="30694" string="테스트방어구_경갑_신발_성능레벨41" />
+  <String id="30695" string="테스트방어구_로브_슈트_성능레벨41" />
+  <String id="30696" string="테스트방어구_로브_장갑_성능레벨41" />
+  <String id="30697" string="테스트방어구_로브_신발_성능레벨41" />
+  <String id="30698" string="테스트무기_쌍검_성능레벨42" />
+  <String id="30699" string="테스트무기_창_성능레벨42" />
+  <String id="30700" string="테스트무기_대검_성능레벨42" />
+  <String id="30701" string="테스트무기_도끼_성능레벨42" />
+  <String id="30702" string="테스트무기_원반_성능레벨42" />
+  <String id="30703" string="테스트무기_활_성능레벨42" />
+  <String id="30704" string="테스트무기_지팡이_성능레벨42" />
+  <String id="30705" string="테스트무기_마법봉_성능레벨42" />
+  <String id="30706" string="테스트방어구_중갑_슈트_성능레벨42" />
+  <String id="30707" string="테스트방어구_중갑_장갑_성능레벨42" />
+  <String id="30708" string="테스트방어구_중갑_신발_성능레벨42" />
+  <String id="30709" string="테스트방어구_경갑_슈트_성능레벨42" />
+  <String id="30710" string="테스트방어구_경갑_장갑_성능레벨42" />
+  <String id="30711" string="테스트방어구_경갑_신발_성능레벨42" />
+  <String id="30712" string="테스트방어구_로브_슈트_성능레벨42" />
+  <String id="30713" string="테스트방어구_로브_장갑_성능레벨42" />
+  <String id="30714" string="테스트방어구_로브_신발_성능레벨42" />
+  <String id="30715" string="테스트무기_쌍검_성능레벨43" />
+  <String id="30716" string="테스트무기_창_성능레벨43" />
+  <String id="30717" string="테스트무기_대검_성능레벨43" />
+  <String id="30718" string="테스트무기_도끼_성능레벨43" />
+  <String id="30719" string="테스트무기_원반_성능레벨43" />
+  <String id="30720" string="테스트무기_활_성능레벨43" />
+  <String id="30721" string="테스트무기_지팡이_성능레벨43" />
+  <String id="30722" string="테스트무기_마법봉_성능레벨43" />
+  <String id="30723" string="테스트방어구_중갑_슈트_성능레벨43" />
+  <String id="30724" string="테스트방어구_중갑_장갑_성능레벨43" />
+  <String id="30725" string="테스트방어구_중갑_신발_성능레벨43" />
+  <String id="30726" string="테스트방어구_경갑_슈트_성능레벨43" />
+  <String id="30727" string="테스트방어구_경갑_장갑_성능레벨43" />
+  <String id="30728" string="테스트방어구_경갑_신발_성능레벨43" />
+  <String id="30729" string="테스트방어구_로브_슈트_성능레벨43" />
+  <String id="30730" string="테스트방어구_로브_장갑_성능레벨43" />
+  <String id="30731" string="테스트방어구_로브_신발_성능레벨43" />
+  <String id="30732" string="테스트무기_쌍검_성능레벨44" />
+  <String id="30733" string="테스트무기_창_성능레벨44" />
+  <String id="30734" string="테스트무기_대검_성능레벨44" />
+  <String id="30735" string="테스트무기_도끼_성능레벨44" />
+  <String id="30736" string="테스트무기_원반_성능레벨44" />
+  <String id="30737" string="테스트무기_활_성능레벨44" />
+  <String id="30738" string="테스트무기_지팡이_성능레벨44" />
+  <String id="30739" string="테스트무기_마법봉_성능레벨44" />
+  <String id="30740" string="테스트방어구_중갑_슈트_성능레벨44" />
+  <String id="30741" string="테스트방어구_중갑_장갑_성능레벨44" />
+  <String id="30742" string="테스트방어구_중갑_신발_성능레벨44" />
+  <String id="30743" string="테스트방어구_경갑_슈트_성능레벨44" />
+  <String id="30744" string="테스트방어구_경갑_장갑_성능레벨44" />
+  <String id="30745" string="테스트방어구_경갑_신발_성능레벨44" />
+  <String id="30746" string="테스트방어구_로브_슈트_성능레벨44" />
+  <String id="30747" string="테스트방어구_로브_장갑_성능레벨44" />
+  <String id="30748" string="테스트방어구_로브_신발_성능레벨44" />
+  <String id="30749" string="테스트무기_쌍검_성능레벨45" />
+  <String id="30750" string="테스트무기_창_성능레벨45" />
+  <String id="30751" string="테스트무기_대검_성능레벨45" />
+  <String id="30752" string="테스트무기_도끼_성능레벨45" />
+  <String id="30753" string="테스트무기_원반_성능레벨45" />
+  <String id="30754" string="테스트무기_활_성능레벨45" />
+  <String id="30755" string="테스트무기_지팡이_성능레벨45" />
+  <String id="30756" string="테스트무기_마법봉_성능레벨45" />
+  <String id="30757" string="테스트방어구_중갑_슈트_성능레벨45" />
+  <String id="30758" string="테스트방어구_중갑_장갑_성능레벨45" />
+  <String id="30759" string="테스트방어구_중갑_신발_성능레벨45" />
+  <String id="30760" string="테스트방어구_경갑_슈트_성능레벨45" />
+  <String id="30761" string="테스트방어구_경갑_장갑_성능레벨45" />
+  <String id="30762" string="테스트방어구_경갑_신발_성능레벨45" />
+  <String id="30763" string="테스트방어구_로브_슈트_성능레벨45" />
+  <String id="30764" string="테스트방어구_로브_장갑_성능레벨45" />
+  <String id="30765" string="테스트방어구_로브_신발_성능레벨45" />
+  <String id="30766" string="테스트무기_쌍검_성능레벨46" />
+  <String id="30767" string="테스트무기_창_성능레벨46" />
+  <String id="30768" string="테스트무기_대검_성능레벨46" />
+  <String id="30769" string="테스트무기_도끼_성능레벨46" />
+  <String id="30770" string="테스트무기_원반_성능레벨46" />
+  <String id="30771" string="테스트무기_활_성능레벨46" />
+  <String id="30772" string="테스트무기_지팡이_성능레벨46" />
+  <String id="30773" string="테스트무기_마법봉_성능레벨46" />
+  <String id="30774" string="테스트방어구_중갑_슈트_성능레벨46" />
+  <String id="30775" string="테스트방어구_중갑_장갑_성능레벨46" />
+  <String id="30776" string="테스트방어구_중갑_신발_성능레벨46" />
+  <String id="30777" string="테스트방어구_경갑_슈트_성능레벨46" />
+  <String id="30778" string="테스트방어구_경갑_장갑_성능레벨46" />
+  <String id="30779" string="테스트방어구_경갑_신발_성능레벨46" />
+  <String id="30780" string="테스트방어구_로브_슈트_성능레벨46" />
+  <String id="30781" string="테스트방어구_로브_장갑_성능레벨46" />
+  <String id="30782" string="테스트방어구_로브_신발_성능레벨46" />
+  <String id="30783" string="테스트무기_쌍검_성능레벨47" />
+  <String id="30784" string="테스트무기_창_성능레벨47" />
+  <String id="30785" string="테스트무기_대검_성능레벨47" />
+  <String id="30786" string="테스트무기_도끼_성능레벨47" />
+  <String id="30787" string="테스트무기_원반_성능레벨47" />
+  <String id="30788" string="테스트무기_활_성능레벨47" />
+  <String id="30789" string="테스트무기_지팡이_성능레벨47" />
+  <String id="30790" string="테스트무기_마법봉_성능레벨47" />
+  <String id="30791" string="테스트방어구_중갑_슈트_성능레벨47" />
+  <String id="30792" string="테스트방어구_중갑_장갑_성능레벨47" />
+  <String id="30793" string="테스트방어구_중갑_신발_성능레벨47" />
+  <String id="30794" string="테스트방어구_경갑_슈트_성능레벨47" />
+  <String id="30795" string="테스트방어구_경갑_장갑_성능레벨47" />
+  <String id="30796" string="테스트방어구_경갑_신발_성능레벨47" />
+  <String id="30797" string="테스트방어구_로브_슈트_성능레벨47" />
+  <String id="30798" string="테스트방어구_로브_장갑_성능레벨47" />
+  <String id="30799" string="테스트방어구_로브_신발_성능레벨47" />
+  <String id="30800" string="테스트무기_쌍검_성능레벨48" />
+  <String id="30801" string="테스트무기_창_성능레벨48" />
+  <String id="30802" string="테스트무기_대검_성능레벨48" />
+  <String id="30803" string="테스트무기_도끼_성능레벨48" />
+  <String id="30804" string="테스트무기_원반_성능레벨48" />
+  <String id="30805" string="테스트무기_활_성능레벨48" />
+  <String id="30806" string="테스트무기_지팡이_성능레벨48" />
+  <String id="30807" string="테스트무기_마법봉_성능레벨48" />
+  <String id="30808" string="테스트방어구_중갑_슈트_성능레벨48" />
+  <String id="30809" string="테스트방어구_중갑_장갑_성능레벨48" />
+  <String id="30810" string="테스트방어구_중갑_신발_성능레벨48" />
+  <String id="30811" string="테스트방어구_경갑_슈트_성능레벨48" />
+  <String id="30812" string="테스트방어구_경갑_장갑_성능레벨48" />
+  <String id="30813" string="테스트방어구_경갑_신발_성능레벨48" />
+  <String id="30814" string="테스트방어구_로브_슈트_성능레벨48" />
+  <String id="30815" string="테스트방어구_로브_장갑_성능레벨48" />
+  <String id="30816" string="테스트방어구_로브_신발_성능레벨48" />
+  <String id="30817" string="테스트무기_쌍검_성능레벨49" />
+  <String id="30818" string="테스트무기_창_성능레벨49" />
+  <String id="30819" string="테스트무기_대검_성능레벨49" />
+  <String id="30820" string="테스트무기_도끼_성능레벨49" />
+  <String id="30821" string="테스트무기_원반_성능레벨49" />
+  <String id="30822" string="테스트무기_활_성능레벨49" />
+  <String id="30823" string="테스트무기_지팡이_성능레벨49" />
+  <String id="30824" string="테스트무기_마법봉_성능레벨49" />
+  <String id="30825" string="테스트방어구_중갑_슈트_성능레벨49" />
+  <String id="30826" string="테스트방어구_중갑_장갑_성능레벨49" />
+  <String id="30827" string="테스트방어구_중갑_신발_성능레벨49" />
+  <String id="30828" string="테스트방어구_경갑_슈트_성능레벨49" />
+  <String id="30829" string="테스트방어구_경갑_장갑_성능레벨49" />
+  <String id="30830" string="테스트방어구_경갑_신발_성능레벨49" />
+  <String id="30831" string="테스트방어구_로브_슈트_성능레벨49" />
+  <String id="30832" string="테스트방어구_로브_장갑_성능레벨49" />
+  <String id="30833" string="테스트방어구_로브_신발_성능레벨49" />
+  <String id="30834" string="테스트무기_쌍검_성능레벨50" />
+  <String id="30835" string="테스트무기_창_성능레벨50" />
+  <String id="30836" string="테스트무기_대검_성능레벨50" />
+  <String id="30837" string="테스트무기_도끼_성능레벨50" />
+  <String id="30838" string="테스트무기_원반_성능레벨50" />
+  <String id="30839" string="테스트무기_활_성능레벨50" />
+  <String id="30840" string="테스트무기_지팡이_성능레벨50" />
+  <String id="30841" string="테스트무기_마법봉_성능레벨50" />
+  <String id="30842" string="테스트방어구_중갑_슈트_성능레벨50" />
+  <String id="30843" string="테스트방어구_중갑_장갑_성능레벨50" />
+  <String id="30844" string="테스트방어구_중갑_신발_성능레벨50" />
+  <String id="30845" string="테스트방어구_경갑_슈트_성능레벨50" />
+  <String id="30846" string="테스트방어구_경갑_장갑_성능레벨50" />
+  <String id="30847" string="테스트방어구_경갑_신발_성능레벨50" />
+  <String id="30848" string="테스트방어구_로브_슈트_성능레벨50" />
+  <String id="30849" string="테스트방어구_로브_장갑_성능레벨50" />
+  <String id="30850" string="테스트방어구_로브_신발_성능레벨50" />
+  <String id="30851" string="테스트무기_쌍검_성능레벨51" />
+  <String id="30852" string="테스트무기_창_성능레벨51" />
+  <String id="30853" string="테스트무기_대검_성능레벨51" />
+  <String id="30854" string="테스트무기_도끼_성능레벨51" />
+  <String id="30855" string="테스트무기_원반_성능레벨51" />
+  <String id="30856" string="테스트무기_활_성능레벨51" />
+  <String id="30857" string="테스트무기_지팡이_성능레벨51" />
+  <String id="30858" string="테스트무기_마법봉_성능레벨51" />
+  <String id="30859" string="테스트방어구_중갑_슈트_성능레벨51" />
+  <String id="30860" string="테스트방어구_중갑_장갑_성능레벨51" />
+  <String id="30861" string="테스트방어구_중갑_신발_성능레벨51" />
+  <String id="30862" string="테스트방어구_경갑_슈트_성능레벨51" />
+  <String id="30863" string="테스트방어구_경갑_장갑_성능레벨51" />
+  <String id="30864" string="테스트방어구_경갑_신발_성능레벨51" />
+  <String id="30865" string="테스트방어구_로브_슈트_성능레벨51" />
+  <String id="30866" string="테스트방어구_로브_장갑_성능레벨51" />
+  <String id="30867" string="테스트방어구_로브_신발_성능레벨51" />
+  <String id="30868" string="테스트무기_쌍검_성능레벨52" />
+  <String id="30869" string="테스트무기_창_성능레벨52" />
+  <String id="30870" string="테스트무기_대검_성능레벨52" />
+  <String id="30871" string="테스트무기_도끼_성능레벨52" />
+  <String id="30872" string="테스트무기_원반_성능레벨52" />
+  <String id="30873" string="테스트무기_활_성능레벨52" />
+  <String id="30874" string="테스트무기_지팡이_성능레벨52" />
+  <String id="30875" string="테스트무기_마법봉_성능레벨52" />
+  <String id="30876" string="테스트방어구_중갑_슈트_성능레벨52" />
+  <String id="30877" string="테스트방어구_중갑_장갑_성능레벨52" />
+  <String id="30878" string="테스트방어구_중갑_신발_성능레벨52" />
+  <String id="30879" string="테스트방어구_경갑_슈트_성능레벨52" />
+  <String id="30880" string="테스트방어구_경갑_장갑_성능레벨52" />
+  <String id="30881" string="테스트방어구_경갑_신발_성능레벨52" />
+  <String id="30882" string="테스트방어구_로브_슈트_성능레벨52" />
+  <String id="30883" string="테스트방어구_로브_장갑_성능레벨52" />
+  <String id="30884" string="테스트방어구_로브_신발_성능레벨52" />
+  <String id="30885" string="테스트무기_쌍검_성능레벨53" />
+  <String id="30886" string="테스트무기_창_성능레벨53" />
+  <String id="30887" string="테스트무기_대검_성능레벨53" />
+  <String id="30888" string="테스트무기_도끼_성능레벨53" />
+  <String id="30889" string="테스트무기_원반_성능레벨53" />
+  <String id="30890" string="테스트무기_활_성능레벨53" />
+  <String id="30891" string="테스트무기_지팡이_성능레벨53" />
+  <String id="30892" string="테스트무기_마법봉_성능레벨53" />
+  <String id="30893" string="테스트방어구_중갑_슈트_성능레벨53" />
+  <String id="30894" string="테스트방어구_중갑_장갑_성능레벨53" />
+  <String id="30895" string="테스트방어구_중갑_신발_성능레벨53" />
+  <String id="30896" string="테스트방어구_경갑_슈트_성능레벨53" />
+  <String id="30897" string="테스트방어구_경갑_장갑_성능레벨53" />
+  <String id="30898" string="테스트방어구_경갑_신발_성능레벨53" />
+  <String id="30899" string="테스트방어구_로브_슈트_성능레벨53" />
+  <String id="30900" string="테스트방어구_로브_장갑_성능레벨53" />
+  <String id="30901" string="테스트방어구_로브_신발_성능레벨53" />
+  <String id="30902" string="테스트무기_쌍검_성능레벨54" />
+  <String id="30903" string="테스트무기_창_성능레벨54" />
+  <String id="30904" string="테스트무기_대검_성능레벨54" />
+  <String id="30905" string="테스트무기_도끼_성능레벨54" />
+  <String id="30906" string="테스트무기_원반_성능레벨54" />
+  <String id="30907" string="테스트무기_활_성능레벨54" />
+  <String id="30908" string="테스트무기_지팡이_성능레벨54" />
+  <String id="30909" string="테스트무기_마법봉_성능레벨54" />
+  <String id="30910" string="테스트방어구_중갑_슈트_성능레벨54" />
+  <String id="30911" string="테스트방어구_중갑_장갑_성능레벨54" />
+  <String id="30912" string="테스트방어구_중갑_신발_성능레벨54" />
+  <String id="30913" string="테스트방어구_경갑_슈트_성능레벨54" />
+  <String id="30914" string="테스트방어구_경갑_장갑_성능레벨54" />
+  <String id="30915" string="테스트방어구_경갑_신발_성능레벨54" />
+  <String id="30916" string="테스트방어구_로브_슈트_성능레벨54" />
+  <String id="30917" string="테스트방어구_로브_장갑_성능레벨54" />
+  <String id="30918" string="테스트방어구_로브_신발_성능레벨54" />
+  <String id="30919" string="테스트무기_쌍검_성능레벨55" />
+  <String id="30920" string="테스트무기_창_성능레벨55" />
+  <String id="30921" string="테스트무기_대검_성능레벨55" />
+  <String id="30922" string="테스트무기_도끼_성능레벨55" />
+  <String id="30923" string="테스트무기_원반_성능레벨55" />
+  <String id="30924" string="테스트무기_활_성능레벨55" />
+  <String id="30925" string="테스트무기_지팡이_성능레벨55" />
+  <String id="30926" string="테스트무기_마법봉_성능레벨55" />
+  <String id="30927" string="테스트방어구_중갑_슈트_성능레벨55" />
+  <String id="30928" string="테스트방어구_중갑_장갑_성능레벨55" />
+  <String id="30929" string="테스트방어구_중갑_신발_성능레벨55" />
+  <String id="30930" string="테스트방어구_경갑_슈트_성능레벨55" />
+  <String id="30931" string="테스트방어구_경갑_장갑_성능레벨55" />
+  <String id="30932" string="테스트방어구_경갑_신발_성능레벨55" />
+  <String id="30933" string="테스트방어구_로브_슈트_성능레벨55" />
+  <String id="30934" string="테스트방어구_로브_장갑_성능레벨55" />
+  <String id="30935" string="테스트방어구_로브_신발_성능레벨55" />
+  <String id="30936" string="테스트무기_쌍검_성능레벨56" />
+  <String id="30937" string="테스트무기_창_성능레벨56" />
+  <String id="30938" string="테스트무기_대검_성능레벨56" />
+  <String id="30939" string="테스트무기_도끼_성능레벨56" />
+  <String id="30940" string="테스트무기_원반_성능레벨56" />
+  <String id="30941" string="테스트무기_활_성능레벨56" />
+  <String id="30942" string="테스트무기_지팡이_성능레벨56" />
+  <String id="30943" string="테스트무기_마법봉_성능레벨56" />
+  <String id="30944" string="테스트방어구_중갑_슈트_성능레벨56" />
+  <String id="30945" string="테스트방어구_중갑_장갑_성능레벨56" />
+  <String id="30946" string="테스트방어구_중갑_신발_성능레벨56" />
+  <String id="30947" string="테스트방어구_경갑_슈트_성능레벨56" />
+  <String id="30948" string="테스트방어구_경갑_장갑_성능레벨56" />
+  <String id="30949" string="테스트방어구_경갑_신발_성능레벨56" />
+  <String id="30950" string="테스트방어구_로브_슈트_성능레벨56" />
+  <String id="30951" string="테스트방어구_로브_장갑_성능레벨56" />
+  <String id="30952" string="테스트방어구_로브_신발_성능레벨56" />
+  <String id="30953" string="테스트무기_쌍검_성능레벨57" />
+  <String id="30954" string="테스트무기_창_성능레벨57" />
+  <String id="30955" string="테스트무기_대검_성능레벨57" />
+  <String id="30956" string="테스트무기_도끼_성능레벨57" />
+  <String id="30957" string="테스트무기_원반_성능레벨57" />
+  <String id="30958" string="테스트무기_활_성능레벨57" />
+  <String id="30959" string="테스트무기_지팡이_성능레벨57" />
+  <String id="30960" string="테스트무기_마법봉_성능레벨57" />
+  <String id="30961" string="테스트방어구_중갑_슈트_성능레벨57" />
+  <String id="30962" string="테스트방어구_중갑_장갑_성능레벨57" />
+  <String id="30963" string="테스트방어구_중갑_신발_성능레벨57" />
+  <String id="30964" string="테스트방어구_경갑_슈트_성능레벨57" />
+  <String id="30965" string="테스트방어구_경갑_장갑_성능레벨57" />
+  <String id="30966" string="테스트방어구_경갑_신발_성능레벨57" />
+  <String id="30967" string="테스트방어구_로브_슈트_성능레벨57" />
+  <String id="30968" string="테스트방어구_로브_장갑_성능레벨57" />
+  <String id="30969" string="테스트방어구_로브_신발_성능레벨57" />
+  <String id="30970" string="테스트무기_쌍검_성능레벨58" />
+  <String id="30971" string="테스트무기_창_성능레벨58" />
+  <String id="30972" string="테스트무기_대검_성능레벨58" />
+  <String id="30973" string="테스트무기_도끼_성능레벨58" />
+  <String id="30974" string="테스트무기_원반_성능레벨58" />
+  <String id="30975" string="테스트무기_활_성능레벨58" />
+  <String id="30976" string="테스트무기_지팡이_성능레벨58" />
+  <String id="30977" string="테스트무기_마법봉_성능레벨58" />
+  <String id="30978" string="테스트방어구_중갑_슈트_성능레벨58" />
+  <String id="30979" string="테스트방어구_중갑_장갑_성능레벨58" />
+  <String id="30980" string="테스트방어구_중갑_신발_성능레벨58" />
+  <String id="30981" string="테스트방어구_경갑_슈트_성능레벨58" />
+  <String id="30982" string="테스트방어구_경갑_장갑_성능레벨58" />
+  <String id="30983" string="테스트방어구_경갑_신발_성능레벨58" />
+  <String id="30984" string="테스트방어구_로브_슈트_성능레벨58" />
+  <String id="30985" string="테스트방어구_로브_장갑_성능레벨58" />
+  <String id="30986" string="테스트방어구_로브_신발_성능레벨58" />
+  <String id="30987" string="테스트무기_쌍검_성능레벨59" />
+  <String id="30988" string="테스트무기_창_성능레벨59" />
+  <String id="30989" string="테스트무기_대검_성능레벨59" />
+  <String id="30990" string="테스트무기_도끼_성능레벨59" />
+  <String id="30991" string="테스트무기_원반_성능레벨59" />
+  <String id="30992" string="테스트무기_활_성능레벨59" />
+  <String id="30993" string="테스트무기_지팡이_성능레벨59" />
+  <String id="30994" string="테스트무기_마법봉_성능레벨59" />
+  <String id="30995" string="테스트방어구_중갑_슈트_성능레벨59" />
+  <String id="30996" string="테스트방어구_중갑_장갑_성능레벨59" />
+  <String id="30997" string="테스트방어구_중갑_신발_성능레벨59" />
+  <String id="30998" string="테스트방어구_경갑_슈트_성능레벨59" />
+  <String id="30999" string="테스트방어구_경갑_장갑_성능레벨59" />
+  <String id="31000" string="테스트방어구_경갑_신발_성능레벨59" />
+  <String id="31001" string="테스트방어구_로브_슈트_성능레벨59" />
+  <String id="31002" string="테스트방어구_로브_장갑_성능레벨59" />
+  <String id="31003" string="테스트방어구_로브_신발_성능레벨59" />
+  <String id="31004" string="테스트무기_쌍검_성능레벨60" />
+  <String id="31005" string="테스트무기_창_성능레벨60" />
+  <String id="31006" string="테스트무기_대검_성능레벨60" />
+  <String id="31007" string="테스트무기_도끼_성능레벨60" />
+  <String id="31008" string="테스트무기_원반_성능레벨60" />
+  <String id="31009" string="테스트무기_활_성능레벨60" />
+  <String id="31010" string="테스트무기_지팡이_성능레벨60" />
+  <String id="31011" string="테스트무기_마법봉_성능레벨60" />
+  <String id="31012" string="테스트방어구_중갑_슈트_성능레벨60" />
+  <String id="31013" string="테스트방어구_중갑_장갑_성능레벨60" />
+  <String id="31014" string="테스트방어구_중갑_신발_성능레벨60" />
+  <String id="31015" string="테스트방어구_경갑_슈트_성능레벨60" />
+  <String id="31016" string="테스트방어구_경갑_장갑_성능레벨60" />
+  <String id="31017" string="테스트방어구_경갑_신발_성능레벨60" />
+  <String id="31018" string="테스트방어구_로브_슈트_성능레벨60" />
+  <String id="31019" string="테스트방어구_로브_장갑_성능레벨60" />
+  <String id="31020" string="테스트방어구_로브_신발_성능레벨60" />
+  <String id="31021" string="테스트무기_쌍검_성능레벨61" />
+  <String id="31022" string="테스트무기_창_성능레벨61" />
+  <String id="31023" string="테스트무기_대검_성능레벨61" />
+  <String id="31024" string="테스트무기_도끼_성능레벨61" />
+  <String id="31025" string="테스트무기_원반_성능레벨61" />
+  <String id="31026" string="테스트무기_활_성능레벨61" />
+  <String id="31027" string="테스트무기_지팡이_성능레벨61" />
+  <String id="31028" string="테스트무기_마법봉_성능레벨61" />
+  <String id="31029" string="테스트방어구_중갑_슈트_성능레벨61" />
+  <String id="31030" string="테스트방어구_중갑_장갑_성능레벨61" />
+  <String id="31031" string="테스트방어구_중갑_신발_성능레벨61" />
+  <String id="31032" string="테스트방어구_경갑_슈트_성능레벨61" />
+  <String id="31033" string="테스트방어구_경갑_장갑_성능레벨61" />
+  <String id="31034" string="테스트방어구_경갑_신발_성능레벨61" />
+  <String id="31035" string="테스트방어구_로브_슈트_성능레벨61" />
+  <String id="31036" string="테스트방어구_로브_장갑_성능레벨61" />
+  <String id="31037" string="테스트방어구_로브_신발_성능레벨61" />
+  <String id="31038" string="테스트무기_쌍검_성능레벨62" />
+  <String id="31039" string="테스트무기_창_성능레벨62" />
+  <String id="31040" string="테스트무기_대검_성능레벨62" />
+  <String id="31041" string="테스트무기_도끼_성능레벨62" />
+  <String id="31042" string="테스트무기_원반_성능레벨62" />
+  <String id="31043" string="테스트무기_활_성능레벨62" />
+  <String id="31044" string="테스트무기_지팡이_성능레벨62" />
+  <String id="31045" string="테스트무기_마법봉_성능레벨62" />
+  <String id="31046" string="테스트방어구_중갑_슈트_성능레벨62" />
+  <String id="31047" string="테스트방어구_중갑_장갑_성능레벨62" />
+  <String id="31048" string="테스트방어구_중갑_신발_성능레벨62" />
+  <String id="31049" string="테스트방어구_경갑_슈트_성능레벨62" />
+  <String id="31050" string="테스트방어구_경갑_장갑_성능레벨62" />
+  <String id="31051" string="테스트방어구_경갑_신발_성능레벨62" />
+  <String id="31052" string="테스트방어구_로브_슈트_성능레벨62" />
+  <String id="31053" string="테스트방어구_로브_장갑_성능레벨62" />
+  <String id="31054" string="테스트방어구_로브_신발_성능레벨62" />
+  <String id="31055" string="테스트무기_쌍검_성능레벨63" />
+  <String id="31056" string="테스트무기_창_성능레벨63" />
+  <String id="31057" string="테스트무기_대검_성능레벨63" />
+  <String id="31058" string="테스트무기_도끼_성능레벨63" />
+  <String id="31059" string="테스트무기_원반_성능레벨63" />
+  <String id="31060" string="테스트무기_활_성능레벨63" />
+  <String id="31061" string="테스트무기_지팡이_성능레벨63" />
+  <String id="31062" string="테스트무기_마법봉_성능레벨63" />
+  <String id="31063" string="테스트방어구_중갑_슈트_성능레벨63" />
+  <String id="31064" string="테스트방어구_중갑_장갑_성능레벨63" />
+  <String id="31065" string="테스트방어구_중갑_신발_성능레벨63" />
+  <String id="31066" string="테스트방어구_경갑_슈트_성능레벨63" />
+  <String id="31067" string="테스트방어구_경갑_장갑_성능레벨63" />
+  <String id="31068" string="테스트방어구_경갑_신발_성능레벨63" />
+  <String id="31069" string="테스트방어구_로브_슈트_성능레벨63" />
+  <String id="31070" string="테스트방어구_로브_장갑_성능레벨63" />
+  <String id="31071" string="테스트방어구_로브_신발_성능레벨63" />
+  <String id="31072" string="테스트무기_쌍검_성능레벨64" />
+  <String id="31073" string="테스트무기_창_성능레벨64" />
+  <String id="31074" string="테스트무기_대검_성능레벨64" />
+  <String id="31075" string="테스트무기_도끼_성능레벨64" />
+  <String id="31076" string="테스트무기_원반_성능레벨64" />
+  <String id="31077" string="테스트무기_활_성능레벨64" />
+  <String id="31078" string="테스트무기_지팡이_성능레벨64" />
+  <String id="31079" string="테스트무기_마법봉_성능레벨64" />
+  <String id="31080" string="테스트방어구_중갑_슈트_성능레벨64" />
+  <String id="31081" string="테스트방어구_중갑_장갑_성능레벨64" />
+  <String id="31082" string="테스트방어구_중갑_신발_성능레벨64" />
+  <String id="31083" string="테스트방어구_경갑_슈트_성능레벨64" />
+  <String id="31084" string="테스트방어구_경갑_장갑_성능레벨64" />
+  <String id="31085" string="테스트방어구_경갑_신발_성능레벨64" />
+  <String id="31086" string="테스트방어구_로브_슈트_성능레벨64" />
+  <String id="31087" string="테스트방어구_로브_장갑_성능레벨64" />
+  <String id="31088" string="테스트방어구_로브_신발_성능레벨64" />
+  <String id="31089" string="테스트무기_쌍검_성능레벨65" />
+  <String id="31090" string="테스트무기_창_성능레벨65" />
+  <String id="31091" string="테스트무기_대검_성능레벨65" />
+  <String id="31092" string="테스트무기_도끼_성능레벨65" />
+  <String id="31093" string="테스트무기_원반_성능레벨65" />
+  <String id="31094" string="테스트무기_활_성능레벨65" />
+  <String id="31095" string="테스트무기_지팡이_성능레벨65" />
+  <String id="31096" string="테스트무기_마법봉_성능레벨65" />
+  <String id="31097" string="테스트방어구_중갑_슈트_성능레벨65" />
+  <String id="31098" string="테스트방어구_중갑_장갑_성능레벨65" />
+  <String id="31099" string="테스트방어구_중갑_신발_성능레벨65" />
+  <String id="31100" string="테스트방어구_경갑_슈트_성능레벨65" />
+  <String id="31101" string="테스트방어구_경갑_장갑_성능레벨65" />
+  <String id="31102" string="테스트방어구_경갑_신발_성능레벨65" />
+  <String id="31103" string="테스트방어구_로브_슈트_성능레벨65" />
+  <String id="31104" string="테스트방어구_로브_장갑_성능레벨65" />
+  <String id="31105" string="테스트방어구_로브_신발_성능레벨65" />
+  <String id="31106" string="테스트반지_일반_성능레벨1" />
+  <String id="31107" string="테스트반지_일반_성능레벨2" />
+  <String id="31108" string="테스트반지_일반_성능레벨3" />
+  <String id="31109" string="테스트반지_일반_성능레벨4" />
+  <String id="31110" string="테스트반지_일반_성능레벨5" />
+  <String id="31111" string="테스트반지_일반_성능레벨6" />
+  <String id="31112" string="테스트반지_일반_성능레벨7" />
+  <String id="31113" string="테스트반지_일반_성능레벨8" />
+  <String id="31114" string="테스트반지_일반_성능레벨9" />
+  <String id="31115" string="테스트반지_일반_성능레벨10" />
+  <String id="31116" string="테스트반지_일반_성능레벨11" />
+  <String id="31117" string="테스트반지_일반_성능레벨12" />
+  <String id="31118" string="테스트반지_일반_성능레벨13" />
+  <String id="31119" string="테스트반지_일반_성능레벨14" />
+  <String id="31120" string="테스트반지_일반_성능레벨15" />
+  <String id="31121" string="테스트반지_일반_성능레벨16" />
+  <String id="31122" string="테스트반지_일반_성능레벨17" />
+  <String id="31123" string="테스트반지_일반_성능레벨18" />
+  <String id="31124" string="테스트반지_일반_성능레벨19" />
+  <String id="31125" string="테스트반지_일반_성능레벨20" />
+  <String id="31126" string="테스트반지_일반_성능레벨21" />
+  <String id="31127" string="테스트반지_일반_성능레벨22" />
+  <String id="31128" string="테스트반지_일반_성능레벨23" />
+  <String id="31129" string="테스트반지_일반_성능레벨24" />
+  <String id="31130" string="테스트반지_일반_성능레벨25" />
+  <String id="31131" string="테스트반지_일반_성능레벨26" />
+  <String id="31132" string="테스트반지_일반_성능레벨27" />
+  <String id="31133" string="테스트반지_일반_성능레벨28" />
+  <String id="31134" string="테스트반지_일반_성능레벨29" />
+  <String id="31135" string="테스트반지_일반_성능레벨30" />
+  <String id="31136" string="테스트반지_일반_성능레벨31" />
+  <String id="31137" string="테스트반지_일반_성능레벨32" />
+  <String id="31138" string="테스트반지_일반_성능레벨33" />
+  <String id="31139" string="테스트반지_일반_성능레벨34" />
+  <String id="31140" string="테스트반지_일반_성능레벨35" />
+  <String id="31141" string="테스트반지_일반_성능레벨36" />
+  <String id="31142" string="테스트반지_일반_성능레벨37" />
+  <String id="31143" string="테스트반지_일반_성능레벨38" />
+  <String id="31144" string="테스트반지_일반_성능레벨39" />
+  <String id="31145" string="테스트반지_일반_성능레벨40" />
+  <String id="31146" string="테스트반지_일반_성능레벨41" />
+  <String id="31147" string="테스트반지_일반_성능레벨42" />
+  <String id="31148" string="테스트반지_일반_성능레벨43" />
+  <String id="31149" string="테스트반지_일반_성능레벨44" />
+  <String id="31150" string="테스트반지_일반_성능레벨45" />
+  <String id="31151" string="테스트반지_일반_성능레벨46" />
+  <String id="31152" string="테스트반지_일반_성능레벨47" />
+  <String id="31153" string="테스트반지_일반_성능레벨48" />
+  <String id="31154" string="테스트반지_일반_성능레벨49" />
+  <String id="31155" string="테스트반지_일반_성능레벨50" />
+  <String id="31156" string="테스트반지_일반_성능레벨51" />
+  <String id="31157" string="테스트반지_일반_성능레벨52" />
+  <String id="31158" string="테스트반지_일반_성능레벨53" />
+  <String id="31159" string="테스트반지_일반_성능레벨54" />
+  <String id="31160" string="테스트반지_일반_성능레벨55" />
+  <String id="31161" string="테스트반지_일반_성능레벨56" />
+  <String id="31162" string="테스트반지_일반_성능레벨57" />
+  <String id="31163" string="테스트반지_일반_성능레벨58" />
+  <String id="31164" string="테스트반지_일반_성능레벨59" />
+  <String id="31165" string="테스트반지_일반_성능레벨60" />
+  <String id="31166" string="테스트귀걸이_일반_성능레벨1" />
+  <String id="31167" string="테스트귀걸이_일반_성능레벨2" />
+  <String id="31168" string="테스트귀걸이_일반_성능레벨3" />
+  <String id="31169" string="테스트귀걸이_일반_성능레벨4" />
+  <String id="31170" string="테스트귀걸이_일반_성능레벨5" />
+  <String id="31171" string="테스트귀걸이_일반_성능레벨6" />
+  <String id="31172" string="테스트귀걸이_일반_성능레벨7" />
+  <String id="31173" string="테스트귀걸이_일반_성능레벨8" />
+  <String id="31174" string="테스트귀걸이_일반_성능레벨9" />
+  <String id="31175" string="테스트귀걸이_일반_성능레벨10" />
+  <String id="31176" string="테스트귀걸이_일반_성능레벨11" />
+  <String id="31177" string="테스트귀걸이_일반_성능레벨12" />
+  <String id="31178" string="테스트귀걸이_일반_성능레벨13" />
+  <String id="31179" string="테스트귀걸이_일반_성능레벨14" />
+  <String id="31180" string="테스트귀걸이_일반_성능레벨15" />
+  <String id="31181" string="테스트귀걸이_일반_성능레벨16" />
+  <String id="31182" string="테스트귀걸이_일반_성능레벨17" />
+  <String id="31183" string="테스트귀걸이_일반_성능레벨18" />
+  <String id="31184" string="테스트귀걸이_일반_성능레벨19" />
+  <String id="31185" string="테스트귀걸이_일반_성능레벨20" />
+  <String id="31186" string="테스트귀걸이_일반_성능레벨21" />
+  <String id="31187" string="테스트귀걸이_일반_성능레벨22" />
+  <String id="31188" string="테스트귀걸이_일반_성능레벨23" />
+  <String id="31189" string="테스트귀걸이_일반_성능레벨24" />
+  <String id="31190" string="테스트귀걸이_일반_성능레벨25" />
+  <String id="31191" string="테스트귀걸이_일반_성능레벨26" />
+  <String id="31192" string="테스트귀걸이_일반_성능레벨27" />
+  <String id="31193" string="테스트귀걸이_일반_성능레벨28" />
+  <String id="31194" string="테스트귀걸이_일반_성능레벨29" />
+  <String id="31195" string="테스트귀걸이_일반_성능레벨30" />
+  <String id="31196" string="테스트귀걸이_일반_성능레벨31" />
+  <String id="31197" string="테스트귀걸이_일반_성능레벨32" />
+  <String id="31198" string="테스트귀걸이_일반_성능레벨33" />
+  <String id="31199" string="테스트귀걸이_일반_성능레벨34" />
+  <String id="31200" string="테스트귀걸이_일반_성능레벨35" />
+  <String id="31201" string="테스트귀걸이_일반_성능레벨36" />
+  <String id="31202" string="테스트귀걸이_일반_성능레벨37" />
+  <String id="31203" string="테스트귀걸이_일반_성능레벨38" />
+  <String id="31204" string="테스트귀걸이_일반_성능레벨39" />
+  <String id="31205" string="테스트귀걸이_일반_성능레벨40" />
+  <String id="31206" string="테스트귀걸이_일반_성능레벨41" />
+  <String id="31207" string="테스트귀걸이_일반_성능레벨42" />
+  <String id="31208" string="테스트귀걸이_일반_성능레벨43" />
+  <String id="31209" string="테스트귀걸이_일반_성능레벨44" />
+  <String id="31210" string="테스트귀걸이_일반_성능레벨45" />
+  <String id="31211" string="테스트귀걸이_일반_성능레벨46" />
+  <String id="31212" string="테스트귀걸이_일반_성능레벨47" />
+  <String id="31213" string="테스트귀걸이_일반_성능레벨48" />
+  <String id="31214" string="테스트귀걸이_일반_성능레벨49" />
+  <String id="31215" string="테스트귀걸이_일반_성능레벨50" />
+  <String id="31216" string="테스트귀걸이_일반_성능레벨51" />
+  <String id="31217" string="테스트귀걸이_일반_성능레벨52" />
+  <String id="31218" string="테스트귀걸이_일반_성능레벨53" />
+  <String id="31219" string="테스트귀걸이_일반_성능레벨54" />
+  <String id="31220" string="테스트귀걸이_일반_성능레벨55" />
+  <String id="31221" string="테스트귀걸이_일반_성능레벨56" />
+  <String id="31222" string="테스트귀걸이_일반_성능레벨57" />
+  <String id="31223" string="테스트귀걸이_일반_성능레벨58" />
+  <String id="31224" string="테스트귀걸이_일반_성능레벨59" />
+  <String id="31225" string="테스트귀걸이_일반_성능레벨60" />
+  <String id="31226" string="테스트목걸이_일반_성능레벨1" />
+  <String id="31227" string="테스트목걸이_일반_성능레벨2" />
+  <String id="31228" string="테스트목걸이_일반_성능레벨3" />
+  <String id="31229" string="테스트목걸이_일반_성능레벨4" />
+  <String id="31230" string="테스트목걸이_일반_성능레벨5" />
+  <String id="31231" string="테스트목걸이_일반_성능레벨6" />
+  <String id="31232" string="테스트목걸이_일반_성능레벨7" />
+  <String id="31233" string="테스트목걸이_일반_성능레벨8" />
+  <String id="31234" string="테스트목걸이_일반_성능레벨9" />
+  <String id="31235" string="테스트목걸이_일반_성능레벨10" />
+  <String id="31236" string="테스트목걸이_일반_성능레벨11" />
+  <String id="31237" string="테스트목걸이_일반_성능레벨12" />
+  <String id="31238" string="테스트목걸이_일반_성능레벨13" />
+  <String id="31239" string="테스트목걸이_일반_성능레벨14" />
+  <String id="31240" string="테스트목걸이_일반_성능레벨15" />
+  <String id="31241" string="테스트목걸이_일반_성능레벨16" />
+  <String id="31242" string="테스트목걸이_일반_성능레벨17" />
+  <String id="31243" string="테스트목걸이_일반_성능레벨18" />
+  <String id="31244" string="테스트목걸이_일반_성능레벨19" />
+  <String id="31245" string="테스트목걸이_일반_성능레벨20" />
+  <String id="31246" string="테스트목걸이_일반_성능레벨21" />
+  <String id="31247" string="테스트목걸이_일반_성능레벨22" />
+  <String id="31248" string="테스트목걸이_일반_성능레벨23" />
+  <String id="31249" string="테스트목걸이_일반_성능레벨24" />
+  <String id="31250" string="테스트목걸이_일반_성능레벨25" />
+  <String id="31251" string="테스트목걸이_일반_성능레벨26" />
+  <String id="31252" string="테스트목걸이_일반_성능레벨27" />
+  <String id="31253" string="테스트목걸이_일반_성능레벨28" />
+  <String id="31254" string="테스트목걸이_일반_성능레벨29" />
+  <String id="31255" string="테스트목걸이_일반_성능레벨30" />
+  <String id="31256" string="테스트목걸이_일반_성능레벨31" />
+  <String id="31257" string="테스트목걸이_일반_성능레벨32" />
+  <String id="31258" string="테스트목걸이_일반_성능레벨33" />
+  <String id="31259" string="테스트목걸이_일반_성능레벨34" />
+  <String id="31260" string="테스트목걸이_일반_성능레벨35" />
+  <String id="31261" string="테스트목걸이_일반_성능레벨36" />
+  <String id="31262" string="테스트목걸이_일반_성능레벨37" />
+  <String id="31263" string="테스트목걸이_일반_성능레벨38" />
+  <String id="31264" string="테스트목걸이_일반_성능레벨39" />
+  <String id="31265" string="테스트목걸이_일반_성능레벨40" />
+  <String id="31266" string="테스트목걸이_일반_성능레벨41" />
+  <String id="31267" string="테스트목걸이_일반_성능레벨42" />
+  <String id="31268" string="테스트목걸이_일반_성능레벨43" />
+  <String id="31269" string="테스트목걸이_일반_성능레벨44" />
+  <String id="31270" string="테스트목걸이_일반_성능레벨45" />
+  <String id="31271" string="테스트목걸이_일반_성능레벨46" />
+  <String id="31272" string="테스트목걸이_일반_성능레벨47" />
+  <String id="31273" string="테스트목걸이_일반_성능레벨48" />
+  <String id="31274" string="테스트목걸이_일반_성능레벨49" />
+  <String id="31275" string="테스트목걸이_일반_성능레벨50" />
+  <String id="31276" string="테스트목걸이_일반_성능레벨51" />
+  <String id="31277" string="테스트목걸이_일반_성능레벨52" />
+  <String id="31278" string="테스트목걸이_일반_성능레벨53" />
+  <String id="31279" string="테스트목걸이_일반_성능레벨54" />
+  <String id="31280" string="테스트목걸이_일반_성능레벨55" />
+  <String id="31281" string="테스트목걸이_일반_성능레벨56" />
+  <String id="31282" string="테스트목걸이_일반_성능레벨57" />
+  <String id="31283" string="테스트목걸이_일반_성능레벨58" />
+  <String id="31284" string="테스트목걸이_일반_성능레벨59" />
+  <String id="31285" string="테스트목걸이_일반_성능레벨60" />
+  <String id="31286" string="테스트_T4.1_반지" />
+  <String id="31287" string="테스트_T4.1_귀걸이" />
+  <String id="31288" string="테스트_T4.1_목걸이" />
+  <String id="32001" string="지스타_시연용_쌍검" />
+  <String id="32002" string="지스타_시연용_창" />
+  <String id="32003" string="지스타_시연용_대검" />
+  <String id="32004" string="지스타_시연용_도끼" />
+  <String id="32005" string="지스타_시연용_원반" />
+  <String id="32006" string="지스타_시연용_활" />
+  <String id="32007" string="지스타_시연용_지팡이" />
+  <String id="32008" string="지스타_시연용_마법봉" />
+  <String id="32009" string="지스타_시연용_중갑" />
+  <String id="32010" string="지스타_시연용_중갑 장갑" />
+  <String id="32011" string="지스타_시연용_중갑 신발" />
+  <String id="32012" string="지스타_시연용_중갑" />
+  <String id="32013" string="지스타_시연용_중갑 장갑" />
+  <String id="32014" string="지스타_시연용_중갑 신발" />
+  <String id="32015" string="지스타_시연용_중갑" />
+  <String id="32016" string="지스타_시연용_중갑 장갑" />
+  <String id="32017" string="지스타_시연용_중갑 신발" />
+  <String id="32018" string="지스타_시연용_중갑" />
+  <String id="32019" string="지스타_시연용_중갑 장갑" />
+  <String id="32020" string="지스타_시연용_중갑 신발" />
+  <String id="32021" string="지스타_시연용_경갑" />
+  <String id="32022" string="지스타_시연용_경갑 장갑" />
+  <String id="32023" string="지스타_시연용_경갑 신발" />
+  <String id="32024" string="지스타_시연용_경갑" />
+  <String id="32025" string="지스타_시연용_경갑 장갑" />
+  <String id="32026" string="지스타_시연용_경갑 신발" />
+  <String id="32027" string="지스타_시연용_경갑" />
+  <String id="32028" string="지스타_시연용_경갑 장갑" />
+  <String id="32029" string="지스타_시연용_경갑 신발" />
+  <String id="32030" string="지스타_시연용_경갑" />
+  <String id="32031" string="지스타_시연용_경갑 장갑" />
+  <String id="32032" string="지스타_시연용_경갑 신발" />
+  <String id="32033" string="지스타_시연용_경갑" />
+  <String id="32034" string="지스타_시연용_경갑 장갑" />
+  <String id="32035" string="지스타_시연용_경갑 신발" />
+  <String id="32036" string="지스타_시연용_경갑" />
+  <String id="32037" string="지스타_시연용_경갑 장갑" />
+  <String id="32038" string="지스타_시연용_경갑 신발" />
+  <String id="32039" string="지스타_시연용_로브" />
+  <String id="32040" string="지스타_시연용_글러브" />
+  <String id="32041" string="지스타_시연용_슈즈" />
+  <String id="32042" string="지스타_시연용_로브" />
+  <String id="32043" string="지스타_시연용_글러브" />
+  <String id="32044" string="지스타_시연용_슈즈" />
+  <String id="32045" string="지스타_시연용_로브" />
+  <String id="32046" string="지스타_시연용_글러브" />
+  <String id="32047" string="지스타_시연용_슈즈" />
+  <String id="32048" string="지스타_시연용_로브" />
+  <String id="32049" string="지스타_시연용_글러브" />
+  <String id="32050" string="지스타_시연용_슈즈" />
+  <String id="32051" string="지스타_시연용_로브" />
+  <String id="32052" string="지스타_시연용_글러브" />
+  <String id="32053" string="지스타_시연용_슈즈" />
+  <String id="32054" string="지스타_시연용_로브" />
+  <String id="32055" string="지스타_시연용_글러브" />
+  <String id="32056" string="지스타_시연용_슈즈" />
+  <String id="32057" string="지스타_시연용_쌍검" />
+  <String id="32058" string="지스타_시연용_창" />
+  <String id="32059" string="지스타_시연용_대검" />
+  <String id="32060" string="지스타_시연용_도끼" />
+  <String id="32061" string="지스타_시연용_원반" />
+  <String id="32062" string="지스타_시연용_활" />
+  <String id="32063" string="지스타_시연용_지팡이" />
+  <String id="32064" string="지스타_시연용_마법봉" />
+  <String id="32065" string="지스타_시연용_중갑" />
+  <String id="32066" string="지스타_시연용_중갑 장갑" />
+  <String id="32067" string="지스타_시연용_중갑 신발" />
+  <String id="32068" string="지스타_시연용_중갑" />
+  <String id="32069" string="지스타_시연용_중갑 장갑" />
+  <String id="32070" string="지스타_시연용_중갑 신발" />
+  <String id="32071" string="지스타_시연용_경갑" />
+  <String id="32072" string="지스타_시연용_경갑 장갑" />
+  <String id="32073" string="지스타_시연용_경갑 신발" />
+  <String id="32074" string="지스타_시연용_경갑" />
+  <String id="32075" string="지스타_시연용_경갑 장갑" />
+  <String id="32076" string="지스타_시연용_경갑 신발" />
+  <String id="32077" string="지스타_시연용_경갑" />
+  <String id="32078" string="지스타_시연용_경갑 장갑" />
+  <String id="32079" string="지스타_시연용_경갑 신발" />
+  <String id="32080" string="지스타_시연용_경갑" />
+  <String id="32081" string="지스타_시연용_경갑 장갑" />
+  <String id="32082" string="지스타_시연용_경갑 신발" />
+  <String id="32083" string="지스타_시연용_로브" />
+  <String id="32084" string="지스타_시연용_글러브" />
+  <String id="32085" string="지스타_시연용_슈즈" />
+  <String id="32086" string="지스타_시연용_로브" />
+  <String id="32087" string="지스타_시연용_글러브" />
+  <String id="32088" string="지스타_시연용_슈즈" />
+  <String id="32089" string="지스타_시연용_로브" />
+  <String id="32090" string="지스타_시연용_글러브" />
+  <String id="32091" string="지스타_시연용_슈즈" />
+  <String id="32092" string="지스타_시연용_쌍검" />
+  <String id="32093" string="지스타_시연용_경갑" />
+  <String id="32094" string="지스타_시연용_경갑 장갑" />
+  <String id="32095" string="지스타_시연용_경갑 신발" />
+  <String id="32096" string="지스타_시연용_경갑" />
+  <String id="32097" string="지스타_시연용_경갑 장갑" />
+  <String id="32098" string="지스타_시연용_경갑 신발" />
+  <String id="32200" string="테스트무기_마공포_성능레벨1" />
+  <String id="32201" string="테스트무기_마공포_성능레벨2" />
+  <String id="32202" string="테스트무기_마공포_성능레벨3" />
+  <String id="32203" string="테스트무기_마공포_성능레벨4" />
+  <String id="32204" string="테스트무기_마공포_성능레벨5" />
+  <String id="32205" string="테스트무기_마공포_성능레벨6" />
+  <String id="32206" string="테스트무기_마공포_성능레벨7" />
+  <String id="32207" string="테스트무기_마공포_성능레벨8" />
+  <String id="32208" string="테스트무기_마공포_성능레벨9" />
+  <String id="32209" string="테스트무기_마공포_성능레벨10" />
+  <String id="32210" string="테스트무기_마공포_성능레벨11" />
+  <String id="32211" string="테스트무기_마공포_성능레벨12" />
+  <String id="32212" string="테스트무기_마공포_성능레벨13" />
+  <String id="32213" string="테스트무기_마공포_성능레벨14" />
+  <String id="32214" string="테스트무기_마공포_성능레벨15" />
+  <String id="32215" string="테스트무기_마공포_성능레벨16" />
+  <String id="32216" string="테스트무기_마공포_성능레벨17" />
+  <String id="32217" string="테스트무기_마공포_성능레벨18" />
+  <String id="32218" string="테스트무기_마공포_성능레벨19" />
+  <String id="32219" string="테스트무기_마공포_성능레벨20" />
+  <String id="32220" string="테스트무기_마공포_성능레벨21" />
+  <String id="32221" string="테스트무기_마공포_성능레벨22" />
+  <String id="32222" string="테스트무기_마공포_성능레벨23" />
+  <String id="32223" string="테스트무기_마공포_성능레벨24" />
+  <String id="32224" string="테스트무기_마공포_성능레벨25" />
+  <String id="32225" string="테스트무기_마공포_성능레벨26" />
+  <String id="32226" string="테스트무기_마공포_성능레벨27" />
+  <String id="32227" string="테스트무기_마공포_성능레벨28" />
+  <String id="32228" string="테스트무기_마공포_성능레벨29" />
+  <String id="32229" string="테스트무기_마공포_성능레벨30" />
+  <String id="32230" string="테스트무기_마공포_성능레벨31" />
+  <String id="32231" string="테스트무기_마공포_성능레벨32" />
+  <String id="32232" string="테스트무기_마공포_성능레벨33" />
+  <String id="32233" string="테스트무기_마공포_성능레벨34" />
+  <String id="32234" string="테스트무기_마공포_성능레벨35" />
+  <String id="32235" string="테스트무기_마공포_성능레벨36" />
+  <String id="32236" string="테스트무기_마공포_성능레벨37" />
+  <String id="32237" string="테스트무기_마공포_성능레벨38" />
+  <String id="32238" string="테스트무기_마공포_성능레벨39" />
+  <String id="32239" string="테스트무기_마공포_성능레벨40" />
+  <String id="32240" string="테스트무기_마공포_성능레벨41" />
+  <String id="32241" string="테스트무기_마공포_성능레벨42" />
+  <String id="32242" string="테스트무기_마공포_성능레벨43" />
+  <String id="32243" string="테스트무기_마공포_성능레벨44" />
+  <String id="32244" string="테스트무기_마공포_성능레벨45" />
+  <String id="32245" string="테스트무기_마공포_성능레벨46" />
+  <String id="32246" string="테스트무기_마공포_성능레벨47" />
+  <String id="32247" string="테스트무기_마공포_성능레벨48" />
+  <String id="32248" string="테스트무기_마공포_성능레벨49" />
+  <String id="32249" string="테스트무기_마공포_성능레벨50" />
+  <String id="32250" string="테스트무기_마공포_성능레벨51" />
+  <String id="32251" string="테스트무기_마공포_성능레벨52" />
+  <String id="32252" string="테스트무기_마공포_성능레벨53" />
+  <String id="32253" string="테스트무기_마공포_성능레벨54" />
+  <String id="32254" string="테스트무기_마공포_성능레벨55" />
+  <String id="32255" string="테스트무기_마공포_성능레벨56" />
+  <String id="32256" string="테스트무기_마공포_성능레벨57" />
+  <String id="32257" string="테스트무기_마공포_성능레벨58" />
+  <String id="32258" string="테스트무기_마공포_성능레벨59" />
+  <String id="32259" string="테스트무기_마공포_성능레벨60" />
+  <String id="32260" string="테스트무기_마공포_성능레벨61" />
+  <String id="32261" string="테스트무기_마공포_성능레벨62" />
+  <String id="32262" string="테스트무기_마공포_성능레벨63" />
+  <String id="32263" string="테스트무기_마공포_성능레벨64" />
+  <String id="32264" string="테스트무기_마공포_성능레벨65" />
+  <String id="32265" string="테스트반지_일반_성능레벨61" />
+  <String id="32266" string="테스트반지_일반_성능레벨62" />
+  <String id="32267" string="테스트반지_일반_성능레벨63" />
+  <String id="32268" string="테스트반지_일반_성능레벨64" />
+  <String id="32269" string="테스트반지_일반_성능레벨65" />
+  <String id="32270" string="테스트귀걸이_일반_성능레벨61" />
+  <String id="32271" string="테스트귀걸이_일반_성능레벨62" />
+  <String id="32272" string="테스트귀걸이_일반_성능레벨63" />
+  <String id="32273" string="테스트귀걸이_일반_성능레벨64" />
+  <String id="32274" string="테스트귀걸이_일반_성능레벨65" />
+  <String id="32275" string="테스트목걸이_일반_성능레벨61" />
+  <String id="32276" string="테스트목걸이_일반_성능레벨62" />
+  <String id="32277" string="테스트목걸이_일반_성능레벨63" />
+  <String id="32278" string="테스트목걸이_일반_성능레벨64" />
+  <String id="32279" string="테스트목걸이_일반_성능레벨65" />
+  <String id="32280" string="테스트속옷_일반_성능레벨60" />
+  <String id="32281" string="테스트속옷_일반_성능레벨61" />
+  <String id="32282" string="테스트속옷_일반_성능레벨62" />
+  <String id="32283" string="테스트속옷_일반_성능레벨63" />
+  <String id="32284" string="테스트속옷_일반_성능레벨64" />
+  <String id="32285" string="테스트속옷_일반_성능레벨65" />
+  <String id="32286" string="테스트허리띠_일반_성능레벨60" />
+  <String id="32287" string="테스트허리띠_일반_성능레벨61" />
+  <String id="32288" string="테스트허리띠_일반_성능레벨62" />
+  <String id="32289" string="테스트허리띠_일반_성능레벨63" />
+  <String id="32290" string="테스트허리띠_일반_성능레벨64" />
+  <String id="32291" string="테스트허리띠_일반_성능레벨65" />
+  <String id="32292" string="테스트브로치_일반_성능레벨60" />
+  <String id="32293" string="테스트브로치_일반_성능레벨61" />
+  <String id="32294" string="테스트브로치_일반_성능레벨62" />
+  <String id="32295" string="테스트브로치_일반_성능레벨63" />
+  <String id="32296" string="테스트브로치_일반_성능레벨64" />
+  <String id="32297" string="테스트브로치_일반_성능레벨65" />
+  <String id="32298" string="테스트무기_비검_성능레벨58" />
+  <String id="32299" string="테스트무기_비검_성능레벨59" />
+  <String id="32300" string="테스트무기_비검_성능레벨60" />
+  <String id="32301" string="테스트무기_비검_성능레벨61" />
+  <String id="32302" string="테스트무기_비검_성능레벨62" />
+  <String id="32303" string="테스트무기_비검_성능레벨63" />
+  <String id="32304" string="테스트무기_비검_성능레벨64" />
+  <String id="32305" string="테스트무기_비검_성능레벨65" />
+  <String id="32306" string="테스트무기_권갑_성능레벨1" />
+  <String id="32307" string="테스트무기_권갑_성능레벨2" />
+  <String id="32308" string="테스트무기_권갑_성능레벨3" />
+  <String id="32309" string="테스트무기_권갑_성능레벨4" />
+  <String id="32310" string="테스트무기_권갑_성능레벨5" />
+  <String id="32311" string="테스트무기_권갑_성능레벨6" />
+  <String id="32312" string="테스트무기_권갑_성능레벨7" />
+  <String id="32313" string="테스트무기_권갑_성능레벨8" />
+  <String id="32314" string="테스트무기_권갑_성능레벨9" />
+  <String id="32315" string="테스트무기_권갑_성능레벨10" />
+  <String id="32316" string="테스트무기_권갑_성능레벨11" />
+  <String id="32317" string="테스트무기_권갑_성능레벨12" />
+  <String id="32318" string="테스트무기_권갑_성능레벨13" />
+  <String id="32319" string="테스트무기_권갑_성능레벨14" />
+  <String id="32320" string="테스트무기_권갑_성능레벨15" />
+  <String id="32321" string="테스트무기_권갑_성능레벨16" />
+  <String id="32322" string="테스트무기_권갑_성능레벨17" />
+  <String id="32323" string="테스트무기_권갑_성능레벨18" />
+  <String id="32324" string="테스트무기_권갑_성능레벨19" />
+  <String id="32325" string="테스트무기_권갑_성능레벨20" />
+  <String id="32326" string="테스트무기_권갑_성능레벨21" />
+  <String id="32327" string="테스트무기_권갑_성능레벨22" />
+  <String id="32328" string="테스트무기_권갑_성능레벨23" />
+  <String id="32329" string="테스트무기_권갑_성능레벨24" />
+  <String id="32330" string="테스트무기_권갑_성능레벨25" />
+  <String id="32331" string="테스트무기_권갑_성능레벨26" />
+  <String id="32332" string="테스트무기_권갑_성능레벨27" />
+  <String id="32333" string="테스트무기_권갑_성능레벨28" />
+  <String id="32334" string="테스트무기_권갑_성능레벨29" />
+  <String id="32335" string="테스트무기_권갑_성능레벨30" />
+  <String id="32336" string="테스트무기_권갑_성능레벨31" />
+  <String id="32337" string="테스트무기_권갑_성능레벨32" />
+  <String id="32338" string="테스트무기_권갑_성능레벨33" />
+  <String id="32339" string="테스트무기_권갑_성능레벨34" />
+  <String id="32340" string="테스트무기_권갑_성능레벨35" />
+  <String id="32341" string="테스트무기_권갑_성능레벨36" />
+  <String id="32342" string="테스트무기_권갑_성능레벨37" />
+  <String id="32343" string="테스트무기_권갑_성능레벨38" />
+  <String id="32344" string="테스트무기_권갑_성능레벨39" />
+  <String id="32345" string="테스트무기_권갑_성능레벨40" />
+  <String id="32346" string="테스트무기_권갑_성능레벨41" />
+  <String id="32347" string="테스트무기_권갑_성능레벨42" />
+  <String id="32348" string="테스트무기_권갑_성능레벨43" />
+  <String id="32349" string="테스트무기_권갑_성능레벨44" />
+  <String id="32350" string="테스트무기_권갑_성능레벨45" />
+  <String id="32351" string="테스트무기_권갑_성능레벨46" />
+  <String id="32352" string="테스트무기_권갑_성능레벨47" />
+  <String id="32353" string="테스트무기_권갑_성능레벨48" />
+  <String id="32354" string="테스트무기_권갑_성능레벨49" />
+  <String id="32355" string="테스트무기_권갑_성능레벨50" />
+  <String id="32356" string="테스트무기_권갑_성능레벨51" />
+  <String id="32357" string="테스트무기_권갑_성능레벨52" />
+  <String id="32358" string="테스트무기_권갑_성능레벨53" />
+  <String id="32359" string="테스트무기_권갑_성능레벨54" />
+  <String id="32360" string="테스트무기_권갑_성능레벨55" />
+  <String id="32361" string="테스트무기_권갑_성능레벨56" />
+  <String id="32362" string="테스트무기_권갑_성능레벨57" />
+  <String id="32363" string="테스트무기_권갑_성능레벨58" />
+  <String id="32364" string="테스트무기_권갑_성능레벨59" />
+  <String id="32365" string="테스트무기_권갑_성능레벨60" />
+  <String id="32366" string="테스트무기_권갑_성능레벨61" />
+  <String id="32367" string="테스트무기_권갑_성능레벨62" />
+  <String id="32368" string="테스트무기_권갑_성능레벨63" />
+  <String id="32369" string="테스트무기_권갑_성능레벨64" />
+  <String id="32370" string="테스트무기_권갑_성능레벨65" />
+  <String id="32371" string="테스트용_카자스탄의 수리검" />
+  <String id="32372" string="테스트용_라키누아의 수리검" />
+  <String id="32373" string="테스트용_스내굴투스의 수리검" />
+  <String id="32374" string="테스트용_저주받은 킬리언의 수리검" />
+  <String id="32375" string="테스트용_강력한 사령술사의 수리검" />
+  <String id="32376" string="테스트용_불새의 얼음 발톱 수리검" />
+  <String id="32377" string="테스트용_불새의 화염 발톱 수리검" />
+  <String id="32378" string="테스트용_춤추는 광대의 수리검" />
+  <String id="32379" string="테스트용_분노한 주술사의 수리검" />
+  <String id="32380" string="테스트용_켈사이크의 얼음 발톱 수리검" />
+  <String id="32381" string="테스트용_켈사이크의 화염 발톱 수리검" />
+  <String id="32382" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 수리검 무옵션" />
+  <String id="32383" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 수리검 후방 데미지" />
+  <String id="32384" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 수리검 데미지" />
+  <String id="32385" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 수리검 공격 속도" />
+  <String id="32386" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 수리검 치명타 확률" />
+  <String id="32387" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="옵션 테스트의 수리검 치명타 위력" />
+  <String id="32388" string="테스트무기_수리검_성능레벨1" />
+  <String id="32389" string="테스트무기_수리검_성능레벨2" />
+  <String id="32390" string="테스트무기_수리검_성능레벨3" />
+  <String id="32391" string="테스트무기_수리검_성능레벨4" />
+  <String id="32392" string="테스트무기_수리검_성능레벨5" />
+  <String id="32393" string="테스트무기_수리검_성능레벨6" />
+  <String id="32394" string="테스트무기_수리검_성능레벨7" />
+  <String id="32395" string="테스트무기_수리검_성능레벨8" />
+  <String id="32396" string="테스트무기_수리검_성능레벨9" />
+  <String id="32397" string="테스트무기_수리검_성능레벨10" />
+  <String id="32398" string="테스트무기_수리검_성능레벨11" />
+  <String id="32399" string="테스트무기_수리검_성능레벨12" />
+  <String id="32400" string="테스트무기_수리검_성능레벨13" />
+  <String id="32401" string="테스트무기_수리검_성능레벨14" />
+  <String id="32402" string="테스트무기_수리검_성능레벨15" />
+  <String id="32403" string="테스트무기_수리검_성능레벨16" />
+  <String id="32404" string="테스트무기_수리검_성능레벨17" />
+  <String id="32405" string="테스트무기_수리검_성능레벨18" />
+  <String id="32406" string="테스트무기_수리검_성능레벨19" />
+  <String id="32407" string="테스트무기_수리검_성능레벨20" />
+  <String id="32408" string="테스트무기_수리검_성능레벨21" />
+  <String id="32409" string="테스트무기_수리검_성능레벨22" />
+  <String id="32410" string="테스트무기_수리검_성능레벨23" />
+  <String id="32411" string="테스트무기_수리검_성능레벨24" />
+  <String id="32412" string="테스트무기_수리검_성능레벨25" />
+  <String id="32413" string="테스트무기_수리검_성능레벨26" />
+  <String id="32414" string="테스트무기_수리검_성능레벨27" />
+  <String id="32415" string="테스트무기_수리검_성능레벨28" />
+  <String id="32416" string="테스트무기_수리검_성능레벨29" />
+  <String id="32417" string="테스트무기_수리검_성능레벨30" />
+  <String id="32418" string="테스트무기_수리검_성능레벨31" />
+  <String id="32419" string="테스트무기_수리검_성능레벨32" />
+  <String id="32420" string="테스트무기_수리검_성능레벨33" />
+  <String id="32421" string="테스트무기_수리검_성능레벨34" />
+  <String id="32422" string="테스트무기_수리검_성능레벨35" />
+  <String id="32423" string="테스트무기_수리검_성능레벨36" />
+  <String id="32424" string="테스트무기_수리검_성능레벨37" />
+  <String id="32425" string="테스트무기_수리검_성능레벨38" />
+  <String id="32426" string="테스트무기_수리검_성능레벨39" />
+  <String id="32427" string="테스트무기_수리검_성능레벨40" />
+  <String id="32428" string="테스트무기_수리검_성능레벨41" />
+  <String id="32429" string="테스트무기_수리검_성능레벨42" />
+  <String id="32430" string="테스트무기_수리검_성능레벨43" />
+  <String id="32431" string="테스트무기_수리검_성능레벨44" />
+  <String id="32432" string="테스트무기_수리검_성능레벨45" />
+  <String id="32433" string="테스트무기_수리검_성능레벨46" />
+  <String id="32434" string="테스트무기_수리검_성능레벨47" />
+  <String id="32435" string="테스트무기_수리검_성능레벨48" />
+  <String id="32436" string="테스트무기_수리검_성능레벨49" />
+  <String id="32437" string="테스트무기_수리검_성능레벨50" />
+  <String id="32438" string="테스트무기_수리검_성능레벨51" />
+  <String id="32439" string="테스트무기_수리검_성능레벨52" />
+  <String id="32440" string="테스트무기_수리검_성능레벨53" />
+  <String id="32441" string="테스트무기_수리검_성능레벨54" />
+  <String id="32442" string="테스트무기_수리검_성능레벨55" />
+  <String id="32443" string="테스트무기_수리검_성능레벨56" />
+  <String id="32444" string="테스트무기_수리검_성능레벨57" />
+  <String id="32445" string="테스트무기_수리검_성능레벨58" />
+  <String id="32446" string="테스트무기_수리검_성능레벨59" />
+  <String id="32447" string="테스트무기_수리검_성능레벨60" />
+  <String id="32448" string="테스트무기_수리검_성능레벨61" />
+  <String id="32449" string="테스트무기_수리검_성능레벨62" />
+  <String id="32450" string="테스트무기_수리검_성능레벨63" />
+  <String id="32451" string="테스트무기_수리검_성능레벨64" />
+  <String id="32452" string="테스트무기_수리검_성능레벨65" />
+  <String id="32453" string="지스타_시연용_수리검" />
+  <String id="32454" string="지스타_시연용_수리검" />
+  <String id="32455" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 수리검" />
+  <String id="32456" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 수리검" />
+  <String id="32457" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 수리검" />
+  <String id="46000" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 쌍검" />
+  <String id="46001" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 창" />
+  <String id="46002" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 대검" />
+  <String id="46003" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 도끼" />
+  <String id="46004" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 원반" />
+  <String id="46005" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 활" />
+  <String id="46006" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 지팡이" />
+  <String id="46007" toolTip="생명에너지를 관리하던 멜디타의 촉수에서 떨어진 무기." string="셋트 아이템 PvE의 마법봉" />
+  <String id="46008" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 중갑" />
+  <String id="46009" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 중갑 장갑" />
+  <String id="46010" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 중갑 신발" />
+  <String id="46011" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 경갑" />
+  <String id="46012" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 경갑 장갑" />
+  <String id="46013" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 경갑 신발" />
+  <String id="46014" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 로브" />
+  <String id="46015" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 글러브" />
+  <String id="46016" toolTip="멜디타의 촉수에서 떨어진 방어구로 멜디타의 외모와는 다르게 의외로 성능이 좋지만 강한 연합의 일원들에게는 큰 효과를 발휘하지 못한다." string="셋트 아이템 PvE의 슈즈" />
+  <String id="46017" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 쌍검" />
+  <String id="46018" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 창" />
+  <String id="46019" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 대검" />
+  <String id="46020" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 도끼" />
+  <String id="46021" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 원반" />
+  <String id="46022" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 활" />
+  <String id="46023" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 지팡이" />
+  <String id="46024" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 마법봉" />
+  <String id="46025" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 중갑" />
+  <String id="46026" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 중갑 장갑" />
+  <String id="46027" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 중갑 신발" />
+  <String id="46028" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 경갑" />
+  <String id="46029" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 경갑 장갑" />
+  <String id="46030" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 경갑 신발" />
+  <String id="46031" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 로브" />
+  <String id="46032" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 글러브" />
+  <String id="46033" toolTip="&lt;font color = '#c21919'&gt;[주의!] 명품 불가 장비&lt;/font&gt;&lt;br&gt;장비 강화 시에 강화 단계에 따라서 PVP 옵션이 발현됩니다." string="셋트 아이템 PvP의의 슈즈" />
+  <String id="46034" string="셋트 아이템의 목걸이" />
+  <String id="71374" string="화려하게 빛나는 반지(사용안함)" />
+  <String id="71375" string="화려하게 빛나는 반지(사용안함)" />
+  <String id="71456" toolTip="T.E.S.T" string="미니게임 스킬 테스트용" />
+  <String id="71529" toolTip="강화 단계 테스트" string="강화 단계 테스트" />
+  <String id="71686" string="무자비한 철기장의 숭고한 경갑 (임시 테스트용)" />
+  <String id="71687" string="무자비한 철기장의 숭고한 경갑 장갑 (임시 테스트용)" />
+  <String id="71688" string="무자비한 철기장의 숭고한 경갑 신발 (임시 테스트용)" />
+  <String id="71689" string="아도니스의 비검 (임시 테스트용)" />
+  <String id="71690" string="아도니스의 숭고한 경갑 (임시 테스트용)" />
+  <String id="71691" string="아도니스의 숭고한 경갑 장갑 (임시 테스트용)" />
+  <String id="71692" string="무자비한 철기장의 비검 (임시 테스트용)" />
+  <String id="71754" string="아도니스의 숭고한 경갑 신발 (임시 테스트용)" />
+  <String id="91190" string="(테스트)아르곤 대항군의 경갑" />
+  <String id="91191" string="(테스트)아르곤 대항군의 경갑 장갑" />
+  <String id="91192" string="(테스트)아르곤 대항군의 경갑 신발" />
+  <String id="94901" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 쌍검" />
+  <String id="94902" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 창" />
+  <String id="94903" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 대검" />
+  <String id="94904" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 도끼" />
+  <String id="94905" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 원반" />
+  <String id="94906" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 활" />
+  <String id="94907" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 지팡이" />
+  <String id="94908" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 마법봉" />
+  <String id="94909" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 비검" />
+  <String id="94910" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 중갑" />
+  <String id="94911" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 중갑 장갑" />
+  <String id="94912" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 중갑 신발" />
+  <String id="94913" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 경갑" />
+  <String id="94914" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 경갑 장갑" />
+  <String id="94915" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 경갑 신발" />
+  <String id="94916" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 로브" />
+  <String id="94917" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 글러브" />
+  <String id="94918" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 슈즈" />
+  <String id="94919" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 경갑 장갑" />
+  <String id="94921" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 경갑 신발" />
+  <String id="94922" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 로브" />
+  <String id="94925" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 글러브" />
+  <String id="94927" toolTip="6단계 각성 강화 테스트용 장비." string="둔칸의 테스트용 슈즈" />
+  <String id="96000" toolTip="사용 시 사제 버프 4종을 받을 수 있습니다." string="테스트용 물약_사제 버프" />
+  <String id="96001" toolTip="사용 시 정령사 버프 3종을 받을 수 있습니다." string="테스트용 물약_정령사 버프" />
+  <String id="96002" toolTip="LinkRawStonId=99998" string="크리스탈 합성제(TIERUP)" />
+  <String id="96003" toolTip="LinkRawStonId=99999" string="크리스탈 합성제(UPGRADE)" />
+  <String id="96004" toolTip="LinkCustomizingId=41248" string="아티펙트 I(맹독의 칼날 모조품)" />
+  <String id="96005" toolTip="LinkCustomizingId=41247" string="아티펙트 II(무자비 모조품)" />
+  <String id="96006" toolTip="LinkCustomizingId=41246" string="아티펙트 III(기회 포착 모조품)" />
+  <String id="96007" toolTip="6단계와 동일 성능" string="7단계 크리스탈(맹독의 칼날 모조품)" />
+  <String id="96008" toolTip="6단계와 동일 성능" string="7단계 크리스탈(무지비 모조품)" />
+  <String id="96010" toolTip="사용시 EP 경험치를 획득할 수 있습니다." string="특성 경험치 획득 아이템" />
+  <String id="96011" toolTip="사용시 1 특성 포인트를 획득할 수 있습니다." string="특성 포인트 1 획득 아이템" />
+  <String id="96012" toolTip="사용시 3 특성 포인트를 획득할 수 있습니다." string="특성 포인트 3 획득 아이템" />
+  <String id="96013" toolTip="사용시 5 특성 포인트를 획득할 수 있습니다." string="특성 포인트 5 획득 아이템" />
+  <String id="96014" toolTip="사용시 100 특성 포인트를 획득할 수 있습니다." string="특성 포인트 100 획득 아이템" />
+  <String id="96015" toolTip="사용시 설정된 특성이 리셋되고, 소모된 특성 포인트가 환원됩니다." string="특성 리셋 아이템" />
+  <String id="101510" toolTip="개발실 테스트용" string="[테스트용] 엘카이아의 마공포" />
+  <String id="101511" toolTip="개발실 테스트용" string="[테스트용] 엘카이아의 중갑" />
+  <String id="101512" toolTip="개발실 테스트용" string="[테스트용] 엘카이아의 흉포한 중갑 장갑" />
+  <String id="101513" toolTip="개발실 테스트용" string="[테스트용] 엘카이아의 중갑 신발" />
+  <String id="101514" toolTip="개발실 테스트용 12강" string="[테스트용] 엘카이아의 마공포 (강력)" />
+  <String id="101515" toolTip="개발실 테스트용 12강" string="[테스트용] 엘카이아의 중갑 (강력)" />
+  <String id="101516" toolTip="개발실 테스트용 12강" string="[테스트용] 엘카이아의 흉포한 중갑 장갑 (강력)" />
+  <String id="101517" toolTip="개발실 테스트용 12강" string="[테스트용] 엘카이아의 중갑 신발 (강력)" />
+  <String id="101518" toolTip="기획자를 처치하기 위해 제작된 강력한 무기" string="[테스트용] 아크데바 토벌대 마공포" />
+  <String id="101519" toolTip="의장님의 어떠한 공격도 버틸 수 있는 튼튼한 방어구" string="[테스트용] 아크데바 토벌대 중갑" />
+  <String id="101520" toolTip="의장님의 어떠한 공격도 버틸 수 있는 튼튼한 방어구" string="[테스트용] 아크데바 토벌대 중갑 장갑" />
+  <String id="101521" toolTip="의장님의 어떠한 공격도 버틸 수 있는 튼튼한 방어구" string="[테스트용] 아크데바 토벌대 중갑 신발" />
+  <String id="101522" toolTip="1레벨 캐릭터 생성 시 착용하고 있는 의상입니다." string="[테스트용] 1번 룩" />
+  <String id="101523" toolTip="30레벨쯤부터 얻을 수 있는 의상입니다." string="[테스트용] 2번 룩" />
+  <String id="101524" toolTip="50레벨쯤부터 얻을 수 있는 의상입니다." string="[테스트용] 4번 룩" />
+  <String id="101525" toolTip="어마어마한 무기" string="[테스트용] 마공포 1번 룩" />
+  <String id="101526" toolTip="무시무시한 무기" string="[테스트용] 마공포 2번 룩" />
+  <String id="101527" toolTip="어마무시한 무기" string="[테스트용] 마공포 3번 룩" />
+  <String id="101528" toolTip="엄마무시한 무기" string="[테스트용] 마공포 4번 룩" />
+  <String id="101529" toolTip="무기무기한 무기" string="[테스트용] 마공포 5번 룩" />
+  <String id="232001" toolTip="우클릭 시 [스타일 정보]창 [몸통 방어구]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;이런젠장 권술사&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 1번 복장" />
+  <String id="232002" toolTip="우클릭 시 [스타일 정보]창 [몸통 방어구]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;빌어먹을 탱커&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 2번 복장" />
+  <String id="232003" toolTip="우클릭 시 [스타일 정보]창 [몸통 방어구]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;집에 가고싶다...&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 3번 복장" />
+  <String id="232004" toolTip="우클릭 시 [스타일 정보]창 [몸통 방어구]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;!@#$%&amp;^%&amp;&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 4번 복장" />
+  <String id="232011" toolTip="우클릭 시 [스타일 정보]창 [무기]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;이런젠장 권술사&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 1번 무기" />
+  <String id="232012" toolTip="우클릭 시 [스타일 정보]창 [무기]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;빌어먹을 탱커&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 2번 무기" />
+  <String id="232013" toolTip="우클릭 시 [스타일 정보]창 [무기]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;집에 가고싶다...&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 3번 무기" />
+  <String id="232014" toolTip="우클릭 시 [스타일 정보]창 [무기]슬롯에 장착됩니다.&lt;br&gt;&lt;br&gt;&quot;!@#$%&amp;^%&amp;&lt;br&gt;   - 마공사 때가 좋았지&quot;" string="권술사 4번 무기" />
+  <String id="232015" toolTip="1개의 확정 아이템 가챠" string="QA 요청 테스트 확정 가챠" />
+  <String id="232016" toolTip="3개의 확정 아이템 가챠" string="QA 요청 테스트 확정 가챠(3개 Fixed)" />
+  <String id="232017" toolTip="우클릭 시 [스타일 정보]창 [몸통 방어구]슬롯에 장착됩니다." string="인술사 프리미엄 복장" />
+  <String id="232018" string="인술사 프리미엄 글러브" />
+  <String id="232019" string="인술사 프리미엄 슈즈" />
+</StrSheet_Item>

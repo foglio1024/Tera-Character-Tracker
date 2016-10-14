@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StrSheet_Item>
+  <String id="246000" toolTip="A smart box containing an Elleon weapon skin of the sun for 7 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin of the Sun (7 Days)" />
+  <String id="246001" toolTip="A smart box containing a permanent Elleon weapon skin of the sun. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin of the Sun" />
+  <String id="246002" toolTip="A smart box containing an Elleon weapon skin of the moon for 7 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin of the Moon (7 Days)" />
+  <String id="246003" toolTip="A smart box containing a permanent Elleon weapon skin of the moon. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin of the Moon" />
+  <String id="246004" toolTip="A smart box containing an Elleon weapon skin for 7 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin (7 Days)" />
+  <String id="246005" toolTip="A smart box containing a permanent Elleon weapon skin. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin" />
+  <String id="246006" toolTip="A smart box containing an Elleon weapon skin of the sun for 30 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin of the Sun (30 Days)" />
+  <String id="246007" toolTip="A smart box containing an Elleon weapon skin of the moon for 30 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin of the Moon (30 Days)" />
+  <String id="246008" toolTip="A smart box containing an Elleon weapon skin for 30 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Elleon's Weapon Skin (30 Days)" />
+</StrSheet_Item>

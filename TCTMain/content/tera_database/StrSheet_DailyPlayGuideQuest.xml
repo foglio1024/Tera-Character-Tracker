@@ -1,0 +1,2279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StrSheet_DailyPlayGuideQuest>
+  <String id="70001001" string="Deep Six the Dreadnaught!" />
+  <String id="70001100" string="[Kalivan's Dreadnaught (Hard)] Gather your allies to kill Nightmare Kalivan." />
+  <String id="70001101" string="Claim your reward!" />
+  <String id="70002001" string="The Unfriendly Skies" />
+  <String id="70002100" string="[Sky Cruiser Endeavor (Hard)] Gather your allies to kill Nightmare Darkan." />
+  <String id="70002101" string="Claim your reward!" />
+  <String id="70003001" string="Tyrant's Fall" />
+  <String id="70003100" string="[Forsaken Island (Hard)] Gather your allies to kill Nightmare Desolarus." />
+  <String id="70003101" string="Claim your reward!" />
+  <String id="70004001" string="Regent's Fall" />
+  <String id="70004100" string="[Forsaken Island] Gather your allies to kill Desolarus." />
+  <String id="70004101" string="Claim your reward!" />
+  <String id="70005001" string="Dreadspirational Challenges" />
+  <String id="70005100" string="[Dreadspire] Conquer the 14th challenge in Dreadspire." />
+  <String id="70005101" string="Claim your reward!" />
+  <String id="70006001" string="Burn Out the Abscess" />
+  <String id="70006100" string="[The Abscess] Defeat Krakatox with your allies!" />
+  <String id="70006101" string="Claim your reward!" />
+  <String id="70007001" string="Burn Out the Abscess (Hard)" />
+  <String id="70007100" string="[The Abscess (Hard)] Defeat Nightmare Krakatox with your allies!" />
+  <String id="70007101" string="Claim your reward!" />
+  <String id="70008001" string="Conquer the Demokron Factory" />
+  <String id="70008100" string="[Demokron Factory] Defeat Verno with your allies!" />
+  <String id="70008101" string="Claim your reward!" />
+  <String id="70009001" string="Conquer the Demokron Factory (Hard)" />
+  <String id="70009100" string="[Demokron Factory (Hard)] Defeat Nightmare Verno with your allies!" />
+  <String id="70009101" string="Claim your rewards!" />
+  <String id="70011001" string="Option: Deep Six the Dreadnaught!" />
+  <String id="70011100" string="[Kalivan's Dreadnaught (Hard)] Gather your allies to kill Nightmare Kalivan." />
+  <String id="70011101" string="Claim your reward!" />
+  <String id="70012001" string="Option: The Unfriendly Skies" />
+  <String id="70012100" string="[Sky Cruiser Endeavor (Hard)] Gather your allies to kill Nightmare Darkan." />
+  <String id="70012101" string="Claim your reward!" />
+  <String id="70013001" string="Option: Tyrant's Fall" />
+  <String id="70013100" string="[Forsaken Island] Gather your allies to kill Nightmare Desolarus." />
+  <String id="70013101" string="Claim your reward!" />
+  <String id="70014001" string="Option: Regent's Fall" />
+  <String id="70014100" string="[Forsaken Island] Gather your allies to kill Desolarus." />
+  <String id="70014101" string="Claim your reward!" />
+  <String id="70015001" string="Option: Dreadspirational Challenges" />
+  <String id="70015100" string="[Dreadspire] Gather your allies and conquer the 14th challenge in Dreadspire." />
+  <String id="70015101" string="Claim your reward!" />
+  <String id="70016001" string="Burn Out the Abscess" />
+  <String id="70016100" string="[The Abscess] Defeat Krakatox with your allies!" />
+  <String id="70016101" string="Claim your rewards!" />
+  <String id="70017001" string="Burn Out the Abscess (Hard)" />
+  <String id="70017100" string="[The Abscess (Hard)] Defeat Nightmare Krakatox with your allies!" />
+  <String id="70017101" string="Claim your rewards!" />
+  <String id="70018001" string="Option: Conquer the Demokron Factory" />
+  <String id="70018100" string="[Demokron Factory] Defeat Verno with your allies!" />
+  <String id="70018101" string="Claim your reward!" />
+  <String id="70019001" string="Option: Conquer the Demokron Factory (Hard)" />
+  <String id="70019100" string="[The Abscess (Hard)] Defeat Nightmare Krakatox with your allies!" />
+  <String id="70019101" string="Claim your reward!" />
+  <String id="80001001" string="Assault the Bastion of Lok!" />
+  <String id="80001100" string="[Bastion of Lok] Eliminate Murdranak." />
+  <String id="80001101" string="Claim your reward!" />
+  <String id="80002001" string="Assault Sinestral Manor!" />
+  <String id="80002100" string="[Sinestral Manor] Eliminate Malgarios." />
+  <String id="80002101" string="Claim your reward!" />
+  <String id="80002102" string="Claim your reward!" />
+  <String id="80002104" string="Claim your reward!" />
+  <String id="80002300" string="Malgarios" />
+  <String id="80003001" string="Assault Saravash's Ascent!" />
+  <String id="80003100" string="[Saravash's Ascent] Eliminate Saravash." />
+  <String id="80003101" string="Claim your reward!" />
+  <String id="80003104" string="Claim your reward!" />
+  <String id="80003300" string="Saravash" />
+  <String id="80004001" string="Assault the Cultists' Refuge!" />
+  <String id="80004100" string="[Cultists' Refuge] Eliminate Bhaozurbas." />
+  <String id="80004101" string="Claim your reward!" />
+  <String id="80005001" string="Assault the Necromancer Tomb!" />
+  <String id="80005100" string="[Necromancer Tomb] Eliminate Vedilith." />
+  <String id="80005101" string="Claim your reward!" />
+  <String id="80006001" string="Assault the Golden Labyrinth!" />
+  <String id="80006100" string="[Golden Labyrinth] Eliminate Baracos." />
+  <String id="80006101" string="Claim your reward!" />
+  <String id="80007001" string="Assault Akasha's Hideout!" />
+  <String id="80007100" string="[Akasha's Hideout] Eliminate Akasha. You may need the aid of your allies!" />
+  <String id="80007101" string="Claim your reward!" />
+  <String id="80008001" string="Assault Saleron's Sky Garden!" />
+  <String id="80008100" string="[Saleron's Sky Garden] Eliminate Striktryssir." />
+  <String id="80008103" string="Claim your reward!" />
+  <String id="80008300" string="Striktryssir" />
+  <String id="80009001" string="Assault the Labyrinth of Terror!" />
+  <String id="80009100" string="[Labyrinth of Terror] Eliminate Killian." />
+  <String id="80009101" string="Claim your reward!" />
+  <String id="80011001" string="Save the Forest" />
+  <String id="80011100" string="[Fey Forest] Defeat beasts, monsters, and sorcerers." />
+  <String id="80011116" string="Claim your reward!" />
+  <String id="80011117" string="Claim your reward!" />
+  <String id="80011122" string="Claim your reward!" />
+  <String id="80011300" string="Fey Forest Invaders" />
+  <String id="80012001" string="Weaken the Devan Army" />
+  <String id="80012100" string="[Oblivion Woods] Take out the devas and their allies." />
+  <String id="80012117" string="Claim your reward!" />
+  <String id="80012118" string="Claim your reward!" />
+  <String id="80012300" string="Occupying Army" />
+  <String id="80013001" string="Save the Valley" />
+  <String id="80013100" string="[Valley of Titans] Defeat the Gutrend kulkaris and their allies." />
+  <String id="80013109" string="Claim your reward!" />
+  <String id="80013118" string="Claim your reward!" />
+  <String id="80013300" string="Gutrend Invaders" />
+  <String id="80014001" string="Save the Hills" />
+  <String id="80014100" string="[Celestial Hills] Defeat the Red Fang orcans and their allies." />
+  <String id="80014109" string="Claim your reward!" />
+  <String id="80014113" string="Claim your reward!" />
+  <String id="80014300" string="Red Fang Invaders" />
+  <String id="80015001" string="Save the Cliffs" />
+  <String id="80015100" string="[Cliffs of Insanity] Eliminate crazed beasts and mutants." />
+  <String id="80015113" string="Claim your reward!" />
+  <String id="80015122" string="Claim your reward!" />
+  <String id="80015300" string="Insane Monsters" />
+  <String id="80016001" string="Defeat Vampirs" />
+  <String id="80016100" string="[Vale of the Fang] Defeat the vampirs and their allies." />
+  <String id="80016119" string="Claim your reward!" />
+  <String id="80016120" string="Claim your reward!" />
+  <String id="80016121" string="Claim your reward!" />
+  <String id="80016122" string="Claim your reward!" />
+  <String id="80016300" string="Vampirs" />
+  <String id="80017001" string="Clean out the Mines" />
+  <String id="80017100" string="[Tenebrous Mines] Defeat mercenaries and skeletons." />
+  <String id="80017111" string="Claim your reward!" />
+  <String id="80017119" string="Claim your reward!" />
+  <String id="80017120" string="Claim your reward!" />
+  <String id="80017300" string="Shadow Soldiers" />
+  <String id="80018001" string="Protect the Outpost" />
+  <String id="80018100" string="[Mistmoor Island] Defeat the Kazuur syndicate and their allies." />
+  <String id="80018111" string="Claim your reward!" />
+  <String id="80018127" string="Claim your reward!" />
+  <String id="80018300" string="Mistmoor Invaders" />
+  <String id="80019001" string="Clean out the Labyrinth" />
+  <String id="80019100" string="[Azarel's Labyrinth] Defeat gulas and alzarin imps." />
+  <String id="80019116" string="Claim your reward!" />
+  <String id="80019125" string="Claim your reward!" />
+  <String id="80019127" string="Claim your reward!" />
+  <String id="80019300" string="Maze Runners" />
+  <String id="81001001" string="Assault the Bastion of Lok!" />
+  <String id="81001100" string="[Bastion of Lok] Eliminate Murdranak." />
+  <String id="81001101" string="Claim your reward!" />
+  <String id="81002001" string="Assault Sinestral Manor!" />
+  <String id="81002100" string="[Sinestral Manor] Eliminate Malgarios." />
+  <String id="81002101" string="Claim your reward!" />
+  <String id="81002102" string="Claim your reward!" />
+  <String id="81002104" string="Claim your reward!" />
+  <String id="81002300" string="Malgarios" />
+  <String id="81003001" string="Assault Saravash's Ascent!" />
+  <String id="81003100" string="[Saravash's Ascent] Eliminate Saravash." />
+  <String id="81003101" string="Claim your reward!" />
+  <String id="81003104" string="Claim your reward!" />
+  <String id="81003300" string="Saravash" />
+  <String id="81004001" string="Assault the Cultists' Refuge!" />
+  <String id="81004100" string="[Cultists' Refuge] Eliminate Bhaozurbas." />
+  <String id="81004101" string="Claim your reward!" />
+  <String id="81005001" string="Assault the Necromancer Tomb!" />
+  <String id="81005100" string="[Necromancer Tomb] Eliminate Vedilith." />
+  <String id="81005101" string="Claim your reward!" />
+  <String id="81006001" string="Assault the Golden Labyrinth!" />
+  <String id="81006100" string="[Golden Labyrinth] Eliminate Baracos." />
+  <String id="81006101" string="Claim your reward!" />
+  <String id="81007001" string="Assault Akasha's Hideout!" />
+  <String id="81007100" string="[Akasha's Hideout] Eliminate Akasha. You may need the aid of your allies." />
+  <String id="81007101" string="Claim your reward!" />
+  <String id="81008001" string="Assault Saleron's Sky Garden!" />
+  <String id="81008100" string="[Saleron's Sky Garden] Eliminate Striktryssir." />
+  <String id="81008103" string="Claim your reward!" />
+  <String id="81008300" string="Striktryssir" />
+  <String id="81009001" string="Option: Assault the Labyrinth of Terror!" />
+  <String id="81009100" string="[Labyrinth of Terror] Eliminate Killian." />
+  <String id="81009101" string="Claim your reward!" />
+  <String id="81011001" string="Option: Save the Forest" />
+  <String id="81011100" string="[Fey Forest] Defeat beasts, faeries and sorcerers." />
+  <String id="81011116" string="Claim your reward!" />
+  <String id="81011122" string="Claim your reward!" />
+  <String id="81011300" string="Fey Forest Invaders" />
+  <String id="81012001" string="Option: Weaken the Devan Army" />
+  <String id="81012100" string="[Oblivion Woods] Take out the devas and their allies." />
+  <String id="81012117" string="Claim your reward!" />
+  <String id="81012300" string="Occupying Army" />
+  <String id="81013001" string="Option: Save the Valley" />
+  <String id="81013100" string="[Valley of Titans] Hunt the Gutrend kulkaris and their allies." />
+  <String id="81013118" string="Claim your reward!" />
+  <String id="81013300" string="Gutrend Invaders" />
+  <String id="81014001" string="Option: Save the Hills" />
+  <String id="81014100" string="[Celestial Hills] Defeat the Red Fang orcans and their allies." />
+  <String id="81014109" string="Claim your reward!" />
+  <String id="81014300" string="Red Fang Invaders" />
+  <String id="81015001" string="Option: Save the Cliffs" />
+  <String id="81015100" string="[Cliffs of Insanity] Eliminate crazed beasts and mutants." />
+  <String id="81015113" string="Claim your reward!" />
+  <String id="81015300" string="Insane Monsters" />
+  <String id="81016001" string="Option: Defeat Vampirs" />
+  <String id="81016100" string="[Vale of the Fang] Defeat the vampirs and their allies." />
+  <String id="81016119" string="Claim your reward!" />
+  <String id="81016121" string="Claim your reward!" />
+  <String id="81016122" string="Claim your reward!" />
+  <String id="81016300" string="Vampirs" />
+  <String id="81017001" string="Option: Clean Out the Mines" />
+  <String id="81017100" string="[Tenebrous Mines] Defeat mercenaries and skeletons." />
+  <String id="81017119" string="Claim your reward!" />
+  <String id="81017120" string="Claim your reward!" />
+  <String id="81017300" string="Shadow Soldiers" />
+  <String id="81018001" string="Option: Protect the Outpost" />
+  <String id="81018100" string="[Mistmoor Island] Defeat the Kazuur syndicate and their allies." />
+  <String id="81018111" string="Claim your reward!" />
+  <String id="81018300" string="Mistmoor Invaders" />
+  <String id="81019001" string="Option: Clean out the Labyrinth" />
+  <String id="81019100" string="[Azarel's Labyrinth] Defeat gulas and alzarin imps." />
+  <String id="81019125" string="Claim your reward!" />
+  <String id="81019127" string="Claim your reward!" />
+  <String id="81019300" string="Maze Runners" />
+  <String id="82001001" string="How About A Good Ol' Snowfight?" />
+  <String id="82001100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82001101" string="Claim your reward!" />
+  <String id="82002001" string="How About A Good Ol' Snowfight?" />
+  <String id="82002100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82002101" string="Claim your reward!" />
+  <String id="82003001" string="How About A Good Ol'Snowfight?" />
+  <String id="82003100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82003101" string="Claim your reward!" />
+  <String id="82004001" string="How About A Good Ol' Snowfight?" />
+  <String id="82004100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82004101" string="Claim your reward!" />
+  <String id="82005001" string="How About A Good Ol' Snowfight?" />
+  <String id="82005100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82005101" string="Claim your reward!" />
+  <String id="82006001" string="How About A Good Ol' Snowfight?" />
+  <String id="82006100" string="[[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82006101" string="Claim your reward!" />
+  <String id="82007001" string="How About A Good Ol' Snowfight?" />
+  <String id="82007100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82007101" string="Claim your reward!" />
+  <String id="82008001" string="How About A Good Ol' Snowfight?" />
+  <String id="82008100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82008101" string="Claim your reward!" />
+  <String id="82009001" string="How About A Good Ol' Snowfight?" />
+  <String id="82009100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="82009101" string="Claim your reward!" />
+  <String id="98301001" string="Win a match in Celestial Arena!" />
+  <String id="98301100" string="[Celestial Arena] Win a match in the arena!" />
+  <String id="98301101" string="Claim your rewards!" />
+  <String id="98301300" string="Won a match!" />
+  <String id="98301400" string="Won a match!" />
+  <String id="98302001" string="Option: Win a match in Celestial Arena!" />
+  <String id="98302100" string="[Celestial Arena] Win a match in the arena!" />
+  <String id="98302101" string="Claim your rewards!" />
+  <String id="98302300" string="Won a match!" />
+  <String id="98302400" string="Won a match!" />
+  <String id="98311001" string="Emergency Order: Relive history and restore the Echo Arcana!" />
+  <String id="98311100" string="[Echoes of Aranea] Journey back in time to Castle Aranea and restore the Echo Arcana!" />
+  <String id="98311101" string="Claim your reward!" />
+  <String id="98311400" string="Restored Echo Arcana" />
+  <String id="98312001" string="Optional order: Relive history and restore the Echo Arcana!" />
+  <String id="98312100" string="[Echoes of Aranea] EJourney back in time to Castle Aranea and restore the Echo Arcana!" />
+  <String id="98312101" string="Claim your reward!" />
+  <String id="98312400" string="Restored Echo Arcana" />
+  <String id="99961001" string="Option: Hunt Brutal Basilisks" />
+  <String id="99961100" string="[Island of Dawn] Hunt Brutal Basilisks and collect Basilisk Eyes." />
+  <String id="99961101" string="Claim your reward!" />
+  <String id="99961400" string="Basilisk Eye" />
+  <String id="99962001" string="Option: Hunt Brutal Orisks!" />
+  <String id="99962100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="99962101" string="Claim your reward!" />
+  <String id="99962400" string="Orisk Tusk" />
+  <String id="99963001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="99963100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="99963101" string="Claim your reward!" />
+  <String id="99963400" string="Poison Sac" />
+  <String id="99964001" string="Option: Hunt Brutal Bloodbound Teraliths" />
+  <String id="99964100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards" />
+  <String id="99964101" string="Claim your reward!" />
+  <String id="99964400" string="Bloodbound Shard" />
+  <String id="99965001" string="Option: Hunt Brutal Fimbrilisks" />
+  <String id="99965100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="99965101" string="Claim your reward!" />
+  <String id="99965400" string="Fimbrilisk Claw" />
+  <String id="99966001" string="Option: Hunt Brutal Searing Fangspawns" />
+  <String id="99966100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="99966101" string="Claim your reward!" />
+  <String id="99966400" string="Fangspawn Horn" />
+  <String id="99967001" string="Option: Hunt Brutal Naga Battlemasters" />
+  <String id="99967100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales." />
+  <String id="99967101" string="Claim your reward!" />
+  <String id="99967400" string="Battlemaster Scale" />
+  <String id="99968001" string="Option: Hunt Brutal Iron Giants" />
+  <String id="99968100" string="[Island of Dawn] Hunt Brutal Iron Giants and collect Iron Rings." />
+  <String id="99968101" string="Claim your reward!" />
+  <String id="99968400" string="Iron Ring" />
+  <String id="99969001" string="Option: Hunt Brutal Onyx Hydraths" />
+  <String id="99969100" string="[Island of Dawn] Hunt Brutal Onyx Hydraths and collect Onyx Thorns." />
+  <String id="99969101" string="Claim your reward!" />
+  <String id="99969400" string="Onyx Thorn" />
+  <String id="99971001" string="Hunt Brutal Basilisks" />
+  <String id="99971100" string="[Island of Dawn] Hunt Brutal Basilisks and collect Basilisk Eyes." />
+  <String id="99971101" string="Claim your reward!" />
+  <String id="99971400" string="Basilisk Eye" />
+  <String id="99972001" string="Hunt Brutal Orisks" />
+  <String id="99972100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="99972101" string="Claim your reward!" />
+  <String id="99972400" string="Orisk Tusk" />
+  <String id="99973001" string="Hunt Brutal Ovoliths" />
+  <String id="99973100" string="[Island of Dawn] Hunt Brutal Ovolith and collect Poison Sacs." />
+  <String id="99973101" string="Claim your reward!" />
+  <String id="99973400" string="Poison Sac" />
+  <String id="99974001" string="Hunt Brutal Bloodbound Teraliths" />
+  <String id="99974100" string="[Island of Dawn] Hunt Brutal Bloodbound Teralith and collect Bloodbound Shards." />
+  <String id="99974101" string="Claim your reward!" />
+  <String id="99974400" string="Bloodbound Shards" />
+  <String id="99975001" string="Hunt Brutal Fimbrilisks" />
+  <String id="99975100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="99975101" string="Claim your reward!" />
+  <String id="99975400" string="Fimbrilisk Claw" />
+  <String id="99976001" string="Hunt Brutal Searing Fangspawns" />
+  <String id="99976100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns" />
+  <String id="99976101" string="Claim your reward!" />
+  <String id="99976400" string="Fangspawn Horn" />
+  <String id="99977001" string="Hunt Brutal Naga Battlemaster!" />
+  <String id="99977100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales" />
+  <String id="99977101" string="Claim your reward!" />
+  <String id="99977400" string="Battlemaster Scale" />
+  <String id="99978001" string="Hunt Brutal Iron Giants" />
+  <String id="99978100" string="[Island of Dawn] Hunt Brutal Iron Giants and collect Iron Rings" />
+  <String id="99978101" string="Claim your reward!" />
+  <String id="99978400" string="Iron Ring" />
+  <String id="99979001" string="Hunt Brutal Onyx Hydraths" />
+  <String id="99979100" string="[Island of Dawn] Hunt Brutal Onyx Hydrath and collect Onyx Thorns" />
+  <String id="99979101" string="Claim your reward!" />
+  <String id="99979400" string="Onyx Thorn" />
+  <String id="99981001" string="Option: Charge Through the Cannonballs!" />
+  <String id="99981100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold again." />
+  <String id="99981101" string="Claim your reward!" />
+  <String id="99982001" string="Option: Take the Candy and Run!" />
+  <String id="99982100" string="[Kumasylum] Win a match in Kumasylum again." />
+  <String id="99982101" string="Claim your reward!" />
+  <String id="99985001" string="Option: Clear Manaya's Core" />
+  <String id="99985100" string="[Shandra Manaya] Defeat Shandra Manaya" />
+  <String id="99985101" string="Claim your reward!" />
+  <String id="99986001" string="Option: Sabex Armory Ambush!" />
+  <String id="99986100" string="[Sabex Armory] Gather your allies to kill Yateveo again." />
+  <String id="99986101" string="Claim your reward!" />
+  <String id="99987001" string="Option: Demokraxus Must Die!" />
+  <String id="99987100" string="[Macellarius Catacombs] Put an end to the demokron nightmare and kill Demokraxus again." />
+  <String id="99987101" string="Claim your reward!" />
+  <String id="99989001" string="Option: Apply for Dungeon Raiders!" />
+  <String id="99989100" string="Apply for Dungeon Raiders and finish your mission with your allies!" />
+  <String id="99989101" string="Claim your reward!" />
+  <String id="99991001" string="Charge Through the Cannonballs!" />
+  <String id="99991100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="99991101" string="Claim your reward!" />
+  <String id="99992001" string="Take the Candy and Run!" />
+  <String id="99992100" string="[Kumasylum] Win a match in Kumasylum" />
+  <String id="99992101" string="Claim your reward!" />
+  <String id="99995001" string="Clear Manaya's Core" />
+  <String id="99995100" string="[Shandra Manaya] Defeat Shandra Manaya" />
+  <String id="99995101" string="Claim your reward!" />
+  <String id="99996001" string="Sabex Armory Ambush!" />
+  <String id="99996100" string="[Sabex Armory] Gather your allies to kill Yateveo." />
+  <String id="99996101" string="Claim your reward!" />
+  <String id="99997001" string="Demokraxus Must Die!" />
+  <String id="99997100" string="[Macellarius Catacombs] Put an end to the demokron nightmare and kill Demokraxus." />
+  <String id="99997101" string="Claim your reward!" />
+  <String id="99999001" string="Apply for Dungeon Raiders!" />
+  <String id="99999100" string="Apply for Dungeon Raiders and finish your mission with your allies!" />
+  <String id="99999101" string="Claim your reward!" />
+  <String id="700010001" string="Conquer the Shadow Sanguinary" />
+  <String id="700010100" string="[Shadow Sanguinary] Defeat Imperator with your allies!" />
+  <String id="700010101" string="Claim your reward!" />
+  <String id="700011001" string="Conquer the Shadow Sanguinary (Hard)" />
+  <String id="700011100" string="[Shadow Sanguinary (Hard)] Defeat Nightmare Imperator with your allies!" />
+  <String id="700011101" string="Claim your reward!" />
+  <String id="700012001" string="Wander Wonderholme" />
+  <String id="700012100" string="[Wonderholme] Defeat Bandersnatch with your allies!" />
+  <String id="700012101" string="Claim your reward!" />
+  <String id="700013001" string="Assault Akasha!" />
+  <String id="700013100" string="[Akasha's Trial] Defeat Ace Akasha in Akasha's Trial." />
+  <String id="700013101" string="Claim your reward!" />
+  <String id="700014001" string="Assault Baracos!" />
+  <String id="700014100" string="[Baracos' Trial] Defeat Ace Baracos in the Baracos' Trial." />
+  <String id="700014101" string="Claim your reward!" />
+  <String id="700015001" string="Teach Manglemore a Lesson" />
+  <String id="700015100" string="[Manglemire] Teach Manglemore a lesson with your allies!" />
+  <String id="700015101" string="Claim your reward!" />
+  <String id="700016001" string="Conquer the Demokron Factory" />
+  <String id="700016100" string="[Demokron Factory] Defeat Verno with your allies!" />
+  <String id="700016101" string="Claim your reward!" />
+  <String id="700017001" string="Assault Kalivan!" />
+  <String id="700017100" string="[Kalivan's Dreadnaught (Hard)] Gather your allies to kill Nightmare Kalivan!" />
+  <String id="700017101" string="Claim your reward!" />
+  <String id="700018001" string="Conquer the Forsaken Island" />
+  <String id="700018100" string="[Forsaken Island] Defeat Desolarus with your allies!" />
+  <String id="700018101" string="Claim your reward!" />
+  <String id="700025001" string="Conquer the Demokron Factory" />
+  <String id="700025100" string="[Demokron Factory] Gather your allies and defeat Verno!" />
+  <String id="700025101" string="Claim your reward!" />
+  <String id="700110001" string="Option: Conquer the Shadow Sanguinary" />
+  <String id="700110100" string="[Shadow Sanguinary] Defeat Imperator with your allies!" />
+  <String id="700110101" string="Claim your reward!" />
+  <String id="700111001" string="Option: Conquer the Shadow Sanguinary (Hard)" />
+  <String id="700111100" string="[Shadow Sanguinary (Hard)] Defeat Nightmare Imperator with your allies!" />
+  <String id="700111101" string="Claim your reward!" />
+  <String id="700112001" string="Option: Wander Wonderholme" />
+  <String id="700112100" string="[Wonderholme] Defeat Bandersnatch with your allies!" />
+  <String id="700112101" string="Claim your reward!" />
+  <String id="700113001" string="Option: Assault Akasha!" />
+  <String id="700113100" string="[Akasha's Trial] Defeat Ace Akasha in Akasha's Trial." />
+  <String id="700113101" string="Claim your reward!" />
+  <String id="700114001" string="Option: Assault Baracos!" />
+  <String id="700114100" string="[Baracos' Trial] Defeat Ace Baracos in Baracos' Trial." />
+  <String id="700114101" string="Claim your reward!" />
+  <String id="700115001" string="Option: Teach Manglemore a lesson" />
+  <String id="700115100" string="[Manglemire] Teach Manglemore a lesson with your allies!" />
+  <String id="700115101" string="Claim your reward!" />
+  <String id="800010001" string="Assault the Ebon Tower!" />
+  <String id="800010100" string="[Ebon Tower] Eliminate Thulsa." />
+  <String id="800010101" string="Claim your reward!" />
+  <String id="800011001" string="Assault Kelsaik's Nest!" />
+  <String id="800011100" string="[Kelsaik's Nest] Eliminate Kelsaik. You may need the aid of your allies." />
+  <String id="800011101" string="Claim your reward!" />
+  <String id="800012001" string="Defeat Valona" />
+  <String id="800012100" string="[Timescape] Defeat Valona." />
+  <String id="800012101" string="Claim your reward!" />
+  <String id="800013001" string="Defeat Nightmare Duras" />
+  <String id="800013100" string="[Akeron's Inferno (Hard)] Defeat Nightmare Duras." />
+  <String id="800013101" string="Claim your reward!" />
+  <String id="800014001" string="" />
+  <String id="800014100" string="" />
+  <String id="800014101" string="" />
+  <String id="800015001" string="" />
+  <String id="800015100" string="" />
+  <String id="800015101" string="" />
+  <String id="800016001" string="" />
+  <String id="800016100" string="" />
+  <String id="800016101" string="" />
+  <String id="800017001" string="" />
+  <String id="800017100" string="" />
+  <String id="800017101" string="" />
+  <String id="800018001" string="" />
+  <String id="800018100" string="" />
+  <String id="800018101" string="" />
+  <String id="800021001" string="Charge Through the Cannonballs!" />
+  <String id="800021100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="800021101" string="Claim your reward!" />
+  <String id="800022001" string="Charge Through the Cannonballs!" />
+  <String id="800022100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="800022101" string="Claim your reward!" />
+  <String id="800023001" string="Charge Through the Cannonballs!" />
+  <String id="800023100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="800023101" string="Claim your reward!" />
+  <String id="800024001" string="Charge Through the Cannonballs!" />
+  <String id="800024100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="800024101" string="Claim your reward!" />
+  <String id="800025001" string="Charge Through the Cannonballs!" />
+  <String id="800025100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="800025101" string="Claim your reward!" />
+  <String id="800026001" string="Charge Through the Cannonballs!" />
+  <String id="800026100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="800026101" string="Claim your reward!" />
+  <String id="800027001" string="Clean up Bestial Vale" />
+  <String id="800027100" string="[Oblivion Woods] Eliminate Basilisks in the Bestial Vale." />
+  <String id="800027101" string="Claim your reward!" />
+  <String id="800027300" string="Essence of Basilisk" />
+  <String id="800030001" string="Clean up Bestial Vale" />
+  <String id="800030100" string="[Oblivion Woods] Eliminate Basilisks in the Bestial Vale." />
+  <String id="800030101" string="Claim your reward!" />
+  <String id="800030300" string="Essence of Basilisk" />
+  <String id="800031001" string="Protect Godric's Farm!" />
+  <String id="800031100" string="[Celestial Hills] Eliminate enemies in the Omphalos Plains and Cardovek Remnants." />
+  <String id="800031102" string="Claim your reward!" />
+  <String id="800031103" string="Claim your reward!" />
+  <String id="800031104" string="Claim your reward!" />
+  <String id="800031300" string="Essence of Godric's Farm monsters" />
+  <String id="800032001" string="Eliminate Juggernaut Mercenaries" />
+  <String id="800032100" string="[Celestial Hills] Eliminate juggernaut mercenaries in the Celestial Hills." />
+  <String id="800032101" string="Claim your reward!" />
+  <String id="800032104" string="Claim your reward!" />
+  <String id="800032300" string="Essence of juggernaut mercenaries" />
+  <String id="800033001" string="Eliminate Juggernaut Mercenaries" />
+  <String id="800033100" string="[Celestial Hills] Eliminate juggernaut mercenaries in the Celestial Hills." />
+  <String id="800033101" string="Claim your reward!" />
+  <String id="800033300" string="Essence of Juggernaut Mercenaries" />
+  <String id="800034001" string="Eliminate Fimbrilisks!" />
+  <String id="800034100" string="[Cliffs of Insanity] Eliminate fimbrilisks in the Knoll of Screams." />
+  <String id="800034101" string="Claim your reward!" />
+  <String id="800034300" string="Essence of Fimbrilisk" />
+  <String id="800035001" string="Eliminate Ovoliths!" />
+  <String id="800035100" string="[Vale of the Fang] Eliminate ovoliths in Sinestral Manor." />
+  <String id="800035103" string="Claim your reward!" />
+  <String id="800035300" string="Essence of Ovolith" />
+  <String id="800036001" string="Eliminate Dusky Basilisks!" />
+  <String id="800036100" string="[Basilisk Crag] Eliminate dusky basilisks in the Vale of Graves." />
+  <String id="800036102" string="Claim your reward!" />
+  <String id="800036300" string="Essence of Dusky Basilisk" />
+  <String id="800037001" string="Eliminate Labyrith Denizens!" />
+  <String id="800037100" string="[Azarel's Labyrinth] Eliminate Azarel's juggernauts and labrynthine stalkers on the second floor." />
+  <String id="800037102" string="Claim your reward!" />
+  <String id="800037300" string="Denizens" />
+  <String id="800038001" string="Eliminate Lurking Teraliths!" />
+  <String id="800038100" string="[Lake of Tears] Clean up the Blessed Woods." />
+  <String id="800038101" string="Claim your reward!" />
+  <String id="800038300" string="Essence of Lurking Teralith" />
+  <String id="800039001" string="Eliminate Giant Gladiators!" />
+  <String id="800039100" string="[Colossal Ruins] Clean up the Arena of the Exalted." />
+  <String id="800039101" string="Claim your reward!" />
+  <String id="800039300" string="Essence of Giant Gladiator" />
+  <String id="800040001" string="Eliminate Desert Lightning Kumases!" />
+  <String id="800040100" string="[Sandwalker Refuge] Clean up the Sandwalker Refuge." />
+  <String id="800040101" string="Claim your reward!" />
+  <String id="800040300" string="Essence of Desert Lightning Kumas" />
+  <String id="800041001" string="Eliminate Patient Lithikumases!" />
+  <String id="800041100" string="[Blessing Basin] Clean up Celestus Rest." />
+  <String id="800041102" string="Claim your reward!" />
+  <String id="800041300" string="Essence of Guardian" />
+  <String id="800042001" string="Eliminate Onyx Hydraths!" />
+  <String id="800042100" string="[Tempest Reach] Clean up Icefang Inlet." />
+  <String id="800042101" string="Claim your reward!" />
+  <String id="800042300" string="Hydraths" />
+  <String id="800043001" string="Eliminate Ravenous Basilisks!" />
+  <String id="800043100" string="[Feral Valley] Clean up the northern reach of Feral Valley." />
+  <String id="800043101" string="Claim your reward!" />
+  <String id="800043300" string="Essence of Ravenous Basilisk" />
+  <String id="800044001" string="Eliminate Naga Battlemasters!" />
+  <String id="800044100" string="[Serpentis Isle] Clean up Kerozen Isle." />
+  <String id="800044101" string="Claim your reward!" />
+  <String id="800044300" string="Essence of Naga Battlemaster" />
+  <String id="800045001" string="Eliminate the Naga Leviathans!" />
+  <String id="800045100" string="[Serpentis Isle] Clean up Dagon's Tomb." />
+  <String id="800045101" string="Claim your reward!" />
+  <String id="800045300" string="Essence of Naga Leviathan" />
+  <String id="800046001" string="Clean up the Hatchery!" />
+  <String id="800046100" string="[Amena Quatla] Defeat ebon fimbrilisks and akalath warlords in the Hatchery." />
+  <String id="800046102" string="Claim your reward!" />
+  <String id="800046300" string="Invaders" />
+  <String id="800047001" string="Eliminate the Sandlurker Lizards!" />
+  <String id="800047100" string="[Tor Exsul] Clean up the Raintree Oasis." />
+  <String id="800047101" string="Claim your reward!" />
+  <String id="800047300" string="Essence of Sandlurker Lizard" />
+  <String id="800048001" string="Urgent :  Summertime Beetle Attack (Beginner)" />
+  <String id="800048100" string="Kill 10 Beetles" />
+  <String id="800048101" string="Claim your reward!" />
+  <String id="800049001" string="Urgent :  Summertime Beetle Attack (Expert)" />
+  <String id="800049100" string="Kill 10 Beetles" />
+  <String id="800049101" string="Claim your reward!" />
+  <String id="800050001" string="The Day Is Mine!" />
+  <String id="800050100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800050101" string="Claim your reward!" />
+  <String id="800050104" string="Claim your reward!" />
+  <String id="800050105" string="Claim your reward!" />
+  <String id="800050300" string="Phantom of the Blood Run" />
+  <String id="800051001" string="The Day Is Mine!" />
+  <String id="800051100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800051101" string="Claim your reward!" />
+  <String id="800051104" string="Claim your reward!" />
+  <String id="800051105" string="Claim your reward!" />
+  <String id="800051300" string="Phantom of the Blood Run" />
+  <String id="800052001" string="The Day Is Mine!" />
+  <String id="800052100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800052101" string="Claim your reward!" />
+  <String id="800052300" string="Ghilliedhu's Spirit" />
+  <String id="800053001" string="The Day Is Mine!" />
+  <String id="800053100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800053101" string="Claim your reward!" />
+  <String id="800053102" string="Claim your reward!" />
+  <String id="800053300" string="Essence of Mistmoor Island" />
+  <String id="800054001" string="The Day Is Mine!" />
+  <String id="800054100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800054101" string="Claim your reward!" />
+  <String id="800054103" string="Claim your reward!" />
+  <String id="800054300" string="Essence of the Desert Fire" />
+  <String id="800055001" string="The Day Is Mine!" />
+  <String id="800055100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800055101" string="Claim your reward!" />
+  <String id="800055300" string="Essence of Mycanar" />
+  <String id="800056001" string="The Day Is Mine!" />
+  <String id="800056100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800056101" string="Claim your reward!" />
+  <String id="800056300" string="Essence of Mycanar" />
+  <String id="800057001" string="The Day Is Mine!" />
+  <String id="800057100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800057101" string="Claim your reward!" />
+  <String id="800057102" string="Claim your reward!" />
+  <String id="800057300" string="Spirit of the Infected" />
+  <String id="800058001" string="The Day Is Mine!" />
+  <String id="800058100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="800058101" string="Claim your reward!" />
+  <String id="800058300" string="Mutant Worker's Spirit" />
+  <String id="800059001" string="Avenge the Fallen" />
+  <String id="800059100" string="[Susurrus Woods] Eliminate devas in Dakonan Junction." />
+  <String id="800059104" string="Claim your reward!" />
+  <String id="800059300" string="Devan Essence" />
+  <String id="800060001" string="Sacrifice Plays" />
+  <String id="800060100" string="[Susurrus Woods] Eliminate runekeepers in the Nightwood." />
+  <String id="800060103" string="Claim your reward!" />
+  <String id="800060104" string="Claim your reward!" />
+  <String id="800060300" string="Essence of Sacrifice" />
+  <String id="800061001" string="Grizzly Hunt" />
+  <String id="800061100" string="[Tirkai Forest] Eliminate Tirkai Grizzlies in the Whitefrost Forest." />
+  <String id="800061101" string="Claim your reward!" />
+  <String id="800061300" string="Essence of Tirkai Grizzly" />
+  <String id="800062001" string="Eliminate the Argonomorphs!" />
+  <String id="800062100" string="[Thrallhold] Eliminate argonomorphs in the Vale of the Reaper." />
+  <String id="800062101" string="Claim your reward!" />
+  <String id="800062300" string="Argonomorph Essence" />
+  <String id="800063001" string="Clear the Twisted Plains" />
+  <String id="800063100" string="[Vale of the Fang] Eliminate creatures on the Twisted Plains." />
+  <String id="800063103" string="Claim your reward!" />
+  <String id="800063104" string="Claim your reward!" />
+  <String id="800063300" string="Essence of the Twisted Plains" />
+  <String id="800064001" string="Weaken the Lokian Force" />
+  <String id="800064100" string="[Celestial Hills] Eliminate Lok's Worshippers in the Cardovek Remnants." />
+  <String id="800064103" string="Claim your reward!" />
+  <String id="800064300" string="Lokian's Spirit" />
+  <String id="800065001" string="Eliminate the Brainwashed!" />
+  <String id="800065100" string="[Aurum Road] Eliminate brainwashed soldiers in the Shattered City." />
+  <String id="800065102" string="Claim your reward!" />
+  <String id="800065300" string="Brainwashed Soldier Essence" />
+  <String id="800066001" string="Disband the Mercenary Company" />
+  <String id="800066100" string="[Mount Tyrannas] Clear out the Bloodblade mercenary Camp." />
+  <String id="800066103" string="Claim your reward!" />
+  <String id="800066300" string="Mercenary's Spirit" />
+  <String id="800067001" string="Eliminate the Kamaras!" />
+  <String id="800067100" string="[Serpentis Isle] Eliminate Kamaras on Kerozen Isle." />
+  <String id="800067102" string="Claim your reward!" />
+  <String id="800067300" string="Essence of Kamara" />
+  <String id="800068001" string="Eliminate Prion Njalvar!" />
+  <String id="800068100" string="[Sienna Canyon] Eliminate Prion Njalvar." />
+  <String id="800068102" string="Claim your reward!" />
+  <String id="800068300" string="Essence of Prion Njalvar" />
+  <String id="800069001" string="Clear Mags Tohopka" />
+  <String id="800069100" string="[Basilisk Crag] Eliminate beasts in Mags Tohopka." />
+  <String id="800069102" string="Claim your reward!" />
+  <String id="800069300" string="Essence of Mags Tohopka Beast" />
+  <String id="800070001" string="Noruk Hunt" />
+  <String id="800070100" string="[Lake of Tears] Hunt mooncrest noruks and gather their antlers." />
+  <String id="800070101" string="Claim your reward!" />
+  <String id="800070300" string="A Piece of White Horn" />
+  <String id="800071001" string="A Rest for the Wendigos" />
+  <String id="800071100" string="[Vale of Spires] Eliminate enthralled wendigos." />
+  <String id="800071102" string="Claim your reward!" />
+  <String id="800071300" string="Essence of Wendigo" />
+  <String id="800099001" string="Save the Forest" />
+  <String id="800099100" string="[Fey Forest] Defeat beasts, faeries and sorcerers." />
+  <String id="800099116" string="Claim your reward!" />
+  <String id="800099300" string="Fey Forest Invaders" />
+  <String id="800110001" string="End the Rebellion" />
+  <String id="800110100" string="[Lake of Tears] Defeat the conspirators and their allies." />
+  <String id="800110116" string="Claim your reward!" />
+  <String id="800110126" string="Claim your reward!" />
+  <String id="800110300" string="Rebel Army" />
+  <String id="800111001" string="Quench the Desert Fire" />
+  <String id="800111100" string="[Colossal Ruins] Defeat the Desert Fire kulkari and their allies." />
+  <String id="800111125" string="Claim your reward!" />
+  <String id="800111126" string="Claim your reward!" />
+  <String id="800111300" string="Desert Fire Invaders" />
+  <String id="800112001" string="Clean up the Aurum Road" />
+  <String id="800112100" string="[Aurum Road] Defeat the Sand Wind kulkari and their allies." />
+  <String id="800112120" string="Claim your reward!" />
+  <String id="800112300" string="Sand Wind Invaders" />
+  <String id="800113001" string="Cleanse the Dark Cathedral" />
+  <String id="800113100" string="[Dark Cathedral] Defeat the devan cultists and their allies." />
+  <String id="800113127" string="Claim your reward!" />
+  <String id="800113128" string="Claim your reward!" />
+  <String id="800113137" string="Claim your reward!" />
+  <String id="800113300" string="Cultists" />
+  <String id="800114001" string="Bring down the Brogars" />
+  <String id="800114100" string="[Essenian Crest] Defeat the Brogar Legion and their allies." />
+  <String id="800114123" string="Claim your reward!" />
+  <String id="800114300" string="Brogar Legion" />
+  <String id="800115001" string="Purify the Blightwood" />
+  <String id="800115100" string="[Blightwood] Eliminate corrupted beasts." />
+  <String id="800115111" string="Claim your reward!" />
+  <String id="800115113" string="Claim your reward!" />
+  <String id="800115300" string="Corrupted Beasts" />
+  <String id="800116001" string="Whittle the Woods" />
+  <String id="800116100" string="[Timeless Woods] Defeat the Lokians and their allies." />
+  <String id="800116119" string="Claim your reward!" />
+  <String id="800116121" string="Claim your reward!" />
+  <String id="800116300" string="Timeless Woods Invaders" />
+  <String id="800117001" string="Plunder the Pirates" />
+  <String id="800117100" string="[Tempest Reach] Defeat the Drowned gulas and their allies." />
+  <String id="800117117" string="Claim your reward!" />
+  <String id="800117300" string="Maelstrom Invaders" />
+  <String id="800118001" string="Defend the Mountain" />
+  <String id="800118100" string="[Mount Tyrannas] Defeat the Stalker Company and their allies." />
+  <String id="800118117" string="Claim your reward!" />
+  <String id="800118300" string="Tyrant's Army" />
+  <String id="800119001" string="Clean out the Citadel" />
+  <String id="800119100" string="[Citadel of Torment] Defeat the Blood Guards and their allies." />
+  <String id="800119124" string="Claim your reward!" />
+  <String id="800119128" string="Claim your reward!" />
+  <String id="800119300" string="Blood Guard Invaders" />
+  <String id="800120001" string="Zero out the Zone" />
+  <String id="800120100" string="[Quarantine Zone] Defeat the mutants and their monstrous allies." />
+  <String id="800120124" string="Claim your reward!" />
+  <String id="800120125" string="Claim your reward!" />
+  <String id="800120300" string="Quarantined Monsters" />
+  <String id="800121001" string="Crush the Caves" />
+  <String id="800121100" string="[Arachnaea] Defeat Atel Akaad and their allies." />
+  <String id="800121112" string="Claim your reward!" />
+  <String id="800121300" string="Arachnen Invaders" />
+  <String id="800122001" string="Free the Feral Valley" />
+  <String id="800122100" string="[Feral Valley] Defeat the Black Claw orcans and their allies." />
+  <String id="800122121" string="Claim your reward!" />
+  <String id="800122122" string="Claim your reward!" />
+  <String id="800122300" string="Feral Valley Invaders" />
+  <String id="800123001" string="Thieves in the Temple" />
+  <String id="800123100" string="[Temple of Dagon] Defeat the forces occupying the temple." />
+  <String id="800123116" string="Claim your reward!" />
+  <String id="800123300" string="Dagon Servants" />
+  <String id="800124001" string="Heroes versus the Volcano" />
+  <String id="800124100" string="[Fyrmount] Defeat shurians and mutated creatures." />
+  <String id="800124114" string="Claim your reward!" />
+  <String id="800124300" string="Fyrmount Invaders" />
+  <String id="800125001" string="Reclaim the Caverns" />
+  <String id="800125100" string="[Hungry Caverns] Defeat the Kaazur Syndicate and their allies." />
+  <String id="800125117" string="Claim your reward!" />
+  <String id="800125300" string="Syndicate Operatives" />
+  <String id="800126001" string="Protect the Darkquaver Woods" />
+  <String id="800126100" string="[Darkquaver Woods] Defeat the Ksharan Shadow Army and their allies." />
+  <String id="800126112" string="Claim your reward!" />
+  <String id="800126300" string="Shadow Army" />
+  <String id="800127001" string="Protect the Susurrus Woods" />
+  <String id="800127100" string="[Susurrus Woods] Defeat the Bleakrock Legion and their allies." />
+  <String id="800127121" string="Claim your reward!" />
+  <String id="800127300" string="Susurrus Invaders" />
+  <String id="800128001" string="Protect the Tor" />
+  <String id="800128100" string="[Tor Exsul] Defeat the Tenebrara Legion and their allies." />
+  <String id="800128112" string="Claim your reward!" />
+  <String id="800128300" string="Tenebrara Invaders" />
+  <String id="800129001" string="Clean out the Crypt" />
+  <String id="800129100" string="[Doomcrypt] Defeat the prion forces and their allies." />
+  <String id="800129115" string="Claim your reward!" />
+  <String id="800129300" string="Crypt Invaders" />
+  <String id="800130001" string="Pacify The Plain" />
+  <String id="800130100" string="[Plain of the Damned] Defeat the Cursed Legion and their allies." />
+  <String id="800130126" string="Claim your reward!" />
+  <String id="800130128" string="Claim your reward!" />
+  <String id="800130300" string="Ksharan Army" />
+  <String id="800131001" string="Clean up the Vale" />
+  <String id="800131100" string="[Vale of Spires] Defeat the wendigos and their allies." />
+  <String id="800131111" string="Claim your reward!" />
+  <String id="800131112" string="Claim your reward!" />
+  <String id="800131126" string="Claim your reward!" />
+  <String id="800131300" string="Lorcadan Invaders" />
+  <String id="800132001" string="Purify Tirkai Forest" />
+  <String id="800132100" string="[Tirkai Forest] Defeat argonomorphs and beasts." />
+  <String id="800132112" string="Claim your reward!" />
+  <String id="800132126" string="Claim your reward!" />
+  <String id="800132300" string="Cyasmic Invaders" />
+  <String id="800133001" string="Hold the Lines" />
+  <String id="800133100" string="[Thrallhold] Defeat argonomorph invaders." />
+  <String id="800133118" string="Claim your reward!" />
+  <String id="800133126" string="Claim your reward!" />
+  <String id="800133300" string="Argonomorph Invaders" />
+  <String id="800134001" string="Clean out the Towers" />
+  <String id="800134100" string="[Three Towers] Destroy experimental argonomorphs." />
+  <String id="800134110" string="Claim your reward!" />
+  <String id="800134126" string="Claim your reward!" />
+  <String id="800134300" string="Failed Experiment" />
+  <String id="800135001" string="Defend the Front Lines" />
+  <String id="800135100" string="[Khanovar Front] Defeat argon invaders and their allies." />
+  <String id="800135108" string="Claim your reward!" />
+  <String id="800135300" string="Argon Invaders" />
+  <String id="800136001" string="Preserve the Peace" />
+  <String id="800136100" string="[Argonea] Defeat the argon invaders." />
+  <String id="800136115" string="Claim your reward!" />
+  <String id="800136300" string="Argon Invaders" />
+  <String id="800137001" string="Slaughter Stonebeaks" />
+  <String id="800137100" string="[Oblivion Woods] Kill Stonebeaks in Oblivion Woods." />
+  <String id="800137102" string="Claim your reward!" />
+  <String id="800137300" string="Stonebeaks" />
+  <String id="800138001" string="Beat the Devan Brigands" />
+  <String id="800138100" string="[Oblivion Woods] Defeat Devan Brigands in Oblivion Woods." />
+  <String id="800138103" string="Claim your reward!" />
+  <String id="800138300" string="Devan Brigand" />
+  <String id="800139001" string="Get the Stolen Money Bags Back" />
+  <String id="800139100" string="[Oblivion Woods] Get the Stolen Money Bags back from Devan Brigands in Oblivion Woods." />
+  <String id="800139103" string="Claim your reward!" />
+  <String id="800139400" string="Stolen Money Bag" />
+  <String id="800140001" string="Pacify the Agitated Sporewalkers" />
+  <String id="800140100" string="[Oblivion Woods] Defeat Agitated Sporewalkers in Oblivion Woods." />
+  <String id="800140101" string="Claim your reward!" />
+  <String id="800140400" string="Undead Marrow" />
+  <String id="800140401" string="Merchant's Merchandise" />
+  <String id="800141001" string="Defeat Fallen Defenders" />
+  <String id="800141100" string="[Oblivion Woods] Defeat Fallen Defenders and gather their bones." />
+  <String id="800141101" string="Claim your reward!" />
+  <String id="800141102" string="Claim your reward!" />
+  <String id="800141400" string="Undead Marrow" />
+  <String id="800142001" string="Eliminate the Devan Elites" />
+  <String id="800142100" string="[Oblivion Woods] Defeat Devan Elite Brigands in Oblivion Woods." />
+  <String id="800142102" string="Claim your reward!" />
+  <String id="800142104" string="Claim your reward!" />
+  <String id="800142300" string="Devan Elite Brigand" />
+  <String id="800142400" string="Undead Marrow" />
+  <String id="800143001" string="A Lesson to Lok Believers" />
+  <String id="800143100" string="[Oblivion Woods] Defeat Lok Believers to disrupt their alliance with the devas." />
+  <String id="800143102" string="Claim your reward!" />
+  <String id="800143300" string="Lok Believers" />
+  <String id="800144001" string="Kill Mossy Ghilliedhus" />
+  <String id="800144100" string="[Oblivion Woods] Kill Mossy Ghilliedhus in Oblivion Woods." />
+  <String id="800144101" string="Claim your reward!" />
+  <String id="810010001" string="Assault the Ebon Tower!" />
+  <String id="810010100" string="[Ebon Tower] Eliminate Thulsa." />
+  <String id="810010101" string="Claim your reward!" />
+  <String id="810011001" string="Assault Kelsaik's Nest!" />
+  <String id="810011100" string="[Kelsaik's Nest] Eliminate Kelsaik. You may need the aid of your allies." />
+  <String id="810011101" string="Claim your reward!" />
+  <String id="810012001" string="Option: Defeat Valona" />
+  <String id="810012100" string="[Timescape] Defeat Valona." />
+  <String id="810012101" string="Claim your reward!" />
+  <String id="810013001" string="Option: Defeat Nightmare Duras" />
+  <String id="810013100" string="[Akeron's Inferno - Hard] Defeat Nightmare Duras" />
+  <String id="810013101" string="Claim your reward!" />
+  <String id="810021001" string="Option: Charge Through the Cannonballs!" />
+  <String id="810021100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="810021101" string="Claim your reward!" />
+  <String id="810022001" string="Option: Charge Through the Cannonballs!" />
+  <String id="810022100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="810022101" string="Claim your reward!" />
+  <String id="810023001" string="Option: Charge through the Cannonballs!" />
+  <String id="810023100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="810023101" string="Claim your reward!" />
+  <String id="810024001" string="Option: Charge through the Cannonballs!" />
+  <String id="810024100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="810024101" string="Claim your reward!" />
+  <String id="810025001" string="Option: Charge through the Cannonballs!" />
+  <String id="810025100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="810025101" string="Claim your reward!" />
+  <String id="810026001" string="Option: Charge through the Cannonballs!" />
+  <String id="810026100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="810026101" string="Claim your reward!" />
+  <String id="810030001" string="Option: Eliminate Basilisks!" />
+  <String id="810030100" string="[Oblivion Woods] Kill basilisks in the Bestial Vale." />
+  <String id="810030101" string="Claim your reward!" />
+  <String id="810030300" string="Basilisks" />
+  <String id="810031001" string="Option: Protect Godric's Farm!" />
+  <String id="810031100" string="[Celestial Hills] Eliminate enemies in the Omphalos Plains and Cardovek Remnants." />
+  <String id="810031102" string="Claim your reward!" />
+  <String id="810031103" string="Claim your reward!" />
+  <String id="810031104" string="Claim your reward!" />
+  <String id="810031300" string="Essence of Godric's Farm monsters" />
+  <String id="810032001" string="Option: Eliminate Juggernaut Mercenaries" />
+  <String id="810032100" string="[Celestial Hills] Eliminate juggernaut mercenaries in the Celestial Hills." />
+  <String id="810032101" string="Claim your reward!" />
+  <String id="810032104" string="Claim your reward!" />
+  <String id="810032300" string="Essence of juggernaut mercenaries" />
+  <String id="810033001" string="Option: Eliminate the Juggernaut Mercenaries" />
+  <String id="810033100" string="[Celestial Hills] Eliminate juggernaut mercenaries in the Celestial Hills." />
+  <String id="810033101" string="Claim your reward!" />
+  <String id="810033300" string="Essence of Juggernaut Mercenaries" />
+  <String id="810034001" string="Option: Eliminate Fimbrilisks!" />
+  <String id="810034100" string="[Cliffs of Insanity] Eliminate fimbrilisks in the Knoll of Screams." />
+  <String id="810034101" string="Claim your reward!" />
+  <String id="810034300" string="Essence of Fimbrilisk" />
+  <String id="810035001" string="Option: Eliminate Ovoliths!" />
+  <String id="810035100" string="[Vale of the Fang] Eliminate ovoliths in Sinestral Manor." />
+  <String id="810035103" string="Claim your reward!" />
+  <String id="810035300" string="Essence of Ovolith" />
+  <String id="810036001" string="Option: Eliminate Dusky Basilisks!" />
+  <String id="810036100" string="[Basilisk Crag] Eliminate dusky basilisks in the Vale of Graves." />
+  <String id="810036102" string="Claim your reward!" />
+  <String id="810036300" string="Essence of Dusky Basilisk" />
+  <String id="810037001" string="Option: Eliminate Azarel's Juggernauts!" />
+  <String id="810037100" string="[Azarel's Labyrinth] Eliminate Azarel's juggernauts on the second floor of the Labyrinth." />
+  <String id="810037102" string="Claim your reward!" />
+  <String id="810037300" string="Essence of Azarel's Juggernaut" />
+  <String id="810038001" string="Option: Eliminate Lurking Teraliths!" />
+  <String id="810038100" string="[Lake of Tears] Clean up the Blessed Woods." />
+  <String id="810038101" string="Claim your reward!" />
+  <String id="810038300" string="Essence of Lurking Teralith" />
+  <String id="810039001" string="Option: Eliminate Giant Gladiators!" />
+  <String id="810039100" string="[Colossal Ruins] Clean up the Arena of the Exalted." />
+  <String id="810039101" string="Claim your reward!" />
+  <String id="810039300" string="Essence of Giant Gladiator" />
+  <String id="810040001" string="Option: Eliminate Desert Lightning Kumases!" />
+  <String id="810040100" string="[Sandwalker Refuge] Clean up Sandwalker Refuge." />
+  <String id="810040101" string="Claim your reward!" />
+  <String id="810040300" string="Essence of Desert Lightning Kumas" />
+  <String id="810041001" string="Option: Eliminate Patient Lithikumases!" />
+  <String id="810041100" string="[Blessing Basin] Clean up Celestus Rest." />
+  <String id="810041102" string="Claim your reward!" />
+  <String id="810041300" string="Essence of Guardian" />
+  <String id="810042001" string="Option: Eliminate Onyx Hydraths!" />
+  <String id="810042100" string="[Tempest Reach] Clean up Icefang Inlet." />
+  <String id="810042101" string="Claim your reward!" />
+  <String id="810042300" string="Hydraths" />
+  <String id="810043001" string="Option: Eliminate Ravenous Basilisks!" />
+  <String id="810043100" string="[Feral Valley] Clean up the northern reach of Feral Valley." />
+  <String id="810043101" string="Claim your reward!" />
+  <String id="810043300" string="Essence of Ravenous Basilisk" />
+  <String id="810044001" string="Option: Eliminate Naga Battlemasters!" />
+  <String id="810044100" string="[Serpentis Isle] Clean up Kerozen Isle." />
+  <String id="810044101" string="Claim your reward!" />
+  <String id="810044300" string="Essence of Naga Battlemaster" />
+  <String id="810045001" string="Option: Eliminate the Naga Leviathans!" />
+  <String id="810045100" string="[Serpentis Isle] Clean up Dagon's Tomb." />
+  <String id="810045101" string="Claim your reward!" />
+  <String id="810045300" string="Essence of Naga Leviathan" />
+  <String id="810046001" string="Option: Clean up the Hatchery!" />
+  <String id="810046100" string="[Amena Quatla] Defeat ebon fimbrilisks and akalath warlords in the Hatchery." />
+  <String id="810046102" string="Claim your reward!" />
+  <String id="810046300" string="Invaders" />
+  <String id="810047001" string="Option: Eliminate the Sandlurker Lizards!" />
+  <String id="810047100" string="[Tor Exsul] Clean up the Raintree Oasis." />
+  <String id="810047101" string="Claim your reward!" />
+  <String id="810047300" string="Essence of Sandlurker Lizard" />
+  <String id="810048001" string="Option: Summertime Beetle Attack (Beginner)" />
+  <String id="810048100" string="Kill 10 Beetles" />
+  <String id="810048101" string="Claim your reward!" />
+  <String id="810049001" string="Optional: Summertime Beetle Attack (Expert)" />
+  <String id="810049100" string="Kill 10 Beetles" />
+  <String id="810049101" string="Claim your reward!" />
+  <String id="810050001" string="Option: The Day Is Mine" />
+  <String id="810050100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810050101" string="Claim your reward!" />
+  <String id="810050104" string="Claim your reward!" />
+  <String id="810050105" string="Claim your reward!" />
+  <String id="810050300" string="Phantom of the Blood Run" />
+  <String id="810051001" string="Option: The Day Is Mine!" />
+  <String id="810051100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810051101" string="Claim your reward!" />
+  <String id="810051104" string="Claim your reward!" />
+  <String id="810051105" string="Claim your reward!" />
+  <String id="810051300" string="Phantom of the Blood Run" />
+  <String id="810052001" string="Option: The Day Is Mine!" />
+  <String id="810052100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810052101" string="Claim your reward!" />
+  <String id="810052300" string="Ghilliedhu's Spirit" />
+  <String id="810053001" string="Option: The Day Is Mine!" />
+  <String id="810053100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810053101" string="Claim your reward!" />
+  <String id="810053102" string="Claim your reward!" />
+  <String id="810053300" string="Essence of Mistmoor Island" />
+  <String id="810054001" string="Option: The Day Is Mine!" />
+  <String id="810054100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810054101" string="Claim your reward!" />
+  <String id="810054103" string="Claim your reward!" />
+  <String id="810054300" string="Essence of the Desert Fire" />
+  <String id="810055001" string="Option: The Day Is Mine!" />
+  <String id="810055100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810055101" string="Claim your reward!" />
+  <String id="810055300" string="Essence of Mycanar" />
+  <String id="810056001" string="Option: The Day Is Mine!" />
+  <String id="810056100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810056101" string="Claim your reward!" />
+  <String id="810056300" string="Essence of Mycanar" />
+  <String id="810057001" string="Option: The Day Is Mine!" />
+  <String id="810057100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810057101" string="Claim your reward!" />
+  <String id="810057102" string="Claim your reward!" />
+  <String id="810057300" string="Spirit of the Infected" />
+  <String id="810058001" string="Option: The Day Is Mine!" />
+  <String id="810058100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="810058101" string="Claim your reward!" />
+  <String id="810058300" string="Mutant Worker's Spirit" />
+  <String id="810059001" string="Option: Avenge the Fallen" />
+  <String id="810059100" string="[Susurrus Woods] Eliminate devas in Dakonan Junction." />
+  <String id="810059104" string="Claim your reward!" />
+  <String id="810059300" string="Devan Essence" />
+  <String id="810060001" string="Option: Sacrifice Plays" />
+  <String id="810060100" string="[Susurrus Woods] Eliminate runekeepers in the Nightwood." />
+  <String id="810060103" string="Claim your reward!" />
+  <String id="810060104" string="Claim your reward!" />
+  <String id="810060300" string="Essence of Sacrifice" />
+  <String id="810061001" string="Option: Grizzly Hunt" />
+  <String id="810061100" string="[Tirkai Forest] Eliminate Tirkai Grizzlies in the Whitefrost Forest." />
+  <String id="810061101" string="Claim your reward!" />
+  <String id="810061300" string="Essence of Tirkai Grizzly" />
+  <String id="810062001" string="Option: Eliminate the Argonomorphs!" />
+  <String id="810062100" string="[Thrallhold] Eliminate argonomorphs in the Vale of the Reaper." />
+  <String id="810062101" string="Claim your reward!" />
+  <String id="810062300" string="Argonomorph Essence" />
+  <String id="810063001" string="Option: Eliminate creatures on the Twisted Plains." />
+  <String id="810063100" string="[Vale of the Fang] Eliminate creatures on the Twisted Plains." />
+  <String id="810063103" string="Claim your reward!" />
+  <String id="810063104" string="Claim your reward!" />
+  <String id="810063300" string="Essence of the Twisted Plains" />
+  <String id="810064001" string="Option: Weaken the Lokian Force" />
+  <String id="810064100" string="[Celestial Hills] Eliminate Lok Worshippers in the Cardovek Remnants." />
+  <String id="810064103" string="Claim your reward!" />
+  <String id="810064300" string="Lokian's Spirit" />
+  <String id="810065001" string="Option: Eliminate the Brainwashed!" />
+  <String id="810065100" string="[Aurum Road] Eliminate brainwashed soldiers in the Shattered City." />
+  <String id="810065102" string="Claim your reward!" />
+  <String id="810065300" string="Brainwashed Soldier Essence" />
+  <String id="810066001" string="Option: Disband the Mercenary Company" />
+  <String id="810066100" string="[Mount Tyrannas] Clear out the Bloodblade mercenary Camp." />
+  <String id="810066103" string="Claim your reward!" />
+  <String id="810066300" string="Mercenary's Spirit" />
+  <String id="810067001" string="Option: Eliminate the Kamaras!" />
+  <String id="810067100" string="[Serpentis Isle] Eliminate Kamaras on Kerozen Isle." />
+  <String id="810067102" string="Claim your reward!" />
+  <String id="810067300" string="Essence of Kamara" />
+  <String id="810068001" string="Option: Eliminate Prion Njalvar!" />
+  <String id="810068100" string="[Sienna Canyon] Eliminate Prion Njalvar." />
+  <String id="810068102" string="Claim your reward!" />
+  <String id="810068300" string="Essence of Prion Njalvar" />
+  <String id="810069001" string="Option: Eliminate the Beasts of Mags Tohopka" />
+  <String id="810069100" string="[Basilisk Crag] Eliminate the beasts of Mags Tohopka." />
+  <String id="810069102" string="Claim your reward!" />
+  <String id="810069300" string="The Soul of Mags Tohopka Beast" />
+  <String id="810070001" string="Option: Noruk Hunt" />
+  <String id="810070100" string="[Lake of Tears] Hunt mooncrest noruks and gather their antlers." />
+  <String id="810070101" string="Claim your reward!" />
+  <String id="810070300" string="A Piece of White Horn" />
+  <String id="810071001" string="Option: A Rest For the Wendigos" />
+  <String id="810071100" string="[Vale of Spires] Eliminate enthalled wendigos." />
+  <String id="810071102" string="Claim your reward!" />
+  <String id="810071300" string="Essence of Wendigo" />
+  <String id="810110001" string="Option: End the Rebellion" />
+  <String id="810110100" string="[Lake of Tears] Defeat the conspirators and their allies." />
+  <String id="810110116" string="Claim your reward!" />
+  <String id="810110300" string="Rebel Army" />
+  <String id="810111001" string="Option: Quench the Desert Fire" />
+  <String id="810111100" string="[Colossal Ruins] Defeat the Desert Fire kulkari and their allies." />
+  <String id="810111125" string="Claim your reward!" />
+  <String id="810111126" string="Claim your reward!" />
+  <String id="810111300" string="Desert Fire Invaders" />
+  <String id="810112001" string="Option: Clean up the Aurum Road" />
+  <String id="810112100" string="[Aurum Road] Defeat the Sand Wind kulkari and their allies." />
+  <String id="810112120" string="Claim your reward!" />
+  <String id="810112300" string="Sand Wind Invaders" />
+  <String id="810113001" string="Option: Cleanse the Dark Cathedral" />
+  <String id="810113100" string="[Dark Cathedral] Defeat the devan cultists and their allies." />
+  <String id="810113127" string="Claim your reward!" />
+  <String id="810113128" string="Claim your reward!" />
+  <String id="810113137" string="Claim your reward!" />
+  <String id="810113300" string="Cultists" />
+  <String id="810114001" string="Option: Bring down the Brogars" />
+  <String id="810114100" string="[Essenian Crest] Defeat the Brogar Legion and their allies." />
+  <String id="810114123" string="Claim your reward!" />
+  <String id="810114300" string="Brogar Legion" />
+  <String id="810115001" string="Option: Purify the Blightwood" />
+  <String id="810115100" string="[Blightwood] Eliminate corrupted beasts." />
+  <String id="810115111" string="Claim your reward!" />
+  <String id="810115113" string="Claim your reward!" />
+  <String id="810115300" string="Corrupted Beasts" />
+  <String id="810116001" string="Option: Whittle the Woods" />
+  <String id="810116100" string="[Timeless Woods] Defeat beasts, Lokians, and forestwalker vulcans." />
+  <String id="810116119" string="Claim your reward!" />
+  <String id="810116121" string="Claim your reward!" />
+  <String id="810116300" string="Timeless Woods Invaders" />
+  <String id="810117001" string="Option: Plunder the Pirates" />
+  <String id="810117100" string="[Tempest Reach] Defeat Drowned gulas and their allies." />
+  <String id="810117117" string="Claim your reward!" />
+  <String id="810117300" string="Maelstrom Invaders" />
+  <String id="810118001" string="Option: Defend the Mountain" />
+  <String id="810118100" string="[Mount Tyrannas] Defeat the Stalker Company and their allies." />
+  <String id="810118117" string="Claim your reward!" />
+  <String id="810118300" string="Tyrant's Army" />
+  <String id="810119001" string="Option: Clean out the Citadel" />
+  <String id="810119100" string="[Citadel of Torment] Defeat the Blood Guards and their allies." />
+  <String id="810119124" string="Claim your reward!" />
+  <String id="810119128" string="Claim your reward!" />
+  <String id="810119300" string="Blood Guard Invaders" />
+  <String id="810120001" string="Option: Zero out the Zone" />
+  <String id="810120100" string="[Quarantine Zone] Defeat the mutants and their monstrous allies." />
+  <String id="810120124" string="Claim your reward!" />
+  <String id="810120125" string="Claim your reward!" />
+  <String id="810120300" string="Quarantined Monsters" />
+  <String id="810121001" string="Option: Crush the Caves" />
+  <String id="810121100" string="[Arachnaea] Defeat Atel Akaad and their allies." />
+  <String id="810121112" string="Claim your reward!" />
+  <String id="810121300" string="Arachnen Invaders" />
+  <String id="810122001" string="Option: Free the Feral Valley" />
+  <String id="810122100" string="[Feral Valley] Defeat the Black Claw orcans and their allies." />
+  <String id="810122121" string="Claim your reward!" />
+  <String id="810122122" string="Claim your reward!" />
+  <String id="810122300" string="Feral Valley Invaders" />
+  <String id="810123001" string="Option: Thieves in the Temple" />
+  <String id="810123100" string="[Temple of Dagon] Defeat the forces occupying the temple." />
+  <String id="810123116" string="Claim your reward!" />
+  <String id="810123300" string="Dagon Servants" />
+  <String id="810124001" string="Option: Heroes versus the Volcano" />
+  <String id="810124100" string="[Fyrmount] Defeat shurians and mutated creatures." />
+  <String id="810124114" string="Claim your reward!" />
+  <String id="810124300" string="Fyrmount Invaders" />
+  <String id="810125001" string="Option: Reclaim the Caverns" />
+  <String id="810125100" string="[Hungry Caverns] Defeat the Kaazur Syndicate and their allies." />
+  <String id="810125117" string="Claim your reward!" />
+  <String id="810125300" string="Syndicate Operatives" />
+  <String id="810126001" string="Option: Protect the Darkquaver Woods" />
+  <String id="810126100" string="[Darkquaver Woods] Defeat the Ksharan Shadow Army and their allies." />
+  <String id="810126112" string="Claim your reward!" />
+  <String id="810126300" string="Shadow Army" />
+  <String id="810127001" string="Option: Protect the Susurrus Woods" />
+  <String id="810127100" string="[Susurrus Woods] Defeat the Bleakrock Legion and their allies." />
+  <String id="810127121" string="Claim your reward!" />
+  <String id="810127300" string="Susurrus Invaders" />
+  <String id="810128001" string="Option: Protect the Tor" />
+  <String id="810128100" string="[Tor Exsul] Defeat the Tenebrara Legion and their allies." />
+  <String id="810128112" string="Claim your reward!" />
+  <String id="810128300" string="Tenebrara Invaders" />
+  <String id="810129001" string="Option: Clean out the Crypt" />
+  <String id="810129100" string="[Doomcrypt] Defeat the prion forces and their allies." />
+  <String id="810129115" string="Claim your reward!" />
+  <String id="810129300" string="Crypt Invaders" />
+  <String id="810130001" string="Option: Pacify The Plain" />
+  <String id="810130100" string="[Plain of the Damned] Defeat the Cursed Legion and their allies." />
+  <String id="810130126" string="Claim your reward!" />
+  <String id="810130128" string="Claim your reward!" />
+  <String id="810130300" string="Ksharan Army" />
+  <String id="810131001" string="Option: Clean up the Vale" />
+  <String id="810131100" string="[Vale of Spires] Defeat the wendigos and their allies." />
+  <String id="810131111" string="Claim your reward!" />
+  <String id="810131112" string="Claim your reward!" />
+  <String id="810131300" string="Lorcadan Invaders" />
+  <String id="810132001" string="Option: Purify Tirkai Forest" />
+  <String id="810132100" string="[Tirkai Forest] Defeat argonomorphs and beasts." />
+  <String id="810132112" string="Claim your reward!" />
+  <String id="810132300" string="Cyasmic Invaders" />
+  <String id="810133001" string="Option: Hold the Lines" />
+  <String id="810133100" string="[Thrallhold] Defeat argonomorph invaders." />
+  <String id="810133118" string="Claim your reward!" />
+  <String id="810133300" string="Argonomorph Invaders" />
+  <String id="810134001" string="Option: Clean out the Towers" />
+  <String id="810134100" string="[Three Towers] Destroy experimental argonomorphs." />
+  <String id="810134110" string="Claim your reward!" />
+  <String id="810134300" string="Failed Experiment" />
+  <String id="810135001" string="Option: Defend the Front Lines" />
+  <String id="810135100" string="[Khanovar Front] Defeat argon invaders and their allies." />
+  <String id="810135108" string="Claim your reward!" />
+  <String id="810135300" string="Argon Invaders" />
+  <String id="810136001" string="Option: Preserve the Peace" />
+  <String id="810136100" string="[Argonea] Defeat the argon invaders." />
+  <String id="810136115" string="Claim your reward!" />
+  <String id="810136300" string="Argon Invaders" />
+  <String id="810137001" string="Option: Slaughter Stonebeaks" />
+  <String id="810137100" string="[Oblivion Woods] Kill Stonebeaks in Oblivion Woods." />
+  <String id="810137102" string="Claim your reward!" />
+  <String id="810137300" string="Stonebeaks" />
+  <String id="810138001" string="Option: Beat Devan Brigands" />
+  <String id="810138100" string="[Oblivion Woods] Defeat Devan Brigands in Oblivion Woods." />
+  <String id="810138103" string="Claim your reward!" />
+  <String id="810138300" string="Devan Brigand" />
+  <String id="810139001" string="Option: Get the Stolen Money Bags Back" />
+  <String id="810139100" string="[Oblivion Woods] Get the Stolen Money Bags back from Devan Brigands in Oblivion Woods." />
+  <String id="810139103" string="Claim your reward!" />
+  <String id="810139400" string="Stolen Money Bag" />
+  <String id="810140001" string="Option: Pacify Agitated Sporewalkers" />
+  <String id="810140100" string="[Oblivion Woods] Defeat Agitated Sporewalkers in Oblivion Woods." />
+  <String id="810140101" string="Claim your reward!" />
+  <String id="810140400" string="Undead Marrow" />
+  <String id="810141001" string="Option: Defeat Fallen Defender" />
+  <String id="810141100" string="[Oblivion Woods] Defeat Fallen Defenders and gather their bones." />
+  <String id="810141102" string="Claim your reward!" />
+  <String id="810141400" string="Undead Marrow" />
+  <String id="810142001" string="Option: Eliminate the Devan Elites" />
+  <String id="810142100" string="[Oblivion Woods] Defeat Devan Elite Brigands in Oblivion Woods." />
+  <String id="810142104" string="Claim your reward!" />
+  <String id="810142300" string="Devan Elite Brigand" />
+  <String id="810143001" string="Option: Going on the Offensive" />
+  <String id="810143100" string="[Oblivion Woods] Kill Lok Believers to disrupt their alliance with the devas." />
+  <String id="810143102" string="Claim your reward!" />
+  <String id="810143300" string="Lok Believers" />
+  <String id="810144001" string="Option: Kill Mossy Ghilliedhus" />
+  <String id="810144100" string="[Oblivion Woods] Kill Mossy Ghilliedhus in Oblivion Woods." />
+  <String id="810144101" string="Claim your reward!" />
+  <String id="820010001" string="How About Another Snowfight?" />
+  <String id="820010100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="820010101" string="Claim your reward!" />
+  <String id="820011001" string="How About Another Snowfight?" />
+  <String id="820011100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="820011101" string="Claim your reward!" />
+  <String id="820012001" string="How About Another Snowfight?" />
+  <String id="820012100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="820012101" string="Claim your reward!" />
+  <String id="820013001" string="How About Another Snowfight?" />
+  <String id="820013100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="820013101" string="Claim your reward!" />
+  <String id="820014001" string="How About Another Snowfight?" />
+  <String id="820014100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="820014101" string="Claim your reward!" />
+  <String id="820015001" string="How About Another Snowfight?" />
+  <String id="820015100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="820015101" string="Claim your reward!" />
+  <String id="820016001" string="How About Another Snowfight?" />
+  <String id="820016100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="820016101" string="Claim your reward!" />
+  <String id="820017001" string="Blood, Sweat and Tears" />
+  <String id="820017100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820017101" string="Claim your reward!" />
+  <String id="820018001" string="Blood, Sweat and Tears" />
+  <String id="820018100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820018101" string="Claim your reward!" />
+  <String id="820019001" string="Blood, Sweat and Tears" />
+  <String id="820019100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820019101" string="Claim your reward!" />
+  <String id="820020001" string="Blood, Sweat and Tears" />
+  <String id="820020100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820020101" string="Claim your reward!" />
+  <String id="820021001" string="Blood, Sweat and Tears" />
+  <String id="820021100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820021101" string="Claim your reward!" />
+  <String id="820022001" string="Practice Makes Perfect Scores" />
+  <String id="820022100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820022101" string="Claim your reward!" />
+  <String id="820023001" string="Practice Makes Perfect Scores" />
+  <String id="820023100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820023101" string="Claim your reward!" />
+  <String id="820024001" string="Practice Makes Perfect Scores" />
+  <String id="820024100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820024101" string="Claim your reward!" />
+  <String id="820025001" string="Practice Makes Perfect Scores" />
+  <String id="820025100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820025101" string="Claim your reward!" />
+  <String id="820026001" string="Practice Makes Perfect Scores" />
+  <String id="820026100" string="[Gridiron Academy] Win a match in Gridiron Academy." />
+  <String id="820026101" string="Claim your reward!" />
+  <String id="980051001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980051100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980051101" string="Claim your reward!" />
+  <String id="980052001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980052100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980052101" string="Claim your reward!" />
+  <String id="980053001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980053100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980053101" string="Claim your reward!" />
+  <String id="980054001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980054100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980054101" string="Claim your reward!" />
+  <String id="980055001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980055100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980055101" string="Claim your reward!" />
+  <String id="980056001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980056100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980056101" string="Claim your reward!" />
+  <String id="980057001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980057100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980057101" string="Claim your reward!" />
+  <String id="980058001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980058100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980058101" string="Claim your reward!" />
+  <String id="980059001" string="Urgent: Hear the Roar of Iron!" />
+  <String id="980059100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="980059101" string="Claim your reward!" />
+  <String id="981051001" string="Option: Hear the Roar of Iron!" />
+  <String id="981051100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981051101" string="Claim your reward!" />
+  <String id="981052001" string="Option: Hear the Roar of Iron!" />
+  <String id="981052100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981052101" string="Claim your reward!" />
+  <String id="981053001" string="Option: Hear the Roar of Iron!" />
+  <String id="981053100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981053101" string="Claim your reward!" />
+  <String id="981054001" string="Option: Hear the Roar of Iron!" />
+  <String id="981054100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981054101" string="Claim your reward!" />
+  <String id="981055001" string="Option: Hear the Roar of Iron!" />
+  <String id="981055100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981055101" string="Claim your reward!" />
+  <String id="981056001" string="Option: Hear the Roar of Iron!" />
+  <String id="981056100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981056101" string="Claim your reward!" />
+  <String id="981057001" string="Option: Hear the Roar of Iron!" />
+  <String id="981057100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981057101" string="Claim your reward!" />
+  <String id="981058001" string="Option: Hear the Roar of Iron!" />
+  <String id="981058100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981058101" string="Claim your reward!" />
+  <String id="981059001" string="Option: Hear the Roar of Iron!" />
+  <String id="981059100" string="[Iron Battlefield] Seize victory in Iron Battleground!" />
+  <String id="981059101" string="Claim your reward!" />
+  <String id="999610001" string="Option: Hunt Brutal Orisks" />
+  <String id="999610100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999610101" string="Claim your reward!" />
+  <String id="999610400" string="Orisk Tusk" />
+  <String id="999611001" string="Option: Hunt Brutal Orisks" />
+  <String id="999611100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999611101" string="Claim your reward!" />
+  <String id="999611400" string="Orisk Tusk" />
+  <String id="999612001" string="Option: Hunt Brutal Orisks" />
+  <String id="999612100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999612101" string="Claim your reward!" />
+  <String id="999612400" string="Orisk Tusk" />
+  <String id="999613001" string="Option: Hunt Brutal Orisks" />
+  <String id="999613100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999613101" string="Claim your reward!" />
+  <String id="999613400" string="Orisk Tusk" />
+  <String id="999614001" string="Option: Hunt Brutal Orisks" />
+  <String id="999614100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999614101" string="Claim your reward!" />
+  <String id="999614400" string="Orisk Tusk" />
+  <String id="999615001" string="Option: Hunt Brutal Orisks" />
+  <String id="999615100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999615101" string="Claim your reward!" />
+  <String id="999615400" string="Orisk Tusk" />
+  <String id="999616001" string="Option: Hunt Brutal Orisks" />
+  <String id="999616100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999616101" string="Claim your reward!" />
+  <String id="999616400" string="Orisk Tusk" />
+  <String id="999617001" string="Option: Hunt Brutal Orisks" />
+  <String id="999617100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999617101" string="Claim your reward!" />
+  <String id="999617400" string="Orisk Tusk" />
+  <String id="999618001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="999618100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs." />
+  <String id="999618101" string="Claim your reward!" />
+  <String id="999618400" string="Poison Sac" />
+  <String id="999619001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="999619100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs." />
+  <String id="999619101" string="Claim your reward!" />
+  <String id="999619400" string="Poison Sac" />
+  <String id="999620001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="999620100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs." />
+  <String id="999620101" string="Claim your reward!" />
+  <String id="999620400" string="Poison Sac" />
+  <String id="999621001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="999621100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs." />
+  <String id="999621101" string="Claim your reward!" />
+  <String id="999621400" string="Poison Sac" />
+  <String id="999622001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="999622100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs." />
+  <String id="999622101" string="Claim your reward!" />
+  <String id="999622400" string="Poison Sac" />
+  <String id="999623001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="999623100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs." />
+  <String id="999623101" string="Claim your reward!" />
+  <String id="999623400" string="Poison Sac" />
+  <String id="999624001" string="Option: Hunt Brutal Ovoliths" />
+  <String id="999624100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs." />
+  <String id="999624101" string="Claim your reward!" />
+  <String id="999624400" string="Poison Sac" />
+  <String id="999625001" string="Option: Hunt Brutal Bloodbound Teraliths" />
+  <String id="999625100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999625101" string="Claim your reward!" />
+  <String id="999625400" string="Bloodbound Shard" />
+  <String id="999626001" string="Option: Hunt Brutal Bloodbound Teraliths" />
+  <String id="999626100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999626101" string="Claim your reward!" />
+  <String id="999626400" string="Bloodbound Shard" />
+  <String id="999627001" string="Option: Hunt Brutal Bloodbound Teraliths" />
+  <String id="999627100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999627101" string="Claim your reward!" />
+  <String id="999627400" string="Bloodbound Shard" />
+  <String id="999628001" string="Option: Hunt Brutal Bloodbound Teraliths" />
+  <String id="999628100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999628101" string="Claim your reward!" />
+  <String id="999628400" string="Bloodbound Shard" />
+  <String id="999629001" string="Option: Hunt Brutal Bloodbound Teraliths" />
+  <String id="999629100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999629101" string="Claim your reward!" />
+  <String id="999629400" string="Bloodbound Shard" />
+  <String id="999630001" string="Option: Hunt Brutal Bloodbound Teraliths" />
+  <String id="999630100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999630101" string="Claim your reward!" />
+  <String id="999630400" string="Bloodbound Shard" />
+  <String id="999631001" string="Option: Hunt Brutal Fimbrilisks" />
+  <String id="999631100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999631101" string="Claim your reward!" />
+  <String id="999631400" string="Fimbrilisk Claw" />
+  <String id="999632001" string="Option: Hunt Brutal Fimbrilisks" />
+  <String id="999632100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999632101" string="Claim your reward!" />
+  <String id="999632400" string="Fimbrilisk Claw" />
+  <String id="999633001" string="Option: Hunt Brutal Fimbrilisks" />
+  <String id="999633100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999633101" string="Claim your reward!" />
+  <String id="999633400" string="Fimbrilisk Claw" />
+  <String id="999634001" string="Option: Hunt Brutal Fimbrilisks" />
+  <String id="999634100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999634101" string="Claim your reward!" />
+  <String id="999634400" string="Fimbrilisk Claw" />
+  <String id="999635001" string="Option: Hunt Brutal Fimbrilisks" />
+  <String id="999635100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999635101" string="Claim your reward!" />
+  <String id="999635400" string="Fimbrilisk Claw" />
+  <String id="999636001" string="Option: Hunt Brutal Searing Fangspawns" />
+  <String id="999636100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999636101" string="Claim your reward!" />
+  <String id="999636400" string="Fangspawn Horn" />
+  <String id="999637001" string="Option: Hunt Brutal Searing Fangspawns" />
+  <String id="999637100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999637101" string="Claim your reward!" />
+  <String id="999637400" string="Fangspawn Horn" />
+  <String id="999638001" string="Option: Hunt Brutal Searing Fangspawns" />
+  <String id="999638100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999638101" string="Claim your reward!" />
+  <String id="999638400" string="Fangspawn Horn" />
+  <String id="999639001" string="Option: Hunt Brutal Searing Fangspawns" />
+  <String id="999639100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999639101" string="Claim your reward!" />
+  <String id="999639400" string="Fangspawn Horn" />
+  <String id="999640001" string="Option: Hunt Brutal Naga Battlemasters" />
+  <String id="999640100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales." />
+  <String id="999640101" string="Claim your reward!" />
+  <String id="999640400" string="Battlemaster Scale" />
+  <String id="999641001" string="Option: Hunt Brutal Naga Battlemasters" />
+  <String id="999641100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales." />
+  <String id="999641101" string="Claim your reward!" />
+  <String id="999641400" string="Battlemaster Scale" />
+  <String id="999642001" string="Option: Hunt Brutal Naga Battlemasters" />
+  <String id="999642100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales." />
+  <String id="999642101" string="Claim your reward!" />
+  <String id="999642400" string="Battlemaster Scale" />
+  <String id="999643001" string="Option: Hunt Brutal Iron Giants" />
+  <String id="999643100" string="[Island of Dawn] Hunt Brutal Iron Giants and collect Iron Rings." />
+  <String id="999643101" string="Claim your reward!" />
+  <String id="999643400" string="Iron Ring" />
+  <String id="999644001" string="Option: Hunt Brutal Iron Giants" />
+  <String id="999644100" string="[Island of Dawn] Hunt Brutal Iron Giants and collect Iron Rings." />
+  <String id="999644101" string="Claim your reward!" />
+  <String id="999644400" string="Iron Ring" />
+  <String id="999645001" string="Option: Hunt Brutal Onyx Hydraths" />
+  <String id="999645100" string="[Island of Dawn] Hunt Brutal Onyx Hydraths and collect Onyx Thorns." />
+  <String id="999645101" string="Claim your reward!" />
+  <String id="999645400" string="Onyx Thorn" />
+  <String id="999710001" string="Hunt Brutal Orisks" />
+  <String id="999710100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999710101" string="Claim your reward!" />
+  <String id="999710400" string="Orisk Tusk" />
+  <String id="999711001" string="Hunt Brutal Orisks" />
+  <String id="999711100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999711101" string="Claim your reward!" />
+  <String id="999711400" string="Orisk Tusk" />
+  <String id="999712001" string="Hunt Brutal Orisks" />
+  <String id="999712100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999712101" string="Claim your reward!" />
+  <String id="999712400" string="Orisk Tusk" />
+  <String id="999713001" string="Hunt Brutal Orisks" />
+  <String id="999713100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999713101" string="Claim your reward!" />
+  <String id="999713400" string="Orisk Tusk" />
+  <String id="999714001" string="Hunt Brutal Orisks" />
+  <String id="999714100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999714101" string="Claim your reward!" />
+  <String id="999714400" string="Orisk Tusk" />
+  <String id="999715001" string="Hunt Brutal Orisks" />
+  <String id="999715100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999715101" string="Claim your reward!" />
+  <String id="999715400" string="Orisk Tusk" />
+  <String id="999716001" string="Hunt Brutal Orisks" />
+  <String id="999716100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999716101" string="Claim your reward!" />
+  <String id="999716400" string="Orisk Tusk" />
+  <String id="999717001" string="Hunt Brutal Orisks" />
+  <String id="999717100" string="[Island of Dawn] Hunt Brutal Orisks and collect Orisk Tusks." />
+  <String id="999717101" string="Claim your reward!" />
+  <String id="999717400" string="Orisk Tusk" />
+  <String id="999718001" string="Hunt Brutal Ovoliths" />
+  <String id="999718100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="999718101" string="Claim your reward!" />
+  <String id="999718400" string="Poison Sac" />
+  <String id="999719001" string="Hunt Brutal Ovoliths" />
+  <String id="999719100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="999719101" string="Claim your reward!" />
+  <String id="999719400" string="Poison Sac" />
+  <String id="999720001" string="Hunt Brutal Ovoliths" />
+  <String id="999720100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="999720101" string="Claim your reward!" />
+  <String id="999720400" string="Poison Sac" />
+  <String id="999721001" string="Hunt Brutal Ovoliths" />
+  <String id="999721100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="999721101" string="Claim your reward!" />
+  <String id="999721400" string="Poison Sac" />
+  <String id="999722001" string="Hunt Brutal Ovoliths" />
+  <String id="999722100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="999722101" string="Claim your reward!" />
+  <String id="999722400" string="Poison Sac" />
+  <String id="999723001" string="Hunt Brutal Ovoliths" />
+  <String id="999723100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="999723101" string="Claim your reward!" />
+  <String id="999723400" string="Poison Sac" />
+  <String id="999724001" string="Hunt Brutal Ovoliths" />
+  <String id="999724100" string="[Island of Dawn] Hunt Brutal Ovoliths and collect Poison Sacs" />
+  <String id="999724101" string="Claim your reward!" />
+  <String id="999724400" string="Poison Sac" />
+  <String id="999725001" string="Hunt Brutal Bloodbound Teraliths" />
+  <String id="999725100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999725101" string="Claim your reward!" />
+  <String id="999725400" string="Bloodbound Shard" />
+  <String id="999726001" string="Hunt Brutal Bloodbound Teraliths" />
+  <String id="999726100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999726101" string="Claim your reward!" />
+  <String id="999726400" string="Bloodbound Shard" />
+  <String id="999727001" string="Hunt Brutal Bloodbound Teraliths" />
+  <String id="999727100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999727101" string="Claim your reward!" />
+  <String id="999727400" string="Bloodbound Shard" />
+  <String id="999728001" string="Hunt Brutal Bloodbound Teraliths" />
+  <String id="999728100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999728101" string="Claim your reward!" />
+  <String id="999728400" string="Bloodbound Shard" />
+  <String id="999729001" string="Hunt Brutal Bloodbound Teraliths" />
+  <String id="999729100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999729101" string="Claim your reward!" />
+  <String id="999729400" string="Bloodbound Shard" />
+  <String id="999730001" string="Hunt Brutal Bloodbound Teraliths" />
+  <String id="999730100" string="[Island of Dawn] Hunt Brutal Bloodbound Teraliths and collect Bloodbound Shards." />
+  <String id="999730101" string="Claim your reward!" />
+  <String id="999730400" string="Bloodbound Shard" />
+  <String id="999731001" string="Hunt Brutal Fimbrilisks" />
+  <String id="999731100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999731101" string="Claim your reward!" />
+  <String id="999731400" string="Fimbrilisk Claw" />
+  <String id="999732001" string="Hunt Brutal Fimbrilisks" />
+  <String id="999732100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999732101" string="Claim your reward!" />
+  <String id="999732400" string="Fimbrilisk Claw" />
+  <String id="999733001" string="Hunt Brutal Fimbrilisks" />
+  <String id="999733100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999733101" string="Claim your reward!" />
+  <String id="999733400" string="Fimbrilisk Claw" />
+  <String id="999734001" string="Hunt Brutal Fimbrilisks" />
+  <String id="999734100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999734101" string="Claim your reward!" />
+  <String id="999734400" string="Fimbrilisk Claw" />
+  <String id="999735001" string="Hunt Brutal Fimbrilisks" />
+  <String id="999735100" string="[Island of Dawn] Hunt Brutal Fimbrilisks and collect Fimbrilisk Claws." />
+  <String id="999735101" string="Claim your reward!" />
+  <String id="999735400" string="Fimbrilisk Claw" />
+  <String id="999736001" string="Hunt Brutal Searing Fangspawns" />
+  <String id="999736100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999736101" string="Claim your reward!" />
+  <String id="999736400" string="Fangspawn Horn" />
+  <String id="999737001" string="Hunt Brutal Searing Fangspawns" />
+  <String id="999737100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999737101" string="Claim your reward!" />
+  <String id="999737400" string="Fangspawn Horn" />
+  <String id="999738001" string="Hunt Brutal Searing Fangspawns" />
+  <String id="999738100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999738101" string="Claim your reward!" />
+  <String id="999738400" string="Fangspawn Horn" />
+  <String id="999739001" string="Hunt Brutal Searing Fangspawns" />
+  <String id="999739100" string="[Island of Dawn] Hunt Brutal Searing Fangspawns and collect Fangspawn Horns." />
+  <String id="999739101" string="Claim your reward!" />
+  <String id="999739400" string="Fangspawn Horn" />
+  <String id="999740001" string="Hunt Brutal Naga Battlemasters" />
+  <String id="999740100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales." />
+  <String id="999740101" string="Claim your reward!" />
+  <String id="999740400" string="Battlemaster Scale" />
+  <String id="999741001" string="Hunt Brutal Naga Battlemasters" />
+  <String id="999741100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales." />
+  <String id="999741101" string="Claim your reward!" />
+  <String id="999741400" string="Battlemaster Scale" />
+  <String id="999742001" string="Hunt Brutal Naga Battlemasters" />
+  <String id="999742100" string="[Island of Dawn] Hunt Brutal Naga Battlemasters and collect Battlemaster Scales." />
+  <String id="999742101" string="Claim your reward!" />
+  <String id="999742400" string="Battlemaster Scale" />
+  <String id="999743001" string="Hunt Brutal Iron Giants" />
+  <String id="999743100" string="[Island of Dawn] Hunt Brutal Iron Giants and collect Iron Rings." />
+  <String id="999743101" string="Claim your reward!" />
+  <String id="999743400" string="Iron Ring" />
+  <String id="999744001" string="Hunt Brutal Iron Giants" />
+  <String id="999744100" string="[Island of Dawn] Hunt Brutal Iron Giants and collect Iron Rings." />
+  <String id="999744101" string="Claim your reward!" />
+  <String id="999744400" string="Iron Ring" />
+  <String id="999745001" string="Hunt Brutal Onyx Hydraths" />
+  <String id="999745100" string="[Island of Dawn] Hunt Brutal Onyx Hydraths and collect Onyx Thorns." />
+  <String id="999745101" string="Claim your reward!" />
+  <String id="999745400" string="Onyx Thorn" />
+  <String id="999811001" string="Option: Timmbbeeerrrr!" />
+  <String id="999811100" string="[Velika] Gather more timbers by killing leafgarb ghilliedhus and rotbough mycanars." />
+  <String id="999811102" string="Claim your reward!" />
+  <String id="999811400" string="Useful Timber" />
+  <String id="999812001" string="Option: Marauding Mandrills" />
+  <String id="999812100" string="[Savage Reach] Hunt more kobifrill mandrills to help secure the road to Boscan Terrace." />
+  <String id="999812101" string="Claim your reward!" />
+  <String id="999813001" string="Option: Death in the Valley" />
+  <String id="999813100" string="[Savage Reach] Protect our Khirian allies by killing more guwangis." />
+  <String id="999813104" string="Claim your reward!" />
+  <String id="999813300" string="Guwangi" />
+  <String id="999814001" string="Option: Contested Territory" />
+  <String id="999814100" string="[Savage Reach] Help the Khirians by killing more guwangi hunters and cavern ovoliths." />
+  <String id="999814103" string="Claim your reward!" />
+  <String id="999814300" string="Guwangi Hunters and Cavern Ovoliths" />
+  <String id="999815001" string="Option: Preying on the Parthians" />
+  <String id="999815100" string="[Savage Reach] Kill more Parthian bashers and needlers and collect their sashes." />
+  <String id="999815102" string="Claim your reward!" />
+  <String id="999815400" string="Parthian Sash" />
+  <String id="999816001" string="Option: Intrepid Heart" />
+  <String id="999816100" string="[Savage Reach] Collect more engine pieces to help Paesyn try to repair Intrepid." />
+  <String id="999816101" string="Claim your reward!" />
+  <String id="999816400" string="Engine Piece" />
+  <String id="999816401" string="Engine Piece" />
+  <String id="999817001" string="Option: Operation Overkill" />
+  <String id="999817100" string="[Ex Prima] Kill more ruin sprites." />
+  <String id="999817103" string="Claim your reward!" />
+  <String id="999817107" string="Claim your reward!" />
+  <String id="999817300" string="Ruin Sprites" />
+  <String id="999817400" string="Trimmed Primitive Bird" />
+  <String id="999818001" string="Option: Parthian Purification" />
+  <String id="999818100" string="[Savage Reach] Kill more Parthian adepts and snipers before they uncover Intrepid's secrets." />
+  <String id="999818102" string="Claim your reward!" />
+  <String id="999818103" string="Claim your reward!" />
+  <String id="999818300" string="Parthian Adepts and Snipers" />
+  <String id="999819001" string="Option: Egg On" />
+  <String id="999819100" string="[Ex Prima] Gather more moaloth eggs for Mysterium research." />
+  <String id="999819101" string="Claim your reward!" />
+  <String id="999819400" string="Moaloth Egg" />
+  <String id="999819401" string="Moaloth Egg" />
+  <String id="999820001" string="Option: Unbearable" />
+  <String id="999820100" string="[Velika] Eliminate more starving Velika bears before they eat all the supplies." />
+  <String id="999820101" string="Claim your reward!" />
+  <String id="999821001" string="Option: Lake Monsters" />
+  <String id="999821100" string="[Spring Valley] Kill more orisks." />
+  <String id="999821101" string="Claim your reward!" />
+  <String id="999822001" string="Option: Training Exorcise" />
+  <String id="999822100" string="[Spring Valley] Kill more demokron thralls." />
+  <String id="999822103" string="Claim your reward!" />
+  <String id="999822300" string="Demokron Thrall" />
+  <String id="999823001" string="Option: Checking IDs" />
+  <String id="999823100" string="[Spring Valley] Kill Spring Valley Intruders and collect more of their talismans." />
+  <String id="999823103" string="Claim your reward!" />
+  <String id="999823107" string="Claim your reward!" />
+  <String id="999823400" string="Mysterious Talisman" />
+  <String id="999824001" string="Option: Lime Time" />
+  <String id="999824100" string="[Spring Valley] Gather more lime from deposits around the hot springs." />
+  <String id="999824101" string="Claim your reward!" />
+  <String id="999824400" string="Lime Deposit" />
+  <String id="999824401" string="Lime Deposit" />
+  <String id="999825001" string="Option: Hot Springs Tonight" />
+  <String id="999825100" string="[Spring Valley] Kill more hot springs starfish and hot springs kamaras." />
+  <String id="999825102" string="Claim your reward!" />
+  <String id="999825300" string="Hot Springs starfish and kamaras" />
+  <String id="999826001" string="Option: Imperial Entanglements" />
+  <String id="999826100" string="[Spring Valley] Defeat more Archdevan Imperial Army forces." />
+  <String id="999826102" string="Claim your reward!" />
+  <String id="999826300" string="Archdevan Imperial Army" />
+  <String id="999827001" string="Option: Bone Fragments" />
+  <String id="999827100" string="[Spring Valley] Kill more Spring Valley animals and collect their bones." />
+  <String id="999827102" string="Claim your reward!" />
+  <String id="999827103" string="Claim your reward!" />
+  <String id="999827400" string="Spring Valley Animal Bones" />
+  <String id="999828001" string="Option: Supply the Demand" />
+  <String id="999828100" string="[Savage Reach] Keep the Vanguard Initiative going by recovering more supply crates." />
+  <String id="999828101" string="Claim your reward!" />
+  <String id="999828400" string="Vanguard Supply Crate" />
+  <String id="999828401" string="Vanguard Supply Crate" />
+  <String id="999829001" string="Option: Creepy-crawlies" />
+  <String id="999829100" string="[Savage Reach] Arachnens threaten Khirian Outpost. Kill more of them to keep it safe." />
+  <String id="999829102" string="Claim your reward!" />
+  <String id="999829300" string="Jungle Arachnen" />
+  <String id="999830001" string="Option: Punishing Parthians" />
+  <String id="999830100" string="[Spring Valley] Kill more Spring Valley Invaders and collect their talismans." />
+  <String id="999830103" string="Claim your reward!" />
+  <String id="999830400" string="Mysterious Talisman" />
+  <String id="999831001" string="Option: Harrier and Harrier" />
+  <String id="999831100" string="[Ex Prima] Kill more demokron shock troopers harrying Qeldar Station!" />
+  <String id="999831103" string="Claim your reward!" />
+  <String id="999831104" string="Claim your reward!" />
+  <String id="999831300" string="Demokron Shock Trooper" />
+  <String id="999832001" string="Option: Rockin' Ruins" />
+  <String id="999832100" string="[Ex Prima] Kill more ruins guardians." />
+  <String id="999832101" string="Claim your reward!" />
+  <String id="999833001" string="Option: Rooted in Alchemy" />
+  <String id="999833100" string="[Ex Prima] Gather more reflective roots." />
+  <String id="999833101" string="Claim your reward!" />
+  <String id="999833400" string="Reflective Root" />
+  <String id="999833401" string="Reflective Root" />
+  <String id="999834001" string="Option: Spare Change" />
+  <String id="999834100" string="[Ex Prima] Kill more mutated sporewalkers to secure the area." />
+  <String id="999834101" string="Claim your reward!" />
+  <String id="999835001" string="Option: Requiem" />
+  <String id="999835100" string="[Ex Prima] Free the souls of murdered baraka." />
+  <String id="999835101" string="Claim your reward!" />
+  <String id="999835400" string="Murdered Souls" />
+  <String id="999835401" string="Murdered Souls" />
+  <String id="999836001" string="Option: Terrible Turtle, Dove" />
+  <String id="999836100" string="[Ex Prima] Kill more moaloths and magmaras in Diranas Quarry." />
+  <String id="999836102" string="Claim your reward!" />
+  <String id="999836300" string="Diranas Quarry BAMs" />
+  <String id="999837001" string="Option: More Things Change" />
+  <String id="999837100" string="[Ex Prima] Kill more mutating Parthians." />
+  <String id="999837105" string="Claim your reward!" />
+  <String id="999837400" string="Mutating Parthian" />
+  <String id="999838001" string="Option: Officer Material" />
+  <String id="999838100" string="[Ex Prima] Kill more Archdevan Imperial Officers." />
+  <String id="999838105" string="Claim your reward!" />
+  <String id="999838300" string="Archdevan Imperial Officer" />
+  <String id="999839001" string="Option: Don't Pay the Ferryman" />
+  <String id="999839100" string="[Ex Prima] Kill goblin tomb robbers and recover more funerary coins." />
+  <String id="999839110" string="Claim your reward!" />
+  <String id="999839400" string="Funerary Coin" />
+  <String id="999840001" string="Option: Waylaid!" />
+  <String id="999840100" string="[Highwatch Outskirts] Defeat more goblin brigands." />
+  <String id="999840101" string="Claim your reward!" />
+  <String id="999841001" string="Option: Cutting a Swath" />
+  <String id="999841100" string="[Arx Umbra] Kill more devan hunters, arcanists, thieves, and ferocious hounds to expand our push into the archdevas' territory." />
+  <String id="999841103" string="Claim your reward!" />
+  <String id="999841300" string="Archdevan Forces" />
+  <String id="999842001" string="Option: Gotta Grab 'em All" />
+  <String id="999842100" string="[Arx Umbra] Gather boxes of parts for the Vanguard engineers." />
+  <String id="999842101" string="Claim your reward!" />
+  <String id="999842400" string="Box of Parts" />
+  <String id="999842401" string="Box of Parts" />
+  <String id="999843001" string="Option: Dark Predations" />
+  <String id="999843100" string="[Arx Umbra] Kill more snowfall sabertooths to protect our forces." />
+  <String id="999843102" string="Claim your reward!" />
+  <String id="999843400" string="Snowfall Sabertooth" />
+  <String id="999844001" string="Option: No Laughing Matter" />
+  <String id="999844100" string="[Arx Umbra] Kill more frostclaw hyenas to protect Tempest Outpost." />
+  <String id="999844101" string="Claim your reward!" />
+  <String id="999844400" string="Frostclaw Hyena" />
+  <String id="999845001" string="Option: Badges of Honor" />
+  <String id="999845100" string="[Arx Umbra] Hunt down more Parthian grunts and take their sigils." />
+  <String id="999845105" string="Claim your reward!" />
+  <String id="999845106" string="Claim your reward!" />
+  <String id="999845400" string="Parthian Sigil" />
+  <String id="999846001" string="Option: Demokron Demolition" />
+  <String id="999846100" string="[Arx Umbra] Obliterate more demokrons to cleanse Arx Umbra of their taint." />
+  <String id="999846102" string="Claim your reward!" />
+  <String id="999846109" string="Claim your reward!" />
+  <String id="999846300" string="Quadriliar, Sicula" />
+  <String id="999847001" string="Option: Vanquished Fury" />
+  <String id="999847100" string="[Arx Umbra] Kill more Furyguards in and around Trellum Consurgo to weaken the archdevas' defenses." />
+  <String id="999847106" string="Claim your reward!" />
+  <String id="999847108" string="Claim your reward!" />
+  <String id="999847400" string="Mark of Fury" />
+  <String id="999848001" string="Option: Slayer of the Pack" />
+  <String id="999848100" string="[Savage Reach] Kill more Parthian brutes and bloodclaws to protect the Vanguard Initiative." />
+  <String id="999848102" string="Claim your reward!" />
+  <String id="999848300" string="Parthian Brutes and Bloodclaws" />
+  <String id="999849001" string="Option: Training Exorcise" />
+  <String id="999849100" string="[Spring Valley] Kill more demokron thralls." />
+  <String id="999849102" string="Claim your reward!" />
+  <String id="999849103" string="Claim your reward!" />
+  <String id="999849300" string="Demokron Thrall" />
+  <String id="999850001" string="Option: The Time of Purification" />
+  <String id="999850100" string="[Arx Umbra] Aid the Khirians by killing more demokrons." />
+  <String id="999850102" string="Claim your reward!" />
+  <String id="999850300" string="Barbed Laceras, Vicious Alvusk" />
+  <String id="999851001" string="Option: Charge Through the Cannonballs!" />
+  <String id="999851100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold again." />
+  <String id="999851101" string="Claim your reward!" />
+  <String id="999852001" string="Option: Take the Candy and Run!" />
+  <String id="999852100" string="[Kumasylum] Win a match in Kumasylum again." />
+  <String id="999852101" string="Claim your reward!" />
+  <String id="999853001" string="Option: Take It or Seize It!" />
+  <String id="999853100" string="[Fraywind Canyon] Win a match in Fraywind Canyon again." />
+  <String id="999853101" string="Claim your reward!" />
+  <String id="999854001" string="Option: I'll Show You the Meaning of Power!" />
+  <String id="999854100" string="[Champions' Skyring (Ranked: Solo)] Win a match in the Champions' Skyring again." />
+  <String id="999854101" string="Claim your reward!" />
+  <String id="999855001" string="Option: A Purrfect Mission" />
+  <String id="999855100" string="[Savage Reach] The Pools of Zurusuru are overrun with onyx jungle sabertooths. Eliminate more of them." />
+  <String id="999855101" string="Claim your reward!" />
+  <String id="999856001" string="Option: Essential Oils" />
+  <String id="999856100" string="[Spring Valley] Gather more blatherweed." />
+  <String id="999856101" string="Claim your reward!" />
+  <String id="999856400" string="Blatherweed" />
+  <String id="999856401" string="Blatherweed" />
+  <String id="999857001" string="Option: Continue to Advance" />
+  <String id="999857100" string="[Arx Umbra] Kill more demokrons to weaken the archdevas' defense." />
+  <String id="999857102" string="Claim your reward!" />
+  <String id="999857300" string="Hulking Sulcata, Rapacious Oculoid" />
+  <String id="999858001" string="Roughbeak Watcher" />
+  <String id="999858100" string="Kill Deformed Fangspawns to secure the area!" />
+  <String id="999858101" string="Claim your reward!" />
+  <String id="999859001" string="Ruins Slave" />
+  <String id="999859100" string="Kill Deformed Fangspawns to secure the area!" />
+  <String id="999859101" string="Claim your reward!" />
+  <String id="999860001" string="Option: Back to the Past-ure" />
+  <String id="999860100" string="Use Instance Matching and complete a Blast From the Past dungeon again." />
+  <String id="999860101" string="Claim your reward!" />
+  <String id="999861001" string="Option: Demokraxus Must Die!" />
+  <String id="999861100" string="[Macellarius Catacombs] Put an end to the demokron nightmare and kill Demokraxus again." />
+  <String id="999861101" string="Claim your reward!" />
+  <String id="999862001" string="Option: Clear Ravenous Gorge" />
+  <String id="999862100" string="[Ravenous Gorge] Kill Nimistrix again with your allies." />
+  <String id="999862101" string="Claim your reward!" />
+  <String id="999863001" string="Option: Another Round at Poolside" />
+  <String id="999863100" string="[Bathysmal Rise - Hard] Kill Nightmare Fulminar again, if you can." />
+  <String id="999863101" string="Claim your reward!" />
+  <String id="999864001" string="Option: Clear Rift's Edge" />
+  <String id="999864100" string="[Rift's Edge] Defeat Koleogg again in Rift's Edge!" />
+  <String id="999864101" string="Claim your reward!" />
+  <String id="999865001" string="Option: Taking Trophies" />
+  <String id="999865100" string="[Spring Valley] Collect more valley noruk antlers." />
+  <String id="999865101" string="Claim your reward!" />
+  <String id="999865400" string="Valley Noruk Antler" />
+  <String id="999866001" string="Bucket Brigade" />
+  <String id="999866100" string="[Akeron's Inferno - Hard] Gather your allies to kill Nightmare Duras, again." />
+  <String id="999866101" string="Claim your reward!" />
+  <String id="999867001" string="Fire, Fire, FIRE!" />
+  <String id="999867100" string="[Akeron's Inferno - Hard] Gather your allies to kill Nightmare Duras, if you can." />
+  <String id="999867101" string="Claim your reward!" />
+  <String id="999868001" string="Option: Back into the Deep End" />
+  <String id="999868100" string="[Bathysmal Rise - Hard] Kill Nightmare Fulminar again." />
+  <String id="999868101" string="Claim your reward!" />
+  <String id="999869001" string="Option: Assault the Dreadnaught" />
+  <String id="999869100" string="[Kalivan's Dreadnaught] Gather your allies to kill Kalivan!" />
+  <String id="999869101" string="Claim your rewards!" />
+  <String id="999870001" string="Option: Assault the Timescape" />
+  <String id="999870100" string="[Timescape] Gather your allies to kill Valona." />
+  <String id="999870101" string="Claim your reward!" />
+  <String id="999871001" string="Option: Assault the Timescape (Hard)" />
+  <String id="999871100" string="[Timescape] Gather your allies to kill Nightmare Valona." />
+  <String id="999871101" string="Claim your reward!" />
+  <String id="999871102" string="Claim your reward!" />
+  <String id="999871104" string="Claim your reward!" />
+  <String id="999871105" string="Claim your reward!" />
+  <String id="999871112" string="Claim your reward!" />
+  <String id="999871119" string="Claim your reward!" />
+  <String id="999871123" string="Claim your reward!" />
+  <String id="999871132" string="Claim your reward!" />
+  <String id="999871133" string="Claim your reward!" />
+  <String id="999871134" string="Claim your reward!" />
+  <String id="999871135" string="Claim your reward!" />
+  <String id="999871136" string="Claim your reward!" />
+  <String id="999871137" string="Claim your reward!" />
+  <String id="999871433" string="Engine Piece" />
+  <String id="999871434" string="Lime Deposit" />
+  <String id="999871435" string="Reflective Root" />
+  <String id="999871436" string="Murdered Souls" />
+  <String id="999871437" string="Box of Parts" />
+  <String id="999872001" string="Option: Lake Monsters" />
+  <String id="999872100" string="[Spring Valley] Kill more orisks." />
+  <String id="999872101" string="Claim your reward!" />
+  <String id="999873001" string="Option: Terrible Turtle, Dove" />
+  <String id="999873100" string="[Ex Prima] Kill more moaloths and magmaras in Diranas Quarry." />
+  <String id="999873102" string="Claim your reward!" />
+  <String id="999873300" string="Diranas Quarry BAMs" />
+  <String id="999874001" string="Option: Rockin' Ruins" />
+  <String id="999874100" string="[Ex Prima] Kill more ruins guardians." />
+  <String id="999874101" string="Claim your reward!" />
+  <String id="999875001" string="Option: Guwangi Purge" />
+  <String id="999875100" string="[Savage Reach] Kill more guwangi hunters and jungle arachnens to aid the Khirians." />
+  <String id="999875107" string="Claim your reward!" />
+  <String id="999875300" string="Guwangi Hunters and Jungle Arachnens" />
+  <String id="999876001" string="Option: Punishing Parthians" />
+  <String id="999876100" string="[Spring Valley] Kill more Parthian bowmen and collect their talismans." />
+  <String id="999876107" string="Claim your reward!" />
+  <String id="999876400" string="Mysterious Talisman" />
+  <String id="999877001" string="Option: Officer Material" />
+  <String id="999877100" string="[Ex Prima] Kill more Archdevan Imperial Officers." />
+  <String id="999877104" string="Claim your reward!" />
+  <String id="999877105" string="Claim your reward!" />
+  <String id="999877300" string="Archdevan Imperial Officers" />
+  <String id="999878001" string="Option: Demokrons are the Disease" />
+  <String id="999878100" string="[Arx Umbra] Kill more demokrons on the southern flank." />
+  <String id="999878109" string="Claim your reward!" />
+  <String id="999878300" string="Sicula, Quadriliar" />
+  <String id="999879001" string="Option: Intrepid Heart" />
+  <String id="999879100" string="[Savage Reach] Collect more engine pieces to help Paesyn try to repair Intrepid." />
+  <String id="999879101" string="Claim your reward!" />
+  <String id="999879400" string="Engine Piece" />
+  <String id="999879401" string="Engine Piece" />
+  <String id="999880001" string="Option: Lime Time" />
+  <String id="999880100" string="[Spring Valley] Gather more lime from deposits around the hot springs." />
+  <String id="999880101" string="Claim your reward!" />
+  <String id="999880400" string="Lime Deposit" />
+  <String id="999880401" string="Lime Deposit" />
+  <String id="999881001" string="Option: Rooted in Alchemy" />
+  <String id="999881100" string="[Ex Prima] Gather more reflective roots." />
+  <String id="999881101" string="Claim your reward!" />
+  <String id="999881400" string="Reflective Root" />
+  <String id="999881401" string="Reflective Root" />
+  <String id="999882001" string="Option: Requiem" />
+  <String id="999882100" string="[Ex Prima] Free the souls of murdered baraka." />
+  <String id="999882101" string="Claim your reward!" />
+  <String id="999882400" string="Murdered Souls" />
+  <String id="999882401" string="Murdered Souls" />
+  <String id="999883001" string="Option: Gotta Grab 'em All" />
+  <String id="999883100" string="[Arx Umbra] Gather more boxes of parts for the Vanguard engineers." />
+  <String id="999883101" string="Claim your reward!" />
+  <String id="999883400" string="Box of Parts" />
+  <String id="999883401" string="Box of Parts" />
+  <String id="999884001" string="Option: Clear Balder's Temple" />
+  <String id="999884100" string="[Balder's Temple] Kill the Guardian of the Relic again in Balder's Temple with your allies!" />
+  <String id="999884101" string="Claim your reward!" />
+  <String id="999884400" string="Sarberry" />
+  <String id="999884401" string="Sarberry" />
+  <String id="999885001" string="Option: Clear Argon Corpus" />
+  <String id="999885100" string="[Argon Corpus] Remove the threat of Meldita again." />
+  <String id="999885101" string="Claim your reward!" />
+  <String id="999885400" string="Construction Sand" />
+  <String id="999885401" string="Construction Sand" />
+  <String id="999886001" string="Option: Sabex Armory Ambush!" />
+  <String id="999886100" string="[Sabex Armory] Gather your allies to kill Yateveo again." />
+  <String id="999886101" string="Claim your reward!" />
+  <String id="999886400" string="Construction Sand" />
+  <String id="999886401" string="Construction Sand" />
+  <String id="999888001" string="Option: Taproot Shortage" />
+  <String id="999888100" string="[Harvest Festival] We are short of taproots for making lunchboxes for Tuwangis. Please collect some taproots." />
+  <String id="999888101" string="Claim your reward!" />
+  <String id="999888400" string="Taproot" />
+  <String id="999888401" string="Taproot" />
+  <String id="999889001" string="Option: Explore the Channelworks" />
+  <String id="999889100" string="[Channelworks] Gather your allies to kill Kerkion again." />
+  <String id="999889101" string="Claim your reward!" />
+  <String id="999891001" string="Option: Meet the Challenge" />
+  <String id="999891100" string="[Kalivan's Challenge] Gather your allies to kill Wretched Kalivan!" />
+  <String id="999891101" string="Claim your reward!" />
+  <String id="999891102" string="Claim your reward!" />
+  <String id="999891103" string="Claim your reward!" />
+  <String id="999891105" string="Claim your reward!" />
+  <String id="999892001" string="Option: Step Right Up!" />
+  <String id="999892100" string="[Bamarama] Place a bet and win during Bamarama." />
+  <String id="999892101" string="Claim your reward!" />
+  <String id="999893001" string="Option: Assault the Shattered Fleet" />
+  <String id="999893100" string="[The Shattered Fleet] Gather your allies and kill Barbosa." />
+  <String id="999893101" string="Claim your reward!" />
+  <String id="999894001" string="Option: Assault the Sky Cruiser Endeavor" />
+  <String id="999894100" string="[Sky Cruiser Endeavor (Hard)] Gather your allies and kill Nightmare Darkan." />
+  <String id="999894101" string="Claim your reward!" />
+  <String id="999895001" string="Option: Master the Meadow" />
+  <String id="999895100" string="[Ex Prima] Eliminate kumases in the Havenstone Ruins." />
+  <String id="999895101" string="Claim your reward!" />
+  <String id="999896001" string="Option: Naga Nada!" />
+  <String id="999896100" string="[Ex Prima] Eliminate naga battlemasters in the Molten Spire." />
+  <String id="999896101" string="Claim your reward!" />
+  <String id="999897001" string="Option: That Ain't Right!" />
+  <String id="999897100" string="[Arx Umbra] Eliminate demokron experiments in the Mingor Cliffs." />
+  <String id="999897102" string="Claim your reward!" />
+  <String id="999897300" string="Failed Experiments and Corroded Experiments" />
+  <String id="999898001" string="Option: Total Warfare" />
+  <String id="999898100" string="[Gridiron] Win a match in the Gridiron." />
+  <String id="999898101" string="Claim your reward!" />
+  <String id="999899001" string="Option: The Day Is Mine!" />
+  <String id="999899100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="999899101" string="Claim your reward!" />
+  <String id="999911001" string="Timmbbeeerrrr!" />
+  <String id="999911100" string="[Velika] Gather timbers by killing leafgarb ghilliedhus and rotbough mycanars." />
+  <String id="999911102" string="Claim your reward!" />
+  <String id="999911400" string="Useful Timber" />
+  <String id="999912001" string="Marauding Mandrills" />
+  <String id="999912100" string="[Savage Reach] Hunt kobifrill mandrills to help secure the road to Boscan Terrace." />
+  <String id="999912101" string="Claim your reward!" />
+  <String id="999913001" string="Death in the Valley" />
+  <String id="999913100" string="[Savage Reach] Protect our Khirian allies by killing guwangis." />
+  <String id="999913104" string="Claim your reward!" />
+  <String id="999913300" string="Guwangi" />
+  <String id="999914001" string="Contested Territory" />
+  <String id="999914100" string="[Savage Reach] Help the Khirians by killing guwangi hunters and cavern ovoliths." />
+  <String id="999914103" string="Claim your reward!" />
+  <String id="999914300" string="Guwangi Hunters and Cavern Ovoliths" />
+  <String id="999915001" string="Preying on the Parthians" />
+  <String id="999915100" string="[Savage Reach] Kill Parthian bashers and needlers and collect their sashes." />
+  <String id="999915102" string="Claim your reward!" />
+  <String id="999915400" string="Parthian Sash" />
+  <String id="999916001" string="Intrepid Heart" />
+  <String id="999916100" string="[Savage Reach] Collect engine pieces to help Paesyn try to repair Intrepid." />
+  <String id="999916101" string="Claim your reward!" />
+  <String id="999916400" string="Engine Piece" />
+  <String id="999916401" string="Engine Piece" />
+  <String id="999917001" string="Operation Overkill" />
+  <String id="999917100" string="[Ex Prima] Kill ruin sprites." />
+  <String id="999917103" string="Claim your reward!" />
+  <String id="999917107" string="Claim your reward!" />
+  <String id="999917300" string="Ruin Sprites" />
+  <String id="999917400" string="Trimmed Primitive Bird" />
+  <String id="999918001" string="Parthian Purification" />
+  <String id="999918100" string="[Savage Reach] Kill Parthian adepts and snipers before they uncover Intrepid's secrets." />
+  <String id="999918102" string="Claim your reward!" />
+  <String id="999918103" string="Claim your reward!" />
+  <String id="999918300" string="Parthian Adepts and Snipers" />
+  <String id="999919001" string="Egg On" />
+  <String id="999919100" string="[Ex Prima] Gather moaloth eggs for Mysterium research." />
+  <String id="999919101" string="Claim your reward!" />
+  <String id="999919400" string="Moaloth Egg" />
+  <String id="999919401" string="Moaloth Egg" />
+  <String id="999920001" string="Unbearable" />
+  <String id="999920100" string="[Velika] Eliminate starving Velika bears before they eat all the supplies." />
+  <String id="999920101" string="Claim your reward!" />
+  <String id="999921001" string="Lake Monsters" />
+  <String id="999921100" string="[Spring Valley] Kill orisks." />
+  <String id="999921101" string="Claim your reward!" />
+  <String id="999922001" string="Training Exorcise" />
+  <String id="999922100" string="[Spring Valley] Kill demokron thralls." />
+  <String id="999922103" string="Claim your reward!" />
+  <String id="999922300" string="Demokron Thrall" />
+  <String id="999923001" string="Checking IDs" />
+  <String id="999923100" string="[Spring Valley] Kill Spring Valley Intruders and collect their talismans." />
+  <String id="999923103" string="Claim your reward!" />
+  <String id="999923107" string="Claim your reward!" />
+  <String id="999923400" string="Mysterious Talisman" />
+  <String id="999924001" string="Lime Time" />
+  <String id="999924100" string="[Spring Valley] Gather lime from deposits around the hot springs." />
+  <String id="999924101" string="Claim your reward!" />
+  <String id="999924400" string="Lime Deposit" />
+  <String id="999924401" string="Lime Deposit" />
+  <String id="999925001" string="Hot Springs Tonight" />
+  <String id="999925100" string="[Spring Valley] Kill hot springs starfish and hot springs kamaras." />
+  <String id="999925102" string="Claim your reward!" />
+  <String id="999925300" string="Hot Springs starfish and kamaras" />
+  <String id="999926001" string="Imperial Entanglements" />
+  <String id="999926100" string="[Spring Valley] Defeat Archdevan Imperial Army forces." />
+  <String id="999926102" string="Claim your reward!" />
+  <String id="999926300" string="Archdevan Imperial Army" />
+  <String id="999927001" string="Bone Fragments" />
+  <String id="999927100" string="[Spring Valley] Kill Spring Valley animals and collect their bones." />
+  <String id="999927102" string="Claim your reward!" />
+  <String id="999927103" string="Claim your reward!" />
+  <String id="999927400" string="Spring Valley Animal Bones" />
+  <String id="999928001" string="Supply the Demand" />
+  <String id="999928100" string="[Savage Reach] Keep the Vanguard Initiative going by recovering its supply crates." />
+  <String id="999928101" string="Claim your reward!" />
+  <String id="999928400" string="Vanguard Supply Crate" />
+  <String id="999928401" string="Vanguard Supply Crate" />
+  <String id="999929001" string="Creepy-crawlies" />
+  <String id="999929100" string="[Savage Reach] Arachnens threaten Khirian Outpost. Kill them to keep it safe." />
+  <String id="999929102" string="Claim your reward!" />
+  <String id="999929300" string="Jungle Arachnen" />
+  <String id="999930001" string="Punishing Parthians" />
+  <String id="999930100" string="[Spring Valley] Kill Spring Valley Invaders and collect their talismans." />
+  <String id="999930103" string="Claim your reward!" />
+  <String id="999930400" string="Mysterious Talisman" />
+  <String id="999931001" string="Harrier and Harrier" />
+  <String id="999931100" string="[Ex Prima] Kill demokron shock troopers harrying Qeldar Station!" />
+  <String id="999931103" string="Claim your reward!" />
+  <String id="999931104" string="Claim your reward!" />
+  <String id="999931300" string="Demokron Shock Trooper" />
+  <String id="999932001" string="Rockin' Ruins" />
+  <String id="999932100" string="[Ex Prima] Kill ruins guardians." />
+  <String id="999932101" string="Claim your reward!" />
+  <String id="999933001" string="Rooted in Alchemy" />
+  <String id="999933100" string="[Ex Prima] Gather reflective roots." />
+  <String id="999933101" string="Claim your reward!" />
+  <String id="999933400" string="Reflective Root" />
+  <String id="999933401" string="Reflective Root" />
+  <String id="999934001" string="Spare Change" />
+  <String id="999934100" string="[Ex Prima] Kill mutated sporewalkers to secure the area." />
+  <String id="999934101" string="Claim your reward!" />
+  <String id="999935001" string="Requiem" />
+  <String id="999935100" string="[Ex Prima] Free the souls of murdered baraka." />
+  <String id="999935101" string="Claim your reward!" />
+  <String id="999935400" string="Murdered Souls" />
+  <String id="999935401" string="Murdered Souls" />
+  <String id="999936001" string="Terrible Turtle, Dove" />
+  <String id="999936100" string="[Ex Prima] Kill moaloths and magmaras in Diranas Quarry." />
+  <String id="999936102" string="Claim your reward!" />
+  <String id="999936300" string="Diranas Quarry BAMs" />
+  <String id="999937001" string="More Things Change" />
+  <String id="999937100" string="[Ex Prima] Kill mutating Parthians." />
+  <String id="999937105" string="Claim your reward!" />
+  <String id="999937400" string="Mutating Parthians" />
+  <String id="999938001" string="Officer Material" />
+  <String id="999938100" string="[Ex Prima] Kill Archdevan Imperial Officers." />
+  <String id="999938105" string="Claim your reward!" />
+  <String id="999938300" string="Archdevan Imperial Officer" />
+  <String id="999939001" string="Don't Pay the Ferryman" />
+  <String id="999939100" string="[Ex Prima] Kill goblin tomb robbers and recover funerary coins." />
+  <String id="999939110" string="Claim your reward!" />
+  <String id="999939400" string="Funerary Coin" />
+  <String id="999940001" string="Waylaid!" />
+  <String id="999940100" string="[Highwatch Outskirts] Defeat goblin brigands." />
+  <String id="999940101" string="Claim your reward!" />
+  <String id="999941001" string="Cutting a Swath" />
+  <String id="999941100" string="[Arx Umbra] Kill devan hunters, arcanists, thieves, and ferocious hounds to expand our push into the archdevas' territory." />
+  <String id="999941103" string="Claim your reward!" />
+  <String id="999941300" string="Archdevan Forces" />
+  <String id="999942001" string="Gotta Grab 'em All" />
+  <String id="999942100" string="[Arx Umbra] Gather boxes of parts for the Vanguard engineers." />
+  <String id="999942101" string="Claim your reward!" />
+  <String id="999942400" string="Box of Parts" />
+  <String id="999942401" string="Box of Parts" />
+  <String id="999943001" string="Dark Predations" />
+  <String id="999943100" string="[Arx Umbra] Kill snowfall sabertooths to protect our forces." />
+  <String id="999943102" string="Claim your reward!" />
+  <String id="999943400" string="Snowfall Sabertooth" />
+  <String id="999944001" string="No Laughing Matter" />
+  <String id="999944100" string="[Arx Umbra] Kill frostclaw hyenas to protect Tempest Outpost." />
+  <String id="999944101" string="Claim your reward!" />
+  <String id="999944400" string="Frostclaw Hyena" />
+  <String id="999945001" string="Badges of Honor" />
+  <String id="999945100" string="[Arx Umbra] Hunt down Parthian grunts and take their sigils." />
+  <String id="999945105" string="Claim your reward!" />
+  <String id="999945106" string="Claim your reward!" />
+  <String id="999945400" string="Parthian Sigil" />
+  <String id="999946001" string="Demokron Demolition" />
+  <String id="999946100" string="[Arx Umbra] Obliterate the demokrons to cleanse Arx Umbra of their taint." />
+  <String id="999946102" string="Claim your reward!" />
+  <String id="999946109" string="Claim your reward!" />
+  <String id="999946300" string="Quadriliar, Sicula" />
+  <String id="999947001" string="Vanquished Fury" />
+  <String id="999947100" string="[Arx Umbra] Kill the Furyguards in and around Trellum Consurgo to weaken the archdevas' defenses." />
+  <String id="999947106" string="Claim your reward!" />
+  <String id="999947108" string="Claim your reward!" />
+  <String id="999947400" string="Mark of Fury" />
+  <String id="999948001" string="Slayer of the Pack" />
+  <String id="999948100" string="[Savage Reach] Kill Parthian brutes and bloodclaws to protect the Vanguard Initiative." />
+  <String id="999948102" string="Claim your reward!" />
+  <String id="999948300" string="Parthian Brutes and Bloodclaws" />
+  <String id="999949001" string="Training Exorcise" />
+  <String id="999949100" string="[Spring Valley] Kill more demokron thralls." />
+  <String id="999949103" string="Claim your reward!" />
+  <String id="999949300" string="Demokron Thrall" />
+  <String id="999950001" string="The Time of Purification" />
+  <String id="999950100" string="[Arx Umbra] Aid the Khirians by killing demokrons." />
+  <String id="999950102" string="Claim your reward!" />
+  <String id="999950300" string="Barbed Laceras, Vicious Alvusk" />
+  <String id="999951001" string="Charge Through the Cannonballs!" />
+  <String id="999951100" string="[Corsairs' Stronghold] Win a match in Corsairs' Stronghold." />
+  <String id="999951101" string="Claim your reward!" />
+  <String id="999952001" string="Take the Candy and Run!" />
+  <String id="999952100" string="[Kumasylum] Win a match in Kumasylum" />
+  <String id="999952101" string="Claim your reward!" />
+  <String id="999953001" string="Take It or Seize It!" />
+  <String id="999953100" string="[Fraywind Canyon] Win a match in Fraywind Canyon." />
+  <String id="999953101" string="Claim your reward!" />
+  <String id="999954001" string="I'll Show You the Meaning of Power!" />
+  <String id="999954100" string="[Champions' Skyring (Ranked: Solo)] Win a match in the Champions' Skyring." />
+  <String id="999954101" string="Claim your reward!" />
+  <String id="999955001" string="A Purrfect Mission" />
+  <String id="999955100" string="[Savage Reach] The Pools of Zurusuru are overrun with onyx jungle sabertooths. Eliminate them." />
+  <String id="999955101" string="Claim your reward!" />
+  <String id="999956001" string="Essential Oils" />
+  <String id="999956100" string="[Spring Valley] Gather blatherweed." />
+  <String id="999956101" string="Claim your reward!" />
+  <String id="999956400" string="Blatherweed" />
+  <String id="999956401" string="Blatherweed" />
+  <String id="999957001" string="Continue to Advance" />
+  <String id="999957100" string="[[Arx Umbra] Kill demokrons to weaken the archdevas' defense." />
+  <String id="999957102" string="Claim your reward!" />
+  <String id="999957300" string="Hulking Sulcata, Rapacious Oculoid" />
+  <String id="999958001" string="Roughbeak Watcher" />
+  <String id="999958100" string="Kill Deformed Fangspawns to secure the area!" />
+  <String id="999958101" string="Claim your reward!" />
+  <String id="999959001" string="Ruins Slave" />
+  <String id="999959100" string="Kill Deformed Fangspawns to secure the area!" />
+  <String id="999959101" string="Claim your reward!" />
+  <String id="999960001" string="Back to the Past-ure" />
+  <String id="999960100" string="Use Instance Matching and complete a Blast From the Past dungeon again." />
+  <String id="999960101" string="Claim your reward!" />
+  <String id="999961001" string="Demokraxus Must Die!" />
+  <String id="999961100" string="[Macellarius Catacombs] Put an end to the demokron nightmare and kill Demokraxus." />
+  <String id="999961101" string="Claim your reward!" />
+  <String id="999962001" string="Clear Ravenous Gorge" />
+  <String id="999962100" string="[Ravenous Gorge] Kill Nimistrix with your allies." />
+  <String id="999962101" string="Claim your reward!" />
+  <String id="999963001" string="Into the Deep End" />
+  <String id="999963100" string="[Bathysmal Rise - Hard] Kill Nightmare Fulminar with your allies." />
+  <String id="999963101" string="Claim your reward!" />
+  <String id="999964001" string="Clear Rift's Edge" />
+  <String id="999964100" string="[Rift's Edge] Defeat Koleogg in Rift's Edge!" />
+  <String id="999964101" string="Claim your reward!" />
+  <String id="999965001" string="Taking Trophies" />
+  <String id="999965100" string="[Spring Valley] Collect valley noruk antlers." />
+  <String id="999965101" string="Claim your reward!" />
+  <String id="999965400" string="Valley Noruk Antler" />
+  <String id="999966001" string="Put out a Bigger Fire." />
+  <String id="999966100" string="[Akeron's Inferno - Hard] Gather your allies to kill Nightmare Duras, again." />
+  <String id="999966101" string="Claim your reward!" />
+  <String id="999967001" string="Put out the Fire" />
+  <String id="999967100" string="[Akeron's Inferno - Hard] Gather your allies to kill Nightmare Duras." />
+  <String id="999967101" string="Claim your reward!" />
+  <String id="999968001" string="Poolside Service" />
+  <String id="999968100" string="[Bathysmal Rise - Hard] Kill Nightmare Fulminar, if you can." />
+  <String id="999968101" string="Claim your reward!" />
+  <String id="999969001" string="Assault the Dreadnaught" />
+  <String id="999969100" string="[Kalivan's Dreadnaught] Gather your allies to kill Kalivan!" />
+  <String id="999969101" string="Claim your reward!" />
+  <String id="999970001" string="Assault the Timescape" />
+  <String id="999970100" string="[Timescape] Gather your allies to kill Valona." />
+  <String id="999970101" string="Claim your reward!" />
+  <String id="999971001" string="Manipulate the Vortex" />
+  <String id="999971100" string="[Timescape - Hard] Gather your allies to kill Nightmare Valona." />
+  <String id="999971101" string="Claim your reward!" />
+  <String id="999971102" string="Claim your reward!" />
+  <String id="999971104" string="Claim your reward!" />
+  <String id="999971105" string="Claim your reward!" />
+  <String id="999971112" string="Claim your reward!" />
+  <String id="999971119" string="Claim your reward!" />
+  <String id="999971123" string="Claim your reward!" />
+  <String id="999971132" string="Claim your reward!" />
+  <String id="999971133" string="Claim your reward!" />
+  <String id="999971134" string="Claim your reward!" />
+  <String id="999971135" string="Claim your reward!" />
+  <String id="999971136" string="Claim your reward!" />
+  <String id="999971137" string="Claim your reward!" />
+  <String id="999971433" string="Engine Piece" />
+  <String id="999971434" string="Lime Deposit" />
+  <String id="999971435" string="Reflective Root" />
+  <String id="999971436" string="Murdered Souls" />
+  <String id="999971437" string="Box of Parts" />
+  <String id="999972001" string="Lake Monsters" />
+  <String id="999972100" string="[Spring Valley] Kill orisks." />
+  <String id="999972101" string="Claim your reward!" />
+  <String id="999973001" string="Terrible Turtle, Dove" />
+  <String id="999973100" string="[Ex Prima] Kill moaloths and magmaras in Diranas Quarry." />
+  <String id="999973102" string="Claim your reward!" />
+  <String id="999973300" string="Diranas Quarry BAMs" />
+  <String id="999974001" string="Rockin' Ruins" />
+  <String id="999974100" string="[Ex Prima] Kill ruins guardians." />
+  <String id="999974101" string="Claim your reward!" />
+  <String id="999975001" string="Guwangi Purge" />
+  <String id="999975100" string="[Savage Reach] Kill guwangi hunters and jungle arachnens to aid the Khirians." />
+  <String id="999975107" string="Claim your reward!" />
+  <String id="999975300" string="Guwangi Hunters and Jungle Arachnens" />
+  <String id="999976001" string="Punishing Parthians" />
+  <String id="999976100" string="[Spring Valley] Kill Parthian bowmen and collect their talismans." />
+  <String id="999976107" string="Claim your reward!" />
+  <String id="999976400" string="Mysterious Talisman" />
+  <String id="999977001" string="Officer Material" />
+  <String id="999977100" string="[Ex Prima] Kill Archdevan Imperial Officers." />
+  <String id="999977104" string="Claim your reward!" />
+  <String id="999977105" string="Claim your reward!" />
+  <String id="999977300" string="Archdevan Imperial Officers" />
+  <String id="999978001" string="Demokrons are the Disease" />
+  <String id="999978100" string="[Arx Umbra] Kill demokrons on the southern flank." />
+  <String id="999978109" string="Claim your reward!" />
+  <String id="999978300" string="Sicula, Quadriliar" />
+  <String id="999979001" string="Intrepid Heart" />
+  <String id="999979100" string="[Savage Reach] Collect engine pieces to help Paesyn try to repair Intrepid." />
+  <String id="999979101" string="Claim your reward!" />
+  <String id="999979400" string="Engine Piece" />
+  <String id="999979401" string="Engine Piece" />
+  <String id="999980001" string="Lime Time" />
+  <String id="999980100" string="[Spring Valley] Gather lime from deposits around the hot springs." />
+  <String id="999980101" string="Claim your reward!" />
+  <String id="999980400" string="Lime Deposit" />
+  <String id="999980401" string="Lime Deposit" />
+  <String id="999981001" string="Rooted in Alchemy" />
+  <String id="999981100" string="[Ex Prima] Gather reflective roots." />
+  <String id="999981101" string="Claim your reward!" />
+  <String id="999981400" string="Reflective Root" />
+  <String id="999981401" string="Reflective Root" />
+  <String id="999982001" string="Requiem" />
+  <String id="999982100" string="[Ex Prima] Free the souls of murdered baraka." />
+  <String id="999982101" string="Claim your reward!" />
+  <String id="999982400" string="Murdered Souls" />
+  <String id="999982401" string="Murdered Souls" />
+  <String id="999983001" string="Gotta Grab 'em All" />
+  <String id="999983100" string="[Arx Umbra] Gather boxes of parts for the Vanguard engineers." />
+  <String id="999983101" string="Claim your reward!" />
+  <String id="999983400" string="Box of Parts" />
+  <String id="999983401" string="Box of Parts" />
+  <String id="999984001" string="Clear Balder's Temple" />
+  <String id="999984100" string="[Balder's Temple] Kill the Guardian of the Relic in Balder's Temple with your allies!" />
+  <String id="999984101" string="Claim your reward!" />
+  <String id="999984400" string="Sarberry" />
+  <String id="999984401" string="Sarberry" />
+  <String id="999985001" string="Clear Argon Corpus" />
+  <String id="999985100" string="[Argon Corpus] Remove the threat of Meldita." />
+  <String id="999985101" string="Claim your reward!" />
+  <String id="999985400" string="Construction Sand" />
+  <String id="999985401" string="Construction Sand" />
+  <String id="999986001" string="Sabex Armory Ambush!" />
+  <String id="999986100" string="[Sabex Armory] Gather your allies to kill Yateveo." />
+  <String id="999986101" string="Claim your reward!" />
+  <String id="999986400" string="Construction Sand" />
+  <String id="999986401" string="Construction Sand" />
+  <String id="999988001" string="Taproot Shortage" />
+  <String id="999988100" string="[Harvest Festival] Collect taproots for tuwangi lunchboxes." />
+  <String id="999988101" string="Claim your reward!" />
+  <String id="999988400" string="Taproot" />
+  <String id="999988401" string="Taproot" />
+  <String id="999989001" string="Explore Channelworks" />
+  <String id="999989100" string="[Channelworks] Gather your allies to kill Kerkion!" />
+  <String id="999989101" string="Claim your reward!" />
+  <String id="999990001" string="Let's Have A Snowball Fight!" />
+  <String id="999990100" string="[Wintera Snowfield] Seize victory in Wintera Snowfield." />
+  <String id="999990101" string="Claim your reward!" />
+  <String id="999991001" string="Meet the Challenge" />
+  <String id="999991100" string="[Kalivan's Challenge] Gather your allies to kill Wretched Kalivan!" />
+  <String id="999991101" string="Claim your reward!" />
+  <String id="999991102" string="Claim your reward!" />
+  <String id="999991103" string="Claim your reward!" />
+  <String id="999991105" string="Claim your reward!" />
+  <String id="999992001" string="Step Right Up!" />
+  <String id="999992100" string="[Bamarama] Place a bet and win during Bamarama." />
+  <String id="999992101" string="Claim your reward!" />
+  <String id="999993001" string="Assault the Shattered Fleet" />
+  <String id="999993100" string="[The Shattered Fleet] Gather your allies to kill Barbosa!" />
+  <String id="999993101" string="Claim your reward!" />
+  <String id="999994001" string="Assault the Sky Cruiser Endeavor" />
+  <String id="999994100" string="[Sky Cruiser Endeavor (Hard)] Gather your allies to kill Nightmare Darkan!" />
+  <String id="999994101" string="Claim your reward!" />
+  <String id="999995001" string="Master the Meadow" />
+  <String id="999995100" string="[Ex Prima] Eliminate kumases in the Havenstone Ruins." />
+  <String id="999995101" string="Claim your reward!" />
+  <String id="999996001" string="Naga Nada!" />
+  <String id="999996100" string="[Ex Prima] Eliminate naga battlemasters in the Molten Spire." />
+  <String id="999996101" string="Claim your reward!" />
+  <String id="999997001" string="That Ain't Right!" />
+  <String id="999997100" string="[Arx Umbra] Eliminate demokron experiments in the Mingor Cliffs." />
+  <String id="999997101" string="Claim your reward!" />
+  <String id="999997102" string="Claim your reward!" />
+  <String id="999997300" string="Failed Experiments and Corroded Experiments" />
+  <String id="999998001" string="Total Warfare" />
+  <String id="999998100" string="[Gridiron] Win a match in the Gridiron." />
+  <String id="999998101" string="Claim your reward!" />
+  <String id="999999001" string="The Day Is Mine!" />
+  <String id="999999100" string="[Kumas Royale] Win a match in Kumas Royale." />
+  <String id="999999101" string="Claim your reward!" />
+</StrSheet_DailyPlayGuideQuest>

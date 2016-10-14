@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Tera.Gauge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tera"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="30" Height="25" Width="25">
+    <Grid x:Name="grid" Height="Auto" Width="Auto" Margin="0,0">
+        <Ellipse x:Name="base" Opacity=".2" Stroke="Black" StrokeThickness="4"></Ellipse>
+        <local:Arc  x:Name="arc" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Width="Auto" EndAngle="15" Stroke="Black" StrokeThickness="4" OriginRotationDegrees="-90"/>
+        <!--<TextBlock x:Name="txt" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Padding="0,3,0,0" Foreground="#ffffffff" FontSize="20" TextAlignment="Center"  FontWeight="Bold">15</TextBlock>-->
+
+    </Grid>
+</UserControl>
