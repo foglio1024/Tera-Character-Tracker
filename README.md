@@ -14,6 +14,7 @@ https://github.com/Foglio1024/Tera-Character-Tracker/wiki
 https://drive.google.com/open?id=0B_Cqa6A1OUxdMXJ1elNSdTM3VTg
 
 ## TODO
+* Account type detection
 * Dungeon guild quest check upon teleporting to dungeon
 * Customizable notification types
 * Exclusion list for characters
