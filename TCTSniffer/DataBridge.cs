@@ -74,6 +74,7 @@ namespace PacketViewer
         static InventoryProcessor ip = new InventoryProcessor();
         static SectionProcessor sp = new SectionProcessor();
         static CrystalbindProcessor cbp = new CrystalbindProcessor();
+        static AccountLoginProcessor alp = new AccountLoginProcessor();
 
         internal static void storeMessage(Message msg)
         {
@@ -93,8 +94,14 @@ namespace PacketViewer
             {
                 case "S_GET_USER_LIST": 
                     #region LIST
-                    wCforCcb.Clear();
+                    cbp.Clear();
+                    if(!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == alp.id)))
+                    {
+                        TeraLogic.AccountList.Add(new Account(alp.id, alp.tc, alp.vet, alp.tcTime));
+                    }
+                    cp.CurrentAccountId = alp.id;
                     SetCharList(lp.HexShortText);
+
                     break; 
                 #endregion
 
@@ -203,7 +210,14 @@ namespace PacketViewer
                     cbp.CancelDeletion();
                     break;
                 #endregion
-                    #endregion
+                #endregion
+
+                case "S_LOGIN_ACCOUNT_INFO":
+                    alp.ParseLoginInfo(lp.HexShortText);
+                    break;
+                case "S_ACCOUNT_PACKAGE_LIST":
+                    alp.ParsePackageInfo(lp.HexShortText);
+                    break;
                 default:
                     break;
             }
@@ -394,6 +408,7 @@ namespace PacketViewer
             //}
             #endregion
         }
+
         #region Methods
         public static Tera.Character CurrentChar()
         {
@@ -402,7 +417,6 @@ namespace PacketViewer
         private static void SetCharList(string p)
         {
             var charList =  cp.ParseCharacters(p);
-
             for (int i = 0; i < charList.Count; i++)
             {
                 UI.win.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.newChar(charList[i])));
@@ -710,347 +724,254 @@ namespace PacketViewer
 
         //}
         #endregion
-    }
-    public class CharListProcessor
-    {
-        const int CLASS_OFFSET_FROM_START = 60;
-        const int LEVEL_OFFSET_FROM_START = 68;
-        const int LOCATION_OFFSET_FROM_START = 108;
-        const int LAST_ONLINE_OFFSET_FROM_START = 116;
-        const int LAUREL_OFFSET_FROM_START = 600;
-        const int POSITION_OFFSET_FROM_START = 608;
-        const int GUILD_ID_OFFSET_FROM_START = 616;
-        const int NAME_OFFSET_FROM_START = 624;
-        const int GUILD_NAME_OFFSET_FROM_NAME = 196;
-        const int FIRST_POINTER = 6;
 
-        LastOnlineConverter lc = new LastOnlineConverter();
-        LocationConverter lcc = new LocationConverter();
-
-        List<string> charStrings = new List<string>();
-        List<int> indexesArray = new List<int>();
-
-
-        private List<Tera.Character> sortChars(List<Tera.Character> c)
+        class CharListProcessor
         {
-            List<Tera.Character> newList = new List<Tera.Character>();
-            uint maxIndex = 0;
-            for (int i = 0; i < c.Count; i++)
-            {
-                if (maxIndex <= c[i].Position)
-                {
-                    maxIndex = c[i].Position;
-                }
-            }
+            const int CLASS_OFFSET_FROM_START = 60;
+            const int LEVEL_OFFSET_FROM_START = 68;
+            const int LOCATION_OFFSET_FROM_START = 108;
+            const int LAST_ONLINE_OFFSET_FROM_START = 116;
+            const int LAUREL_OFFSET_FROM_START = 600;
+            const int POSITION_OFFSET_FROM_START = 608;
+            const int GUILD_ID_OFFSET_FROM_START = 616;
+            const int NAME_OFFSET_FROM_START = 624;
+            const int GUILD_NAME_OFFSET_FROM_NAME = 196;
+            const int FIRST_POINTER = 6;
 
-            if (maxIndex == 0)
-            {
-                return c;
-            }
+            public string CurrentAccountId { get; set; }
 
-            else
+            LastOnlineConverter lc = new LastOnlineConverter();
+            LocationConverter lcc = new LocationConverter();
+
+            List<string> charStrings = new List<string>();
+            List<int> indexesArray = new List<int>();
+
+
+            private List<Tera.Character> sortChars(List<Tera.Character> c)
             {
-                for (int i = 0; i <= maxIndex; i++)
+                List<Tera.Character> newList = new List<Tera.Character>();
+                uint maxIndex = 0;
+                for (int i = 0; i < c.Count; i++)
                 {
-                    int newIndex = c.IndexOf(c.Find(x => x.Position == i));
-                    if (newIndex >= 0)
+                    if (maxIndex <= c[i].Position)
                     {
-                        newList.Add(c[newIndex]);
+                        maxIndex = c[i].Position;
                     }
                 }
-                return newList;
-            }
-        }
-        private string getName(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            bool eos = false;
-            int i = 0;
-            string c = "";
-            while (!eos)
-            {
-                c = s.Substring(NAME_OFFSET_FROM_START + 4 * i, 4);
-                if (c != "0000")
+
+                if (maxIndex == 0)
                 {
-                    b.Append(c);
-                    i++;
+                    return c;
                 }
+
                 else
                 {
-                    eos = true;
-                }
-            }
-
-            b.Replace("00", "");
-            string name = Encoding.UTF7.GetString(TCTSniffer.StringUtils.StringToByteArray(b.ToString()));
-            return name;
-
-        }
-        private uint getPosition(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            string c = s.Substring(POSITION_OFFSET_FROM_START, 8);
-
-            for (int i = 4; i > 0; i--)
-            {
-                b.Append(c[2 * (i - 1)]);
-                b.Append(c[2 * (i - 1) + 1]);
-            }
-
-            uint pos = Convert.ToUInt32(b.ToString(), 16);
-            return pos;
-
-        }
-        private string getClass(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            string c = s.Substring(CLASS_OFFSET_FROM_START, 8);
-
-            for (int i = 4; i > 0; i--)
-            {
-                b.Append(c[2 * (i - 1)]);
-                b.Append(c[2 * (i - 1) + 1]);
-            }
-
-            uint classIndex = Convert.ToUInt32(b.ToString(), 16);
-
-            string cl = ((Class)classIndex).ToString();
-            return cl;
-
-        }
-        private string getLaurel(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            string c = s.Substring(LAUREL_OFFSET_FROM_START, 8);
-
-            for (int i = 4; i > 0; i--)
-            {
-                b.Append(c[2 * (i - 1)]);
-                b.Append(c[2 * (i - 1) + 1]);
-            }
-
-            uint lrIndex = Convert.ToUInt32(b.ToString(), 16);
-
-            string lr = ((Laurel)lrIndex).ToString();
-            return lr;
-        }
-        private uint getLevel(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            string c = s.Substring(LEVEL_OFFSET_FROM_START, 8);
-
-            for (int i = 4; i > 0; i--)
-            {
-                b.Append(c[2 * (i - 1)]);
-                b.Append(c[2 * (i - 1) + 1]);
-            }
-
-            uint lv = Convert.ToUInt32(b.ToString(), 16);
-            return lv;
-
-        }
-        private uint getGuildId(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            string c = "";
-
-            c = s.Substring(GUILD_ID_OFFSET_FROM_START, 8);
-
-            for (int i = 4; i > 0; i--)
-            {
-                b.Append(c[2 * (i - 1)]);
-                b.Append(c[2 * (i - 1) + 1]);
-            }
-
-            uint gid = Convert.ToUInt32(b.ToString(), 16);
-            return gid;
-
-        }
-        private uint getLocationId(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            string c = "";
-            c = s.Substring(LOCATION_OFFSET_FROM_START, 8);
-
-            for (int i = 4; i > 0; i--)
-            {
-                b.Append(c[2 * (i - 1)]);
-                b.Append(c[2 * (i - 1) + 1]);
-            }
-
-            uint loc = Convert.ToUInt32(b.ToString(), 16);
-            return loc;
-        }
-        private long getLastOnline(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            StringReader r = new StringReader(s);
-            string c = "";
-            c = s.Substring(LAST_ONLINE_OFFSET_FROM_START, 8);
-
-            for (int i = 4; i > 0; i--)
-            {
-                b.Append(c[2 * (i - 1)]);
-                b.Append(c[2 * (i - 1) + 1]);
-            }
-
-            long lastOn = Convert.ToInt64(b.ToString(), 16);
-            return lastOn;
-        }
-        private string getGuildName(string s)
-        {
-            StringBuilder b = new StringBuilder();
-            StringReader r = new StringReader(s);
-            bool eos = false;
-            int i = 0;
-            string c = "";
-            while (!eos)
-            {
-                c = s.Substring(NAME_OFFSET_FROM_START + getName(s).Length * 4 + GUILD_NAME_OFFSET_FROM_NAME + 4 * i, 4);
-                if (c != "0000")
-                {
-                    b.Append(c);
-                    i++;
-                }
-                else
-                {
-                    eos = true;
-                }
-            }
-
-            b.Replace("00", "");
-            string gname = Encoding.UTF7.GetString(TCTSniffer.StringUtils.StringToByteArray(b.ToString()));
-            //Console.WriteLine(gname);
-            return gname;
-
-        }
-
-        void fillIndexesArray(string content)
-        {
-            int currentPointer = FIRST_POINTER;
-
-            do
-            {
-                int lastPointer = readPointer(content, currentPointer * 2);
-                indexesArray.Add(lastPointer);
-                currentPointer = readPointer(content, lastPointer * 2 + 4);
-            }
-            while (currentPointer != 0);
-        }
-        void fillCharStrings(string content)
-        {
-            fillIndexesArray(content);
-            int itemLenght = 0;
-            for (int i = 0; i < indexesArray.Count; i++)
-            {
-                if (i != indexesArray.Count - 1)
-                {
-                    itemLenght = indexesArray[i + 1] - indexesArray[i];
-                    charStrings.Add(content.Substring(indexesArray[i] * 2 + 4, itemLenght * 2));
-                }
-                else
-                {
-                    charStrings.Add(content.Substring(indexesArray[i] * 2 + 4));
-                }
-
-            }
-        }
-        Character stringToCharacter(string s)
-        {
-            uint guildId = getGuildId(s);
-            uint pos = getPosition(s);
-            string name = getName(s);
-            string charClass = getClass(s);
-            uint level = getLevel(s);
-            uint loc = getLocationId(s);
-            long lastOn = getLastOnline(s);
-            string laurel = getLaurel(s);
-
-
-            return new Character(_index: pos,
-                                _name: name,
-                                _class: charClass,
-                                _laurel: laurel,
-                                _lvl: level,
-                                _guildId: guildId,
-                                _locationId: loc,
-                                _lastOnline: lastOn
-                                );
-        }
-        int readPointer(string content, int start)
-        {
-            return StringUtils.Hex2BStringToInt(content.Substring(start, 4));
-        }
-
-        public List<Character> ParseCharacters(string p)
-        {
-            List<Character> _charList = new List<Character>();
-            fillCharStrings(p);
-
-            foreach (var str in charStrings)
-            {
-                var c = stringToCharacter(str);
-                _charList.Add(c);
-
-                if (!Tera.TeraLogic.GuildDictionary.ContainsKey(c.GuildId))
-                {
-                    TeraLogic.GuildDictionary.Add(c.GuildId, getGuildName(str));
-                }
-
-                UI.win.updateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + lc.Convert(c.LastOnline, null, null, null) + ".");
-            }
-
-
-            var charList = sortChars(_charList);
-            return charList;
-        }
-        public void Clear()
-        {
-            indexesArray.Clear();
-            charStrings.Clear();
-        }
-        List<Tera.Character> getAllChars(string p)
-        {
-            List<Tera.Character> charList = new List<Character>();
-            List<string> stringList = new List<string>();
-            int startIndex = 0;
-            int charLength = 0;
-            string _char = "";
-            bool lastChar = false;
-            bool eof = false;
-            while (!eof)
-            {
-                if (!lastChar)
-                {
-                    string header = p.Substring(0, 4);
-                    charLength = p.IndexOf(header, 4);
-                    _char = p.Substring(0, charLength + 4);
-                    stringList.Add(_char);
-                    //Console.WriteLine("Added char");
-
-                    //Check if next is last char
-                    string nextCharHeader = "";
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i <= maxIndex; i++)
                     {
-                        nextCharHeader = nextCharHeader + p[charLength + 4 + i];
+                        int newIndex = c.IndexOf(c.Find(x => x.Position == i));
+                        if (newIndex >= 0)
+                        {
+                            newList.Add(c[newIndex]);
+                        }
                     }
-                    if (nextCharHeader == "0000")
+                    return newList;
+                }
+            }
+            private string getName(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                bool eos = false;
+                int i = 0;
+                string c = "";
+                while (!eos)
+                {
+                    c = s.Substring(NAME_OFFSET_FROM_START + 4 * i, 4);
+                    if (c != "0000")
                     {
-                        lastChar = true;
-                        //Console.WriteLine("Last char");
+                        b.Append(c);
+                        i++;
+                    }
+                    else
+                    {
+                        eos = true;
+                    }
+                }
+
+                b.Replace("00", "");
+                string name = Encoding.UTF7.GetString(TCTSniffer.StringUtils.StringToByteArray(b.ToString()));
+                return name;
+
+            }
+            private uint getPosition(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                string c = s.Substring(POSITION_OFFSET_FROM_START, 8);
+
+                for (int i = 4; i > 0; i--)
+                {
+                    b.Append(c[2 * (i - 1)]);
+                    b.Append(c[2 * (i - 1) + 1]);
+                }
+
+                uint pos = Convert.ToUInt32(b.ToString(), 16);
+                return pos;
+
+            }
+            private string getClass(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                string c = s.Substring(CLASS_OFFSET_FROM_START, 8);
+
+                for (int i = 4; i > 0; i--)
+                {
+                    b.Append(c[2 * (i - 1)]);
+                    b.Append(c[2 * (i - 1) + 1]);
+                }
+
+                uint classIndex = Convert.ToUInt32(b.ToString(), 16);
+
+                string cl = ((Class)classIndex).ToString();
+                return cl;
+
+            }
+            private string getLaurel(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                string c = s.Substring(LAUREL_OFFSET_FROM_START, 8);
+
+                for (int i = 4; i > 0; i--)
+                {
+                    b.Append(c[2 * (i - 1)]);
+                    b.Append(c[2 * (i - 1) + 1]);
+                }
+
+                uint lrIndex = Convert.ToUInt32(b.ToString(), 16);
+
+                string lr = ((Laurel)lrIndex).ToString();
+                return lr;
+            }
+            private uint getLevel(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                string c = s.Substring(LEVEL_OFFSET_FROM_START, 8);
+
+                for (int i = 4; i > 0; i--)
+                {
+                    b.Append(c[2 * (i - 1)]);
+                    b.Append(c[2 * (i - 1) + 1]);
+                }
+
+                uint lv = Convert.ToUInt32(b.ToString(), 16);
+                return lv;
+
+            }
+            private uint getGuildId(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                string c = "";
+
+                c = s.Substring(GUILD_ID_OFFSET_FROM_START, 8);
+
+                for (int i = 4; i > 0; i--)
+                {
+                    b.Append(c[2 * (i - 1)]);
+                    b.Append(c[2 * (i - 1) + 1]);
+                }
+
+                uint gid = Convert.ToUInt32(b.ToString(), 16);
+                return gid;
+
+            }
+            private uint getLocationId(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                string c = "";
+                c = s.Substring(LOCATION_OFFSET_FROM_START, 8);
+
+                for (int i = 4; i > 0; i--)
+                {
+                    b.Append(c[2 * (i - 1)]);
+                    b.Append(c[2 * (i - 1) + 1]);
+                }
+
+                uint loc = Convert.ToUInt32(b.ToString(), 16);
+                return loc;
+            }
+            private long getLastOnline(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                StringReader r = new StringReader(s);
+                string c = "";
+                c = s.Substring(LAST_ONLINE_OFFSET_FROM_START, 8);
+
+                for (int i = 4; i > 0; i--)
+                {
+                    b.Append(c[2 * (i - 1)]);
+                    b.Append(c[2 * (i - 1) + 1]);
+                }
+
+                long lastOn = Convert.ToInt64(b.ToString(), 16);
+                return lastOn;
+            }
+            private string getGuildName(string s)
+            {
+                StringBuilder b = new StringBuilder();
+                StringReader r = new StringReader(s);
+                bool eos = false;
+                int i = 0;
+                string c = "";
+                while (!eos)
+                {
+                    c = s.Substring(NAME_OFFSET_FROM_START + getName(s).Length * 4 + GUILD_NAME_OFFSET_FROM_NAME + 4 * i, 4);
+                    if (c != "0000")
+                    {
+                        b.Append(c);
+                        i++;
+                    }
+                    else
+                    {
+                        eos = true;
+                    }
+                }
+
+                b.Replace("00", "");
+                string gname = Encoding.UTF7.GetString(TCTSniffer.StringUtils.StringToByteArray(b.ToString()));
+                //Console.WriteLine(gname);
+                return gname;
+
+            }
+
+            void fillIndexesArray(string content)
+            {
+                int currentPointer = FIRST_POINTER;
+
+                do
+                {
+                    int lastPointer = readPointer(content, currentPointer * 2);
+                    indexesArray.Add(lastPointer);
+                    currentPointer = readPointer(content, lastPointer * 2 + 4);
+                }
+                while (currentPointer != 0);
+            }
+            void fillCharStrings(string content)
+            {
+                fillIndexesArray(content);
+                int itemLenght = 0;
+                for (int i = 0; i < indexesArray.Count; i++)
+                {
+                    if (i != indexesArray.Count - 1)
+                    {
+                        itemLenght = indexesArray[i + 1] - indexesArray[i];
+                        charStrings.Add(content.Substring(indexesArray[i] * 2 + 4, itemLenght * 2));
+                    }
+                    else
+                    {
+                        charStrings.Add(content.Substring(indexesArray[i] * 2 + 4));
                     }
 
-                    p = p.Substring(charLength + 4);
-                }
-                else
-                {
-                    _char = p;
-                    stringList.Add(_char);
-                    //Console.WriteLine("Found {0} chars", stringList.Count);
-                    eof = true;
                 }
             }
-            foreach (string s in stringList)
+            Character stringToCharacter(string s)
             {
                 uint guildId = getGuildId(s);
                 uint pos = getPosition(s);
@@ -1062,382 +983,417 @@ namespace PacketViewer
                 string laurel = getLaurel(s);
 
 
-                charList.Add(new Character(_index: pos,
-                                           _name: name,
-                                           _class: charClass,
-                                           _laurel: laurel,
-                                           _lvl: level,
-                                           _guildId: guildId,
-                                           _locationId: loc,
-                                           _lastOnline: lastOn
-                                           ));
-                LastOnlineConverter lc = new LastOnlineConverter();
-                Tera.LocationConverter lcc = new LocationConverter();
-                Tera.UI.win.updateLog("Found character: " + name + " lv." + level + " " + charClass.ToLower() + ", logged out in " + lcc.Convert(loc, null, null, null) + " on " + lc.Convert(lastOn, null, null, null) + ".");
+                return new Character(_index: pos,
+                                    _name: name,
+                                    _class: charClass,
+                                    _laurel: laurel,
+                                    _lvl: level,
+                                    _guildId: guildId,
+                                    _locationId: loc,
+                                    _lastOnline: lastOn,
+                                    _accId: CurrentAccountId
+                                    );
+            }
+            int readPointer(string content, int start)
+            {
+                return StringUtils.Hex2BStringToInt(content.Substring(start, 4));
+            }
 
-                if (!Tera.TeraLogic.GuildDictionary.ContainsKey(guildId))
+            public List<Character> ParseCharacters(string p)
+            {
+                List<Character> _charList = new List<Character>();
+                fillCharStrings(p);
+
+                foreach (var str in charStrings)
                 {
-                    TeraLogic.GuildDictionary.Add(guildId, getGuildName(s));
+                    var c = stringToCharacter(str);
+                    _charList.Add(c);
+
+                    if (!Tera.TeraLogic.GuildDictionary.ContainsKey(c.GuildId))
+                    {
+                        TeraLogic.GuildDictionary.Add(c.GuildId, getGuildName(str));
+                    }
+
+                    UI.win.updateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + lc.Convert(c.LastOnline, null, null, null) + ".");
                 }
 
+
+                var charList = sortChars(_charList);
+                return charList;
             }
-
-            var orderedCharList = sortChars(charList);
-
-
-
-            return orderedCharList;
-        } //old
-    }
-    public class CharLoginProcessor
-    {
-        const int NAME_OFFSET_FROM_START = 290 * 2;
-        const int ID_OFFSET_FROM_START = 18 * 2;
-        const int ID_LENGHT = 12;
-
-        public string getName(string content)
-        {
-            return StringUtils.GetStringFromHex(content, NAME_OFFSET_FROM_START, "0000");
-        }
-        public string getId(string content)
-        {
-            return content.Substring(ID_OFFSET_FROM_START, ID_LENGHT);
-        }
-    }
-    public class VanguardWindowProcessor
-    {
-        const int WEEKLY_OFFSET = 28 * 2;
-        const int CREDITS_OFFSET = 32 * 2;
-        const int DAILY_OFFSET = 12 * 2;
-
-
-        public int getWeekly(string content)
-        {
-            int w = StringUtils.Hex4BStringToInt(content.Substring(WEEKLY_OFFSET));
-            if(w > TeraLogic.MAX_WEEKLY) { w = TeraLogic.MAX_WEEKLY; }
-            return w;
-        }
-        public int getCredits(string content)
-        {
-            return StringUtils.Hex4BStringToInt(content.Substring(CREDITS_OFFSET));
-        }
-        public int getDaily(string content)
-        {
-            return StringUtils.Hex4BStringToInt(content.Substring(DAILY_OFFSET));
-        }
-    }
-    public class InventoryProcessor
-    {
-        const int FIRST_POINTER = 6;
-        const int ID_OFFSET = 8 * 2;
-        const int POSITION_OFFSET = 32 * 2;
-        const int AMOUNT_OFFSET = 36 * 2;
-        const int AMOUNT_OFFSET_FROM_ID = 56;
-        const int MULTIPLE_FLAG = 25*2;
-        const int HEADER_LENGHT = 61 * 2;
-        const string MARK_ID = "5B500200";
-        const string GFIN_ID = "36020000";
-
-        List<string> itemStrings = new List<string>();
-        List<int> indexesArray = new List<int>();
-        List<InventoryItem> itemsList = new List<InventoryItem>();
-
-        public bool multiplePackets = false;
-        public string p1;
-        public string p2;
-        public string inv;
-
-        public void Clear()
-        {
-            multiplePackets = false;
-            p1 = null;
-            p2 = null;
-            itemsList.Clear();
-            itemStrings.Clear();
-            indexesArray.Clear();
-        }
-        public void MergeInventory()
-        {
-            if(p2 != null)
+            public void Clear()
             {
-                fillItemList(p1);
                 indexesArray.Clear();
+                charStrings.Clear();
+            }
+        }
+        class CharLoginProcessor
+        {
+            const int NAME_OFFSET_FROM_START = 290 * 2;
+            const int ID_OFFSET_FROM_START = 18 * 2;
+            const int ID_LENGHT = 12;
+
+            public string getName(string content)
+            {
+                return StringUtils.GetStringFromHex(content, NAME_OFFSET_FROM_START, "0000");
+            }
+            public string getId(string content)
+            {
+                return content.Substring(ID_OFFSET_FROM_START, ID_LENGHT);
+            }
+        }
+        class VanguardWindowProcessor
+        {
+            const int WEEKLY_OFFSET = 28 * 2;
+            const int CREDITS_OFFSET = 32 * 2;
+            const int DAILY_OFFSET = 12 * 2;
+
+
+            public int getWeekly(string content)
+            {
+                int w = StringUtils.Hex4BStringToInt(content.Substring(WEEKLY_OFFSET));
+                if(w > TeraLogic.MAX_WEEKLY) { w = TeraLogic.MAX_WEEKLY; }
+                return w;
+            }
+            public int getCredits(string content)
+            {
+                return StringUtils.Hex4BStringToInt(content.Substring(CREDITS_OFFSET));
+            }
+            public int getDaily(string content)
+            {
+                return StringUtils.Hex4BStringToInt(content.Substring(DAILY_OFFSET));
+            }
+        }
+        class InventoryProcessor
+        {
+            const int FIRST_POINTER = 6;
+            const int ID_OFFSET = 8 * 2;
+            const int POSITION_OFFSET = 32 * 2;
+            const int AMOUNT_OFFSET = 36 * 2;
+            const int AMOUNT_OFFSET_FROM_ID = 56;
+            const int MULTIPLE_FLAG = 25*2;
+            const int HEADER_LENGHT = 61 * 2;
+            const string MARK_ID = "5B500200";
+            const string GFIN_ID = "36020000";
+
+            List<string> itemStrings = new List<string>();
+            List<int> indexesArray = new List<int>();
+            List<InventoryItem> itemsList = new List<InventoryItem>();
+
+            public bool multiplePackets = false;
+            public string p1;
+            public string p2;
+            public string inv;
+
+            public void Clear()
+            {
+                multiplePackets = false;
+                p1 = null;
+                p2 = null;
+                itemsList.Clear();
                 itemStrings.Clear();
-                fillItemList(p2);
+                indexesArray.Clear();
             }
-            else
+            public void MergeInventory()
             {
-                fillItemList(p1);
-            }
-        }
-        public void FastMergeInventory()
-        {
-            if (p2 != null)
-            {
-                inv = p1 + p2;
-            }
-            else inv = p1;
-        }
-        public int GetMarks(string content)
-        {
-            fillItemList(content);
-            if (itemsList.Find(x => x.Name == "Elleon's Mark of Valor") != null)
-            {
-                return itemsList.Find(x => x.Name == "Elleon's Mark of Valor").Amount;
-            }
-            else return 0;
-
-
-        }
-        public int GetGoldfinger(string content)
-        {
-            fillItemList(content);
-            if (itemsList.Find(x => x.Name == "Goldfinger Token") != null)
-            {
-                return itemsList.Find(x => x.Name == "Goldfinger Token").Amount;
-            }
-            else return 0;
-
-        }
-        public int GetMarksFast(string content)
-        {
-            if (content.Contains(MARK_ID))
-            {
-                    return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(MARK_ID) + AMOUNT_OFFSET_FROM_ID, 8));
-            }
-            else return 0;
-        }
-        public int GetGoldfingerFast(string content)
-        {
-            if (content.Contains(GFIN_ID))
-            {
-                    return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(GFIN_ID) + AMOUNT_OFFSET_FROM_ID, 8));
-
-            }
-            else return 0;
-        }
-
-        void fillIndexesArray(string content)
-        {
-            int currentPointer = FIRST_POINTER;
-
-            do
-            {
-                int lastPointer = readPointer(content, currentPointer * 2);
-                indexesArray.Add(lastPointer);
-                currentPointer = readPointer(content, lastPointer * 2 + 4);
-            }
-            while (currentPointer != 0);
-        }
-        void fillItemStrings(string p)
-        {
-            fillIndexesArray(p);
-            int itemLenght = 0;
-            for (int i = 0; i < indexesArray.Count; i++)
-            {
-                if (i != indexesArray.Count-1)
+                if(p2 != null)
                 {
-                    itemLenght = indexesArray[i+1] - indexesArray[i];
-                    itemStrings.Add(p.Substring(indexesArray[i] * 2 + 4 , itemLenght*2));
+                    fillItemList(p1);
+                    indexesArray.Clear();
+                    itemStrings.Clear();
+                    fillItemList(p2);
                 }
                 else
                 {
-                    itemStrings.Add(p.Substring(indexesArray[i] * 2 + 4));
+                    fillItemList(p1);
                 }
-
             }
-        }
-        InventoryItem stringToItem(string s)
-        {
-            int itemId = StringUtils.Hex4BStringToInt(s.Substring(ID_OFFSET, 8));
-            int amount = StringUtils.Hex4BStringToInt(s.Substring(AMOUNT_OFFSET, 8));
-            string name = "Unknown";
-            XElement e;
-            foreach (var doc in TeraLogic.StrSheet_Item_List)
+            public void FastMergeInventory()
             {
-                e = doc.Descendants().Where(x => (string)x.Attribute("id") == itemId.ToString()).FirstOrDefault();
-                if(e != null)
+                if (p2 != null)
                 {
-                    name = e.Attribute("string").Value;
-                    break;
+                    inv = p1 + p2;
+                }
+                else inv = p1;
+            }
+            public int GetMarks(string content)
+            {
+                fillItemList(content);
+                if (itemsList.Find(x => x.Name == "Elleon's Mark of Valor") != null)
+                {
+                    return itemsList.Find(x => x.Name == "Elleon's Mark of Valor").Amount;
+                }
+                else return 0;
+
+
+            }
+            public int GetGoldfinger(string content)
+            {
+                fillItemList(content);
+                if (itemsList.Find(x => x.Name == "Goldfinger Token") != null)
+                {
+                    return itemsList.Find(x => x.Name == "Goldfinger Token").Amount;
+                }
+                else return 0;
+
+            }
+            public int GetMarksFast(string content)
+            {
+                if (content.Contains(MARK_ID))
+                {
+                        return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(MARK_ID) + AMOUNT_OFFSET_FROM_ID, 8));
+                }
+                else return 0;
+            }
+            public int GetGoldfingerFast(string content)
+            {
+                if (content.Contains(GFIN_ID))
+                {
+                        return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(GFIN_ID) + AMOUNT_OFFSET_FROM_ID, 8));
+
+                }
+                else return 0;
+            }
+
+            void fillIndexesArray(string content)
+            {
+                int currentPointer = FIRST_POINTER;
+
+                do
+                {
+                    int lastPointer = readPointer(content, currentPointer * 2);
+                    indexesArray.Add(lastPointer);
+                    currentPointer = readPointer(content, lastPointer * 2 + 4);
+                }
+                while (currentPointer != 0);
+            }
+            void fillItemStrings(string p)
+            {
+                fillIndexesArray(p);
+                int itemLenght = 0;
+                for (int i = 0; i < indexesArray.Count; i++)
+                {
+                    if (i != indexesArray.Count-1)
+                    {
+                        itemLenght = indexesArray[i+1] - indexesArray[i];
+                        itemStrings.Add(p.Substring(indexesArray[i] * 2 + 4 , itemLenght*2));
+                    }
+                    else
+                    {
+                        itemStrings.Add(p.Substring(indexesArray[i] * 2 + 4));
+                    }
+
+                }
+            }
+            InventoryItem stringToItem(string s)
+            {
+                int itemId = StringUtils.Hex4BStringToInt(s.Substring(ID_OFFSET, 8));
+                int amount = StringUtils.Hex4BStringToInt(s.Substring(AMOUNT_OFFSET, 8));
+                string name = "Unknown";
+                XElement e;
+                foreach (var doc in TeraLogic.StrSheet_Item_List)
+                {
+                    e = doc.Descendants().Where(x => (string)x.Attribute("id") == itemId.ToString()).FirstOrDefault();
+                    if(e != null)
+                    {
+                        name = e.Attribute("string").Value;
+                        break;
+                    }
+                }
+
+
+                return new InventoryItem(itemId, amount, name);
+            }
+            void fillItemList(string content)
+            {
+                fillItemStrings(content);
+                foreach (var str in itemStrings)
+                {
+                    itemsList.Add(stringToItem(str));
+                }
+            }
+            int readPointer(string content, int start)
+            {
+                return StringUtils.Hex2BStringToInt(content.Substring(start, 4)); 
+            }
+            class InventoryItem
+            {
+                public int Id { get; set; }
+                public int Amount { get; set; }
+                public string Name { get; set; }
+                public InventoryItem(int _itemId, int _amount, string _name)
+                {
+                    Id = _itemId;
+                    Amount = _amount;
+                    Name = _name;
                 }
             }
 
-
-            return new InventoryItem(itemId, amount, name);
         }
-        void fillItemList(string content)
+        class SectionProcessor
         {
-            fillItemStrings(content);
-            foreach (var str in itemStrings)
-            {
-                itemsList.Add(stringToItem(str));
-            }
-        }
-        int readPointer(string content, int start)
-        {
-            return StringUtils.Hex2BStringToInt(content.Substring(start, 4)); 
-        }
-        class InventoryItem
-        {
-            public int Id { get; set; }
-            public int Amount { get; set; }
-            public string Name { get; set; }
-            public InventoryItem(int _itemId, int _amount, string _name)
-            {
-                Id = _itemId;
-                Amount = _amount;
-                Name = _name;
-            }
-        }
-
-    }
-    public class SectionProcessor
-    {
-        const int SECTION_ID_OFFSET = 13 * 2;
+            const int SECTION_ID_OFFSET = 13 * 2;
         
-        public uint GetLocationId(string p)
-        {
-            return Convert.ToUInt32(StringUtils.Hex4BStringToInt(p.Substring(SECTION_ID_OFFSET, 8)));
-        }
-        public string GetLocationName(string p)
-        {
-            var locId = GetLocationId(p);
-            var c = new LocationConverter();
-            return (string)c.Convert(locId, null, null, null);
-        }
-    }
-    public class CrystalbindProcessor
-    {
-        const int CCB_ID = 4610;
-        const int CHAR_ID_OFFSET = 4 * 2;
-        const int CHAR_ID_LENGHT = 12;
-        const int B_BUFF_ID_OFFSET = 20 * 2;
-        const int E_BUFF_ID_OFFSET = 12 * 2;
-        const int TIME_OFFSET = 24 * 2;
-        bool ccbEnding = false;
-        public bool Status { get; set; } = false;
-        public long Time { get; set; } = 0;
-        List<Buff> BuffList = new List<Buff>();
-
-        public void Clear()
-        {
-            Status = false;
-            Time = 0;
-            BuffList.Clear();
-            ccbEnding = false;
-        }
-        public void CheckCcb(uint locId)
-        {
-            bool found = false;
-            foreach (var buff in BuffList)
+            public uint GetLocationId(string p)
             {
-                if(buff.Id == CCB_ID)
-                {
-                    found = true;
-                    Status = true;
-                    break;
-                }
+                return Convert.ToUInt32(StringUtils.Hex4BStringToInt(p.Substring(SECTION_ID_OFFSET, 8)));
             }
+            public string GetLocationName(string p)
+            {
+                var locId = GetLocationId(p);
+                var c = new LocationConverter();
+                return (string)c.Convert(locId, null, null, null);
+            }
+        }
+        class CrystalbindProcessor
+        {
+            const int CCB_ID = 4610;
+            const int CHAR_ID_OFFSET = 4 * 2;
+            const int CHAR_ID_LENGHT = 12;
+            const int B_BUFF_ID_OFFSET = 20 * 2;
+            const int E_BUFF_ID_OFFSET = 12 * 2;
+            const int TIME_OFFSET = 24 * 2;
+            bool ccbEnding = false;
+            public bool Status { get; set; } = false;
+            public long Time { get; set; } = 0;
+            List<Buff> BuffList = new List<Buff>();
 
-            if (!found)
+            public void Clear()
             {
                 Status = false;
+                Time = 0;
+                BuffList.Clear();
+                ccbEnding = false;
             }
-
-            if (!Status)
+            public void CheckCcb(uint locId)
             {
-                if (TeraLogic.RiskList.Contains(locId))
+                bool found = false;
+                foreach (var buff in BuffList)
                 {
-                    TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind is off.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
+                    if(buff.Id == CCB_ID)
+                    {
+                        found = true;
+                        Status = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    Status = false;
+                }
+
+                if (!Status)
+                {
+                    if (TeraLogic.RiskList.Contains(locId))
+                    {
+                        TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind is off.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
+                    }
+                }
+                else if(Time <= 3600000)
+                {
+                    TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind will expire soon.", TCTNotifier.NotificationType.Crystalbind, Colors.Orange);
                 }
             }
-            else if(Time <= 3600000)
+            public void ParseNewBuff(string p, string currentCharId)
             {
-                TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind will expire soon.", TCTNotifier.NotificationType.Crystalbind, Colors.Orange);
-            }
-        }
-        public void ParseNewBuff(string p, string currentCharId)
-        {
-            if(p.Substring(CHAR_ID_OFFSET, CHAR_ID_LENGHT) == currentCharId)
-            {
-                var b = new Buff();
-                b.Id = StringUtils.Hex4BStringToInt(p.Substring(B_BUFF_ID_OFFSET, 8));
-                b.TimeLeft = StringUtils.Hex4BStringToInt(p.Substring(TIME_OFFSET, 8));
-                BuffList.Add(b);
-
-                if(b.Id == CCB_ID)
+                if(p.Substring(CHAR_ID_OFFSET, CHAR_ID_LENGHT) == currentCharId)
                 {
-                    Status = true;
-                    Time = b.TimeLeft;
-                    ccbEnding = false;
-                    DataBridge.CurrentChar().Crystalbind = Time;
+                    var b = new Buff();
+                    b.Id = StringUtils.Hex4BStringToInt(p.Substring(B_BUFF_ID_OFFSET, 8));
+                    b.TimeLeft = StringUtils.Hex4BStringToInt(p.Substring(TIME_OFFSET, 8));
+                    BuffList.Add(b);
+
+                    if(b.Id == CCB_ID)
+                    {
+                        Status = true;
+                        Time = b.TimeLeft;
+                        ccbEnding = false;
+                        DataBridge.CurrentChar().Crystalbind = Time;
+                    }
                 }
             }
-        }
-        public void ParseEndingBuff(string p, string currentCharId)
-        {
-            if (p.Substring(CHAR_ID_OFFSET, CHAR_ID_LENGHT) == currentCharId)
+            public void ParseEndingBuff(string p, string currentCharId)
             {
-                var b = new Buff();
-                b.Id = StringUtils.Hex4BStringToInt(p.Substring(E_BUFF_ID_OFFSET, 8));
-                b.TimeLeft = 0;
-
-                if(b.Id == CCB_ID)
+                if (p.Substring(CHAR_ID_OFFSET, CHAR_ID_LENGHT) == currentCharId)
                 {
-                    Console.WriteLine("Starting deletion");
-                    StartDeletion();
+                    var b = new Buff();
+                    b.Id = StringUtils.Hex4BStringToInt(p.Substring(E_BUFF_ID_OFFSET, 8));
+                    b.TimeLeft = 0;
+
+                    if(b.Id == CCB_ID)
+                    {
+                        StartDeletion();
+                    }
+                    else
+                    {
+                        BuffList.Remove(BuffList.Find(x => x.Id == b.Id));
+                    }
+                }
+            }
+            public void CancelDeletion()
+            {
+                ccbEnding = false;
+            }
+
+            async Task WaitCancel()
+            {
+                await Task.Delay(5000);
+            }
+            async void StartDeletion()
+            {
+                ccbEnding = true;
+                await WaitCancel();
+                if (ccbEnding)
+                {
+                    EndCcb();
                 }
                 else
                 {
-                    BuffList.Remove(BuffList.Find(x => x.Id == b.Id));
                 }
             }
+            void EndCcb()
+            {
+                Status = false;
+                Time = 0;
+                DataBridge.CurrentChar().Crystalbind = Time;
+                TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind expired.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
+            }
+            class Buff
+            {
+                public int Id { get; set; }
+                public long TimeLeft { get; set; }
+            }
         }
-        public void CancelDeletion()
+        class AccountLoginProcessor
         {
-            Console.WriteLine("Cancelling deletion");
-            ccbEnding = false;
-        }
+            const string veteran_id = "B2010000";
+            const string tc_id = "B1010000";
 
-        async Task WaitCancel()
-        {
-            Console.WriteLine("Starting waiting");
-            await Task.Delay(5000);
-            Console.WriteLine("Waiting ended");
-        }
-        async void StartDeletion()
-        {
-            ccbEnding = true;
-            Console.WriteLine("Deletion armed");
-            await WaitCancel();
-            if (ccbEnding)
+            public string id = "0";
+            public bool tc = false;
+            public bool vet = false;
+            public long tcTime = 0;
+
+            public void ParsePackageInfo(string p)
             {
-                Console.WriteLine( "Deletion confirmed" );
-                EndCcb();
+                if (p.Contains(veteran_id))
+                {
+                    vet = true;
+                }
+                if (p.Contains(tc_id))
+                {
+                    tc = true;
+                    tcTime = StringUtils.Hex4BStringToInt(p.Substring(p.IndexOf(tc_id),8));
+                }
             }
-            else
+            public void ParseLoginInfo(string p)
             {
-                Console.WriteLine("Deletion canceled");
+                id = p.Substring(8, 12);
             }
         }
-        void EndCcb()
-        {
-            Console.WriteLine("Deleting");
-            Status = false;
-            Time = 0;
-            DataBridge.CurrentChar().Crystalbind = Time;
-            TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind expired.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
-        }
-        class Buff
-        {
-            public int Id { get; set; }
-            public long TimeLeft { get; set; }
-        }
+        class SystemMessageProcessor { }
+
     }
-
-    public class SystemMessageProcessor { }
-    public class AccountLoginProcessor { }
-
 }
 

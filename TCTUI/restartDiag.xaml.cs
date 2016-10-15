@@ -28,7 +28,8 @@ namespace Tera
 
         private void saveAndClose(object sender, MouseButtonEventArgs e)
         {
-            TeraLogic.saveCharsToXml();
+            TeraLogic.SaveCharacters();
+            TeraLogic.SaveAccounts();
             d.Completed += (o, s) => { Application.Current.Shutdown();   };
             this.BeginAnimation(OpacityProperty, d);
             Application.Current.MainWindow.BeginAnimation(OpacityProperty, d);

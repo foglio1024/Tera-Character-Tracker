@@ -77,10 +77,11 @@ namespace TCTMain
             }
             public static void LoadDatabases()
             {
-                Tera.TeraLogic.loadDB();
-                Tera.TeraLogic.loadCharsFromXmlFile();
-                Tera.TeraLogic.loadDungsFromXmlFile();
-                Tera.TeraLogic.loadGuildsDB();
+                Tera.TeraLogic.LoadTeraDB();
+                Tera.TeraLogic.LoadAccounts();
+                Tera.TeraLogic.LoadCharacters();
+                Tera.TeraLogic.LoadDungeons();
+                Tera.TeraLogic.LoadGuildsDB();
 
                 if (!Tera.TeraLogic.GuildDictionary.ContainsKey(0))
                 {

@@ -131,6 +131,7 @@ namespace Tera
                     cl.GuildId = c.GuildId;
                     cl.LocationId = c.LocationId;
                     cl.LastOnline = c.LastOnline;
+                    cl.AccountId = c.AccountId;
 
                     break;
                 }
@@ -421,21 +422,22 @@ namespace Tera
          */
 
         #region File Management
-        public static void saveDungsToXml(List<Dungeon> a)
-        {
-            XmlSerializer xs = new XmlSerializer(typeof(List<Dungeon>));
-            FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/dungeons.xml", FileMode.Create, FileAccess.Write);
-            xs.Serialize(fs, a);
-            fs.Close();
-        }
-        public static void saveCharsToXml()
+        public static void SaveCharacters()
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Character>));
             FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/characters.xml", FileMode.Create, FileAccess.Write);
             xs.Serialize(fs, CharList);
             fs.Close();
         }
-        public static void loadCharsFromXmlFile()
+        public static void SaveAccounts()
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(List<Account>));
+            FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/accounts.xml", FileMode.Create, FileAccess.Write);
+            xs.Serialize(fs, AccountList);
+            fs.Close();
+
+        }
+        public static void LoadCharacters()
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Character>));
 
@@ -444,21 +446,36 @@ namespace Tera
                 FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/characters.xml", FileMode.Open, FileAccess.Read);
                 CharList = xs.Deserialize(fs) as List<Character>;
                 fs.Close();
-                //CharList = sortChars(CharList);
 
             }
             else 
             {
                 FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/characters.xml", FileMode.Create, FileAccess.Write);
                 fs.Close();
-
                 CharList = new List<Character>();
-
-                saveCharsToXml();
-
+                SaveCharacters();
             }
         }
-        public static void loadDungsFromXmlFile()
+        public static void LoadAccounts()
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(List<Account>));
+
+            if (File.Exists(Environment.CurrentDirectory + "\\content/data/accounts.xml"))
+            {
+                FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/accounts.xml", FileMode.Open, FileAccess.Read);
+                AccountList = xs.Deserialize(fs) as List<Account>;
+                fs.Close();
+
+            }
+            else
+            {
+                FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/accounts.xml", FileMode.Create, FileAccess.Write);
+                fs.Close();
+                AccountList = new List<Account>();
+                SaveAccounts();
+            }
+        }
+        public static void LoadDungeons()
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Dungeon>));
             FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/dungeons.xml", FileMode.Open, FileAccess.Read);
@@ -466,7 +483,7 @@ namespace Tera
             fs.Close();
 
         }
-        public static void loadGuildsDB()
+        public static void LoadGuildsDB()
         {
             GuildDictionary = new Dictionary<uint, string>();
 
@@ -482,7 +499,22 @@ namespace Tera
             }
 
         }
-        public static void loadDB()
+        internal static void SaveGuildsDB()
+        {
+            if (GuildDictionary.Count > 0)
+            {
+                string[] lines = new string[GuildDictionary.Count];
+                int i = 0;
+                foreach (var item in GuildDictionary)
+                {
+                    lines[i] = item.Key + "," + item.Value;
+                    i++;
+                }
+                File.WriteAllLines(Environment.CurrentDirectory + "\\content/data/guilds.txt", lines);
+            }
+
+        }
+        public static void LoadTeraDB()
         {
             DailyPlayGuideQuest             = new XDocument();
             DailyPlayGuideQuest             = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/DailyPlayGuideQuest.xml");
@@ -508,21 +540,6 @@ namespace Tera
         }
 
 
-        internal static void saveGuildDB()
-        {
-            if (GuildDictionary.Count > 0)
-            {
-                string[] lines = new string[GuildDictionary.Count];
-                int i = 0;
-                foreach (var item in GuildDictionary)
-                {
-                    lines[i] = item.Key + "," + item.Value;
-                    i++;
-                }
-                File.WriteAllLines(Environment.CurrentDirectory + "\\content/data/guilds.txt", lines);
-            }
-
-        }
         #endregion
         #region Console App
         //public void printEverything(List<Character> a)

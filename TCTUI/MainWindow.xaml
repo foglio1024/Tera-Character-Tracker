@@ -8,7 +8,7 @@
         xmlns:c="clr-namespace:Tera.classes"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Tera Character Tracker" 
+        Title="Tera Character Tracker 1.00" 
         MaxHeight="930"
         MinHeight="87"
         Loaded="Window_Loaded" 

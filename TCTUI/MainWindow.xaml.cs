@@ -1065,8 +1065,9 @@ namespace Tera
 
         private void saveButtonClicked(object sender, RoutedEventArgs e)
         {
-            TeraLogic.saveCharsToXml();
-            TeraLogic.saveGuildDB();
+            TeraLogic.SaveCharacters();
+            TeraLogic.SaveAccounts();
+            TeraLogic.SaveGuildsDB();
 
             TeraLogic.IsSaved = true;
         }
@@ -1422,8 +1423,9 @@ namespace Tera
             //if (d.Result)
             //{
 
-            TeraLogic.saveCharsToXml();
-            TeraLogic.saveGuildDB();
+            TeraLogic.SaveCharacters();
+            TeraLogic.SaveAccounts();
+            TeraLogic.SaveGuildsDB();
             TCTProps.Top = this.Top;
             TCTProps.Left = this.Left;
             TCTProps.Height = this.Height;

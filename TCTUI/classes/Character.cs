@@ -13,24 +13,25 @@ namespace Tera
     public class Character : INotifyPropertyChanged
     {
         //Variables
-        private string name;
-        private string charClass;
-        private uint locationId;
-        private uint guildId;
-        private long lastOnline;
-        private long crystalbind;
-        private string laurel;
-        private uint position;
-        private uint lvl;
-        private int credits;
-        private int dailies;
-        private int weekly;
-        private int marks_of_valor;
-        private int goldfinger_tokens;
-        private bool isDirty;
-        private string notes;
+        string name;
+        string charClass;
+        uint locationId;
+        uint guildId;
+        long lastOnline;
+        long crystalbind;
+        string laurel;
+        uint position;
+        uint lvl;
+        int credits;
+        int dailies;
+        int weekly;
+        int marks_of_valor;
+        int goldfinger_tokens;
+        bool isDirty;
+        string notes;
+        string accountId;
 
-        private List<CharDungeon> dg = new List<CharDungeon>();
+        List<CharDungeon> dg = new List<CharDungeon>();
 
         //Notify
         public event PropertyChangedEventHandler PropertyChanged;
@@ -66,6 +67,19 @@ namespace Tera
                 {
                     charClass = value;
                     NotifyPropertyChanged("CharClass");
+                }
+            }
+        }
+        [XmlAttribute("AccountId")]
+        public string AccountId
+        {
+            get { return accountId; }
+            set
+            {
+                if (accountId != value)
+                {
+                    accountId = value;
+                    NotifyPropertyChanged("AccountId");
                 }
             }
         }
@@ -274,13 +288,14 @@ namespace Tera
             }
         }
         //Methods
-        public Character(uint _index, string _name, string _class, string _laurel, uint _lvl, uint _guildId, uint _locationId, long _lastOnline)
+        public Character(uint _index, string _name, string _class, string _laurel, uint _lvl, uint _guildId, uint _locationId, long _lastOnline, string _accId)
         {
             name = _name;
             charClass = _class;
             laurel = _laurel;
             lvl = _lvl;
             position = _index;
+            accountId = _accId;
 
             credits = 0;
             dailies = 8;
