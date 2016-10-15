@@ -21,6 +21,18 @@ namespace Tera
 {
     public static class TeraLogic 
     {
+        public static class TCTProps
+        {
+            public static bool Reset { get; set; }
+            public static bool FirstLaunchAfterReset { get; set; }
+            public static DateTime LastClosed { get; set; }
+            public static double Top { get; set; }
+            public static double Left { get; set; }
+            public static double Width { get; set; }
+            public static double Height { get; set; }
+            public static bool Console { get; set; }
+        }
+
         private static int totalCredits;
         private static int totalMarks;
         public static bool isTC;

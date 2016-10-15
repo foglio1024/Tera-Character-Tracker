@@ -26,7 +26,7 @@ namespace Tera
         public leftSlide()
         {
             InitializeComponent();
-            if (TCTProps.Console)
+            if (TeraLogic.TCTProps.Console)
             {
                 Console_Switch.TurnOn();
             }
@@ -244,15 +244,15 @@ namespace Tera
         }
         private void SetConsole(object sender, MouseButtonEventArgs e)
         {
-            if (Tera.TCTProps.Console)
+            if (Tera.TeraLogic.TCTProps.Console)
             {
-                Tera.TCTProps.Console = false;
+                Tera.TeraLogic.TCTProps.Console = false;
                 FreeConsole();
             }
 
             else
             {
-                Tera.TCTProps.Console = true;
+                Tera.TeraLogic.TCTProps.Console = true;
                 AllocConsole();
             }
         }

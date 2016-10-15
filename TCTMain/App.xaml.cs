@@ -60,11 +60,11 @@ namespace TCTMain
                     LastClosed = DateTime.Now;
                     settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault().Attribute("value").Value = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
                     settings.Descendants().Where(x => x.Name == "TeraClub").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.isTC.ToString();
-                    settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Console.ToString();
-                    settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Top.ToString();
-                    settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Left.ToString();
-                    settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Width.ToString();
-                    settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Height.ToString();
+                    settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value =  Tera.TeraLogic.TCTProps.Console.ToString();
+                    settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value =      Tera.TeraLogic.TCTProps.Top.ToString();
+                    settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value =     Tera.TeraLogic.TCTProps.Left.ToString();
+                    settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value =    Tera.TeraLogic.TCTProps.Width.ToString();
+                    settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value =   Tera.TeraLogic.TCTProps.Height.ToString();
                     settings.Save(Environment.CurrentDirectory + "\\content/data/settings.xml");
                     Environment.Exit(0);
 
@@ -126,19 +126,19 @@ namespace TCTMain
                     Tera.TeraLogic.isTC = false;
                 }
 
-                Tera.TCTProps.Top = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value);
-                Tera.TCTProps.Left = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value);
-                Tera.TCTProps.Width = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value);
-                Tera.TCTProps.Height = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value);
+                Tera.TeraLogic.TCTProps.Top = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value);
+                Tera.TeraLogic.TCTProps.Left = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value);
+                Tera.TeraLogic.TCTProps.Width = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value);
+                Tera.TeraLogic.TCTProps.Height = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value);
 
                 if(settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value == "True")
                 {
-                    Tera.TCTProps.Console = true;
+                    Tera.TeraLogic.TCTProps.Console = true;
                     AllocConsole();
                 }
                 else
                 {
-                    Tera.TCTProps.Console = false;
+                    Tera.TeraLogic.TCTProps.Console = false;
                 }
             }
 

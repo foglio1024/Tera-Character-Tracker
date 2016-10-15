@@ -29,17 +29,6 @@ namespace Tera
     /// <summary>
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
-    public static class TCTProps
-    {
-        public static bool Reset { get; set; }
-        public static bool FirstLaunchAfterReset { get; set; }
-        public static DateTime LastClosed { get; set; }
-        public static double Top { get; set; }
-        public static double Left { get; set; }
-        public static double Width { get; set; }
-        public static double Height { get; set; }
-        public static bool Console { get; set; }
-    }
 
     public partial class TeraMainWindow : Window
     {
@@ -47,10 +36,10 @@ namespace Tera
         public TeraMainWindow()
         {
             InitializeComponent();
-            this.Top = TCTProps.Top;
-            this.Left = TCTProps.Left;
-            this.Height = TCTProps.Height;
-            this.Width = TCTProps.Width;
+            this.Top = TeraLogic.TCTProps.Top;
+            this.Left = TeraLogic.TCTProps.Left;
+            this.Height = TeraLogic.TCTProps.Height;
+            this.Width = TeraLogic.TCTProps.Width;
 
             UI.win = this;
 
@@ -1426,10 +1415,10 @@ namespace Tera
             TeraLogic.SaveCharacters();
             TeraLogic.SaveAccounts();
             TeraLogic.SaveGuildsDB();
-            TCTProps.Top = this.Top;
-            TCTProps.Left = this.Left;
-            TCTProps.Height = this.Height;
-            TCTProps.Width = this.Width;
+            TeraLogic.TCTProps.Top = this.Top;
+            TeraLogic.TCTProps.Left = this.Left;
+            TeraLogic.TCTProps.Height = this.Height;
+            TeraLogic.TCTProps.Width = this.Width;
 
 
             //this.Close();

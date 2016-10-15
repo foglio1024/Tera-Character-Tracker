@@ -91,6 +91,9 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountContainer.xaml.cs">
+      <DependentUpon>AccountContainer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Arc.cs" />
     <Compile Include="classes\Account.cs" />
     <Compile Include="MaterialSwitch.xaml.cs">
@@ -117,6 +120,10 @@
     <Compile Include="WeeklyGauge.xaml.cs">
       <DependentUpon>WeeklyGauge.xaml</DependentUpon>
     </Compile>
+    <Page Include="AccountContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
