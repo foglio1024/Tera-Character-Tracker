@@ -476,9 +476,6 @@ namespace PacketViewer
         }
         #endregion
 
-
-
-
         private static void updateLaurel()
         {
             string tmp = wCforEarnedLaurel;

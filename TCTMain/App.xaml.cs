@@ -22,6 +22,7 @@ namespace TCTMain
         private static XDocument settings;
         private static DateTime LastClosed;
         public TCTNotifier.NotificationSender NS = new TCTNotifier.NotificationSender();
+
         public class Threads
         {
             public static void NetThread()
@@ -40,11 +41,16 @@ namespace TCTMain
                     if (dailyReset)
                     {
                         Tera.UI.win.Dispatcher.Invoke(new Action(()=> Tera.UI.win.resetDailyData(new object(), new RoutedEventArgs())));
+                        Tera.UI.win.updateLog("Daily data has been reset.");
+                        TCTNotifier.NotificationProvider.NS.sendNotification("Daily data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
                         dailyReset = false;
                     }
                     if (weeklyReset)
                     {
                         Tera.UI.win.Dispatcher.Invoke(new Action(() => Tera.UI.win.resetWeeklyData(new object(), new RoutedEventArgs())));
+                        Tera.UI.win.updateLog("Weekly data has been reset.");
+                        TCTNotifier.NotificationProvider.NS.sendNotification("Weekly data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
+
                         weeklyReset = false;
                     }
                     
@@ -54,6 +60,7 @@ namespace TCTMain
                     LastClosed = DateTime.Now;
                     settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault().Attribute("value").Value = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
                     settings.Descendants().Where(x => x.Name == "TeraClub").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.isTC.ToString();
+                    settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Console.ToString();
                     settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Top.ToString();
                     settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Left.ToString();
                     settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value = Tera.TCTProps.Width.ToString();
@@ -68,10 +75,6 @@ namespace TCTMain
                     Console.WriteLine(e.InnerException);
                 }
             }
-            public static void NotificationService()
-            {
-                TCTNotifier.NotificationProvider.NS = new TCTNotifier.NotificationSender();
-            }
             public static void LoadDatabases()
             {
                 Tera.TeraLogic.loadDB();
@@ -85,17 +88,19 @@ namespace TCTMain
                 }
 
             }
-            
         }
+            
 
         private const int DAILY_RESET_HOUR = 5;
         public static bool dailyReset = false;
         public static bool weeklyReset = false;
+
         [DllImport("kernel32.dll")]
         public static extern bool AllocConsole();
 
         [DllImport("kernel32.dll")]
         public static extern bool FreeConsole();
+
         [STAThread]
         public static void Main()
         {
@@ -124,6 +129,16 @@ namespace TCTMain
                 Tera.TCTProps.Left = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value);
                 Tera.TCTProps.Width = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value);
                 Tera.TCTProps.Height = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value);
+
+                if(settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value == "True")
+                {
+                    Tera.TCTProps.Console = true;
+                    AllocConsole();
+                }
+                else
+                {
+                    Tera.TCTProps.Console = false;
+                }
             }
 
 
@@ -153,7 +168,6 @@ namespace TCTMain
 
             uiThread.SetApartmentState(ApartmentState.STA);
             netThread.SetApartmentState(ApartmentState.STA);
-            //AllocConsole();
             Threads.LoadDatabases();
             uiThread.Start();
             netThread.Start();
