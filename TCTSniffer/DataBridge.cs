@@ -89,122 +89,242 @@ namespace PacketViewer
         }
         public static void storeLastPacket(Network.Packet_old lp)
         {
+            switch (opn.GetName(lp.OpCode))
+            {
+                case "S_GET_USER_LIST": 
+                    #region LIST
+                    wCforCcb.Clear();
+                    SetCharList(lp.HexShortText);
+                    break; 
+                #endregion
 
-            #region CHARLIST
-            if (opn.GetName(lp.OpCode) == "S_GET_USER_LIST") 
-            {
-                wCforCcb.Clear();
-                SetCharList(lp.HexShortText);
-            }
-            #endregion
-            #region  SELECT ON LOGIN
-            if (opn.GetName(lp.OpCode) == "S_LOGIN")
-            {
-                cbp.Clear();
-                LoginChar(lp.HexShortText);
-            }
-            #endregion
-            #region VANGUARD_WINDOW
-            if (opn.GetName(lp.OpCode) == "S_AVAILABLE_EVENT_MATCHING_LIST")
-            {
-                SetVanguardData(lp.HexShortText);
-            }
-            #endregion
-            #region INVENTORY
-            if (opn.GetName(lp.OpCode) == "S_INVEN")
-            {
-                if (lp.HexShortText[53].ToString() == "1") /*wait next packet*/
-                {
-                    ip.multiplePackets = true;
-                    ip.p1 = lp.HexShortText;
-                }
-                else if (lp.HexShortText[53].ToString() == "0")/*is last/unique packet*/
-                {
-                    if (ip.multiplePackets)
+                case "S_LOGIN":
+                    #region LOGIN
+                    cbp.Clear();
+                    LoginChar(lp.HexShortText);
+                    break; 
+                #endregion
+
+                case "S_AVAILABLE_EVENT_MATCHING_LIST":
+                    #region VANGUARD WINDOW
+                    SetVanguardData(lp.HexShortText);
+                    break; 
+                #endregion
+
+                case "S_INVEN":
+                    #region INVENTORY
+                    if (lp.HexShortText[53].ToString() == "1") /*wait next packet*/
                     {
-                        ip.p2 = lp.HexShortText;
-                        ip.multiplePackets = false;
-                    }
-                    else
-                    {
+                        ip.multiplePackets = true;
                         ip.p1 = lp.HexShortText;
                     }
+                    else if (lp.HexShortText[53].ToString() == "0")/*is last/unique packet*/
+                    {
+                        if (ip.multiplePackets)
+                        {
+                            ip.p2 = lp.HexShortText;
+                            ip.multiplePackets = false;
+                        }
+                        else
+                        {
+                            ip.p1 = lp.HexShortText;
+                        }
 
-                    SetTokens();
-                }
+                        SetTokens();
+                    }
+                    break; 
+                #endregion
+
+                case "S_DUNGEON_COOL_TIME_LIST":
+                    #region DUNGEONS RUNS
+                    Tera.UI.win.updateLog(currentCharName + " > received dungeons data.");
+                    wCforDungeons = lp.HexShortText;
+                    setDungs();
+                    break; 
+                #endregion
+
+                case "S_SYSTEM_MESSAGE":
+                    #region SYSTEM MESSAGE
+                    #region DUNGEON ENGAGED
+                    /*dungeon engaged*/
+                    if (lp.HexShortText.Contains("0B00440075006E00670065006F006E00"))
+                    {
+                        wCforEngage = lp.HexShortText;
+                        wCforEngage = wCforEngage.Substring(120);
+                        setEngagedDung();
+                    } 
+                    #endregion
+                    #region VANGUARD QUEST COMPLETED
+                    /*vanguard completed*/
+                    else if (lp.HexShortText.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
+                    {
+                        wCforVanguardCompleted = lp.HexShortText;
+                        wCforVanguardCompleted = wCforVanguardCompleted.Substring(100);
+                        setCompletedVanguard();
+                    } 
+                    #endregion
+                    #region LAUREL
+                    /*earned laurel*/
+                    else if (lp.HexShortText.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
+                    {
+                        wCforEarnedLaurel = lp.HexShortText;
+                        updateLaurel();
+                    }
+                    break;  
+                #endregion
+                #endregion
+
+                case "S_VISIT_NEW_SECTION":
+                    #region SECTION
+                    NewSection(lp.HexShortText);
+                    break; 
+                #endregion
+
+                case "S_UPDATE_NPCGUILD":
+                    #region CREDITS UPDATE
+                    wCforUpdatedCreditsAfterPurchase = lp.HexShortText;
+                    updateCreditsAfterPurchase(); 
+                    break;
+                #endregion
+
+                #region CCB
+                case "S_ABNORMALITY_BEGIN":
+                    #region CCB START
+                    cbp.ParseNewBuff(lp.HexShortText, currentCharId);
+                    break;
+                #endregion
+                case "S_ABNORMALITY_END":
+                    #region CCB END
+                    cbp.ParseEndingBuff(lp.HexShortText, currentCharId);
+                    break;
+                #endregion
+                case "S_CLEAR_ALL_HOLDED_ABNORMALITY":
+                    #region CCB HOLD
+                    cbp.CancelDeletion();
+                    break;
+                #endregion
+                    #endregion
+                default:
+                    break;
             }
 
+#region old
+            //#region CHARLIST
+            //if (opn.GetName(lp.OpCode) == "S_GET_USER_LIST") 
+            //{
+            //    wCforCcb.Clear();
+            //    SetCharList(lp.HexShortText);
+            //}
+            //#endregion
+            //#region  SELECT ON LOGIN
+            //if (opn.GetName(lp.OpCode) == "S_LOGIN")
+            //{
+            //    cbp.Clear();
+            //    LoginChar(lp.HexShortText);
+            //}
+            //#endregion
+            //#region VANGUARD_WINDOW
+            //if (opn.GetName(lp.OpCode) == "S_AVAILABLE_EVENT_MATCHING_LIST")
+            //{
+            //    SetVanguardData(lp.HexShortText);
+            //}
+            //#endregion
+            //#region INVENTORY
+            //if (opn.GetName(lp.OpCode) == "S_INVEN")
+            //{
+            //    if (lp.HexShortText[53].ToString() == "1") /*wait next packet*/
+            //    {
+            //        ip.multiplePackets = true;
+            //        ip.p1 = lp.HexShortText;
+            //    }
+            //    else if (lp.HexShortText[53].ToString() == "0")/*is last/unique packet*/
+            //    {
+            //        if (ip.multiplePackets)
+            //        {
+            //            ip.p2 = lp.HexShortText;
+            //            ip.multiplePackets = false;
+            //        }
+            //        else
+            //        {
+            //            ip.p1 = lp.HexShortText;
+            //        }
+
+            //        SetTokens();
+            //    }
+            //}
+
+            //#endregion
+            //#region DUNGEONS
+            //if (opn.GetName(lp.OpCode) == "S_DUNGEON_COOL_TIME_LIST")
+            //{
+            //    //Console.WriteLine("Received Dungeons");
+            //    Tera.UI.win.updateLog(currentCharName + " > received dungeons data.");
+
+            //    wCforDungeons = lp.HexShortText;
+            //    setDungs();
+            //}
+            //#endregion
+            //#region DUNGEON_ENGAGED, VANGUARD_COMPLETED, LAUREL_EARNED
+            //if (opn.GetName(lp.OpCode) == "S_SYSTEM_MESSAGE")
+            //{   
+            //    /*dungeon engaged*/
+            //    if(lp.HexShortText.Contains("0B00440075006E00670065006F006E00"))
+            //    {
+            //        wCforEngage = lp.HexShortText;
+            //        wCforEngage = wCforEngage.Substring(120);
+            //        setEngagedDung();
+
+            //    }
+            //    /*vanguard completed*/
+            //    else if (lp.HexShortText.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
+            //    {
+            //        wCforVanguardCompleted = lp.HexShortText;
+            //        wCforVanguardCompleted = wCforVanguardCompleted.Substring(100);
+            //        setCompletedVanguard();
+            //    }
+            //    /*earned laurel*/
+            //    else if (lp.HexShortText.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
+            //    {
+            //       wCforEarnedLaurel = lp.HexShortText;
+            //       updateLaurel();
+            //    }
+
+
+            //}
+            //#endregion
+            //#region NEW_SECTION
+            //if(opn.GetName(lp.OpCode) == "S_VISIT_NEW_SECTION")
+            //{
+            //    NewSection(lp.HexShortText);
+            //}
+            //#endregion
+            //#region VANGUARD_CREDITS
+            //if (opn.GetName(lp.OpCode) == "S_UPDATE_NPCGUILD")
+            //{
+            //    wCforUpdatedCreditsAfterPurchase = lp.HexShortText;
+            //    updateCreditsAfterPurchase();
+            //}
+            //#endregion
+            //#region CRYSTALBIND
+            //if (opn.GetName(lp.OpCode) == "S_ABNORMALITY_BEGIN")
+            //{
+            //    cbp.ParseNewBuff(lp.HexShortText, currentCharId);
+            //}
+            //if (opn.GetName(lp.OpCode) == "S_ABNORMALITY_END")
+            //{
+            //    cbp.ParseEndingBuff(lp.HexShortText, currentCharId);
+            //}
+            //if(opn.GetName(lp.OpCode) == "S_CLEAR_ALL_HOLDED_ABNORMALITY")
+            //{
+            //    cbp.CancelDeletion();
+            //}
+            //
             #endregion
-            #region DUNGEONS
-            if (opn.GetName(lp.OpCode) == "S_DUNGEON_COOL_TIME_LIST")
-            {
-                //Console.WriteLine("Received Dungeons");
-                Tera.UI.win.updateLog(currentCharName + " > received dungeons data.");
-
-                wCforDungeons = lp.HexShortText;
-                setDungs();
-            }
-            #endregion
-            #region DUNGEON_ENGAGED, VANGUARD_COMPLETED, LAUREL_EARNED
-            if (opn.GetName(lp.OpCode) == "S_SYSTEM_MESSAGE")
-            {   /*dungeon engaged*/
-                if(lp.HexShortText.Contains("0B00440075006E00670065006F006E00"))
-                {
-                    wCforEngage = lp.HexShortText;
-                    wCforEngage = wCforEngage.Substring(120);
-                    setEngagedDung();
-
-                }
-                /*vanguard completed*/
-                else if (lp.HexShortText.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
-                {
-                    wCforVanguardCompleted = lp.HexShortText;
-                    wCforVanguardCompleted = wCforVanguardCompleted.Substring(100);
-                    setCompletedVanguard();
-                }
-                /*earned laurel*/
-                else if (lp.HexShortText.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
-                {
-                   wCforEarnedLaurel = lp.HexShortText;
-                   updateLaurel();
-                }
-
-
-            }
-            #endregion
-            #region NEW_SECTION
-            if(opn.GetName(lp.OpCode) == "S_VISIT_NEW_SECTION")
-            {
-                NewSection(lp.HexShortText);
-            }
-            #endregion
-            #region VANGUARD_CREDITS
-            if (opn.GetName(lp.OpCode) == "S_UPDATE_NPCGUILD")
-            {
-                wCforUpdatedCreditsAfterPurchase = lp.HexShortText;
-                updateCreditsAfterPurchase();
-            }
-            #endregion
-            #region CRYSTALBIND
-            if (opn.GetName(lp.OpCode) == "S_ABNORMALITY_BEGIN")
-            {
-                cbp.ParseNewBuff(lp.HexShortText, currentCharId);
-            }
-            if (opn.GetName(lp.OpCode) == "S_ABNORMALITY_END")
-            {
-                cbp.ParseEndingBuff(lp.HexShortText, currentCharId);
-            }
-            if(opn.GetName(lp.OpCode) == "S_CLEAR_ALL_HOLDED_ABNORMALITY")
-            {
-                cbp.CancelDeletion();
-            }
-            #endregion
-
-            #region CCB_OLD
+#region CCB_OLD
 
             //if (opn.GetName(lp.OpCode) == "*")  //old
             //{
-                    
+
             //    if (lp.HexShortText.Contains(currentCharId))
             //    {
             //        bool found = false;
@@ -254,7 +374,7 @@ namespace PacketViewer
 
             //    }
             //}
-            
+
             //if(opn.GetName(lp.OpCode) == "*")
             //{
             //    if(lp.HexShortText.Substring(8,12) == currentCharId)
