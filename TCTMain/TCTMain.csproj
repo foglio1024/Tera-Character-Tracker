@@ -120,7 +120,9 @@
     <Content Include="resources\notifier_images\rep.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="resources\notifier_images\connected.png" />
+    <Content Include="resources\notifier_images\connected.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="flat_icon.ico" />
     <Resource Include="resources\bigLaurels\bronze.png" />
     <Resource Include="resources\bigLaurels\champion.png" />
@@ -205,7 +207,9 @@
     <Content Include="content\tera_database\StrSheet_Region.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="resources\notifier_images\gfin.png" />
+    <Content Include="resources\notifier_images\gfin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\class-icons\archer.png" />
@@ -266,9 +270,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\notifier_images\ccbBuff.png" />
-    <Resource Include="resources\notifier_images\default.png" />
-    <Resource Include="resources\notifier_images\marks.png" />
+    <Content Include="resources\notifier_images\ccbBuff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\notifier_images\default.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\notifier_images\marks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
