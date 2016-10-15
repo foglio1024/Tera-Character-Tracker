@@ -22,6 +22,7 @@ using System.Windows.Threading;
 using System.Windows.Media.Effects;
 using System.IO;
 using System.Drawing.Imaging;
+using System.ComponentModel;
 
 namespace Tera
 {
@@ -30,13 +31,14 @@ namespace Tera
     /// </summary>
     public static class TCTProps
     {
-        public static bool reset;
-        public static bool firstLaunchAfterReset;
-        public static DateTime lastClosed;
-        public static double Top;
-        public static double Left;
-        public static double Width;
-        public static double Height;
+        public static bool Reset { get; set; }
+        public static bool FirstLaunchAfterReset { get; set; }
+        public static DateTime LastClosed { get; set; }
+        public static double Top { get; set; }
+        public static double Left { get; set; }
+        public static double Width { get; set; }
+        public static double Height { get; set; }
+        public static bool Console { get; set; }
     }
 
     public partial class TeraMainWindow : Window

@@ -93,6 +93,9 @@
   <ItemGroup>
     <Compile Include="Arc.cs" />
     <Compile Include="classes\Account.cs" />
+    <Compile Include="MaterialSwitch.xaml.cs">
+      <DependentUpon>MaterialSwitch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QuestGauge.xaml.cs">
       <DependentUpon>QuestGauge.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,10 @@
     <Compile Include="overviewPage2.xaml.cs">
       <DependentUpon>overviewPage2.xaml</DependentUpon>
     </Compile>
+    <Page Include="MaterialSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="QuestGauge.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

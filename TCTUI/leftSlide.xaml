@@ -14,10 +14,8 @@
             <DropShadowEffect Opacity="0.2" BlurRadius="15"/>
         </Grid.Effect>
         <StackPanel x:Name="mainSP">
-
-            <Grid>
-                <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="400" Height="200"  Fill="#10000000">
-                </Rectangle>
+            <Grid Height="30" Background="#0c000000">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" FontSize="16" FontWeight="DemiBold" Foreground="#91000000">Settings</TextBlock>
             </Grid>
             <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
                 <Grid.ColumnDefinitions>
@@ -43,50 +41,15 @@
                 <TextBlock HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Tera Club</TextBlock>
 
             </Grid>
-            <!--<Grid Tag="overview" Height="65" Cursor="Hand" MouseEnter="rowHighlight" MouseLeave="rowNormal" Background="#00000000" MouseLeftButtonDown="tabSelected" ClipToBounds="True">
+            <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0"/>
-                    <ColumnDefinition Width="60"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
-                <Rectangle x:Name="overview_i" Fill="Black" Opacity=".8" Height="28" Width="28" Grid.Column="1">
-                    <Rectangle.OpacityMask>
-                        <ImageBrush ImageSource="resources/ic_assignment_black_24dp_2x.png" Stretch="Uniform"/>
-                    </Rectangle.OpacityMask>
-                </Rectangle>
-                <TextBlock x:Name="overview_t" HorizontalAlignment="Left" Margin="7" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Foreground="#df000000" FontSize="15" FontWeight="DemiBold">Overview</TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Console</TextBlock>
+                <local:MaterialSwitch x:Name="Console_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetConsole" Margin="0,0,20,0"></local:MaterialSwitch>
 
             </Grid>
-            <Grid Tag="dungeons" Height="65" Cursor="Hand" MouseEnter="rowHighlight" MouseLeave="rowNormal" Background="#00000000" MouseLeftButtonDown="tabSelected" ClipToBounds="True">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0"/>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Rectangle x:Name="dungeons_i" Fill="Black" Opacity=".8" Height="28" Width="28" Grid.Column="1">
-                    <Rectangle.OpacityMask>
-                        <ImageBrush ImageSource="resources/ic_event_available_black_24dp_2x.png" Stretch="Uniform"/>
-                    </Rectangle.OpacityMask>
-                </Rectangle>
-                <TextBlock x:Name="dungeons_t" HorizontalAlignment="Left" Margin="7" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Foreground="#df000000" FontSize="15" FontWeight="DemiBold">Dungeons</TextBlock>
-            </Grid>-->
-            <!--<Grid Tag="balance"  Height="65" Cursor="Hand" MouseEnter="rowHighlight" MouseLeave="rowNormal" Background="#00000000" MouseLeftButtonDown="tabSelected" ClipToBounds="True">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0"/>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Rectangle x:Name="balance_i" Fill="Black" Opacity=".8" Height="28" Width="28" Grid.Column="1">
-                    <Rectangle.OpacityMask>
-                        <ImageBrush ImageSource="resources/ic_attach_money_black_24dp_2x.png" Stretch="Uniform"/>
-                    </Rectangle.OpacityMask>
-                </Rectangle>
-                <TextBlock x:Name="balance_t" HorizontalAlignment="Left" Margin="7" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Foreground="#df000000" FontSize="15" FontWeight="DemiBold">Balance</TextBlock>-->
-            <!--</Grid>-->
         </StackPanel>
     </Grid>
 </UserControl>

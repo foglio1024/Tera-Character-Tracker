@@ -26,6 +26,14 @@ namespace Tera
         public leftSlide()
         {
             InitializeComponent();
+            if (TCTProps.Console)
+            {
+                Console_Switch.TurnOn();
+            }
+            else
+            {
+                Console_Switch.TurnOff();
+            }
         }
         public void rowHighlight(object sender, MouseEventArgs e)
         {
@@ -234,8 +242,49 @@ namespace Tera
             el.BeginAnimation(OpacityProperty, opacityAn);
 
         }
+        private void SetConsole(object sender, MouseButtonEventArgs e)
+        {
+            if (Tera.TCTProps.Console)
+            {
+                Tera.TCTProps.Console = false;
+                FreeConsole();
+            }
 
-        
+            else
+            {
+                Tera.TCTProps.Console = true;
+                AllocConsole();
+            }
+        }
+        private void ConsoleSwitch(object sender, MouseButtonEventArgs e)
+        {
+            var On = new ThicknessAnimationUsingKeyFrames();
+            var Off = new ThicknessAnimationUsingKeyFrames();
+            var OnFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 255, 255), System.Windows.Media.Color.FromArgb(255, 255, 120, 42), TimeSpan.FromMilliseconds(150));
+            var OffFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 120, 42), System.Windows.Media.Color.FromArgb(255, 255, 255, 255), TimeSpan.FromMilliseconds(150));
+            var OnBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(25, 0, 0, 0), System.Windows.Media.Color.FromArgb(100, 255, 120, 42), TimeSpan.FromMilliseconds(150));
+            var OffBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(100, 255, 120, 42), System.Windows.Media.Color.FromArgb(25, 0, 0, 0), TimeSpan.FromMilliseconds(150));
+
+            On.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
+            Off.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
+
+            Off.Completed += (x, ev) =>
+            {
+                //showRestartDiag();
+
+            };
+            On.Completed += (x, ev) =>
+            {
+                //showRestartDiag();
+
+            };
+
+        }
+        [DllImport("kernel32.dll")]
+        public static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
+
     }
-    
 }
