@@ -22,7 +22,7 @@
         VerticalAlignment="Stretch" 
         d:DesignHeight="930" 
         d:DesignWidth="1280" 
-        Drop="rejectDrop" 
+         
         WindowStartupLocation="Manual" 
         MaxWidth="1280"
         MinWidth="713"
@@ -68,7 +68,7 @@
     </Window.CacheMode>
     <!--<Border Name="MainBorder" Width="{StaticResource _Width}" Height="900" Grid.RowSpan="5" BorderBrush="#FF506d7b" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">-->
         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Grid Name="MainGrid" MouseLeftButtonDown="closeLeftSlide" Drop="rejectDrop" AllowDrop="True"  Margin="0"  Background="#FFf0f0f0" HorizontalAlignment="Stretch">
+            <Grid Name="MainGrid"  AllowDrop="True"  Margin="0"  Background="#FFf0f0f0" HorizontalAlignment="Stretch">
             <!--#region Rows/Columns Defs-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"/>
@@ -78,7 +78,7 @@
             </Grid.RowDefinitions>
             <!--#endregion-->
 
-            <Grid Name="sepGrid" HorizontalAlignment="Stretch" Drop="rejectDrop" Grid.Row="2">
+            <Grid Name="sepGrid" HorizontalAlignment="Stretch"  Grid.Row="2">
                 <!--#region Rows/Columns Defs-->
 
                 <Grid.ColumnDefinitions>
@@ -94,7 +94,7 @@
                     <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
                         <!--Style="{StaticResource MaterialGrid}"-->
                         <Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />
-                        <local:overviewPage2 x:Name="ovPage" Drop="rejectDrop" AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+                        <local:overviewPage2 x:Name="overviewPage"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
                     </Grid>
 
                
@@ -105,7 +105,7 @@
 
             </Grid>
             <local:leftSlide x:Name="leftSlide1" Height="870"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="400" Margin="-420,0,0,30" Grid.Row="2"/>
-            <Grid Name="ToolBar" HorizontalAlignment="Stretch" Margin="0" Background="#FF607D8B" Grid.Row="1" Drop="rejectDrop">
+            <Grid Name="ToolBar" HorizontalAlignment="Stretch" Margin="0" Background="#FF607D8B" Grid.Row="1" >
                 <!--#region Rows/Columns Defs-->
 
                 <Grid.ColumnDefinitions>
@@ -114,11 +114,11 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <!--#endregion-->
-                <Image Margin="5,3,0,3" Height="24" Width="24" Stretch="Uniform" Source="resources/ui_images/ic_menu_white_24dp_2x.png" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" Grid.ColumnSpan="1" MouseLeftButtonDown="showLeftSlide"/>
+                <Image Margin="5,3,0,3" Height="24" Width="24" Stretch="Uniform" Source="resources/ui_images/ic_menu_white_24dp_2x.png" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" Grid.ColumnSpan="1" MouseLeftButtonDown="LeftSlideToggle"/>
                 <TextBlock FontWeight="DemiBold" Margin="0,2,0,0" Grid.Column="1" HorizontalAlignment="Stretch" Padding="5,0,0,0" VerticalAlignment="Top" FontSize="17" Height="22">Overview</TextBlock>
-                    <Image Height="20" Width="20" Stretch="Uniform" Source="resources/ui_images/ic_save_white_24dp_2x.png" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" MouseLeftButtonDown="saveButtonClicked" Cursor="Hand" Grid.ColumnSpan="1" Margin="0,5"/>
-                    <Image Name="img" Source="resources/ui_images/ic_add_white_24dp_2x.png" MouseLeftButtonDown="newCharButtonClicked" Cursor="Hand" Margin="60,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
-                    <Image Name="dgButton" ToolTip="Show dungeons" Source="resources/ui_images/dungs.png" MouseLeftButtonDown="showDungeonWindow" Cursor="Hand" Margin="30,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
+                    <Image Height="20" Width="20" Stretch="Uniform" Source="resources/ui_images/ic_save_white_24dp_2x.png" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" MouseLeftButtonDown="SaveButtonPressed" Cursor="Hand" Grid.ColumnSpan="1" Margin="0,5"/>
+                    <Image Name="img" Source="resources/ui_images/ic_add_white_24dp_2x.png" MouseLeftButtonDown="TestButton" Cursor="Hand" Margin="60,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
+                    <Image Name="dgButton" ToolTip="Show dungeons" Source="resources/ui_images/dungs.png" MouseLeftButtonDown="ShowDungeonOverview" Cursor="Hand" Margin="30,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
                     <!--<Grid Grid.Column="2"  VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,-0,154,-0" >
                     -->
                 <!--<Ellipse MouseLeftButtonDown="newChar" Fill="#FFFF782A" Cursor="Hand">
@@ -155,7 +155,7 @@
         </Grid>
 
     
-    <Grid Name="StatusBar" Grid.Row="3" Focusable="False" VerticalAlignment="Bottom" Height="20" Cursor="Hand" ToolTip="Expand log." MouseLeftButtonDown="expandLog">
+    <Grid Name="StatusBar" Grid.Row="3" Focusable="False" VerticalAlignment="Bottom" Height="20" Cursor="Hand" ToolTip="Expand log." MouseLeftButtonDown="LogSizeToggle">
         <ListBox ScrollViewer.VerticalScrollBarVisibility="Hidden" Name="Log"  Height="Auto" VerticalAlignment="Stretch" BorderBrush="Transparent" Foreground="White" Background="{x:Null}" Focusable="False" IsTextSearchEnabled="False">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>

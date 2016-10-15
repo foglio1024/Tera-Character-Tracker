@@ -40,15 +40,15 @@ namespace TCTMain
 
                     if (dailyReset)
                     {
-                        Tera.UI.win.Dispatcher.Invoke(new Action(()=> Tera.UI.win.resetDailyData(new object(), new RoutedEventArgs())));
-                        Tera.UI.win.updateLog("Daily data has been reset.");
+                        Tera.UI.win.Dispatcher.Invoke(new Action(()=> Tera.UI.win.ResetDailyData(new object(), new RoutedEventArgs())));
+                        Tera.UI.win.UpdateLog("Daily data has been reset.");
                         TCTNotifier.NotificationProvider.NS.sendNotification("Daily data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
                         dailyReset = false;
                     }
                     if (weeklyReset)
                     {
-                        Tera.UI.win.Dispatcher.Invoke(new Action(() => Tera.UI.win.resetWeeklyData(new object(), new RoutedEventArgs())));
-                        Tera.UI.win.updateLog("Weekly data has been reset.");
+                        Tera.UI.win.Dispatcher.Invoke(new Action(() => Tera.UI.win.ResetWeeklyData(new object(), new RoutedEventArgs())));
+                        Tera.UI.win.UpdateLog("Weekly data has been reset.");
                         TCTNotifier.NotificationProvider.NS.sendNotification("Weekly data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
 
                         weeklyReset = false;
@@ -81,6 +81,12 @@ namespace TCTMain
                 Tera.TeraLogic.LoadAccounts();
                 Tera.TeraLogic.LoadCharacters();
                 Tera.TeraLogic.LoadDungeons();
+
+                if (Tera.TeraLogic.CharList != null && Tera.TeraLogic.DungList != null)
+                {
+                    Tera.TeraLogic.CheckDungeonsList(); 
+                }
+
                 Tera.TeraLogic.LoadGuildsDB();
 
                 if (!Tera.TeraLogic.GuildDictionary.ContainsKey(0))

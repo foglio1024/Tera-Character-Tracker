@@ -24,10 +24,10 @@ namespace Tera
     /// <summary>
     /// Logica di interazione per newStrip.xaml
     /// </summary>
-    public partial class newStrip : UserControl
+    public partial class CharacterStrip : UserControl
     {
 
-        public newStrip()
+        public CharacterStrip()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace Tera
         public static bool _isDown;
         public   TeraMainWindow _visual;
         public UIElement _draggedItem;
-        public newStrip item2;
+        public CharacterStrip item2;
         
         DoubleAnimation fadeOut = new DoubleAnimation(0, TimeSpan.FromMilliseconds(120));
         DoubleAnimation fadeIn = new DoubleAnimation(1, TimeSpan.FromMilliseconds(120));
@@ -58,7 +58,7 @@ namespace Tera
 
         public void rowHighlight(object sender, MouseEventArgs e)
         {
-            var s = sender as newStrip;
+            var s = sender as CharacterStrip;
             var an = new ColorAnimation();
             an.From = Color.FromArgb(0, 0, 0, 0);
             an.To = Color.FromArgb(30, 155, 155, 155);
@@ -72,7 +72,7 @@ namespace Tera
         {
            // if (classSelPopup.IsOpen == false)
            // {
-            var s = sender as newStrip;
+            var s = sender as CharacterStrip;
             var an = new ColorAnimation();
             an.From = Color.FromArgb(30, 155, 155, 155);
             an.To = Color.FromArgb(0, 0, 0, 0);
@@ -218,12 +218,12 @@ namespace Tera
             {
                
                 _drag = true;
-                item2 = new newStrip();
-                _draggedItem = e.Source as newStrip;
-                item2 = (_draggedItem as newStrip);
+                item2 = new CharacterStrip();
+                _draggedItem = e.Source as CharacterStrip;
+                item2 = (_draggedItem as CharacterStrip);
 
                 CreateDragDropWindow(_draggedItem, e.GetPosition(e.Source as Rectangle));
-                ((_draggedItem as newStrip).Content as Grid).BeginAnimation(HeightProperty, shrink);
+                ((_draggedItem as CharacterStrip).Content as Grid).BeginAnimation(HeightProperty, shrink);
                 DragDrop.DoDragDrop(_draggedItem, new DataObject("UIElement", _draggedItem, true), DragDropEffects.Move);
 
                 _visual.Close();
@@ -259,7 +259,7 @@ namespace Tera
                 if (e.Data.GetDataPresent("UIElement"))
                 {
                     UIElement droptarget = e.Source as UIElement;
-                    var panel = (droptarget as newStrip).Parent as StackPanel;
+                    var panel = (droptarget as CharacterStrip).Parent as StackPanel;
                     int droptargetIndex = -1, i = 0;
                     foreach (UIElement element in panel.Children)
                     {
@@ -270,22 +270,22 @@ namespace Tera
                         }
                         i++;
                     }
-                    var sourceItem = e.Data.GetData("UIElement") as newStrip;
+                    var sourceItem = e.Data.GetData("UIElement") as CharacterStrip;
 
                     if (droptargetIndex != -1)
                     {
                         Character temp = new Character();
-                    newStrip temp2 = new newStrip();
+                    CharacterStrip temp2 = new CharacterStrip();
                         var originIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(sourceItem.Tag)));
                         temp = TeraLogic.CharList[originIndex];
-                        temp2 = TeraMainWindow.NewStrips[originIndex];
+                        temp2 = TeraMainWindow.CharacterStrips[originIndex];
                         panel.Children.Remove(sourceItem);
                         panel.Children.Insert(droptargetIndex, sourceItem);
                         (sourceItem.Content as Grid).BeginAnimation(HeightProperty, expand);
                         TeraLogic.CharList.RemoveAt(originIndex);
                         TeraLogic.CharList.Insert(droptargetIndex, temp);
-                        TeraMainWindow.NewStrips.RemoveAt(originIndex);
-                        TeraMainWindow.NewStrips.Insert(droptargetIndex, temp2);
+                        TeraMainWindow.CharacterStrips.RemoveAt(originIndex);
+                        TeraMainWindow.CharacterStrips.Insert(droptargetIndex, temp2);
 
                       //  var t = r.Children[originIndex];
                      //   r.Children.RemoveAt(originIndex);
@@ -352,7 +352,7 @@ namespace Tera
             TeraLogic.CharList.Remove(TeraLogic.CharList.Find(x=>x.Name.Equals(this.Tag)));
 
             /*removes entry from strips array*/
-            TeraMainWindow.NewStrips.Remove(TeraMainWindow.NewStrips.Find(x => Tag.Equals(this.Tag)));
+            TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => Tag.Equals(this.Tag)));
 
             /*removes strip from panel after animation*/
             shrink.Completed += (a,b) => (this.Parent as StackPanel).Children.Remove(this);
@@ -457,7 +457,7 @@ namespace Tera
         {
             try
             {
-                TeraLogic.selectChar(this.Tag.ToString());
+                TeraLogic.SelectCharacter(this.Tag.ToString());
             }
             catch(Exception ex)
             {

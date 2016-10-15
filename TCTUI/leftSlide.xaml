@@ -22,30 +22,6 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="1" VerticalAlignment="Center" Width="50" Height="50" Margin="0,0,20,0" HorizontalAlignment="Right" Cursor="Hand" MouseLeftButtonDown="tc_switch_changed">
-                    <Rectangle x:Name="tc_switch_back" Width="40" Fill="#3F000000">
-                        <Rectangle.OpacityMask>
-                            <ImageBrush Stretch="Uniform">
-                                <ImageBrush.ImageSource>
-                                    <BitmapImage UriSource="resources/ui_images/switch_base.png"/>
-                                </ImageBrush.ImageSource>
-                            </ImageBrush>
-                        </Rectangle.OpacityMask>
-                    </Rectangle>
-                    <Ellipse x:Name="tc_switch" Fill="#FFFF782A" HorizontalAlignment="Center" Width="20" Height="20" Margin="-20,0,0,0">
-                        <Ellipse.Effect>
-                            <DropShadowEffect ShadowDepth="1" Color="#FFAEAEAE" BlurRadius="4"/>
-                        </Ellipse.Effect>
-                    </Ellipse>
-                </Grid>
-                <TextBlock HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Tera Club</TextBlock>
-
-            </Grid>
-            <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
                 <TextBlock HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Console</TextBlock>
                 <local:MaterialSwitch x:Name="Console_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetConsole" Margin="0,0,20,0"></local:MaterialSwitch>
 

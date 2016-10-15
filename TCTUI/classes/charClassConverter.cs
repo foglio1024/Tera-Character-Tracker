@@ -5,7 +5,7 @@ using System.Windows.Media.Imaging;
 using Tera;
 namespace Tera
 {
-    internal class charClassConverter : IValueConverter
+    internal class CharClassConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -157,9 +157,9 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="2" Foreground="#90000000" HorizontalAlignment="Center" Margin="0,0,10,0">/</TextBlock>
-                        <TextBlock Grid.Column="3" x:Name="dailiesTB" Foreground="#90000000" HorizontalAlignment="Right" Margin="0,0,12,0">-</TextBlock>
+                        <TextBlock Grid.Column="3" x:Name="dailiesTB" Foreground="#90000000" HorizontalAlignment="Right" Margin="0,0,10,0">-</TextBlock>
                         <TextBlock Margin="10,0,0,0" Foreground="#dc000000" Grid.Column="0">Weeklies / Dailies</TextBlock>
-                        <TextBox Style="{StaticResource TB}" x:Name="weeklyTB" Grid.Column="1" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0" TextChanged="isSavedToFalse">-</TextBox>
+                        <TextBlock x:Name="weeklyTB" Grid.Column="1" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0">-</TextBlock>
                     </Grid>
                     <StackPanel Orientation="Horizontal">
                         <Rectangle x:Name="questsBar"  Style="{StaticResource barRect}"/>
@@ -176,7 +176,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Margin="10,0,0,0" Foreground="#dc000000" Grid.Column="0">Vanguard credits</TextBlock>
-                        <TextBox Style="{StaticResource TB}" x:Name="creditsTB" Grid.Column="1" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0" TextChanged="isSavedToFalse">-</TextBox>
+                        <TextBlock x:Name="creditsTB" Grid.Column="1" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0" >-</TextBlock>
                     </Grid>
 
                     <Rectangle x:Name="creditsBar"  Style="{StaticResource barRect}"/>
@@ -191,7 +191,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Margin="10,0,0,0" Foreground="#dc000000" Grid.Column="0">Marks of valor</TextBlock>
-                        <TextBox Style="{StaticResource TB}" Grid.Column="1" x:Name="mvTB" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0" TextChanged="isSavedToFalse">-</TextBox>
+                        <TextBlock Grid.Column="1" x:Name="mvTB" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0">-</TextBlock>
                     </Grid>
                     <Rectangle x:Name="marksBar"  Style="{StaticResource barRect}"/>
                     <Rectangle Style="{StaticResource baseRect}"/>
@@ -205,7 +205,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Margin="10,0,0,0" Foreground="#dc000000" Grid.Column="0">Goldfinger Tokens</TextBlock>
-                        <TextBox Style="{StaticResource TB}" Grid.Column="1" x:Name="gfTB" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0" TextChanged="isSavedToFalse">-</TextBox>
+                        <TextBlock  Grid.Column="1" x:Name="gfTB" Foreground="#dc000000" HorizontalAlignment="Right" Margin="0,0,10,0">-</TextBlock>
                     </Grid>
                     <Rectangle x:Name="gfBar"  Style="{StaticResource barRect}"/>
                     <Rectangle Style="{StaticResource baseRect}"/>

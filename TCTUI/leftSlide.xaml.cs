@@ -64,56 +64,8 @@ namespace Tera
             /*close after choice*/
             ThicknessAnimationUsingKeyFrames an = new ThicknessAnimationUsingKeyFrames();
             an.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-420, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
-            TeraMainWindow.leftSlideIsOpen = false;
+            //TeraMainWindow.leftSlideIsOpen = false;
             this.BeginAnimation(MarginProperty, an);
-
-
-        }
-        private void tc_switch_changed(object sender, MouseButtonEventArgs e)
-        {
-            var tcOn = new ThicknessAnimationUsingKeyFrames();
-            var tcOff = new ThicknessAnimationUsingKeyFrames();
-            var tcOnFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 255, 255), System.Windows.Media.Color.FromArgb(255, 255, 120, 42), TimeSpan.FromMilliseconds(150));
-            var tcOffFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 120, 42), System.Windows.Media.Color.FromArgb(255, 255, 255, 255), TimeSpan.FromMilliseconds(150));
-            var tcOnBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(25, 0, 0, 0), System.Windows.Media.Color.FromArgb(100, 255, 120, 42), TimeSpan.FromMilliseconds(150));
-            var tcOffBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(100, 255, 120, 42), System.Windows.Media.Color.FromArgb(25, 0, 0, 0), TimeSpan.FromMilliseconds(150));
-
-            tcOn.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
-            tcOff.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
-            
-            tcOff.Completed += (x, ev) =>
-            {
-                //showRestartDiag();
-
-            };
-            tcOn.Completed += (x, ev) =>
-            {
-                //showRestartDiag();
-
-            };
-            
-            if (Properties.Settings.Default.TeraClub)
-            {
-                Properties.Settings.Default.TeraClub = false;
-                Properties.Settings.Default.Save();
-                tc_switch.BeginAnimation(MarginProperty, tcOff);
-                tc_switch.Fill.BeginAnimation(SolidColorBrush.ColorProperty, tcOffFill);
-                tc_switch_back.Fill.BeginAnimation(SolidColorBrush.ColorProperty, tcOffBackFill);
-
-
-            }
-            else
-            {
-                Properties.Settings.Default.TeraClub = true;
-                Properties.Settings.Default.Save();
-                tc_switch.BeginAnimation(MarginProperty, tcOn);
-                tc_switch.Fill.BeginAnimation(SolidColorBrush.ColorProperty, tcOnFill);
-                tc_switch_back.Fill.BeginAnimation(SolidColorBrush.ColorProperty, tcOnBackFill);
-            }
-
-            /* 
-            * reload dg controls bindings
-            */
 
 
         }
@@ -164,22 +116,6 @@ namespace Tera
                     d.Runs = 0;
                 }
             }
-        }
-        private void reloadDgCtrl()
-        {
-            TeraMainWindow w;
-
-                w = Application.Current.MainWindow as TeraMainWindow;
-                var s = w.FindName("dgPage") as UserControl;
-                var p = s.FindName("dungeonTableGridContent") as StackPanel;
-                p.Children.Clear();
-                TeraMainWindow.DungStrips.Clear();
-                for (int i = 0; i < TeraLogic.CharList.Count; i++)
-                {
-                    TeraMainWindow.createDungStrips(i);
-                }
-            
-            
         }
         private void animateSwitch()
         {

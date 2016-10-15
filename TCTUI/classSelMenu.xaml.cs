@@ -50,14 +50,14 @@ namespace Tera
         private void classSelected(object sender, MouseButtonEventArgs e)
         {
 
-            TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name.Equals(TeraMainWindow.activeChar)))].CharClass=(sender as Grid).Tag.ToString();
+            //TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name.Equals(TeraMainWindow.activeChar)))].CharClass=(sender as Grid).Tag.ToString();
             TeraLogic.IsSaved = false;
 
         }
         private void laurelSelected(object sender, MouseButtonEventArgs e)
         {
 
-            TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name.Equals(TeraMainWindow.activeChar)))].Laurel = (sender as Grid).Tag.ToString();
+            //TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name.Equals(TeraMainWindow.activeChar)))].Laurel = (sender as Grid).Tag.ToString();
             TeraLogic.IsSaved = false;
 
         }

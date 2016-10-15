@@ -31,10 +31,10 @@ namespace Tera
             public static double Width { get; set; }
             public static double Height { get; set; }
             public static bool Console { get; set; }
+            public static Color baseColor = Color.FromArgb(255, 96, 125, 139);
+            public static Color accentColor = Color.FromArgb(255, 255, 120, 42);
         }
 
-        private static int totalCredits;
-        private static int totalMarks;
         public static bool isTC;
 
         public const int MAX_WEEKLY = 15;
@@ -56,80 +56,11 @@ namespace Tera
         public static XDocument NewWorldMapData;
         public static XDocument StrSheet_Dungeon;
         public static List<XDocument> StrSheet_Item_List;
-        public static int TotalCredits { get
-            {
-                totalCredits = 0;
-                for (int i = 0; i < CharList.Count; i++)
-                {
-                    totalCredits += CharList[i].Credits;
-                }
-                 return totalCredits;
-            }
-        }
-        public static  int TotalMarks { get
-        {
-                totalMarks = 0;
-                for (int i = 0; i < CharList.Count; i++)
-                {
-                    totalMarks += CharList[i].MarksOfValor;
-                }
-                 return totalMarks;
-            }
-        }
+        public static CharViewContentProvider cvcp = new CharViewContentProvider();
 
         public static List<uint> RiskList { get; } = new List<uint> { 9070, 9767, 9068, 9067, 9768, 9611 };
 
-        /*    public void newCharacter(List<Character> a)
-            {
-                Character nc = new Character("nm","cl",0,0,0,0,"none");
-                Console.Write("Name: ");
-                nc.Name = Console.ReadLine();
-                Console.Write("Class: ");
-                nc.CharClass = Console.ReadLine();
-                a.Add(nc);
-                Console.WriteLine("Created {0}, {1}", nc.Name, nc.CharClass);
-                nc.printAll();
-
-            }*/
-        /*      public List<Character> loadFromTxtFile()
-              {
-                  List<Character> a = new List<Character>();
-                  StreamReader sr = new StreamReader("a.txt");
-                  string line;
-                  while ((line = sr.ReadLine()) != null)
-                  {
-                      string[] items = line.Split(';');
-                          a.Add(new Character(items[0],
-                                                      items[1],
-                                      Convert.ToInt32(items[2]),
-                                      Convert.ToInt32(items[3]),
-                                      Convert.ToInt32(items[4]),
-                                      Convert.ToInt32(items[5]),
-                                                      items[6])
-                                      );
-                  }
-                  return a;
-
-              }*/
-        //public static void newChar()
-        //{
-        //    CharList.Add(new Character(CharList.Count, "Name", "None", 0, 0, 0, 0, "None", 1, MAX_DAILY, 0, 1,0));
-
-        //    /*adds strip*/
-        //    TeraMainWindow.NewStrips.Add(new newStrip());
-        //    int i = CharList.Count -1;
-
-        //    /*initializes dungeons*/
-        //    for (int j = 0; j < DungList.Count; j++)
-        //    {
-        //        CharList[i].Dungeons.Add(new CharDungeon(DungList[j].ShortName, 0));
-
-        //    }
-
-
-        //}
-
-        public static void newChar(Character c)
+        public static void AddCharacter(Character c)
         {
             bool found = false;
             foreach (var cl in CharList)
@@ -155,8 +86,7 @@ namespace Tera
                 CharList.Add(c);
 
                 /*adds strip*/
-                TeraMainWindow.NewStrips.Add(new newStrip());
-                int i = CharList.Count - 1;
+                TeraMainWindow.CharacterStrips.Add(new CharacterStrip());
                 int tc = 1;
                 if (isTC)
                 {
@@ -169,68 +99,67 @@ namespace Tera
                     if (DungList[j].ShortName == "AH" || DungList[j].ShortName == "EA" || DungList[j].ShortName == "GL" || DungList[j].ShortName == "CA")
                     {
 
-                        CharList[i].Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns));
+                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns));
                     }
                     else
                     {
-                        CharList[i].Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc));
+                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc));
 
                     }
                 }
-                UI.win.createNewStrip(i);
+
+                UI.win.CreateStrip(CharList.Count - 1);
 
             }
 
         }
-        public static void selectChar(string name)
+        public static void SelectCharacter(string name)
         {
 
-            TeraMainWindow.cvcp.SelectedChar = TeraLogic.CharList.Find(x => x.Name.Equals(name));
-            var charIndex = (TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Equals(TeraMainWindow.cvcp.SelectedChar))));
+            cvcp.SelectedChar = TeraLogic.CharList.Find(x => x.Name.Equals(name));
+            var charIndex = (TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Equals(TeraLogic.cvcp.SelectedChar))));
             var w = UI.win.chView;
 
 
-            w.charName.Text = TeraMainWindow.cvcp.SelectedChar.Name;
-            w.charClassTB.Text = TeraMainWindow.cvcp.SelectedChar.CharClass;
-            TeraMainWindow.createClassImageBinding(charIndex, "CharClass", w.classImg, "hd");
+            w.charName.Text = TeraLogic.cvcp.SelectedChar.Name;
+            w.charClassTB.Text = TeraLogic.cvcp.SelectedChar.CharClass;
 
-            TeraMainWindow.createLaurelImageBinding(TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Equals(TeraMainWindow.cvcp.SelectedChar))), "Laurel", w.laurelImg, "hd");
-            TeraMainWindow.createBinding(charIndex, "Name", w.charName);
-            TeraMainWindow.createBinding(charIndex, "Weekly", w.weeklyTB);
-            TeraMainWindow.createBinding(charIndex, "Dailies", w.dailiesTB);
-            TeraMainWindow.createBinding(charIndex, "Credits", w.creditsTB);
-            TeraMainWindow.createBinding(charIndex, "MarksOfValor", w.mvTB);
-            TeraMainWindow.createBinding(charIndex, "GoldfingerTokens", w.gfTB);
-            TeraMainWindow.createBinding(charIndex, "GuildId", w.guildNameTB, new GuildConverter());
-            TeraMainWindow.createBinding(charIndex, "LocationId", w.locationTB, new LocationConverter());
-            TeraMainWindow.createBinding(charIndex, "LastOnline", w.lastOnlineTB, new LastOnlineConverter());
-            TeraMainWindow.createBinding(charIndex, "Notes", w.notesTB);
+            DataBinder.BindParameterToImageSourceWithConverter(charIndex, "CharClass", w.classImg, "hd", new CharClassConverter());
+            DataBinder.BindParameterToImageSourceWithConverter(charIndex, "Laurel", w.laurelImg, "hd", new LaurelImgConverter());
 
+            w.charName.SetBinding(      TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Name"));
+            w.weeklyTB.SetBinding(      TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Weekly"));
+            w.dailiesTB.SetBinding(     TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Dailies"));
+            w.creditsTB.SetBinding(     TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Credits"));
+            w.mvTB.SetBinding(          TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor"));
+            w.gfTB.SetBinding(          TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens"));
+            w.guildNameTB.SetBinding(   TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "GuildId", new GuildConverter(), null));
+            w.locationTB.SetBinding(    TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LocationId" , new LocationConverter(), null));
+            w.lastOnlineTB.SetBinding(  TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LastOnline", new LastOnlineConverter(), null));
+            w.notesTB.SetBinding(       TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Notes"));
 
-            createBarBindings(w.questsBar, charIndex, "Weekly", TeraLogic.MAX_WEEKLY);
-            createBarBindings(w.creditsBar, charIndex, "Credits", TeraLogic.MAX_CREDITS);
-            createBarBindings(w.marksBar, charIndex, "MarksOfValor", TeraLogic.MAX_MARKS);
-            createBarBindings(w.gfBar, charIndex, "GoldfingerTokens", TeraLogic.MAX_GF_TOKENS);
+            w.questsBar.SetBinding(     Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new barLengthConverter(), new double[] { UI.win.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY) }));
+            w.dailiesBar.SetBinding(    Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Dailies", new DailybarLengthConverter(), new double[] { UI.win.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY - CharList[charIndex].Weekly) }));
+            w.creditsBar.SetBinding(    Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Credits", new barLengthConverter(), new double[] { UI.win.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_CREDITS) }));
+            w.marksBar.SetBinding(      Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor", new barLengthConverter(), new double[] { UI.win.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_MARKS) }));
+            w.gfBar.SetBinding(         Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens", new barLengthConverter(), new double[] { UI.win.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_GF_TOKENS) }));
 
-            createDailiesBarBinding(w.dailiesBar, charIndex, "Dailies", UI.win.chView.baseBar);
+            w.questsBar.SetBinding(     Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new barColorConverter(), 7));
+            w.dailiesBar.SetBinding(    Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new barColorConverter(), 7));
+            w.creditsBar.SetBinding(    Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Credits", new barColorConverter(), 8000));
+            w.marksBar.SetBinding(      Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor", new barColorConverter(), 80));
+            w.gfBar.SetBinding(         Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens", new barColorConverter(), 65));
 
-            createBarColorBindings(w.dailiesBar, charIndex, "Weekly", 7);
-            createBarColorBindings(w.questsBar, charIndex, "Weekly", 7);
-            createBarColorBindings(w.creditsBar, charIndex, "Credits", 7000);
-            createBarColorBindings(w.marksBar, charIndex, "MarksOfValor", 82);
-            createBarColorBindings(w.gfBar, charIndex, "GoldfingerTokens", 70);
+            createDgBindings(charIndex, w);
 
-            createDgBindings(w, charIndex);
-
-            foreach (var ns in Tera.TeraMainWindow.NewStrips)
+            foreach (var ns in Tera.TeraMainWindow.CharacterStrips)
             {
                 if (ns.Tag != null)
                 {
                     if (ns.Tag.Equals(name))
                     {
                         ns.rowSelect(true);
-                        UI.win.ovPage.tableGridContent.ScrollIntoView(ns);
-
+                        UI.win.overviewPage.tableGridContent.ScrollIntoView(ns);
                     }
                     else
                     {
@@ -241,75 +170,29 @@ namespace Tera
             try
             {
                 System.Drawing.Bitmap bmp = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(Environment.CurrentDirectory + "\\content/data/guild_images/" + CharList[charIndex].GuildId.ToString() + ".bmp");
-                UI.win.setGuildImg(bmp);
+                UI.win.SetGuildImage(bmp);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
                 System.Drawing.Bitmap bmp = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(Environment.CurrentDirectory + "\\content/data/guild_images/" + "0" + ".bmp");
-                UI.win.setGuildImg(bmp);
+                UI.win.SetGuildImage(bmp);
 
             }
 
 
 
         }
-        private static void createBarBindings(Rectangle bar, int charIndex, string prop, int max)
+
+        private static void createDgBindings(int charIndex, CharView w)
         {
-            double[] par = new double[2];
-            par[0] = UI.win.chView.baseBar.ActualWidth;
-            par[1] = Convert.ToDouble(max);
-            var b = new Binding
-            {
-                Source = TeraLogic.CharList[charIndex],
-                Path = new PropertyPath(prop),
-                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-                Converter = new barLengthConverter(),
-                ConverterParameter = par
-            };
-
-            bar.SetBinding(Shape.WidthProperty, b);
-        }
-        public static void createDailiesBarBinding(Rectangle bar, int charIndex, string prop, Rectangle bs)
-        {
-            double[] par = new double[2];
-            par[0] = bs.ActualWidth;
-            par[1] = Convert.ToDouble(MAX_WEEKLY-CharList[charIndex].Weekly);
-
-            var b = new Binding
-            {
-                Source = TeraLogic.CharList[charIndex],
-                Path = new PropertyPath(prop),
-                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-                Converter = new DailybarLengthConverter(),
-                ConverterParameter = par
-            };
-
-            bar.SetBinding(Shape.WidthProperty, b);
+            createDgBindingsHelper(charIndex, w.starterTier.Children);
+            createDgBindingsHelper(charIndex, w.midTier.Children);
+            createDgBindingsHelper(charIndex, w.midHighTier.Children);
+            createDgBindingsHelper(charIndex, w.highTier.Children);
+            createDgBindingsHelper(charIndex, w.topTier.Children);
         }
 
-        private static void createBarColorBindings(Rectangle bar, int charIndex, string prop, int max)
-        {
-            var b = new Binding
-            {
-                Source = TeraLogic.CharList[charIndex],
-                Path = new PropertyPath(prop),
-                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-                Converter = new barColorConverter(),
-                ConverterParameter = max
-            };
-
-            bar.SetBinding(Shape.FillProperty, b);
-        }
-        private static void createDgBindings(CharView w, int charIndex)
-        {
-            createDgBindingsHelper(w, charIndex, w.starterTier.Children);
-            createDgBindingsHelper(w, charIndex, w.midTier.Children);
-            createDgBindingsHelper(w, charIndex, w.midHighTier.Children);
-            createDgBindingsHelper(w, charIndex, w.highTier.Children);
-            createDgBindingsHelper(w, charIndex, w.topTier.Children);
-        }
-
-        private static void createDgBindingsHelper(CharView w, int charIndex, UIElementCollection coll)
+        private static void createDgBindingsHelper(int charIndex, UIElementCollection coll)
         {
             foreach (dgCounter dc in coll)
             {
@@ -387,51 +270,60 @@ namespace Tera
         }
 
 
-        /*    public void waitForInput(List<Character> a)
+        public static void CheckDungeonsList()
+        {
+            bool found = false;
+
+            for (int i = 0; i < CharList.Count; i++)
             {
-                int action = -1;
-                while (0 == 0)
+                for (int j = 0; j < DungList.Count; j++)
                 {
-                    switch (action)
+                    found = false;
+
+                    for (int h = 0; h < CharList[i].Dungeons.Count; h++)
                     {
-                        case 1:
-                            editCharacter(a);
+                        if (CharList[i].Dungeons[h].Name == DungList[j].ShortName)
+                        {
+                            found = true;
                             break;
-                        case 2:
-                            newCharacter(a);
-                            break;
-                        case 3:
-                            Console.WriteLine("Enter name of the character to delete:");
-                            string delChar = Console.ReadLine();
-                            deleteCharacter(a, delChar);
-                            break;
-                        case 4:
-                            printEverything(a);
-                            break;
-                        case 6:
-                            saveToXml(a);
-                            break;
-                        case 7:
-                            resetDailies(a);
-                            break;
-                        case 8:
-                            Console.WriteLine("Delete all {0} characters? (y/n)", a.Count);
-                            string confirmation = Console.ReadLine();
-                            if (confirmation == "y")
-                            {
-                                deleteAll(a);
-                            }
-                            break;
-                        case 9:
-                            System.Environment.Exit(0);
-                            break;
+                        }
                     }
 
-                    action = prompt();
+                    if (!found)
+                    {
+                        CharList[i].Dungeons.Insert(j, new CharDungeon(DungList[j].ShortName, 0));
+                    }
+                }
+            }
+
+            found = false;
+
+            for (int i = 0; i < CharList.Count; i++)
+            {
+                for (int h = 0; h < CharList[i].Dungeons.Count; h++)
+                {
+                    found = false;
+
+                    for (int j = 0; j < DungList.Count; j++)
+                    {
+                        if (CharList[i].Dungeons[h].Name == DungList[j].ShortName)
+                        {
+                            found = true;
+                            break;
+                        }
+
+                    }
+
+                    if (!found)
+                    {
+                        CharList[i].Dungeons.RemoveAt(h);
+                    }
 
                 }
             }
-         */
+
+
+        }
 
         #region File Management
         public static void SaveCharacters()

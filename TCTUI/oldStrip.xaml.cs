@@ -98,7 +98,7 @@ namespace Tera
                 classSelPopup.PlacementTarget = className;
                 classSelPopup.Placement = System.Windows.Controls.Primitives.PlacementMode.Left;
                 
-                TeraMainWindow.activeChar = Convert.ToString((sender as Image).Tag);
+                //TeraMainWindow.activeChar = Convert.ToString((sender as Image).Tag);
                 classSelPopup.IsOpen = true;
                 selMenu.Height = 1;
                 selMenu.Width = 1;
@@ -332,7 +332,7 @@ namespace Tera
             TeraLogic.CharList.Remove(TeraLogic.CharList.Find(x=>x.Name.Equals(this.Tag)));
 
             /*removes entry from strips array*/
-            TeraMainWindow.NewStrips.Remove(TeraMainWindow.NewStrips.Find(x => Tag.Equals(this.Tag)));
+            TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => Tag.Equals(this.Tag)));
 
             /*removes strip from panel after animation*/
             shrink.Completed += (a,b) => (this.Parent as StackPanel).Children.Remove(this);

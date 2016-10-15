@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Arc.cs" />
     <Compile Include="classes\Account.cs" />
+    <Compile Include="classes\DataBinder.cs" />
     <Compile Include="MaterialSwitch.xaml.cs">
       <DependentUpon>MaterialSwitch.xaml</DependentUpon>
     </Compile>
@@ -176,8 +177,8 @@
     </Compile>
     <Compile Include="LaurelImgConverter.cs" />
     <Compile Include="ledConv.cs" />
-    <Compile Include="newStrip.xaml.cs">
-      <DependentUpon>newStrip.xaml</DependentUpon>
+    <Compile Include="CharacterStrip.xaml.cs">
+      <DependentUpon>CharacterStrip.xaml</DependentUpon>
     </Compile>
     <Compile Include="restartDiag.xaml.cs">
       <DependentUpon>restartDiag.xaml</DependentUpon>
@@ -258,7 +259,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="newStrip.xaml">
+    <Page Include="CharacterStrip.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
