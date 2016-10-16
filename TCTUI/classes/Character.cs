@@ -10,7 +10,7 @@ namespace Tera
 {
     [System.Xml.Serialization.XmlType("Character", IncludeInSchema = true)]
 
-    public class Character : INotifyPropertyChanged
+    public class Character : INotifyPropertyChanged, IComparable
     {
         //Variables
         string name;
@@ -384,6 +384,10 @@ namespace Tera
             }
         }
 
+        public int CompareTo(object obj)
+        {
+            return Position.CompareTo(obj);
+        }
     }
 
 }

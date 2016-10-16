@@ -86,6 +86,61 @@ namespace Tera
 
             t.txt.SetBinding(TextBlock.TextProperty, GenericCharBinding(i, property));
         }
+        public static void CreateDgBindings(int charIndex, CharView w)
+        {
+            CreateDgBindingsForTier(charIndex, w.starterTier.Children);
+            CreateDgBindingsForTier(charIndex, w.midTier.Children);
+            CreateDgBindingsForTier(charIndex, w.midHighTier.Children);
+            CreateDgBindingsForTier(charIndex, w.highTier.Children);
+            CreateDgBindingsForTier(charIndex, w.topTier.Children);
+        }
+        public static void CreateDgBindingsForTier(int charIndex, UIElementCollection coll)
+        {
+            foreach (dgCounter dc in coll)
+            {
+                int tc = 1;
+
+                if (TeraLogic.AccountList.Find(a => a.Id == TeraLogic.CharList[charIndex].AccountId).TeraClub)
+                {
+                    tc = 2;
+                }
+
+                int dgIndex = TeraLogic.CharList[charIndex].Dungeons.IndexOf(TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name.Equals(dc.Name)));
+
+                var counterText = new Binding
+                {
+                    Source = TeraLogic.CharList[charIndex].Dungeons[dgIndex],
+                    Path = new PropertyPath("Runs"),
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                    Mode = BindingMode.OneWay,
+                    Converter = new intToStringConverter(),
+                };
+
+                int p = 0;
+                if (dc.n.Text == "AH" || dc.n.Text == "EA" || dc.n.Text == "GL" || dc.n.Text == "CA")
+                {
+                    p = TeraLogic.DungList[dgIndex].MaxBaseRuns;
+                }
+                else
+                {
+                    p = TeraLogic.DungList[dgIndex].MaxBaseRuns * tc;
+                }
+
+                var ellipseFill = new Binding
+                {
+                    Source = TeraLogic.CharList[charIndex].Dungeons[dgIndex],
+                    Path = new PropertyPath("Runs"),
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                    Mode = BindingMode.OneWay,
+                    Converter = new DgFillColorConverter(),
+                    ConverterParameter = p
+                };
+
+
+                dc.ell.SetBinding(Shape.FillProperty, ellipseFill);
+                dc.t.SetBinding(TextBlock.TextProperty, counterText);
+            }
+        }
 
     }
 }

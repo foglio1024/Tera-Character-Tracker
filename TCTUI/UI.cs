@@ -8,6 +8,10 @@ namespace Tera
 {
     public static class UI
     {
-        static public TeraMainWindow win;
+        static public TeraMainWindow MainWin;
+        static public void UpdateLog(string data)
+        {
+            MainWin.UpdateLog(data);
+        }
     }
 }

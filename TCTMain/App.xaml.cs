@@ -40,15 +40,16 @@ namespace TCTMain
 
                     if (dailyReset)
                     {
-                        Tera.UI.win.Dispatcher.Invoke(new Action(()=> Tera.UI.win.ResetDailyData(new object(), new RoutedEventArgs())));
-                        Tera.UI.win.UpdateLog("Daily data has been reset.");
+                        Tera.TeraLogic.ResetDailyData();
+                        Tera.UI.UpdateLog("Daily data has been reset.");
                         TCTNotifier.NotificationProvider.NS.sendNotification("Daily data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
+
                         dailyReset = false;
                     }
                     if (weeklyReset)
                     {
-                        Tera.UI.win.Dispatcher.Invoke(new Action(() => Tera.UI.win.ResetWeeklyData(new object(), new RoutedEventArgs())));
-                        Tera.UI.win.UpdateLog("Weekly data has been reset.");
+                        Tera.TeraLogic.ResetWeeklyData();
+                        Tera.UI.UpdateLog("Weekly data has been reset.");
                         TCTNotifier.NotificationProvider.NS.sendNotification("Weekly data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
 
                         weeklyReset = false;
@@ -59,7 +60,6 @@ namespace TCTMain
                     /*save settings to xml*/
                     LastClosed = DateTime.Now;
                     settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault().Attribute("value").Value = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
-                    settings.Descendants().Where(x => x.Name == "TeraClub").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.isTC.ToString();
                     settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value =  Tera.TeraLogic.TCTProps.Console.ToString();
                     settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value =      Tera.TeraLogic.TCTProps.Top.ToString();
                     settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value =     Tera.TeraLogic.TCTProps.Left.ToString();
@@ -117,20 +117,12 @@ namespace TCTMain
             {
                 settings = XDocument.Load(Environment.CurrentDirectory + "\\content/data/settings.xml");
                 XElement LastClosedXE = settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault();
-                XElement TeraClubXE = settings.Descendants().Where(x => x.Name == "TeraClub").FirstOrDefault();
 
                 double _LastClosed = Convert.ToDouble(LastClosedXE.Attribute("value").Value.ToString());
                 System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
 
                 LastClosed = dtDateTime.AddSeconds(_LastClosed).ToLocalTime();
-                if (TeraClubXE.Value == "True")
-                {
-                    Tera.TeraLogic.isTC = true;
-                }
-                else
-                {
-                    Tera.TeraLogic.isTC = false;
-                }
+
 
                 Tera.TeraLogic.TCTProps.Top = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value);
                 Tera.TeraLogic.TCTProps.Left = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value);

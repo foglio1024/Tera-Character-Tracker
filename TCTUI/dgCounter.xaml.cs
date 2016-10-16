@@ -27,14 +27,14 @@ namespace Tera
 
         private void subtractDungRun(object sender, MouseButtonEventArgs e)
         {
-            if (TeraMainWindow.cvcp.SelectedChar != null)
+            if (TeraLogic.cvcp.SelectedChar != null)
             {
                 int tc = 1;
                 if (Properties.Settings.Default.TeraClub)
                 {
                     tc = 2;
                 }
-                var charName = TeraMainWindow.cvcp.SelectedChar.Name;
+                var charName = TeraLogic.cvcp.SelectedChar.Name;
                 var charIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(charName)));
 
                 var dgName = this.Tag as string;

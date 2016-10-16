@@ -41,7 +41,7 @@ namespace Tera
             Height = TeraLogic.TCTProps.Height;
             Width = TeraLogic.TCTProps.Width;
 
-            UI.win = this;
+            UI.MainWin = this;
         }
         #endregion
 
@@ -59,7 +59,7 @@ namespace Tera
         #endregion
 
         #region Properties
-        public static List<CharacterStrip> CharacterStrips { get ;  set; }
+        public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
         #endregion
 
         #region Methods
@@ -321,46 +321,6 @@ namespace Tera
 
             leftSlide1.BeginAnimation(MarginProperty, an);
 
-        }
-        public  void ResetDailyData(object sender, RoutedEventArgs e)
-        {
-            /*resets dungeons runs*/
-            int tc = 1;
-            foreach (var c in TeraLogic.CharList)
-            {
-                if (TeraLogic.AccountList.Find(a => a.Id == c.AccountId).TeraClub)
-                {
-                    tc = 2;
-                }
-
-                int i = 0;
-                foreach (var d in c.Dungeons)
-                {
-                    if (d.Name.Equals("CA") || d.Name.Equals("AH") || d.Name.Equals("GL") || d.Name.Equals("EA"))
-                    {
-                        d.Runs = TeraLogic.DungList[i].MaxBaseRuns;
-                    }
-                    else
-                    {
-                        d.Runs = TeraLogic.DungList[i].MaxBaseRuns * tc;
-                    }
-                    i++;
-                }
-            }
-
-            /*reset dailies*/
-            foreach (var c in TeraLogic.CharList)
-            {
-                c.Dailies = 8;
-            }
-
-        }
-        public  void ResetWeeklyData(object sender, RoutedEventArgs e)
-        {
-            foreach (var c in TeraLogic.CharList)
-            {
-                c.Weekly = 0;
-            }
         }
         private void ShowDungeonOverview(object sender, RoutedEventArgs e)
         {

@@ -101,6 +101,9 @@ namespace PacketViewer
                     }
                     cp.CurrentAccountId = alp.id;
                     SetCharList(lp.HexShortText);
+                    TeraLogic.SaveAccounts();
+                    TeraLogic.SaveCharacters();
+                    UI.UpdateLog("Data saved.");
 
                     break; 
                 #endregion
@@ -144,7 +147,7 @@ namespace PacketViewer
 
                 case "S_DUNGEON_COOL_TIME_LIST":
                     #region DUNGEONS RUNS
-                    Tera.UI.win.UpdateLog(currentCharName + " > received dungeons data.");
+                    Tera.UI.UpdateLog(currentCharName + " > received dungeons data.");
                     wCforDungeons = lp.HexShortText;
                     setDungs();
                     break; 
@@ -215,9 +218,17 @@ namespace PacketViewer
                 case "S_LOGIN_ACCOUNT_INFO":
                     alp.ParseLoginInfo(lp.HexShortText);
                     break;
+
                 case "S_ACCOUNT_PACKAGE_LIST":
                     alp.ParsePackageInfo(lp.HexShortText);
                     break;
+
+                case "S_RETURN_TO_LOBBY":
+                    TeraLogic.SaveAccounts();
+                    TeraLogic.SaveCharacters();
+                    UI.UpdateLog("Data saved.");
+                    break;
+
                 default:
                     break;
             }
@@ -419,11 +430,11 @@ namespace PacketViewer
             var charList =  cp.ParseCharacters(p);
             for (int i = 0; i < charList.Count; i++)
             {
-                UI.win.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.AddCharacter(charList[i])));
+                UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.AddCharacter(charList[i])));
             }
             cp.Clear();
 
-            UI.win.UpdateLog("Found " + charList.Count + " characters.");
+            UI.UpdateLog("Found " + charList.Count + " characters.");
             TCTNotifier.NotificationProvider.NS.sendNotification("Found " + charList.Count + " characters.");
         }
         private static void LoginChar(string p)
@@ -431,8 +442,8 @@ namespace PacketViewer
             currentCharName = clp.getName(p);
             currentCharId = clp.getId(p);
             
-            Tera.UI.win.UpdateLog(currentCharName + " logged in.");
-            Tera.UI.win.Dispatcher.Invoke(new Action(()=> Tera.TeraLogic.SelectCharacter(currentCharName)));
+            UI.UpdateLog(currentCharName + " logged in.");
+            UI.MainWin.Dispatcher.Invoke(new Action(()=> Tera.TeraLogic.SelectCharacter(currentCharName)));
 
             TeraLogic.cvcp.SelectedChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
@@ -445,7 +456,7 @@ namespace PacketViewer
             CurrentChar().GoldfingerTokens = ip.GetGoldfingerFast(ip.inv);
             ip.Clear();
 
-            Tera.UI.win.UpdateLog(currentCharName + " > received inventory data (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens).");
+            UI.UpdateLog(currentCharName + " > received inventory data (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens).");
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
         }
         private static void SetVanguardData(string p)
@@ -454,7 +465,7 @@ namespace PacketViewer
             int credits = vwp.getCredits(p); //Convert.ToInt32(wCforVGData[8 * 8 + 2].ToString() + wCforVGData[8 * 8 + 3].ToString()+ wCforVGData[8 * 8 + 0].ToString() + wCforVGData[8 * 8 + 1].ToString() , 16);
             int completed_dailies = vwp.getDaily(p); //Convert.ToInt32(wCforVGData.Substring(3 * 8, 2).ToString(), 16);
             int remaining_dailies = Tera.TeraLogic.MAX_DAILY - completed_dailies;
-            Tera.UI.win.UpdateLog(currentCharName + " > received vanguard data (" + credits + " credits, " + weekly + " weekly quests done, "+ remaining_dailies + " dailies left).");
+            UI.UpdateLog(currentCharName + " > received vanguard data (" + credits + " credits, " + weekly + " weekly quests done, "+ remaining_dailies + " dailies left).");
 
             CurrentChar().Weekly = weekly;
             CurrentChar().Credits = credits;
@@ -467,7 +478,7 @@ namespace PacketViewer
             CurrentChar().LocationId = sp.GetLocationId(p);
             cbp.CheckCcb(CurrentChar().LocationId);
 
-            UI.win.UpdateLog(CurrentChar().Name + " moved to " + sp.GetLocationName(p) + ".");
+            UI.UpdateLog(CurrentChar().Name + " moved to " + sp.GetLocationName(p) + ".");
 
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
         }
@@ -500,11 +511,11 @@ namespace PacketViewer
             {
                 int laurId = Convert.ToInt32(tmp.Substring(200,2)) - 30;
                 TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].Laurel = ((Laurel)laurId).ToString();
-                Tera.UI.win.UpdateLog(currentCharName + " earned a " + ((Laurel)laurId).ToString() + " laurel.");
+                Tera.UI.UpdateLog(currentCharName + " earned a " + ((Laurel)laurId).ToString() + " laurel.");
 
             }
 
-        }
+        }                   
         private static void updateCreditsAfterPurchase()
         {
             string _repId = wCforUpdatedCreditsAfterPurchase.Substring(40, 4);
@@ -514,7 +525,7 @@ namespace PacketViewer
                 string _cr = wCforUpdatedCreditsAfterPurchase.Substring(64, 8);
                 var cr = TCTSniffer.StringUtils.Hex4BStringToInt(_cr);
                 Tera.TeraLogic.CharList[Tera.TeraLogic.CharList.IndexOf(Tera.TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].Credits = cr;
-                Tera.UI.win.UpdateLog(currentCharName + " > " + cr + " Vanguard credits left.");
+                Tera.UI.UpdateLog(currentCharName + " > " + cr + " Vanguard credits left.");
             }
         }
         private static void setCompletedVanguard()
@@ -565,13 +576,13 @@ namespace PacketViewer
                         if (t != null)
                         {
                             var questname = t.Attribute("string").Value;
-                            Tera.UI.win.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".");
+                            Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".");
                             TCTNotifier.NotificationProvider.NS.sendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".", TCTNotifier.NotificationType.Credits, Colors.LightGreen);
                         }
 
                         else
                         {
-                            Tera.UI.win.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")");
+                            Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")");
                             TCTNotifier.NotificationProvider.NS.sendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")", TCTNotifier.NotificationType.Credits, Colors.LightGreen);
                         }
                     }
@@ -602,7 +613,7 @@ namespace PacketViewer
                 sb.Append(hexIndex[1]);
                 if (Tera.TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())) != null)
                 {
-                    Tera.UI.win.UpdateLog(currentCharName + " > " + Tera.TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
+                    Tera.UI.UpdateLog(currentCharName + " > " + Tera.TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
                     TCTNotifier.NotificationProvider.NS.sendNotification(TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
 
                     Tera.TeraLogic.CharList.Find(
@@ -1014,7 +1025,7 @@ namespace PacketViewer
                         TeraLogic.GuildDictionary.Add(c.GuildId, getGuildName(str));
                     }
 
-                    UI.win.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + lc.Convert(c.LastOnline, null, null, null) + ".");
+                    UI.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + lc.Convert(c.LastOnline, null, null, null) + ".");
                 }
 
 

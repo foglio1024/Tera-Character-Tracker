@@ -74,7 +74,7 @@ namespace Tera
         private void editCharName(object s, MouseButtonEventArgs e)
         {
             TextBox t = new TextBox();
-            TeraMainWindow.createBinding(TeraMainWindow.cvcp.getCharIndex(), "Name", t);
+            //TeraMainWindow.createBinding(TeraMainWindow.cvcp.getCharIndex(), "Name", t);
             var r = s as TextBlock;
             (r.Parent as Grid).Children.Add(t);
             Grid.SetColumn(t, 0);
