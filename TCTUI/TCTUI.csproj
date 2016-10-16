@@ -97,6 +97,10 @@
     <Compile Include="Classes\Arc.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\DataBinder.cs" />
+    <Compile Include="Converters\TimeToAngle.cs" />
+    <Compile Include="CrystalbindIndicator.xaml.cs">
+      <DependentUpon>CrystalbindIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MaterialSwitch.xaml.cs">
       <DependentUpon>MaterialSwitch.xaml</DependentUpon>
     </Compile>
@@ -110,13 +114,14 @@
     <Compile Include="Converters\Daily_ValueToBarWidth.cs" />
     <Compile Include="Converters\Guild_IdToName.cs" />
     <Compile Include="Converters\LocationConverter.cs" />
-    <Compile Include="Classes\ProgressToAngleConverter.cs" />
+    <Compile Include="Converters\ValueToAngle.cs" />
     <Compile Include="DungeonsWindow.xaml.cs">
       <DependentUpon>DungeonsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\UnixToDateTime.cs" />
     <Compile Include="Converters\ProgressToColor.cs" />
     <Compile Include="Classes\UI.cs" />
+    <Compile Include="Converters\TicksToTimespan.cs" />
     <Compile Include="WeeklyGauge.xaml.cs">
       <DependentUpon>WeeklyGauge.xaml</DependentUpon>
     </Compile>
@@ -149,15 +154,16 @@
     <Compile Include="CharacterStrip.xaml.cs">
       <DependentUpon>CharacterStrip.xaml</DependentUpon>
     </Compile>
-    <Compile Include="restartDiag.xaml.cs">
-      <DependentUpon>restartDiag.xaml</DependentUpon>
-    </Compile>
     <Compile Include="leftSlide.xaml.cs">
       <DependentUpon>leftSlide.xaml</DependentUpon>
     </Compile>
-    <Compile Include="overviewPage2.xaml.cs">
-      <DependentUpon>overviewPage2.xaml</DependentUpon>
+    <Compile Include="CharacterStripContainer.xaml.cs">
+      <DependentUpon>CharacterStripContainer.xaml</DependentUpon>
     </Compile>
+    <Page Include="CrystalbindIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MaterialSwitch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,11 +213,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="overviewPage2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="restartDiag.xaml">
+    <Page Include="CharacterStripContainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -317,7 +319,9 @@
   <ItemGroup>
     <Resource Include="resources\ui_images\dungs.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="resources\ui_images\ccbBuff.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

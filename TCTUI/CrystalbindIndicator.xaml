@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Tera.CrystalbindIndicator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tera"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="25">
+    <Grid>
+        <Ellipse x:Name="led" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="3" Opacity=".3" Fill="Black"/>
+        <local:Arc x:Name="arc" StrokeThickness="3" HorizontalAlignment="Stretch" Stroke="Black" VerticalAlignment="Stretch" Margin="0" EndAngle="100.999"/>
+
+
+    </Grid>
+</UserControl>

@@ -23,9 +23,9 @@ namespace Tera
     /// <summary>
     /// Logica di interazione per overviewPage2.xaml
     /// </summary>
-    public partial class overviewPage2 : UserControl
+    public partial class CharacterStripContainer : UserControl
     {
-        public overviewPage2()
+        public CharacterStripContainer()
         {
             InitializeComponent();
 
@@ -39,19 +39,19 @@ namespace Tera
 
         private void resetConfirmation(object sender, MouseButtonEventArgs e)
         {
-            if (dailiesConfPopup.IsOpen)
-            {
-                fadeOut0.Completed += (s, ev) => dailiesConfPopup.IsOpen = false;
-                dailiesConfPopup.Child.BeginAnimation(OpacityProperty, fadeOut0);
-            }
-            else
-            {
-                dailiesConfPopup.IsOpen = true;
+            //if (dailiesConfPopup.IsOpen)
+            //{
+            //    fadeOut0.Completed += (s, ev) => dailiesConfPopup.IsOpen = false;
+            //    dailiesConfPopup.Child.BeginAnimation(OpacityProperty, fadeOut0);
+            //}
+            //else
+            //{
+            //    dailiesConfPopup.IsOpen = true;
 
-                dailiesConfPopup.Child.BeginAnimation(OpacityProperty, fadeIn1);
+            //    dailiesConfPopup.Child.BeginAnimation(OpacityProperty, fadeIn1);
 
 
-            }
+            //}
         }
 
         private void resetDailies(object sender, MouseButtonEventArgs e)
@@ -60,7 +60,7 @@ namespace Tera
             {
                 //TO DO: confirmation popup
                 character.Weekly = 0;
-                closeConfPopup(sender, e);
+                //closeConfPopup(sender, e);
 
             }
         }
@@ -73,39 +73,8 @@ namespace Tera
         {
             (sender as Image).BeginAnimation(OpacityProperty, fadeOut);
         }
-        private void closeConfPopup(object sender, MouseButtonEventArgs e)
-        {
-            fadeOut0.Completed += (s, ev) => dailiesConfPopup.IsOpen = false;
-            dailiesConfPopup.Child.BeginAnimation(OpacityProperty, fadeOut0);
-
-        }
-        private void closeConfPopup(object sender, MouseEventArgs e)
-        {
-            fadeOut0.Completed += (s, ev) => dailiesConfPopup.IsOpen = false;
-            dailiesConfPopup.Child.BeginAnimation(OpacityProperty, fadeOut0);
-
-        }
         private void rejectDrop(object sender, DragEventArgs e)
         {
-            //if (e.Source.GetType().ToString() != new newStrip().GetType().ToString())
-            //{
-            //    var ovPage = MainWindow.FindChild<overviewPage2>(Application.Current.MainWindow, "ovPage");
-
-            //    ovPage.tableGridContent.Children.Clear();
-
-            //    for (int i = 0; i < MainWindow.CharList.Count; i++)
-            //    {
-            //        ovPage.tableGridContent.Children.Add(MainWindow.NewStrips[i]);
-
-            //    }
-            //    foreach (newStrip item in ovPage.tableGridContent.Children)
-            //    {
-            //        (item.Content as Grid).BeginAnimation(HeightProperty, expand);
-
-            //    }
-
-            //}
-
         }
 
         private void Grid_Drop(object sender, DragEventArgs e)

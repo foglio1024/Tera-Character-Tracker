@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Tera.overviewPage2"
+﻿<UserControl x:Class="Tera.CharacterStripContainer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -89,29 +89,7 @@
                 <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Class</TextBlock>
                 <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Name</TextBlock>
                 <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Credits</TextBlock>
-                <Grid Grid.Column="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="20"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9" Grid.ColumnSpan="1">Weekly Badges</TextBlock>
-                    <Image     Grid.Column="1" Cursor="Hand" ToolTip="Reset weekly badges." Opacity=".1" Source="resources/ic_close_black_24dp_2x.png" MouseLeftButtonDown="resetConfirmation" MouseEnter="opacityUp" MouseLeave="opacityDown"/>
-                    <Popup x:Name="dailiesConfPopup" Placement="Top" AllowsTransparency="True">
-                        <Grid Margin="15" Opacity="0" Height="40"  MouseLeave="closeConfPopup"><!--Style="{StaticResource MaterialGrid}"-->
-                            <Grid.Effect>
-                                <DropShadowEffect Opacity="0.25" BlurRadius="10" ShadowDepth="3" />
-                            </Grid.Effect>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="35"/>
-                                <ColumnDefinition Width="35"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,10,0" FontSize="15" Foreground="#df000000" Grid.Column="0">Reset all weekly badges?</TextBlock>
-                            <Image Width="25" Grid.Column="1" Source="resources/ic_done_black_24dp_2x.png" Opacity=".5" Cursor="Hand" MouseLeftButtonDown="resetDailies"/>
-                            <Image Width="25" Grid.Column="2" Source="resources/ic_close_black_24dp_2x.png" Opacity=".5" Cursor="Hand" MouseLeftButtonDown="closeConfPopup"/>
-                        </Grid>
-                    </Popup>                
-                </Grid>
+                <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9" Grid.ColumnSpan="1">Weekly Badges</TextBlock>
                 <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Marks of Valor</TextBlock>
                 <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Goldfinger Tokens</TextBlock>
 

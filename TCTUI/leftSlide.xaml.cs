@@ -72,7 +72,7 @@ namespace Tera
         private void showRestartDiag()
         {
             TeraMainWindow d = new TeraMainWindow();
-            d.Content = new restartDiag();
+            //d.Content = new restartDiag();
             
             var parent = VisualTreeHelper.GetParent(this);
             while (!(parent is TeraMainWindow))

@@ -5,18 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Windows.Data;
 
-namespace Tera {
+namespace Tera.Converters
+{
 
-    public class ProgressToAngleConverter : IValueConverter
+    public class TimeToAngle : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            int progress = (int)value;
-            double max = (double)parameter;
+            long progress = (long)value;
+            long max = 43200000;
+
 
             if(progress < max)
             {
-                return 359.999 * (progress / max);
+                double v = 359.999 * ((double)progress / (double)max);
+                return v;
             }
             else
             {

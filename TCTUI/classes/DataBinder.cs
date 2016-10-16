@@ -142,5 +142,9 @@ namespace Tera
             }
         }
 
+        internal static void BindParameterToArcGauge(int i, string v, CrystalbindIndicator ccbInd, IValueConverter valueToAngle)
+        {
+            ccbInd.arc.SetBinding(Arc.EndAngleProperty, GenericCharBinding(i, v, valueToAngle, null));
+        }
     }
 }

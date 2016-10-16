@@ -8,7 +8,7 @@
         xmlns:c="clr-namespace:Tera.Converters"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Tera Character Tracker 1.00" 
+        Title="Tera Character Tracker v1.1" 
         MaxHeight="930"
         MinHeight="87"
         Loaded="Window_Loaded" 
@@ -67,8 +67,8 @@
         <BitmapCache EnableClearType="True" SnapsToDevicePixels="False"/>
     </Window.CacheMode>
     <!--<Border Name="MainBorder" Width="{StaticResource _Width}" Height="900" Grid.RowSpan="5" BorderBrush="#FF506d7b" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">-->
-        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Grid Name="MainGrid"  AllowDrop="True"  Margin="0"  Background="#FFf0f0f0" HorizontalAlignment="Stretch">
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid Name="MainGrid"  AllowDrop="True"  Margin="0"  Background="#FFf0f0f0" HorizontalAlignment="Stretch">
             <!--#region Rows/Columns Defs-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"/>
@@ -91,13 +91,13 @@
 
                 <local:CharView x:Name="chView" Grid.Column="2" HorizontalAlignment="Stretch"/>
 
-                    <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
-                        <!--Style="{StaticResource MaterialGrid}"-->
-                        <Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />
-                        <local:overviewPage2 x:Name="overviewPage"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-                    </Grid>
+                <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
+                    <!--Style="{StaticResource MaterialGrid}"-->
+                    <Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />
+                    <local:CharacterStripContainer x:Name="overviewPage"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+                </Grid>
 
-               
+
                 <Grid x:Name="spacer" Width="0"/>
 
 
@@ -106,65 +106,38 @@
             </Grid>
             <local:leftSlide x:Name="leftSlide1" Height="870"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="400" Margin="-420,0,0,30" Grid.Row="2"/>
             <Grid Name="ToolBar" HorizontalAlignment="Stretch" Margin="0" Background="#FF607D8B" Grid.Row="1" >
-                <!--#region Rows/Columns Defs-->
-
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="35"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <!--#endregion-->
                 <Image Margin="5,3,0,3" Height="24" Width="24" Stretch="Uniform" Source="resources/ui_images/ic_menu_white_24dp_2x.png" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" Grid.ColumnSpan="1" MouseLeftButtonDown="LeftSlideToggle"/>
                 <TextBlock FontWeight="DemiBold" Margin="0,2,0,0" Grid.Column="1" HorizontalAlignment="Stretch" Padding="5,0,0,0" VerticalAlignment="Top" FontSize="17" Height="22">Overview</TextBlock>
-                    <Image Height="20" Width="20" Stretch="Uniform" Source="resources/ui_images/ic_save_white_24dp_2x.png" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" MouseLeftButtonDown="SaveButtonPressed" Cursor="Hand" Grid.ColumnSpan="1" Margin="0,5"/>
-                    <Image Name="img" Source="resources/ui_images/ic_add_white_24dp_2x.png" MouseLeftButtonDown="TestButton" Cursor="Hand" Margin="60,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
-                    <Image Name="dgButton" ToolTip="Show dungeons" Source="resources/ui_images/dungs.png" MouseLeftButtonDown="ShowDungeonOverview" Cursor="Hand" Margin="30,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
-                    <!--<Grid Grid.Column="2"  VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,-0,154,-0" >
-                    -->
-                <!--<Ellipse MouseLeftButtonDown="newChar" Fill="#FFFF782A" Cursor="Hand">
-                            <Ellipse.Effect>
-                                <DropShadowEffect Opacity="0.35" BlurRadius="5" ShadowDepth="2"/>
-                            </Ellipse.Effect>
-                        </Ellipse>-->
-                <!--
-                </Grid>-->
+                <Grid Grid.Column="3" Margin="5,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Height="20" Width="20" Stretch="Uniform" Source="resources/ui_images/ic_save_white_24dp_2x.png" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" MouseLeftButtonDown="SaveButtonPressed" Cursor="Hand" Margin="0,5"/>
+                    <!--<Image Name="img" Source="resources/ui_images/ic_add_white_24dp_2x.png" MouseLeftButtonDown="TestButton" Cursor="Hand" Margin="60,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>-->
+                    <Image Name="dgButton" ToolTip="Show dungeons" Source="resources/ui_images/dungs.png" MouseLeftButtonDown="ShowDungeonOverview" Cursor="Hand" Margin="0,5,30,5" IsHitTestVisible="True" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
+                </Grid>
+
             </Grid>
-            <!--<Grid Name="TitleBar" Margin="0" Background="#FF607D8B" Grid.Row="0">
-                --><!--#region Rows/Columns Defs--><!--
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="35"/>
-                    <ColumnDefinition Width="35"/>
-                </Grid.ColumnDefinitions>
-                --><!--#endregion--><!--
-
-                <Grid x:Name="CloseButtonBG" Grid.Column="3" MouseEnter="RedCloseButton" MouseLeave="NormalCloseButton" MouseLeftButtonDown="PressedCloseButton" MouseLeftButtonUp="NormalCloseButton">
-                    <Image x:Name="CloseButton"  Source="resources/ic_close_white_24dp_2x.png" MouseLeftButtonUp="Close"/>
-                </Grid>
-
-                <Grid x:Name="MinButtonBG" Grid.Column="2">
-                    <Image x:Name="MinButton"  Source="resources/ic_keyboard_arrow_down_white_24dp_2x.png" MouseLeftButtonUp="Minimize" MouseEnter="HoverMinButton" MouseLeave="NormalMinButton" MouseLeftButtonDown="PressedMinButton"/>
-                </Grid>
-
-                <Label x:Name="TitleLabel" Content="Tera Character Tracker 2.1a" Grid.Column="1" Foreground="White" FontSize="14" Padding="0,0,0,0" VerticalAlignment="Center"/>
-                <Image Margin="0,3,0,3" Grid.Column="0" Source="/resources/icon_noshadow.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="20"/>
-                <Grid x:Name="Drag" Grid.Column="0" Grid.ColumnSpan="2" Background="#00000000" MouseLeftButtonDown="TitleBar_MouseDown"/>
-            </Grid>-->
         </Grid>
 
-    
-    <Grid Name="StatusBar" Grid.Row="3" Focusable="False" VerticalAlignment="Bottom" Height="20" Cursor="Hand" ToolTip="Expand log." MouseLeftButtonDown="LogSizeToggle">
-        <ListBox ScrollViewer.VerticalScrollBarVisibility="Hidden" Name="Log"  Height="Auto" VerticalAlignment="Stretch" BorderBrush="Transparent" Foreground="White" Background="{x:Null}" Focusable="False" IsTextSearchEnabled="False">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                    <VirtualizingStackPanel Focusable="False" IsHitTestVisible="False" VerticalAlignment="Bottom" Margin="0,-3,0,0"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
-        <!--<TextBlock Name="Status" Foreground="White" FontSize="12" VerticalAlignment="Center" Margin="5,0" Opacity=".7" Background="Transparent">Log</TextBlock>-->
-    </Grid>
+
+        <Grid Name="StatusBar" Grid.Row="3" Focusable="False" VerticalAlignment="Bottom" Height="20" Cursor="Hand" ToolTip="Expand log." MouseLeftButtonDown="LogSizeToggle">
+            <ListBox ScrollViewer.VerticalScrollBarVisibility="Hidden" Name="Log"  Height="Auto" VerticalAlignment="Stretch" BorderBrush="Transparent" Foreground="White" Background="{x:Null}" Focusable="False" IsTextSearchEnabled="False">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Focusable="False" IsHitTestVisible="False" VerticalAlignment="Bottom" Margin="0,-3,0,0"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <!--<TextBlock Name="Status" Foreground="White" FontSize="12" VerticalAlignment="Center" Margin="5,0" Opacity=".7" Background="Transparent">Log</TextBlock>-->
+        </Grid>
     </Grid>
     <!--</Border>-->
 </Window>
