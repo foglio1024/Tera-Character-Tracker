@@ -11,14 +11,14 @@ Note: I'm not an expert developer, so there may be bugs, crashes or compatibilty
 https://github.com/Foglio1024/Tera-Character-Tracker/wiki
 
 ## **Download**
-https://drive.google.com/open?id=0B_Cqa6A1OUxdMXJ1elNSdTM3VTg
+https://drive.google.com/drive/folders/0B_Cqa6A1OUxdeDFvTEpZYmtzT2M
 
 ## TODO
-* Account type detection
+* Account type detection (not displayed yet, but implemented)
 * Dungeon guild quest check upon teleporting to dungeon
 * Customizable notification types
 * Exclusion list for characters
-* Crystalbind indicator for each character
+* Crystalbind indicator for each character -DONE
 * Hide character function
 * Auto-update
 * Error log
