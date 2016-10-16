@@ -176,8 +176,15 @@ namespace Tera
             // set guild image
             if(File.Exists(Environment.CurrentDirectory + "\\content/data/guild_images/" + CharList[charIndex].GuildId.ToString() + ".bmp"))
             {
-                System.Drawing.Bitmap bmp = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(Environment.CurrentDirectory + "\\content/data/guild_images/" + CharList[charIndex].GuildId.ToString() + ".bmp");
-                UI.MainWin.SetGuildImage(bmp);
+                try
+                {
+                    System.Drawing.Bitmap bmp = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(Environment.CurrentDirectory + "\\content/data/guild_images/" + CharList[charIndex].GuildId.ToString() + ".bmp");
+                    UI.MainWin.SetGuildImage(bmp);
+                }
+                catch
+                {
+                    UI.MainWin.UpdateLog("Error while setting guild image. Using default image.");
+                }
             }
             else
             {
