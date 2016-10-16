@@ -106,16 +106,16 @@
     <Compile Include="BarGauge.xaml.cs">
       <DependentUpon>BarGauge.xaml</DependentUpon>
     </Compile>
-    <Compile Include="classes\barColorConverter.cs" />
+    <Compile Include="Converters\ValueToBarColor.cs" />
     <Compile Include="classes\DailybarLengthConverter.cs" />
-    <Compile Include="classes\GuildConverter.cs" />
-    <Compile Include="classes\LocationConverter.cs" />
+    <Compile Include="Converters\Guild_IdToName.cs" />
+    <Compile Include="Converters\LocationConverter.cs" />
     <Compile Include="classes\ProgressToAngleConverter.cs" />
     <Compile Include="DgEllipseConverter.cs" />
     <Compile Include="DungeonsWindow.xaml.cs">
       <DependentUpon>DungeonsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LastOnlineConverter.cs" />
+    <Compile Include="Converters\UnixToDateTime.cs" />
     <Compile Include="ProgressToColorConverter.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="WeeklyGauge.xaml.cs">
@@ -133,10 +133,8 @@
       <DependentUpon>CharView.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharViewContentProvider.cs" />
-    <Compile Include="classes\barLengthConverter.cs" />
+    <Compile Include="Converters\ValueToBarLenght.cs" />
     <Compile Include="classes\charClassConverter.cs" />
-    <Compile Include="classes\barConverter100.cs" />
-    <Compile Include="classes\barConverter9000.cs" />
     <Compile Include="classes\CreditsGraphLineConverter.cs" />
     <Compile Include="classes\DailiesGaugeFillConverter.cs">
       <CustomToolNamespace>Tera</CustomToolNamespace>
@@ -145,33 +143,23 @@
     <Compile Include="classes\DotParse.cs" />
     <Compile Include="classes\CharDungeon.cs" />
     <Compile Include="classes\Dungeon.cs" />
-    <Compile Include="classes\intToStringConverter.cs" />
+    <Compile Include="Converters\IntToString.cs" />
     <Compile Include="classSelMenu.xaml.cs">
       <DependentUpon>classSelMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="classes\graphCreditsConverter.cs" />
-    <Compile Include="classes\intToBoolConverter.cs" />
     <Compile Include="classes\DailiesGaugeImageSourceConverter.cs">
       <CustomToolNamespace>Tera</CustomToolNamespace>
     </Compile>
     <Compile Include="CustomToolTip.xaml.cs">
       <DependentUpon>CustomToolTip.xaml</DependentUpon>
     </Compile>
-    <Compile Include="classes\LaurelColorConverter.cs" />
+    <Compile Include="Converters\Laurel_GradeToColor.cs" />
     <Compile Include="dgCounter.xaml.cs">
       <DependentUpon>dgCounter.xaml</DependentUpon>
     </Compile>
     <Compile Include="DgGaugeImageSourceConverter.cs" />
     <Compile Include="DgRunsConverter.cs" />
-    <Compile Include="dgSelNew.xaml.cs">
-      <DependentUpon>dgSelNew.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="dungeonsPage.xaml.cs">
-      <DependentUpon>dungeonsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="dungeonStrip.xaml.cs">
-      <DependentUpon>dungeonStrip.xaml</DependentUpon>
-    </Compile>
     <Compile Include="exitDiag.xaml.cs">
       <DependentUpon>exitDiag.xaml</DependentUpon>
     </Compile>
@@ -189,8 +177,6 @@
     <Compile Include="oldStrip.xaml.cs">
       <DependentUpon>oldStrip.xaml</DependentUpon>
     </Compile>
-    <Compile Include="classes\Laurel.cs" />
-    <Compile Include="classes\RectConverter.cs" />
     <Compile Include="overviewPage2.xaml.cs">
       <DependentUpon>overviewPage2.xaml</DependentUpon>
     </Compile>
@@ -219,18 +205,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="dgCounter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="dgSelNew.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="dungeonsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="dungeonStrip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -380,6 +354,7 @@
   <ItemGroup>
     <Resource Include="resources\ui_images\dungs.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

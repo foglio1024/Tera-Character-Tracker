@@ -17,8 +17,7 @@ using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media.Imaging;
-
-
+using Tera.Converters;
 
 namespace PacketViewer
 {
@@ -751,8 +750,8 @@ namespace PacketViewer
 
             public string CurrentAccountId { get; set; }
 
-            LastOnlineConverter lc = new LastOnlineConverter();
-            LocationConverter lcc = new LocationConverter();
+            UnixToDateTime timeConverter = new UnixToDateTime();
+            Location_IdToName lcc = new Location_IdToName();
 
             List<string> charStrings = new List<string>();
             List<int> indexesArray = new List<int>();
@@ -1025,7 +1024,7 @@ namespace PacketViewer
                         TeraLogic.GuildDictionary.Add(c.GuildId, getGuildName(str));
                     }
 
-                    UI.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + lc.Convert(c.LastOnline, null, null, null) + ".");
+                    UI.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + timeConverter.Convert(c.LastOnline, null, null, null) + ".");
                 }
 
 
@@ -1252,7 +1251,7 @@ namespace PacketViewer
             public string GetLocationName(string p)
             {
                 var locId = GetLocationId(p);
-                var c = new LocationConverter();
+                var c = new Location_IdToName();
                 return (string)c.Convert(locId, null, null, null);
             }
         }

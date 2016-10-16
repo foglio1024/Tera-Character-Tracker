@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Tera
+namespace Tera.Converters
 {
-    public class LastOnlineConverter : IValueConverter
+    public class UnixToDateTime : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -13,8 +13,8 @@ namespace Tera
             dtDateTime = dtDateTime.AddSeconds(unixTime).ToLocalTime();
             string format = "HH:mm - dd/MM/yyyy";
             return dtDateTime.ToString(format);
-
         }
+
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -4,9 +4,9 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Tera
+namespace Tera.Converters
 {
-    internal class barColorConverter : IValueConverter
+    internal class ValueToBarColor : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -14,11 +14,10 @@ namespace Tera
             var m = (int)parameter;
             if(v > m)
             {
-                return new SolidColorBrush(new Color { A = 255, R = 255, G = 120, B = 42 });
+                return new SolidColorBrush(TeraLogic.TCTProps.accentColor);
             }
             else
             {
-                //return new SolidColorBrush(new Color { A = 255, R = 255, G = 120, B = 42 });
                 return SystemParameters.WindowGlassBrush;
             }
         }

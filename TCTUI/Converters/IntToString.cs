@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Tera
+namespace Tera.Converters
 {
-    internal class barConverter100 : IValueConverter
+    class IntToString : IValueConverter
     {
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var x = (int)value;
-            x = x * 180 / 100;
-            return x;
+            return value.ToString();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Windows.Data;
 using System.Xml.Linq;
 
-namespace Tera
+namespace Tera.Converters
 {
-    public class LocationConverter : IValueConverter
+    public class Location_IdToName : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

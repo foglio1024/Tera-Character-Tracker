@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Tera
+namespace Tera.Converters
 {
-    internal class barConverter9000 : IValueConverter
+    class ValueToBarLenght : IValueConverter
     {
-       
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var x = (int)value;
-            x = x*180 / 9000;
-            return x;
+            return (int)value * (parameter as double[])[0] / (parameter as double[])[1];
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

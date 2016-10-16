@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Shapes;
-using Tera.classes;
+using Tera.Converters;
 
 namespace Tera
 {
@@ -64,7 +64,7 @@ namespace Tera
         {
 
             t.barD.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyD, new DailybarLengthConverter(), new double[] { t.@base.Width, TeraLogic.MAX_WEEKLY - TeraLogic.CharList[i].Weekly }));
-            t.barW.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyW, new barLengthConverter(), new double[] { t.@base.Width, maxValueW }));
+            t.barW.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyW, new ValueToBarLenght(), new double[] { t.@base.Width, maxValueW }));
             t.txtD.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyD));
             t.txtW.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyW));
 
@@ -77,7 +77,7 @@ namespace Tera
         }
         public static void BindParameterToBarGauge(int i, string property, BarGauge t, int maxValue, int threshold, bool color, bool invert)
         {
-            t.val.SetBinding(Shape.WidthProperty, GenericCharBinding(i, property, new barLengthConverter(), new double[] { t.@base.Width, maxValue }) );
+            t.val.SetBinding(Shape.WidthProperty, GenericCharBinding(i, property, new ValueToBarLenght(), new double[] { t.@base.Width, maxValue }) );
 
             if (color)
             {
@@ -113,7 +113,7 @@ namespace Tera
                     Path = new PropertyPath("Runs"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,
-                    Converter = new intToStringConverter(),
+                    Converter = new IntToString(),
                 };
 
                 int p = 0;
