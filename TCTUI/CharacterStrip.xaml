@@ -3,17 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:c="clr-namespace:Tera.classes"
+             xmlns:c="clr-namespace:Tera.Converters"
              xmlns:local="clr-namespace:Tera"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="960" MouseEnter="rowHighlight" MouseLeave="rowNormal" Background="#00ffffff" Loaded="UserControl_Loaded" AllowDrop="False" 
              GiveFeedback="mainGF"
              Cursor="Hand"
              MouseLeftButtonDown="selectChar">
-    <UserControl.Resources>
-        <local:DailiesGaugeFillConverter x:Key="DailiesGaugeFillConverter"/>
-        <local:DailiesGaugeImageSourceConverter x:Key="DailiesGaugeImageSourceConverter"/>
-    </UserControl.Resources>
     <Grid Height="40" Background="Transparent">
 
         <Grid.ColumnDefinitions>

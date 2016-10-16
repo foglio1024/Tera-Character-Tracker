@@ -16,7 +16,6 @@ using System.Windows.Shapes;
 using System.Drawing;
 using System.Windows.Media.Animation;
 using System.Threading;
-using Tera.classes;
 using System.Windows.Controls.Primitives;
 using System.Windows.Threading;
 using System.Windows.Media.Effects;
@@ -117,7 +116,7 @@ namespace Tera
             DataBinder.BindParameterToBarGauge(i, "MarksOfValor", CharacterStrips[i].mvTB, TeraLogic.MAX_MARKS, TeraLogic.MAX_MARKS-10, true, true);
             DataBinder.BindParameterToBarGauge(i, "GoldfingerTokens", CharacterStrips[i].gftTB, TeraLogic.MAX_GF_TOKENS, TeraLogic.MAX_GF_TOKENS-10, true, true);
             DataBinder.BindParameterToQuestBarGauge(i, "Weekly", "Dailies", CharacterStrips[i].questTB, TeraLogic.MAX_WEEKLY, TeraLogic.MAX_WEEKLY - TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, true, false);
-            DataBinder.BindParameterToImageSourceWithConverter(i, "CharClass", CharacterStrips[i].classImage, "sd", new CharClassConverter());
+            DataBinder.BindParameterToImageSourceWithConverter(i, "CharClass", CharacterStrips[i].classImage, "sd", new ClassToImage());
             DataBinder.BindCharPropertyToShapeFillColor(i, "Laurel", CharacterStrips[i].laurelRect, new Laurel_GradeToColor());
 
             /*creates bindings for tags*/
@@ -227,7 +226,7 @@ namespace Tera
 
             foreach (var dg in TeraLogic.DungList)
             {
-                dgCounter d = new dgCounter();
+                DungeonRunsCounter d = new DungeonRunsCounter();
                 d.Name = dg.ShortName;
                 d.Tag = dg.ShortName;
                 d.n.Text = dg.ShortName;
@@ -401,7 +400,7 @@ namespace Tera
                                 Path = new PropertyPath("Runs"),
                                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                                 Mode = BindingMode.OneWay,
-                                Converter = new DgFillColorConverter(),
+                                Converter = new Dungeon_RunsToColor(),
                                 ConverterParameter = max,
 
                             };

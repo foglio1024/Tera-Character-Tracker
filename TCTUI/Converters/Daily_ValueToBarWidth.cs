@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Tera
+namespace Tera.Converters
 {
-    internal class DailybarLengthConverter : IValueConverter
+    internal class Daily_ValueToBarWidth : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -13,7 +13,7 @@ namespace Tera
             double weeklyLeft = pars[1];
             int dailiesLeft = (int)value;
             int dailiesDone = TeraLogic.MAX_DAILY - dailiesLeft;
-            double offset = dailiesLeft - weeklyLeft; //TeraLogic.MAX_DAILY - weeklyLeft;
+            double offset = dailiesLeft - weeklyLeft;
             if(offset < 0) { offset = 0; }
             double unitLenght = maxLenght/Tera.TeraLogic.MAX_WEEKLY;
 

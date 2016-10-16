@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using Tera;
-namespace Tera
+namespace Tera.Converters
 {
-    internal class CharClassConverter : IValueConverter
+    internal class ClassToImage : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

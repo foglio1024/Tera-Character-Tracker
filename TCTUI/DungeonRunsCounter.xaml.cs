@@ -18,9 +18,9 @@ namespace Tera
     /// <summary>
     /// Logica di interazione per dgCounter.xaml
     /// </summary>
-    public partial class dgCounter : UserControl
+    public partial class DungeonRunsCounter : UserControl
     {
-        public dgCounter()
+        public DungeonRunsCounter()
         {
             InitializeComponent();
         }

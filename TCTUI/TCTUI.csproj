@@ -94,9 +94,9 @@
     <Compile Include="AccountContainer.xaml.cs">
       <DependentUpon>AccountContainer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Arc.cs" />
-    <Compile Include="classes\Account.cs" />
-    <Compile Include="classes\DataBinder.cs" />
+    <Compile Include="Classes\Arc.cs" />
+    <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\DataBinder.cs" />
     <Compile Include="MaterialSwitch.xaml.cs">
       <DependentUpon>MaterialSwitch.xaml</DependentUpon>
     </Compile>
@@ -107,17 +107,16 @@
       <DependentUpon>BarGauge.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ValueToBarColor.cs" />
-    <Compile Include="classes\DailybarLengthConverter.cs" />
+    <Compile Include="Converters\Daily_ValueToBarWidth.cs" />
     <Compile Include="Converters\Guild_IdToName.cs" />
     <Compile Include="Converters\LocationConverter.cs" />
-    <Compile Include="classes\ProgressToAngleConverter.cs" />
-    <Compile Include="DgEllipseConverter.cs" />
+    <Compile Include="Classes\ProgressToAngleConverter.cs" />
     <Compile Include="DungeonsWindow.xaml.cs">
       <DependentUpon>DungeonsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\UnixToDateTime.cs" />
-    <Compile Include="ProgressToColorConverter.cs" />
-    <Compile Include="UI.cs" />
+    <Compile Include="Converters\ProgressToColor.cs" />
+    <Compile Include="Classes\UI.cs" />
     <Compile Include="WeeklyGauge.xaml.cs">
       <DependentUpon>WeeklyGauge.xaml</DependentUpon>
     </Compile>
@@ -132,39 +131,21 @@
     <Compile Include="CharView.xaml.cs">
       <DependentUpon>CharView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CharViewContentProvider.cs" />
+    <Compile Include="Classes\CharViewContentProvider.cs" />
     <Compile Include="Converters\ValueToBarLenght.cs" />
-    <Compile Include="classes\charClassConverter.cs" />
-    <Compile Include="classes\CreditsGraphLineConverter.cs" />
-    <Compile Include="classes\DailiesGaugeFillConverter.cs">
-      <CustomToolNamespace>Tera</CustomToolNamespace>
-    </Compile>
-    <Compile Include="classes\DgFillColorConverter.cs" />
-    <Compile Include="classes\DotParse.cs" />
-    <Compile Include="classes\CharDungeon.cs" />
-    <Compile Include="classes\Dungeon.cs" />
+    <Compile Include="Converters\ClassToImage.cs" />
+    <Compile Include="Converters\Dungeon_RunsToColor.cs" />
+    <Compile Include="Classes\CharDungeon.cs" />
+    <Compile Include="Classes\Dungeon.cs" />
     <Compile Include="Converters\IntToString.cs" />
-    <Compile Include="classSelMenu.xaml.cs">
-      <DependentUpon>classSelMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="classes\graphCreditsConverter.cs" />
-    <Compile Include="classes\DailiesGaugeImageSourceConverter.cs">
-      <CustomToolNamespace>Tera</CustomToolNamespace>
-    </Compile>
-    <Compile Include="CustomToolTip.xaml.cs">
-      <DependentUpon>CustomToolTip.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\Laurel_GradeToColor.cs" />
-    <Compile Include="dgCounter.xaml.cs">
-      <DependentUpon>dgCounter.xaml</DependentUpon>
+    <Compile Include="DungeonRunsCounter.xaml.cs">
+      <DependentUpon>DungeonRunsCounter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DgGaugeImageSourceConverter.cs" />
-    <Compile Include="DgRunsConverter.cs" />
     <Compile Include="exitDiag.xaml.cs">
       <DependentUpon>exitDiag.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LaurelImgConverter.cs" />
-    <Compile Include="ledConv.cs" />
+    <Compile Include="Converters\LaurelToImage.cs" />
     <Compile Include="CharacterStrip.xaml.cs">
       <DependentUpon>CharacterStrip.xaml</DependentUpon>
     </Compile>
@@ -173,9 +154,6 @@
     </Compile>
     <Compile Include="leftSlide.xaml.cs">
       <DependentUpon>leftSlide.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="oldStrip.xaml.cs">
-      <DependentUpon>oldStrip.xaml</DependentUpon>
     </Compile>
     <Compile Include="overviewPage2.xaml.cs">
       <DependentUpon>overviewPage2.xaml</DependentUpon>
@@ -196,15 +174,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="classSelMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomToolTip.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="dgCounter.xaml">
+    <Page Include="DungeonRunsCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,7 +198,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="classes\Character.cs" />
+    <Compile Include="Classes\Character.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -236,10 +206,6 @@
     <Page Include="CharacterStrip.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="oldStrip.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="overviewPage2.xaml">
       <SubType>Designer</SubType>
@@ -259,7 +225,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\TeraLogic.cs" />
+    <Compile Include="Classes\TeraLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -297,9 +263,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="classes\DnD_old.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="flat_icon.ico" />

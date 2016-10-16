@@ -4,9 +4,9 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Tera
+namespace Tera.Converters
 {
-    internal class ProgressToColorConverter : IValueConverter
+    internal class ProgressToColor : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -25,12 +25,11 @@ namespace Tera
 
                 else if (val < th)
                 {
-                    return new SolidColorBrush(new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(TeraLogic.TCTProps.accentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
                 }
                 else
                 {
                     return SystemParameters.WindowGlassBrush;
-                    //return new SolidColorBrush(new Color { A = 0xa0, R = 255, G = 120, B = 42 });
 
                 }
             }
@@ -45,12 +44,10 @@ namespace Tera
                 else if (val < th)
                 {
                     return SystemParameters.WindowGlassBrush;
-                    //return new SolidColorBrush(new Color { A = 255, R = 255, G = 120, B = 42 });
-
                 }
                 else
                 {
-                    return new SolidColorBrush(new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(TeraLogic.TCTProps.accentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
                 }
             }
         }

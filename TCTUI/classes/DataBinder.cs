@@ -63,16 +63,16 @@ namespace Tera
         public static void BindParameterToQuestBarGauge(int i, string propertyW, string propertyD, QuestGauge t, int maxValueW, int thresholdW, int maxValueD, int thresholdD, bool color, bool invert)
         {
 
-            t.barD.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyD, new DailybarLengthConverter(), new double[] { t.@base.Width, TeraLogic.MAX_WEEKLY - TeraLogic.CharList[i].Weekly }));
+            t.barD.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyD, new Daily_ValueToBarWidth(), new double[] { t.@base.Width, TeraLogic.MAX_WEEKLY - TeraLogic.CharList[i].Weekly }));
             t.barW.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyW, new ValueToBarLenght(), new double[] { t.@base.Width, maxValueW }));
             t.txtD.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyD));
             t.txtW.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyW));
 
             if (color)
             {
-                t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColorConverter(), new object[] { maxValueW, thresholdW, invert }));
-                t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColorConverter(), new object[] { maxValueW, thresholdW, invert }));
-                t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColorConverter(), new object[] { maxValueW, thresholdW, invert }));
+                t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColor(), new object[] { maxValueW, thresholdW, invert }));
+                t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColor(), new object[] { maxValueW, thresholdW, invert }));
+                t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColor(), new object[] { maxValueW, thresholdW, invert }));
             }
         }
         public static void BindParameterToBarGauge(int i, string property, BarGauge t, int maxValue, int threshold, bool color, bool invert)
@@ -81,7 +81,7 @@ namespace Tera
 
             if (color)
             {
-                t.val.SetBinding(Shape.FillProperty, GenericCharBinding(i, property,new ProgressToColorConverter(), new object[] { maxValue, threshold, invert }));
+                t.val.SetBinding(Shape.FillProperty, GenericCharBinding(i, property,new ProgressToColor(), new object[] { maxValue, threshold, invert }));
             }
 
             t.txt.SetBinding(TextBlock.TextProperty, GenericCharBinding(i, property));
@@ -96,7 +96,7 @@ namespace Tera
         }
         public static void CreateDgBindingsForTier(int charIndex, UIElementCollection coll)
         {
-            foreach (dgCounter dc in coll)
+            foreach (DungeonRunsCounter dc in coll)
             {
                 int tc = 1;
 
@@ -132,7 +132,7 @@ namespace Tera
                     Path = new PropertyPath("Runs"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,
-                    Converter = new DgFillColorConverter(),
+                    Converter = new Dungeon_RunsToColor(),
                     ConverterParameter = p
                 };
 

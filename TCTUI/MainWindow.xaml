@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tera"
-        xmlns:c="clr-namespace:Tera.classes"
+        xmlns:c="clr-namespace:Tera.Converters"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Tera Character Tracker 1.00" 

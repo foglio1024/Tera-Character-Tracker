@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
-namespace Tera
+namespace Tera.Converters
 {
-    internal class LaurelImgConverter : IValueConverter
+    internal class LaurelToImage : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
