@@ -21,7 +21,6 @@ namespace TCTMain
     {
         private static XDocument settings;
         private static DateTime LastClosed;
-        public TCTNotifier.NotificationSender NS = new TCTNotifier.NotificationSender();
 
         public class Threads
         {
