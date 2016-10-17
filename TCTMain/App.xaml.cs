@@ -61,6 +61,7 @@ namespace TCTMain
                     LastClosed = DateTime.Now;
                     settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault().Attribute("value").Value = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
                     settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value =  Tera.TeraLogic.TCTProps.Console.ToString();
+                    settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.CcbNM.ToString();
                     settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value =      Tera.TeraLogic.TCTProps.Top.ToString();
                     settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value =     Tera.TeraLogic.TCTProps.Left.ToString();
                     settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value =    Tera.TeraLogic.TCTProps.Width.ToString();
@@ -129,7 +130,16 @@ namespace TCTMain
                 Tera.TeraLogic.TCTProps.Width = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value);
                 Tera.TeraLogic.TCTProps.Height = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value);
 
-                if(settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value == "True")
+                if(settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value == "EverySection")
+                {
+                    Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.EverySection;
+                }
+                else
+                {
+                    Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.TeleportOnly;
+                }
+
+                if (settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value == "True")
                 {
                     Tera.TeraLogic.TCTProps.Console = true;
                     AllocConsole();

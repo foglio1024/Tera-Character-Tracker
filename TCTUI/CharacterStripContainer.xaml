@@ -68,9 +68,9 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0" />
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="175"/>
-                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="65"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="120"/>
@@ -86,12 +86,12 @@
                     </Border.CacheMode>
                 </Border>
 
-                <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Class</TextBlock>
-                <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Name</TextBlock>
-                <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Credits</TextBlock>
-                <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9" Grid.ColumnSpan="1">Weekly Badges</TextBlock>
-                <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Marks of Valor</TextBlock>
-                <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,9">Goldfinger Tokens</TextBlock>
+                <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Class</TextBlock>
+                <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Name</TextBlock>
+                <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Credits</TextBlock>
+                <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Weekly Badges</TextBlock>
+                <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Marks of Valor</TextBlock>
+                <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Goldfinger Tokens</TextBlock>
 
             <!--<ScrollViewer x:Name="charScroller" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="10" Focusable="False" >
             <StackPanel x:Name="tableGridContent"   VerticalAlignment="Stretch"  AllowDrop="True"  Drop="rejectDrop"  Margin="0,0,0,0" ScrollViewer.CanContentScroll="True">

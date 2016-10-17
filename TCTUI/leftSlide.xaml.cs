@@ -26,6 +26,7 @@ namespace Tera
         public leftSlide()
         {
             InitializeComponent();
+
             if (TeraLogic.TCTProps.Console)
             {
                 Console_Switch.TurnOn();
@@ -34,7 +35,19 @@ namespace Tera
             {
                 Console_Switch.TurnOff();
             }
+
+            if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            {
+                CrystalbindNotificationType_Switch.TurnOn();
+                CrystalbindNotificationType_Text.Text = "Crystalbind notification: every section";
+            }
+            else
+            {
+                CrystalbindNotificationType_Switch.TurnOff();
+                CrystalbindNotificationType_Text.Text = "Crystalbind notification: teleport only";
+            }
         }
+
         public void rowHighlight(object sender, MouseEventArgs e)
         {
             var s = sender as Grid;
@@ -192,28 +205,20 @@ namespace Tera
                 AllocConsole();
             }
         }
-        private void ConsoleSwitch(object sender, MouseButtonEventArgs e)
+        private void SetCrystalbindNotificationType(object sender, MouseButtonEventArgs e)
         {
-            var On = new ThicknessAnimationUsingKeyFrames();
-            var Off = new ThicknessAnimationUsingKeyFrames();
-            var OnFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 255, 255), System.Windows.Media.Color.FromArgb(255, 255, 120, 42), TimeSpan.FromMilliseconds(150));
-            var OffFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 120, 42), System.Windows.Media.Color.FromArgb(255, 255, 255, 255), TimeSpan.FromMilliseconds(150));
-            var OnBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(25, 0, 0, 0), System.Windows.Media.Color.FromArgb(100, 255, 120, 42), TimeSpan.FromMilliseconds(150));
-            var OffBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(100, 255, 120, 42), System.Windows.Media.Color.FromArgb(25, 0, 0, 0), TimeSpan.FromMilliseconds(150));
-
-            On.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
-            Off.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
-
-            Off.Completed += (x, ev) =>
+            if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
             {
-                //showRestartDiag();
+                TeraLogic.TCTProps.CcbNM = CcbNotificationMode.TeleportOnly;
+                CrystalbindNotificationType_Text.Text = "Crystalbind notification: teleport only";
+            }
 
-            };
-            On.Completed += (x, ev) =>
+            else
             {
-                //showRestartDiag();
+                TeraLogic.TCTProps.CcbNM = CcbNotificationMode.EverySection;
+                CrystalbindNotificationType_Text.Text = "Crystalbind notification: every section";
+            }
 
-            };
 
         }
         [DllImport("kernel32.dll")]

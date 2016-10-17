@@ -477,9 +477,16 @@ namespace PacketViewer
             if (CurrentChar().LocationId != sp.GetLocationId(p))
             {
                 CurrentChar().LocationId = sp.GetLocationId(p);
-                cbp.CheckCcb(CurrentChar().LocationId);
-
+                if(TeraLogic.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
+                {
+                    cbp.CheckCcb(CurrentChar().LocationId);
+                }
                 UI.UpdateLog(CurrentChar().Name + " moved to " + sp.GetLocationName(p) + ".");
+            }
+
+            if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            {
+                cbp.CheckCcb(CurrentChar().LocationId);
             }
 
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
@@ -1219,11 +1226,15 @@ namespace PacketViewer
                         TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind is off.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
                     }
                 }
-                else if(Time <= 3600000)
+                else if (Time <= 3600000 && Time > 0)
                 {
-                    TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind will expire soon.", TCTNotifier.NotificationType.Crystalbind, Colors.Orange);
+                    if (TeraLogic.RiskList.Contains(locId))
+                    {
+                        TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind will expire soon.", TCTNotifier.NotificationType.Crystalbind, Colors.Orange);
+                    }
                 }
             }
+
             public void ParseNewBuff(string p, string currentCharId)
             {
                 if(p.Substring(CHAR_ID_OFFSET, CHAR_ID_LENGHT) == currentCharId)
@@ -1267,7 +1278,7 @@ namespace PacketViewer
 
             async Task WaitCancel()
             {
-                await Task.Delay(5000);
+                await Task.Delay(2000);
             }
             async void StartDeletion()
             {
@@ -1277,15 +1288,14 @@ namespace PacketViewer
                 {
                     EndCcb();
                 }
-                else
-                {
-                }
+
             }
             void EndCcb()
             {
                 Status = false;
                 Time = 0;
-                DataBridge.CurrentChar().Crystalbind = Time;
+                CurrentChar().Crystalbind = Time;
+                BuffList.Clear();
                 TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind expired.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
             }
             class Buff
