@@ -51,8 +51,8 @@ namespace Tera
         public static XDocument DailyPlayGuideQuest;
         public static XDocument StrSheet_DailyPlayGuideQuest;
         public static XDocument StrSheet_Region;
-        public static XDocument NewWorldMapData;
         public static XDocument StrSheet_Dungeon;
+        public static XDocument NewWorldMapData;
         public static List<XDocument> StrSheet_Item_List;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
 

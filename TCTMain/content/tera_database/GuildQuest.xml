@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GuildQuest>
+  <Quest id="2001" name="명예의 전장 - 5" desc="@GuildQuest:2001002" title="@GuildQuest:2001001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="26" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2002" name="명예의 전장 - 15" desc="@GuildQuest:2002002" title="@GuildQuest:2002001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="26" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2003" name="명예의 전장 - 25" desc="@GuildQuest:2003002" title="@GuildQuest:2003001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="26" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2004" name="포화의 전장 - 5 " desc="@GuildQuest:2004002" title="@GuildQuest:2004001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="10" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2005" name="포화의 전장 - 15" desc="@GuildQuest:2005002" title="@GuildQuest:2005001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="10" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2006" name="포화의 전장 - 25" desc="@GuildQuest:2006002" title="@GuildQuest:2006001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="10" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2007" name="대혼전 - 5 " desc="@GuildQuest:2007002" title="@GuildQuest:2007001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="70" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2008" name="대혼전 - 15" desc="@GuildQuest:2008002" title="@GuildQuest:2008001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="70" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="2009" name="대혼전 - 25 " desc="@GuildQuest:2009002" title="@GuildQuest:2009001">
+    <ClearCondition>
+      <TargetList>
+        <Field battleFieldId="70" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="3001" name="채집 (각각 400)" desc="@GuildQuest:3001002" title="@GuildQuest:3001001">
+    <ClearCondition>
+      <TargetList>
+        <Collection templateId="1700" collectionId="63" />
+        <Collection templateId="1701" collectionId="151" />
+        <Collection templateId="1702" collectionId="351" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="3002" name="채집 (각각 1200)" desc="@GuildQuest:3002002" title="@GuildQuest:3002001">
+    <ClearCondition>
+      <TargetList>
+        <Collection templateId="1700" collectionId="63" />
+        <Collection templateId="1701" collectionId="151" />
+        <Collection templateId="1702" collectionId="351" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="3003" name="채집 - 섬유" desc="@GuildQuest:3003002" title="@GuildQuest:3003001">
+    <ClearCondition>
+      <TargetList>
+        <Collection templateId="1700" collectionId="63" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="3004" name="채집 - 광석" desc="@GuildQuest:3004002" title="@GuildQuest:3004001">
+    <ClearCondition>
+      <TargetList>
+        <Collection templateId="1701" collectionId="151" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="3005" name="채집 - 정기" desc="@GuildQuest:3005002" title="@GuildQuest:3005001">
+    <ClearCondition>
+      <TargetList>
+        <Collection templateId="1702" collectionId="351" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="4001" name="탐욕의 아난샤 처치" desc="@GuildQuest:4001002" title="@GuildQuest:4001001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="152" templateId="2001" />
+      </TargetList>
+    </ClearCondition>
+    <RelatedTerritoryInfo huntingZoneId="29" territoryId="2900175" />
+  </Quest>
+  <Quest id="4002" name="분노의 카라고스 처치" desc="@GuildQuest:4002002" title="@GuildQuest:4002001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="152" templateId="2002" />
+      </TargetList>
+    </ClearCondition>
+    <RelatedTerritoryInfo huntingZoneId="34" territoryId="3401075" />
+  </Quest>
+  <Quest id="4003" name="학살의 사브라니악 처치" desc="@GuildQuest:4003002" title="@GuildQuest:4003001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="152" templateId="2003" />
+      </TargetList>
+    </ClearCondition>
+    <RelatedTerritoryInfo huntingZoneId="34" territoryId="3401076" />
+  </Quest>
+  <Quest id="11001" name="고대의 지하수로 (하)" desc="@GuildQuest:11001002" title="@GuildQuest:11001001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="777" templateId="77730" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11002" name="고대의 지하수로 (하)" desc="@GuildQuest:11002002" title="@GuildQuest:11002001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="777" templateId="77730" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11003" name="고대의 지하수로 (하)" desc="@GuildQuest:11003002" title="@GuildQuest:11003001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="777" templateId="77730" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11004" name="약화된 켈리반의 돌격선 (하)" desc="@GuildQuest:11004002" title="@GuildQuest:11004001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="860" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11005" name="약화된 켈리반의 돌격선 (하)" desc="@GuildQuest:11005002" title="@GuildQuest:11005001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="860" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11006" name="약화된 켈리반의 돌격선 (하)" desc="@GuildQuest:11006002" title="@GuildQuest:11006001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="860" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11007" name="악인 켈리반의 돌격선 (중)" desc="@GuildQuest:11007002" title="@GuildQuest:11007001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="460" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11008" name="악인 켈리반의 돌격선 (중)" desc="@GuildQuest:11008002" title="@GuildQuest:11008001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="460" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11009" name="악인 켈리반의 돌격선 (중)" desc="@GuildQuest:11009002" title="@GuildQuest:11009001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="460" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11010" name="베르노의 실험실(중)" desc="@GuildQuest:11010002" title="@GuildQuest:11010001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="767" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11011" name="베르노의 실험실(중)" desc="@GuildQuest:11011002" title="@GuildQuest:11011001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="767" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11012" name="베르노의 실험실(중)" desc="@GuildQuest:11012002" title="@GuildQuest:11012001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="767" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11013" name="번스타인의 악령섬 (중)" desc="@GuildQuest:11013002" title="@GuildQuest:11013001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="459" templateId="1003" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11014" name="번스타인의 악령섬 (중)" desc="@GuildQuest:11014002" title="@GuildQuest:11014001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="459" templateId="1003" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11015" name="번스타인의 악령섬 (중)" desc="@GuildQuest:11015002" title="@GuildQuest:11015001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="459" templateId="1003" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11016" name="포악한 퀴르갈의 동굴 (상)" desc="@GuildQuest:11016002" title="@GuildQuest:11016001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="611" templateId="81101" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11017" name="포악한 퀴르갈의 동굴 (상)" desc="@GuildQuest:11017002" title="@GuildQuest:11017001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="611" templateId="81101" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11018" name="포악한 퀴르갈의 동굴 (상)" desc="@GuildQuest:11018002" title="@GuildQuest:11018001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="611" templateId="81101" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11019" name="포악한 베르노의 실험실 (상)" desc="@GuildQuest:11019002" title="@GuildQuest:11019001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="467" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11020" name="포악한 베르노의 실험실 (상)" desc="@GuildQuest:11020002" title="@GuildQuest:11020001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="467" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11021" name="포악한 베르노의 실험실 (상)" desc="@GuildQuest:11021002" title="@GuildQuest:11021001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="467" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11022" name="듀리온의 안식처 (상)" desc="@GuildQuest:11022002" title="@GuildQuest:11022001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="768" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11023" name="듀리온의 안식처 (상)" desc="@GuildQuest:11023002" title="@GuildQuest:11023001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="768" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11024" name="듀리온의 안식처 (상)" desc="@GuildQuest:11024002" title="@GuildQuest:11024001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="768" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11025" name="폭군 듀리온의 안식처 (최상)" desc="@GuildQuest:11025002" title="@GuildQuest:11025001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="468" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11026" name="폭군 듀리온의 안식처 (최상)" desc="@GuildQuest:11026002" title="@GuildQuest:11026001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="468" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="11027" name="폭군 듀리온의 안식처 (최상)" desc="@GuildQuest:11027002" title="@GuildQuest:11027001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="468" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21001" name="베르노의 실험실(하)" desc="@GuildQuest:21001002" title="@GuildQuest:21001001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="767" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21002" name="베르노의 실험실(하)" desc="@GuildQuest:21002002" title="@GuildQuest:21002001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="767" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21003" name="베르노의 실험실(하)" desc="@GuildQuest:21003002" title="@GuildQuest:21003001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="767" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21004" name="포악한 베르노의 실험실 (중)" desc="@GuildQuest:21004002" title="@GuildQuest:21004001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="467" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21005" name="포악한 베르노의 실험실 (중)" desc="@GuildQuest:21005002" title="@GuildQuest:21005001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="467" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21006" name="포악한 베르노의 실험실 (중)" desc="@GuildQuest:21006002" title="@GuildQuest:21006001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="467" templateId="46704" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21007" name="부활한 회당 (중)" desc="@GuildQuest:21007002" title="@GuildQuest:21007001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="429" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21008" name="부활한 회당 (중)" desc="@GuildQuest:21008002" title="@GuildQuest:21008001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="429" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21009" name="부활한 회당 (중)" desc="@GuildQuest:21009002" title="@GuildQuest:21009001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="429" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21010" name="릴리스의 성 - 하급 (중)" desc="@GuildQuest:21010002" title="@GuildQuest:21010001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="970" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21011" name="릴리스의 성 - 하급 (중)" desc="@GuildQuest:21011002" title="@GuildQuest:21011001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="970" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21012" name="릴리스의 성 - 하급 (중)" desc="@GuildQuest:21012002" title="@GuildQuest:21012001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="970" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21013" name="듀리온의 안식처 (중)" desc="@GuildQuest:21013002" title="@GuildQuest:21013001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="768" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21014" name="듀리온의 안식처 (중)" desc="@GuildQuest:21014002" title="@GuildQuest:21014001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="768" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21015" name="듀리온의 안식처 (중)" desc="@GuildQuest:21015002" title="@GuildQuest:21015001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="768" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21016" name="폭풍의 엘카라스 호 (상)" desc="@GuildQuest:21016002" title="@GuildQuest:21016001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="916" templateId="1000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21017" name="폭풍의 엘카라스 호 (상)" desc="@GuildQuest:21017002" title="@GuildQuest:21017001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="916" templateId="1000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21018" name="폭풍의 엘카라스 호 (상)" desc="@GuildQuest:21018002" title="@GuildQuest:21018001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="916" templateId="1000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21019" name="폭군 듀리온의 안식처 ( 상)" desc="@GuildQuest:21019002" title="@GuildQuest:21019001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="468" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21020" name="폭군 듀리온의 안식처 ( 상)" desc="@GuildQuest:21020002" title="@GuildQuest:21020001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="468" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21021" name="폭군 듀리온의 안식처 ( 상)" desc="@GuildQuest:21021002" title="@GuildQuest:21021001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="468" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21022" name="릴리스의 성 - 상급 (상)" desc="@GuildQuest:21022002" title="@GuildQuest:21022001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="969" templateId="96903" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21023" name="릴리스의 성 - 상급 (상)" desc="@GuildQuest:21023002" title="@GuildQuest:21023001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="969" templateId="96903" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21024" name="릴리스의 성 - 상급 (상)" desc="@GuildQuest:21024002" title="@GuildQuest:21024001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="969" templateId="96903" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21025" name="라켈리스의 성 - 하급 (상)" desc="@GuildQuest:21025002" title="@GuildQuest:21025001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="770" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21026" name="라켈리스의 성 - 하급 (상)" desc="@GuildQuest:21026002" title="@GuildQuest:21026001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="770" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21027" name="라켈리스의 성 - 하급 (상)" desc="@GuildQuest:21027002" title="@GuildQuest:21027001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="770" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21028" name="라켈리스의 성 - 상급 (최상)" desc="@GuildQuest:21028002" title="@GuildQuest:21028001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="970" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21029" name="라켈리스의 성 - 상급 (최상)" desc="@GuildQuest:21029002" title="@GuildQuest:21029001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="970" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21030" name="라켈리스의 성 - 상급 (최상)" desc="@GuildQuest:21030002" title="@GuildQuest:21030001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="970" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+</GuildQuest>
