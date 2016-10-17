@@ -30,13 +30,13 @@ namespace Tera
                 Source = arc,
                 Path = new PropertyPath("EndAngle"),
                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-                Converter = new Ccb_TimeToLed(),
+                Converter = new CcbTime_AngleToColor(),
             };
             led.SetBinding(Shape.FillProperty, b);
             arc.SetBinding(Shape.StrokeProperty, b);
         }
 
-        private class Ccb_TimeToLed : IValueConverter
+        private class CcbTime_AngleToColor : IValueConverter
         {
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
