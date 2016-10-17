@@ -91,8 +91,8 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountContainer.xaml.cs">
-      <DependentUpon>AccountContainer.xaml</DependentUpon>
+    <Compile Include="CharacterContainer.xaml.cs">
+      <DependentUpon>CharacterContainer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Arc.cs" />
     <Compile Include="Classes\Account.cs" />
@@ -125,7 +125,7 @@
     <Compile Include="WeeklyGauge.xaml.cs">
       <DependentUpon>WeeklyGauge.xaml</DependentUpon>
     </Compile>
-    <Page Include="AccountContainer.xaml">
+    <Page Include="CharacterContainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,8 +157,8 @@
     <Compile Include="leftSlide.xaml.cs">
       <DependentUpon>leftSlide.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CharacterStripContainer.xaml.cs">
-      <DependentUpon>CharacterStripContainer.xaml</DependentUpon>
+    <Compile Include="AccountContainer.xaml.cs">
+      <DependentUpon>AccountContainer.xaml</DependentUpon>
     </Compile>
     <Page Include="CrystalbindIndicator.xaml">
       <SubType>Designer</SubType>
@@ -213,7 +213,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CharacterStripContainer.xaml">
+    <Page Include="AccountContainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -434,7 +434,7 @@ namespace PacketViewer
             cp.Clear();
 
             UI.UpdateLog("Found " + charList.Count + " characters.");
-            TCTNotifier.NotificationProvider.NS.sendNotification("Found " + charList.Count + " characters.");
+            //TCTNotifier.NotificationProvider.NS.sendNotification("Found " + charList.Count + " characters.");
         }
         private static void LoginChar(string p)
         {
@@ -446,7 +446,7 @@ namespace PacketViewer
 
             TeraLogic.cvcp.SelectedChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
-            TCTNotifier.NotificationProvider.NS.sendNotification(currentCharName + " logged in.");
+            //TCTNotifier.NotificationProvider.NS.sendNotification(currentCharName + " logged in.");
         }
         private static void SetTokens()
         {

@@ -25,7 +25,7 @@
          
         WindowStartupLocation="Manual" 
         MaxWidth="1280"
-        MinWidth="713"
+        MinWidth="739"
         WindowStyle="SingleBorderWindow" 
         Closing="Win_Closing"
         VisualEdgeMode="Aliased"
@@ -94,7 +94,7 @@
                 <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
                     <!--Style="{StaticResource MaterialGrid}"-->
                     <Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />
-                    <local:CharacterStripContainer x:Name="overviewPage"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+                    <local:AccountContainer x:Name="accounts"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
                 </Grid>
 
 

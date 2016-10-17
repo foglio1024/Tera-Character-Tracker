@@ -120,29 +120,16 @@ namespace Tera
             DataBinder.BindCharPropertyToShapeFillColor(i, "Laurel", CharacterStrips[i].laurelRect, new Laurel_GradeToColor());
             DataBinder.BindParameterToArcGauge(i, "Crystalbind", CharacterStrips[i].ccbInd, new TimeToAngle());
             CharacterStrips[i].ccbInd.SetBinding(ToolTipProperty, DataBinder.GenericCharBinding(i, "Crystalbind", new TicksToTimespan(), null));
-
-            /*creates bindings for tags*/
-            var b = new Binding();
-            b.Source = TeraLogic.CharList[i];
-            b.Path = new PropertyPath("Name");
-            CharacterStrips[i].nameTB.SetBinding(TagProperty, b);
-            CharacterStrips[i].creditsTB.SetBinding(TagProperty, b);
-            CharacterStrips[i].mvTB.SetBinding(TagProperty, b);
-            CharacterStrips[i].questTB.SetBinding(TagProperty, b);
-            CharacterStrips[i].gftTB.SetBinding(TagProperty, b);
-            CharacterStrips[i].SetBinding(TagProperty, b);
-            CharacterStrips[i].laurelRect.SetBinding(TagProperty, b);
-            CharacterStrips[i].lvlTB.SetBinding(TagProperty, b);
-            CharacterStrips[i].SetBinding(TagProperty, b);
-
-
+            CharacterStrips[i].SetBinding(TagProperty, DataBinder.GenericCharBinding(i, "Name"));
+            
+        }
+        public void AddStripToContainer(int i)
+        {
             /*adds strip to panel*/
             (CharacterStrips[i].Content as Grid).Height = 1;
-            overviewPage.tableGridContent.Items.Add(CharacterStrips[i]); /*newCharBox*/
-
+            accounts.chContainer.Items.Add(CharacterStrips[i]);
             (CharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
         }
-
         public void CreateStrip(int i)
         {
             /*adds strip to array*/
@@ -150,6 +137,10 @@ namespace Tera
 
             /*create bindings for controls*/
             CreateStripControlsBindings(i);
+
+            /*add strip to container*/
+            AddStripToContainer(i);
+
         }
         public void UpdateLog(string txt)
         {
@@ -217,6 +208,7 @@ namespace Tera
         #region Event Handlers
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
             /*creates strips for loaded chars*/
             for (int i = 0; i < TeraLogic.CharList.Count; i++)
             {

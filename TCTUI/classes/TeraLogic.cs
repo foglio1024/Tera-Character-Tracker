@@ -170,7 +170,7 @@ namespace Tera
                     if (ns.Tag.Equals(name))
                     {
                         ns.rowSelect(true);
-                        UI.MainWin.overviewPage.tableGridContent.ScrollIntoView(ns);
+                        UI.MainWin.accounts.chContainer.ScrollIntoView(ns);
                     }
                     else
                     {

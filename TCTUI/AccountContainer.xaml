@@ -3,38 +3,112 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:Tera.Converters"
              xmlns:local="clr-namespace:Tera"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid Background="#0a000000">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
+             d:DesignHeight="500" Drop="rejectDrop" AllowDrop="False" VerticalAlignment="Top" Height="Auto">
+    <Control.Resources>
+        <Style x:Key="MaterialGrid" TargetType="Grid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TranslateTransform X="0" Y="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="4"
+                                      Color="Black"
+                                      Opacity=".3"
+                                      x:Name="shadow"
+                                      ShadowDepth="1.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border 
+                              Name="Border"
+                              Padding="0"
+                              SnapsToDevicePixels="true"
+                              BorderThickness="0">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="Border" Property="Background"
+                                Value="#00ffffff"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground"
+                                Value="#00ffffff"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Control.Resources>
+    <!--<StackPanel AllowDrop="False" Drop="rejectDrop" VerticalAlignment="Stretch">-->
+        <Grid x:Name="tableGrid" AllowDrop="False" Drop="rejectDrop"  Margin="0" VerticalAlignment="Stretch" HorizontalAlignment="Left" >
+            
+            <Grid x:Name="headerGrid" Drop="rejectDrop" Margin="0" VerticalAlignment="Stretch" >
+                <!--#region -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0" />
+                    <ColumnDefinition Width="65"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="500*"/>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition Width="15*"/>
 
-                <TextBlock Grid.Column="0" Foreground="#91000000">Account ID:</TextBlock>
-                <TextBlock Name="accountId" Grid.Column="1" Foreground="#91000000" Margin="5,0">id</TextBlock>
-            </Grid>
-            <Grid Grid.Column="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Foreground="#91000000">Account type:</TextBlock>
-                <TextBlock Name="accountType" Foreground="#91000000" Grid.Column="1" Margin="5,0">normal</TextBlock>
-            </Grid>
+                <!--#endregion-->
+                <Border  AllowDrop="False" Drop="rejectDrop" Grid.Row="0" Grid.ColumnSpan="11" BorderThickness="0,0,0,1" BorderBrush="#19000000">
+                    <Border.CacheMode>
+                        <BitmapCache/>
+                    </Border.CacheMode>
+                </Border>
+
+                <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Class</TextBlock>
+                <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Name</TextBlock>
+                <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Credits</TextBlock>
+                <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Weekly Badges</TextBlock>
+                <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Marks of Valor</TextBlock>
+                <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Goldfinger Tokens</TextBlock>
+
+            <!--<ScrollViewer x:Name="charScroller" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="10" Focusable="False" >
+            <StackPanel x:Name="tableGridContent"   VerticalAlignment="Stretch"  AllowDrop="True"  Drop="rejectDrop"  Margin="0,0,0,0" ScrollViewer.CanContentScroll="True">
+                    <StackPanel.CacheMode>
+                        <BitmapCache/>
+                    </StackPanel.CacheMode>
+                </StackPanel>
+            </ScrollViewer>-->
+            <ListBox x:Name="chContainer" Grid.Row="1" Grid.ColumnSpan="10" HorizontalAlignment="Stretch" Background="Transparent" Foreground="{x:Null}" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Padding="-1" >
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Focusable="False" IsHitTestVisible="True" VerticalAlignment="Top" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
 
         </Grid>
-    </Grid>
+        </Grid>
+    <!--</StackPanel>-->
 </UserControl>

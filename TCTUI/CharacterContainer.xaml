@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Tera.CharacterContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tera"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="#0a000000">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Foreground="#91000000">Account ID:</TextBlock>
+                <TextBlock Name="accountId" Grid.Column="1" Foreground="#91000000" Margin="5,0">id</TextBlock>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Foreground="#91000000">Account type:</TextBlock>
+                <TextBlock Name="accountType" Foreground="#91000000" Grid.Column="1" Margin="5,0">normal</TextBlock>
+            </Grid>
+
+        </Grid>
+        <ListBox x:Name="stripsPanel" Grid.Row="1" Grid.ColumnSpan="10" HorizontalAlignment="Stretch" Background="Transparent" Foreground="{x:Null}" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Padding="-1" >
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Focusable="False" IsHitTestVisible="True" VerticalAlignment="Top" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+    </Grid>
+</UserControl>
