@@ -33,6 +33,7 @@ namespace Tera
                 Converter = new Ccb_TimeToLed(),
             };
             led.SetBinding(Shape.FillProperty, b);
+            arc.SetBinding(Shape.StrokeProperty, b);
         }
 
         private class Ccb_TimeToLed : IValueConverter
@@ -41,11 +42,16 @@ namespace Tera
             {
                 var v = (double)value;
                 double th = 359.999 / 12;
-                if (v < th)
+                if (v < th && v > 0)
                 {
                     return new SolidColorBrush(TeraLogic.TCTProps.accentColor);
                 }
+                else if(v == 0)
+                {
+                    return new SolidColorBrush(Color.FromArgb(50,0,0,0));
+                }
                 else return new SolidColorBrush(SystemParameters.WindowGlassColor);
+
             }
 
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
