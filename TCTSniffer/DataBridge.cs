@@ -474,10 +474,13 @@ namespace PacketViewer
         }
         private static void NewSection(string p)
         {
-            CurrentChar().LocationId = sp.GetLocationId(p);
-            cbp.CheckCcb(CurrentChar().LocationId);
+            if (CurrentChar().LocationId != sp.GetLocationId(p))
+            {
+                CurrentChar().LocationId = sp.GetLocationId(p);
+                cbp.CheckCcb(CurrentChar().LocationId);
 
-            UI.UpdateLog(CurrentChar().Name + " moved to " + sp.GetLocationName(p) + ".");
+                UI.UpdateLog(CurrentChar().Name + " moved to " + sp.GetLocationName(p) + ".");
+            }
 
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
         }
@@ -652,89 +655,6 @@ namespace PacketViewer
 
         }
 
-        #region OldMethods
-        //private static void updateRegion()
-        //{
-        //    int location_start = 18*2;
-
-        //    var chName = StringUtils.GetStringFromHex(wCforNewRegion, 112,"0000");
-        //    if(chName == currentCharName)
-        //    {
-        //        var sb = new StringBuilder();
-        //        var sb2 = new StringBuilder();
-        //        for (int i = 0; i < 8; i++)
-        //        {
-        //            sb.Append(wCforNewRegion[location_start + i]);
-        //        }
-
-        //        sb2.Append(sb[6].ToString());
-        //        sb2.Append(sb[7].ToString());
-        //        sb2.Append(sb[4].ToString());
-        //        sb2.Append(sb[5].ToString());
-        //        sb2.Append(sb[2].ToString());
-        //        sb2.Append(sb[3].ToString());
-        //        sb2.Append(sb[0].ToString());
-        //        sb2.Append(sb[1].ToString());
-        //        uint locationId = Convert.ToUInt32(sb2.ToString(), 16);
-
-        //        Tera.TeraLogic.CharList[Tera.TeraLogic.CharList.IndexOf(Tera.TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].LocationId = locationId;
-        //        string locationName = "unknown region (" + locationId + ")";
-
-        //        var c = new LocationConverter();
-
-        //        locationName = (string)c.Convert(locationId, null, null, null);
-
-
-        //        Tera.UI.win.updateLog(currentCharName + " moved to " + locationName + ".");
-        //        Tera.TeraLogic.CharList[Tera.TeraLogic.CharList.IndexOf(Tera.TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-
-        //        if (locationId == 9067 || locationId == 9068 || locationId == 9768 || locationId == 9070 || locationId == 9611 /*|| locationId == 183002*/)
-        //        {
-        //            if (!ccb)
-        //            {
-        //                TCTNotifier.NotificationProvider.NS.sendNotification("Your CCB is off.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
-        //            }
-
-                        
-        //            else if (TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)).Crystalbind < 3600000)
-        //            {
-        //                TCTNotifier.NotificationProvider.NS.sendNotification("Your CCB will expire in less than one hour.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
-        //            }
-                    
-        //        }
-        //    }
-        //}
-        //private static void ccbEndToFalse()
-        //{
-        //    ccbEnding = false;
-        //    Console.WriteLine("ccbEnding set to false");
-        //}
-        //private static void setCcb()
-        //{
-        //    var tmp = ccbString;
-        //    var timeLeft = StringUtils.Hex4BStringToInt(tmp.Substring(48, 8));
-        //    var ts = TimeSpan.FromMilliseconds(timeLeft);
-        //    TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)).Crystalbind = timeLeft;
-        //    Tera.UI.win.updateLog(currentCharName + " > " + ts.Hours + " hours " + ts.Minutes + " minutes of Complete Crystalbind left.");
-        //}
-        //private static void ccbEnd()
-        //{
-        //    ccbEnding = true;
-        //    Console.WriteLine("Wait start");
-        //    Thread.Sleep(2000);
-        //    Console.WriteLine("Wait done");
-        //    if (ccbEnding)
-        //    {
-        //        Console.WriteLine("ccbEnding = " + ccbEnding.ToString());
-        //        TeraLogic.CharList.Find(x => x.Name == currentCharName).Crystalbind = 0;
-        //        Console.WriteLine("Sending expired notification");
-        //        TCTNotifier.NotificationProvider.NS.sendNotification("Your ccb has expired.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
-        //    }
-
-
-        //}
-        #endregion
-
         class CharListProcessor
         {
             const int CLASS_OFFSET_FROM_START = 60;
@@ -755,7 +675,6 @@ namespace PacketViewer
 
             List<string> charStrings = new List<string>();
             List<int> indexesArray = new List<int>();
-
 
             private List<Tera.Character> sortChars(List<Tera.Character> c)
             {
