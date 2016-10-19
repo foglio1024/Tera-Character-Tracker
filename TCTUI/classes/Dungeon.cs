@@ -18,16 +18,11 @@ namespace Tera
     public class Dungeon
     {
         
-        string fullName;
         string shortName;
         int maxBaseRuns;
         int requiredIlvl;
-        int groupSize;
-        string hex;
+        int id;
         DungeonTier tier;
-
-        [XmlAttribute("Name")]
-        public string FullName { get { return fullName; } set { fullName = value; } }
 
         [XmlAttribute("ShortName")]
         public string ShortName { get { return shortName; } set { shortName = value; } }
@@ -38,25 +33,20 @@ namespace Tera
         [XmlAttribute("RequiredIlvl")]
         public int RequiredIlvl { get { return requiredIlvl; } set { requiredIlvl = value; } }
 
-        [XmlAttribute("GroupSize")]
-        public int GroupSize { get { return groupSize; } set { groupSize = value; } }
-
         [XmlAttribute("Tier")]
         public DungeonTier Tier { get { return tier; } set { tier = value; } }
 
-        [XmlAttribute("Hex")]
-        public string Hex { get { return hex; } set { hex = value; } }
+        [XmlAttribute("Id")]
+        public int Id { get { return id; } set { id = value; } }
 
         public Dungeon() { }
-        public Dungeon(string _fullName, string _shortName, int _runs, int _ilvl, int _group, DungeonTier _tier, string _hex)
+        public Dungeon(string _shortName, int _runs, int _ilvl, DungeonTier _tier, int _id)
         {
-            fullName = _fullName;
             shortName = _shortName;
             maxBaseRuns = _runs;
             requiredIlvl = _ilvl;
-            groupSize = _group;
             tier = _tier;
-            hex = _hex;
+            id = _id;
         }
 
     }

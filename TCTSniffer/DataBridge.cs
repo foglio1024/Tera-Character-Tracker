@@ -156,11 +156,12 @@ namespace PacketViewer
                     #region SYSTEM MESSAGE
                     #region DUNGEON ENGAGED
                     /*dungeon engaged*/
-                    if (lp.HexShortText.Contains("0B00440075006E00670065006F006E00"))
+                    if (lp.HexShortText.Contains("40003200320031003400"))
                     {
                         wCforEngage = lp.HexShortText;
                         wCforEngage = wCforEngage.Substring(120);
-                        setEngagedDung();
+                        //setEngagedDung();
+                        newEngDung();
                     } 
                     #endregion
                     #region VANGUARD QUEST COMPLETED
@@ -598,46 +599,61 @@ namespace PacketViewer
                 }
             }            
         }
-        private static void setEngagedDung()
+        //private static void setEngagedDung()
+        //{
+        //    try
+        //    {
+        //        StringBuilder sb0 = new StringBuilder();
+        //        for (int i = 0; i < wCforEngage.Length; i = i + 2)
+        //        {
+        //            sb0.Append(wCforEngage[i]);
+        //            sb0.Append(wCforEngage[i + 1]);
+        //        }
+        //        sb0.Replace("00", "");
+        //        var decIndexAsByteArray = TCTSniffer.StringUtils.StringToByteArray(sb0.ToString());
+        //        var decIndexAsString = Encoding.UTF7.GetString(decIndexAsByteArray);
+        //        int decIndex = 0;
+        //        Int32.TryParse(decIndexAsString, out decIndex);
+
+        //        //string hexIndex = decIndex.ToString("X");
+        //        //StringBuilder sb = new StringBuilder();
+        //        //sb.Append(hexIndex[2]);
+        //        //sb.Append(hexIndex[3]);
+        //        //sb.Append(hexIndex[0]);
+        //        //sb.Append(hexIndex[1]);
+        //        if (TeraLogic.DungList.Find(x => x.Id == decIndex) != null)
+        //        {
+        //            Tera.UI.UpdateLog(currentCharName + " > " + Tera.TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
+        //            TCTNotifier.NotificationProvider.NS.sendNotification(TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
+
+        //            Tera.TeraLogic.CharList.Find(
+        //                x => x.Name.Equals(currentCharName)
+        //                ).Dungeons.Find(
+        //                d => d.Name.Equals(TeraLogic.DungList.Find(
+        //                    dg => dg.Id ==decIndex))
+        //                    ).ShortName
+        //                )).Runs--;
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        Console.WriteLine(e.ToString());
+        //    }
+        //}
+        private static void newEngDung()
         {
-            try
+            string stringId = StringUtils.GetStringFromHex(wCforEngage, 0, "0000");
+            int id = 0;
+            Int32.TryParse(stringId, out id);
+            XElement dgNameEl = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
+            if(dgNameEl != null)
             {
-                StringBuilder sb0 = new StringBuilder();
-                for (int i = 0; i < wCforEngage.Length; i = i + 2)
-                {
-                    sb0.Append(wCforEngage[i]);
-                    sb0.Append(wCforEngage[i + 1]);
-                }
-                sb0.Replace("00", "");
-                var decIndexAsByteArray = TCTSniffer.StringUtils.StringToByteArray(sb0.ToString());
-                var decIndexAsString = Encoding.UTF7.GetString(decIndexAsByteArray);
-                int decIndex = 0;
-                Int32.TryParse(decIndexAsString, out decIndex);
+                string dgName = dgNameEl.Attribute("string").Value;
+                UI.UpdateLog(currentCharName + " > " + dgName + " engaged.");
+                TCTNotifier.NotificationProvider.NS.sendNotification(dgName + " engaged.");
 
-                string hexIndex = decIndex.ToString("X");
-                StringBuilder sb = new StringBuilder();
-                sb.Append(hexIndex[2]);
-                sb.Append(hexIndex[3]);
-                sb.Append(hexIndex[0]);
-                sb.Append(hexIndex[1]);
-                if (Tera.TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())) != null)
-                {
-                    Tera.UI.UpdateLog(currentCharName + " > " + Tera.TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
-                    TCTNotifier.NotificationProvider.NS.sendNotification(TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
-
-                    Tera.TeraLogic.CharList.Find(
-                        x => x.Name.Equals(currentCharName)
-                        ).Dungeons.Find(
-                        d => d.Name.Equals(Tera.TeraLogic.DungList.Find(
-                            dg => dg.Hex.Equals(sb.ToString())
-                            ).ShortName
-                        )).Runs--;
-                }
-            }
-            catch (Exception e)
-            {
-
-                Console.WriteLine(e.ToString());
+                CurrentChar().Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == id).ShortName)).Runs--;
             }
         }
         private static void setDungs()
@@ -647,18 +663,22 @@ namespace PacketViewer
             for (int i = 0; i < temp.Length / 28; i++)
             {
                 dgList.Add(temp.Substring(28 * i, 28));
-                if(Tera.TeraLogic.DungList.Find(d => d.Hex.Equals(dgList[i].Substring(8, 4))) != null)
+            }
+            foreach (var ds in dgList)
+            {
+                int dgId = StringUtils.Hex2BStringToInt(ds.Substring(8, 4));
+
+                if (Tera.TeraLogic.DungList.Find(d => d.Id == dgId) != null)
                 {
-                    var chIndex = Tera.TeraLogic.CharList.IndexOf(Tera.TeraLogic.CharList.Find(c => c.Name.Equals(currentCharName)));
-                    var dgName = Tera.TeraLogic.DungList.Find(d => d.Hex.Equals(dgList[i].Substring(8, 4))).ShortName;
-
-                    var dgIndex = Tera.TeraLogic.CharList[chIndex].Dungeons.IndexOf(Tera.TeraLogic.CharList[chIndex].Dungeons.Find(d => d.Name.Equals(dgName)));
-                    Tera.TeraLogic.CharList[chIndex].Dungeons[dgIndex].Runs = Convert.ToInt32(dgList[i].Substring(25, 1));
-
-
+                    var dgName = Tera.TeraLogic.DungList.Find(d => d.Id==dgId).ShortName;
+                    CurrentChar().Dungeons.Find(d => d.Name == dgName).Runs = Convert.ToInt32(ds.Substring(25, 1));
                 }
             }
-            Tera.TeraLogic.CharList[Tera.TeraLogic.CharList.IndexOf(Tera.TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+
+
+
+
+            CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
         }
 

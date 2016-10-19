@@ -105,30 +105,48 @@ namespace Tera
                     tc = 2;
                 }
 
-                int dgIndex = TeraLogic.CharList[charIndex].Dungeons.IndexOf(TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name.Equals(dc.Name)));
 
+
+                //int dgIndex = TeraLogic.CharList[charIndex].Dungeons.IndexOf(TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name.Equals(dc.Name)));
+
+                //var counterText = new Binding
+                //{
+                //    Source = TeraLogic.CharList[charIndex].Dungeons[dgIndex],
+                //    Path = new PropertyPath("Runs"),
+                //    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                //    Mode = BindingMode.OneWay,
+                //    Converter = new IntToString(),
+                //};
                 var counterText = new Binding
                 {
-                    Source = TeraLogic.CharList[charIndex].Dungeons[dgIndex],
+                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
                     Path = new PropertyPath("Runs"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,
                     Converter = new IntToString(),
                 };
 
+                //int p = 0;
+                //if (dc.n.Text == "AH" || dc.n.Text == "EA" || dc.n.Text == "GL" || dc.n.Text == "CA")
+                //{
+                //    p = TeraLogic.DungList[dgIndex].MaxBaseRuns;
+                //}
+                //else
+                //{
+                //    p = TeraLogic.DungList[dgIndex].MaxBaseRuns * tc;
+                //}
                 int p = 0;
                 if (dc.n.Text == "AH" || dc.n.Text == "EA" || dc.n.Text == "GL" || dc.n.Text == "CA")
                 {
-                    p = TeraLogic.DungList[dgIndex].MaxBaseRuns;
+                    p = TeraLogic.DungList.Find(d => d.ShortName == dc.Name).MaxBaseRuns;
                 }
                 else
                 {
-                    p = TeraLogic.DungList[dgIndex].MaxBaseRuns * tc;
+                    p = TeraLogic.DungList.Find(d => d.ShortName == dc.Name).MaxBaseRuns * tc;
                 }
-
                 var ellipseFill = new Binding
                 {
-                    Source = TeraLogic.CharList[charIndex].Dungeons[dgIndex],
+                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
                     Path = new PropertyPath("Runs"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,
