@@ -214,18 +214,24 @@ namespace Tera
                     tc = 1;
                 }
 
-                int i = 0;
                 foreach (var d in c.Dungeons)
                 {
                     if (d.Name.Equals("CA") || d.Name.Equals("AH") || d.Name.Equals("GL") || d.Name.Equals("EA"))
                     {
-                        d.Runs = TeraLogic.DungList[i].MaxBaseRuns;
+                        if (DungList.Find(x => x.ShortName == d.Name) != null)
+                        {
+                            d.Runs = DungList.Find(x => x.ShortName == d.Name).MaxBaseRuns;
+                        }
+
                     }
                     else
                     {
-                        d.Runs = TeraLogic.DungList[i].MaxBaseRuns * tc;
+                        if (DungList.Find(x => x.ShortName == d.Name) != null)
+                        {
+
+                            d.Runs = DungList.Find(x => x.ShortName == d.Name).MaxBaseRuns * tc;
+                        }
                     }
-                    i++;
                 }
             }
 
@@ -264,7 +270,12 @@ namespace Tera
 
                     if (!found)
                     {
-                        CharList[i].Dungeons.Insert(j, new CharDungeon(DungList[j].ShortName, 0));
+                        int tc = 1;
+                        if(AccountList.Find(x => x.Id == CharList[i].AccountId).TeraClub)
+                        {
+                            tc = 2;
+                        }
+                        CharList[i].Dungeons.Insert(j, new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc));
                     }
                 }
             }
