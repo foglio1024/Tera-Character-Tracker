@@ -12,7 +12,7 @@ namespace Tera.Converters
             var _laurel = (string)value;
             _laurel.ToLower();
             object imagePath = "";
-            if (_laurel.Length != 0)
+            if (_laurel.Length != 0 && _laurel != "-1")
             {
                     return new BitmapImage(new Uri("pack://application:,,,/resources/biglaurels/" +_laurel+  ".png", UriKind.Absolute));
             }

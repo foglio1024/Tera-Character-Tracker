@@ -19,9 +19,9 @@
       <Compensation type="money" templateId="20000000" amount="3000000" />
     </CompensationList>
     <CompensationList mailSender="@EventMatching:2001" minLevel="65" maxLevel="65" mailTitle="@EventMatching:2004" completeCount="15" mailBody="@EventMatching:2005">
-      <Compensation type="item" templateId="909" amount="10" />
-      <Compensation type="item" templateId="910" amount="5" />
-      <Compensation type="item" templateId="809" amount="100" />
+      <Compensation type="item" templateId="910" amount="10" />
+      <Compensation type="item" templateId="911" amount="5" />
+      <Compensation type="item" templateId="810" amount="100" />
       <Compensation type="item" templateId="444" amount="10" />
     </CompensationList>
   </AdditionalReward>
@@ -29,9 +29,10 @@
     <Event id="800001" type="Dungeon" active="True" categoryId="800001" questId="800001" repeat="True" requiredItemLevel="51">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8122" amount="2" />
         <Compensation type="item" templateId="8108" amount="2" />
+        <Compensation type="item" templateId="98300" amount="1" />
         <Compensation type="item" templateId="94203" amount="20" />
         <Compensation type="exp" templateId="20000001" amount="171509" />
         <Compensation type="money" templateId="20000000" amount="150000" />
@@ -43,10 +44,11 @@
     <Event id="800002" type="Dungeon" active="True" categoryId="800002" questId="800002" repeat="True" requiredItemLevel="66">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8123" amount="2" />
-        <Compensation type="item" templateId="8109" amount="2" />
+        <Compensation type="item" templateId="8137" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="344840" />
         <Compensation type="money" templateId="20000000" amount="250000" />
       </CompensationList>
@@ -57,10 +59,11 @@
     <Event id="800003" type="Dungeon" active="True" categoryId="800003" questId="800003" repeat="True" requiredItemLevel="77">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8123" amount="2" />
-        <Compensation type="item" templateId="8109" amount="2" />
+        <Compensation type="item" templateId="8137" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="645972" />
         <Compensation type="money" templateId="20000000" amount="350000" />
       </CompensationList>
@@ -71,10 +74,11 @@
     <Event id="800004" type="Dungeon" active="True" categoryId="800004" questId="800004" repeat="True" requiredItemLevel="96">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8124" amount="2" />
         <Compensation type="item" templateId="8110" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1248399" />
         <Compensation type="money" templateId="20000000" amount="400000" />
       </CompensationList>
@@ -85,10 +89,11 @@
     <Event id="800005" type="Dungeon" active="True" categoryId="800005" questId="800005" repeat="True" requiredItemLevel="118">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8124" amount="2" />
         <Compensation type="item" templateId="8110" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="2151117" />
         <Compensation type="money" templateId="20000000" amount="450000" />
       </CompensationList>
@@ -99,10 +104,11 @@
     <Event id="800006" type="Dungeon" active="True" categoryId="800006" questId="800006" repeat="True" requiredItemLevel="146">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8125" amount="2" />
         <Compensation type="item" templateId="8111" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98304" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="4193868" />
         <Compensation type="money" templateId="20000000" amount="500000" />
       </CompensationList>
@@ -113,10 +119,11 @@
     <Event id="800008" type="Dungeon" active="True" categoryId="800008" questId="800008" repeat="True" requiredItemLevel="166">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8125" amount="2" />
         <Compensation type="item" templateId="8111" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="5077775" />
         <Compensation type="money" templateId="20000000" amount="550000" />
       </CompensationList>
@@ -127,10 +134,11 @@
     <Event id="800009" type="Dungeon" active="True" categoryId="800009" questId="800009" repeat="True" requiredItemLevel="200">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8125" amount="2" />
         <Compensation type="item" templateId="8111" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="5414715" />
         <Compensation type="money" templateId="20000000" amount="600000" />
       </CompensationList>
@@ -141,10 +149,11 @@
     <Event id="800010" type="Dungeon" active="True" categoryId="800010" questId="800010" repeat="True" requiredItemLevel="200">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8126" amount="2" />
         <Compensation type="item" templateId="8112" amount="2" />
         <Compensation type="item" templateId="94203" amount="20" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="6606048" />
         <Compensation type="money" templateId="20000000" amount="650000" />
       </CompensationList>
@@ -155,8 +164,7 @@
     <Event id="800030" type="Field" active="True" categoryId="800030" questId="800030" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8122" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="11906" />
@@ -169,10 +177,10 @@
     <Event id="800031" type="Field" active="True" categoryId="800031" questId="800031" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8122" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
+        <Compensation type="item" templateId="98300" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="14887" />
         <Compensation type="money" templateId="20000000" amount="75000" />
       </CompensationList>
@@ -183,10 +191,10 @@
     <Event id="800034" type="Field" active="True" categoryId="800034" questId="800034" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8123" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98300" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="20774" />
         <Compensation type="money" templateId="20000000" amount="100000" />
       </CompensationList>
@@ -197,10 +205,10 @@
     <Event id="800035" type="Field" active="True" categoryId="800035" questId="800035" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8123" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="25910" />
         <Compensation type="money" templateId="20000000" amount="112500" />
       </CompensationList>
@@ -211,10 +219,10 @@
     <Event id="800036" type="Field" active="True" categoryId="800036" questId="800036" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8123" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="36036" />
         <Compensation type="money" templateId="20000000" amount="140000" />
       </CompensationList>
@@ -225,10 +233,10 @@
     <Event id="800037" type="Field" active="True" categoryId="800037" questId="800037" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8123" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="44841" />
         <Compensation type="money" templateId="20000000" amount="175000" />
       </CompensationList>
@@ -239,10 +247,10 @@
     <Event id="800038" type="Field" active="True" categoryId="800038" questId="800038" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8123" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="55766" />
         <Compensation type="money" templateId="20000000" amount="192500" />
       </CompensationList>
@@ -253,10 +261,10 @@
     <Event id="800039" type="Field" active="True" categoryId="800039" questId="800039" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8124" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="69300" />
         <Compensation type="money" templateId="20000000" amount="200000" />
       </CompensationList>
@@ -267,10 +275,10 @@
     <Event id="800040" type="Field" active="True" categoryId="800040" questId="800040" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8124" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="77233" />
         <Compensation type="money" templateId="20000000" amount="220000" />
       </CompensationList>
@@ -281,10 +289,10 @@
     <Event id="800041" type="Field" active="True" categoryId="800041" questId="800041" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8124" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="118951" />
         <Compensation type="money" templateId="20000000" amount="225000" />
       </CompensationList>
@@ -295,10 +303,10 @@
     <Event id="800042" type="Field" active="True" categoryId="800042" questId="800042" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8124" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="147485" />
         <Compensation type="money" templateId="20000000" amount="247500" />
       </CompensationList>
@@ -309,10 +317,10 @@
     <Event id="800043" type="Field" active="True" categoryId="800043" questId="800043" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8124" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="203398" />
         <Compensation type="money" templateId="20000000" amount="275000" />
       </CompensationList>
@@ -323,10 +331,10 @@
     <Event id="800044" type="Field" active="True" categoryId="800044" questId="800044" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8125" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98304" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="280166" />
         <Compensation type="money" templateId="20000000" amount="300000" />
       </CompensationList>
@@ -337,10 +345,10 @@
     <Event id="800045" type="Field" active="True" categoryId="800045" questId="800045" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8125" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98304" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="346619" />
         <Compensation type="money" templateId="20000000" amount="330000" />
       </CompensationList>
@@ -351,10 +359,10 @@
     <Event id="800046" type="Field" active="True" categoryId="800046" questId="800046" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8125" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="394337" />
         <Compensation type="money" templateId="20000000" amount="360000" />
       </CompensationList>
@@ -365,10 +373,10 @@
     <Event id="800047" type="Field" active="True" categoryId="800047" questId="800047" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8125" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="453458" />
         <Compensation type="money" templateId="20000000" amount="390000" />
       </CompensationList>
@@ -379,8 +387,7 @@
     <Event id="800101" type="Field" active="True" categoryId="800101" questId="800101" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="2994" />
@@ -392,10 +399,10 @@
     <Event id="800104" type="Field" active="True" categoryId="800104" questId="800104" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8109" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98300" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="16000" />
       </CompensationList>
       <TargetList>
@@ -405,10 +412,10 @@
     <Event id="800105" type="Field" active="True" categoryId="800105" questId="800105" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8109" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98300" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="28000" />
       </CompensationList>
       <TargetList>
@@ -418,10 +425,10 @@
     <Event id="800106" type="Field" active="True" categoryId="800106" questId="800106" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8109" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98300" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="36000" />
       </CompensationList>
       <TargetList>
@@ -431,10 +438,10 @@
     <Event id="800107" type="Field" active="True" categoryId="800107" questId="800107" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8109" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="45000" />
       </CompensationList>
       <TargetList>
@@ -444,10 +451,10 @@
     <Event id="800108" type="Field" active="True" categoryId="800108" questId="800108" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8109" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="62000" />
       </CompensationList>
       <TargetList>
@@ -457,10 +464,10 @@
     <Event id="800109" type="Field" active="True" categoryId="800109" questId="800109" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8109" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="74000" />
       </CompensationList>
       <TargetList>
@@ -470,10 +477,10 @@
     <Event id="800110" type="Field" active="True" categoryId="800110" questId="800110" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6198" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8109" amount="1" />
         <Compensation type="item" templateId="8137" amount="1" />
+        <Compensation type="item" templateId="98301" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="88000" />
       </CompensationList>
       <TargetList>
@@ -483,10 +490,10 @@
     <Event id="800111" type="Field" active="True" categoryId="800111" questId="800111" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="104400" />
       </CompensationList>
       <TargetList>
@@ -496,10 +503,10 @@
     <Event id="800112" type="Field" active="True" categoryId="800112" questId="800112" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="104400" />
       </CompensationList>
       <TargetList>
@@ -509,10 +516,10 @@
     <Event id="800113" type="Field" active="True" categoryId="800113" questId="800113" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="104400" />
       </CompensationList>
       <TargetList>
@@ -522,10 +529,10 @@
     <Event id="800114" type="Field" active="True" categoryId="800114" questId="800114" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="166000" />
       </CompensationList>
       <TargetList>
@@ -535,10 +542,10 @@
     <Event id="800115" type="Field" active="True" categoryId="800115" questId="800115" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="166000" />
       </CompensationList>
       <TargetList>
@@ -548,10 +555,10 @@
     <Event id="800116" type="Field" active="True" categoryId="800116" questId="800116" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98302" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="166000" />
       </CompensationList>
       <TargetList>
@@ -561,10 +568,10 @@
     <Event id="800117" type="Field" active="True" categoryId="800117" questId="800117" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="186097" />
       </CompensationList>
       <TargetList>
@@ -574,10 +581,10 @@
     <Event id="800118" type="Field" active="True" categoryId="800118" questId="800118" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="186097" />
       </CompensationList>
       <TargetList>
@@ -587,10 +594,10 @@
     <Event id="800119" type="Field" active="True" categoryId="800119" questId="800119" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="186097" />
       </CompensationList>
       <TargetList>
@@ -600,10 +607,10 @@
     <Event id="800120" type="Field" active="True" categoryId="800120" questId="800120" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="367629" />
       </CompensationList>
       <TargetList>
@@ -613,10 +620,10 @@
     <Event id="800121" type="Field" active="True" categoryId="800121" questId="800121" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="367629" />
       </CompensationList>
       <TargetList>
@@ -626,10 +633,10 @@
     <Event id="800122" type="Field" active="True" categoryId="800122" questId="800122" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="367629" />
       </CompensationList>
       <TargetList>
@@ -639,10 +646,10 @@
     <Event id="800123" type="Field" active="True" categoryId="800123" questId="800123" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6199" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8110" amount="1" />
         <Compensation type="item" templateId="8138" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="367629" />
       </CompensationList>
       <TargetList>
@@ -652,10 +659,10 @@
     <Event id="800124" type="Field" active="True" categoryId="800124" questId="800124" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="493903" />
       </CompensationList>
       <TargetList>
@@ -665,10 +672,10 @@
     <Event id="800125" type="Field" active="True" categoryId="800125" questId="800125" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98303" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="493903" />
       </CompensationList>
       <TargetList>
@@ -678,10 +685,10 @@
     <Event id="800126" type="Field" active="True" categoryId="800126" questId="800126" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98304" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="543397" />
       </CompensationList>
       <TargetList>
@@ -691,10 +698,10 @@
     <Event id="800127" type="Field" active="True" categoryId="800127" questId="800127" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98304" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="543397" />
       </CompensationList>
       <TargetList>
@@ -704,10 +711,10 @@
     <Event id="800128" type="Field" active="True" categoryId="800128" questId="800128" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="812753" />
       </CompensationList>
       <TargetList>
@@ -717,10 +724,10 @@
     <Event id="800129" type="Field" active="True" categoryId="800129" questId="800129" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="812753" />
       </CompensationList>
       <TargetList>
@@ -730,10 +737,10 @@
     <Event id="800130" type="Field" active="True" categoryId="800130" questId="800130" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1245634" />
       </CompensationList>
       <TargetList>
@@ -743,10 +750,10 @@
     <Event id="800131" type="Field" active="True" categoryId="800131" questId="800131" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6200" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8111" amount="1" />
         <Compensation type="item" templateId="8139" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1245634" />
       </CompensationList>
       <TargetList>
@@ -756,10 +763,10 @@
     <Event id="800132" type="Field" active="True" categoryId="800132" questId="800132" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8112" amount="1" />
         <Compensation type="item" templateId="8140" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1445634" />
       </CompensationList>
       <TargetList>
@@ -769,10 +776,10 @@
     <Event id="800133" type="Field" active="True" categoryId="800133" questId="800133" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8112" amount="1" />
         <Compensation type="item" templateId="8140" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1445634" />
       </CompensationList>
       <TargetList>
@@ -782,10 +789,10 @@
     <Event id="800134" type="Field" active="True" categoryId="800134" questId="800134" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8112" amount="1" />
         <Compensation type="item" templateId="8140" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1445634" />
       </CompensationList>
       <TargetList>
@@ -795,10 +802,10 @@
     <Event id="800135" type="Field" active="True" categoryId="800135" questId="800135" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8112" amount="1" />
         <Compensation type="item" templateId="8140" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1445634" />
       </CompensationList>
       <TargetList>
@@ -808,10 +815,10 @@
     <Event id="800136" type="Field" active="True" categoryId="800136" questId="800136" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6201" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200998" amount="1" />
         <Compensation type="item" templateId="8112" amount="1" />
         <Compensation type="item" templateId="8140" amount="1" />
+        <Compensation type="item" templateId="98305" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="1445634" />
       </CompensationList>
       <TargetList>
@@ -821,8 +828,7 @@
     <Event id="800137" type="Field" active="True" categoryId="800137" questId="800137" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="2994" />
@@ -834,8 +840,7 @@
     <Event id="800138" type="Field" active="True" categoryId="800138" questId="800138" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="3450" />
@@ -847,8 +852,7 @@
     <Event id="800139" type="Field" active="True" categoryId="800139" questId="800139" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="3450" />
@@ -860,8 +864,7 @@
     <Event id="800140" type="Field" active="True" categoryId="800140" questId="800140" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="4300" />
@@ -873,8 +876,7 @@
     <Event id="800141" type="Field" active="True" categoryId="800141" questId="800141" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="4300" />
@@ -886,8 +888,7 @@
     <Event id="800142" type="Field" active="True" categoryId="800142" questId="800142" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="4935" />
@@ -899,8 +900,7 @@
     <Event id="800143" type="Field" active="True" categoryId="800143" questId="800143" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="5420" />
@@ -912,14 +912,114 @@
     <Event id="800144" type="Field" active="True" categoryId="800144" questId="800144" repeat="True" requiredItemLevel="1" requiredVisitedGuardId="0">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6197" amount="1" />
-        <Compensation type="item" templateId="98251" amount="1" />
+        <Compensation type="item" templateId="200997" amount="1" />
         <Compensation type="item" templateId="8108" amount="1" />
         <Compensation type="item" templateId="8136" amount="1" />
         <Compensation type="exp" templateId="20000001" amount="6400" />
       </CompensationList>
       <TargetList>
         <Target id="3" teleportContinentId="7001" teleportPos="107464,16375,2718" />
+      </TargetList>
+    </Event>
+    <Event id="980051" type="BattleField" active="True" categoryId="980051" questId="980051" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="600000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="1360681" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980052" type="BattleField" active="True" categoryId="980052" questId="980052" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="700000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="2117669" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980053" type="BattleField" active="True" categoryId="980053" questId="980053" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="900000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="4980877" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980054" type="BattleField" active="True" categoryId="980054" questId="980054" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="1000000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="7045748" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980055" type="BattleField" active="True" categoryId="980055" questId="980055" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="1100000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="12166182" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980056" type="BattleField" active="True" categoryId="900056" questId="980056" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="1200000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="17975636" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980057" type="BattleField" active="True" categoryId="980057" questId="980057" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="1400000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="25205494" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980058" type="BattleField" active="True" categoryId="980058" questId="980058" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="money" templateId="20000000" amount="1700000" />
+        <Compensation type="item" templateId="5269" amount="1" />
+        <Compensation type="exp" templateId="20000001" amount="421714003" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="25" npcGuildId="609" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="980059" type="BattleField" active="True" categoryId="980059" questId="980059" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="94110" amount="15" />
+        <Compensation type="money" templateId="20000000" amount="2500000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="45" npcGuildId="609" />
+        <Compensation type="item" templateId="6562" amount="1" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
       </TargetList>
     </Event>
     <Event id="800050" type="BattleField" active="True" categoryId="800050" questId="800050" repeat="True" requiredItemLevel="1" recommend="True">
@@ -1072,7 +1172,7 @@
     <Event id="2109" type="Dungeon" active="True" categoryId="2109" questId="999989" repeat="True" requiredItemLevel="355" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94108" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
         <Compensation type="money" templateId="20000000" amount="2000000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="35" npcGuildId="609" />
       </CompensationList>
@@ -1083,7 +1183,7 @@
     <Event id="2110" type="Dungeon" active="True" categoryId="2110" questId="999991" repeat="True" requiredItemLevel="355" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94108" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
         <Compensation type="money" templateId="20000000" amount="2000000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="35" npcGuildId="609" />
       </CompensationList>
@@ -1091,188 +1191,188 @@
         <Target id="9860" />
       </TargetList>
     </Event>
-    <Event id="2117" type="Dungeon" active="True" categoryId="2117" questId="700001" repeat="True" requiredItemLevel="397">
+    <Event id="2124" type="Dungeon" active="True" categoryId="2124" questId="700008" repeat="True" requiredItemLevel="355" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="20" />
-        <Compensation type="item" templateId="1300" amount="35" />
-        <Compensation type="money" templateId="20000000" amount="2400000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9060" />
-      </TargetList>
-    </Event>
-    <Event id="2119" type="Dungeon" active="True" categoryId="2119" questId="700004" repeat="True" requiredItemLevel="397">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="20" />
-        <Compensation type="item" templateId="1300" amount="35" />
-        <Compensation type="money" templateId="20000000" amount="2400000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9059" />
-      </TargetList>
-    </Event>
-    <Event id="2122" type="Dungeon" active="True" categoryId="2122" questId="700006" repeat="True" requiredItemLevel="355">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94108" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
         <Compensation type="money" templateId="20000000" amount="2000000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="35" npcGuildId="609" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9511" />
-      </TargetList>
-    </Event>
-    <Event id="2123" type="Dungeon" active="True" categoryId="2123" questId="700007" repeat="True" requiredItemLevel="402">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="25" />
-        <Compensation type="item" templateId="1300" amount="85" />
-        <Compensation type="money" templateId="20000000" amount="2800000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9611" />
-      </TargetList>
-    </Event>
-    <Event id="2124" type="Dungeon" active="True" categoryId="2124" questId="700008" repeat="True" requiredItemLevel="397" recommend="True">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="20" />
-        <Compensation type="item" templateId="1300" amount="35" />
-        <Compensation type="money" templateId="20000000" amount="2400000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
       </CompensationList>
       <TargetList>
         <Target id="9767" />
       </TargetList>
     </Event>
-    <Event id="2125" type="Dungeon" active="True" categoryId="2125" questId="700009" repeat="True" requiredItemLevel="402">
+    <Event id="2125" type="Dungeon" active="True" categoryId="2125" questId="700009" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="25" />
-        <Compensation type="item" templateId="1300" amount="85" />
-        <Compensation type="money" templateId="20000000" amount="2800000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
+        <Compensation type="item" templateId="94110" amount="20" />
+        <Compensation type="item" templateId="1300" amount="35" />
+        <Compensation type="money" templateId="20000000" amount="2400000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
       </CompensationList>
       <TargetList>
         <Target id="9067" />
       </TargetList>
     </Event>
-    <Event id="2126" type="Dungeon" active="True" categoryId="2126" questId="700010" repeat="True" requiredItemLevel="402">
+    <Event id="2126" type="Dungeon" active="True" categoryId="2126" questId="700010" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="25" />
-        <Compensation type="item" templateId="1300" amount="85" />
-        <Compensation type="money" templateId="20000000" amount="2800000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
+        <Compensation type="item" templateId="94110" amount="20" />
+        <Compensation type="item" templateId="1300" amount="35" />
+        <Compensation type="money" templateId="20000000" amount="2400000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
       </CompensationList>
       <TargetList>
         <Target id="9768" />
       </TargetList>
     </Event>
-    <Event id="2127" type="Dungeon" active="True" categoryId="2127" questId="700011" repeat="True" requiredItemLevel="409">
+    <Event id="2127" type="Dungeon" active="True" categoryId="2127" questId="700011" repeat="True" requiredItemLevel="417">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="94110" amount="25" />
-        <Compensation type="item" templateId="1300" amount="140" />
-        <Compensation type="money" templateId="20000000" amount="3200000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="60" npcGuildId="609" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9068" />
-      </TargetList>
-    </Event>
-    <Event id="2128" type="Dungeon" active="True" categoryId="2128" questId="700012" repeat="True" requiredItemLevel="402">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="25" />
         <Compensation type="item" templateId="1300" amount="85" />
         <Compensation type="money" templateId="20000000" amount="2800000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
       </CompensationList>
       <TargetList>
-        <Target id="9643" />
+        <Target id="9068" />
       </TargetList>
     </Event>
-    <Event id="2129" type="Dungeon" active="True" categoryId="2129" questId="700015" repeat="True" requiredItemLevel="409">
+    <Event id="4000" type="Dungeon" active="True" categoryId="4000" questId="710001" repeat="False" requiredItemLevel="410" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="15" />
-        <Compensation type="item" templateId="1300" amount="55" />
-        <Compensation type="money" templateId="20000000" amount="2900000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="35" npcGuildId="609" />
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="910" amount="1" />
+        <Compensation type="item" templateId="810" amount="3" />
       </CompensationList>
       <TargetList>
-        <Target id="9070" />
+        <Target id="9029" />
       </TargetList>
     </Event>
-    <Event id="2130" type="Dungeon" active="True" categoryId="2130" questId="700016" repeat="False" requiredItemLevel="397" recommend="True">
+    <Event id="4001" type="Dungeon" active="True" categoryId="4001" questId="710002" repeat="False" requiredItemLevel="410" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="909" amount="2" />
-        <Compensation type="item" templateId="92" amount="2" />
-        <Compensation type="item" templateId="97719" amount="60" />
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="910" amount="1" />
+        <Compensation type="item" templateId="810" amount="3" />
       </CompensationList>
       <TargetList>
-        <Target id="9767" />
+        <Target id="9768" />
       </TargetList>
     </Event>
-    <Event id="2131" type="Dungeon" active="True" categoryId="2131" questId="700017" repeat="False" requiredItemLevel="397" recommend="True">
+    <Event id="4002" type="Dungeon" active="True" categoryId="4002" questId="710003" repeat="False" requiredItemLevel="410" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="909" amount="2" />
-        <Compensation type="item" templateId="92" amount="2" />
-        <Compensation type="item" templateId="97719" amount="60" />
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="910" amount="1" />
+        <Compensation type="item" templateId="810" amount="3" />
       </CompensationList>
       <TargetList>
-        <Target id="9060" />
+        <Target id="9769" />
       </TargetList>
     </Event>
-    <Event id="2132" type="Dungeon" active="True" categoryId="2132" questId="700018" repeat="False" requiredItemLevel="397" recommend="True">
+    <Event id="4003" type="Dungeon" active="True" categoryId="4003" questId="710004" repeat="False" requiredItemLevel="410" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="909" amount="2" />
-        <Compensation type="item" templateId="92" amount="2" />
-        <Compensation type="item" templateId="97719" amount="60" />
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="910" amount="1" />
+        <Compensation type="item" templateId="810" amount="3" />
       </CompensationList>
       <TargetList>
-        <Target id="9059" />
+        <Target id="9067" />
       </TargetList>
     </Event>
-    <Event id="2139" type="Dungeon" active="True" categoryId="2135" questId="700025" repeat="False" requiredItemLevel="397" recommend="True">
+    <Event id="2133" type="Dungeon" active="True" categoryId="2133" questId="700019" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="909" amount="2" />
-        <Compensation type="item" templateId="92" amount="2" />
-        <Compensation type="item" templateId="97719" amount="60" />
+        <Compensation type="item" templateId="94110" amount="20" />
+        <Compensation type="item" templateId="1300" amount="35" />
+        <Compensation type="money" templateId="20000000" amount="2400000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
       </CompensationList>
       <TargetList>
-        <Target id="9767" />
+        <Target id="9769" />
       </TargetList>
     </Event>
-    <Event id="90321" type="SoloDungeon" active="True" categoryId="700014" questId="700014" repeat="True" requiredItemLevel="390" recommend="True">
+    <Event id="2134" type="Dungeon" active="True" categoryId="2134" questId="700021" repeat="True" requiredItemLevel="410">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="94110" amount="20" />
+        <Compensation type="item" templateId="1300" amount="35" />
+        <Compensation type="money" templateId="20000000" amount="2400000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9029" />
+      </TargetList>
+    </Event>
+    <Event id="2135" type="Dungeon" active="True" categoryId="2135" questId="700022" repeat="True" requiredItemLevel="417">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="94110" amount="25" />
+        <Compensation type="item" templateId="1300" amount="85" />
+        <Compensation type="money" templateId="20000000" amount="2800000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9916" />
+      </TargetList>
+    </Event>
+    <Event id="2136" type="Dungeon" active="True" categoryId="2136" questId="700020" repeat="True" requiredItemLevel="417">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="94110" amount="25" />
+        <Compensation type="item" templateId="1300" amount="85" />
+        <Compensation type="money" templateId="20000000" amount="2800000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9969" />
+      </TargetList>
+    </Event>
+    <Event id="2137" type="Dungeon" active="True" categoryId="2137" questId="700023" repeat="True" requiredItemLevel="417">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="94110" amount="25" />
+        <Compensation type="item" templateId="1300" amount="85" />
+        <Compensation type="money" templateId="20000000" amount="2800000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9770" />
+      </TargetList>
+    </Event>
+    <Event id="2138" type="Dungeon" active="True" categoryId="2138" questId="700024" repeat="True" requiredItemLevel="422">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="94111" amount="25" />
+        <Compensation type="item" templateId="1300" amount="140" />
+        <Compensation type="money" templateId="20000000" amount="3200000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="60" npcGuildId="609" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9970" />
+      </TargetList>
+    </Event>
+    <Event id="90321" type="Field" active="True" categoryId="700014" questId="700014" repeat="True" requiredItemLevel="410" recommend="True">
       <Action type="uiLink" uiName="DungeonWork" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97719" amount="10" />
-        <Compensation type="item" templateId="94108" amount="8" />
-        <Compensation type="money" templateId="20000000" amount="1000000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="15" npcGuildId="609" />
+        <Compensation type="item" templateId="94110" amount="8" />
+        <Compensation type="money" templateId="20000000" amount="1100000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="20" npcGuildId="609" />
+        <Compensation type="item" templateId="20914" amount="12" />
       </CompensationList>
       <TargetList>
         <Target id="9032" />
       </TargetList>
     </Event>
-    <Event id="90311" type="SoloDungeon" active="True" categoryId="700013" questId="700013" repeat="True" requiredItemLevel="390">
+    <Event id="90311" type="Field" active="True" categoryId="700013" questId="700013" repeat="True" requiredItemLevel="410">
       <Action type="uiLink" uiName="DungeonWork" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97719" amount="10" />
-        <Compensation type="item" templateId="94108" amount="8" />
-        <Compensation type="money" templateId="20000000" amount="1000000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="15" npcGuildId="609" />
+        <Compensation type="item" templateId="94110" amount="8" />
+        <Compensation type="money" templateId="20000000" amount="1100000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="20" npcGuildId="609" />
+        <Compensation type="item" templateId="20914" amount="12" />
       </CompensationList>
       <TargetList>
         <Target id="9031" />
@@ -1281,11 +1381,10 @@
     <Event id="2201" type="BattleField" active="True" categoryId="2201" questId="999951" repeat="True" requiredItemLevel="1">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="94110" amount="15" />
         <Compensation type="money" templateId="20000000" amount="2800000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
-        <Compensation type="item" templateId="111" amount="1" />
-        <Compensation type="item" templateId="116" amount="1" />
+        <Compensation type="item" templateId="6552" amount="1" />
       </CompensationList>
       <TargetList>
         <Target id="10" />
@@ -1294,11 +1393,10 @@
     <Event id="2203" type="BattleField" active="True" categoryId="2203" questId="999953" repeat="True" requiredItemLevel="1">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="10" />
+        <Compensation type="item" templateId="94110" amount="10" />
         <Compensation type="money" templateId="20000000" amount="2400000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
-        <Compensation type="item" templateId="111" amount="1" />
-        <Compensation type="item" templateId="116" amount="1" />
+        <Compensation type="item" templateId="6552" amount="1" />
       </CompensationList>
       <TargetList>
         <Target id="26" />
@@ -1307,10 +1405,10 @@
     <Event id="2204" type="BattleField" active="True" categoryId="2204" questId="999954" repeat="True" requiredItemLevel="1">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="5" />
-        <Compensation type="money" templateId="20000000" amount="1500000" />
+        <Compensation type="item" templateId="94110" amount="5" />
+        <Compensation type="money" templateId="20000000" amount="1850000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="30" npcGuildId="609" />
-        <Compensation type="item" templateId="111" amount="1" />
+        <Compensation type="item" templateId="6552" amount="1" />
       </CompensationList>
       <TargetList>
         <Target id="38" />
@@ -1319,11 +1417,10 @@
     <Event id="2206" type="BattleField" active="True" categoryId="2206" questId="999998" repeat="True" requiredItemLevel="1">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="5" />
-        <Compensation type="money" templateId="20000000" amount="1500000" />
+        <Compensation type="item" templateId="94110" amount="5" />
+        <Compensation type="money" templateId="20000000" amount="1850000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="30" npcGuildId="609" />
-        <Compensation type="item" templateId="111" amount="1" />
-        <Compensation type="item" templateId="116" amount="1" />
+        <Compensation type="item" templateId="6562" amount="1" />
       </CompensationList>
       <TargetList>
         <Target id="70" />
@@ -1332,11 +1429,10 @@
     <Event id="999999" type="BattleField" active="True" categoryId="999999" questId="999999" repeat="True" requiredItemLevel="1" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94109" amount="15" />
-        <Compensation type="money" templateId="20000000" amount="2800000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="50" npcGuildId="609" />
-        <Compensation type="item" templateId="111" amount="1" />
-        <Compensation type="item" templateId="116" amount="1" />
+        <Compensation type="item" templateId="94110" amount="15" />
+        <Compensation type="money" templateId="20000000" amount="2400000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
+        <Compensation type="item" templateId="6562" amount="1" />
       </CompensationList>
       <TargetList>
         <Target id="118" />
@@ -2016,10 +2112,10 @@
     <Event id="2321" type="Field" active="True" categoryId="2321" questId="999701" repeat="False" requiredItemLevel="355" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97718" amount="20" />
-        <Compensation type="item" templateId="94108" amount="10" />
+        <Compensation type="item" templateId="94109" amount="10" />
         <Compensation type="money" templateId="20000000" amount="1700000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="25" npcGuildId="609" />
+        <Compensation type="item" templateId="20913" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="81472,-80507,-4452" />
@@ -2028,10 +2124,10 @@
     <Event id="2322" type="Field" active="True" categoryId="2321" questId="999702" repeat="False" requiredItemLevel="355" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97718" amount="20" />
-        <Compensation type="item" templateId="94108" amount="10" />
+        <Compensation type="item" templateId="94109" amount="10" />
         <Compensation type="money" templateId="20000000" amount="1700000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="25" npcGuildId="609" />
+        <Compensation type="item" templateId="20913" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="81472,-80507,-4452" />
@@ -2040,109 +2136,109 @@
     <Event id="2323" type="Field" active="True" categoryId="2321" questId="999703" repeat="False" requiredItemLevel="355" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97718" amount="20" />
-        <Compensation type="item" templateId="94108" amount="10" />
+        <Compensation type="item" templateId="94109" amount="10" />
         <Compensation type="money" templateId="20000000" amount="1700000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="25" npcGuildId="609" />
+        <Compensation type="item" templateId="20913" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="81472,-80507,-4452" />
       </TargetList>
     </Event>
-    <Event id="2324" type="Field" active="True" categoryId="2324" questId="999704" repeat="False" requiredItemLevel="397" recommend="True">
+    <Event id="2324" type="Field" active="True" categoryId="2324" questId="999704" repeat="False" requiredItemLevel="410" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97719" amount="20" />
-        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="94110" amount="15" />
         <Compensation type="money" templateId="20000000" amount="2000000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="30" npcGuildId="609" />
+        <Compensation type="item" templateId="20914" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="64121,-84576,-3779" />
       </TargetList>
     </Event>
-    <Event id="2325" type="Field" active="True" categoryId="2324" questId="999705" repeat="False" requiredItemLevel="397" recommend="True">
+    <Event id="2325" type="Field" active="True" categoryId="2324" questId="999705" repeat="False" requiredItemLevel="410" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97719" amount="20" />
-        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="94110" amount="15" />
         <Compensation type="money" templateId="20000000" amount="2000000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="30" npcGuildId="609" />
+        <Compensation type="item" templateId="20914" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="64121,-84576,-3779" />
       </TargetList>
     </Event>
-    <Event id="2326" type="Field" active="True" categoryId="2324" questId="999706" repeat="False" requiredItemLevel="397" recommend="True">
+    <Event id="2326" type="Field" active="True" categoryId="2324" questId="999706" repeat="False" requiredItemLevel="410" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97719" amount="20" />
-        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="94110" amount="15" />
         <Compensation type="money" templateId="20000000" amount="2000000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="30" npcGuildId="609" />
+        <Compensation type="item" templateId="20914" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="64121,-84576,-3779" />
       </TargetList>
     </Event>
-    <Event id="2327" type="Field" active="True" categoryId="2327" questId="999707" repeat="False" requiredItemLevel="402" recommend="True">
+    <Event id="2327" type="Field" active="True" categoryId="2327" questId="999707" repeat="False" requiredItemLevel="417" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97720" amount="20" />
-        <Compensation type="item" templateId="94109" amount="20" />
+        <Compensation type="item" templateId="94110" amount="20" />
         <Compensation type="money" templateId="20000000" amount="2300000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
+        <Compensation type="item" templateId="20915" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="53169,-70241,-5663" />
       </TargetList>
     </Event>
-    <Event id="2328" type="Field" active="True" categoryId="2327" questId="999708" repeat="False" requiredItemLevel="402" recommend="True">
+    <Event id="2328" type="Field" active="True" categoryId="2327" questId="999708" repeat="False" requiredItemLevel="417" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97720" amount="20" />
-        <Compensation type="item" templateId="94109" amount="20" />
+        <Compensation type="item" templateId="94110" amount="20" />
         <Compensation type="money" templateId="20000000" amount="2300000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
+        <Compensation type="item" templateId="20915" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="53169,-70241,-5663" />
       </TargetList>
     </Event>
-    <Event id="2329" type="Field" active="True" categoryId="2327" questId="999709" repeat="False" requiredItemLevel="402" recommend="True">
+    <Event id="2329" type="Field" active="True" categoryId="2327" questId="999709" repeat="False" requiredItemLevel="417" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97720" amount="20" />
-        <Compensation type="item" templateId="94109" amount="20" />
+        <Compensation type="item" templateId="94110" amount="20" />
         <Compensation type="money" templateId="20000000" amount="2300000" />
         <Compensation type="reputationPoint" templateId="20000008" amount="40" npcGuildId="609" />
+        <Compensation type="item" templateId="20915" amount="20" />
       </CompensationList>
       <TargetList>
         <Target id="13" teleportContinentId="13" teleportPos="67135,-75116,-2986" />
       </TargetList>
     </Event>
-    <Event id="98301" type="SoloDungeon" active="True" categoryId="983001" questId="983001" repeat="True" requiredItemLevel="355" recommend="False">
+    <Event id="98301" type="Field" active="True" categoryId="983001" questId="983001" repeat="True" requiredItemLevel="410" recommend="False">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="97718" amount="20" />
-        <Compensation type="item" templateId="94108" amount="15" />
-        <Compensation type="money" templateId="20000000" amount="2000000" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="35" npcGuildId="609" />
+        <Compensation type="item" templateId="94110" amount="10" />
+        <Compensation type="money" templateId="20000000" amount="1200000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="25" npcGuildId="609" />
+        <Compensation type="item" templateId="20914" amount="15" />
       </CompensationList>
       <TargetList>
-        <Target id="9830" teleportContinentId="9830" teleportPos="22820,-130322,12258" />
+        <Target id="9830" teleportContinentId="7031" teleportPos="21268,4926,6196" />
       </TargetList>
     </Event>
-    <Event id="98311" type="SoloDungeon" active="True" categoryId="983101" questId="983101" repeat="True" requiredItemLevel="330" recommend="True">
+    <Event id="98311" type="Field" active="True" categoryId="983101" questId="983101" repeat="True" requiredItemLevel="355" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="94108" amount="15" />
-        <Compensation type="item" templateId="97718" amount="20" />
-        <Compensation type="reputationPoint" templateId="20000008" amount="35" npcGuildId="609" />
-        <Compensation type="money" templateId="20000000" amount="2100000" />
+        <Compensation type="item" templateId="94109" amount="12" />
+        <Compensation type="money" templateId="20000000" amount="1800000" />
+        <Compensation type="reputationPoint" templateId="20000008" amount="30" npcGuildId="609" />
+        <Compensation type="item" templateId="20913" amount="20" />
       </CompensationList>
       <TargetList>
-        <Target id="9069" teleportContinentId="9069" teleportPos="-32523,-71668,8509" />
+        <Target id="9069" teleportContinentId="7031" teleportPos="21315,4998,6192" />
       </TargetList>
     </Event>
   </EventGroup>
@@ -2750,6 +2846,88 @@
         <Target id="3" teleportContinentId="7001" teleportPos="107464,16375,2718" />
       </TargetList>
     </Event>
+    <Event id="981051" type="BattleField" active="True" categoryId="981051" questId="981051" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="874724" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981052" type="BattleField" active="True" categoryId="981052" questId="981052" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="1361358" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981053" type="BattleField" active="True" categoryId="981053" questId="981053" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="3201992" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981054" type="BattleField" active="True" categoryId="981054" questId="981054" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="4529409" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981055" type="BattleField" active="True" categoryId="981055" questId="981055" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="7821117" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981056" type="BattleField" active="True" categoryId="981056" questId="981056" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="11555766" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981057" type="BattleField" active="True" categoryId="981057" questId="981057" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="16203532" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981058" type="BattleField" active="True" categoryId="981058" questId="981058" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="exp" templateId="20000001" amount="271101859" />
+        <Compensation type="money" templateId="20000000" amount="108000" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="981059" type="BattleField" active="True" categoryId="981059" questId="981059" repeat="True" requiredItemLevel="1">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="6393" amount="1" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
     <Event id="810050" type="BattleField" active="True" categoryId="810050" questId="810050" repeat="True" requiredItemLevel="1">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
@@ -2886,43 +3064,7 @@
         <Target id="9860" />
       </TargetList>
     </Event>
-    <Event id="92117" type="Dungeon" active="True" categoryId="92117" questId="700101" repeat="True" requiredItemLevel="397">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6393" amount="1" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9060" />
-      </TargetList>
-    </Event>
-    <Event id="92119" type="Dungeon" active="True" categoryId="92119" questId="700104" repeat="True" requiredItemLevel="397">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6393" amount="1" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9059" />
-      </TargetList>
-    </Event>
-    <Event id="92122" type="Dungeon" active="True" categoryId="92122" questId="700106" repeat="True" requiredItemLevel="355">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6393" amount="1" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9511" />
-      </TargetList>
-    </Event>
-    <Event id="92123" type="Dungeon" active="True" categoryId="92123" questId="700107" repeat="True" requiredItemLevel="402">
-      <Action type="matching" />
-      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="item" templateId="6393" amount="1" />
-      </CompensationList>
-      <TargetList>
-        <Target id="9611" />
-      </TargetList>
-    </Event>
-    <Event id="92124" type="Dungeon" active="True" categoryId="92124" questId="700108" repeat="True" requiredItemLevel="397" recommend="True">
+    <Event id="92124" type="Dungeon" active="True" categoryId="92124" questId="700108" repeat="True" requiredItemLevel="355" recommend="True">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="6393" amount="1" />
@@ -2931,7 +3073,7 @@
         <Target id="9767" />
       </TargetList>
     </Event>
-    <Event id="92125" type="Dungeon" active="True" categoryId="92125" questId="700109" repeat="True" requiredItemLevel="402">
+    <Event id="92125" type="Dungeon" active="True" categoryId="92125" questId="700109" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="6393" amount="1" />
@@ -2940,7 +3082,7 @@
         <Target id="9067" />
       </TargetList>
     </Event>
-    <Event id="92126" type="Dungeon" active="True" categoryId="92126" questId="700110" repeat="True" requiredItemLevel="402">
+    <Event id="92126" type="Dungeon" active="True" categoryId="92126" questId="700110" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="6393" amount="1" />
@@ -2949,7 +3091,7 @@
         <Target id="9768" />
       </TargetList>
     </Event>
-    <Event id="92127" type="Dungeon" active="True" categoryId="92127" questId="700111" repeat="True" requiredItemLevel="409">
+    <Event id="92127" type="Dungeon" active="True" categoryId="92127" questId="700111" repeat="True" requiredItemLevel="417">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="6393" amount="1" />
@@ -2958,25 +3100,61 @@
         <Target id="9068" />
       </TargetList>
     </Event>
-    <Event id="92128" type="Dungeon" active="True" categoryId="92128" questId="700112" repeat="True" requiredItemLevel="402">
+    <Event id="92130" type="Dungeon" active="True" categoryId="92130" questId="700119" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="6393" amount="1" />
       </CompensationList>
       <TargetList>
-        <Target id="9643" />
+        <Target id="9769" />
       </TargetList>
     </Event>
-    <Event id="92129" type="Dungeon" active="True" categoryId="92129" questId="700115" repeat="True" requiredItemLevel="409">
+    <Event id="92131" type="Dungeon" active="True" categoryId="92131" questId="700121" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="6393" amount="1" />
       </CompensationList>
       <TargetList>
-        <Target id="9070" />
+        <Target id="9029" />
       </TargetList>
     </Event>
-    <Event id="90322" type="SoloDungeon" active="True" categoryId="700114" questId="700114" repeat="True" requiredItemLevel="390">
+    <Event id="92132" type="Dungeon" active="True" categoryId="92132" questId="700122" repeat="True" requiredItemLevel="417">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="6393" amount="1" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9916" />
+      </TargetList>
+    </Event>
+    <Event id="92133" type="Dungeon" active="True" categoryId="92133" questId="700120" repeat="True" requiredItemLevel="417">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="6393" amount="1" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9969" />
+      </TargetList>
+    </Event>
+    <Event id="92134" type="Dungeon" active="True" categoryId="92134" questId="700123" repeat="True" requiredItemLevel="417">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="6393" amount="1" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9770" />
+      </TargetList>
+    </Event>
+    <Event id="92135" type="Dungeon" active="True" categoryId="92135" questId="700124" repeat="True" requiredItemLevel="422">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="6393" amount="1" />
+      </CompensationList>
+      <TargetList>
+        <Target id="9970" />
+      </TargetList>
+    </Event>
+    <Event id="90322" type="Field" active="True" categoryId="700114" questId="700114" repeat="True" requiredItemLevel="410">
       <Action type="uiLink" uiName="DungeonWork" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="40000" />
@@ -2985,7 +3163,7 @@
         <Target id="9032" />
       </TargetList>
     </Event>
-    <Event id="90312" type="SoloDungeon" active="True" categoryId="700113" questId="700113" repeat="True" requiredItemLevel="390">
+    <Event id="90312" type="Field" active="True" categoryId="700113" questId="700113" repeat="True" requiredItemLevel="410">
       <Action type="uiLink" uiName="DungeonWork" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="40000" />
@@ -3588,7 +3766,7 @@
         <Target id="13" teleportContinentId="13" teleportPos="81472,-80507,-4452" />
       </TargetList>
     </Event>
-    <Event id="92324" type="Field" active="True" categoryId="92324" questId="999604" repeat="True" requiredItemLevel="397">
+    <Event id="92324" type="Field" active="True" categoryId="92324" questId="999604" repeat="True" requiredItemLevel="410">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="80000" />
@@ -3597,7 +3775,7 @@
         <Target id="13" teleportContinentId="13" teleportPos="64121,-84576,-3779" />
       </TargetList>
     </Event>
-    <Event id="92325" type="Field" active="True" categoryId="92324" questId="999605" repeat="True" requiredItemLevel="397">
+    <Event id="92325" type="Field" active="True" categoryId="92324" questId="999605" repeat="True" requiredItemLevel="410">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="80000" />
@@ -3606,7 +3784,7 @@
         <Target id="13" teleportContinentId="13" teleportPos="64121,-84576,-3779" />
       </TargetList>
     </Event>
-    <Event id="92326" type="Field" active="True" categoryId="92324" questId="999606" repeat="True" requiredItemLevel="397">
+    <Event id="92326" type="Field" active="True" categoryId="92324" questId="999606" repeat="True" requiredItemLevel="410">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="80000" />
@@ -3615,7 +3793,7 @@
         <Target id="13" teleportContinentId="13" teleportPos="64121,-84576,-3779" />
       </TargetList>
     </Event>
-    <Event id="92327" type="Field" active="True" categoryId="92327" questId="999607" repeat="True" requiredItemLevel="402">
+    <Event id="92327" type="Field" active="True" categoryId="92327" questId="999607" repeat="True" requiredItemLevel="417">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="100000" />
@@ -3624,7 +3802,7 @@
         <Target id="13" teleportContinentId="13" teleportPos="53169,-70241,-5663" />
       </TargetList>
     </Event>
-    <Event id="92328" type="Field" active="True" categoryId="92327" questId="999608" repeat="True" requiredItemLevel="402">
+    <Event id="92328" type="Field" active="True" categoryId="92327" questId="999608" repeat="True" requiredItemLevel="417">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="100000" />
@@ -3633,7 +3811,7 @@
         <Target id="13" teleportContinentId="13" teleportPos="53169,-70241,-5663" />
       </TargetList>
     </Event>
-    <Event id="92329" type="Field" active="True" categoryId="92327" questId="999609" repeat="True" requiredItemLevel="402">
+    <Event id="92329" type="Field" active="True" categoryId="92327" questId="999609" repeat="True" requiredItemLevel="417">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="100000" />
@@ -3642,22 +3820,22 @@
         <Target id="13" teleportContinentId="13" teleportPos="67135,-75116,-2986" />
       </TargetList>
     </Event>
-    <Event id="98302" type="SoloDungeon" active="True" categoryId="983002" questId="983002" repeat="True" requiredItemLevel="355" recommend="True">
+    <Event id="98302" type="Field" active="True" categoryId="983002" questId="983002" repeat="True" requiredItemLevel="410" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
-        <Compensation type="money" templateId="20000000" amount="100000" />
+        <Compensation type="money" templateId="20000000" amount="50000" />
       </CompensationList>
       <TargetList>
-        <Target id="9830" teleportContinentId="9830" teleportPos="22820,-130322,12258" />
+        <Target id="9830" teleportContinentId="7031" teleportPos="21268,4926,6196" />
       </TargetList>
     </Event>
-    <Event id="98312" type="SoloDungeon" active="True" categoryId="983102" questId="983102" repeat="True" requiredItemLevel="330" recommend="True">
+    <Event id="98312" type="Field" active="True" categoryId="983102" questId="983102" repeat="True" requiredItemLevel="355" recommend="True">
       <Action type="teleport" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="money" templateId="20000000" amount="100000" />
       </CompensationList>
       <TargetList>
-        <Target id="9069" teleportContinentId="9069" teleportPos="-32523,-71668,8509" />
+        <Target id="9069" teleportContinentId="7031" teleportPos="21315,4998,6192" />
       </TargetList>
     </Event>
   </EventGroup>

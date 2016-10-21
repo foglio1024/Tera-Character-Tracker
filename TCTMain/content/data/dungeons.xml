@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <ArrayOfDungeon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Dungeon ShortName="KC" MaxBaseRuns="2" RequiredIlvl="355"  Tier="Starter" Id="9860" />
-  <!--<Dungeon ShortName="ABN" MaxBaseRuns="2" RequiredIlvl="355"  Tier="Starter" Id="9511" />-->
-  <Dungeon ShortName="CW" MaxBaseRuns="2" RequiredIlvl="355"  Tier="Starter" Id="9777" />
-  <Dungeon ShortName="DFN" MaxBaseRuns="1" RequiredIlvl="397"  Tier="Starter" Id="9767" />
-  <Dungeon ShortName="LKN" MaxBaseRuns="2" RequiredIlvl="410" Tier="Starter" Id="0"/>
-  <Dungeon ShortName="CA" MaxBaseRuns="2" RequiredIlvl="330"  Tier="Starter" Id="9830" />
-  <Dungeon ShortName="GL" MaxBaseRuns="2" RequiredIlvl="330"  Tier="Starter" Id="9032" />
-  <Dungeon ShortName="AH" MaxBaseRuns="2" RequiredIlvl="330"  Tier="Starter" Id="9031" />
-  <Dungeon ShortName="EA" MaxBaseRuns="2" RequiredIlvl="330"  Tier="Starter" Id="9069" />
-  <Dungeon ShortName="VoK" MaxBaseRuns="2" RequiredIlvl="410" Tier="Mid" Id="0"/>
-  <!--<Dungeon ShortName="KDH" MaxBaseRuns="2" RequiredIlvl="397"  Tier="Mid" Id="9060" />
-  <Dungeon ShortName="TS" MaxBaseRuns="2" RequiredIlvl="397"  Tier="Mid" Id="9756" />
-  <Dungeon ShortName="FI" MaxBaseRuns="2" RequiredIlvl="397"  Tier="Mid" Id="9059"/>
-  <Dungeon ShortName="WH" MaxBaseRuns="1" RequiredIlvl="409"   Tier="Mid" Id="9643" />-->
-  <Dungeon ShortName="GG" MaxBaseRuns="2" RequiredIlvl="0"    Tier="Mid" Id="9713" />
-  <Dungeon ShortName="DFH" MaxBaseRuns="1" RequiredIlvl="409"  Tier="MidHigh" Id="9067" />
-  <Dungeon ShortName="LKH" MaxBaseRuns="1" RequiredIlvl="417" Tier="MidHigh" Id="0"/>
-  <!--<Dungeon ShortName="ABH" MaxBaseRuns="1" RequiredIlvl="409"  Tier="MidHigh" Id="9611" />-->
-  <Dungeon ShortName="SSN" MaxBaseRuns="1" RequiredIlvl="409"  Tier="High" Id="9768" />
-  <Dungeon ShortName="RMN" MaxBaseRuns="1" RequiredIlvl="417" Tier="High" Id="0"/>
-  <Dungeon ShortName="SCH" MaxBaseRuns="1" RequiredIlvl="417" Tier="High" Id="0"/>
-  <!--<Dungeon ShortName="MM" MaxBaseRuns="2" RequiredIlvl="409"  Tier="High" Id="9070" />-->
-  <Dungeon ShortName="SSH" MaxBaseRuns="1" RequiredIlvl="414"  Tier="Top" Id="9068" />
-  <Dungeon ShortName="RMH" MaxBaseRuns="1" RequiredIlvl="422" Tier="Top" Id="0"/>
-  <!--<ShortName="DS" MaxBaseRuns="1" RequiredIlvl="409" Tier="MidHigh" Id="9885" />-->
+    <Dungeon ShortName="KC"  MaxBaseRuns="2" Tier="Tier2" Id="9860" />
+    <Dungeon ShortName="CW"  MaxBaseRuns="2" Tier="Tier2" Id="9777" />
+    <Dungeon ShortName="DFN" MaxBaseRuns="2" Tier="Tier2" Id="9767" />
+    <Dungeon ShortName="LKN" MaxBaseRuns="2" Tier="Tier3" Id="9769"/>
+    <Dungeon ShortName="CA"  MaxBaseRuns="2" Tier="Solo" Id="9830" />
+    <Dungeon ShortName="GL"  MaxBaseRuns="2" Tier="Solo" Id="9032" />
+    <Dungeon ShortName="AH"  MaxBaseRuns="2" Tier="Solo" Id="9031" />
+    <Dungeon ShortName="EA"  MaxBaseRuns="2" Tier="Solo" Id="9069" />
+    <Dungeon ShortName="GG"  MaxBaseRuns="2" Tier="Solo" Id="9713" />
+    <Dungeon ShortName="VoK" MaxBaseRuns="2" Tier="Tier3" Id="9029"/>
+<!--<Dungeon ShortName="ABN" MaxBaseRuns="2" Tier="Tier2" Id="9511" />-->
+<!--<Dungeon ShortName="KDH" MaxBaseRuns="2" Tier="Tier3" Id="9060" />
+    <Dungeon ShortName="TS"  MaxBaseRuns="2" Tier="Tier3" Id="9756" />
+    <Dungeon ShortName="FI"  MaxBaseRuns="2" Tier="Tier3" Id="9059"/>
+    <Dungeon ShortName="WH"  MaxBaseRuns="1" Tier="Tier3" Id="9643" />-->
+    <Dungeon ShortName="DFH" MaxBaseRuns="2" Tier="Tier3" Id="9067" />
+    <Dungeon ShortName="SSN" MaxBaseRuns="2" Tier="Tier3" Id="9768" />
+    <Dungeon ShortName="LKH" MaxBaseRuns="1" Tier="Tier4" Id="9969"/>
+<!--<Dungeon ShortName="ABH" MaxBaseRuns="1" Tier="Tier4" Id="9611" />-->
+    <Dungeon ShortName="RMN" MaxBaseRuns="1" Tier="Tier4" Id="9770"/>
+    <Dungeon ShortName="SCH" MaxBaseRuns="1" Tier="Tier4" Id="9916"/>
+<!--<Dungeon ShortName="MM"  MaxBaseRuns="2" Tier="Tier4" Id="9070" />-->
+    <Dungeon ShortName="SSH" MaxBaseRuns="1" Tier="Tier4" Id="9068" />
+    <Dungeon ShortName="RMH" MaxBaseRuns="1" Tier="Tier5" Id="9970"/>
+<!--<Dungeon ShortName="DS"  MaxBaseRuns="1" Tier="Tier3" Id="9885" />-->
 </ArrayOfDungeon>

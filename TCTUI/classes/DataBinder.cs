@@ -88,11 +88,11 @@ namespace Tera
         }
         public static void CreateDgBindings(int charIndex, CharView w)
         {
-            CreateDgBindingsForTier(charIndex, w.starterTier.Children);
-            CreateDgBindingsForTier(charIndex, w.midTier.Children);
-            CreateDgBindingsForTier(charIndex, w.midHighTier.Children);
-            CreateDgBindingsForTier(charIndex, w.highTier.Children);
-            CreateDgBindingsForTier(charIndex, w.topTier.Children);
+            CreateDgBindingsForTier(charIndex, w.t2panel.Children);
+            CreateDgBindingsForTier(charIndex, w.t3panel.Children);
+            CreateDgBindingsForTier(charIndex, w.tier4panel.Children);
+            CreateDgBindingsForTier(charIndex, w.tier5panel.Children);
+            CreateDgBindingsForTier(charIndex, w.soloPanel.Children);
         }
         public static void CreateDgBindingsForTier(int charIndex, UIElementCollection coll)
         {

@@ -263,8 +263,8 @@
   <String id="60257" toolTip="A weapon skin that will take you to the summit." string="Piton" />
   <String id="60258" toolTip="A weapon skin that will take you to the summit." string="Piton" />
   <String id="60259" toolTip="A weapon skin that will take you to the summit." string="Piton" />
-  <String id="60260" toolTip="While the blessing is in your possession, you may resurrect at the spot of your death.&lt;BR&gt;Once resurrected, you will have 60% of HP, MP and 100% Stamina and 12 seconds of invincibility (or until you use a combat skill)." string="Goddess' Blessing" />
-  <String id="60261" toolTip="Use this manual to learn how to summon a Night Mare with a Movement Speed of 280." string="Riding Skill: Night Mare" />
+  <String id="60260" toolTip="While the blessing is in your possession, you may resurrect at the spot of your death.&lt;br&gt;Once resurrected, you will have 60% of HP, MP and invincibility for 12 seconds or until you use a combat skill.&lt;br&gt;Cooldown takes 60 minutes." string="Goddess' Blessing" />
+  <String id="60261" toolTip="Use this manual to learn how to summon a Night Mare with a movement speed of 280." string="Riding Skill: Night Mare" />
   <String id="60262" toolTip="Summons a traveling merchant for you and your party for 5 minutes.&lt;BR&gt;Summoning another traveling NPC will dismiss Monti." string="Summon NPC: Monti" />
   <String id="60263" toolTip="Summons a traveling crystal merchant for you and your party for 5 minutes.&lt;BR&gt;Summoning another traveling NPC will dismiss Dimon." string="Summon NPC: Dimon" />
   <String id="60264" toolTip="Summons a traveling banker for you and your party for 5 minutes.&lt;BR&gt;Summoning another traveling NPC will dismiss Phargo." string="Summon NPC: Phargo" />
@@ -689,7 +689,7 @@
   <String id="60834" toolTip="" string="" />
   <String id="60835" toolTip="" string="" />
   <String id="60836" toolTip="" string="" />
-  <String id="60837" toolTip="" string="" />
+  <String id="60837" toolTip="While the blessing is in your possession, you may resurrect at the spot of your death.&lt;br&gt;Once resurrected, you will have 60% of HP, MP and 12 seconds of invincibility (or until you use a combat skill).&lt;br&gt;Cooldown takes 60 minutes." string="" />
   <String id="60838" toolTip="" string="" />
   <String id="60839" toolTip="" string="" />
   <String id="60840" toolTip="" string="" />
@@ -705,7 +705,7 @@
   <String id="70001" toolTip="Resets the cooldowns of instances other than raid instances. Cannot be used while inside an instance." string="Instance Reset Scroll" />
   <String id="70100" toolTip="Open to receive a number of Federation Bills (max 200)." string="Federation Clip" />
   <String id="70101" toolTip="A gift from Velik lies inside." string="Velik's Golden Giftbox" />
-  <String id="70102" toolTip="A universal catalyst used to produce enchantment bonuses of +1 to +15 to any tier. Has a higher chance of success for +1 to +12." string="Extensive Alkahest" />
+  <String id="70102" toolTip="Solvent for enchanting equipment of any level. The enchantment correction effect does not apply to that of Awakened Enchantment but does decreases the amount of alkahest needed." string="Extensive Alkahest" />
   <String id="70103" toolTip="[When used, receive up to 500 Federation Bills.] The number of Federation Bills received is between 3 and 500." string="Federation Wallet" />
   <String id="70104" toolTip="Chest filled with items collected by an argon investigator. With luck, you may find something useful." string="Researcher's Collection Box" />
   <String id="70105" toolTip="Spoiled Alkahest. Merchant may want this." string="Retro Alkahest" />
@@ -719,8 +719,8 @@
   <String id="70113" toolTip="Open to receive a number of Federation Bills (max 100)." string="Federation Wallet" />
   <String id="70114" toolTip="Open to receive a number of Federation Bills (max 300)." string="Federation Tri-fold" />
   <String id="70115" toolTip="Goddess Kaia has personally prepared this chest full of treasures for hardworking warriors." string="Kaia's Gift Box II" />
-  <String id="70116" toolTip="Creates a campfire for you and others to rest around. Charms burnt in this campfire will last longer. Cannot be created near another campfire. [Right-click to use]." string="Charming Campfire" />
-  <String id="70117" toolTip="Creates a campfire for you and others to rest around. This campfire speeds Stamina recovery. Cannot be created near another campfire. [Right-click to use]." string="Hasty Campfire" />
+  <String id="70116" toolTip="This item is no longer usable." string="Charming Campfire" />
+  <String id="70117" toolTip="This item is no longer usable." string="Hasty Campfire" />
   <String id="70118" toolTip="An assortment of rewards for battleground winners!" string="Victor's Spoils" />
   <String id="70119" toolTip="An assortment of items to aid your future battleground challenges." string="Challenger's Aide" />
   <String id="70120" toolTip="Give your armor the glamorous look of pure silver. Impossible to dye." string="Sterling Hauberk Template" />
@@ -742,8 +742,8 @@
   <String id="70136" toolTip="Give your armor the rich look of luxurious gold. Impossible to dye." string="24-Karat Sleeves Template" />
   <String id="70137" toolTip="Give your armor the rich look of luxurious gold. Impossible to dye." string="24-Karat Shoes Template" />
   <String id="70138" toolTip="Infused with energy." string="Energized Bead" />
-  <String id="70139" toolTip="A universal catalyst used to produce enchantment bonuses of +1 to +12 to any tier. Has a higher chance of success." string="Veteran's Extensive Alkahest" />
-  <String id="70141" toolTip="A universal catalyst used to produce enchantment bonuses of +1 to +15 to any tier. Failure grants significantly higher enchantment advantage for +1 to +12." string="Rare Alkahest" />
+  <String id="70139" toolTip="Powder needed to enchant equipment with a higher success rate. There is no chance of downgrading an enchantment level upon failure." string="Veteran's Extensive Alkahest" />
+  <String id="70141" toolTip="Rare Alkahest. There's no enchantment decrease and, when fails to enchant, your enchantment correction increases. The enchantment correction effect does not apply to that of Awakened Enchantment but does decreases the amount of alkahest needed." string="Rare Alkahest" />
   <String id="70142" toolTip="" string="" />
   <String id="70143" toolTip="" string="" />
   <String id="70144" toolTip="" string="" />
@@ -2252,29 +2252,29 @@
   <String id="137001" toolTip="Use this book to learn how to summon a pet with the ability to [pick up items]." string="Care and Use of Your Pet Candyspinner" />
   <String id="137002" toolTip="Use this book to learn how to summon a pet with the ability of [auto-gathering]." string="Care and Use of Your Pet Fetch" />
   <String id="137003" toolTip="Use this book to learn how to summon a dragon pet with the ability of [dragon hoard]. " string="Care and Use of Your Pet Dragonette" />
-  <String id="137004" toolTip="Use this manual to learn how to summon a fast Arcadian Dapple with a Movement Speed of 240." string="Riding Skill: Fast Arcadian Dapple" />
-  <String id="137005" toolTip="Use this manual to learn how to summon a Gray Horse with a Movement Speed of 240." string="Riding Skill: Fast Velikan Gray" />
-  <String id="137006" toolTip="Use this manual to learn how to summon a Shadow Steed with a Movement Speed of 275." string="Riding Skill: Shadow Steed" />
-  <String id="137007" toolTip="Use this manual to learn how to summon Razormane with a Movement Speed of 280." string="Riding Skill: Razormane" />
-  <String id="137008" toolTip="Use this manual to learn how to summon a zebra with a Movement Speed of 275." string="Riding Skill: Aeolian Zebra" />
-  <String id="137009" toolTip="This manual enables a nexus champion to summon a Death Charger with a Movement Speed of 275." string="Riding Skill: Death Charger" />
-  <String id="137010" toolTip="Use this manual to learn how to summon a black leopard with a Movement Speed of 275." string="Riding Skill: Black Leopard" />
-  <String id="137011" toolTip="Use this manual to learn how to summon a Tawny Huntress with a Movement Speed of 280." string="Riding Skill: Tawny Huntress" />
-  <String id="137012" toolTip="Use this manual to learn how to summon Snowdrift the snow leopard with a Movement Speed of 280." string="Riding Skill: Snowdrift" />
+  <String id="137004" toolTip="Use this manual to learn how to summon a fast Arcadian Dapple with a movement speed of 240." string="Riding Skill: Fast Arcadian Dapple" />
+  <String id="137005" toolTip="Use this manual to learn how to summon a Gray Horse with a movement speed of 240." string="Riding Skill: Fast Velikan Gray" />
+  <String id="137006" toolTip="Use this manual to learn how to summon a Shadow Steed with a movement speed of 275." string="Riding Skill: Shadow Steed" />
+  <String id="137007" toolTip="Use this manual to learn how to summon Razormane with a movement speed of 280." string="Riding Skill: Razormane" />
+  <String id="137008" toolTip="Use this manual to learn how to summon a zebra with a movement speed of 275." string="Riding Skill: Aeolian Zebra" />
+  <String id="137009" toolTip="This manual enables a nexus champion to summon a Death Charger with a movement speed of 275." string="Riding Skill: Death Charger" />
+  <String id="137010" toolTip="Use this manual to learn how to summon a black leopard with a movement speed of 275." string="Riding Skill: Black Leopard" />
+  <String id="137011" toolTip="Use this manual to learn how to summon a Tawny Huntress with a movement speed of 280." string="Riding Skill: Tawny Huntress" />
+  <String id="137012" toolTip="Use this manual to learn how to summon Snowdrift the snow leopard with a movement speed of 280." string="Riding Skill: Snowdrift" />
   <String id="137013" toolTip="Use this manual to learn how to summon Rambo with the ability to [auto-loot]." string="Care and Use of Your Pet Rambo" />
   <String id="137014" toolTip="Use this manual to learn the [Servant's Bow] emote.&#xA;&#xA;You can use this emote only when wearing a maid uniform. &#xA;" string="Special Emote: Servant's Bow" />
   <String id="137015" toolTip="Use this manual to learn the [Kitchen Dance] emote.&#xA;&#xA;You can use this emote only when wearing a maid uniform. &#xA;" string="Special Emote: Kitchen Dance" />
-  <String id="137016" toolTip="Use this manual to learn how to summon Sheldon, a giant kamara after which the Unified Theory Institute's bots were modeled, with a Movement Speed of 275." string="Riding Skill: Sheldon" />
+  <String id="137016" toolTip="Use this manual to learn how to summon Sheldon, a giant kamara after which the Unified Theory Institute's bots were modeled, with a movement speed of 275." string="Riding Skill: Sheldon" />
   <String id="137017" toolTip="Use this manual to learn how to summon Cat." string="Care and Use of Your Pet Toto" />
   <String id="137018" toolTip="Use this manual to learn how to summon a carnivorous plant with the ability to [auto-loot]." string="Care and Use of Your Pet Carnivorous Plant" />
   <String id="137019" toolTip="Use this manual to learn how to summon a kissable enchanted amphibian with the ability to [auto-loot]." string="Care and Use of Your Pet Prince" />
-  <String id="137020" toolTip="Use this manual to learn how to summon Munchhausen, the mendacious traveler, with a Movement Speed of 280. Restores 0.5% of the max MP every second." string="Riding Skill: Munchhausen " />
-  <String id="137021" toolTip="Use this manual to learn how to summon Gourmando, the infernal glutton, with a Movement Speed of 280. Restores 0.5% of the max HP every second." string="Riding Skill: Gourmando" />
+  <String id="137020" toolTip="Use this manual to learn how to summon Munchhausen, the mendacious traveler, with a movement speed of 280. Restores 0.5% of the max MP every second." string="Riding Skill: Munchhausen " />
+  <String id="137021" toolTip="Use this manual to learn how to summon Gourmando, the infernal glutton, with a movement speed of 280. Restores 0.5% of the max HP every second." string="Riding Skill: Gourmando" />
   <String id="137022" toolTip="Use this manual to learn how to summon your pocket popo with the ability of [special storage]." string="Care and Use of Your Pet Pocket Popo" />
-  <String id="137023" toolTip="Use this manual to learn how to summon a Ostrich with a Movement Speed of 280." string="Riding Skill: Ostrich" />
-  <String id="137024" toolTip="Use this manual to learn how to summon a Firey Ostrich with a Movement Speed of 280." string="Riding Skill: Fire Ostrich" />
-  <String id="137025" toolTip="Use this manual to learn how to summon a Wind Ostrich with a Movement Speed of 280." string="Riding Skill: Wind Ostrich" />
-  <String id="137026" toolTip="Use this manual to learn how to summon a Fireblast Ostrich with a Movement Speed of 280." string="Riding Skill: Fireblast Ostrich" />
+  <String id="137023" toolTip="Use this manual to learn how to summon a Ostrich with a movement speed of 280." string="Riding Skill: Ostrich" />
+  <String id="137024" toolTip="Use this manual to learn how to summon a Firey Ostrich with a movement speed of 280." string="Riding Skill: Fire Ostrich" />
+  <String id="137025" toolTip="Use this manual to learn how to summon a Wind Ostrich with a movement speed of 280." string="Riding Skill: Wind Ostrich" />
+  <String id="137026" toolTip="Use this manual to learn how to summon a Fireblast Ostrich with a movement speed of 280." string="Riding Skill: Fireblast Ostrich" />
   <String id="137027" toolTip="Use this manual to learn how to summon your pocket popo with the ability of [special storage]." string="The Real Popo Pet" />
   <String id="137028" toolTip="Use this manual to learn the [Peace] emote.&lt;BR&gt;&lt;BR&gt;You can use this emote only when wearing a sailor look." string="Special Emote : Peace (Human Female)" />
   <String id="137029" toolTip="Use this manual to learn the [Sit] emote.&lt;BR&gt;&lt;BR&gt;You can use this emote only when wearing a sailor look." string="Special Emote : Sit (HighElf Female)" />
@@ -2283,32 +2283,32 @@
   <String id="137032" toolTip="Use this manual to learn the [Peace] emote.&lt;BR&gt;&lt;BR&gt;You can use this emote only when wearing a sailor look." string="Special Emote : Peace (Castanic Female)" />
   <String id="137033" toolTip="Use this manual to learn the [Sit] emote.&lt;BR&gt;&lt;BR&gt;You can use this emote only when wearing a sailor look." string="Special Emote : Sit (Elin)" />
   <String id="137034" toolTip="Use this manual to learn the [Peace] emote.&lt;BR&gt;&lt;BR&gt;You can use this emote only when wearing a sailor look." string="Special Emote : Peace (Elin)" />
-  <String id="137035" toolTip="Use this manual to learn how to summon a pig with a Movement Speed of 280." string="Riding Skill: Pig (New)" />
-  <String id="137036" toolTip="Use this manual to learn how to summon a spotted pig with a Movement Speed of 280." string="Riding Skill: Spotted Pig (New)" />
-  <String id="137037" toolTip="Use this manual to learn how to summon a black pig with a Movement Speed of 280." string="Riding Skill: Black Pig (New)" />
-  <String id="137038" toolTip="Use this manual to learn how to summon a pretty-looking pig with a Movement Speed of 280." string="Riding Skill: Pretty Pig (New)" />
+  <String id="137035" toolTip="Use this manual to learn how to summon a pig with a movement speed of 280." string="Riding Skill: Pig (New)" />
+  <String id="137036" toolTip="Use this manual to learn how to summon a spotted pig with a movement speed of 280." string="Riding Skill: Spotted Pig (New)" />
+  <String id="137037" toolTip="Use this manual to learn how to summon a black pig with a movement speed of 280." string="Riding Skill: Black Pig (New)" />
+  <String id="137038" toolTip="Use this manual to learn how to summon a pretty-looking pig with a movement speed of 280." string="Riding Skill: Pretty Pig (New)" />
   <String id="137039" toolTip="Use this manual to learn the [Sit] emote.&lt;BR&gt;&lt;BR&gt;You can use this emote only when wearing a sailor look." string="Special Emote : Sit (Human Female)" />
-  <String id="137040" toolTip="Use this manual to learn how to summon a Beanine Duck with a Movement Speed of 280. Your Stamina gradually increases while you are riding this mount." string="Riding Skill: Beanine Duck (Stamina)" />
-  <String id="137041" toolTip="Use this manual to learn how to summon a Cap Duck with a Movement Speed of 280." string="Riding Skill: Cap Duck" />
+  <String id="137040" toolTip="Use this manual to learn how to summon a Beanine Duck with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Beanine Duck" />
+  <String id="137041" toolTip="Use this manual to learn how to summon a Cap Duck with a movement speed of 280." string="Riding Skill: Cap Duck" />
   <String id="137042" toolTip="Currently not used" string="Riding Skill: Duck (Punk) (New)" />
-  <String id="137043" toolTip="Use this manual to learn how to summon a White Afro Duck with a Movement Speed of 280." string="Riding Skill: White Afro Duck" />
-  <String id="137044" toolTip="Use this manual to learn how to summon a Black Afro Duck with a Movement Speed of 280. Your Stamina gradually increases while you are riding this mount." string="Riding Skill: Black Afro Duck (Stamina)" />
-  <String id="137045" toolTip="Use this manual to learn how to summon a Mayhem Pig with a Movement Speed of 280." string="Riding Skill: Mayhem Pig (New)" />
-  <String id="137046" toolTip="Use this manual to learn how to summon a Regal Frostlion with a Movement Speed of 280." string="Riding Skill: Regal Frostlion" />
-  <String id="137047" toolTip="Use this manual to learn how to summon a Lioness with a Movement Speed of 280." string="Riding Skill: Tawny Huntress" />
-  <String id="137048" toolTip="Use this manual to learn how to summon a Sleipnir with a Movement Speed of 280." string="Riding Skill: Sleipnir" />
-  <String id="137049" toolTip="Use this manual to learn how to summon an Electrum Wind with a Movement Speed of 280." string="Riding Skill: Electrum Wind" />
-  <String id="137050" toolTip="Use this manual to learn how to summon a Kukka Original with a Movement Speed of 280.&lt;br&gt;Restores 0.5% of your max MP every second." string="Summon: Kukka Original" />
-  <String id="137051" toolTip="Use this manual to learn how to summon a Chakka Original with a Movement Speed of 280.&lt;br&gt;Restores 0.5% of your max HP every second." string="Summon: Chakka Original" />
+  <String id="137043" toolTip="Use this manual to learn how to summon a White Afro Duck with a movement speed of 280." string="Riding Skill: White Afro Duck" />
+  <String id="137044" toolTip="Use this manual to learn how to summon a Black Afro Duck with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Black Afro Duck" />
+  <String id="137045" toolTip="Use this manual to learn how to summon a Mayhem Pig with a movement speed of 280." string="Riding Skill: Mayhem Pig (New)" />
+  <String id="137046" toolTip="Use this manual to learn how to summon a Regal Frostlion with a movement speed of 280." string="Riding Skill: Regal Frostlion" />
+  <String id="137047" toolTip="Use this manual to learn how to summon a Lioness with a movement speed of 280." string="Riding Skill: Tawny Huntress" />
+  <String id="137048" toolTip="Use this manual to learn how to summon a Sleipnir with a movement speed of 280." string="Riding Skill: Sleipnir" />
+  <String id="137049" toolTip="Use this manual to learn how to summon an Electrum Wind with a movement speed of 280." string="Riding Skill: Electrum Wind" />
+  <String id="137050" toolTip="Use this manual to learn how to summon a Kukka Original with a movement speed of 280.&lt;br&gt;Restores 0.5% of your max MP every second." string="Summon: Kukka Original" />
+  <String id="137051" toolTip="Use this manual to learn how to summon a Chakka Original with a movement speed of 280.&lt;br&gt;Restores 0.5% of your max HP every second." string="Summon: Chakka Original" />
   <String id="137052" toolTip="[TBU]" string="[TBU]" />
   <String id="137053" toolTip="[TBU]" string="[TBU]" />
-  <String id="137054" toolTip="Use this manual to learn how to summon a Wolf with a Movement Speed of 280." string="Riding Skill: Wolf (New)" />
-  <String id="137055" toolTip="Use this manual to learn how to summon a White Tiger with a Movement Speed of 280. Restores your HP." string="Riding Skill: White Tiger" />
-  <String id="137056" toolTip="Use this manual to learn how to summon a Roaring Armored White Tiger with a Movement Speed of 280. Restores your HP." string="Riding Skill: Roaring Armored White Tiger" />
-  <String id="137057" toolTip="Use this manual to learn how to summon a Fierce Tiger with a Movement Speed of 280. Restores your HP." string="Riding Skill: Fierce Tiger" />
-  <String id="137058" toolTip="Use this manual to learn how to summon a Roaring Armored Fierce Tiger with a Movement Speed of 280. Restores your HP." string="Riding Skill: Roaring Armored Fierce Tiger" />
-  <String id="137059" toolTip="Use this manual to learn how to summon a Death Charger with a Movement Speed of 275 (for 30 days)." string="[Event] Riding Skill: Death Charger (30 Days)" />
-  <String id="137060" toolTip="Use this manual to learn how to summon a Death Charger with a Movement Speed of 280." string="[Event] Riding Skill: Death Charger" />
+  <String id="137054" toolTip="Use this manual to learn how to summon a Wolf with a movement speed of 280." string="Riding Skill: Wolf (New)" />
+  <String id="137055" toolTip="Use this manual to learn how to summon a White Tiger with a movement speed of 280. Restores your HP." string="Riding Skill: White Tiger" />
+  <String id="137056" toolTip="Use this manual to learn how to summon a Roaring Armored White Tiger with a movement speed of 280. Restores your HP." string="Riding Skill: Roaring Armored White Tiger" />
+  <String id="137057" toolTip="Use this manual to learn how to summon a Fierce Tiger with a movement speed of 280. Restores your HP." string="Riding Skill: Fierce Tiger" />
+  <String id="137058" toolTip="Use this manual to learn how to summon a Roaring Armored Fierce Tiger with a movement speed of 280. Restores your HP." string="Riding Skill: Roaring Armored Fierce Tiger" />
+  <String id="137059" toolTip="Use this manual to learn how to summon a Death Charger with a movement speed of 275 (for 30 days)." string="[Event] Riding Skill: Death Charger (30 Days)" />
+  <String id="137060" toolTip="Use this manual to learn how to summon a Death Charger with a movement speed of 280." string="[Event] Riding Skill: Death Charger" />
   <String id="137061" toolTip="" string="" />
   <String id="137062" toolTip="" string="" />
   <String id="137063" toolTip="" string="" />
@@ -2667,7 +2667,7 @@
   <String id="139001" toolTip="A special gift for the TERA PC Cafe users!&#xA;Open to receive 80 Federation Bills.&#xA;The item counter resets daily at midnight." string="[PC Cafe] Gift Box" />
   <String id="139002" toolTip="Heals 5% of your HP up to 75% every $tickinterval for $time.&#xA;The item counter resets daily at midnight." string="[PC Cafe] Rejuvenation Potion" />
   <String id="139003" toolTip="Heals 5% of your MP up to 75% every $tickinterval for $time.&#xA;The item counter resets daily at midnight." string="[PC Cafe] Divine Infusion" />
-  <String id="139004" toolTip="Fully restores your Stamina. Cannot be used during combat.&#xA;The item counter resets daily at midnight." string="[PC Cafe] Arunic Panacea" />
+  <String id="139004" toolTip="This item is no longer usable." string="[PC Cafe] Arunic Panacea" />
   <String id="139005" toolTip="Automatically turns into 1 Federation Bill when added to the inventory." string="Federation Bill" />
   <String id="139006" toolTip="A small snowball to throw at your enemies.&#xA;Targets are chilled. Three chills will turn a player into a snowman. Players turned into snowmen must quickly be thawed with a fireball from an ally or lose 100,000 HP.&#xA;" string="Snowball" />
   <String id="139007" toolTip="A snowball with stones in it. It throws faster than normal snowballs and stuns targets for 2 seconds.&#xA;&#xA;This hurts you more than it hurts me!" string="Dirty Snowball" />
@@ -2755,7 +2755,7 @@
   <String id="139089" toolTip="Increases your reputation and credits gained by 100% for 7 days.&#xA;The item's usage time decreases even when you're offline." string="100% Reputation Boost (7 Days)" />
   <String id="139090" toolTip="Increases your reputation and credits gained by 100% for 30 days.&#xA;The item's usage time decreases even when you're offline." string="100% Reputation Boost (30 Days)" />
   <String id="139091" toolTip="Adds an additional character slot to this server. Each account can contain up to 16 character slots per server." string="[Server] Additional Character Slot" />
-  <String id="139092" toolTip="Adds one tab of 72 slots to your bank storage.&#xA;Each shared bank account can have up to 4 tabs." string="[Server] Bank Expansion" />
+  <String id="139092" toolTip="Adds one tab of 72 slots to your bank storage.&#xA;Each shared bank account can have up to 8 tabs." string="[Server] Bank Expansion" />
   <String id="139093" toolTip="Restores 30 energy to your summoned pet.&#xA;Right-click to feed your pet." string="Pet Treat" />
   <String id="139094" toolTip="Restores 100 energy to your summoned pet.&#xA;Right-click to feed your pet." string="Pet Food" />
   <String id="139095" toolTip="Seafood to keep your pet in the pink. Right-click to feed Rockefeller." string="Rockefeller Oyster" />
@@ -3397,6 +3397,255 @@
   <String id="140003" toolTip="" string="" />
   <String id="140004" toolTip="" string="" />
   <String id="140005" toolTip="" string="" />
+  <String id="140006" toolTip="" string="" />
+  <String id="140007" toolTip="" string="" />
+  <String id="140008" toolTip="" string="" />
+  <String id="140009" toolTip="" string="" />
+  <String id="140010" toolTip="" string="" />
+  <String id="140011" toolTip="" string="" />
+  <String id="140012" toolTip="" string="" />
+  <String id="140013" toolTip="" string="" />
+  <String id="140014" toolTip="" string="" />
+  <String id="140015" toolTip="" string="" />
+  <String id="140016" toolTip="" string="" />
+  <String id="140017" toolTip="" string="" />
+  <String id="140018" toolTip="" string="" />
+  <String id="140019" toolTip="" string="" />
+  <String id="140020" toolTip="" string="" />
+  <String id="140021" toolTip="" string="" />
+  <String id="140022" toolTip="" string="" />
+  <String id="140023" toolTip="" string="" />
+  <String id="140024" toolTip="" string="" />
+  <String id="140025" toolTip="" string="" />
+  <String id="140026" toolTip="" string="" />
+  <String id="140027" toolTip="" string="" />
+  <String id="140028" toolTip="" string="" />
+  <String id="140029" toolTip="" string="" />
+  <String id="140030" toolTip="" string="" />
+  <String id="140031" toolTip="" string="" />
+  <String id="140032" toolTip="" string="" />
+  <String id="140033" toolTip="" string="" />
+  <String id="140034" toolTip="" string="" />
+  <String id="140035" toolTip="" string="" />
+  <String id="140036" toolTip="" string="" />
+  <String id="140037" toolTip="" string="" />
+  <String id="140038" toolTip="" string="" />
+  <String id="140039" toolTip="" string="" />
+  <String id="140040" toolTip="" string="" />
+  <String id="140041" toolTip="" string="" />
+  <String id="140042" toolTip="" string="" />
+  <String id="140043" toolTip="" string="" />
+  <String id="140044" toolTip="" string="" />
+  <String id="140045" toolTip="" string="" />
+  <String id="140046" toolTip="" string="" />
+  <String id="140047" toolTip="" string="" />
+  <String id="140048" toolTip="" string="" />
+  <String id="140049" toolTip="" string="" />
+  <String id="140050" toolTip="" string="" />
+  <String id="140051" toolTip="" string="" />
+  <String id="140052" toolTip="" string="" />
+  <String id="140053" toolTip="" string="" />
+  <String id="140054" toolTip="" string="" />
+  <String id="140055" toolTip="" string="" />
+  <String id="140056" toolTip="" string="" />
+  <String id="140057" toolTip="" string="" />
+  <String id="140058" toolTip="" string="" />
+  <String id="140059" toolTip="" string="" />
+  <String id="140060" toolTip="" string="" />
+  <String id="140061" toolTip="" string="" />
+  <String id="140062" toolTip="" string="" />
+  <String id="140063" toolTip="" string="" />
+  <String id="140064" toolTip="" string="" />
+  <String id="140065" toolTip="" string="" />
+  <String id="140066" toolTip="" string="" />
+  <String id="140067" toolTip="" string="" />
+  <String id="140068" toolTip="" string="" />
+  <String id="140069" toolTip="" string="" />
+  <String id="140070" toolTip="" string="" />
+  <String id="140071" toolTip="" string="" />
+  <String id="140072" toolTip="" string="" />
+  <String id="140073" toolTip="" string="" />
+  <String id="140074" toolTip="" string="" />
+  <String id="140075" toolTip="" string="" />
+  <String id="140076" toolTip="" string="" />
+  <String id="140077" toolTip="" string="" />
+  <String id="140078" toolTip="" string="" />
+  <String id="140079" toolTip="" string="" />
+  <String id="140080" toolTip="" string="" />
+  <String id="140081" toolTip="" string="" />
+  <String id="140082" toolTip="" string="" />
+  <String id="140083" toolTip="" string="" />
+  <String id="140084" toolTip="" string="" />
+  <String id="140085" toolTip="" string="" />
+  <String id="140086" toolTip="" string="" />
+  <String id="140087" toolTip="" string="" />
+  <String id="140088" toolTip="" string="" />
+  <String id="140089" toolTip="" string="" />
+  <String id="140090" toolTip="" string="" />
+  <String id="140091" toolTip="" string="" />
+  <String id="140092" toolTip="" string="" />
+  <String id="140093" toolTip="" string="" />
+  <String id="140094" toolTip="" string="" />
+  <String id="140095" toolTip="" string="" />
+  <String id="140096" toolTip="" string="" />
+  <String id="140097" toolTip="" string="" />
+  <String id="140098" toolTip="" string="" />
+  <String id="140099" toolTip="" string="" />
+  <String id="140100" toolTip="" string="" />
+  <String id="140101" toolTip="" string="" />
+  <String id="140102" toolTip="" string="" />
+  <String id="140103" toolTip="" string="" />
+  <String id="140104" toolTip="" string="" />
+  <String id="140105" toolTip="" string="" />
+  <String id="140106" toolTip="" string="" />
+  <String id="140107" toolTip="" string="" />
+  <String id="140108" toolTip="" string="" />
+  <String id="140109" toolTip="" string="" />
+  <String id="140110" toolTip="" string="" />
+  <String id="140111" toolTip="" string="" />
+  <String id="140112" toolTip="" string="" />
+  <String id="140113" toolTip="" string="" />
+  <String id="140114" toolTip="" string="" />
+  <String id="140115" toolTip="" string="" />
+  <String id="140116" toolTip="" string="" />
+  <String id="140117" toolTip="" string="" />
+  <String id="140118" toolTip="" string="" />
+  <String id="140119" toolTip="" string="" />
+  <String id="140120" toolTip="" string="" />
+  <String id="140121" toolTip="" string="" />
+  <String id="140122" toolTip="" string="" />
+  <String id="140123" toolTip="" string="" />
+  <String id="140124" toolTip="" string="" />
+  <String id="140125" toolTip="" string="" />
+  <String id="140126" toolTip="" string="" />
+  <String id="140127" toolTip="" string="" />
+  <String id="140128" toolTip="" string="" />
+  <String id="140129" toolTip="" string="" />
+  <String id="140130" toolTip="" string="" />
+  <String id="140131" toolTip="" string="" />
+  <String id="140132" toolTip="" string="" />
+  <String id="140133" toolTip="" string="" />
+  <String id="140134" toolTip="" string="" />
+  <String id="140135" toolTip="" string="" />
+  <String id="140136" toolTip="" string="" />
+  <String id="140137" toolTip="" string="" />
+  <String id="140138" toolTip="" string="" />
+  <String id="140139" toolTip="" string="" />
+  <String id="140140" toolTip="" string="" />
+  <String id="140141" toolTip="" string="" />
+  <String id="140142" toolTip="" string="" />
+  <String id="140143" toolTip="" string="" />
+  <String id="140144" toolTip="" string="" />
+  <String id="140145" toolTip="" string="" />
+  <String id="140146" toolTip="" string="" />
+  <String id="140147" toolTip="" string="" />
+  <String id="140148" toolTip="" string="" />
+  <String id="140149" toolTip="" string="" />
+  <String id="140150" toolTip="" string="" />
+  <String id="140151" toolTip="" string="" />
+  <String id="140152" toolTip="" string="" />
+  <String id="140153" toolTip="" string="" />
+  <String id="140154" toolTip="" string="" />
+  <String id="140155" toolTip="" string="" />
+  <String id="140156" toolTip="" string="" />
+  <String id="140157" toolTip="" string="" />
+  <String id="140158" toolTip="" string="" />
+  <String id="140159" toolTip="" string="" />
+  <String id="140160" toolTip="" string="" />
+  <String id="140161" toolTip="" string="" />
+  <String id="140162" toolTip="" string="" />
+  <String id="140163" toolTip="" string="" />
+  <String id="140164" toolTip="" string="" />
+  <String id="140165" toolTip="" string="" />
+  <String id="140166" toolTip="" string="" />
+  <String id="140167" toolTip="" string="" />
+  <String id="140168" toolTip="" string="" />
+  <String id="140169" toolTip="" string="" />
+  <String id="140170" toolTip="" string="" />
+  <String id="140171" toolTip="" string="" />
+  <String id="140172" toolTip="" string="" />
+  <String id="140173" toolTip="" string="" />
+  <String id="140174" toolTip="" string="" />
+  <String id="140175" toolTip="" string="" />
+  <String id="140176" toolTip="" string="" />
+  <String id="140177" toolTip="" string="" />
+  <String id="140178" toolTip="" string="" />
+  <String id="140179" toolTip="" string="" />
+  <String id="140180" toolTip="" string="" />
+  <String id="140181" toolTip="" string="" />
+  <String id="140182" toolTip="" string="" />
+  <String id="140183" toolTip="" string="" />
+  <String id="140184" toolTip="" string="" />
+  <String id="140185" toolTip="" string="" />
+  <String id="140186" toolTip="" string="" />
+  <String id="140187" toolTip="" string="" />
+  <String id="140188" toolTip="" string="" />
+  <String id="140189" toolTip="" string="" />
+  <String id="140190" toolTip="" string="" />
+  <String id="140191" toolTip="" string="" />
+  <String id="140192" toolTip="" string="" />
+  <String id="140193" toolTip="" string="" />
+  <String id="140194" toolTip="" string="" />
+  <String id="140195" toolTip="" string="" />
+  <String id="140196" toolTip="" string="" />
+  <String id="140197" toolTip="" string="" />
+  <String id="140198" toolTip="" string="" />
+  <String id="140199" toolTip="" string="" />
+  <String id="140200" toolTip="" string="" />
+  <String id="140201" toolTip="" string="" />
+  <String id="140202" toolTip="" string="" />
+  <String id="140203" toolTip="" string="" />
+  <String id="140204" toolTip="" string="" />
+  <String id="140205" toolTip="" string="" />
+  <String id="140206" toolTip="" string="" />
+  <String id="140207" toolTip="" string="" />
+  <String id="140237" toolTip="" string="" />
+  <String id="140238" toolTip="" string="" />
+  <String id="140239" toolTip="" string="" />
+  <String id="140240" toolTip="" string="" />
+  <String id="140241" toolTip="" string="" />
+  <String id="140242" toolTip="" string="" />
+  <String id="140243" toolTip="" string="" />
+  <String id="140244" toolTip="" string="" />
+  <String id="140245" toolTip="" string="" />
+  <String id="140246" toolTip="" string="" />
+  <String id="140247" toolTip="" string="" />
+  <String id="140248" toolTip="" string="" />
+  <String id="140249" toolTip="" string="" />
+  <String id="140250" toolTip="" string="" />
+  <String id="140251" toolTip="" string="" />
+  <String id="140252" toolTip="" string="" />
+  <String id="140253" toolTip="" string="" />
+  <String id="140254" toolTip="" string="" />
+  <String id="140255" toolTip="" string="" />
+  <String id="140256" toolTip="" string="" />
+  <String id="140257" toolTip="" string="" />
+  <String id="140258" toolTip="" string="" />
+  <String id="140259" toolTip="" string="" />
+  <String id="140260" toolTip="" string="" />
+  <String id="140261" toolTip="" string="" />
+  <String id="140262" toolTip="" string="" />
+  <String id="140263" toolTip="" string="" />
+  <String id="140264" toolTip="" string="" />
+  <String id="140265" toolTip="" string="" />
+  <String id="140266" toolTip="" string="" />
+  <String id="140267" toolTip="" string="" />
+  <String id="140268" toolTip="" string="" />
+  <String id="140269" toolTip="" string="" />
+  <String id="140270" toolTip="" string="" />
+  <String id="140271" toolTip="" string="" />
+  <String id="140272" toolTip="" string="" />
+  <String id="140273" toolTip="" string="" />
+  <String id="140274" toolTip="" string="" />
+  <String id="140275" toolTip="" string="" />
+  <String id="140276" toolTip="" string="" />
+  <String id="140277" toolTip="" string="" />
+  <String id="140278" toolTip="" string="" />
+  <String id="140279" toolTip="" string="" />
+  <String id="140280" toolTip="" string="" />
+  <String id="140281" toolTip="" string="" />
+  <String id="140282" toolTip="" string="" />
+  <String id="140283" toolTip="" string="" />
   <String id="141000" toolTip="" string="" />
   <String id="141001" toolTip="" string="" />
   <String id="141002" toolTip="" string="" />
@@ -4715,29 +4964,29 @@
   <String id="147026" toolTip="" string="" />
   <String id="147027" toolTip="" string="" />
   <String id="147028" toolTip="" string="" />
-  <String id="147029" toolTip="Use this manual to learn how to summon a Police Car a Movement Speed of 280. Item expires in 10 days.&lt;br&gt; Replenishes Stamina." string="[Event] Riding Skill: Police Car(10days)" />
-  <String id="147030" toolTip="Use this manual to learn how to summon a Silver Giraffe a Movement Speed of 280. Item expires in 30 days.&lt;br&gt; Replenishes Stamina." string="[Event] Riding Skill: Silver Giraffe(30days)" />
-  <String id="147031" toolTip="Use this manual to learn how to summon a Buzzer (Rare) a Movement Speed of 280. &lt;br&gt; Replenishes Stamina, HP. MP." string="Riding Skill: Buzzer(Rare)" />
-  <String id="147032" toolTip="Use this manual to learn how to summon a Tweedle (Rare) a Movement Speed of 280. Replenishes Stamina, HP. MP." string="Riding Skill: Tweedle(Rare)" />
-  <String id="147033" toolTip="Use this manual to learn how to summon a Cutter (Rare) a Movement Speed of 280. Replenishes Stamina, HP. MP." string="Riding Skill: Cutter(Rare)" />
-  <String id="147034" toolTip="Use this manual to learn how to summon a Buzzer a Movement Speed of 280. Replenishes Stamina, HP. MP." string="Riding Skill: Buzzer" />
-  <String id="147035" toolTip="Use this manual to learn how to summon a Tweedle  a Movement Speed of 280. Replenishes Stamina, HP. MP." string="Riding Skill: Tweedle" />
-  <String id="147036" toolTip="Use this manual to learn how to summon a Cutter a Movement Speed of 280. Replenishes Stamina, HP. MP." string="Riding Skill: Cutter" />
-  <String id="147037" toolTip="Use this manual to learn how to summon a Glimmer a Movement Speed of 280. Item expires in 10 days.&lt;br&gt; Replenishes Stamina." string="[Buddy Up Event] Riding Skill: Glimmer (30days)" />
-  <String id="147038" toolTip="Use this manual to learn how to summon Noble Socks(Rare_Flower Effects), a black egg- and sushi-loving cat with a Movement Speed of 280. Restores your HP, MP and Stamina." string="Riding Skill: Noble Socks(Rare_Flower Effects)" />
-  <String id="147039" toolTip="Use this manual to learn how to summon Saltyheart, a tawny salmon- and sushi-loving cat with a Movement Speed of 280 that rejuvenates Stamina." string="Riding Skill: Saltyheart(Rare_Flower Effects)" />
-  <String id="147040" toolTip="Use this manual to learn how to summon Sushi Cat Grey(Rare_Flower Effects), a grey salmon- and sushi-loving cat with a Movement Speed of 280 that rejuvenates Stamina." string="Riding Skill: Sushi Cat Grey (Rare_Flower Effects)" />
-  <String id="147041" toolTip="Use this manual to learn how to summon Socko, a black egg- and sushi-loving cat with a Movement Speed of 280. Restores your HP and MP." string="Riding Skill: Socko" />
-  <String id="147042" toolTip="Use this manual to learn how to summon Saltyko, a tawny salmon- and sushi-loving cat with a Movement Speed of 280 that rejuvenates HP and MP." string="Riding Skill: Saltyko" />
-  <String id="147043" toolTip="Use this manual to learn how to summon Sushi Cat Grey, a grey salmon- and sushi-loving cat with a Movement Speed of 280 that rejuvenates HP and MP." string="Riding Skill: Suchi Cat Grey" />
-  <String id="147044" toolTip="Use this manual to learn how to summon a Black Ookami with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Black Ookami" />
-  <String id="147045" toolTip="Use this manual to learn how to summon a Green Ookami with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Green Ookami" />
-  <String id="147046" toolTip="Use this manual to learn how to summon Friendship with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Friendship" />
-  <String id="147047" toolTip="Use this manual to learn how to summon a Ghost Horse with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Ghost Horse Black" />
-  <String id="147048" toolTip="Use this manual to learn how to summon a Ghost Horse with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Ghost Horse Gold" />
-  <String id="147049" toolTip="Use this manual to learn how to summon a Ghost Horse with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Ghost Horse White" />
-  <String id="147050" toolTip="Use this manual to learn how to summon a Ghost Horse with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Ghost Horse Red" />
-  <String id="147051" toolTip="Use this manual to learn how to summon a Ghost Horse with a Movement Speed of 280 that replenishes your stamina." string="Riding Skill: Ghost Horse Luminous" />
+  <String id="147029" toolTip="Use this manual to learn how to summon a Police Car a movement speed of 280 that restores 0.5% HP and MP every second.&lt;br&gt;Item expires in 10 days." string="[Event] Riding Skill: Police Car(10days)" />
+  <String id="147030" toolTip="Use this manual to learn how to summon a Silver Giraffe a movement speed of 280 that restores 0.5% HP and MP every second.&lt;br&gt;Item expires in 30 days." string="[Event] Riding Skill: Silver Giraffe(30days)" />
+  <String id="147031" toolTip="Use this manual to learn how to summon a Buzzer (Rare) a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Buzzer(Rare)" />
+  <String id="147032" toolTip="Use this manual to learn how to summon a Tweedle (Rare) a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Tweedle(Rare)" />
+  <String id="147033" toolTip="Use this manual to learn how to summon a Cutter (Rare) a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Cutter(Rare)" />
+  <String id="147034" toolTip="Use this manual to learn how to summon a Buzzer a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Buzzer" />
+  <String id="147035" toolTip="Use this manual to learn how to summon a Tweedle  a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Tweedle" />
+  <String id="147036" toolTip="Use this manual to learn how to summon a Cutter a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Cutter" />
+  <String id="147037" toolTip="Use this manual to learn how to summon a Glimmer a movement speed of 280 that restores 0.5% HP and MP every second." string="[Buddy Up Event] Riding Skill: Glimmer (30days)" />
+  <String id="147038" toolTip="Use this manual to learn how to summon Noble Socks(Rare_Flower Effects), a black egg- and sushi-loving cat with a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Noble Socks(Rare_Flower Effects)" />
+  <String id="147039" toolTip="Use this manual to learn how to summon Saltyheart, a tawny salmon- and sushi-loving cat with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Saltyheart(Rare_Flower Effects)" />
+  <String id="147040" toolTip="Use this manual to learn how to summon Sushi Cat Grey(Rare_Flower Effects), a grey salmon- and sushi-loving cat with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Sushi Cat Grey (Rare_Flower Effects)" />
+  <String id="147041" toolTip="Use this manual to learn how to summon Socko, a black egg- and sushi-loving cat with a movement speed of 280. Restores your HP and MP." string="Riding Skill: Socko" />
+  <String id="147042" toolTip="Use this manual to learn how to summon Saltyko, a tawny salmon- and sushi-loving cat with a movement speed of 280 that rejuvenates HP and MP." string="Riding Skill: Saltyko" />
+  <String id="147043" toolTip="Use this manual to learn how to summon Sushi Cat Grey, a grey salmon- and sushi-loving cat with a movement speed of 280 that rejuvenates HP and MP." string="Riding Skill: Suchi Cat Grey" />
+  <String id="147044" toolTip="Use this manual to learn how to summon a Black Ookami with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Black Ookami" />
+  <String id="147045" toolTip="Use this manual to learn how to summon a Green Ookami with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Green Ookami" />
+  <String id="147046" toolTip="Use this manual to learn how to summon Friendship with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Friendship" />
+  <String id="147047" toolTip="Use this manual to learn how to summon a Ghost Horse with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Ghost Horse Black" />
+  <String id="147048" toolTip="Use this manual to learn how to summon a Ghost Horse with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Ghost Horse Gold" />
+  <String id="147049" toolTip="Use this manual to learn how to summon a Ghost Horse with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Ghost Horse White" />
+  <String id="147050" toolTip="Use this manual to learn how to summon a Ghost Horse with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Ghost Horse Red" />
+  <String id="147051" toolTip="Use this manual to learn how to summon a Ghost Horse with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Ghost Horse Luminous" />
   <String id="147052" toolTip="" string="" />
   <String id="147053" toolTip="" string="" />
   <String id="147054" toolTip="" string="" />
@@ -5636,7 +5885,7 @@
   <String id="149483" toolTip="Right-click to equip in the [Style Info] &gt; [Body] slot.&lt;BR&gt;&lt;BR&gt;Smarten yourself up with this maid's costume." string="" />
   <String id="149484" toolTip="Right-click to equip in the [Style Info] &gt; [Body] slot.&lt;BR&gt;&lt;BR&gt;Smarten yourself up with this maid's costume." string="" />
   <String id="149485" toolTip="Right-click to equip in the [Style Info] &gt; [Body] slot.&lt;BR&gt;&lt;BR&gt;Smarten yourself up with this maid's costume." string="" />
-  <String id="149486" toolTip="Adds one tab of 72 slots to your bank storage.◁Each shared bank account can have up to 4 tabs." string="" />
+  <String id="149486" toolTip="Adds one tab of 72 slots to your bank storage.◁Each shared bank account can have up to 8 tabs." string="" />
   <String id="149487" toolTip="Adds an additional character slot to this server. Each account can contain up to 16 character slots per server." string="" />
   <String id="149488" toolTip="A travel guidebook in progress.◁Use to save or teleport to one of your 5 memorized locations." string="" />
   <String id="149489" toolTip="A travel guidebook that was written by an anonymous travel aficionado; being written by an amateur doesn't make the quality of this book third-rate.$BR◁A travel guidebook. " string="" />
@@ -6015,10 +6264,122 @@
   <String id="149862" toolTip="" string="" />
   <String id="149863" toolTip="" string="" />
   <String id="149864" toolTip="" string="" />
+  <String id="149865" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll: Lilith's Keep" />
+  <String id="149866" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll: Lilith's Keep (Hard)" />
+  <String id="149867" toolTip="" string="" />
+  <String id="149868" toolTip="" string="" />
+  <String id="149869" toolTip="" string="" />
+  <String id="149870" toolTip="" string="" />
+  <String id="149871" toolTip="" string="" />
+  <String id="149872" toolTip="" string="" />
+  <String id="149873" toolTip="" string="" />
+  <String id="149874" toolTip="" string="" />
+  <String id="149875" toolTip="" string="" />
+  <String id="149876" toolTip="" string="" />
+  <String id="149877" toolTip="" string="" />
+  <String id="149878" toolTip="" string="" />
+  <String id="149879" toolTip="" string="" />
+  <String id="149880" toolTip="" string="" />
+  <String id="149881" toolTip="" string="" />
+  <String id="149882" toolTip="" string="" />
+  <String id="149883" toolTip="" string="" />
+  <String id="149884" toolTip="" string="" />
+  <String id="149885" toolTip="" string="" />
+  <String id="149886" toolTip="" string="" />
+  <String id="149887" toolTip="" string="" />
+  <String id="149888" toolTip="" string="" />
+  <String id="149889" toolTip="" string="" />
   <String id="149890" toolTip="" string="" />
   <String id="149891" toolTip="" string="" />
   <String id="149892" toolTip="" string="" />
+  <String id="149893" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll: Ruinous Manor" />
+  <String id="149894" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll: Ruinous Manor (Hard)" />
   <String id="149895" toolTip="" string="" />
   <String id="149896" toolTip="" string="" />
+  <String id="149897" toolTip="" string="" />
+  <String id="149898" toolTip="" string="" />
+  <String id="149899" toolTip="" string="" />
+  <String id="149900" toolTip="" string="" />
+  <String id="149901" toolTip="" string="" />
+  <String id="149902" toolTip="" string="" />
   <String id="149903" toolTip="" string="" />
+  <String id="149904" toolTip="" string="" />
+  <String id="149905" toolTip="" string="" />
+  <String id="149906" toolTip="" string="" />
+  <String id="149907" toolTip="" string="" />
+  <String id="149908" toolTip="" string="" />
+  <String id="149909" toolTip="" string="" />
+  <String id="149910" toolTip="" string="" />
+  <String id="149911" toolTip="" string="" />
+  <String id="149912" toolTip="" string="" />
+  <String id="149913" toolTip="" string="" />
+  <String id="149914" toolTip="" string="" />
+  <String id="149915" toolTip="" string="" />
+  <String id="149916" toolTip="" string="" />
+  <String id="149917" toolTip="" string="" />
+  <String id="149918" toolTip="" string="" />
+  <String id="149919" toolTip="" string="" />
+  <String id="149920" toolTip="" string="" />
+  <String id="149921" toolTip="" string="" />
+  <String id="149922" toolTip="" string="" />
+  <String id="149923" toolTip="" string="" />
+  <String id="149924" toolTip="" string="" />
+  <String id="149925" toolTip="" string="" />
+  <String id="149926" toolTip="" string="" />
+  <String id="149927" toolTip="" string="" />
+  <String id="149928" toolTip="" string="" />
+  <String id="149929" toolTip="" string="" />
+  <String id="149930" toolTip="" string="" />
+  <String id="149931" toolTip="" string="" />
+  <String id="149932" toolTip="" string="" />
+  <String id="149933" toolTip="" string="" />
+  <String id="149934" toolTip="" string="" />
+  <String id="149935" toolTip="" string="" />
+  <String id="149936" toolTip="" string="" />
+  <String id="149937" toolTip="" string="" />
+  <String id="149938" toolTip="" string="" />
+  <String id="149939" toolTip="" string="" />
+  <String id="149940" toolTip="" string="" />
+  <String id="149941" toolTip="" string="" />
+  <String id="149942" toolTip="" string="" />
+  <String id="149943" toolTip="" string="" />
+  <String id="149944" toolTip="" string="" />
+  <String id="149945" toolTip="" string="" />
+  <String id="149946" toolTip="" string="" />
+  <String id="149947" toolTip="" string="" />
+  <String id="149948" toolTip="" string="" />
+  <String id="149949" toolTip="" string="" />
+  <String id="149950" toolTip="" string="" />
+  <String id="149951" toolTip="" string="" />
+  <String id="149952" toolTip="" string="" />
+  <String id="149953" toolTip="" string="" />
+  <String id="149954" toolTip="" string="" />
+  <String id="149955" toolTip="" string="" />
+  <String id="149956" toolTip="" string="" />
+  <String id="149957" toolTip="" string="" />
+  <String id="149958" toolTip="" string="" />
+  <String id="149959" toolTip="" string="" />
+  <String id="149960" toolTip="" string="" />
+  <String id="149961" toolTip="" string="" />
+  <String id="149962" toolTip="" string="" />
+  <String id="149963" toolTip="" string="" />
+  <String id="149964" toolTip="" string="" />
+  <String id="149965" toolTip="" string="" />
+  <String id="149966" toolTip="" string="" />
+  <String id="149967" toolTip="" string="" />
+  <String id="149968" toolTip="" string="" />
+  <String id="149969" toolTip="" string="" />
+  <String id="149970" toolTip="" string="" />
+  <String id="149971" toolTip="" string="" />
+  <String id="149972" toolTip="" string="" />
+  <String id="149973" toolTip="" string="" />
+  <String id="149974" toolTip="" string="" />
+  <String id="149975" toolTip="" string="" />
+  <String id="149976" toolTip="" string="" />
+  <String id="149977" toolTip="" string="" />
+  <String id="149978" toolTip="" string="" />
+  <String id="149979" toolTip="" string="" />
+  <String id="149980" toolTip="" string="" />
+  <String id="149981" toolTip="" string="" />
+  <String id="149982" toolTip="" string="" />
 </StrSheet_Item>

@@ -36,7 +36,7 @@
   <String id="2002002" string="Win {Count1} time(s) in {BattleField1}." />
   <String id="2003001" string="{BattleField1}" />
   <String id="2003002" string="Win {Count1} time(s) in {BattleField1}." />
-  <String id="2004001" string="BattleField1}" />
+  <String id="2004001" string="{BattleField1}" />
   <String id="2004002" string="Win {Count1} time(s) in {BattleField1}." />
   <String id="2005001" string="{BattleField1}" />
   <String id="2005002" string="Win {Count1} time(s) in {BattleField1}." />
@@ -59,11 +59,11 @@
   <String id="3005001" string="Crafting Supplies" />
   <String id="3005002" string="Gather {Count1} {Item1}." />
   <String id="4001001" string="{Monster1}" />
-  <String id="4001002" string="Kill {@LinkTerritory:29#2900175#Anansha} in {@LinkTerritory:29#2900175#Timeless Woods}." />
+  <String id="4001002" string="Summon and kill {@LinkTerritory:29#2900175#Anansha} in {@LinkTerritory:29#2900175#Timeless Woods}." />
   <String id="4002001" string="{Monster1}" />
-  <String id="4002002" string="Kill {@LinkTerritory:34#3401075#Frygaras} in {@LinkTerritory:34#3401075#Screaming Snowfield}." />
+  <String id="4002002" string="Summon and kill {@LinkTerritory:34#3401075#Frygaras} in {@LinkTerritory:34#3401075#Screaming Snowfield}." />
   <String id="4003001" string="{Monster1}" />
-  <String id="4003002" string="Kill {@LinkTerritory:34#3401076#Sabranak} in {@LinkTerritory:34#3401076#Howling Glacier}." />
+  <String id="4003002" string="Summon and kill {@LinkTerritory:34#3401076#Sabranak} in {@LinkTerritory:34#3401076#Howling Glacier}." />
   <String id="11001001" string="{HuntingZone1}" />
   <String id="11001002" string="Defeat {Monster1} {Count1} time(s) in {HuntingZone1}." />
   <String id="11002001" string="{HuntingZone1}" />

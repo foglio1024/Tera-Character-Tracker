@@ -1,2 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StrSheet_Item />
+<StrSheet_Item>
+  <String id="243000" toolTip="" string="" />
+  <String id="243001" toolTip="" string="" />
+  <String id="243002" toolTip="" string="" />
+  <String id="243003" toolTip="" string="" />
+  <String id="243004" toolTip="" string="" />
+  <String id="243005" toolTip="" string="" />
+  <String id="243006" toolTip="" string="" />
+  <String id="243007" toolTip="" string="" />
+  <String id="243008" toolTip="" string="" />
+  <String id="243009" toolTip="" string="" />
+  <String id="243010" toolTip="" string="" />
+</StrSheet_Item>

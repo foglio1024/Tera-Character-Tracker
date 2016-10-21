@@ -1,24 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DailyPlayGuideQuest>
-  <Quest id="1" name="@DailyPlayGuideQuest:70001001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="460" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70001100" monsterHuntingZoneId="460" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70001101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
-  <Quest id="4" name="@DailyPlayGuideQuest:70004001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="460" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70004100" monsterHuntingZoneId="459" monsterTemplateId="1003" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70004101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
   <Quest id="5" name="@DailyPlayGuideQuest:70005001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="885" suitableLevel="65" suitableMemberCount="5">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70005100" monsterHuntingZoneId="885" monsterTemplateId="885057" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70005101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
-  <Quest id="6" name="@DailyPlayGuideQuest:70006001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="511" suitableLevel="65" suitableMemberCount="7">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70006100" monsterHuntingZoneId="511" monsterTemplateId="81101" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70006101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
-  <Quest id="7" name="@DailyPlayGuideQuest:70007001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="611" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70007100" monsterHuntingZoneId="611" monsterTemplateId="81101" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70007101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
   <Quest id="8" name="@DailyPlayGuideQuest:70008001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="767" suitableLevel="65" suitableMemberCount="7">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70008100" monsterHuntingZoneId="767" monsterTemplateId="46704" partyConstraint="solo" unitedParty="모두적용" />
@@ -36,10 +20,6 @@
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700011100" monsterHuntingZoneId="468" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700011101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
-  <Quest id="12" name="@DailyPlayGuideQuest:700012001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="643" suitableLevel="65" suitableMemberCount="10">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700012100" monsterHuntingZoneId="643" monsterTemplateId="1005" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700012101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
   <Quest id="13" name="@DailyPlayGuideQuest:700013001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="431" suitableLevel="65" suitableMemberCount="1">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700013100" monsterHuntingZoneId="431" monsterTemplateId="5005" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700013101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
@@ -47,10 +27,6 @@
   <Quest id="14" name="@DailyPlayGuideQuest:700014001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="432" suitableLevel="65" suitableMemberCount="1">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700014100" monsterHuntingZoneId="432" monsterTemplateId="101" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700014101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
-  <Quest id="15" name="@DailyPlayGuideQuest:700015001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="470" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700015100" monsterHuntingZoneId="470" monsterTemplateId="1000" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700015101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
   <Quest id="16" name="@DailyPlayGuideQuest:700016001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="767" suitableLevel="65" suitableMemberCount="7">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700016100" monsterHuntingZoneId="767" monsterTemplateId="46704" partyConstraint="solo" unitedParty="모두적용" />
@@ -64,29 +40,37 @@
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700018100" monsterHuntingZoneId="459" monsterTemplateId="1003" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700018101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
+  <Quest id="19" name="@DailyPlayGuideQuest:700019001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="769" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700019100" monsterHuntingZoneId="769" monsterTemplateId="76903" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700019101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="20" name="@DailyPlayGuideQuest:700020001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="969" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700020100" monsterHuntingZoneId="769" monsterTemplateId="76903" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700020101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="21" name="@DailyPlayGuideQuest:700021001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="429" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700021100" monsterHuntingZoneId="429" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700021101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="22" name="@DailyPlayGuideQuest:700022001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="916" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700022100" monsterHuntingZoneId="916" monsterTemplateId="1000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700022101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="23" name="@DailyPlayGuideQuest:700023001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="969" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700023100" monsterHuntingZoneId="770" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700023101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="24" name="@DailyPlayGuideQuest:700024001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="969" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700024100" monsterHuntingZoneId="970" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700024101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
   <Quest id="25" name="@DailyPlayGuideQuest:700025001" type="daily" minLevel="65" groupId="7000" autoStartType="1" realHuntingZoneId="767" suitableLevel="65" suitableMemberCount="7">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700025100" monsterHuntingZoneId="767" monsterTemplateId="46704" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700025101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
-  <Quest id="1" name="@DailyPlayGuideQuest:70011001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="460" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70011100" monsterHuntingZoneId="460" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70011101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
-  <Quest id="4" name="@DailyPlayGuideQuest:70014001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="460" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70014100" monsterHuntingZoneId="459" monsterTemplateId="1003" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70014101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
   <Quest id="5" name="@DailyPlayGuideQuest:70015001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="885" suitableLevel="65" suitableMemberCount="5">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70015100" monsterHuntingZoneId="885" monsterTemplateId="885057" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70015101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
-  <Quest id="6" name="@DailyPlayGuideQuest:70016001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="511" suitableLevel="65" suitableMemberCount="7">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70016100" monsterHuntingZoneId="511" monsterTemplateId="81101" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70016101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
-  <Quest id="7" name="@DailyPlayGuideQuest:70017001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="611" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70017100" monsterHuntingZoneId="611" monsterTemplateId="81101" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:70017101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
   <Quest id="8" name="@DailyPlayGuideQuest:70018001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="767" suitableLevel="65" suitableMemberCount="7">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:70018100" monsterHuntingZoneId="767" monsterTemplateId="46704" partyConstraint="solo" unitedParty="모두적용" />
@@ -104,10 +88,6 @@
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700111100" monsterHuntingZoneId="468" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700111101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
-  <Quest id="12" name="@DailyPlayGuideQuest:700112001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="643" suitableLevel="65" suitableMemberCount="10">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700112100" monsterHuntingZoneId="643" monsterTemplateId="1005" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700112101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
-  </Quest>
   <Quest id="13" name="@DailyPlayGuideQuest:700113001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="431" suitableLevel="65" suitableMemberCount="1">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700113100" monsterHuntingZoneId="431" monsterTemplateId="5005" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700113101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
@@ -116,9 +96,45 @@
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700114100" monsterHuntingZoneId="432" monsterTemplateId="101" partyConstraint="solo" unitedParty="모두적용" />
     <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700114101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
-  <Quest id="15" name="@DailyPlayGuideQuest:700115001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="470" suitableLevel="65" suitableMemberCount="5">
-    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700115100" monsterHuntingZoneId="470" monsterTemplateId="1000" partyConstraint="solo" unitedParty="모두적용" />
-    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700115101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  <Quest id="19" name="@DailyPlayGuideQuest:700119001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="769" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700119100" monsterHuntingZoneId="769" monsterTemplateId="76903" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700119101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="20" name="@DailyPlayGuideQuest:700120001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="969" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700120100" monsterHuntingZoneId="769" monsterTemplateId="76903" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700120101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="21" name="@DailyPlayGuideQuest:700121001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="429" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700121100" monsterHuntingZoneId="429" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700121101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="22" name="@DailyPlayGuideQuest:700122001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="916" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700122100" monsterHuntingZoneId="916" monsterTemplateId="1000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700122101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="23" name="@DailyPlayGuideQuest:700123001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="969" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700123100" monsterHuntingZoneId="770" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700123101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="24" name="@DailyPlayGuideQuest:700124001" type="daily" minLevel="65" groupId="7001" autoStartType="1" realHuntingZoneId="969" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:700124100" monsterHuntingZoneId="970" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:700124101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="1" name="@DailyPlayGuideQuest:71001001" type="daily" minLevel="65" groupId="7100" autoStartType="1" realHuntingZoneId="429" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:71001100" monsterHuntingZoneId="429" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:71001101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="2" name="@DailyPlayGuideQuest:71002001" type="daily" minLevel="65" groupId="7100" autoStartType="1" realHuntingZoneId="768" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:71002100" monsterHuntingZoneId="768" monsterTemplateId="3000" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:71002101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="3" name="@DailyPlayGuideQuest:71003001" type="daily" minLevel="65" groupId="7100" autoStartType="1" realHuntingZoneId="769" suitableLevel="65" suitableMemberCount="5">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:71003100" monsterHuntingZoneId="769" monsterTemplateId="76903" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:71003101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
+  </Quest>
+  <Quest id="4" name="@DailyPlayGuideQuest:71004001" type="daily" minLevel="65" groupId="7100" autoStartType="1" realHuntingZoneId="467" suitableLevel="65" suitableMemberCount="7">
+    <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:71004100" monsterHuntingZoneId="467" monsterTemplateId="46704" partyConstraint="solo" unitedParty="모두적용" />
+    <TaskPart id="1" type="visit" taskId="2" journal="@DailyPlayGuideQuest:71004101" targetHuntingZoneId="9999" targetNpcTemplateId="9999" />
   </Quest>
   <Quest id="1" name="@DailyPlayGuideQuest:80001001" type="daily" minLevel="20" maxLevel="25" groupId="8000" autoStartType="1" overLevel="26" realHuntingZoneId="487" suitableLevel="20" suitableMemberCount="5">
     <TaskPart id="0" type="hunting" count="1" taskId="1" failOnUserDead="False" journal="@DailyPlayGuideQuest:80001100" monsterHuntingZoneId="487" monsterTemplateId="101" partyConstraint="solo" />

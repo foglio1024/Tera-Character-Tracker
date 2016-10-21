@@ -8,11 +8,11 @@ namespace Tera
 {
     public enum DungeonTier
     {
-        Starter,
-        Mid,
-        MidHigh,
-        High,
-        Top
+        Solo,
+        Tier2,
+        Tier3,
+        Tier4,
+        Tier5
     }
     [Serializable]
     public class Dungeon

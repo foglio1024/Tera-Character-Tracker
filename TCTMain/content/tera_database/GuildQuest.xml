@@ -381,21 +381,21 @@
   <Quest id="21010" name="릴리스의 성 - 하급 (중)" desc="@GuildQuest:21010002" title="@GuildQuest:21010001">
     <ClearCondition>
       <TargetList>
-        <Npc huntingZoneId="970" templateId="3000" />
+        <Npc huntingZoneId="769" templateId="76903" />
       </TargetList>
     </ClearCondition>
   </Quest>
   <Quest id="21011" name="릴리스의 성 - 하급 (중)" desc="@GuildQuest:21011002" title="@GuildQuest:21011001">
     <ClearCondition>
       <TargetList>
-        <Npc huntingZoneId="970" templateId="3000" />
+        <Npc huntingZoneId="769" templateId="76903" />
       </TargetList>
     </ClearCondition>
   </Quest>
   <Quest id="21012" name="릴리스의 성 - 하급 (중)" desc="@GuildQuest:21012002" title="@GuildQuest:21012001">
     <ClearCondition>
       <TargetList>
-        <Npc huntingZoneId="970" templateId="3000" />
+        <Npc huntingZoneId="769" templateId="76903" />
       </TargetList>
     </ClearCondition>
   </Quest>
@@ -465,21 +465,21 @@
   <Quest id="21022" name="릴리스의 성 - 상급 (상)" desc="@GuildQuest:21022002" title="@GuildQuest:21022001">
     <ClearCondition>
       <TargetList>
-        <Npc huntingZoneId="969" templateId="96903" />
+        <Npc huntingZoneId="969" templateId="76903" />
       </TargetList>
     </ClearCondition>
   </Quest>
   <Quest id="21023" name="릴리스의 성 - 상급 (상)" desc="@GuildQuest:21023002" title="@GuildQuest:21023001">
     <ClearCondition>
       <TargetList>
-        <Npc huntingZoneId="969" templateId="96903" />
+        <Npc huntingZoneId="969" templateId="76903" />
       </TargetList>
     </ClearCondition>
   </Quest>
   <Quest id="21024" name="릴리스의 성 - 상급 (상)" desc="@GuildQuest:21024002" title="@GuildQuest:21024001">
     <ClearCondition>
       <TargetList>
-        <Npc huntingZoneId="969" templateId="96903" />
+        <Npc huntingZoneId="969" templateId="76903" />
       </TargetList>
     </ClearCondition>
   </Quest>

@@ -54,6 +54,18 @@
   <String id="70019001" string="Option: Conquer the Demokron Factory (Hard)" />
   <String id="70019100" string="[The Abscess (Hard)] Defeat Nightmare Krakatox with your allies!" />
   <String id="70019101" string="Claim your reward!" />
+  <String id="71001001" string="[Additional Reward] Suppress the Vault of Kaprima" />
+  <String id="71001100" string="[Vault of Kaprima] Defeat Kaprima Reborn with your allies!" />
+  <String id="71001101" string="Claim your reward!" />
+  <String id="71002001" string="[Additional Reward] Conquer the Shadow Sanguinary" />
+  <String id="71002100" string="[Shadow Sanguinary] Defeat Imperator with your allies!" />
+  <String id="71002101" string="Claim your reward!" />
+  <String id="71003001" string="[Additional Reward] Conquer Lilith’s Keep" />
+  <String id="71003100" string="[Lilith’s Keep] Defeat Lilith with your allies!" />
+  <String id="71003101" string="Claim your reward!" />
+  <String id="71004001" string="[Additional Reward] Assault the Demokron Factory (Hard)" />
+  <String id="71004100" string="[Demokron Factory (Hard)] Defeat Nightmare Verno with your allies!" />
+  <String id="71004101" string="Claim your reward!" />
   <String id="80001001" string="Assault the Bastion of Lok!" />
   <String id="80001100" string="[Bastion of Lok] Eliminate Murdranak." />
   <String id="80001101" string="Claim your reward!" />
@@ -391,6 +403,24 @@
   <String id="700018001" string="Conquer the Forsaken Island" />
   <String id="700018100" string="[Forsaken Island] Defeat Desolarus with your allies!" />
   <String id="700018101" string="Claim your reward!" />
+  <String id="700019001" string="Conquer Lilith’s Keep" />
+  <String id="700019100" string="[Lilith’s Keep] Defeat Lilith with your allies!" />
+  <String id="700019101" string="Claim your reward!" />
+  <String id="700020001" string="Raid Lilith’s Keep (Hard)" />
+  <String id="700020100" string="[Lilith’s Keep (Hard)] Defeat Nightmare Lilith with your allies!" />
+  <String id="700020101" string="Claim your reward!" />
+  <String id="700021001" string="Suppress the Vault of Kaprima" />
+  <String id="700021100" string="[Vault of Kaprima] Defeat Kaprima Reborn with your allies!" />
+  <String id="700021101" string="Claim your reward!" />
+  <String id="700022001" string="Attack Sky Cruiser Endeavor (Hard)" />
+  <String id="700022100" string="[Sky Cruiser Endeavor (Hard)] Defeat Nightmare Darkan with your allies!" />
+  <String id="700022101" string="Claim your reward!" />
+  <String id="700023001" string="Conquer Runis Manor" />
+  <String id="700023100" string="[Runis Manor] Defeat Lachelith with your allies! " />
+  <String id="700023101" string="Claim your reward!" />
+  <String id="700024001" string="Conquer Runis Manor (Hard)" />
+  <String id="700024100" string="[Runis Manor (Hard)] Defeat Nightmare Lachelith with your allies! " />
+  <String id="700024101" string="Claim your reward!" />
   <String id="700025001" string="Conquer the Demokron Factory" />
   <String id="700025100" string="[Demokron Factory] Gather your allies and defeat Verno!" />
   <String id="700025101" string="Claim your reward!" />
@@ -412,6 +442,24 @@
   <String id="700115001" string="Option: Teach Manglemore a lesson" />
   <String id="700115100" string="[Manglemire] Teach Manglemore a lesson with your allies!" />
   <String id="700115101" string="Claim your reward!" />
+  <String id="700119001" string="Option: Raid Lilith’s Keep" />
+  <String id="700119100" string="[Lilith’s Keep] Defeat Lilith with your allies!" />
+  <String id="700119101" string="Claim your reward!" />
+  <String id="700120001" string="Option: Raid Lilith's Keep (Hard)" />
+  <String id="700120100" string="[Lilith’s Keep (Hard)] Defeat Nightmare Lilith with your allies!" />
+  <String id="700120101" string="Claim your reward!" />
+  <String id="700121001" string="Option: Suppress the Vault of Kaprima" />
+  <String id="700121100" string="[Vault of Kaprima] Defeat Kaprima Reborn with your allies!" />
+  <String id="700121101" string="Claim your reward!" />
+  <String id="700122001" string="Option: Attack Sky Cruiser Endeavor (Hard)" />
+  <String id="700122100" string="[Sky Cruiser Endeavor (Hard)] Defeat Nightmare Darkan with your allies!" />
+  <String id="700122101" string="Claim your reward!" />
+  <String id="700123001" string="Option: Infiltrate Runis Manor" />
+  <String id="700123100" string="[Runis Manor] Defeat Lachelith with your allies! " />
+  <String id="700123101" string="Claim your reward!" />
+  <String id="700124001" string="Option: Conquer Runis Manor (Hard)" />
+  <String id="700124100" string="[Runis Manor (Hard)] Defeat Nightmare Lachelith with your allies! " />
+  <String id="700124101" string="Claim your reward!" />
   <String id="800010001" string="Assault the Ebon Tower!" />
   <String id="800010100" string="[Ebon Tower] Eliminate Thulsa." />
   <String id="800010101" string="Claim your reward!" />
@@ -909,7 +957,7 @@
   <String id="810048001" string="Option: Summertime Beetle Attack (Beginner)" />
   <String id="810048100" string="Kill 10 Beetles" />
   <String id="810048101" string="Claim your reward!" />
-  <String id="810049001" string="Optional: Summertime Beetle Attack (Expert)" />
+  <String id="810049001" string="Option: Summertime Beetle Attack (Expert)" />
   <String id="810049100" string="Kill 10 Beetles" />
   <String id="810049101" string="Claim your reward!" />
   <String id="810050001" string="Option: The Day Is Mine" />

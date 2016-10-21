@@ -198,7 +198,8 @@
   <String id="459" string="Forsaken Island" />
   <String id="759" string="Forsaken Island (Hard)" />
   <String id="830" string="Celestial Arena (Solo)" />
-  <String id="970" string="" />
+  <String id="970" string="Ruinous Manor (Hard)" />
+  <String id="770" string="Ruinous Manor" />
   <String id="813" string="Ghillieglade" />
   <String id="713" string="Ghillieglade" />
   <String id="468" string="Shadow Sanguinary (Hard)" />
@@ -219,4 +220,6 @@
   <String id="611" string="The Abscess (Hard)" />
   <String id="885" string="Dreadspire" />
   <String id="886" string="Dreadspire: Upper Levels" />
+  <String id="769" string="Lilith’s Keep" />
+  <String id="969" string="Nightmare Lilith’s Keep" />
 </StrSheet_ZoneName>

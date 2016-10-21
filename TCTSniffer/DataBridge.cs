@@ -178,7 +178,7 @@ namespace PacketViewer
                     else if (lp.HexShortText.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
                     {
                         wCforEarnedLaurel = lp.HexShortText;
-                        updateLaurel();
+                        //updateLaurel();
                     }
                     break;  
                 #endregion

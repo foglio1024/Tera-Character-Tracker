@@ -322,6 +322,15 @@
   <ItemGroup>
     <Resource Include="resources\ui_images\ccbBuff.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\ui_images\dg_red_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\ui_images\dg_yellow_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\ui_images\star_mask.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

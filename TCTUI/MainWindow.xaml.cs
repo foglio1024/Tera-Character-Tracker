@@ -227,24 +227,24 @@ namespace Tera
 
                 switch (dg.Tier)
                 {
-                    case DungeonTier.Starter:
-                        chView.starterTier.Children.Add(d);
+                    case DungeonTier.Tier2:
+                        chView.t2panel.Children.Add(d);
                         break;
 
-                    case DungeonTier.Mid:
-                        chView.midTier.Children.Add(d);
+                    case DungeonTier.Tier3:
+                        chView.t3panel.Children.Add(d);
                         break;
 
-                    case DungeonTier.MidHigh:
-                        chView.midHighTier.Children.Add(d);
+                    case DungeonTier.Tier4:
+                        chView.tier4panel.Children.Add(d);
                         break;
 
-                    case DungeonTier.High:
-                        chView.highTier.Children.Add(d);
+                    case DungeonTier.Tier5:
+                        chView.tier5panel.Children.Add(d);
                         break;
 
-                    case DungeonTier.Top:
-                        chView.topTier.Children.Add(d);
+                    case DungeonTier.Solo:
+                        chView.soloPanel.Children.Add(d);
                         break;
 
                     default:

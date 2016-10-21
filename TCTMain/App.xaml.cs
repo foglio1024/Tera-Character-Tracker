@@ -58,6 +58,21 @@ namespace TCTMain
 
                     /*save settings to xml*/
                     LastClosed = DateTime.Now;
+                
+                    settings = 
+                        new XDocument
+                        (
+                            new XElement("Settings",
+                               new XElement("LastClosed",  new XAttribute("value","")),
+                               new XElement("Console",     new XAttribute("value","")),
+                               new XElement("CcbFrequency",new XAttribute("value","")),
+                               new XElement("Top",         new XAttribute("value","")),
+                               new XElement("Left",        new XAttribute("value","")),
+                               new XElement("Width",       new XAttribute("value","")),
+                               new XElement("Height",      new XAttribute("value",""))
+                            )
+                        );
+                 
                     settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault().Attribute("value").Value = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
                     settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value =  Tera.TeraLogic.TCTProps.Console.ToString();
                     settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.CcbNM.ToString();

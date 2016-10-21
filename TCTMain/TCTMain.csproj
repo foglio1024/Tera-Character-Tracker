@@ -166,10 +166,9 @@
   <ItemGroup>
     <Content Include="content\data\dungeons.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
-    <Content Include="content\data\settings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="content\data\settings.xml" />
     <Content Include="content\tera_database\DailyPlayGuideQuest.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
