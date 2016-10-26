@@ -19,6 +19,6 @@ https://drive.google.com/drive/folders/0B_Cqa6A1OUxdeDFvTEpZYmtzT2M
 * Customizable notification types
 * Exclusion list for characters
 * Crystalbind indicator for each character -DONE
-* Hide character function
+* Hide character
 * Auto-update
-* Error log
+* Error log -DONE
