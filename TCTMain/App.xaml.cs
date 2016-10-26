@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace TCTMain
     /// </summary>
     public partial class App : Application
     {
-        const string version = "v1.3";
+        static string version = "v"+Assembly.GetExecutingAssembly().GetName().Version.Major+"."+Assembly.GetExecutingAssembly().GetName().Version.Minor;
         public class Threads
         {
             public static void NetThread()
@@ -32,6 +33,7 @@ namespace TCTMain
                 try
                 {
                     TCTNotifier.NotificationProvider.Init();
+
                     TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running");
 
                     Tera.TeraMainWindow w = new Tera.TeraMainWindow();

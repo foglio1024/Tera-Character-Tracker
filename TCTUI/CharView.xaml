@@ -56,7 +56,7 @@
                     <ImageBrush ImageSource="resources/ui_images/star_mask.png"/>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Fill" Value="#88ffaa00"/>
+            <Setter Property="Fill" Value="#a0ffa64d"/>
             <Setter Property="Stretch" Value="UniformToFill"/>
             <Setter Property="Height" Value="15"/>
             <Setter Property="Width" Value="15"/>
@@ -262,15 +262,15 @@
 
 
             <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" Margin="20,0">
-                <Rectangle Fill="#ffed4949" Style="{StaticResource Star}"/>
-                <Rectangle Fill="#ffed4949" Style="{StaticResource Star}"/>
-                <Rectangle Fill="#ffed4949" Style="{StaticResource Star}"/>
-                <Rectangle Fill="#ffed4949" Style="{StaticResource Star}"/>
-                <Rectangle Fill="#ffed4949" Style="{StaticResource Star}"/>
+                <Rectangle Fill="#a0ff5050" Style="{StaticResource Star}"/>
+                <Rectangle Fill="#a0ff5050" Style="{StaticResource Star}"/>
+                <Rectangle Fill="#a0ff5050" Style="{StaticResource Star}"/>
+                <Rectangle Fill="#a0ff5050" Style="{StaticResource Star}"/>
+                <Rectangle Fill="#a0ff5050" Style="{StaticResource Star}"/>
             </StackPanel>
             <StackPanel x:Name="tier5panel" Orientation="Horizontal" Grid.Column="0" Grid.Row="4"/>
 
-            <TextBlock Margin="20,0,10,0" VerticalAlignment="Center" Grid.Column="1" Foreground="#90000000" Grid.Row="5">Solo</TextBlock>
+            <TextBlock Margin="20,0,10,0" VerticalAlignment="Center" Grid.Column="1" Padding="3,0" Foreground="#90000000" Grid.Row="5" FontWeight="DemiBold">Solo</TextBlock>
             <StackPanel x:Name="soloPanel" Orientation="Horizontal" Grid.Column="0" Grid.Row="5"/>
 
             <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" BorderThickness="0,1,0,1" BorderBrush="#fff0f0f0"/>

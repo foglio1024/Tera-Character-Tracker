@@ -23,6 +23,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using System.ComponentModel;
 using Tera.Converters;
+using System.Xml.Linq;
 
 namespace Tera
 {
@@ -224,7 +225,12 @@ namespace Tera
                 d.Name = dg.ShortName;
                 d.Tag = dg.ShortName;
                 d.n.Text = dg.ShortName;
-
+                XElement dgNameEl = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dg.Id.ToString()).FirstOrDefault();
+                if (dgNameEl != null)
+                {
+                    d.ToolTip = dgNameEl.Attribute("string").Value;
+                }
+                    
                 switch (dg.Tier)
                 {
                     case DungeonTier.Tier2:
