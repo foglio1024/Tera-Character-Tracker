@@ -40,14 +40,22 @@ namespace TCTMain
                     w.ShowDialog();
 
                     Tera.TeraLogic.SaveSettings();
-                    
                     Environment.Exit(0);
 
 
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    Console.WriteLine(e.InnerException);
+                    Console.WriteLine(ex.InnerException);
+
+                    using (StreamWriter writer = new StreamWriter(Environment.CurrentDirectory + "\\error.txt", true))
+                    {
+                        writer.WriteLine("Message :" + ex.Message + Environment.NewLine + "StackTrace :" + ex.StackTrace +
+                           "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
+                        writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
+                    }
+                    MessageBox.Show("An error occured. Check error.txt for more info");
+                    Environment.Exit(-1);
                 }
             }
             public static void LoadDatabases()

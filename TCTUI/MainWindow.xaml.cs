@@ -295,7 +295,7 @@ namespace Tera
             TeraLogic.SaveCharacters();
             TeraLogic.SaveAccounts();
             TeraLogic.SaveGuildsDB();
-
+            TeraLogic.SaveSettings();
             TeraLogic.IsSaved = true;
         }
         private void LeftSlideToggle(object sender, MouseButtonEventArgs e)
