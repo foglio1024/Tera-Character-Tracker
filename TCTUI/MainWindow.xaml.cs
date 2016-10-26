@@ -473,7 +473,7 @@ namespace Tera
         {
             string teststring = "Test" + i;
 
-           TCTNotifier.NotificationProvider.NS.sendNotification(teststring, TCTNotifier.NotificationType.Credits, Colors.LightGreen);
+           TCTNotifier.NotificationProvider.SendNotification(teststring, TCTNotifier.NotificationType.Credits, Colors.LightGreen, false);
            i++;
         }
 

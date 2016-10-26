@@ -100,7 +100,7 @@
                         <ColumnDefinition Style="{StaticResource info2defsR}"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Foreground="#90000000" Style="{StaticResource TBlock}">Location:</TextBlock>
-                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="locationTB" Grid.Column="1" Margin="15,0,0,0">-</TextBlock>
+                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="locationTB" Grid.Column="1" Margin="15,0,0,0" TextWrapping="Wrap">-</TextBlock>
 
                 </Grid>
                 <Grid  Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource info2grids}">

@@ -257,7 +257,6 @@ namespace Tera
                 {
                     marks_of_valor = value;
                     NotifyPropertyChanged("MarksOfValor");
-
                 };
             }
         }

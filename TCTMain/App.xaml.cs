@@ -19,7 +19,7 @@ namespace TCTMain
     /// </summary>
     public partial class App : Application
     {
-
+        const string version = "v1.3";
         public class Threads
         {
             public static void NetThread()
@@ -31,12 +31,14 @@ namespace TCTMain
             {
                 try
                 {
+                    TCTNotifier.NotificationProvider.Init();
+                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running");
 
                     Tera.TeraMainWindow w = new Tera.TeraMainWindow();
                     w.InitializeComponent();
 
                     Tera.TeraLogic.TryReset();
-                    
+                    w.Title = "Tera Character Tracker " + version;
                     w.ShowDialog();
 
                     Tera.TeraLogic.SaveSettings();
@@ -47,13 +49,15 @@ namespace TCTMain
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.InnerException);
-
                     using (StreamWriter writer = new StreamWriter(Environment.CurrentDirectory + "\\error.txt", true))
                     {
                         writer.WriteLine("Message :" + ex.Message + Environment.NewLine + "StackTrace :" + ex.StackTrace +
                            "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
                         writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
                     }
+                    Tera.TeraLogic.SaveAccounts();
+                    Tera.TeraLogic.SaveSettings();
+                    Tera.TeraLogic.SaveCharacters();
                     MessageBox.Show("An error occured. Check error.txt for more info");
                     Environment.Exit(-1);
                 }
@@ -81,7 +85,6 @@ namespace TCTMain
         }
             
 
-
         [DllImport("kernel32.dll")]
         public static extern bool AllocConsole();
 
@@ -94,7 +97,6 @@ namespace TCTMain
             /*load settings*/
             Tera.TeraLogic.LoadSettings();
             Tera.TeraLogic.ResetCheck();
-
 
             Thread uiThread = new Thread(new ThreadStart(Threads.UIThread));
             Thread netThread = new Thread(new ThreadStart(Threads.NetThread));

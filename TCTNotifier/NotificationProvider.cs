@@ -13,6 +13,7 @@ using System.Windows.Threading;
 
 namespace TCTNotifier
 {
+
     public enum NotificationType
     {
         Default,
@@ -27,18 +28,20 @@ namespace TCTNotifier
         public string content;
         public NotificationType nType;
         public Color ringColor;
-        public NotificationInfo(string _c, NotificationType _nt, Color _co)
+        public bool isRepeatable;
+        public NotificationInfo(string _c, NotificationType _nt, Color _co, bool _repeat)
         {
             content = _c;
             nType = _nt;
             ringColor = _co;
+            isRepeatable = _repeat;
         }
     }
     public delegate void NotificationAddedEventHandler(object sender, EventArgs e, NotificationInfo ni);
     public delegate void NotificationEndedEventHandler(object sender, EventArgs e);
     public static class NotificationProvider
     {
-        public static NotificationInfo lastNotification = new NotificationInfo("Null notification",NotificationType.Default, Colors.Black);
+        public static NotificationInfo[] lastNotification = new NotificationInfo[2] { new NotificationInfo("Null notification", NotificationType.Default, Colors.Black, false), new NotificationInfo("Null notification", NotificationType.Default, Colors.Black, false) };
         public static Dictionary<NotificationType, string> imagesDictionary = new Dictionary<NotificationType, string>()
         {
             { NotificationType.Default, "default" },
@@ -52,12 +55,12 @@ namespace TCTNotifier
         public static NotificationQueue NQ = new NotificationQueue();
         public static NotificationListener NL = new NotificationListener(NQ);
         public static Notification N = new Notification();
-        public static NotificationSender NS = new NotificationSender();
-        public static void AddNotification(NotificationInfo _n)
+        static NotificationSender NS;
+        static void AddNotification(NotificationInfo _n)
         {
             NQ.Add(_n);
         }
-        public class NotificationQueue : List<NotificationInfo>
+        public  class NotificationQueue : List<NotificationInfo>
         {
             public bool Busy { get; set; } = false;
             public event NotificationAddedEventHandler Added;
@@ -102,7 +105,7 @@ namespace TCTNotifier
             }
             private void NextNotification(object sender, EventArgs e)
             {
-                if(NQ.Count > 0)
+                if (NQ.Count > 0)
                 {
                     NotifyNew(new object(), new EventArgs(), NQ.First());
                 }
@@ -138,6 +141,7 @@ namespace TCTNotifier
                         {
                             imgB.ImageSource = new BitmapImage(new Uri("pack://application:,,,/resources/notifier_images/default.png", UriKind.RelativeOrAbsolute));
                             Console.WriteLine(ex.ToString());
+
                         }
 
                         sn.icon.Fill = imgB;
@@ -153,92 +157,114 @@ namespace TCTNotifier
                 nq = null;
             }
         }
-    }
-    public class NotificationSender
-    {
-        string content;
-        NotificationType nType;
-        Color ringColor;
-
-        public NotificationSender()
+        public static void SendNotification(string _content, NotificationType _nType, Color col, bool rep)
         {
-            content = "Empty";
-            nType = NotificationType.Default;
-            initNotification();
-
+            NS.sendNotification(_content, _nType, col, rep);
         }
-        void initNotification()
+        public static void SendNotification(string _content)
         {
-            prepareNotification(new NotificationInfo("Empty", NotificationType.Default, Colors.WhiteSmoke));
-            NotificationProvider.N.Dispatcher.Invoke(() => NotificationProvider.N.Hide());
+            NS.sendNotification(_content);
+        }
+        public static void Init()
+        {
+            NS = new NotificationSender();
         }
 
-        void prepareNotification(NotificationInfo _n)
+        class NotificationSender
         {
-            content = _n.content;
-            nType = _n.nType;
-            ringColor = _n.ringColor;
-            NotificationProvider.N.Dispatcher.Invoke(() =>
+            string content;
+            NotificationType nType;
+            Color ringColor;
+
+            public NotificationSender()
             {
-                NotificationProvider.N.NotificationHolder.Children.Clear();
-                NotificationProvider.N.ShowActivated = false;
-                NotificationProvider.N.Show();
-            });
-        }
-        void notify(NotificationInfo n)
-        {
-            NotificationProvider.N.Dispatcher.Invoke(new Action(() =>
-            {
-                var sn = new StandardNotification();
-                sn.txt.Text = content;
-                sn.glowColor = ringColor;
-                NotificationProvider.N.NotificationHolder.Children.Add(sn);
-                NotificationProvider.N.ShowInTaskbar = false;
-                NotificationProvider.N.ShowActivated = false;
-                ImageBrush imgB = new ImageBrush();
+                content = "Empty";
+                nType = NotificationType.Default;
+                initNotification();
 
-                try
+            }
+            void initNotification()
+            {
+                prepareNotification(new NotificationInfo("Empty", NotificationType.Default, Colors.WhiteSmoke, false));
+                NotificationProvider.N.Dispatcher.Invoke(() => NotificationProvider.N.Hide());
+            }
+
+            void prepareNotification(NotificationInfo _n)
+            {
+                content = _n.content;
+                nType = _n.nType;
+                ringColor = _n.ringColor;
+                NotificationProvider.N.Dispatcher.Invoke(() =>
                 {
-                    string val = "";
-                    NotificationProvider.imagesDictionary.TryGetValue(nType, out val);
-                    imgB.ImageSource = new BitmapImage(new Uri("pack://application:,,,/resources/notifier_images/" + val + ".png", UriKind.RelativeOrAbsolute));
-                }
-
-                catch (Exception e)
-                {
-                    imgB.ImageSource = new BitmapImage(new Uri("pack://application:,,,/resources/notifier_images/default.png", UriKind.RelativeOrAbsolute));
-                    Console.WriteLine(e.ToString());
-                }
-
-                sn.icon.Fill = imgB;
-            
-                NotificationProvider.N.Pop(n);
-            }));
-        }
-                
-        public void sendNotification(string _content, NotificationType _nType, Color col)
-        {
-            var _n = new NotificationInfo(_content, _nType, col);
-            if (NotificationProvider.NQ.Count >= 0) 
+                    NotificationProvider.N.NotificationHolder.Children.Clear();
+                    NotificationProvider.N.ShowActivated = false;
+                    NotificationProvider.N.Show();
+                });
+            }
+            void notify(NotificationInfo n)
             {
-                if(_n.content != NotificationProvider.lastNotification.content || _n.nType == NotificationType.Crystalbind)
+                NotificationProvider.N.Dispatcher.Invoke(new Action(() =>
+                {
+                    var sn = new StandardNotification();
+                    sn.txt.Text = content;
+                    sn.glowColor = ringColor;
+                    NotificationProvider.N.NotificationHolder.Children.Add(sn);
+                    NotificationProvider.N.ShowInTaskbar = false;
+                    NotificationProvider.N.ShowActivated = false;
+                    ImageBrush imgB = new ImageBrush();
+
+                    try
+                    {
+                        string val = "";
+                        NotificationProvider.imagesDictionary.TryGetValue(nType, out val);
+                        imgB.ImageSource = new BitmapImage(new Uri("pack://application:,,,/resources/notifier_images/" + val + ".png", UriKind.RelativeOrAbsolute));
+                    }
+
+                    catch (Exception ex)
+                    {
+                        imgB.ImageSource = new BitmapImage(new Uri("pack://application:,,,/resources/notifier_images/default.png", UriKind.RelativeOrAbsolute));
+                        Console.WriteLine(ex.ToString());
+
+                    }
+
+                    sn.icon.Fill = imgB;
+
+                    NotificationProvider.N.Pop(n);
+                }));
+            }
+
+            public void sendNotification(string _content, NotificationType _nType, Color col, bool rep)
+            {
+                var _n = new NotificationInfo(_content, _nType, col, rep);
+                if (NotificationProvider.NQ.Count >= 0)
+                {
+                    if (_n.content == NotificationProvider.lastNotification[0].content || _n.content == NotificationProvider.lastNotification[1].content)
+                    {
+                        if (_n.isRepeatable)
+                        {
+                            NotificationProvider.AddNotification(_n);
+                        }
+                    }
+                    else
+                    {
+                        NotificationProvider.AddNotification(_n);
+                    }
+                }
+                else
                 {
                     NotificationProvider.AddNotification(_n);
                 }
+                NotificationProvider.lastNotification[1] = NotificationProvider.lastNotification[0];
+                NotificationProvider.lastNotification[0] = _n;
             }
-            else
+
+            public void sendNotification(string _content)
             {
+                var _n = new NotificationInfo(_content, NotificationType.Default, Colors.WhiteSmoke, true);
+
                 NotificationProvider.AddNotification(_n);
+
             }
-            NotificationProvider.lastNotification = _n;
-        }
-
-        public void sendNotification(string _content)
-        {
-            var _n = new NotificationInfo(_content, NotificationType.Default, Colors.WhiteSmoke);
-
-            NotificationProvider.AddNotification(_n);
-
         }
     }
 }

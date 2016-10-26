@@ -447,14 +447,36 @@ namespace PacketViewer
             UI.MainWin.Dispatcher.Invoke(new Action(()=> Tera.TeraLogic.SelectCharacter(currentCharName)));
 
             TeraLogic.cvcp.SelectedChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-
+            CurrentChar().GoldfingerTokens = 0;
+            CurrentChar().MarksOfValor = 0;
             //TCTNotifier.NotificationProvider.NS.sendNotification(currentCharName + " logged in.");
         }
         private static void SetTokens()
         {
             ip.FastMergeInventory();
-            CurrentChar().MarksOfValor = ip.GetMarksFast(ip.inv);
-            CurrentChar().GoldfingerTokens = ip.GetGoldfingerFast(ip.inv);
+
+            var newMarks = ip.GetMarksFast(ip.inv);
+            var newGoldfinger = ip.GetGoldfingerFast(ip.inv);
+            if (CurrentChar().MarksOfValor != newMarks)
+            {
+                CurrentChar().MarksOfValor = newMarks;
+                if (CurrentChar().MarksOfValor > 82)
+                {
+                    UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
+                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", TCTNotifier.NotificationType.MarksNotification, Colors.Orange, true);
+                }
+            }
+
+            if (CurrentChar().GoldfingerTokens != newGoldfinger)
+            {
+                CurrentChar().GoldfingerTokens = newGoldfinger;
+                if (CurrentChar().GoldfingerTokens >= 80)
+                {
+                    UI.UpdateLog("You have more than 80 Goldfinger Tokens.");
+                    TCTNotifier.NotificationProvider.SendNotification("You have "+ CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", TCTNotifier.NotificationType.Goldfinger, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
+                }
+            }
+
             ip.Clear();
 
             UI.UpdateLog(currentCharName + " > received inventory data (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens).");
@@ -504,9 +526,9 @@ namespace PacketViewer
                 {
                     logo.Save(Environment.CurrentDirectory + "\\content/data/guild_images/" + guildId.ToString() + ".bmp");
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    Console.WriteLine(e.ToString());
+                    Console.WriteLine(ex.ToString());
                 }
             }
         }
@@ -588,13 +610,13 @@ namespace PacketViewer
                         {
                             var questname = t.Attribute("string").Value;
                             Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".");
-                            TCTNotifier.NotificationProvider.NS.sendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".", TCTNotifier.NotificationType.Credits, Colors.LightGreen);
+                            TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".", TCTNotifier.NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true);
                         }
 
                         else
                         {
                             Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")");
-                            TCTNotifier.NotificationProvider.NS.sendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")", TCTNotifier.NotificationType.Credits, Colors.LightGreen);
+                            TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")", TCTNotifier.NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
                         }
                     }
                 }
@@ -652,7 +674,7 @@ namespace PacketViewer
             {
                 string dgName = dgNameEl.Attribute("string").Value;
                 UI.UpdateLog(currentCharName + " > " + dgName + " engaged.");
-                TCTNotifier.NotificationProvider.NS.sendNotification(dgName + " engaged.");
+                TCTNotifier.NotificationProvider.SendNotification(dgName + " engaged.");
                 try
                 {
                     CurrentChar().Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == id).ShortName)).Runs--;
@@ -1250,14 +1272,14 @@ namespace PacketViewer
                 {
                     if (TeraLogic.RiskList.Contains(locId))
                     {
-                        TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind is off.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
+                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", TCTNotifier.NotificationType.Crystalbind, Colors.Red, true);
                     }
                 }
-                else if (Time <= 3600000 && Time > 0)
+                else if (Time <= 1800000 && Time > 0)
                 {
                     if (TeraLogic.RiskList.Contains(locId))
                     {
-                        TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind will expire soon.", TCTNotifier.NotificationType.Crystalbind, Colors.Orange);
+                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", TCTNotifier.NotificationType.Crystalbind, Colors.Orange, true);
                     }
                 }
             }
@@ -1323,7 +1345,7 @@ namespace PacketViewer
                 Time = 0;
                 CurrentChar().Crystalbind = Time;
                 BuffList.Clear();
-                TCTNotifier.NotificationProvider.NS.sendNotification("Your Complete Crystalbind expired.", TCTNotifier.NotificationType.Crystalbind, Colors.Red);
+                TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind expired.", TCTNotifier.NotificationType.Crystalbind, Colors.Red, true);
             }
             class Buff
             {
