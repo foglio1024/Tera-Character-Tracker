@@ -102,6 +102,7 @@ namespace PacketViewer
                     SetCharList(lp.HexShortText);
                     TeraLogic.SaveAccounts();
                     TeraLogic.SaveCharacters();
+
                     UI.UpdateLog("Data saved.");
 
                     break; 
@@ -652,8 +653,14 @@ namespace PacketViewer
                 string dgName = dgNameEl.Attribute("string").Value;
                 UI.UpdateLog(currentCharName + " > " + dgName + " engaged.");
                 TCTNotifier.NotificationProvider.NS.sendNotification(dgName + " engaged.");
-
-                CurrentChar().Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == id).ShortName)).Runs--;
+                try
+                {
+                    CurrentChar().Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == id).ShortName)).Runs--;
+                }
+                catch
+                {
+                    UI.UpdateLog("Dungeon not found. Can't subtract run from entry counter.");
+                }
             }
         }
         private static void setDungs()

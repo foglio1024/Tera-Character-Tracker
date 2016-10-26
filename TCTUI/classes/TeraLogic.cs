@@ -16,6 +16,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Windows.Media;
 using Tera.Converters;
+using System.Runtime.InteropServices;
 
 namespace Tera
 {
@@ -41,18 +42,23 @@ namespace Tera
             public static Color accentColor = Color.FromArgb(255, 255, 120, 42);
         }
 
+
         public const int MAX_WEEKLY = 15;
         public const int MAX_DAILY = 8;
         public const int MAX_CREDITS = 9000;
         public const int MAX_MARKS = 100;
         public const int MAX_GF_TOKENS = 80;
-     
+        private const int DAILY_RESET_HOUR = 5;
 
+        public static bool dailyReset = false;
+        public static bool weeklyReset = false;
         public static bool IsSaved { get; set; }
         public static List<Character> CharList { get; set; }
         public static List<Dungeon> DungList{ get; set; }
         public static List<Account> AccountList { get; set; }
         public static Dictionary<uint, string> GuildDictionary { get; set; }
+        private static XDocument settings;
+        private static DateTime LastClosed;
         public static XDocument EventMatching;
         public static XDocument DailyPlayGuideQuest;
         public static XDocument StrSheet_DailyPlayGuideQuest;
@@ -308,6 +314,48 @@ namespace Tera
 
 
         }
+        public static void TryReset()
+        {
+            if (dailyReset)
+            {
+                ResetDailyData();
+                UI.UpdateLog("Daily data has been reset.");
+                TCTNotifier.NotificationProvider.NS.sendNotification("Daily data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
+
+                dailyReset = false;
+            }
+            if (weeklyReset)
+            {
+                ResetWeeklyData();
+                UI.UpdateLog("Weekly data has been reset.");
+                TCTNotifier.NotificationProvider.NS.sendNotification("Weekly data has been reset.", TCTNotifier.NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100));
+
+                weeklyReset = false;
+            }
+        }
+        public static void ResetCheck()
+        {
+            DateTime lastReset;
+            if (DateTime.Now.Hour >= DAILY_RESET_HOUR)
+            {
+                lastReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DAILY_RESET_HOUR, 0, 0);
+            }
+
+            else
+            {
+                lastReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day - 1, DAILY_RESET_HOUR, 0, 0);
+            }
+
+            if (LastClosed < lastReset)
+            {
+                dailyReset = true;
+                if (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                    weeklyReset = true;
+                }
+            }
+
+        }
 
     #region File Management
         public static void SaveCharacters()
@@ -426,6 +474,89 @@ namespace Tera
                 i++;
             }
         }
-    #endregion
+        public static void SaveSettings()
+        {
+            LastClosed = DateTime.Now;
+
+            settings =
+                new XDocument
+                (
+                    new XElement("Settings",
+                       new XElement("LastClosed", new XAttribute("value", "")),
+                       new XElement("Console", new XAttribute("value", "")),
+                       new XElement("CcbFrequency", new XAttribute("value", "")),
+                       new XElement("Top", new XAttribute("value", "")),
+                       new XElement("Left", new XAttribute("value", "")),
+                       new XElement("Width", new XAttribute("value", "")),
+                       new XElement("Height", new XAttribute("value", ""))
+                    )
+                );
+
+            settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault().Attribute("value").Value = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
+            settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Console.ToString();
+            settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.CcbNM.ToString();
+            settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Top.ToString();
+            settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Left.ToString();
+            settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Width.ToString();
+            settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Height.ToString();
+            settings.Save(Environment.CurrentDirectory + "\\content/data/settings.xml");
+        }
+        public static void LoadSettings()
+        {
+            settings = new XDocument();
+            if (File.Exists(Environment.CurrentDirectory + "\\content/data/settings.xml"))
+            {
+                settings = XDocument.Load(Environment.CurrentDirectory + "\\content/data/settings.xml");
+                XElement LastClosedXE = settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault();
+
+                double _LastClosed = Convert.ToDouble(LastClosedXE.Attribute("value").Value.ToString());
+                System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+
+                LastClosed = dtDateTime.AddSeconds(_LastClosed).ToLocalTime();
+
+
+                Tera.TeraLogic.TCTProps.Top = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value);
+                Tera.TeraLogic.TCTProps.Left = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value);
+                Tera.TeraLogic.TCTProps.Width = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value);
+                Tera.TeraLogic.TCTProps.Height = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value);
+
+                if (settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value == "EverySection")
+                {
+                    Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.EverySection;
+                }
+                else
+                {
+                    Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.TeleportOnly;
+                }
+
+                if (settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value == "True")
+                {
+                    Tera.TeraLogic.TCTProps.Console = true;
+                    AllocConsole();
+                }
+                else
+                {
+                    Tera.TeraLogic.TCTProps.Console = false;
+                }
+            }
+
+            else
+            {
+                Tera.TeraLogic.TCTProps.Top = 20;
+                Tera.TeraLogic.TCTProps.Left = 20;
+                Tera.TeraLogic.TCTProps.Width = 1280;
+                Tera.TeraLogic.TCTProps.Height = 930;
+                Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.EverySection;
+                Tera.TeraLogic.TCTProps.Console = false;
+            }
+        }
+
+        [DllImport("kernel32.dll")]
+        public static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
+
+        #endregion
     }
 }
