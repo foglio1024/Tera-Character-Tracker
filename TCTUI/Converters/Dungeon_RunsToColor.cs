@@ -24,22 +24,22 @@ namespace Tera.Converters
 
             if (runs == 0)
             {
-               return new SolidColorBrush(col = Color.FromArgb(0xa0, 255, 80, 80));
+               return new SolidColorBrush(col = UI.Colors.FadedRed);
             }
 
             else if(runs > 0 && runs < max)
             {
-               return new SolidColorBrush(col = Color.FromArgb(0xa0, 255, 166, 77));
+               return new SolidColorBrush(col = UI.Colors.FadedYellow);
             }
 
             else if (runs == max)
             {
-                return new SolidColorBrush(col = Color.FromArgb(0xa0, 88, 180, 91));
+                return new SolidColorBrush(col = UI.Colors.FadedGreen);
             }
 
             else
             {
-                return new SolidColorBrush(col = Color.FromArgb(0xa0, 96, 125, 139));
+                return new SolidColorBrush(col = UI.Colors.FadedGray);
             }
 
         }

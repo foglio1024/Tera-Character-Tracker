@@ -14,11 +14,11 @@ namespace Tera.Converters
             var m = (int)parameter;
             if(v > m)
             {
-                return new SolidColorBrush(TeraLogic.TCTProps.accentColor);
+                return new SolidColorBrush(UI.Colors.SolidAccentColor);
             }
             else
             {
-                return SystemParameters.WindowGlassBrush;
+                return new SolidColorBrush(UI.Colors.SolidBaseColor);
             }
         }
 

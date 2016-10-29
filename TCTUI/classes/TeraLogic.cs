@@ -25,8 +25,10 @@ namespace Tera
         TeleportOnly = 0,
         EverySection = 1
     }
-    public static class TeraLogic 
+
+    public static class TeraLogic
     {
+
         public static class TCTProps
         {
             public static bool Reset { get; set; }
@@ -38,8 +40,6 @@ namespace Tera
             public static double Height { get; set; }
             public static bool Console { get; set; }
             public static CcbNotificationMode CcbNM { get; set; } = CcbNotificationMode.TeleportOnly;
-            public static Color baseColor = Color.FromArgb(255, 96, 125, 139);
-            public static Color accentColor = Color.FromArgb(255, 255, 120, 42);
         }
 
 

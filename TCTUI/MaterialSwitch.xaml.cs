@@ -27,10 +27,10 @@ namespace Tera
 
             On = new ThicknessAnimationUsingKeyFrames();
             Off = new ThicknessAnimationUsingKeyFrames();
-            OnFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 255, 255), System.Windows.Media.Color.FromArgb(255, 255, 120, 42), TimeSpan.FromMilliseconds(150));
-            OffFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(255, 255, 120, 42), System.Windows.Media.Color.FromArgb(255, 255, 255, 255), TimeSpan.FromMilliseconds(150));
-            OnBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(25, 0, 0, 0), System.Windows.Media.Color.FromArgb(100, 255, 120, 42), TimeSpan.FromMilliseconds(150));
-            OffBackFill = new ColorAnimation(System.Windows.Media.Color.FromArgb(100, 255, 120, 42), System.Windows.Media.Color.FromArgb(25, 0, 0, 0), TimeSpan.FromMilliseconds(150));
+            OnFill = new ColorAnimation(Colors.White, UI.Colors.SolidAccentColor, TimeSpan.FromMilliseconds(150));
+            OffFill = new ColorAnimation(UI.Colors.SolidAccentColor, Colors.White, TimeSpan.FromMilliseconds(150));
+            OnBackFill = new ColorAnimation(UI.Colors.FadedGray, UI.Colors.FadedAccentColor, TimeSpan.FromMilliseconds(150));
+            OffBackFill = new ColorAnimation(UI.Colors.FadedAccentColor, UI.Colors.FadedGray, TimeSpan.FromMilliseconds(150));
             On.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
             Off.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));
 
