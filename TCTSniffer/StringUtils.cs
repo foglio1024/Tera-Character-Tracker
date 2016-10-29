@@ -44,7 +44,14 @@ namespace TCTSniffer
             var result = Convert.ToInt32(sb.ToString(), 16);
             return result;
         }
-
+        public static int Hex1BStringToInt(string hex)
+        {
+            var sb = new StringBuilder();
+                sb.Append(hex[0]);
+                sb.Append(hex[1]);
+            var result = Convert.ToInt32(sb.ToString(), 16);
+            return result;
+        }
         public static int GetStringEnd(string s, int startIndex, string terminator)
         {
             int endIndex = startIndex;

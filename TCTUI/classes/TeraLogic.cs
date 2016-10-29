@@ -64,6 +64,7 @@ namespace Tera
         public static XDocument StrSheet_DailyPlayGuideQuest;
         public static XDocument StrSheet_Region;
         public static XDocument StrSheet_Dungeon;
+        public static XDocument StrSheet_ZoneName;
         public static XDocument NewWorldMapData;
         public static List<XDocument> StrSheet_Item_List;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
@@ -464,6 +465,8 @@ namespace Tera
             NewWorldMapData                 = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/NewWorldMapData.xml");
             StrSheet_Dungeon                = new XDocument();
             StrSheet_Dungeon                = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Dungeon-0.xml");
+            StrSheet_ZoneName               = new XDocument();
+            StrSheet_ZoneName               = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_ZoneName.xml");
             StrSheet_Item_List              = new List<XDocument>();
             int i = 0;
             while (File.Exists(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Item/StrSheet_Item-" + i + ".xml"))

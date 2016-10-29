@@ -18,6 +18,8 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media.Imaging;
 using Tera.Converters;
+using System.Windows.Data;
+using System.Globalization;
 
 namespace PacketViewer
 {
@@ -47,6 +49,19 @@ namespace PacketViewer
         Champion
     }
 
+    enum GuildSize
+    {
+        Small,
+        Medium,
+        Big
+    }
+    enum QuestStatus
+    {
+        Available,
+        Taken,
+        Completed
+    }
+
 
 
     public static class DataBridge
@@ -67,13 +82,14 @@ namespace PacketViewer
         static OpCodeNamer opn = new OpCodeNamer(Path.Combine(btd.ResourceDirectory, string.Format("opcodes-{0}.txt", "3907eu")));
 
 
-        static CharListProcessor cp = new CharListProcessor();
-        static CharLoginProcessor clp = new CharLoginProcessor();
-        static VanguardWindowProcessor vwp = new VanguardWindowProcessor();
-        static InventoryProcessor ip = new InventoryProcessor();
-        static SectionProcessor sp = new SectionProcessor();
-        static CrystalbindProcessor cbp = new CrystalbindProcessor();
-        static AccountLoginProcessor alp = new AccountLoginProcessor();
+        static CharListProcessor charListProcessor = new CharListProcessor();
+        static CharLoginProcessor charLoginProcessor = new CharLoginProcessor();
+        static VanguardWindowProcessor vanguardWindowProcessor = new VanguardWindowProcessor();
+        static InventoryProcessor inventoryProcessor = new InventoryProcessor();
+        static SectionProcessor sectionProcessor = new SectionProcessor();
+        static CrystalbindProcessor crystalbindProcessor = new CrystalbindProcessor();
+        static AccountLoginProcessor accountLoginProcessor = new AccountLoginProcessor();
+        static GuildQuestListProcessor guildQuestListProcessor = new GuildQuestListProcessor();
 
         internal static void storeMessage(Message msg)
         {
@@ -93,12 +109,12 @@ namespace PacketViewer
             {
                 case "S_GET_USER_LIST": 
                     #region LIST
-                    cbp.Clear();
-                    if(!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == alp.id)))
+                    crystalbindProcessor.Clear();
+                    if(!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
                     {
-                        TeraLogic.AccountList.Add(new Account(alp.id, alp.tc, alp.vet, alp.tcTime));
+                        TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
                     }
-                    cp.CurrentAccountId = alp.id;
+                    charListProcessor.CurrentAccountId = accountLoginProcessor.id;
                     SetCharList(lp.HexShortText);
                     TeraLogic.SaveAccounts();
                     TeraLogic.SaveCharacters();
@@ -110,7 +126,7 @@ namespace PacketViewer
 
                 case "S_LOGIN":
                     #region LOGIN
-                    cbp.Clear();
+                    crystalbindProcessor.Clear();
                     LoginChar(lp.HexShortText);
                     break; 
                 #endregion
@@ -125,19 +141,19 @@ namespace PacketViewer
                     #region INVENTORY
                     if (lp.HexShortText[53].ToString() == "1") /*wait next packet*/
                     {
-                        ip.multiplePackets = true;
-                        ip.p1 = lp.HexShortText;
+                        inventoryProcessor.multiplePackets = true;
+                        inventoryProcessor.p1 = lp.HexShortText;
                     }
                     else if (lp.HexShortText[53].ToString() == "0")/*is last/unique packet*/
                     {
-                        if (ip.multiplePackets)
+                        if (inventoryProcessor.multiplePackets)
                         {
-                            ip.p2 = lp.HexShortText;
-                            ip.multiplePackets = false;
+                            inventoryProcessor.p2 = lp.HexShortText;
+                            inventoryProcessor.multiplePackets = false;
                         }
                         else
                         {
-                            ip.p1 = lp.HexShortText;
+                            inventoryProcessor.p1 = lp.HexShortText;
                         }
 
                         SetTokens();
@@ -201,27 +217,27 @@ namespace PacketViewer
                 #region CCB
                 case "S_ABNORMALITY_BEGIN":
                     #region CCB START
-                    cbp.ParseNewBuff(lp.HexShortText, currentCharId);
+                    crystalbindProcessor.ParseNewBuff(lp.HexShortText, currentCharId);
                     break;
                 #endregion
                 case "S_ABNORMALITY_END":
                     #region CCB END
-                    cbp.ParseEndingBuff(lp.HexShortText, currentCharId);
+                    crystalbindProcessor.ParseEndingBuff(lp.HexShortText, currentCharId);
                     break;
                 #endregion
                 case "S_CLEAR_ALL_HOLDED_ABNORMALITY":
                     #region CCB HOLD
-                    cbp.CancelDeletion();
+                    crystalbindProcessor.CancelDeletion();
                     break;
                 #endregion
                 #endregion
 
                 case "S_LOGIN_ACCOUNT_INFO":
-                    alp.ParseLoginInfo(lp.HexShortText);
+                    accountLoginProcessor.ParseLoginInfo(lp.HexShortText);
                     break;
 
                 case "S_ACCOUNT_PACKAGE_LIST":
-                    alp.ParsePackageInfo(lp.HexShortText);
+                    accountLoginProcessor.ParsePackageInfo(lp.HexShortText);
                     break;
 
                 case "S_RETURN_TO_LOBBY":
@@ -230,6 +246,19 @@ namespace PacketViewer
                     UI.UpdateLog("Data saved.");
                     break;
 
+                case "S_GUILD_QUEST_LIST":
+                    guildQuestListProcessor.ParseGuildListPacket(lp.HexShortText);
+                    UI.UpdateLog("Received guild quests list.");
+                    break;
+
+                case "S_FINISH_GUILD_QUEST":
+                    guildQuestListProcessor.RemoveQuest(lp.HexShortText);
+                    UI.UpdateLog("Guild quest completed.");
+                    break;
+                case "S_START_GUILD_QUEST":
+                    guildQuestListProcessor.TakeQuest(lp.HexShortText);
+                    UI.UpdateLog("Guild quest accepted.");
+                    break;
                 default:
                     break;
             }
@@ -428,20 +457,20 @@ namespace PacketViewer
         }
         private static void SetCharList(string p)
         {
-            var charList =  cp.ParseCharacters(p);
+            var charList =  charListProcessor.ParseCharacters(p);
             for (int i = 0; i < charList.Count; i++)
             {
                 UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.AddCharacter(charList[i])));
             }
-            cp.Clear();
+            charListProcessor.Clear();
 
             UI.UpdateLog("Found " + charList.Count + " characters.");
             //TCTNotifier.NotificationProvider.NS.sendNotification("Found " + charList.Count + " characters.");
         }
         private static void LoginChar(string p)
         {
-            currentCharName = clp.getName(p);
-            currentCharId = clp.getId(p);
+            currentCharName = charLoginProcessor.getName(p);
+            currentCharId = charLoginProcessor.getId(p);
             
             UI.UpdateLog(currentCharName + " logged in.");
             UI.MainWin.Dispatcher.Invoke(new Action(()=> Tera.TeraLogic.SelectCharacter(currentCharName)));
@@ -453,10 +482,10 @@ namespace PacketViewer
         }
         private static void SetTokens()
         {
-            ip.FastMergeInventory();
+            inventoryProcessor.FastMergeInventory();
 
-            var newMarks = ip.GetMarksFast(ip.inv);
-            var newGoldfinger = ip.GetGoldfingerFast(ip.inv);
+            var newMarks = inventoryProcessor.GetMarksFast(inventoryProcessor.inv);
+            var newGoldfinger = inventoryProcessor.GetGoldfingerFast(inventoryProcessor.inv);
             if (CurrentChar().MarksOfValor != newMarks)
             {
                 CurrentChar().MarksOfValor = newMarks;
@@ -477,16 +506,16 @@ namespace PacketViewer
                 }
             }
 
-            ip.Clear();
+            inventoryProcessor.Clear();
 
             UI.UpdateLog(currentCharName + " > received inventory data (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens).");
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
         }
         private static void SetVanguardData(string p)
         {
-            int weekly = vwp.getWeekly(p); //Convert.ToInt32(wCforVGData[7 * 8].ToString() + wCforVGData[7 * 8 + 1].ToString(), 16);
-            int credits = vwp.getCredits(p); //Convert.ToInt32(wCforVGData[8 * 8 + 2].ToString() + wCforVGData[8 * 8 + 3].ToString()+ wCforVGData[8 * 8 + 0].ToString() + wCforVGData[8 * 8 + 1].ToString() , 16);
-            int completed_dailies = vwp.getDaily(p); //Convert.ToInt32(wCforVGData.Substring(3 * 8, 2).ToString(), 16);
+            int weekly = vanguardWindowProcessor.getWeekly(p); //Convert.ToInt32(wCforVGData[7 * 8].ToString() + wCforVGData[7 * 8 + 1].ToString(), 16);
+            int credits = vanguardWindowProcessor.getCredits(p); //Convert.ToInt32(wCforVGData[8 * 8 + 2].ToString() + wCforVGData[8 * 8 + 3].ToString()+ wCforVGData[8 * 8 + 0].ToString() + wCforVGData[8 * 8 + 1].ToString() , 16);
+            int completed_dailies = vanguardWindowProcessor.getDaily(p); //Convert.ToInt32(wCforVGData.Substring(3 * 8, 2).ToString(), 16);
             int remaining_dailies = Tera.TeraLogic.MAX_DAILY - completed_dailies;
             UI.UpdateLog(currentCharName + " > received vanguard data (" + credits + " credits, " + weekly + " weekly quests done, "+ remaining_dailies + " dailies left).");
 
@@ -498,19 +527,21 @@ namespace PacketViewer
         }
         private static void NewSection(string p)
         {
-            if (CurrentChar().LocationId != sp.GetLocationId(p))
+            if (CurrentChar().LocationId != sectionProcessor.GetLocationId(p))
             {
-                CurrentChar().LocationId = sp.GetLocationId(p);
+                CurrentChar().LocationId = sectionProcessor.GetLocationId(p);
                 if(TeraLogic.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
                 {
-                    cbp.CheckCcb(CurrentChar().LocationId);
+                    crystalbindProcessor.CheckCcb(CurrentChar().LocationId);
                 }
-                UI.UpdateLog(CurrentChar().Name + " moved to " + sp.GetLocationName(p) + ".");
+
+                guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
+                UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
             }
 
             if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
             {
-                cbp.CheckCcb(CurrentChar().LocationId);
+                crystalbindProcessor.CheckCcb(CurrentChar().LocationId);
             }
 
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
@@ -1380,8 +1411,229 @@ namespace PacketViewer
                 id = p.Substring(8, 12);
             }
         }
-        class SystemMessageProcessor { }
+        class GuildQuestListProcessor
+        {
+            const int QUEST_COUNT_OFFSET = 4 * 2;
+            const int FIRST_ADDRESS_OFFSET = 6 * 2;
+            const int GUILD_SIZE_OFFSET = 56 * 2;
 
+            List<GuildQuest> QuestList = new List<GuildQuest>();
+
+            List<int> addressList = new List<int>();
+            List<string> questStringList = new List<string>();
+            string guildListPacket;
+            public QuestParser questParser;
+
+            void Clear()
+            {
+                if (questParser != null)
+                {
+                    questParser.Clear(); 
+                }
+                addressList.Clear();
+                questStringList.Clear();
+                QuestList.Clear();
+            }
+            public void ParseGuildListPacket(string p)
+            {
+                Clear();
+                questParser = new QuestParser(p);
+                guildListPacket = p;
+                FillQuestStringList();
+                foreach (var item in questStringList)
+                {
+                    if(questParser.GetQuestSize(item) == GetGuildSize() && questParser.GetZoneID(item) != 152)
+                    {
+                        QuestList.Add(new GuildQuest(questParser.GetQuestID(item),
+                                                     questParser.GetStatus(item),
+                                                     questParser.GetZoneID(item)));
+                    }
+                }
+            }
+
+            void FillAddressList()
+            {
+                var firstAddress = StringUtils.Hex2BStringToInt(guildListPacket.Substring(FIRST_ADDRESS_OFFSET));
+                var address = firstAddress * 2;
+                addressList.Add(address);
+                bool end = false;
+                while (!end)
+                {
+                    address = StringUtils.Hex2BStringToInt(guildListPacket.Substring(address + 4)) * 2;
+                    if (address == 0)
+                    {
+                        end = true;
+                    }
+                    else
+                    {
+                        addressList.Add(address);
+                    }
+                }
+            }
+            void FillQuestStringList()
+            {
+                FillAddressList();
+                for (int i = 0; i < addressList.Count; i++)
+                {
+                    if (i == addressList.Count - 1)
+                    {
+                        questStringList.Add(guildListPacket.Substring(addressList[i]));
+                    }
+                    else
+                    {
+                        var start = addressList[i];
+                        var len = addressList[i + 1] - start;
+                        questStringList.Add(guildListPacket.Substring(start, len));
+                    }
+
+                }
+            }
+            string GetGuildSize()
+            {
+                int size = StringUtils.Hex4BStringToInt(guildListPacket.Substring(GUILD_SIZE_OFFSET));
+                return ((GuildSize)size).ToString();
+            }
+
+            public void RemoveQuest(string p)
+            {
+                int id = StringUtils.Hex2BStringToInt(p.Substring(10));
+                foreach (var quest in QuestList)
+                {
+                   if(quest.ID == id)
+                    {
+                        QuestList.Remove(quest);
+                    }
+                }
+            }
+            public void TakeQuest(string p)
+            {
+                var id = StringUtils.Hex2BStringToInt(p.Substring(7 * 2));
+                foreach (var quest in QuestList)
+                {
+                    if (quest.ID == id)
+                    {
+                        quest.Status = QuestStatus.Taken;
+                    }
+                }
+            }
+
+            public void CheckQuestStatus(uint locationId)
+            {
+                RegionToZoneID regionConverter = new RegionToZoneID();
+                int zoneID = (int)regionConverter.Convert(locationId, null, null, null);
+                bool found = false;
+                foreach (var quest in QuestList)
+                {
+                    if(quest.ZoneId == zoneID)
+                    {
+                        found = true;
+                        if(quest.Status== QuestStatus.Available)
+                        {
+                            TCTNotifier.NotificationProvider.SendNotification("You have available guild quests for this dungeon.", TCTNotifier.NotificationType.Default, Colors.Red, true);
+                        }
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    //DO NOTHING
+                }
+            }
+
+            public class QuestParser
+            {
+                const int QUEST_ID_OFFSET = 22 * 2;
+                const int TARGET_LIST_ADDRESS_OFFSET = 6 * 2;
+                const int TEMPLATE_ID_OFFSET = 8 * 2;
+                const int ZONE_ID_OFFSET = 4 * 2;
+                const int QUEST_SIZE_OFFSET = 30 * 2;
+                const int QUEST_STATUS_OFFSET = 161 * 2;
+                string guildListPacket;
+                public void Clear()
+                {
+                    guildListPacket = "";
+                }
+                public int GetQuestID(string q)
+                {
+                    int questId = StringUtils.Hex2BStringToInt(q.Substring(QUEST_ID_OFFSET));
+                    return questId;
+                }
+                public int GetTemplateID(string q)
+                {
+                    int targetsAddress = StringUtils.Hex2BStringToInt(q.Substring(TARGET_LIST_ADDRESS_OFFSET));
+                    string targets = guildListPacket.Substring(targetsAddress * 2);
+
+                    return StringUtils.Hex4BStringToInt(targets.Substring(TEMPLATE_ID_OFFSET));
+
+                }
+                public int GetZoneID(string q)
+                {
+                    int targetsAddress = StringUtils.Hex2BStringToInt(q.Substring(TARGET_LIST_ADDRESS_OFFSET));
+                    string targets = guildListPacket.Substring(targetsAddress * 2);
+                    return StringUtils.Hex4BStringToInt(targets.Substring(ZONE_ID_OFFSET));
+
+                }
+                public string GetQuestSize(string q)
+                {
+                    int size = StringUtils.Hex2BStringToInt(q.Substring(QUEST_SIZE_OFFSET));
+                    return ((GuildSize)size).ToString();
+                }
+                public QuestStatus GetStatus(string p)
+                {
+                    int status = StringUtils.Hex1BStringToInt(p.Substring(QUEST_STATUS_OFFSET, 2));
+                    return (QuestStatus)status;
+
+                }
+                public QuestParser(string p)
+                {
+                    guildListPacket = p;
+                }
+
+            }
+            class RegionToZoneID : IValueConverter
+            {
+                public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+                {
+                    uint regionID = (uint)value;
+                    var regionToName = new Location_IdToName();
+                    string regionName = (string)regionToName.Convert(regionID, null, null, null);
+                    var el = TeraLogic.StrSheet_ZoneName.Descendants().Where(x => (string)x.Attribute("string") == regionName).FirstOrDefault();
+                    string zoneID = "";
+                    if (el != null)
+                    {
+                        zoneID = el.Attribute("id").Value;
+                        return System.Convert.ToInt32(zoneID);
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+
+
+                public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            class GuildQuest
+            {
+                public int ID { get; }
+                public QuestStatus Status { get; set; }
+                public int ZoneId { get; }
+
+                public GuildQuest(int _id, QuestStatus _status, int _zId)
+                {
+                    ID = _id;
+                    Status = _status;
+                    ZoneId = _zId;
+                }
+            }
+        }
+
+
+        class SystemMessageProcessor { }
     }
 }
 
