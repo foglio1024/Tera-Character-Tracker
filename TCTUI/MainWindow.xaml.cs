@@ -258,9 +258,9 @@ namespace Tera
                 }
             }
 
-            ToolBar.Background = SystemParameters.WindowGlassBrush;
-            StatusBar.Background = SystemParameters.WindowGlassBrush;
-            chView.guildGrid.Background = SystemParameters.WindowGlassBrush;
+            ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);
+            StatusBar.Background =          new SolidColorBrush(UI.Colors.SolidBaseColor);
+            chView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
 
             this.Activate();
 
@@ -357,12 +357,16 @@ namespace Tera
                     (w.Child as DungeonsWindow).header.Children.Add(new TextBlock { Text = dg.ShortName, TextAlignment=TextAlignment.Center, Width = 30, Foreground = new SolidColorBrush { Color = new System.Windows.Media.Color { A = 130, R = 0, G = 0, B = 0 } }, VerticalAlignment = VerticalAlignment.Center });
                 }
 
-                /*add dungeon circles indicators in main panel*/
-                foreach (var c in TeraLogic.CharList)
-                {
-                    if (c.Level == 65)
-                    {
+                var localList = new List<Character>();
 
+
+                /*add dungeon circles indicators in main panel*/
+                foreach (TextBlock c in (w.Child as DungeonsWindow).chars.Children)
+                {
+                    Character character = TeraLogic.CharList.Find(x => x.Name == c.Text);
+                    if (character.Level == 65)
+                    {
+                        localList.Add(character);
                         var sp = new StackPanel();
                         sp.Orientation = Orientation.Horizontal;
                         foreach (var dg in TeraLogic.DungList)
@@ -386,17 +390,17 @@ namespace Tera
                             t.FontWeight = FontWeights.DemiBold;
                             el.Fill = new SolidColorBrush(new System.Windows.Media.Color { A = 255, R = 0, G = 0, B = 0 });
                             int max = dg.MaxBaseRuns;
-                            if (TeraLogic.AccountList.Find(a => a.Id == c.AccountId).TeraClub)
+                            if (TeraLogic.AccountList.Find(a => a.Id == character.AccountId).TeraClub)
                             {
                                 if(dg.ShortName != "CA" && dg.ShortName != "GL" && dg.ShortName != "AH")
                                 {
                                     max = dg.MaxBaseRuns * 2;
                                 }
                             }
-                            int dgIndex = c.Dungeons.IndexOf(c.Dungeons.Find(d => d.Name.Equals(dg.ShortName)));
+                            int dgIndex = character.Dungeons.IndexOf(character.Dungeons.Find(d => d.Name.Equals(dg.ShortName)));
                             var b = new Binding
                             {
-                                Source = c.Dungeons[dgIndex],
+                                Source = character.Dungeons[dgIndex],
                                 Path = new PropertyPath("Runs"),
                                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                                 Mode = BindingMode.OneWay,
@@ -406,7 +410,7 @@ namespace Tera
                             };
                             var tb = new Binding
                             {
-                                Source = c.Dungeons[dgIndex],
+                                Source = character.Dungeons[dgIndex],
                                 Path = new PropertyPath("Runs"),
                                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                                 Mode = BindingMode.OneWay,
@@ -416,32 +420,37 @@ namespace Tera
 
                             g.Children.Add(el);
                             g.Children.Add(t);
-                            g.Tag = c.Name +"%"+ dg.ShortName;
+                            g.Tag = character.Name +"%"+ dg.ShortName;
                             g.MouseEnter += (snd, evn) =>
                             {
                                 var parameters = (snd as Grid).Tag.ToString().Split('%');
                                 string chName = parameters[0];
                                 string dgName = parameters[1];
-                                int chIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(chName)));
+                                int chIndex = localList.IndexOf(localList.Find(x => x.Name.Equals(chName)));
                                 int dgIndex0 = TeraLogic.DungList.IndexOf(TeraLogic.DungList.Find(x => x.ShortName.Equals(dgName)));
-
-                                (((w.Child as DungeonsWindow).chars.Children[chIndex] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 255, R = 0, G = 0, B = 0 });
-                                (((w.Child as DungeonsWindow).header.Children[dgIndex0] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 255, R = 0, G = 0, B = 0 });
-
+                                if (chIndex < (w.Child as DungeonsWindow).chars.Children.Count)
+                                {
+                                    (((w.Child as DungeonsWindow).chars.Children[chIndex] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 255, R = 0, G = 0, B = 0 });
+                                    (((w.Child as DungeonsWindow).header.Children[dgIndex0] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 255, R = 0, G = 0, B = 0 });
+                                }
                             };
+
 
                             g.MouseLeave += (snd, evn) =>
                             {
                                 var parameters = (snd as Grid).Tag.ToString().Split('%');
                                 string chName = parameters[0];
                                 string dgName = parameters[1];
-                                int chIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(chName)));
+                                int chIndex = localList.IndexOf(localList.Find(x => x.Name.Equals(chName)));
                                 int dgIndex0 = TeraLogic.DungList.IndexOf(TeraLogic.DungList.Find(x => x.ShortName.Equals(dgName)));
-
-                                (((w.Child as DungeonsWindow).chars.Children[chIndex] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 130, R = 0, G = 0, B = 0 });
-                                (((w.Child as DungeonsWindow).header.Children[dgIndex0] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 130, R = 0, G = 0, B = 0 });
-
+                                if(chIndex < (w.Child as DungeonsWindow).chars.Children.Count)
+                                {
+                                    (((w.Child as DungeonsWindow).chars.Children[chIndex] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 130, R = 0, G = 0, B = 0 });
+                                    (((w.Child as DungeonsWindow).header.Children[dgIndex0] as TextBlock)).Foreground = new SolidColorBrush(new System.Windows.Media.Color { A = 130, R = 0, G = 0, B = 0 });
+                                }
                             };
+
+
 
                             sp.Children.Add(g);
 
