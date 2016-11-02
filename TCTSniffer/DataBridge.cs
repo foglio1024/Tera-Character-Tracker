@@ -640,7 +640,7 @@ namespace PacketViewer
                         if (t != null)
                         {
                             var questname = t.Attribute("string").Value;
-                            Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".");
+                            Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing \"" + questname + "\".");
                             TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".", TCTNotifier.NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true);
                         }
 

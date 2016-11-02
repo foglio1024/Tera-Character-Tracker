@@ -46,7 +46,7 @@ namespace TCTNotifier
             Color darkColor = new Color { A = a, R = glowColor.R, G = glowColor.G, B = glowColor.B };
             ColorAnimation ca1 = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(300)));
             ColorAnimation ca2 = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(1200)));
-            ColorAnimation ca3 = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(300)));
+            ColorAnimation ca3 = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(1300)));
             ColorAnimation ca4 = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(1200)));
 
             icon.Stroke = new SolidColorBrush(glowColor);
@@ -68,6 +68,7 @@ namespace TCTNotifier
                 GlowEnded();
             };
             icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, ca1);
+
 
         }
 
