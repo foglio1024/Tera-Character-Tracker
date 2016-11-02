@@ -25,11 +25,11 @@ namespace Tera.Converters
 
                 else if (val < th)
                 {
-                    return new SolidColorBrush(UI.Colors.FadedAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(UI.Colors.SolidAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
                 }
                 else
                 {
-                    return new SolidColorBrush(UI.Colors.FadedBaseColor);
+                    return new SolidColorBrush(UI.Colors.SolidBaseColor);
 
                 }
             }
@@ -43,11 +43,11 @@ namespace Tera.Converters
 
                 else if (val < th)
                 {
-                    return new SolidColorBrush(UI.Colors.FadedBaseColor);
+                    return new SolidColorBrush(UI.Colors.SolidBaseColor);
                 }
                 else
                 {
-                    return new SolidColorBrush(UI.Colors.FadedAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(UI.Colors.SolidAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
                 }
             }
         }
