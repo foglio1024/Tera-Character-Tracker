@@ -252,7 +252,7 @@ namespace PacketViewer
                     break;
 
                 case "S_FINISH_GUILD_QUEST":
-                    guildQuestListProcessor.RemoveQuest(lp.HexShortText);
+                    //guildQuestListProcessor.RemoveQuest(lp.HexShortText);
                     UI.UpdateLog("Guild quest completed.");
                     break;
                 case "S_START_GUILD_QUEST":
