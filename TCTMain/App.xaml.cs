@@ -106,12 +106,20 @@ namespace TCTMain
                    
             }
         }
+        static void DeleteOldExe()
+        {
+            if (File.Exists(Environment.CurrentDirectory + "\\Tera Character Tracker.exe"))
+            {
+                File.Delete(Environment.CurrentDirectory + "\\Tera Character Tracker.exe");
+            }
+        }
 
         [STAThread]
         public static void Main()
         {
 
             AppStartup();
+            DeleteOldExe();
             /*load settings*/
             Tera.TeraLogic.LoadSettings();
             Tera.TeraLogic.ResetCheck();
