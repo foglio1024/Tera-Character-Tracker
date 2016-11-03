@@ -15,10 +15,10 @@ https://drive.google.com/drive/folders/0B_Cqa6A1OUxdeDFvTEpZYmtzT2M
 
 ## TODO
 * Account type detection (not displayed yet, but implemented)
-* Dungeon guild quest check upon teleporting to dungeon
+* Dungeon guild quest check upon teleporting to dungeon - DONE
 * Customizable notification types
 * Exclusion list for characters
-* Crystalbind indicator for each character -DONE
+* Crystalbind indicator for each character - DONE
 * Hide character
 * Auto-update
-* Error log -DONE
+* Error log - DONE
