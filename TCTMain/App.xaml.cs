@@ -93,9 +93,25 @@ namespace TCTMain
         [DllImport("kernel32.dll")]
         public static extern bool FreeConsole();
 
+        static Mutex m;
+
+        static void AppStartup()
+        {
+            bool isNewInstance = false;
+            m = new Mutex(true, "TeraCharacterTracker.exe", out isNewInstance);
+            if (!isNewInstance)
+            {
+                MessageBox.Show("A TCT instance is already running.","Warning");
+                App.Current.Shutdown();
+                   
+            }
+        }
+
         [STAThread]
         public static void Main()
         {
+
+            AppStartup();
             /*load settings*/
             Tera.TeraLogic.LoadSettings();
             Tera.TeraLogic.ResetCheck();
@@ -110,7 +126,6 @@ namespace TCTMain
             netThread.Start();
 
         }
-
 
     }
 
