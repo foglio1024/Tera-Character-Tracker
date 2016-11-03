@@ -54,6 +54,7 @@ namespace Tera
         public static bool weeklyReset = false;
         public static bool IsSaved { get; set; }
         public static List<Character> CharList { get; set; }
+        public static List<Character> DeletedChars = new List<Character>();
         public static List<Dungeon> DungList{ get; set; }
         public static List<Account> AccountList { get; set; }
         public static Dictionary<uint, string> GuildDictionary { get; set; }
@@ -150,8 +151,8 @@ namespace Tera
             w.guildNameTB.SetBinding(   TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "GuildId", new Guild_IdToName(), null));
             w.locationTB.SetBinding(    TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LocationId" , new Location_IdToName(), null));
             w.lastOnlineTB.SetBinding(  TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LastOnline", new UnixToDateTime(), null));
-            w.notesTB.SetBinding(       TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Notes"));
-
+            w.notesTB.SetBinding(       TextBox.TextProperty, DataBinder.GenericCharBinding(charIndex, "Notes"));
+            
             // create width bindings for bars
             w.questsBar.SetBinding(     Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY) }));
             w.dailiesBar.SetBinding(    Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Dailies", new Daily_ValueToBarWidth(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY - CharList[charIndex].Weekly) }));

@@ -481,6 +481,19 @@ namespace Tera
         {
             Keyboard.ClearFocus();
         }
+        private void undoDeletion(object sender, MouseButtonEventArgs e)
+        {
+            if(TeraLogic.DeletedChars.Count > 0)
+            {
+                TeraLogic.AddCharacter(TeraLogic.DeletedChars.Last());
+                TeraLogic.DeletedChars.Remove(TeraLogic.DeletedChars.Last());
+            }
+            if (TeraLogic.DeletedChars.Count == 0)
+            {
+                UI.MainWin.undoButton.Opacity = .3;
+            }
+        }
+
         #endregion
 
         int i = 0;
@@ -492,6 +505,32 @@ namespace Tera
            i++;
         }
 
+        private void image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (TeraLogic.cvcp.SelectedChar != null)
+            {
+                int ind = TeraLogic.CharList.IndexOf(TeraLogic.cvcp.SelectedChar);
+                TeraLogic.DeletedChars.Add(TeraLogic.CharList[ind]);
+                TeraLogic.CharList.Remove(TeraLogic.cvcp.SelectedChar);
+                TeraLogic.cvcp.SelectedChar = null;
+                UI.MainWin.accounts.chContainer.Items.RemoveAt(ind);
+                TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => (string)x.Tag == TeraLogic.DeletedChars.Last().Name));
+
+                UI.MainWin.undoButton.Opacity = 1;
+            }
+        }
+        DoubleAnimation BarButtonFadeIn = new DoubleAnimation(1, TimeSpan.FromMilliseconds(70));
+        DoubleAnimation BarButtonFadeOut = new DoubleAnimation(.3, TimeSpan.FromMilliseconds(120));
+
+        private void BarButtonHoverIn(object sender, MouseEventArgs e)
+        {
+            (sender as System.Windows.Controls.Image).BeginAnimation(OpacityProperty, BarButtonFadeIn);
+        }
+
+        private void BarButtonHoverOut(object sender, MouseEventArgs e)
+        {
+            (sender as System.Windows.Controls.Image).BeginAnimation(OpacityProperty, BarButtonFadeOut);
+        }
     }
 
 }

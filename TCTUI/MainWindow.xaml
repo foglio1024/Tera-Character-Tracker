@@ -119,9 +119,12 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Image Height="20" Width="20" Stretch="Uniform" Source="resources/ui_images/ic_save_white_24dp_2x.png" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" MouseLeftButtonDown="SaveButtonPressed" Cursor="Hand" Margin="0,5"/>
+                    <Image ToolTip="Save" Height="20" Width="20" Stretch="Uniform" Source="resources/ui_images/ic_save_white_24dp_2x.png" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" MouseLeftButtonDown="SaveButtonPressed" Cursor="Hand" Margin="0,5" Opacity="0.3" MouseEnter="BarButtonHoverIn" MouseLeave="BarButtonHoverOut"/>
                     <!--<Image Name="img" Source="resources/ui_images/ic_add_white_24dp_2x.png" MouseLeftButtonDown="TestButton" Cursor="Hand" Margin="60,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>-->
-                    <Image Name="dgButton" ToolTip="Show dungeons" Source="resources/ui_images/dungs.png" MouseLeftButtonDown="ShowDungeonOverview" Cursor="Hand" Margin="0,5,30,5" IsHitTestVisible="True" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
+                    <Image Name="dgButton" ToolTip="Show dungeons" Source="resources/ui_images/dungs.png" MouseLeftButtonDown="ShowDungeonOverview" Cursor="Hand" Margin="0,5,30,5" IsHitTestVisible="True" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20" Opacity="0.3" MouseEnter="BarButtonHoverIn" MouseLeave="BarButtonHoverOut"/>
+                    <Image Name="undoButton" ToolTip="Undo" Source="resources/ui_images/ic_undo_white_24dp_2x.png" MouseLeftButtonDown="undoDeletion" Cursor="Hand" Margin="0,5,90,5" Opacity=".3" IsHitTestVisible="True" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>
+                    <Image x:Name="del_button" ToolTip="Delete character." HorizontalAlignment="Right" Height="20" Margin="0,5,60,5" Cursor="Hand" Grid.Column="1" VerticalAlignment="Center" Width="20" Source="resources/ui_images/ic_close_white_24dp_2x.png" Opacity="0.3" MouseLeftButtonDown="image_MouseLeftButtonDown" MouseEnter="BarButtonHoverIn" MouseLeave="BarButtonHoverOut"/>
+
                 </Grid>
 
             </Grid>

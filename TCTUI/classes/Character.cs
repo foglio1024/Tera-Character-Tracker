@@ -70,6 +70,7 @@ namespace Tera
                 }
             }
         }
+
         [XmlAttribute("AccountId")]
         public string AccountId
         {

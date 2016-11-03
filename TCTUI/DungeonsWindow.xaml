@@ -18,15 +18,18 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
-        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
-
-        <StackPanel Name="header" VerticalAlignment="Stretch" HorizontalAlignment="Left" Height="15" Margin="5" Grid.Row="0" Grid.Column="1" Orientation="Horizontal"/>
-        <StackPanel Name="content" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Grid.Row="1" Grid.Column="1"/>
-        <StackPanel Name="chars" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,5,10,5" Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Foreground="#91000000" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,5,10,5" Grid.Column="0" Grid.Row="0">Characters</TextBlock>
+        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Row="0"/>
+        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"/>
+        <Rectangle Height="20" Grid.ColumnSpan="2" Fill="#fff0f0f0"/>
+        <Border BorderBrush="#ffdddddd" BorderThickness="1" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
+        <TextBlock FontWeight="DemiBold" HorizontalAlignment="Center" Grid.ColumnSpan="2" Foreground="#91000000" VerticalAlignment="Center">Dungeon overview</TextBlock>
+        <StackPanel Name="header" VerticalAlignment="Stretch" HorizontalAlignment="Left" Height="15" Margin="5" Grid.Row="1" Grid.Column="1" Orientation="Horizontal"/>
+        <StackPanel Name="content" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Grid.Row="2" Grid.Column="1"/>
+        <StackPanel Name="chars" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,5,10,5" Grid.Row="2" Grid.Column="0"/>
+        <TextBlock Foreground="#91000000" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,5,10,5" Grid.Column="0" Grid.Row="1">Characters</TextBlock>
 
 
     </Grid>
