@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCTSniffer
+namespace TCTParser
 {
     public static class StringUtils
     {
@@ -20,6 +20,17 @@ namespace TCTSniffer
                       Convert.ToByte(new string(new char[2] { (char)sr.Read(), (char)sr.Read() }), 16);
             }
             return bytes;
+        }
+        public static long Hex8BStringToInt(string hex)
+        {
+            var sb = new StringBuilder();
+            for (int i = 16 - 2; i >= 0; i -= 2)
+            {
+                sb.Append(hex[i]);
+                sb.Append(hex[i + 1]);
+            }
+            var result = Convert.ToInt64(sb.ToString(), 16);
+            return result;
         }
 
         public static int Hex4BStringToInt(string hex)

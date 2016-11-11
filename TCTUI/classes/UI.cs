@@ -4,15 +4,25 @@ using System.Windows.Media;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TCTData.Enums;
 
 namespace Tera
 {
     public static class UI
     {
-        static public TeraMainWindow MainWin;
-        static public void UpdateLog(string data)
+        public static TeraMainWindow MainWin;
+        public static void UpdateLog(string data)
         {
             MainWin.UpdateLog(data);
+        }
+
+        public static void SendNotification(string content, NotificationType nt, Color col, bool repeat)
+        {
+            TCTNotifier.NotificationProvider.SendNotification(content, nt, col, repeat);
+        }
+        public static void SendDefaultNotification(string content)
+        {
+            TCTNotifier.NotificationProvider.SendNotification(content);
         }
 
         public static class Colors

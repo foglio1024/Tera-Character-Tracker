@@ -9,7 +9,8 @@ using System.Xml.Linq;
 using PacketDotNet;
 using PacketViewer.Network;
 using Tera;
-using PacketViewer;
+using TCTData.Enums;
+using TCTParser;
 
 namespace TCTSniffer
 {
@@ -30,7 +31,7 @@ namespace TCTSniffer
         {
             Console.WriteLine("Connected to " + server.Name);
             UI.UpdateLog("Connected to: " + server.Name);
-            TCTNotifier.NotificationProvider.SendNotification("Connected to: " + server.Name,TCTNotifier.NotificationType.Connected, System.Windows.Media.Color.FromArgb(255,0,255,100), false);
+            UI.SendNotification("Connected to: " + server.Name, NotificationType.Connected, System.Windows.Media.Color.FromArgb(255,0,255,100), false);
         }
         static void teraSniffer_MessageReceived(Tera.Message message)
         {
@@ -43,8 +44,9 @@ namespace TCTSniffer
             if (message.Direction == MessageDirection.ServerToClient)
             {
                 Packet_old tmpPacket = new Packet_old(Direction.SC, message.OpCode, data, false); //**********************//
-                DataBridge.storeLastPacket(tmpPacket);
-                DataBridge.storeMessage(message);
+
+                DataParser.StoreLastPacket(tmpPacket.OpCode, tmpPacket.HexShortText);
+                DataParser.StoreLastMessage(message);
 
             }
 

@@ -7,7 +7,7 @@ namespace Tera.Game.Messages
     {
         public EntityId Id { get; private set; }
 
-        internal SpawnMeServerMessage(TeraMessageReader reader)
+        public SpawnMeServerMessage(TeraMessageReader reader)
             : base(reader)
         {
             Id = reader.ReadEntityId();

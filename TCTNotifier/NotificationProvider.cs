@@ -10,19 +10,11 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using TCTData.Enums;
 
 namespace TCTNotifier
 {
 
-    public enum NotificationType
-    {
-        Default,
-        Crystalbind,
-        MarksNotification,
-        Goldfinger,
-        Connected,
-        Credits
-    }
     public class NotificationInfo
     {
         public string content;

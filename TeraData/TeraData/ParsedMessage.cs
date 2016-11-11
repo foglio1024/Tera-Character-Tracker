@@ -8,7 +8,7 @@ namespace Tera.Game.Messages
     {
         public string OpCodeName { get; private set; }
 
-        internal ParsedMessage(TeraMessageReader reader)
+        public ParsedMessage(TeraMessageReader reader)
             : base(reader.Message.Time, reader.Message.Direction, reader.Message.Data)
         {
             OpCodeName = reader.OpCodeName;

@@ -12,7 +12,6 @@ using Tera;
 using Tera.Game.Messages;
 using Tera.Game;
 using Tera.Data;
-using TCTSniffer;
 using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -20,51 +19,11 @@ using System.Windows.Media.Imaging;
 using Tera.Converters;
 using System.Windows.Data;
 using System.Globalization;
+using TCTData.Enums;
 
-namespace PacketViewer
+namespace TCTParser
 {
-    enum Class
-    {
-        Warrior = 0,
-        Lancer = 1,
-        Slayer = 2,
-        Berserker = 3,
-        Sorcerer = 4,
-        Archer = 5,
-        Priest = 6,
-        Mystic = 7,
-        Reaper = 8,
-        Gunner = 9,
-        Brawler = 10,
-        Ninja = 11,
-
-    }
-    enum Laurel
-    {
-        None,
-        Bronze,
-        Silver,
-        Gold,
-        Diamond,
-        Champion
-    }
-
-    enum GuildSize
-    {
-        Small,
-        Medium,
-        Big
-    }
-    enum QuestStatus
-    {
-        Available,
-        Taken,
-        Completed
-    }
-
-
-
-    public static class DataBridge
+    public static class DataParser
     {
         const int VANGUARD_REP_ID = 609;
 
@@ -81,7 +40,6 @@ namespace PacketViewer
         static BasicTeraData btd = new BasicTeraData();
         static OpCodeNamer opn = new OpCodeNamer(Path.Combine(btd.ResourceDirectory, string.Format("opcodes-{0}.txt", "3907eu")));
 
-
         static CharListProcessor charListProcessor = new CharListProcessor();
         static CharLoginProcessor charLoginProcessor = new CharLoginProcessor();
         static VanguardWindowProcessor vanguardWindowProcessor = new VanguardWindowProcessor();
@@ -90,10 +48,10 @@ namespace PacketViewer
         static CrystalbindProcessor crystalbindProcessor = new CrystalbindProcessor();
         static AccountLoginProcessor accountLoginProcessor = new AccountLoginProcessor();
         static GuildQuestListProcessor guildQuestListProcessor = new GuildQuestListProcessor();
+        static BankProcessor bankProcessor = new BankProcessor();
 
-        internal static void storeMessage(Message msg)
-        {
-            
+        public static void StoreLastMessage(Message msg)
+        {           
             if (opn.GetName(msg.OpCode) == "S_GET_USER_GUILD_LOGO")
             {
                 TeraMessageReader tmr = new TeraMessageReader(msg, opn);
@@ -103,9 +61,9 @@ namespace PacketViewer
                 t.Start();
             }
         }
-        public static void storeLastPacket(Network.Packet_old lp)
+/*****/ public static void StoreLastPacket(ushort opCode, string data)
         {
-            switch (opn.GetName(lp.OpCode))
+            switch (opn.GetName(opCode))
             {
                 case "S_GET_USER_LIST": 
                     #region LIST
@@ -115,11 +73,11 @@ namespace PacketViewer
                         TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
                     }
                     charListProcessor.CurrentAccountId = accountLoginProcessor.id;
-                    SetCharList(lp.HexShortText);
+                    SetCharList(data);
                     TeraLogic.SaveAccounts();
                     TeraLogic.SaveCharacters();
 
-                    UI.UpdateLog("Data saved.");
+                    Tera.UI.UpdateLog("Data saved.");
 
                     break; 
                 #endregion
@@ -127,33 +85,33 @@ namespace PacketViewer
                 case "S_LOGIN":
                     #region LOGIN
                     crystalbindProcessor.Clear();
-                    LoginChar(lp.HexShortText);
+                    LoginChar(data);
                     break; 
                 #endregion
 
                 case "S_AVAILABLE_EVENT_MATCHING_LIST":
                     #region VANGUARD WINDOW
-                    SetVanguardData(lp.HexShortText);
+                    SetVanguardData(data);
                     break; 
                 #endregion
 
                 case "S_INVEN":
                     #region INVENTORY
-                    if (lp.HexShortText[53].ToString() == "1") /*wait next packet*/
+                    if (data[53].ToString() == "1") /*wait next packet*/
                     {
                         inventoryProcessor.multiplePackets = true;
-                        inventoryProcessor.p1 = lp.HexShortText;
+                        inventoryProcessor.p1 = data;
                     }
-                    else if (lp.HexShortText[53].ToString() == "0")/*is last/unique packet*/
+                    else if (data[53].ToString() == "0")/*is last/unique packet*/
                     {
                         if (inventoryProcessor.multiplePackets)
                         {
-                            inventoryProcessor.p2 = lp.HexShortText;
+                            inventoryProcessor.p2 = data;
                             inventoryProcessor.multiplePackets = false;
                         }
                         else
                         {
-                            inventoryProcessor.p1 = lp.HexShortText;
+                            inventoryProcessor.p1 = data;
                         }
 
                         SetTokens();
@@ -164,7 +122,7 @@ namespace PacketViewer
                 case "S_DUNGEON_COOL_TIME_LIST":
                     #region DUNGEONS RUNS
                     Tera.UI.UpdateLog(currentCharName + " > received dungeons data.");
-                    wCforDungeons = lp.HexShortText;
+                    wCforDungeons = data;
                     setDungs();
                     break; 
                 #endregion
@@ -173,9 +131,9 @@ namespace PacketViewer
                     #region SYSTEM MESSAGE
                     #region DUNGEON ENGAGED
                     /*dungeon engaged*/
-                    if (lp.HexShortText.Contains("40003200320031003400"))
+                    if (data.Contains("40003200320031003400"))
                     {
-                        wCforEngage = lp.HexShortText;
+                        wCforEngage = data;
                         wCforEngage = wCforEngage.Substring(120);
                         //setEngagedDung();
                         newEngDung();
@@ -183,18 +141,18 @@ namespace PacketViewer
                     #endregion
                     #region VANGUARD QUEST COMPLETED
                     /*vanguard completed*/
-                    else if (lp.HexShortText.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
+                    else if (data.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
                     {
-                        wCforVanguardCompleted = lp.HexShortText;
+                        wCforVanguardCompleted = data;
                         wCforVanguardCompleted = wCforVanguardCompleted.Substring(100);
                         setCompletedVanguard();
                     } 
                     #endregion
                     #region LAUREL
                     /*earned laurel*/
-                    else if (lp.HexShortText.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
+                    else if (data.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
                     {
-                        wCforEarnedLaurel = lp.HexShortText;
+                        wCforEarnedLaurel = data;
                         //updateLaurel();
                     }
                     break;  
@@ -203,13 +161,13 @@ namespace PacketViewer
 
                 case "S_VISIT_NEW_SECTION":
                     #region SECTION
-                    NewSection(lp.HexShortText);
+                    NewSection(data);
                     break; 
                 #endregion
 
                 case "S_UPDATE_NPCGUILD":
                     #region CREDITS UPDATE
-                    wCforUpdatedCreditsAfterPurchase = lp.HexShortText;
+                    wCforUpdatedCreditsAfterPurchase = data;
                     updateCreditsAfterPurchase(); 
                     break;
                 #endregion
@@ -217,12 +175,12 @@ namespace PacketViewer
                 #region CCB
                 case "S_ABNORMALITY_BEGIN":
                     #region CCB START
-                    crystalbindProcessor.ParseNewBuff(lp.HexShortText, currentCharId);
+                    crystalbindProcessor.ParseNewBuff(data, currentCharId);
                     break;
                 #endregion
                 case "S_ABNORMALITY_END":
                     #region CCB END
-                    crystalbindProcessor.ParseEndingBuff(lp.HexShortText, currentCharId);
+                    crystalbindProcessor.ParseEndingBuff(data, currentCharId);
                     break;
                 #endregion
                 case "S_CLEAR_ALL_HOLDED_ABNORMALITY":
@@ -233,31 +191,34 @@ namespace PacketViewer
                 #endregion
 
                 case "S_LOGIN_ACCOUNT_INFO":
-                    accountLoginProcessor.ParseLoginInfo(lp.HexShortText);
+                    accountLoginProcessor.ParseLoginInfo(data);
                     break;
 
                 case "S_ACCOUNT_PACKAGE_LIST":
-                    accountLoginProcessor.ParsePackageInfo(lp.HexShortText);
+                    accountLoginProcessor.ParsePackageInfo(data);
                     break;
 
                 case "S_RETURN_TO_LOBBY":
                     TeraLogic.SaveAccounts();
                     TeraLogic.SaveCharacters();
-                    UI.UpdateLog("Data saved.");
+                    Tera.UI.UpdateLog("Data saved.");
                     break;
 
                 case "S_GUILD_QUEST_LIST":
-                    guildQuestListProcessor.ParseGuildListPacket(lp.HexShortText);
-                    UI.UpdateLog("Received guild quests list.");
+                    guildQuestListProcessor.ParseGuildListPacket(data);
+                    Tera.UI.UpdateLog("Received guild quests list.");
                     break;
 
                 case "S_FINISH_GUILD_QUEST":
                     //guildQuestListProcessor.RemoveQuest(lp.HexShortText);
-                    UI.UpdateLog("Guild quest completed.");
+                    Tera.UI.UpdateLog("Guild quest completed.");
                     break;
                 case "S_START_GUILD_QUEST":
-                    guildQuestListProcessor.TakeQuest(lp.HexShortText);
-                    UI.UpdateLog("Guild quest accepted.");
+                    guildQuestListProcessor.TakeQuest(data);
+                    Tera.UI.UpdateLog("Guild quest accepted.");
+                    break;
+                case "S_VIEW_WARE_EX":
+                    UI.UpdateLog("Received bank data: " + bankProcessor.GetGoldAmount(data).ToString() + " banked gold.");
                     break;
                 default:
                     break;
@@ -460,20 +421,20 @@ namespace PacketViewer
             var charList =  charListProcessor.ParseCharacters(p);
             for (int i = 0; i < charList.Count; i++)
             {
-                UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.AddCharacter(charList[i])));
+                Tera.UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.AddCharacter(charList[i])));
             }
             charListProcessor.Clear();
 
-            UI.UpdateLog("Found " + charList.Count + " characters.");
+            Tera.UI.UpdateLog("Found " + charList.Count + " characters.");
             //TCTNotifier.NotificationProvider.NS.sendNotification("Found " + charList.Count + " characters.");
         }
         private static void LoginChar(string p)
         {
             currentCharName = charLoginProcessor.getName(p);
             currentCharId = charLoginProcessor.getId(p);
-            
-            UI.UpdateLog(currentCharName + " logged in.");
-            UI.MainWin.Dispatcher.Invoke(new Action(()=> Tera.TeraLogic.SelectCharacter(currentCharName)));
+
+            Tera.UI.UpdateLog(currentCharName + " logged in.");
+            Tera.UI.MainWin.Dispatcher.Invoke(new Action(()=> Tera.TeraLogic.SelectCharacter(currentCharName)));
 
             TeraLogic.cvcp.SelectedChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             CurrentChar().GoldfingerTokens = 0;
@@ -491,8 +452,8 @@ namespace PacketViewer
                 CurrentChar().MarksOfValor = newMarks;
                 if (CurrentChar().MarksOfValor > 82)
                 {
-                    UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
-                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", TCTNotifier.NotificationType.MarksNotification, Colors.Orange, true);
+                    Tera.UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
+                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationType.MarksNotification, Colors.Orange, true);
                 }
             }
 
@@ -501,14 +462,14 @@ namespace PacketViewer
                 CurrentChar().GoldfingerTokens = newGoldfinger;
                 if (CurrentChar().GoldfingerTokens >= 80)
                 {
-                    UI.UpdateLog("You have more than 80 Goldfinger Tokens.");
-                    TCTNotifier.NotificationProvider.SendNotification("You have "+ CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", TCTNotifier.NotificationType.Goldfinger, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
+                    Tera.UI.UpdateLog("You have more than 80 Goldfinger Tokens.");
+                    TCTNotifier.NotificationProvider.SendNotification("You have "+ CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationType.Goldfinger, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
                 }
             }
 
             inventoryProcessor.Clear();
 
-            UI.UpdateLog(currentCharName + " > received inventory data (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens).");
+            Tera.UI.UpdateLog(currentCharName + " > received inventory data (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens).");
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
         }
         private static void SetVanguardData(string p)
@@ -517,7 +478,7 @@ namespace PacketViewer
             int credits = vanguardWindowProcessor.getCredits(p); //Convert.ToInt32(wCforVGData[8 * 8 + 2].ToString() + wCforVGData[8 * 8 + 3].ToString()+ wCforVGData[8 * 8 + 0].ToString() + wCforVGData[8 * 8 + 1].ToString() , 16);
             int completed_dailies = vanguardWindowProcessor.getDaily(p); //Convert.ToInt32(wCforVGData.Substring(3 * 8, 2).ToString(), 16);
             int remaining_dailies = Tera.TeraLogic.MAX_DAILY - completed_dailies;
-            UI.UpdateLog(currentCharName + " > received vanguard data (" + credits + " credits, " + weekly + " weekly quests done, "+ remaining_dailies + " dailies left).");
+            Tera.UI.UpdateLog(currentCharName + " > received vanguard data (" + credits + " credits, " + weekly + " weekly quests done, "+ remaining_dailies + " dailies left).");
 
             CurrentChar().Weekly = weekly;
             CurrentChar().Credits = credits;
@@ -536,7 +497,7 @@ namespace PacketViewer
                 }
 
                 guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
-                UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
+                Tera.UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
             }
 
             if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
@@ -583,11 +544,11 @@ namespace PacketViewer
         private static void updateCreditsAfterPurchase()
         {
             string _repId = wCforUpdatedCreditsAfterPurchase.Substring(40, 4);
-            var repId = TCTSniffer.StringUtils.Hex2BStringToInt(_repId);
+            var repId = StringUtils.Hex2BStringToInt(_repId);
             if(repId == VANGUARD_REP_ID)
             {
                 string _cr = wCforUpdatedCreditsAfterPurchase.Substring(64, 8);
-                var cr = TCTSniffer.StringUtils.Hex4BStringToInt(_cr);
+                var cr = StringUtils.Hex4BStringToInt(_cr);
                 Tera.TeraLogic.CharList[Tera.TeraLogic.CharList.IndexOf(Tera.TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].Credits = cr;
                 Tera.UI.UpdateLog(currentCharName + " > " + cr + " Vanguard credits left.");
             }
@@ -641,13 +602,13 @@ namespace PacketViewer
                         {
                             var questname = t.Attribute("string").Value;
                             Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing \"" + questname + "\".");
-                            TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".", TCTNotifier.NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true);
+                            TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".", NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true);
                         }
 
                         else
                         {
                             Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")");
-                            TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")", TCTNotifier.NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
+                            TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")", NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
                         }
                     }
                 }
@@ -704,7 +665,7 @@ namespace PacketViewer
             if(dgNameEl != null)
             {
                 string dgName = dgNameEl.Attribute("string").Value;
-                UI.UpdateLog(currentCharName + " > " + dgName + " engaged.");
+                Tera.UI.UpdateLog(currentCharName + " > " + dgName + " engaged.");
                 TCTNotifier.NotificationProvider.SendNotification(dgName + " engaged.");
                 try
                 {
@@ -712,7 +673,7 @@ namespace PacketViewer
                 }
                 catch
                 {
-                    UI.UpdateLog("Dungeon not found. Can't subtract run from entry counter.");
+                    Tera.UI.UpdateLog("Dungeon not found. Can't subtract run from entry counter.");
                 }
             }
         }
@@ -814,7 +775,7 @@ namespace PacketViewer
                 }
 
                 b.Replace("00", "");
-                string name = Encoding.UTF7.GetString(TCTSniffer.StringUtils.StringToByteArray(b.ToString()));
+                string name = Encoding.UTF7.GetString(StringUtils.StringToByteArray(b.ToString()));
                 return name;
 
             }
@@ -951,7 +912,7 @@ namespace PacketViewer
                 }
 
                 b.Replace("00", "");
-                string gname = Encoding.UTF7.GetString(TCTSniffer.StringUtils.StringToByteArray(b.ToString()));
+                string gname = Encoding.UTF7.GetString(StringUtils.StringToByteArray(b.ToString()));
                 //Console.WriteLine(gname);
                 return gname;
 
@@ -1030,7 +991,7 @@ namespace PacketViewer
                         TeraLogic.GuildDictionary.Add(c.GuildId, getGuildName(str));
                     }
 
-                    UI.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + timeConverter.Convert(c.LastOnline, null, null, null) + ".");
+                    Tera.UI.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + timeConverter.Convert(c.LastOnline, null, null, null) + ".");
                 }
 
 
@@ -1303,14 +1264,14 @@ namespace PacketViewer
                 {
                     if (TeraLogic.RiskList.Contains(locId))
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", TCTNotifier.NotificationType.Crystalbind, Colors.Red, true);
+                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true);
                     }
                 }
                 else if (Time <= 1800000 && Time > 0)
                 {
                     if (TeraLogic.RiskList.Contains(locId))
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", TCTNotifier.NotificationType.Crystalbind, Colors.Orange, true);
+                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true);
                     }
                 }
             }
@@ -1329,7 +1290,7 @@ namespace PacketViewer
                         Status = true;
                         Time = b.TimeLeft;
                         ccbEnding = false;
-                        DataBridge.CurrentChar().Crystalbind = Time;
+                        DataParser.CurrentChar().Crystalbind = Time;
                     }
                 }
             }
@@ -1376,7 +1337,7 @@ namespace PacketViewer
                 Time = 0;
                 CurrentChar().Crystalbind = Time;
                 BuffList.Clear();
-                TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind expired.", TCTNotifier.NotificationType.Crystalbind, Colors.Red, true);
+                TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind expired.", NotificationType.Crystalbind, Colors.Red, true);
             }
             class Buff
             {
@@ -1512,7 +1473,7 @@ namespace PacketViewer
                 {
                     if (quest.ID == id)
                     {
-                        quest.Status = QuestStatus.Taken;
+                        quest.Status = GuildQuestStatus.Taken;
                     }
                 }
             }
@@ -1527,9 +1488,9 @@ namespace PacketViewer
                     if(quest.ZoneId == zoneID)
                     {
                         found = true;
-                        if(quest.Status== QuestStatus.Available)
+                        if(quest.Status== GuildQuestStatus.Available)
                         {
-                            TCTNotifier.NotificationProvider.SendNotification("You have available guild quests for this dungeon.", TCTNotifier.NotificationType.Default, Colors.Red, true);
+                            TCTNotifier.NotificationProvider.SendNotification("You have available guild quests for this dungeon.", NotificationType.Default, Colors.Red, true);
                         }
                         break;
                     }
@@ -1578,10 +1539,10 @@ namespace PacketViewer
                     int size = StringUtils.Hex2BStringToInt(q.Substring(QUEST_SIZE_OFFSET));
                     return ((GuildSize)size).ToString();
                 }
-                public QuestStatus GetStatus(string p)
+                public GuildQuestStatus GetStatus(string p)
                 {
                     int status = StringUtils.Hex1BStringToInt(p.Substring(QUEST_STATUS_OFFSET, 2));
-                    return (QuestStatus)status;
+                    return (GuildQuestStatus)status;
 
                 }
                 public QuestParser(string p)
@@ -1620,10 +1581,10 @@ namespace PacketViewer
             class GuildQuest
             {
                 public int ID { get; }
-                public QuestStatus Status { get; set; }
+                public GuildQuestStatus Status { get; set; }
                 public int ZoneId { get; }
 
-                public GuildQuest(int _id, QuestStatus _status, int _zId)
+                public GuildQuest(int _id, GuildQuestStatus _status, int _zId)
                 {
                     ID = _id;
                     Status = _status;
@@ -1636,18 +1597,23 @@ namespace PacketViewer
             private const int GOLD_OFFSET = 36 * 2;
             private const int BANK_TYPE_OFFSET = 16 * 2;
             public long GetGoldAmount(string s)
-            {        
-                if(GetBankType(s) == 1)
+            {
+                if (GetBankType(s) == 1)
                 {
-                    return StringUtils.Hex8BStringToInt(s.Substring(GOLD_OFFSET));
+                    return StringUtils.Hex8BStringToInt(s.Substring(GOLD_OFFSET))/10000;
                 }
-                return 0;
+                else
+                {
+                    return 0;
+                }
+
             }
             private int GetBankType(string s)
             {
                 return StringUtils.Hex1BStringToInt(s.Substring(BANK_TYPE_OFFSET, 2));
             }
         }
+
 
         class SystemMessageProcessor { }
     }

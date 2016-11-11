@@ -16,7 +16,7 @@ namespace Tera.Game.Messages
 
         public bool IsHeal { get { return (Flags & SkillResultFlags.Heal) != 0; } }
 
-        internal EachSkillResultServerMessage(TeraMessageReader reader)
+        public EachSkillResultServerMessage(TeraMessageReader reader)
             : base(reader)
         {
             reader.Skip(4);

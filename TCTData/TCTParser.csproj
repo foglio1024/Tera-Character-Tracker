@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AE9993A3-7636-4BED-9AFC-F6D726BF9696}</ProjectGuid>
+    <ProjectGuid>{E78B04C1-7848-4D51-A7A2-AF00BBBCFB27}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TCTNotifier</RootNamespace>
-    <AssemblyName>TCTNotifier</AssemblyName>
+    <RootNamespace>TCTParser</RootNamespace>
+    <AssemblyName>TCTParser</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\TCTMain\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -35,12 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,31 +55,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StandardNotification.xaml.cs">
-      <DependentUpon>StandardNotification.xaml</DependentUpon>
-    </Compile>
-    <None Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Notification.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="StandardNotification.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Notification.xaml.cs">
-      <DependentUpon>Notification.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationProvider.cs" />
+    <Compile Include="DataParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,10 +69,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="StringUtils.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,10 +84,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TCTData\TCTData\TCTData.csproj">
+    <ProjectReference Include="..\TCTNotifier\TCTNotifier.csproj">
+      <Project>{AE9993A3-7636-4BED-9AFC-F6D726BF9696}</Project>
+      <Name>TCTNotifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCTUI\TCTUI.csproj">
+      <Project>{17ec9a9a-527c-47ca-a4f3-682fc1b9163c}</Project>
+      <Name>TCTUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeraData\TeraData\TeraData.csproj">
+      <Project>{32daa401-1ebe-4417-8795-58a38128502c}</Project>
+      <Name>TeraData</Name>
+    </ProjectReference>
+    <ProjectReference Include="TCTData\TCTData.csproj">
       <Project>{325deb0a-2e02-495d-9612-058385f9db9d}</Project>
       <Name>TCTData</Name>
     </ProjectReference>

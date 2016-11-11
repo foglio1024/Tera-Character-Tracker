@@ -24,6 +24,7 @@ using System.Drawing.Imaging;
 using System.ComponentModel;
 using Tera.Converters;
 using System.Xml.Linq;
+using TCTData.Enums;
 
 namespace Tera
 {
@@ -501,7 +502,7 @@ namespace Tera
         {
             string teststring = "Test" + i;
 
-           TCTNotifier.NotificationProvider.SendNotification(teststring, TCTNotifier.NotificationType.Credits, Colors.LightGreen, false);
+           TCTNotifier.NotificationProvider.SendNotification(teststring, NotificationType.Credits, Colors.LightGreen, false);
            i++;
         }
 

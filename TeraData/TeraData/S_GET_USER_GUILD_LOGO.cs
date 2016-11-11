@@ -8,7 +8,7 @@ namespace Tera.Game.Messages
 {
     public class S_GET_USER_GUILD_LOGO : ParsedMessage
     {
-        internal S_GET_USER_GUILD_LOGO(TeraMessageReader reader) : base(reader)
+        public S_GET_USER_GUILD_LOGO(TeraMessageReader reader) : base(reader)
         {
             var offset = reader.ReadUInt16();
             var size = reader.ReadUInt16();

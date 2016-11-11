@@ -132,6 +132,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TCTData\TCTData\TCTData.csproj">
+      <Project>{325deb0a-2e02-495d-9612-058385f9db9d}</Project>
+      <Name>TCTData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TCTNotifier\TCTNotifier.csproj">
       <Project>{ae9993a3-7636-4bed-9afc-f6d726bf9696}</Project>
       <Name>TCTNotifier</Name>

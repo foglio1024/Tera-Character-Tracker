@@ -58,8 +58,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Angle.cs" />
-    <Compile Include="BasicTeraData.cs" />
     <Compile Include="BlockHelper.cs" />
     <Compile Include="BlockSplitter.cs" />
     <Compile Include="BlockType.cs" />
@@ -68,15 +66,8 @@
     <Compile Include="ConnectionId.cs" />
     <Compile Include="Cryptor.cs" />
     <Compile Include="CryptorKey.cs" />
-    <Compile Include="DataBridge.cs" />
     <Compile Include="EachSkillResultServerMessage.cs" />
     <Compile Include="EndpointIpv4.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="EntityId.cs" />
-    <Compile Include="EntityTracker.cs" />
-    <Compile Include="Gender.cs" />
-    <Compile Include="Helpers.cs" />
-    <Compile Include="IHasOwner.cs" />
     <Compile Include="IpPacket.cs" />
     <Compile Include="IpSniffer.cs" />
     <Compile Include="IpSnifferRawSocketMultipleInterfaces.cs" />
@@ -84,54 +75,29 @@
     <Compile Include="IpSnifferWinPcap.cs" />
     <Compile Include="ITeraSniffer.cs" />
     <Compile Include="LogHelper.cs" />
-    <Compile Include="LoginServerMessage.cs" />
-    <Compile Include="Message.cs" />
-    <Compile Include="MessageDirection.cs" />
     <Compile Include="MessageFactory.cs" />
     <Compile Include="MessageSplitter.cs" />
     <Compile Include="MiscFuncs.cs" />
-    <Compile Include="NpcEntity.cs" />
-    <Compile Include="OpCodeNamer.cs" />
     <Compile Include="PacketTranslator.cs" />
     <Compile Include="Packet_old.cs" />
-    <Compile Include="ParsedMessage.cs" />
     <Compile Include="ParserHelpers.cs" />
-    <Compile Include="PlaceHolderEntity.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PlayerClass.cs" />
     <Compile Include="PlayerTracker.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProjectileEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Race.cs" />
-    <Compile Include="RaceGenderClass.cs" />
-    <Compile Include="Region.cs" />
-    <Compile Include="Server.cs" />
     <Compile Include="ServerInfo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Sha.cs" />
-    <Compile Include="Skill.cs" />
-    <Compile Include="SkillDatabase.cs" />
     <Compile Include="SpawnMeServerMessage.cs" />
-    <Compile Include="SpawnNpcServerMessage.cs" />
-    <Compile Include="SpawnProjectileServerMessage.cs" />
-    <Compile Include="SpawnUserServerMessage.cs" />
-    <Compile Include="StartUserProjectileServerMessage.cs" />
     <Compile Include="StreamHelper.cs" />
-    <Compile Include="StringUtils.cs" />
-    <Compile Include="S_GET_USER_GUILD_LOGO.cs" />
     <Compile Include="S_GET_USER_LIST.cs" />
     <Compile Include="TcpConnection.cs" />
     <Compile Include="TcpFlags.cs" />
     <Compile Include="TcpPacket.cs" />
     <Compile Include="TcpSniffer.cs" />
-    <Compile Include="TeraData.cs" />
-    <Compile Include="TeraMessageReader.cs" />
     <Compile Include="TeraSniffer.cs" />
     <Compile Include="UnknownMessage.cs" />
-    <Compile Include="UserEntity.cs" />
     <Compile Include="Utils.cs" />
-    <Compile Include="Vector3f.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -147,13 +113,21 @@
     <Content Include="spclibs\SharpPcap.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TCTNotifier\TCTNotifier.csproj">
-      <Project>{ae9993a3-7636-4bed-9afc-f6d726bf9696}</Project>
-      <Name>TCTNotifier</Name>
+    <ProjectReference Include="..\TCTData\TCTData\TCTData.csproj">
+      <Project>{325deb0a-2e02-495d-9612-058385f9db9d}</Project>
+      <Name>TCTData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCTData\TCTParser.csproj">
+      <Project>{e78b04c1-7848-4d51-a7a2-af00bbbcfb27}</Project>
+      <Name>TCTParser</Name>
     </ProjectReference>
     <ProjectReference Include="..\TCTUI\TCTUI.csproj">
       <Project>{17ec9a9a-527c-47ca-a4f3-682fc1b9163c}</Project>
       <Name>TCTUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeraData\TeraData\TeraData.csproj">
+      <Project>{32daa401-1ebe-4417-8795-58a38128502c}</Project>
+      <Name>TeraData</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
