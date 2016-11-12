@@ -367,6 +367,7 @@ namespace Tera
             FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/characters.xml", FileMode.Create, FileAccess.Write);
             xs.Serialize(fs, CharList);
             fs.Close();
+            UI.UpdateLog("Characters saved.");
         }
         public static void SaveAccounts()
         {
@@ -374,6 +375,7 @@ namespace Tera
             FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/accounts.xml", FileMode.Create, FileAccess.Write);
             xs.Serialize(fs, AccountList);
             fs.Close();
+            UI.UpdateLog("Accounts saved.");
 
         }
         public static void LoadCharacters()
@@ -450,6 +452,7 @@ namespace Tera
                     i++;
                 }
                 File.WriteAllLines(Environment.CurrentDirectory + "\\content/data/guilds.txt", lines);
+                UI.UpdateLog("Guilds database saved.")
             }
 
         }
@@ -505,6 +508,7 @@ namespace Tera
             settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Width.ToString();
             settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Height.ToString();
             settings.Save(Environment.CurrentDirectory + "\\content/data/settings.xml");
+            UI.UpdateLog("Settings saved.");
         }
         public static void LoadSettings()
         {

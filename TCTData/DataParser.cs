@@ -201,7 +201,6 @@ namespace TCTParser
                 case "S_RETURN_TO_LOBBY":
                     TeraLogic.SaveAccounts();
                     TeraLogic.SaveCharacters();
-                    Tera.UI.UpdateLog("Data saved.");
                     break;
 
                 case "S_GUILD_QUEST_LIST":
@@ -210,7 +209,6 @@ namespace TCTParser
                     break;
 
                 case "S_FINISH_GUILD_QUEST":
-                    //guildQuestListProcessor.RemoveQuest(lp.HexShortText);
                     Tera.UI.UpdateLog("Guild quest completed.");
                     break;
                 case "S_START_GUILD_QUEST":
@@ -218,7 +216,15 @@ namespace TCTParser
                     Tera.UI.UpdateLog("Guild quest accepted.");
                     break;
                 case "S_VIEW_WARE_EX":
-                    UI.UpdateLog("Received bank data: " + bankProcessor.GetGoldAmount(data).ToString() + " banked gold.");
+                    if (bankProcessor.IsOpenAction(data) == true && bankProcessor.GetBankType(data) == 1) 
+                    {
+                        UI.UpdateLog("Received bank data: " + bankProcessor.GetGoldAmount(data).ToString() + " banked gold.");
+                        /*
+                         * add saving to file with timestamp
+                         *
+                         *
+                         */
+                    }
                     break;
                 default:
                     break;
@@ -1596,21 +1602,30 @@ namespace TCTParser
         {
             private const int GOLD_OFFSET = 36 * 2;
             private const int BANK_TYPE_OFFSET = 16 * 2;
+            private const int ACTION_OFFSET = 20 * 2;
+
             public long GetGoldAmount(string s)
             {
-                if (GetBankType(s) == 1)
+                return StringUtils.Hex8BStringToInt(s.Substring(GOLD_OFFSET))/10000;
+            }
+            public int  GetBankType(string s)
+            {
+                return StringUtils.Hex1BStringToInt(s.Substring(BANK_TYPE_OFFSET, 2));
+            }
+            public bool IsOpenAction(string s)
+            {
+                if (StringUtils.Hex1BStringToInt(s.Substring(ACTION_OFFSET, 2)) == 0)
                 {
-                    return StringUtils.Hex8BStringToInt(s.Substring(GOLD_OFFSET))/10000;
+                    return true;
+                }
+                else if(StringUtils.Hex1BStringToInt(s.Substring(ACTION_OFFSET, 2)) == 1)
+                {
+                    return false;
                 }
                 else
                 {
-                    return 0;
+                    return false;
                 }
-
-            }
-            private int GetBankType(string s)
-            {
-                return StringUtils.Hex1BStringToInt(s.Substring(BANK_TYPE_OFFSET, 2));
             }
         }
 
