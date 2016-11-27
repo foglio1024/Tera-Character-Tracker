@@ -147,12 +147,13 @@
   <String id="9830" string="Celestial Arena" />
   <String id="9067" string="Demokron Factory (Hard)" />
   <String id="9767" string="Demokron Factory" />
-  <String id="9769" string="Lilith’s Keep" />
-  <String id="9969" string="Lilith’s Keep (Hard)" />
+  <String id="9769" string="Lilith's Keep" />
+  <String id="9969" string="Lilith's Keep (Hard)" />
   <String id="9068" string="Shadow Sanguinary (Hard)" />
   <String id="9768" string="Shadow Sanguinary" />
   <String id="9070" string="Manglemire" />
   <String id="9069" string="Echoes of Aranea" />
   <String id="9970" string="Ruinous Manor (Hard)" />
   <String id="9770" string="Ruinous Manor" />
+  <String id="9950" string="Harrowhold" />
 </StrSheet_Dungeon>

@@ -252,7 +252,7 @@ namespace TCTNotifier
 
             public void sendNotification(string _content)
             {
-                var _n = new NotificationInfo(_content, NotificationType.Default, Colors.WhiteSmoke, true);
+                var _n = new NotificationInfo(_content, NotificationType.Default, Color.FromArgb(255, 0, 123, 206), true);
 
                 NotificationProvider.AddNotification(_n);
 

@@ -1282,6 +1282,61 @@
         <Target id="9067" />
       </TargetList>
     </Event>
+    <Event id="4101" type="BattleField" active="True" categoryId="4101" questId="980035" repeat="True" requiredItemLevel="1" recommend="True">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="810" amount="3" />
+      </CompensationList>
+      <TargetList>
+        <Target id="70" />
+      </TargetList>
+    </Event>
+    <Event id="4102" type="BattleField" active="True" categoryId="4102" questId="980031" repeat="False" requiredItemLevel="1" recommend="True">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="810" amount="3" />
+      </CompensationList>
+      <TargetList>
+        <Target id="909" />
+      </TargetList>
+    </Event>
+    <Event id="4103" type="BattleField" active="True" categoryId="4103" questId="980032" repeat="False" requiredItemLevel="1" recommend="True">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="810" amount="3" />
+      </CompensationList>
+      <TargetList>
+        <Target id="10" />
+      </TargetList>
+    </Event>
+    <Event id="4104" type="BattleField" active="True" categoryId="4104" questId="980036" repeat="True" requiredItemLevel="1" recommend="True">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="810" amount="3" />
+      </CompensationList>
+      <TargetList>
+        <Target id="118" />
+      </TargetList>
+    </Event>
+    <Event id="4105" type="BattleField" active="True" categoryId="4105" questId="980033" repeat="True" requiredItemLevel="1" recommend="True">
+      <Action type="matching" />
+      <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
+        <Compensation type="item" templateId="20914" amount="15" />
+        <Compensation type="item" templateId="94109" amount="15" />
+        <Compensation type="item" templateId="810" amount="3" />
+      </CompensationList>
+      <TargetList>
+        <Target id="26" />
+      </TargetList>
+    </Event>
     <Event id="2133" type="Dungeon" active="True" categoryId="2133" questId="700019" repeat="True" requiredItemLevel="410">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
@@ -1426,7 +1481,7 @@
         <Target id="70" />
       </TargetList>
     </Event>
-    <Event id="999999" type="BattleField" active="True" categoryId="999999" questId="999999" repeat="True" requiredItemLevel="1" recommend="True">
+    <Event id="999999" type="BattleField" active="True" categoryId="999999" questId="999999" repeat="True" requiredItemLevel="1">
       <Action type="matching" />
       <CompensationList mailSender="@EventMatching:2001" mailTitle="@EventMatching:2002" mailBody="@EventMatching:2003">
         <Compensation type="item" templateId="94110" amount="15" />

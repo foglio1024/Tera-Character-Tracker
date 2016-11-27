@@ -6,14 +6,15 @@
              xmlns:local="clr-namespace:TCTNotifier"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
-    <Grid x:Name="grid" Height="Auto" MinHeight="50" VerticalAlignment="Center" Background="#FF2E2E2E" HorizontalAlignment="Left" Width="200" Margin="0,0,0,0">
+    <Grid x:Name="grid" Height="Auto" MinHeight="50" VerticalAlignment="Center" SnapsToDevicePixels="True" Background="#FF2E2E2E" HorizontalAlignment="Left" Width="200" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Rectangle Fill="#FF3E3D3D"/>
         <TextBlock Name="txt" Margin="5" Foreground="#70ffffff" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Notification text." TextWrapping="Wrap"/>
-        <Ellipse x:Name="icon" Width="40" Height="40" Stroke="Transparent" StrokeThickness="3" >
+        <Border Name="border" BorderBrush="#ff909090" BorderThickness="0,0,0,2" Grid.ColumnSpan="2" Margin="0"/>
+        <Ellipse x:Name="icon" Width="40" Height="40" Stroke="Transparent" StrokeThickness="0" >
         </Ellipse>
     </Grid>
 

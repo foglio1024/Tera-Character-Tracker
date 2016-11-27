@@ -56,6 +56,7 @@
       <Section id="2" desc="벨리카 인근" nameId="63023" floor="1" mapId="WMap_VK_Field_01" height="53620.37" width="71493.82" top="34211.0" left="-34211.0">
         <Npc type="MARKER_RECOVERY" pos="12737.1436,7665.0762,1057.3972" continentId="1" nameId="99,10" />
         <Npc type="MARKER_ENTER_DUNGEON" pos="19108,4450,2148" continentId="1" nameId="99,6301" />
+        <Npc type="MARKER_ENTER_DUNGEON" pos="17825,5327,2138" continentId="1" nameId="99,9501" />
       </Section>
     </Guard>
     <Guard id="2" desc="2 발키온 보호령" nameId="202" mapId="WMap_ATW_Guard" height="117964.8" width="157286.4" top="130560.0" left="-161280.0">
@@ -916,6 +917,7 @@
       <Section id="9048" desc="T5.0 주사위 인던" nameId="9048001" floor="1" mapId="WMap_T5_EX_Dice" height="67601.6" width="16876.22" top="-92160.0" left="76800.0" mode="5" />
       <Section id="90481" desc="T5.0 주사위 인던Boss룸" nameId="9048002" floor="2" mapId="WMap_T5_EX_Dice_Boss" height="7680.0" width="7680.0" top="-88320.0" left="72960.0" mode="5" />
       <Section id="9714" desc="프리미엄 전용 공간" nameId="9714001" floor="0" mapId="WMap_VK_Empty_03" height="53620.37" width="71493.82" top="126371.0" left="-49571.0" mode="5" />
+      <Section id="9950" desc="거대몬스터레이드" nameId="9950001" floor="1" mapId="WMap_DG_HugeDragon" height="15360.0" width="30720.0" top="0.0" left="-92160.0" mode="5" />
     </Guard>
     <Guard id="2" desc="여명의 정원">
       <Section id="9036" desc="카라스챠 소환지" nameId="9036001" floor="1" mapId="WMap_SJ_03" height="7680.0" width="15360.0" top="72960.0" left="-15360.0" mode="5" />

@@ -687,9 +687,9 @@ namespace TCTParser
         {
             var temp = wCforDungeons.Substring(24);
             List<string> dgList = new List<string>();
-            for (int i = 0; i < temp.Length / 28; i++)
+            for (int i = 0; i < temp.Length / 36; i++)
             {
-                dgList.Add(temp.Substring(28 * i, 28));
+                dgList.Add(temp.Substring(36 * i, 36));
             }
             foreach (var ds in dgList)
             {
@@ -698,7 +698,7 @@ namespace TCTParser
                 if (Tera.TeraLogic.DungList.Find(d => d.Id == dgId) != null)
                 {
                     var dgName = Tera.TeraLogic.DungList.Find(d => d.Id==dgId).ShortName;
-                    CurrentChar().Dungeons.Find(d => d.Name == dgName).Runs = Convert.ToInt32(ds.Substring(25, 1));
+                    CurrentChar().Dungeons.Find(d => d.Name == dgName).Runs = Convert.ToInt32(ds.Substring(32, 2));
                 }
             }
 

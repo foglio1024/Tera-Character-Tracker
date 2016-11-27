@@ -452,7 +452,7 @@ namespace Tera
                     i++;
                 }
                 File.WriteAllLines(Environment.CurrentDirectory + "\\content/data/guilds.txt", lines);
-                UI.UpdateLog("Guilds database saved.")
+                UI.UpdateLog("Guilds database saved.");
             }
 
         }

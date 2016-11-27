@@ -164,13 +164,14 @@
   <String id="9760" string="Kalivan's Dreadnaught" />
   <String id="9767" string="Demokron Factory" />
   <String id="9768" string="Shadow Sanguinary" />
-  <String id="9769" string="Lilith’s Keep" />
+  <String id="9769" string="Lilith's Keep" />
   <String id="9770" string="Ruinous Manor" />
   <String id="9795" string="Crucible of Fame" />
   <String id="9810" string="Entrance to Lakan's Prison" />
   <String id="9830" string="Celestial Arena" />
   <String id="9860" string="Kalivan's Challenge" />
-  <String id="9969" string="Nightmare Lilith’s Keep" />
+  <String id="9950" string="Harrowhold" />
+  <String id="9969" string="Nightmare Lilith's Keep" />
   <String id="9970" string="Ruinous Manor (Hard)" />
   <String id="9999" string="TERA Instanced Space" />
   <String id="10001" string="Serpentis Isle" />
@@ -1156,6 +1157,8 @@
   <String id="906913" string="Anea's Palace Entrance" />
   <String id="907001" string="Playpen Entrance" />
   <String id="907002" string="Playpen" />
+  <String id="950001" string="Harrowhold" />
+  <String id="950002" string="Harrowhold Entrance" />
   <String id="975601" string="Timescape" />
   <String id="975602" string="Scarlet Way" />
   <String id="975603" string="Beyond Thundertrial" />
@@ -1168,14 +1171,14 @@
   <String id="976903" string="Grand Hall" />
   <String id="976904" string="Lady's Chamber" />
   <String id="976905" string="Manor Hallway" />
-  <String id="976906" string="Entrance to Lilith’s Keep" />
+  <String id="976906" string="Entrance to Lilith's Keep" />
   <String id="979501" string="Crucible of Fame" />
   <String id="996901" string="Manor Grounds" />
   <String id="996902" string="Burning Garden" />
   <String id="996903" string="Grand Hall" />
   <String id="996904" string="Lady's Chamber" />
   <String id="996905" string="Manor Hallway" />
-  <String id="996906" string="Entrance to Lilith’s Keep" />
+  <String id="996906" string="Entrance to Lilith's Keep" />
   <String id="1810041" string="Bathysmal Rise Entrance" />
   <String id="8000001" string="Relic Hunter Outpost" />
   <String id="8000002" string="Valkyon Federation Headquarters" />
@@ -1521,7 +1524,7 @@
   <String id="9713002" string="Ghillieglade Entrance" />
   <String id="9713003" string="Gatekeeper's Grotto" />
   <String id="9713004" string="Guardian's Plaza" />
-  <String id="9713005" string="Banyakas’s Sanctum" />
+  <String id="9713005" string="Banyakas's Sanctum" />
   <String id="9714001" string="Velik's Sanctuary" />
   <String id="9716001" string="Sky Cruiser Endeavor" />
   <String id="9716002" string="Sky Cruiser Endeavor - Platform" />
@@ -1658,7 +1661,7 @@
   <String id="9813002" string="Ghillieglade Entrance" />
   <String id="9813003" string="Gatekeeper's Grotto" />
   <String id="9813004" string="Guardian's Plaza" />
-  <String id="9813005" string="Banyakas’s Sanctum" />
+  <String id="9813005" string="Banyakas's Sanctum" />
   <String id="9814001" string="The Vault of Oriyn" />
   <String id="9821001" string="Dakuryon's Sanctum" />
   <String id="9822001" string="Archdeva Listening Post" />
@@ -1731,6 +1734,9 @@
   <String id="9916003" string="Control Room (Hard)" />
   <String id="9916004" string="Engine Room (Hard) " />
   <String id="9916005" string="Sky Cruiser Deck (Hard) " />
+  <String id="9950001" string="Harrowhold" />
+  <String id="9950002" string="Harrowhold - Courtyard" />
+  <String id="9950003" string="Harrowhold - Cliffs" />
   <String id="9970001" string="Destroyed Garden" />
   <String id="9970002" string="Destroyed Keep" />
   <String id="9970003" string="Lady's Chamber" />

@@ -30,4 +30,34 @@
   <String id="246027" toolTip="A smart box containing a permanent Dyeable Wrestling Costume for male characters and a Dyeable Sheriff Uniform for female characters. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Dyeable Wild West" />
   <String id="246028" toolTip="A smart box containing a Dyeable Wrestling Costume for male characters and a Dyeable Sheriff Uniform for female characters for 7 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Dyeable Wild West (7 Days)" />
   <String id="246029" toolTip="A smart box containing a Dyeable Wrestling Costume for male characters and a Dyeable Sheriff Uniform for female characters for 30 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Dyeable Wild West (30 Days)" />
+  <String id="246030" toolTip="" string="" />
+  <String id="246031" toolTip="" string="" />
+  <String id="246032" toolTip="" string="" />
+  <String id="246033" toolTip="" string="" />
+  <String id="246034" toolTip="" string="" />
+  <String id="246035" toolTip="" string="" />
+  <String id="246036" toolTip="" string="" />
+  <String id="246037" toolTip="" string="" />
+  <String id="246038" toolTip="" string="" />
+  <String id="246039" toolTip="" string="" />
+  <String id="246040" toolTip="" string="" />
+  <String id="246041" toolTip="" string="" />
+  <String id="246042" toolTip="" string="" />
+  <String id="246043" toolTip="" string="" />
+  <String id="246044" toolTip="" string="" />
+  <String id="246045" toolTip="" string="" />
+  <String id="246046" toolTip="" string="" />
+  <String id="246047" toolTip="" string="" />
+  <String id="246048" toolTip="" string="" />
+  <String id="246049" toolTip="" string="" />
+  <String id="246050" toolTip="A smart box containing a permanent Carmine Winter Dress for female characters or Shearling Flying Jacket for male characters. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Shearling Jacket" />
+  <String id="246051" toolTip="A smart box containing a Carmine Winter Dress for female characters or Shearling Flying Jacket for male characters for 7 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Shearling Jacket (7 Days)" />
+  <String id="246052" toolTip="A smart box containing a Carmine Winter Dress for female characters or Shearling Flying Jacket for male characters for 30 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Shearling Jacket (30 Days)" />
+  <String id="246053" toolTip="A smart box containing a permanent Dyeable Winter Dress for female characters or Dyeable Flying Jacket for male characters. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Dyeable Flying Jacket" />
+  <String id="246054" toolTip="A smart box containing a Dyeable Winter Dress for female characters or Dyeable Flying Jacket for male characters for 7 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Dyeable Flying Jacket (7 Days)" />
+  <String id="246055" toolTip="A smart box containing a Dyeable Winter Dress for female characters or Dyeable Flying Jacket for male characters for 30 days. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Dyeable Flying Jacket (30 Days)" />
+  <String id="246056" toolTip="A smart box containing a permanent Pirate Costume. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Pirate Costume" />
+  <String id="246057" toolTip="A smart box containing a permanent Festive Costume for female characters or Santa Suit for male characters. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Santa Suit" />
+  <String id="246058" toolTip="A smart box containing a permanent Snowsuit. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Snowsuit" />
+  <String id="246059" toolTip="A smart box containing a permanent purple Spectral Weapon Skin. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Smart Box: Purple Spectral Weapon Skin" />
 </StrSheet_Item>

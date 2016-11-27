@@ -2749,6 +2749,7 @@
     <String name="Tikat" class="" templateId="9000" title="Federation Bills" gender="male" race="popori" />
     <String name="Ambrrr" class="" templateId="9004" title="Wintera Messenger" gender="male" race="object" />
     <String name="Colbrrr" class="" templateId="9005" title="Wintera Messenger" gender="male" race="object" />
+    <String name="Harrowhold Teleportal" class="" templateId="9501" title="" gender="" race="object" />
     <String name="One Who Cannot Exist" class="" templateId="9999" title="One Who Cannot Be Placed" gender="female" race="Human" />
     <String name="Therry" class="" templateId="22002" title="Free Traders Administrator" gender="male" race="Human" />
     <String name="Chriar" class="" templateId="22003" title="Free Traders Grand Merchant" gender="male" race="Human" />
@@ -4823,7 +4824,6 @@
     <String name="Timescape Entrance" class="" templateId="5035" title="Timescape Teleport Manager" gender="" race="" />
     <String name="Kalivan's Dreadnaught Entrance" class="" templateId="5036" title="Kalivan's Dreadnaught Teleport Master" gender="" race="" />
     <String name="Forsaken Island Entrance" class="" templateId="5037" title="Forsaken Island Teleport Master" gender="" race="" />
-    <String name="Entrance to Ruinous Manor" class="" templateId="5038" title="Teleportal" gender="" race="" />
     <String name="Tactics/Magic Instructor" class="" templateId="5993" title="" gender="" race="" />
     <String name="Tactics/Magic Instructor" class="" templateId="5997" title="" gender="" race="" />
     <String name="Flight Manager" class="" templateId="5999" title="" gender="" race="" />
@@ -4841,6 +4841,7 @@
     <String name="Tactics/Magic Instructor" class="" templateId="8281" title="" gender="" race="" />
     <String name="Demokron Factory Entrance" class="" templateId="9067" title="Teleportal" gender="" race="" />
     <String name="Manglemire Entrance" class="" templateId="9070" title="Playground Teleport Master" gender="" race="" />
+    <String name="Harrowhold Entrance" class="" templateId="9501" title="" gender="" race="" />
     <String name="Entrance to Lilith's Keep" class="" templateId="9769" title="Teleportal" gender="" race="" />
     <String name="Qeldar Station" class="" templateId="18101" title="" gender="" race="" />
     <String name="Hulran Watch" class="" templateId="18102" title="" gender="" race="" />
@@ -4899,12 +4900,12 @@
     <String name="Protection Crystal" class="" templateId="5001" title="" gender="" race="" />
   </HuntingZone>
   <HuntingZone id="111">
-    <String name="Tank_Practical" class="" templateId="1000" title="" gender="male" race="object" />
-    <String name="Tank_Power" class="" templateId="2000" title="" gender="male" race="object" />
-    <String name="Tank_Speed" class="" templateId="3000" title="" gender="male" race="object" />
-    <String name="Tank Kit" class="" templateId="4003" title="" gender="male" race="object" />
-    <String name="Fixed Cannon" class="" templateId="6000" title="" gender="male" race="object" />
-    <String name="Tank_Practical,Power,Speed" class="" templateId="7000" title="" gender="male" race="object" />
+    <String name="Napalm Tank" class="" templateId="1000" title="" gender="male" race="object" />
+    <String name="Power Tank" class="" templateId="2000" title="" gender="male" race="object" />
+    <String name="Speed Tank" class="" templateId="3000" title="" gender="male" race="object" />
+    <String name="Repair Pylon" class="" templateId="4003" title="" gender="male" race="object" />
+    <String name="Artillery" class="" templateId="6000" title="" gender="male" race="object" />
+    <String name="Ultimate Tank" class="" templateId="7000" title="" gender="male" race="object" />
   </HuntingZone>
   <HuntingZone id="112">
     <String name="Naga Reaver" class="" templateId="1000" title="" gender="" race="" />
@@ -12516,8 +12517,8 @@
     <String name="Vyrun" class="" templateId="999" title="Dungeon Merchant" gender="male" race="" />
     <String name="Exit Teleportal" class="" templateId="1501" title="" gender="male" race="object" />
     <String name="Exit Teleportal" class="" templateId="1502" title="" gender="male" race="object" />
-    <String name="Odon's Chamber Teleportal" class="" templateId="1503" title="Go to Odon’s Chamber" gender="male" race="object" />
-    <String name="Verno's Chamber Teleportal" class="" templateId="1504" title="Go to Verno’s Chamber" gender="male" race="object" />
+    <String name="Odon's Chamber Teleportal" class="" templateId="1503" title="Go to Odon's Chamber" gender="male" race="object" />
+    <String name="Verno's Chamber Teleportal" class="" templateId="1504" title="Go to Verno's Chamber" gender="male" race="object" />
     <String name="Demokron Factory Teleportal" class="" templateId="1505" title="" gender="male" race="object" />
     <String name="Vera" class="" templateId="46701" title="Demokron Guardian" gender="male" race="monster" />
     <String name="Prima" class="" templateId="46702" title="Demokron Guardian" gender="male" race="monster" />
@@ -12580,7 +12581,7 @@
     <String name="Bloodwrath Seer" class="" templateId="2027" title="Guard" gender="male" race="monster" />
     <String name="Bloodwrath Lookout" class="" templateId="2028" title="Guard" gender="male" race="monster" />
     <String name="Bloodwrath Bodyguard" class="" templateId="2032" title="Guard" gender="male" race="monster" />
-    <String name="Pyrepelt" class="" templateId="76901" title="Lilith’s Favorite Horse" gender="male" race="monster" />
+    <String name="Pyrepelt" class="" templateId="76901" title="Lilith's Favorite Horse" gender="male" race="monster" />
     <String name="Arachandlebra" class="" templateId="76902" title="Illuminating Pet" gender="male" race="monster" />
     <String name="Lilith" class="" templateId="76903" title="Vampyr Noble" gender="male" race="monster" />
     <String name="Spirit of Fire" class="" templateId="769015" title="Living Flame" gender="male" race="monster" />
@@ -14190,6 +14191,40 @@
     <String name="Dougal's Escort" class="" templateId="99903" title="Adjutant" gender="male" race="" />
     <String name="Soldier" class="" templateId="99904" title="Vanguard Scout" gender="male" race="" />
   </HuntingZone>
+  <HuntingZone id="950">
+    <String name="Ignidrax Copy" class="" templateId="901" title="Warrior Edge Test" gender="" race="" />
+    <String name="Vergos Copy" class="" templateId="902" title="Warrior Edge Test" gender="" race="" />
+    <String name="Vergos" class="" templateId="1000" title="Dragonsire" gender="" race="" />
+    <String name="Lament Warrior" class="" templateId="1002" title="Dragoncursed" gender="" race="" />
+    <String name="Begin Phase 4" class="" templateId="1003" title="Last Battle" gender="" race="" />
+    <String name="Begin Phase 0" class="" templateId="1005" title="4th Cavalry" gender="" race="" />
+    <String name="Begin Phase 1" class="" templateId="1006" title="Battle with Vergos" gender="" race="" />
+    <String name="Begin Phase" class="" templateId="1007" title="Battle in the Air" gender="" race="" />
+    <String name="Begin Phase 3" class="" templateId="1008" title="Battle on the Rocks" gender="" race="" />
+    <String name="Ignidrax" class="" templateId="1100" title="Spawn of Vergos" gender="" race="" />
+    <String name="Terradrax" class="" templateId="1101" title="Spawn of Vergos" gender="" race="" />
+    <String name="Umbradrax" class="" templateId="1102" title="Spawn of Vergos" gender="" race="" />
+    <String name="Aquadrax" class="" templateId="1103" title="Spawn of Vergos" gender="" race="" />
+    <String name="Spirit of Agony" class="" templateId="1120" title="" gender="" race="" />
+    <String name="Vergos" class="" templateId="2000" title="Dragonsire" gender="" race="" />
+    <String name="Ballista" class="" templateId="2005" title="" gender="" race="" />
+    <String name="Stone Golem" class="" templateId="2500" title="Created by Vergos" gender="" race="" />
+    <String name="Vergos" class="" templateId="3000" title="Dragonsire" gender="" race="" />
+    <String name="Vergos" class="" templateId="4000" title="Dragonsire" gender="" race="" />
+    <String name="Dembrel" class="" templateId="9001" title="Gate Keeper" gender="" race="" />
+    <String name="Kanbrim" class="" templateId="9003" title="Gate Keeper" gender="" race="" />
+    <String name="Kanbrim" class="" templateId="9004" title="Gate Keeper" gender="" race="" />
+    <String name="Kanbrim" class="" templateId="9007" title="Gate Keeper" gender="" race="" />
+    <String name="Kanbrim" class="" templateId="9008" title="Gate Keeper" gender="" race="" />
+    <String name="Harrowhold - Courtyard Teleportal" class="" templateId="9009" title="" gender="" race="" />
+    <String name="Harrowhold - Cliff Teleportal" class="" templateId="9010" title="" gender="" race="" />
+    <String name="Exit Teleportal" class="" templateId="9011" title="" gender="" race="" />
+    <String name="Kanbrim" class="" templateId="9012" title="Gate Keeper" gender="" race="" />
+    <String name="Kanbrim's Reward" class="" templateId="9500" title="" gender="" race="" />
+    <String name="Vergos's Plunder" class="" templateId="9501" title="" gender="" race="" />
+    <String name="Vergos's Plunder" class="" templateId="9502" title="" gender="" race="" />
+    <String name="Vergos's Hoard" class="" templateId="9503" title="" gender="" race="" />
+  </HuntingZone>
   <HuntingZone id="969">
     <String name="Kill Nightmare Pyrepelt" class="" templateId="911" title="" gender="male" race="monster" />
     <String name="Kill Nightmare Arachandlebra" class="" templateId="912" title="" gender="male" race="monster" />
@@ -14200,7 +14235,7 @@
     <String name="Elite Bloodwrath Seer" class="" templateId="2027" title="Guard" gender="male" race="monster" />
     <String name="Elite Bloodwrath Lookout" class="" templateId="2028" title="Guard" gender="male" race="monster" />
     <String name="Elite Bloodwrath Bodyguard" class="" templateId="2032" title="Guard" gender="male" race="monster" />
-    <String name="Nightmare Pyrepelt" class="" templateId="76901" title="Lilith’s Favorite Horse" gender="male" race="monster" />
+    <String name="Nightmare Pyrepelt" class="" templateId="76901" title="Lilith's Favorite Horse" gender="male" race="monster" />
     <String name="Nightmare Arachandlebra" class="" templateId="76902" title="Illuminating Pet" gender="male" race="monster" />
     <String name="Nightmare Lilith" class="" templateId="76903" title="Vampyr Noble" gender="male" race="monster" />
     <String name="Spirit of Fire" class="" templateId="769015" title="Living Flame" gender="male" race="monster" />

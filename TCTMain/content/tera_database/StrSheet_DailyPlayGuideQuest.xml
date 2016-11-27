@@ -60,8 +60,8 @@
   <String id="71002001" string="[Additional Reward] Conquer the Shadow Sanguinary" />
   <String id="71002100" string="[Shadow Sanguinary] Defeat Imperator with your allies!" />
   <String id="71002101" string="Claim your reward!" />
-  <String id="71003001" string="[Additional Reward] Conquer Lilith’s Keep" />
-  <String id="71003100" string="[Lilith’s Keep] Defeat Lilith with your allies!" />
+  <String id="71003001" string="[Additional Reward] Conquer Lilith's Keep" />
+  <String id="71003100" string="[Lilith's Keep] Defeat Lilith with your allies!" />
   <String id="71003101" string="Claim your reward!" />
   <String id="71004001" string="[Additional Reward] Assault the Demokron Factory (Hard)" />
   <String id="71004100" string="[Demokron Factory (Hard)] Defeat Nightmare Verno with your allies!" />
@@ -403,11 +403,11 @@
   <String id="700018001" string="Conquer the Forsaken Island" />
   <String id="700018100" string="[Forsaken Island] Defeat Desolarus with your allies!" />
   <String id="700018101" string="Claim your reward!" />
-  <String id="700019001" string="Conquer Lilith’s Keep" />
-  <String id="700019100" string="[Lilith’s Keep] Defeat Lilith with your allies!" />
+  <String id="700019001" string="Conquer Lilith's Keep" />
+  <String id="700019100" string="[Lilith's Keep] Defeat Lilith with your allies!" />
   <String id="700019101" string="Claim your reward!" />
-  <String id="700020001" string="Raid Lilith’s Keep (Hard)" />
-  <String id="700020100" string="[Lilith’s Keep (Hard)] Defeat Nightmare Lilith with your allies!" />
+  <String id="700020001" string="Raid Lilith's Keep (Hard)" />
+  <String id="700020100" string="[Lilith's Keep (Hard)] Defeat Nightmare Lilith with your allies!" />
   <String id="700020101" string="Claim your reward!" />
   <String id="700021001" string="Suppress the Vault of Kaprima" />
   <String id="700021100" string="[Vault of Kaprima] Defeat Kaprima Reborn with your allies!" />
@@ -442,11 +442,11 @@
   <String id="700115001" string="Option: Teach Manglemore a lesson" />
   <String id="700115100" string="[Manglemire] Teach Manglemore a lesson with your allies!" />
   <String id="700115101" string="Claim your reward!" />
-  <String id="700119001" string="Option: Raid Lilith’s Keep" />
-  <String id="700119100" string="[Lilith’s Keep] Defeat Lilith with your allies!" />
+  <String id="700119001" string="Option: Raid Lilith's Keep" />
+  <String id="700119100" string="[Lilith's Keep] Defeat Lilith with your allies!" />
   <String id="700119101" string="Claim your reward!" />
   <String id="700120001" string="Option: Raid Lilith's Keep (Hard)" />
-  <String id="700120100" string="[Lilith’s Keep (Hard)] Defeat Nightmare Lilith with your allies!" />
+  <String id="700120100" string="[Lilith's Keep (Hard)] Defeat Nightmare Lilith with your allies!" />
   <String id="700120101" string="Claim your reward!" />
   <String id="700121001" string="Option: Suppress the Vault of Kaprima" />
   <String id="700121100" string="[Vault of Kaprima] Defeat Kaprima Reborn with your allies!" />

@@ -343,7 +343,7 @@
   <String id="394" toolTip="Recovers 1% of Max HP per 5 seconds for 3 hours. Cannot be used with any other Renewal Draught. Requires at least Guild Level 2." string="Veteran Vigorous Renewal Draught" />
   <String id="395" toolTip="Replenishes 5 MP per 5 seconds for 3 hours. Cannot be used with any other Renewal Draught. Requires at least Guild Level 2." string="Veteran Infused Renewal Draught" />
   <String id="396" toolTip="A crystal safeguard scroll supplied to supporters of the federation and its soldiers. The crystalbind is destroyed when a crystal otherwise would have been destroyed. Lasts for 12 hours of gameplay, and supersedes the effect of crystalbind when used together." string="Complete Veteran Crystalbind" />
-  <String id="397" toolTip="Resets the daily entry counts of all instance dungeons. Cannot be used while inside an instance." string="Veteran Instance Reset Scroll" />
+  <String id="397" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&#xA;&#xA;Cannot be used while inside an instance." string="Veteran Instance Reset Scroll" />
   <String id="398" toolTip="Use this scroll and an &lt;font color = '#009900'&gt;Intricate Identification Scroll&lt;/font&gt; (available from Merchants, on the &lt;font color = '#22eeee'&gt;General Goods&lt;/font&gt; tab) to reset the enchantment effects of equipment. Has a chance to make an eligible item &lt;font color = '#f7a001'&gt;masterwork&lt;/font&gt;. [Right-click scroll, then left-click target enchantable equipment.]" string="Federation Enigmatic Scroll" />
   <String id="399" toolTip="Changes the randomized effects of unenchantable equipment. [Right-click scroll, then left-click target item.]" string="Semi-Enigmatic Scroll" />
   <String id="400" toolTip="This item is no longer usable." string="Santa Candle" />
@@ -390,7 +390,7 @@
   <String id="441" toolTip="Recovers MP immediately upon acquisition." string="Nexus Boon" />
   <String id="442" toolTip="Sends you to the entrance of {@Rgn:9025001} in Balder's Refuge." string="Balder's Temple Teleport Scroll" />
   <String id="443" toolTip="Sends you to the entrance of the {@Rgn:9024001} in the Rain Cages of Mistmoor Island." string="Fane of Kaprima Teleport Scroll" />
-  <String id="444" toolTip="Increases Attack Speed by $H_W_GOOD$value$COLOR_END and skill damage by $H_W_GOOD$value$COLOR_END. Also, reduces damage received by $H_W_GOOD10%$COLOR_END." string="Bravery Potion" />
+  <String id="444" toolTip="Increases Attack Speed by $H_W_GOOD$value$COLOR_END and skill damage by $H_W_GOOD10%$COLOR_END. Also, reduces damage received by $H_W_GOOD10%$COLOR_END." string="Bravery Potion" />
   <String id="445" toolTip="Necessary to preserve enchantment effects on equipment." string="Spellbind" />
   <String id="446" toolTip="A catalyst used to produce enchantment bonuses of +7 to +9 to tier 5 or below. No longer available from merchants. Can be resold to merchants at the original sale price." string="Refined Alkahest" />
   <String id="447" toolTip="A universal catalyst used to produce enchantment bonuses of +10 to +15 to any tier." string="Masterwork Alkahest" />
@@ -399,8 +399,8 @@
   <String id="450" toolTip="Use this manual to learn how to summon Sleipnir, the celestial warhorse with a Movement Speed of 280." string="Riding Skill: Sleipnir" />
   <String id="451" toolTip="Use this manual to learn how to summon Smolder, the black lion with a Movement Speed of 280." string="Riding Skill: Smolder" />
   <String id="452" toolTip="Use this manual to learn how to summon Boneshaker, a skeletal warhorse with a Movement Speed of 280." string="Riding Skill: Boneshaker" />
-  <String id="453" toolTip="Use this manual to learn how to summon Munchhausen, the mendacious traveler, with a Movement Speed of 280.&lt;BR&gt;Replenishes 0.5% of max MP every second." string="Riding Skill: Munchhausen" />
-  <String id="454" toolTip="Use this manual to learn how to summon Gourmando, the infernal glutton, with a Movement Speed of 280.&lt;BR&gt;Recovers 0.5% of max HP every second." string="Riding Skill: Gourmando" />
+  <String id="453" toolTip="Use this manual to learn how to summon Munchhausen, the mendacious traveler with a Movement Speed of 280 that replenishes 0.5% of your max MP every second." string="Riding Skill: Munchhausen" />
+  <String id="454" toolTip="Use this manual to learn how to summon Gourmando, the infernal glutton with a Movement Speed of 280 that recovers 0.5% of your max HP every second." string="Riding Skill: Gourmando" />
   <String id="455" toolTip="Use this manual to learn how to summon Sheldon, a giant kamara after which the Unified Theory Institute's bots were modeled, with a Movement Speed of 280." string="Riding Skill: Sheldon" />
   <String id="457" toolTip="Use this manual to learn how to summon Regulus with a Movement Speed of 280." string="Riding Skill: Regulus" />
   <String id="498" toolTip="Splendid fireworks with the image of a dragon." string="Fireworks (Dragon)" />
@@ -1367,7 +1367,7 @@
   <String id="5172" toolTip="Awards an uncommon level 58 or 60 mystic glyph." string="Mystic Bellicarium Glyph Box" />
   <String id="5173" toolTip="An assortment of rewards for battleground winners!" string="Victor's Box" />
   <String id="5174" toolTip="An assortment of items to aid your future battleground challenges." string="Challenger's Box" />
-  <String id="5175" toolTip="Use this manual to learn how to summon the pirate horse, Black Pearl, with a Movement Speed of 275." string="Riding Skill: Black Pearl" />
+  <String id="5175" toolTip="Use this manual to learn how to summon Black Pearl, the pirate horse with a Movement Speed of 275." string="Riding Skill: Black Pearl" />
   <String id="5176" toolTip="Awarded to guilds for impressive performance in GvG. Contains 3000 masterwork alkahests." string="Crusade Rewards Masterwork Alkahest Box" />
   <String id="5177" toolTip="Awarded to guilds for impressive performance in GvG. Contains 30 semi-enigmatic scrolls." string="Crusade Rewards Semi-Enigmatic Scroll Box" />
   <String id="5178" toolTip="Awarded to guilds for impressive performance in GvG. Contains 7500 noctenium infusions." string="Crusade Rewards Noctenium Infusion Box" />
@@ -1902,15 +1902,15 @@
   <String id="6460" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Strong and decorative material used for making brooches." string="Elytra Shard" />
   <String id="6461" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Beautiful wing from Koleogg. Used for making exemplary brooches imbued with hidden power." string="Iridescent Elytra" />
   <String id="6462" toolTip="A simple brooch decorated with a wing motif." string="Simple Threatening Brooch" />
-  <String id="6463" toolTip="&lt;font color = '#2478FF'&gt;[Accessory]&lt;/font&gt; Obtained in Kalivan’s Challenge, Demokron Factory, Channelworks, or crafted. A well-made brooch decorated with a wing motif." string="Flawless Threatening Brooch" />
+  <String id="6463" toolTip="&lt;font color = '#2478FF'&gt;[Accessory]&lt;/font&gt; Obtained in Kalivan's Challenge, Demokron Factory, Channelworks, or crafted. A well-made brooch decorated with a wing motif." string="Flawless Threatening Brooch" />
   <String id="6464" toolTip="&lt;font color = '#2478FF'&gt;[Processed Material]&lt;/font&gt; Wire specially designed to affix beautiful decorations and magical bijous to brooches." string="Accessory Wire" />
   <String id="6465" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Sticky substance perfect for affixing delicate items to brooches." string="Blue Goo" />
   <String id="6466" toolTip="&lt;font color = '#2478FF'&gt;[Enhanced Accessory]&lt;/font&gt; Drag to shortcut tray after equipping to access &lt;font color = '#2478FF'&gt;[Maximum Capacity]&lt;/font&gt;: Increases Endurance by $H_W_GOOD$value$COLOR_END for $H_W_GOOD$time$COLOR_END." string="Iridescent Threatening Brooch" />
   <String id="6467" toolTip="A simple brooch decorated with a wing motif." string="Simple Powerful Brooch" />
-  <String id="6468" toolTip="&lt;font color = '#2478FF'&gt;[Accessory]&lt;/font&gt; Obtained in Kalivan’s Challenge, Demokron Factory, Channelworks, or crafted." string="Flawless Powerful Brooch" />
+  <String id="6468" toolTip="&lt;font color = '#2478FF'&gt;[Accessory]&lt;/font&gt; Obtained in Kalivan's Challenge, Demokron Factory, Channelworks, or crafted." string="Flawless Powerful Brooch" />
   <String id="6469" toolTip="&lt;font color = '#2478FF'&gt;[Enhanced Accessory] &lt;/font&gt;Drag to shortcut tray after equipping to access &lt;BR&gt;&lt;font color = '#2478FF'&gt;[Tapped Power]&lt;/font&gt;: Increases Power by $H_W_GOOD$value$COLOR_END for $H_W_GOOD$time$COLOR_END." string="Iridescent Powerful Brooch" />
   <String id="6470" toolTip="A simple brooch decorated with a wing motif." string="Simple Keen Brooch" />
-  <String id="6471" toolTip="&lt;font color = '#2478FF'&gt;[Accessory]&lt;/font&gt; Obtained in Kalivan’s Challenge, Demokron Factory, Channelworks, or crafted." string="Flawless Keen Brooch" />
+  <String id="6471" toolTip="&lt;font color = '#2478FF'&gt;[Accessory]&lt;/font&gt; Obtained in Kalivan's Challenge, Demokron Factory, Channelworks, or crafted." string="Flawless Keen Brooch" />
   <String id="6472" toolTip="&lt;font color = '#2478FF'&gt;[Enhanced Accessory] &lt;/font&gt;Drag to shortcut tray after equipping to access &lt;BR&gt;&lt;font color = '#2478FF'&gt;[Furious Grudge]&lt;/font&gt;: Increases Crit Factor by $H_W_GOOD$value$COLOR_END and Attack Speed by $H_W_GOOD$value2$COLOR_END for $H_W_GOOD$time$COLOR_END." string="Iridescent Keen Brooch" />
   <String id="6473" toolTip="A three-pack of Artisan Additives for crafting." string="Artisan Additive (3-Pack)" />
   <String id="6474" toolTip="&lt;font color = '#2478FF'&gt;[Additive]&lt;/font&gt; Increases bonus rate &lt;font color = '#2478FF'&gt;25% more compared to normal&lt;/font&gt; on crafting master items. Consumed each time. Not necessary, but useful for artisan crafting." string="Master's Additive" />
@@ -11913,7 +11913,7 @@
   <String id="20804" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on body armor. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently creates a chance of casting a shield around you when your HP becomes 50% or lower.&lt;/font&gt;The shield absorbs damage for you for a set duration." string="Armor Etching: Bulwark IV" />
   <String id="20805" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on body armor. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently creates a chance of continuously restoring HP/MP when your HP becomes 50% or lower.&lt;/font&gt;" string="Armor Etching: Recovery IV" />
   <String id="20806" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on a weapon. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently increases Power by 12.&lt;/font&gt;" string="Weapon Etching: Pumped IV" />
-  <String id="20807" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on a weapon. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently increases Crit Factor by 22.&lt;/font&gt;" string="Weapon Etching: Keen I" />
+  <String id="20807" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on a weapon. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently increases Crit Factor by 22.&lt;/font&gt;" string="Weapon Etching: Keen IV" />
   <String id="20808" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on a weapon. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently increases HP recovery rate by 420 and Attack Speed by 1.5%.&lt;/font&gt;&lt;BR&gt;&lt;font color = '#FF0000'&gt;Caution! For Priests/Mystics only. Does not increase healing you receive.&lt;/font&gt;" string="Weapon Etching: Healing IV" />
   <String id="20809" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on a weapon. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently increases aggro by 10% and Attack Speed by 1.5%.&lt;/font&gt;" string="Weapon Etching: Threatening IV" />
   <String id="20810" toolTip="[Right-click on the etching and left-click on the target equipment to use.] Etches the following effect on a weapon. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Effect]&lt;BR&gt;Permanently increases Attack Speed by 5% and decreases skill cooldown by 3%.&lt;/font&gt;" string="Weapon Etching: Energetic IV" />
@@ -11934,12 +11934,12 @@
   <String id="20903" toolTip="&lt;font color = '#2478FF'&gt;[Processed Material]&lt;/font&gt; Refined metal used in noble vampyr weapons. Used to make Guile equipment." string="Bloodsteel Ingot" />
   <String id="20904" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Infused with capricious magic power. Can be processed and used to make equipment." string="Caprin Horn" />
   <String id="20905" toolTip="&lt;font color = '#2478FF'&gt;[Processed Material]&lt;/font&gt; Processed horn used to make equipment." string="Caprin Handles" />
-  <String id="20906" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Contains Lilith’s tears. A source of power when used as equipment material.$BRUsed to make &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt;." string="Lady’s Handkerchief" />
-  <String id="20907" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Perfume used by Lilith. Also used as a forging material for weapons.  $BR&lt;font color = '#2478FF'&gt;Used to make Ambush Equipment&lt;/font&gt;." string="Eau d' Fascination" />
-  <String id="20908" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; A bauble polluted by Lilith’s darkest desires. $BR&lt;font color = '#2478FF'&gt;Used to make Ambush Equipment&lt;/font&gt;." string="Envy Crystal" />
+  <String id="20906" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Contains Lilith's tears. A source of power when used as equipment material.$BRUsed to make &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt;." string="Lady's Handkerchief" />
+  <String id="20907" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Perfume used by Lilith. Also used as a forging material for weapons.  $BR&lt;font color = '#2478FF'&gt;Used to make Ambush Equipment&lt;/font&gt;." string="Eau de Fascination" />
+  <String id="20908" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; A bauble polluted by Lilith's darkest desires. $BR&lt;font color = '#2478FF'&gt;Used to make Ambush Equipment&lt;/font&gt;." string="Envy Crystal" />
   <String id="20909" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Contains mesmerizing vampyr power. $BR&lt;font color = '#2478FF'&gt;Used to make Ambush Equipment&lt;/font&gt;." string="Hypnotic Powder" />
-  <String id="20910" toolTip="A chest containing Lachelith’s most treasured possessions. Has a chance of containing materials for &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt;." string="Lachelith’s Treasure Chest" />
-  <String id="20911" toolTip="A chest containing Lilith’s most treasured possessions. Has a chance of containing materials for &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt;." string="Lilith’s Treasure Chest" />
+  <String id="20910" toolTip="A chest containing Lachelith's most treasured possessions. Has a chance of containing materials for &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt;." string="Lachelith's Treasure Chest" />
+  <String id="20911" toolTip="A chest containing Lilith's most treasured possessions. Has a chance of containing materials for &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt;." string="Lilith's Treasure Chest" />
   <String id="20912" toolTip="Source of magic power for Lilith. &lt;font color = '#2478FF'&gt;[Right-click]&lt;/font&gt; to exchange it for equipment." string="Lakan's Charm" />
   <String id="20913" toolTip="Awarded for well-manored behavior. Currency for items." string="Undercede Token" />
   <String id="20914" toolTip="Awarded for well-manored behavior. Currency for items." string="Intercede Token" />
@@ -11956,7 +11956,7 @@
   <String id="20925" toolTip="Use this recipe to learn the corresponding crafting skill." string="Design: Infernalshot" />
   <String id="20926" toolTip="Use this recipe to learn the corresponding crafting skill." string="Design: Diabolic Powerfists" />
   <String id="20927" toolTip="Use this recipe to learn the corresponding crafting skill." string="Design: Bloodstar" />
-  <String id="20928" toolTip="Use this design to learn the corresponding crafting skill. Gives a random lancer primary enchantment effect." string="Design: Zealhiest Mail" />
+  <String id="20928" toolTip="Use this design to learn the corresponding crafting skill. Gives a random lancer primary enchantment effect." string="Design: Zealheist Mail" />
   <String id="20929" toolTip="Use this design to learn the corresponding crafting skill. Gives a random berserker primary enchantment effect." string="Design: Zealwrek Mail" />
   <String id="20930" toolTip="Use this design to learn the corresponding crafting skill. Gives a random gunner primary enchantment effect." string="Design: Zealgorge Mail" />
   <String id="20931" toolTip="Use this design to learn the corresponding crafting skill. Gives a random brawler primary enchantment effect." string="Design: Zealsubsume Mail" />
@@ -12012,8 +12012,8 @@
   <String id="20981" toolTip="Use this recipe to learn the corresponding crafting skill." string="Design: Landsheart Ring" />
   <String id="20982" toolTip="Use this recipe to learn the corresponding crafting skill." string="Design: Manor Collection" />
   <String id="20983" toolTip="Use this recipe to learn the corresponding crafting skill." string="Design: Bloodsteel Ingot" />
-  <String id="20984" toolTip="Use this recipe to learn the corresponding crafting skill." string="Weaponcrafting Design: Horn Handle" />
-  <String id="20985" toolTip="Use this recipe to learn the corresponding crafting skill." string="Armorcrafting Design: Horn Handle" />
+  <String id="20984" toolTip="Use this recipe to learn the corresponding crafting skill." string="Weaponcrafting Design: Caprin Handle" />
+  <String id="20985" toolTip="Use this recipe to learn the corresponding crafting skill." string="Armorcrafting Design: Caprin Handle" />
   <String id="20986" toolTip="&lt;font color = '#2478FF'&gt;[Credit Material]&lt;/font&gt; This badge can be purchased with Bellicarium Credits. The material is also used to make &lt;font color = '#2478FF'&gt;[Blubred or Landsheart Accessories]&lt;/font&gt;." string="Victory Badge" />
   <String id="20987" toolTip="&lt;font color = '#2478FF'&gt;[Credit Material]&lt;/font&gt; This badge can be purchased with Killing Spree points. The material is also used to make &lt;font color = '#2478FF'&gt;[Blubred or Landsheart Accessories]&lt;/font&gt;." string="Insanity Badge" />
   <String id="20988" toolTip="There is a high chance of getting a Blubred or Landsheart accessory design at random." string="Noble Heights Design Box" />
@@ -14382,7 +14382,7 @@
   <String id="28062" toolTip="This design is worn and useless. Sell it to a shop for gold." string="Worn Recipe: Warding Scroll VI" />
   <String id="28063" toolTip="Cannot learn the corresponding crafting skill by this design. You can sell this design in shops." string="Old Design: Ranger's Nostrum VI" />
   <String id="28064" toolTip="Cannot learn the corresponding crafting skill by this design. You can sell this design in shops." string="Old Design: Nostrum of Energy VI" />
-  <String id="28065" toolTip="An old and relatively useless recipe. Sell it to a shop for money." string="Worn Recipe: Heaven’s Elixir" />
+  <String id="28065" toolTip="An old and relatively useless recipe. Sell it to a shop for money." string="Worn Recipe: Heaven's Elixir" />
   <String id="28066" toolTip="Use this design to learn the corresponding crafting skill." string="Design: Straw Scarab Powder" />
   <String id="28067" toolTip="Use this design to learn the corresponding crafting skill." string="Design: Elemental Scarab Powder" />
   <String id="28068" toolTip="Use this design to learn the corresponding crafting skill." string="Design: Aurora Scarab Powder" />
@@ -14846,6 +14846,16 @@
   <String id="32116" string="Snake Eye Earring" />
   <String id="32117" string="Many Layered Locket" />
   <String id="32118" string="Band of Intensity" />
+  <String id="32119" toolTip="A reward for those who defended an Oneiric Generator during the Dreamstorm. May contain Tier 9 Feedstock, Spellbind IX, Bravery Potion, or gems." string="Vanguard Initiative Supply Crate I" />
+  <String id="32120" toolTip="A reward for those who defended an Oneiric Generator during the Dreamstorm. May contain Tier 9 Feedstock, Spellbind IX, Bravery Potion, or gems." string="Vanguard Initiative Supply Crate II" />
+  <String id="32121" toolTip="A reward for those who defended an Oneiric Generator during the Dreamstorm. May contain Tier 9 Feedstock, Spellbind IX, Bravery Potion, or gems." string="Vanguard Initiative Supply Crate III" />
+  <String id="32122" toolTip="A reward for those who defended an Oneiric Generator during the Dreamstorm. May contain Tier 9 Feedstock, Spellbind IX, Bravery Potion, or gems." string="Vanguard Initiative Supply Crate IV" />
+  <String id="32123" toolTip="A reward for those who defended an Oneiric Generator during the Dreamstorm. May contain Tier 9 Feedstock, Spellbind IX, Bravery Potion, or gems." string="Vanguard Initiative Supply Crate V" />
+  <String id="32124" toolTip="A reward for those who have prevailed against the forces of the Archdevans. May contain noctenium infusions and Supercede Tokens." string="Idoneal Force Supply Crate I" />
+  <String id="32125" toolTip="A reward for those who have prevailed against the forces of the Archdevans. May contain noctenium infusions and Supercede Tokens." string="Idoneal Force Supply Crate II" />
+  <String id="32126" toolTip="A reward for those who have prevailed against the forces of the Archdevans. May contain noctenium infusions and Supercede Tokens." string="Idoneal Force Supply Crate III" />
+  <String id="32127" toolTip="A reward for those who have prevailed against the forces of the Archdevans. May contain noctenium infusions and Supercede Tokens." string="Idoneal Force Supply Crate IV" />
+  <String id="32128" toolTip="A reward for those who have prevailed against the forces of the Archdevans. May contain noctenium infusions and Supercede Tokens." string="Idoneal Force Supply Crate V" />
   <String id="35000" toolTip="Skill: Rain of Blows $H_W_GOOD Glyph points 4$COLOR_END$BRIncreases skill damage by $value." string="Glyph of Power" />
   <String id="35001" toolTip="Skill: Death From Above $H_W_GOOD Glyph points 2$COLOR_END$BRDecreases cooldown by $value." string="Glyph of Energy" />
   <String id="35002" toolTip="Skill: Rain of Blows $H_W_GOOD Glyph points 4$COLOR_END$BRRecovers $value HP." string="Glyph of Restoration" />
@@ -14975,7 +14985,7 @@
   <String id="36968" toolTip="Skill: Thunder Strike $H_W_GOODGlyph points 4$COLOR_END$BRSpeeds charging by $value." string="Glyph of Haste" />
   <String id="36969" toolTip="Skill: Staggering Strike $H_W_GOODGlyph points 4$COLOR_END$BR$prob chance to eliminate cooldown." string="Glyph of Persistence" />
   <String id="36970" toolTip="Skill: Fiery Rage $H_W_GOODGlyph points 4$COLOR_END$BR$prob chance to increase Power by 10% for 10 seconds." string="Glyph of the Pump" />
-  <String id="36971" toolTip="Skill: Flurry of Blows $H_W_GOODGlyph points 4$COLOR_END$BRIncreases effect duration by $value." string="Glyph of Lingering" />
+  <String id="36971" toolTip="Skill: Fiery Rage $H_W_GOODGlyph points 4$COLOR_END$BRIncreases effect duration by $value." string="Glyph of Lingering" />
   <String id="36972" toolTip="Skill: Lethal Strike $H_W_GOODGlyph points 3$COLOR_END$BRIncreases skill damage by $value. " string="Glyph of Power" />
   <String id="36973" toolTip="Skill: Thunder Strike $H_W_GOODGlyph points 5$COLOR_END$BREliminates slowed movement restriction." string="Glyph of the Slick" />
   <String id="36974" toolTip="Skill: Cyclone $H_W_GOODGlyph points 3$COLOR_END$BRSpeeds charging by $value." string="Glyph of Haste" />
@@ -15031,12 +15041,12 @@
   <String id="38258" toolTip="Skill: Arrow Volley $H_W_GOOD Glyph points 2$COLOR_END$BR$prob chance to eliminate cooldown." string="Glyph of Persistence" />
   <String id="38259" toolTip="Skill: Feign Death $H_W_GOOD Glyph points 4$COLOR_END$BRHeals 3% of total HP every 1 second for 10 seconds." string="Glyph of Regeneration" />
   <String id="38260" toolTip="Skill: Radiant Arrow $H_W_GOOD Glyph points 4$COLOR_END$BRDecreases HP consumption by $value when overcharged." string="Glyph of the Sanative" />
-  <String id="38261" toolTip="Skill: Radiant Arrow $H_W_GOOD Glyph points 5$COLOR_END$BRDoubles the chance to crit." string="Glyph of Carving" />
+  <String id="38261" toolTip="Skill: Radiant Arrow $H_W_GOOD Glyph points 4$COLOR_END$BRDoubles the chance to crit." string="Glyph of Carving" />
   <String id="38262" toolTip="Skill: Close Quarters $H_W_GOOD Glyph points 4$COLOR_END$BRIncreases Movement Speed by 50 for 3 seconds." string="Glyph of Fleetfoot" />
   <String id="38263" toolTip="Skill: Close Quarters $H_W_GOOD Glyph points 4$COLOR_END$BRIncreases effect duration by $value." string="Glyph of Lingering" />
   <String id="38264" toolTip="Skill: Breakaway Bolt $H_W_GOOD Glyph points 4$COLOR_END$BR$prob chance to decrease opponent's Movement Speed by 40% for 6 seconds." string="Glyph of Slowing" />
   <String id="38265" toolTip="Skill: Stunning Trap Arrow $H_W_GOODGlyph points 3$COLOR_END$BRDecreases cooldown by $value." string="Glyph of Energy" />
-  <String id="38266" toolTip="Skill: Slow Trap Arrow $H_W_GOODGlyph points 3$COLOR_END$BRDecreases a target's Endurance by 4.55% for 25 seconds." string="Glyph of Enfeeblement" />
+  <String id="38266" toolTip="Skill: Thunderbolt $H_W_GOODGlyph points 4$COLOR_END$BRDoubles the chance to crit." string="Glyph of Carving" />
   <String id="38267" toolTip="Skill: Incendiary Trap Arrow $H_W_GOODGlyph points 5$COLOR_END$BRIncreases skill damage by $value." string="Glyph of Power" />
   <String id="38268" toolTip="Skill: Breakaway Bolt $H_W_GOODGlyph points 3$COLOR_END$BRDecreases cooldown by $value." string="Glyph of Energy" />
   <String id="38269" toolTip="Skill: Restraining Arrow $H_W_GOODGlyph points 2$COLOR_END$BRDecreases cooldown by $value." string="Glyph of Energy" />
@@ -15045,12 +15055,12 @@
   <String id="38272" toolTip="Skill: Radiant Arrow $H_W_GOODGlyph points 2$COLOR_END$BRIncreases range by 5 meters." string="Glyph of Longshot" />
   <String id="38273" toolTip="Skill: Stunning Trap $H_W_GOODGlyph points 4$COLOR_END$BRIncreases effect duration by $value. " string="Glyph of Lingering" />
   <String id="38274" toolTip="Skill: Web Arrow $H_W_GOODGlyph points 3$COLOR_END$BR$prob chance to increase Combat Movement Speed by 10 for 12 seconds after a successful hit." string="Glyph of Fleetfoot" />
-  <String id="38275" toolTip="Skill: Final Salvo $H_W_GOODGlyph points 3$COLOR_END$BR$prob chance to eliminate cooldown." string="Glyph of Persistence" />
+  <String id="38275" toolTip="Skill: Sequential Fire $H_W_GOODGlyph points 3$COLOR_END$BRDecreases cooldown by $value." string="Glyph of Energy" />
   <String id="38276" toolTip="Skill: Rain of Arrows $H_W_GOODGlyph points 4$COLOR_END$BRIncreases skill damage by $value." string="Glyph of Power" />
   <String id="38277" toolTip="Skill: Penetrating Arrow $H_W_GOODGlyph points 2$COLOR_END$BRIncreases range by 5 meters." string="Glyph of Longshot" />
   <String id="38278" toolTip="Skill: Arrow Volley $H_W_GOODGlyph points 2$COLOR_END$BR$prob chance to eliminate cooldown." string="Glyph of Persistence" />
-  <String id="38279" toolTip="Skill: Radiant Arrow $H_W_GOODGlyph points 4$COLOR_END$BRDoubles the chance to crit." string="Glyph of Carving" />
-  <String id="38280" toolTip="Skill: Slow Trap Arrow $H_W_GOODGlyph points 3$COLOR_END$BRDecreases target's Endurance by 4.55% for 25 seconds." string="Glyph of Enfeeblement" />
+  <String id="38279" toolTip="Skill: Radiant Arrow $H_W_GOODGlyph points 3$COLOR_END$BRTriples the chance to crit." string="Glyph of Carving" />
+  <String id="38280" toolTip="Skill: Thunderbolt $H_W_GOODGlyph points 3$COLOR_END$BRTriples the chance to crit." string="Glyph of Carving" />
   <String id="38281" toolTip="Skill: Incendiary Trap Arrow $H_W_GOODGlyph points 4$COLOR_END$BRIncreases skill damage by $value." string="Glyph of Power" />
   <String id="38282" toolTip="Skill: Thunderbolt $H_W_GOODGlyph points 3$COLOR_END$BRSpeeds casting time by $value." string="Glyph of Haste" />
   <String id="38283" toolTip="Skill: Thunderbolt$H_W_GOODGlyph points 3$COLOR_END$BRIncreases skill damage by $value." string="Glyph of Power" />
@@ -15614,16 +15624,16 @@
   <String id="51009" string="Bloodgate Ring" />
   <String id="51010" string="Bloodvain Ring" />
   <String id="51011" toolTip="&lt;font color='#2478FF'&gt;[Enhanced Accessory]&lt;/font&gt;Contains a usable skill. Drag to shortcut tray after equipping to use as a skill. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#2478FF'&gt;[Skill]&lt;/font&gt; Increases Power by $value3 for $time, Crit Factor by $value, Attack speed by $value2, and removes harmful effects." string="Quatrefoil Brooch" />
-  <String id="51012" string="Manorguest Necklace" />
+  <String id="51012" string="Manor Necklace" />
   <String id="51013" string="Manorguest Earring" />
   <String id="51014" string="Manorborne Earring" />
   <String id="51015" string="Manorguest Ring" />
   <String id="51016" string="Manorborne Ring" />
-  <String id="51017" string="Estateguest Necklace" />
+  <String id="51017" string="Estate Necklace" />
   <String id="51018" string="Estateguest Earring" />
   <String id="51019" string="Estateborne Earring" />
   <String id="51020" string="Estateguest Ring" />
-  <String id="51021" string="Estateborne Ring " />
+  <String id="51021" string="Estateborne Ring" />
   <String id="51022" string="Blubred Necklace" />
   <String id="51023" string="Blubred Earring" />
   <String id="51024" string="Blubred Ring" />
@@ -16258,16 +16268,16 @@
   <String id="55645" toolTip="Use this design to learn the corresponding crafting skill." string="Design: Pitting Assemblage" />
   <String id="55646" toolTip="Use this design to learn the corresponding crafting skill." string="Design: Punchlock" />
   <String id="55647" toolTip="Use this design to learn the corresponding crafting skill." string="Design: Ratchet Gun" />
-  <String id="55648" toolTip="Twin swords imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Sizzle &amp; Sear" />
-  <String id="55649" toolTip="Lance imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Withering Lance" />
-  <String id="55650" toolTip="Greatsword imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Smolderslice" />
-  <String id="55651" toolTip="Axe imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Cinderhack" />
-  <String id="55652" toolTip="Disc imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Burning Wheel" />
-  <String id="55653" toolTip="Bow imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Sunburst" />
-  <String id="55654" toolTip="Staff imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Flamestave" />
-  <String id="55655" toolTip="Scepter imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Roiling Rodule" />
-  <String id="55656" toolTip="Scythes imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Flarefangs" />
-  <String id="55657" toolTip="Arcannon imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Stovepipe" />
+  <String id="55648" toolTip="Twin swords imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Sizzle &amp; Sear" />
+  <String id="55649" toolTip="Lance imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Withering Lance" />
+  <String id="55650" toolTip="Greatsword imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Smolderslice" />
+  <String id="55651" toolTip="Axe imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Cinderhack" />
+  <String id="55652" toolTip="Disc imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Burning Wheel" />
+  <String id="55653" toolTip="Bow imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Sunburst" />
+  <String id="55654" toolTip="Staff imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Flamestave" />
+  <String id="55655" toolTip="Scepter imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Roiling Rodule" />
+  <String id="55656" toolTip="Scythes imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Flarefangs" />
+  <String id="55657" toolTip="Arcannon imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Stovepipe" />
   <String id="55658" toolTip="Collect all the pieces of Bahaar's relic to create a weapon imbued with the god's power." string="Bahaar's Relic Piece" />
   <String id="55659" toolTip="A piece of a weapon enchanted with the power of an ancient god. Broken and powerless, it no longer functions as a weapon, but can be used for enchanting Tier 5 weapons. " string="Bahaar Weapon Shard" />
   <String id="55660" toolTip="A warrior's weapons, forged with the intent of slaughtering demokrons." string="Cleanse &amp; Purge" />
@@ -16280,7 +16290,7 @@
   <String id="55667" toolTip="A mystic's weapon, crafted for the purpose of purifying the evil of demokrons." string="Purging Scepter " />
   <String id="55668" toolTip="A reaper's weapon, forged with the intent of cutting down demokrons." string="Purging Scythe" />
   <String id="55669" toolTip="A gunner's weapon, manufactured for the purpose of slaying demokrons." string="Purging Arcannon" />
-  <String id="55670" toolTip="Powerfists imbued with the god Bahaar’s power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Tormentors" />
+  <String id="55670" toolTip="Powerfists imbued with the god Bahaar's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Tormentors" />
   <String id="55671" toolTip="A brawler's weapons, manufactured with the intent of beating demokrons to a pulp." string="Purging Powerfists" />
   <String id="55672" toolTip="A salt-crusted token bearing the likeness of a once-great hero, and exchangeable for consumables suited for exploring dungeons. [Right-click] to open the Kalivan Token Exchange." string="Kalivan Token" />
   <String id="56000" toolTip="Use this design to learn the corresponding crafting skill." string="Design: Crafted Levlow Powerfists" />
@@ -16857,7 +16867,7 @@
   <String id="58501" toolTip="Manifests PvP effects when enchanted." string="Tribune's Shuriken of Dedication" />
   <String id="58502" toolTip="Manifests PvP effects when enchanted." string="Tribune's Shuriken of Victory" />
   <String id="58503" string="Crafted Thunderstroke Shuriken" />
-  <String id="58504" toolTip="A shuriken imbued with the god Bahaar’s power.$BR&lt;font color = '#a9d18e'&gt;Inflicts critical damage on monsters on similar level to the weapon’s requirement." string="Flameslicer" />
+  <String id="58504" toolTip="A shuriken imbued with the god Bahaar's power.$BR&lt;font color = '#a9d18e'&gt;Inflicts critical damage on monsters on similar level to the weapon's requirement." string="Flameslicer" />
   <String id="58505" toolTip="A ninja's weapon, forged with the intent of slaughtering demokrons." string="Purging Shuriken" />
   <String id="58506" toolTip="A shuriken imbued with the goddess Seren' power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Nightsaw" />
   <String id="58507" toolTip="A shuriken imbued with the god Dagon's power.$BR$BR$H_W_GOODPVE: $COLOR_ENDInflicts more crits on monsters of similar level to the weapon's requirement." string="Marscale" />
@@ -17092,8 +17102,8 @@
   <String id="70096" toolTip="An urgent letter from the Mysterium maester.$BR[Right-click to read the letter.]" string="Adonis's Letter" />
   <String id="70097" toolTip="Thick syrupy milk for confections." string="Sweetened Milk" />
   <String id="70098" toolTip="A sweet desert made of ice and fruit. Replenishes 170 MP per second for 15 seconds." string="Sarberry Deliciousness" />
-  <String id="71001" toolTip="Summon a horse you can fly in free-flight zones." string="Riding Skill: Skydancer" />
-  <String id="71002" toolTip="Summon a horse you can fly in free-flight zones." string="Riding Skill: Tulpar" />
+  <String id="71001" toolTip="Summon a horse you can fly in free-flight zones." string="Flying Skill: Skydancer" />
+  <String id="71002" toolTip="Summon a horse you can fly in free-flight zones." string="Flying Skill: Tulpar" />
   <String id="71100" toolTip="Quick weapons formagined in the whimsories of Wonderholme." string="Gyre &amp; Gimble" />
   <String id="71101" toolTip="Quick weapon formagined in the whimsories of Wonderholme." string="Beetlebore" />
   <String id="71102" toolTip="Quick weapon formagined in the whimsories of Wonderholme." string="Ace Spade" />
@@ -17413,7 +17423,7 @@
   <String id="71421" toolTip="Croquette in the traditional crescent shape. Crispy on the outside and moist on the inside.&lt;BR&gt;&lt;BR&gt;Replenishes $H_W_GOOD1%$COLOR_END of your maximum MP every $H_W_GOOD$tickInterval$COLOR_END for $time while increasing power by $H_W_GOOD$value2$COLOR_END and Attack Speed by $H_W_GOOD$value3$COLOR_END." string="Half-Moon Croquette" />
   <String id="71422" toolTip="Traditional Bleakfields BBQ with pigling meat wrapped in palm leaves and grilled over the low heat of lava.&lt;BR&gt;&lt;BR&gt;Increases healing effects by $H_W_GOOD9%$COLOR_END for $time for you and up to 20 people within a 20m radius." string="Traditional Bleakfields BBQ" />
   <String id="71423" toolTip="A salad of fresh greens and sky lotuses tossed with a spicy dressing.&lt;BR&gt;&lt;BR&gt;Increases maximum HP and MP by $H_W_GOOD5%$COLOR_END for 15 minutes for you and up to 20 people within a 20m radius." string="Freeholds Flame Salad" />
-  <String id="71424" toolTip="Stir-fried struthio breast marinated in a special sauce and topped with a sky lotus.&lt;BR&gt;&lt;BR&gt;Increases Crit Resistance by $H_W_GOOD20$COLOR_END for 15 minutes for you and up to 20 people within a 20m radius." string="Bleak Wings" />
+  <String id="71424" toolTip="Stir-fried struthio breast marinated in a special sauce and topped with a sky lotus.&lt;BR&gt;&lt;BR&gt;Increases Crit Resist Factor by $H_W_GOOD20$COLOR_END for 15 minutes for you and up to 20 people within a 20m radius." string="Bleak Wings" />
   <String id="71425" toolTip="Crisp and sweet taproot." string="Taproot" />
   <String id="71426" toolTip="Highly nutritious and sweet moongourd." string="Moongourd" />
   <String id="71427" toolTip="Fresh, healthy floretta." string="Floretta" />
@@ -19027,8 +19037,9 @@
   <String id="83304" toolTip="Teleports you to the entrance of Shadow Sanquinary in the Highwatch Outskirts in Val Oriyn." string="Shadow Sanquinary Teleport Scroll" />
   <String id="83305" toolTip="Teleports you to the Manglemire teleport manager outside Eldritch Academy." string="Teleport Scroll: Manglemire" />
   <String id="83306" toolTip="Present to Shuma, the Dreadspire Entrance Manager in Tempest Reach, to access the sixteenth and later challenges of Dreadspire. Each player must have a ticket to enter, and each entry consumes one ticket.$BRAdditional tickets are available as random drops in the 15th Challenge of Dreadspire." string="Dreadspire Top Challenges Ticket" />
-  <String id="83400" toolTip="Teleports you to Lilith’s Keep located on the Cliffs of Insanity in Popolion." string="Teleport Scroll: Lilith’s Keep" />
-  <String id="83401" toolTip="Teleports you to the Ruinous Manor located on the Cliffs of Insanity in Popolion." string="Teleport Scroll: Ruinous Manor" />
+  <String id="83307" toolTip="Teleports you to Harrowhold." string="Harrowhold Teleport Scroll" />
+  <String id="83400" toolTip="Teleports you to the Manor Grounds outside Lilith's Keep and the Ruinous Manor, located on the Cliffs of Insanity in Popolion." string="Keep and Manor Teleport Scroll" />
+  <String id="83401" toolTip="Teleports you to the Manor Grounds outside the Ruinous Manor, located on the Cliffs of Insanity in Popolion." string="Ruinous Manor Teleport Scroll" />
   <String id="84301" toolTip="&lt;font color = '#2478FF'&gt;[Recommended Classes: lancer, warrior, berserker, brawler]&lt;/font&gt; &#xA;&lt;font color='#00BFFF'&gt;Dyad crystals&lt;/font&gt; are not destroyed upon death." string="Poisedly Wrathful Niveot" />
   <String id="84302" toolTip="&lt;font color = '#2478FF'&gt;[Recommended Classes: lancer, warrior, berserker, brawler]&lt;/font&gt; &#xA;&lt;font color='#00BFFF'&gt;Dyad crystals&lt;/font&gt; are not destroyed upon death." string="Resolutely Wrathful Niveot" />
   <String id="84303" toolTip="&lt;font color = '#2478FF'&gt;[Recommended Classes: lancer, warrior, berserker, brawler]&lt;/font&gt; &#xA;&lt;font color='#00BFFF'&gt;Dyad crystals&lt;/font&gt; are not destroyed upon death." string="Grievingly Wrathful Niveot" />
@@ -19179,7 +19190,7 @@
   <String id="88190" toolTip="Guile weapon." string="Infernalshot" />
   <String id="88191" toolTip="Guile weapons." string="Diabolic Powerfists" />
   <String id="88192" toolTip="Guile weapon." string="Bloodstar" />
-  <String id="88193" toolTip="Guile armor.&#xA;Lancer primary enchantment effect." string="Zealhiest Mail" />
+  <String id="88193" toolTip="Guile armor.&#xA;Lancer primary enchantment effect." string="Zealheist Mail" />
   <String id="88194" toolTip="Guile armor.&#xA;Berserker primary enchantment effect." string="Zealwrek Mail" />
   <String id="88195" toolTip="Guile armor.&#xA;Gunner primary enchantment effect." string="Zealgorge Mail" />
   <String id="88196" toolTip="Guile armor.&#xA;Brawler primary enchantment effect." string="Zealsubsume Mail" />
@@ -19189,7 +19200,7 @@
   <String id="88200" toolTip="Guile armor.&#xA;Reaper primary enchantment effect." string="Hexrest Cuirass" />
   <String id="88201" toolTip="Guile armor.&#xA;Sorcerer primary enchantment effect." string="Bloodstain Robe" />
   <String id="88202" toolTip="Guile armor.&#xA;Mystic primary enchantment effect." string="Bloodeprive Robe" />
-  <String id="88203" toolTip="Guile armor.&#xA;Priest primary enchantment effect." string="Bloodrained Robe" />
+  <String id="88203" toolTip="Guile armor.&#xA;Priest primary enchantment effect." string="Bloodrain Robe" />
   <String id="88204" toolTip="Guile armor.&#xA;Ninja primary enchantment effect." string="Stiflebreath Robe" />
   <String id="88205" toolTip="Guile armor." string="Lifestealers" />
   <String id="88206" toolTip="Guile armor." string="Lustclamp" />
@@ -19628,13 +19639,13 @@
   <String id="91405" toolTip="A basic armor design turned into high fashion!" string="Unusual Robe Template" />
   <String id="91406" toolTip="A basic armor design turned into high fashion!" string="Everneath Gown" />
   <String id="91407" toolTip="A basic armor design turned into high fashion!" string="Firesight Robe" />
-  <String id="91408" toolTip="Fashion made exclusively for amazing dye results!&lt;/font&gt;.&quot; &lt;br&gt;&lt;br&gt;This collection consists was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Cuirass" />
-  <String id="91409" toolTip="Fashion made exclusively for amazing dye results!&lt;/font&gt;.&quot; &lt;br&gt;&lt;br&gt;This collection consists was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Hauberk" />
-  <String id="91410" toolTip="Fashion made exclusively for amazing dye results!&lt;/font&gt;.&quot; &lt;br&gt;&lt;br&gt;This collection consists was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Robe" />
+  <String id="91408" toolTip="Fashion made exclusively for amazing dye results!&lt;br&gt;&lt;br&gt;This collection was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Cuirass" />
+  <String id="91409" toolTip="Fashion made exclusively for amazing dye results!&lt;br&gt;&lt;br&gt;This collection was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Hauberk" />
+  <String id="91410" toolTip="Fashion made exclusively for amazing dye results!&lt;br&gt;&lt;br&gt;This collection was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Robe" />
   <String id="91411" toolTip="Spoiled and unusable dye. Sell it to shops to get at least the money for the bottle." string="Spoiled Dye" />
-  <String id="91412" toolTip="Fashion made exclusively for amazing dye results!&lt;/font&gt;.&quot; &lt;br&gt;&lt;br&gt;This collection consists was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Cuirass" />
-  <String id="91413" toolTip="Fashion made exclusively for amazing dye results!&lt;/font&gt;.&quot; &lt;br&gt;&lt;br&gt;This collection consists was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Hauberk" />
-  <String id="91414" toolTip="Fashion made exclusively for amazing dye results!&lt;/font&gt;.&quot; &lt;br&gt;&lt;br&gt;This collection consists was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Robe" />
+  <String id="91412" toolTip="Fashion made exclusively for amazing dye results!&lt;br&gt;&lt;br&gt;This collection was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Cuirass" />
+  <String id="91413" toolTip="Fashion made exclusively for amazing dye results!&lt;br&gt;&lt;br&gt;This collection was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Hauberk" />
+  <String id="91414" toolTip="Fashion made exclusively for amazing dye results!&lt;br&gt;&lt;br&gt;This collection was carefully selected for absorption and achieves more vivid dyeing results than regular clothes." string="Vibrant Robe" />
   <String id="91415" toolTip="Sterling items can be mixed and made into a permanent sterling hauberk." string="Design: Sterling Hauberk" />
   <String id="91416" toolTip="Sterling items can be mixed and made into a permanent sterling cuirass." string="Design: Sterling Cuirass" />
   <String id="91417" toolTip="Sterling items can be mixed and made into a permanent sterling robe." string="Design: Sterling Robe" />
@@ -20489,9 +20500,9 @@
   <String id="95654" toolTip="Open this box to obtain Imperator body armor suitable for your class. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Imperator Body Armor" />
   <String id="95655" toolTip="Open this box to obtain Imperator handwear suitable for your class. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Imperator Handwear" />
   <String id="95656" toolTip="Open this box to obtain Imperator footwear suitable for your class. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Imperator Footwear" />
-  <String id="95657" toolTip="A crate containing a weapon infused with Lilith’s power." string="Guile Weapon Crate" />
-  <String id="95658" toolTip="A crate containing an armor infused with Lilith’s power." string="Guile Armor Crate" />
-  <String id="95659" toolTip="Contains a set of Dakuryon’s accessories." string="Gate Accessory Set Box" />
+  <String id="95657" toolTip="A crate containing a weapon infused with Lilith's power." string="Guile Weapon Crate" />
+  <String id="95658" toolTip="A crate containing an armor infused with Lilith's power." string="Guile Armor Crate" />
+  <String id="95659" toolTip="Contains a set of Dakuryon's accessories." string="Gate Accessory Set Box" />
   <String id="95660" toolTip="Contains a shadowgate or bloodgate ring." string="Gate Ring Box" />
   <String id="95661" toolTip="Contains a shadowgate or bloodgate earring." string="Gate Earring Box" />
   <String id="95662" toolTip="Contains a shadowvain or bloodvain ring." string="Vain Ring Box" />
@@ -21434,7 +21445,7 @@
   <String id="97305" toolTip="&lt;font color = '#2478FF'&gt;[Processed Material]&lt;/font&gt; Ingot forged from Dread Ore. Used as material for crafting equipment." string="Dread Ingot" />
   <String id="97306" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt;$BRMaterial for crafting &lt;font color = '#2478FF'&gt;Starfall equipment&lt;/font&gt;. " string="Desolarus Heartbeat" />
   <String id="97307" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt;$BRMaterial for crafting &lt;font color = '#2478FF'&gt;Starfall equipment&lt;/font&gt;." string="Ghostly Seal" />
-  <String id="97308" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; A spar from Kalivan’s dreadnaught.$BRMaterial for crafting &lt;font color = '#2478FF'&gt;Starfall equipment&lt;/font&gt;." string="Dreadnaught Spar" />
+  <String id="97308" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; A spar from Kalivan's dreadnaught.$BRMaterial for crafting &lt;font color = '#2478FF'&gt;Starfall equipment&lt;/font&gt;." string="Dreadnaught Spar" />
   <String id="97309" toolTip="&lt;font color = '#2478FF'&gt;[Dropped Material]&lt;/font&gt; Ashes of the dead. $BRMaterial for crafting &lt;font color = '#2478FF'&gt;Starfall equipment&lt;/font&gt;." string="Sea Ash" />
   <String id="97310" toolTip="Treasure chest that sometimes contains crafting materials for Starfall equipment." string="Desolarus Treasure Chest" />
   <String id="97311" toolTip="Treasure chest that sometimes contains crafting materials for Starfall equipment." string="Kalivan's Treasure Chest" />
@@ -21895,15 +21906,40 @@
   <String id="98247" toolTip="A weapon skin as proof of your defeat of the final challenge of Dreadspire and of your greed." string="Ultimate Scepter" />
   <String id="98248" toolTip="A weapon skin as proof of your defeat of the final challenge of Dreadspire and of your greed." string="Ultimate Scythes" />
   <String id="98249" toolTip="A weapon skin as proof of your defeat of the final challenge of Dreadspire and of your greed." string="Ultimate Arcannon" />
-  <String id="98250" toolTip="Use this manual to learn how to summon Smolder, the fiery black lion, with a Movement Speed of 280." string="Riding Skill: Smolder" />
+  <String id="98250" toolTip="Use this manual to learn how to summon Smolder, the fiery black lion with a Movement Speed of 280." string="Riding Skill: Smolder" />
   <String id="98251" toolTip="This item is no longer usable." string="Mystel's Triple Charm" />
   <String id="98252" toolTip="A box containing a Bravery Potion." string="Chest of Bravery" />
+  <String id="98260" toolTip="A trophy for a hero who bested the first dragon in battle. Present Vergos's Head to Saleron at the Ebon Span in the Doomcrypt to obtain Marrow Brooch (by way of the quest &lt;font color = '#2478FF'&gt;[Sorrow in eyes]&lt;/font&gt;).  (Vergos's Head will disappear upon receiving the quest, but that won't affect the quest's progress.)" string="Vergos's Head" />
+  <String id="98261" toolTip="An essential component for crafting a &lt;font color = '#2478FF'&gt;Behemoth weapon from an Ambush weapon. Behemoth weapons crafted this way cannot be liberated.&lt;/font&gt;&lt;br&gt;Properties of the base weapon (like enchantments, masterwork, awakening, permanent etchings, and niveots) transfer to the new weapon. Temporary etchings do not transfer.&lt;br&gt;The new Behemoth weapon will be permanently bound." string="Vergos's Fang" />
+  <String id="98262" toolTip="An essential component for crafting &lt;font color = '#2478FF'&gt;Behemoth armor from a Ambush armor. Behemoth armor crafted this way cannot be liberated.&lt;/font&gt;&lt;br&gt;Properties of the base armor (like enchantments, masterwork, awakening, permanent etchings, and niveots) transfer to the new armor. Temporary etchings do not transfer.&lt;br&gt;The new Behemoth armor will be permanently bound." string="Vergos's Scale" />
+  <String id="98263" toolTip="An essential component for crafting &lt;font color = '#2478FF'&gt;Behemoth armor from a Ambush armor. Behemoth armor crafted this way cannot be liberated.&lt;/font&gt;&lt;br&gt;Properties of the base armor (like enchantments, masterwork, awakening, permanent etchings, and niveots) transfer to the new armor. Temporary etchings do not transfer.&lt;br&gt;The new Behemoth armor will be permanently bound." string="Vergos's Horn" />
+  <String id="98264" toolTip="An essential component for crafting &lt;font color = '#2478FF'&gt;Behemoth armor from a Ambush armor. Behemoth armor crafted this way cannot be liberated.&lt;/font&gt;&lt;br&gt;Properties of the base armor (like enchantments, masterwork, awakening, permanent etchings, and niveots) transfer to the new armor. Temporary etchings do not transfer.&lt;br&gt;The new Behemoth armor will be permanently bound." string="Vergos's Bone" />
+  <String id="98265" toolTip="A bit of the raw essence of Vergos. You may exchange Behemoth Essence for components needed to craft Behemoth equipment." string="Behemoth Essence" />
+  <String id="98266" toolTip="Guaranteed to enchant equipment to +12 and awaken it (if eligible). &lt;BR&gt;&lt;BR&gt;&lt;font color = '#5CD1E5'&gt; Can only be used on tier 11 items. Cannot be transferred between servers.&lt;/font&gt;" string="+12 Enchantment Scroll [Tier 11]" />
+  <String id="98267" toolTip="Guaranteed to enchant equipment to +15 and awaken it (if eligible). &lt;BR&gt;&lt;BR&gt;&lt;font color = '#5CD1E5'&gt; Can only be used on tier 11 items. Cannot be transferred between servers.&lt;/font&gt;" string="+15 Enchantment Scroll [Tier 11]" />
+  <String id="98268" toolTip="A loot box plundered from Vergos's hoard. May contain &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt;." string="Vergos's Copper Chest" />
+  <String id="98269" toolTip="A loot box plundered from Vergos's hoard. May contain &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt; and &lt;font color = '#2478FF'&gt;Vergos's Fang&lt;/font&gt;." string="Vergos's Silver Chest" />
+  <String id="98270" toolTip="A loot box plundered from Vergos's hoard. May contain &lt;font color = '#2478FF'&gt;Ambush Equipment&lt;/font&gt; and &lt;font color = '#2478FF'&gt;Vergos's Fang&lt;/font&gt;." string="Vergos's Gold Chest" />
+  <String id="98271" toolTip="A loot bag containing a variety of common supplies." string="Common Battle Pack" />
+  <String id="98272" toolTip="A loot bag containing a variety of uncommon supplies." string="Uncommon Battle Pack" />
+  <String id="98273" toolTip="A loot bag containing a variety of rare supplies." string="Rare Battle Pack" />
+  <String id="98274" toolTip="A loot bag containing a variety of superior supplies." string="Superior Battle Pack" />
+  <String id="98275" toolTip="A smart box containing an Ambush weapon suitable for your class. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Ambush Weapon Box" />
+  <String id="98276" toolTip="A smart box containing Ambush body armor suitable for your class. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Ambush Armor Box (Body)" />
+  <String id="98277" toolTip="A smart box containing Ambush hand armor suitable for your class. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Ambush Armor Box (Hand)" />
+  <String id="98278" toolTip="A smart box containing Ambush foot armor suitable for your class. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Ambush Armor Box (Foot)" />
+  <String id="98279" toolTip="A loot box containing Vergos's Fang." string="Vergos's Fang Box" />
+  <String id="98280" toolTip="A loot box containing Vergos's Scale." string="Vergos's Scale Box" />
+  <String id="98281" toolTip="Open this box to obtain superior weapon and armor etchings with random effects." string="Superior Etching Box" />
   <String id="98300" toolTip="&lt;font color = '#2478FF'&gt;[Right-click]&lt;/font&gt; to exchange for level 22 armor or accessories." string="XXII Token" />
   <String id="98301" toolTip="&lt;font color = '#2478FF'&gt;[Right-click]&lt;/font&gt; to exchange for level 27 armor or accessories." string="XXVII Token" />
   <String id="98302" toolTip="&lt;font color = '#2478FF'&gt;[Right-click]&lt;/font&gt; to exchange for level 38 armor or accessories." string="XXXVIII Token" />
   <String id="98303" toolTip="&lt;font color = '#2478FF'&gt;[Right-click]&lt;/font&gt; to exchange for level 44 armor or accessories." string="XLIV Token" />
   <String id="98304" toolTip="&lt;font color = '#2478FF'&gt;[Right-click]&lt;/font&gt; to exchange for level 50 armor or accessories." string="L Token" />
   <String id="98305" toolTip="&lt;font color = '#2478FF'&gt;[Right-click]&lt;/font&gt; exchange for level 53 armor or accessories." string="LIII Token" />
+  <String id="98400" toolTip="A suitably heroic costume befitting one who has defeated Vergos, the Dragonsire, and returned with his head, as proof." string="Dragonslayer's Garb" />
+  <String id="98401" toolTip="A suitably heroic helmet befitting one who has defeated Vergos, the Dragonsire, and returned with his head, as proof." string="Dragonslayer's Helm" />
+  <String id="98402" toolTip="A suitably heroic cloak befitting one who has defeated Vergos, the Dragonsire, and returned with his head, as proof." string="Dragonslayer's Cloak" />
   <String id="99000" toolTip="Battleground innerwear with additional defense." string="Battleground Inner Armor" />
   <String id="99011" toolTip="Turns you into a male zombie for up to one hour. While zombified, your Movement Speed increases, but you cannot jump, use skills, attack, or enter dungeons or battlegrounds. The effect is canceled by using the potion icon on your skill bar, or if you are attacked, attempt to teleport, use an emote, are summoned by a party member, die, log out, or enter Civil Unrest: Velika.&lt;br&gt;&lt;br&gt;&lt;font color = '#f7a001'&gt;Cannot be used in Civil Unrest: Velika, battlegrounds or dungeons.&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color = '#f7a001'&gt;This is a temporary item that expires one hour after it appears in your inventory.&lt;/font&gt;" string="Expiring Anthrozombie Elixir (1 hour)" />
   <String id="99012" toolTip="Turns you into a male zombie for up to three hours. While zombified, your Movement Speed increases, but you cannot jump, use skills, attack, or enter dungeons or battlegrounds. The effect is canceled by using the potion icon on your skill bar, or if you are attacked, attempt to teleport, use an emote, are summoned by a party member, die, log out, or enter Civil Unrest: Velika.&lt;br&gt;&lt;br&gt;&lt;font color = '#f7a001'&gt;Cannot be used in Civil Unrest: Velika, battlegrounds or dungeons.&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color = '#f7a001'&gt;This is a temporary item that expires three hours after it appears in your inventory.&lt;/font&gt;" string="Expiring Anthrozombie Elixir (3 hour)" />
@@ -21957,7 +21993,7 @@
   <String id="99137" toolTip="Use this manual to learn how to summon an Ancient Mighty Fire Dragon with a &lt;font color = '#f7a001'&gt;flying speed of 290&lt;/font&gt; and a &lt;font color = '#f7a001'&gt;movement speed of 290&lt;/font&gt;. He restores 2% of your max MP and HP every second. The dragon is surrounded by an aura that increases the movement speed of nearby group member's mounts by 10. Additionally you learn the passive skill Dragon Master." string="Dragon Skill: Ancient Mighty Fire Dragon (7 days)" />
   <String id="99138" toolTip="Use this manual to learn how to summon an Ancient Mighty Spirit Dragon with a &lt;font color = '#f7a001'&gt;flying speed of 290&lt;/font&gt; and a &lt;font color = '#f7a001'&gt;movement speed of 290&lt;/font&gt;. He restores 2% of your max MP and HP every second. The dragon is surrounded by an aura that increases the movement speed of nearby group member's mounts by 10. Additionally you learn the passive skill Dragon Master." string="Dragon Skill: Ancient Mighty Spirit Dragon (7 days)" />
   <String id="99139" toolTip="Use this manual to learn how to summon an Ancient Mighty Diamond Dragon with a &lt;font color = '#f7a001'&gt;flying speed of 290&lt;/font&gt; and a &lt;font color = '#f7a001'&gt;movement speed of 290&lt;/font&gt;. He restores 2% of your max MP and HP every second. The dragon is surrounded by an aura that increases the movement speed of nearby group member's mounts by 10. Additionally you learn the passive skill Dragon Master." string="Dragon Skill: Ancient Mighty Diamond Dragon (7 days)" />
-  <String id="99140" toolTip="" string="" />
+  <String id="99140" toolTip="Right-click to use. Changes the writing on any imprintable sportswear. The costume must be equipped first before writing on it." string="Printing Coupon: Sportswear" />
   <String id="99141" toolTip="Use this manual to learn how to summon an Armored Dragon with a &lt;font color = '#f7a001'&gt;flying speed of 290&lt;/font&gt; and a &lt;font color = '#f7a001'&gt;movement speed of 290&lt;/font&gt;. He restores 1% of your max MP and HP every second." string="Flying Skill: Armored Dragon (3 Days)" />
   <String id="99142" toolTip="Use this manual to learn how to summon an Armored Dragon with a &lt;font color = '#f7a001'&gt;flying speed of 290&lt;/font&gt; and a &lt;font color = '#f7a001'&gt;movement speed of 290&lt;/font&gt;. He restores 1% of your max MP and HP every second." string="Flying Skill: Armored Dragon (7 Days)" />
   <String id="99143" toolTip="Use this manual to learn how to summon an Armored Dragon with a &lt;font color = '#f7a001'&gt;flying speed of 290&lt;/font&gt; and a &lt;font color = '#f7a001'&gt;movement speed of 290&lt;/font&gt;. He restores 1% of your max MP and HP every second." string="Flying Skill: Armored Dragon (14 Days)" />
@@ -21994,7 +22030,7 @@
   <String id="99174" toolTip="When a BuddyUp friend reaches level 65, we send you a final token of friendship." string="Token of Friendship: Level 65 Friend" />
   <String id="99175" toolTip="Open to obtain a random award of a dyad niveot structure, feedstock (tier 5 or 6), or alkahest (tier 5 or 6)." string="Enchantment Boon Box" />
   <String id="99176" toolTip="When used, enchants equipment to +12 without fail. &lt;BR&gt;&lt;BR&gt;&lt;font color = '#5CD1E5'&gt; Can only be used on tier 1–7 and Masterworked items. Cannot be transferred between servers.&lt;/font&gt;" string="+12 Enchantment Scroll" />
-  <String id="99177" toolTip="Resets daily entry counts for the following instance dungeons. &lt;br&gt;&lt;br&gt;{resetDungeonList}" string="Friendly Instance Reset Scroll" />
+  <String id="99177" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll" />
   <String id="99178" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll: Lilith's Keep" />
   <String id="99179" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll: Lilith's Keep" />
   <String id="99180" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&lt;br&gt;&lt;br&gt;Cannot be used while inside an instance." string="Instance Reset Scroll: Lilith's Keep" />
@@ -22516,7 +22552,7 @@
   <String id="200526" toolTip="Requires Level 1-50&#xA;Increases Attack Speed by $H_W_GOOD$value$COLOR_END, attack damage by $H_W_GOOD10%$COLOR_END, and Defense by $H_W_GOOD10%$COLOR_END. Does not stack with effects received via Instance Matching." string="Federation Supply: Kaia's Dedication II" />
   <String id="200527" toolTip="Use to open [Locked Strongbox]." string="Federation Supply: Strongbox Key" />
   <String id="200528" toolTip="&quot;A travel guidebook that was written by an anonymous travel aficionado; being written by an amateur doesn't make the quality of this book third-rate.&quot;$BR&#xA;A travel guidebook. " string="Federation Supply: Travel Journal" />
-  <String id="200529" toolTip="While the blessing is in your possession, you may resurrect at the spot of your death.&lt;br&gt;Once resurrected, you will have 60% of HP, MP and invincibility for 12 seconds or until you use a combat skill.&lt;br&gt;Cooldown takes 60 minutes." string="Federation Supply: Goddess's Blessing" />
+  <String id="200529" toolTip="While the blessing is in your possession, you may resurrect at the spot of your death.&lt;br&gt;Once resurrected, you will have 60% of your HP and MP, and invincibility for 12 seconds (or until you use a skill)." string="Federation Supply: Goddess's Blessing" />
   <String id="200530" toolTip="" string="Federation Supply Robe Costume" />
   <String id="200531" toolTip="" string="Robe of the First Expedition Costume" />
   <String id="200532" toolTip="" string="Trey Robe Costume" />
@@ -22921,6 +22957,7 @@
   <String id="201024" toolTip="A travel guidebook.&#xA;Use to teleport to any city, town, or village." string="Elite Village Atlas" />
   <String id="201025" toolTip="Teleports Elites to Velik's Sanctuary. &lt;br&gt;&lt;br&gt;&lt;font color = '#5CD1E5'&gt;Velik offers an opportunity to enter the Ghillieglade. &lt;/font&gt;" string="Elite Velik's Opportunity" />
   <String id="201026" toolTip="" string="Shuriken of Mettle Weapon Skin" />
+  <String id="201027" toolTip="Light up the heavens with a magical lantern." string="Scintillating Starlight" />
   <String id="201100" toolTip="Resets EP Setting and EP Points will be returned" string="EP Reset Potion" />
   <String id="201101" toolTip="Use to gain 1 EP Point." string="EP Point I" />
   <String id="201102" toolTip="Use to gain 2 EP Points." string="EP Point II" />
@@ -22934,7 +22971,7 @@
   <String id="201157" toolTip="Contains a random item usually purchasable by members of Reward Tier 8 shelf or higher." string="Fourth Shelf Surprise" />
   <String id="201158" toolTip="Contains a random item usually purchasable by members of Reward Tier 10 shelf or higher." string="Fifth Shelf Surprise" />
   <String id="201159" toolTip="[TERA Rewards Exclusive] Use this manual to learn how to summon Darkan's Wings. (Does not grant the ability to fly.)" string="Skill: Darkan's Wings" />
-  <String id="201160" toolTip="Use this manual to learn how to summon Night Mare with a Movement Speed of 280." string="Riding Skill: Night Mare" />
+  <String id="201160" toolTip="Use this manual to learn how to summon a Night Mare with a Movement Speed of 280." string="Riding Skill: Night Mare" />
   <String id="201161" toolTip="Contains 30 reward credits you can spend in the TERA Rewards Emporium." string="Reward Tier 1" />
   <String id="201162" toolTip="Contains 45 reward credits you can spend in the TERA Rewards Emporium." string="Reward Tier 2" />
   <String id="201163" toolTip="Contains 75 reward credits you can spend in the TERA Rewards Emporium." string="Reward Tier 3" />
@@ -22951,9 +22988,9 @@
   <String id="201174" toolTip="Normal contents: 320–400 reward credits.&#xA;May contain a jackpot of 401–1200 reward credits." string="TERA Rewards Loot Box 3" />
   <String id="201175" toolTip="Normal contents: 1600–2000 reward credits.&#xA;May contain a jackpot of 2001–6000 reward credits." string="TERA Rewards Loot Box 4" />
   <String id="201176" toolTip="Normal contents: 2400–3000 reward credits.&#xA;May contain a jackpot of 3001–9000 reward credits." string="TERA Rewards Loot Box 5" />
-  <String id="201177" toolTip="[TERA Rewards Exclusive] Use this manual to learn how to summon a ghostly wolf mount with a Movement Speed of 280&lt;br&gt;that restores 1% HP and MP every second." string="Riding Skill: Noble Specter" />
-  <String id="201178" toolTip="[TERA Rewards Exclusive] Use this manual to learn how to summon a ghostly dragon mount with a Movement Speed of 280&lt;br&gt;that restores 1% HP and MP every second." string="Riding Skill: Noble Aether" />
-  <String id="201179" toolTip="[TERA Rewards Exclusive] Use this manual to learn how to summon a ghostly spirit wolf mount with a Movement Speed of 280&lt;br&gt;that restores 1% HP and MP every second." string="Riding Skill: Noble Ghost" />
+  <String id="201177" toolTip="[TERA Rewards Exclusive] Use this manual to learn how to summon a ghostly wolf mount with a Movement Speed of 280 that restores 1% of your max HP and MP every second." string="Riding Skill: Noble Specter" />
+  <String id="201178" toolTip="[TERA Rewards Exclusive] Use this manual to learn how to summon a ghostly dragon mount with a Movement Speed of 280 that restores 1% of your max HP and MP every second." string="Riding Skill: Noble Aether" />
+  <String id="201179" toolTip="[TERA Rewards Exclusive] Use this manual to learn how to summon a ghostly spirit wolf mount with a Movement Speed of 280 that restores 1% of your max HP and MP every second." string="Riding Skill: Noble Ghost" />
   <String id="201180" toolTip="Use this scroll to enchant eligible tier 1-8 equipment to +9. &lt;br&gt;&lt;br&gt;&lt;font color = '#5CD1E5'&gt;This item cannot be transferred between servers.&lt;/font&gt;" string="+9 Enchantment Scroll" />
   <String id="201181" toolTip="[TERA Rewards Exclusive] Use this scroll to enchant eligible tier 1-8 equipment to +12. [Target equipment must be eligible for masterwork enchantment.]&lt;br&gt;&lt;br&gt;&lt;font color = '#5CD1E5'&gt;This item cannot be transferred between servers.&lt;/font&gt;" string="Emporium +12 Enchantment Scroll" />
   <String id="201182" toolTip="[TERA Rewards Exclusive] Use this scroll to awaken and enchant eligible equipment to +12. [Item must be eligible for both masterwork enchantment and awakening.]&lt;br&gt;&lt;br&gt;&lt;font color = '#5CD1E5'&gt;This item cannot be transferred between servers.&lt;/font&gt;" string="Emporium +12 Awakened Scroll" />
@@ -22984,6 +23021,7 @@
   <String id="201207" toolTip="Contains 160 reward credits." string="TERA Rewards Cache 4 (80%)" />
   <String id="201208" toolTip="Contains 200 reward credits." string="TERA Rewards Cache 4 (100%)" />
   <String id="201209" toolTip="A chest given to the victors of a Kumas Royale battle." string="Kumas's Victor Chest" />
+  <String id="201210" toolTip="A loot box awarded for winning a match in Iron Battlefield." string="Iron Gear Box" />
   <String id="20000000" toolTip="Gold, silver, and copper" string="Money" />
   <String id="20000001" toolTip="Experience Points" string="XP" />
   <String id="20000002" toolTip="Unspecified Reward" string="Unspecified Reward" />

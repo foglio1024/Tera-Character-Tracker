@@ -27,6 +27,7 @@ namespace TCTNotifier
             InitializeComponent();
         }
 
+        private int notificaitonTime = 4000; // notification time in milliseconds
         public Color glowColor;
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -54,20 +55,24 @@ namespace TCTNotifier
             ca1.Completed += (s, o) =>
             {
                 icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, ca2);
+                border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, ca2);
             };
             ca2.Completed += (s, o) =>
             {
                 icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, ca3);
+                border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, ca3);
             };
             ca3.Completed += (s, o) =>
             {
                 icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, ca4);
+                border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, ca4);
             };
             ca4.Completed += (s, o) =>
             {
                 GlowEnded();
             };
             icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, ca1);
+            border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, ca1);
 
 
         }

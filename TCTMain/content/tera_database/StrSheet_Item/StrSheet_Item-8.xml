@@ -702,7 +702,7 @@
   <String id="60847" toolTip="" string="" />
   <String id="60848" toolTip="" string="" />
   <String id="70000" toolTip="A protective spell which protects crystals from destruction. Lasts for 12 hours of gameplay, and supersedes the effect of crystalbind when used together." string="Complete Crystalbind" />
-  <String id="70001" toolTip="Resets the cooldowns of instances other than raid instances. Cannot be used while inside an instance." string="Instance Reset Scroll" />
+  <String id="70001" toolTip="Resets the cooldowns of the following instances: {resetDungeonList}.&#xA;&#xA;Cannot be used while inside an instance." string="Instance Reset Scroll" />
   <String id="70100" toolTip="Open to receive a number of Federation Bills (max 200)." string="Federation Clip" />
   <String id="70101" toolTip="A gift from Velik lies inside." string="Velik's Golden Giftbox" />
   <String id="70102" toolTip="Solvent for enchanting equipment of any level. The enchantment correction effect does not apply to that of Awakened Enchantment but does decreases the amount of alkahest needed." string="Extensive Alkahest" />
@@ -3599,6 +3599,35 @@
   <String id="140205" toolTip="" string="" />
   <String id="140206" toolTip="" string="" />
   <String id="140207" toolTip="" string="" />
+  <String id="140208" toolTip="" string="" />
+  <String id="140209" toolTip="" string="" />
+  <String id="140210" toolTip="" string="" />
+  <String id="140211" toolTip="" string="" />
+  <String id="140212" toolTip="" string="" />
+  <String id="140213" toolTip="" string="" />
+  <String id="140214" toolTip="" string="" />
+  <String id="140215" toolTip="" string="" />
+  <String id="140216" toolTip="" string="" />
+  <String id="140217" toolTip="" string="" />
+  <String id="140218" toolTip="" string="" />
+  <String id="140219" toolTip="" string="" />
+  <String id="140220" toolTip="" string="" />
+  <String id="140221" toolTip="" string="" />
+  <String id="140222" toolTip="" string="" />
+  <String id="140223" toolTip="" string="" />
+  <String id="140224" toolTip="" string="" />
+  <String id="140225" toolTip="" string="" />
+  <String id="140226" toolTip="" string="" />
+  <String id="140227" toolTip="" string="" />
+  <String id="140228" toolTip="" string="" />
+  <String id="140229" toolTip="" string="" />
+  <String id="140230" toolTip="" string="" />
+  <String id="140231" toolTip="" string="" />
+  <String id="140232" toolTip="" string="" />
+  <String id="140233" toolTip="" string="" />
+  <String id="140234" toolTip="" string="" />
+  <String id="140235" toolTip="" string="" />
+  <String id="140236" toolTip="" string="" />
   <String id="140237" toolTip="" string="" />
   <String id="140238" toolTip="" string="" />
   <String id="140239" toolTip="" string="" />
@@ -3646,6 +3675,7 @@
   <String id="140281" toolTip="" string="" />
   <String id="140282" toolTip="" string="" />
   <String id="140283" toolTip="" string="" />
+  <String id="140284" toolTip="" string="" />
   <String id="141000" toolTip="" string="" />
   <String id="141001" toolTip="" string="" />
   <String id="141002" toolTip="" string="" />
@@ -4910,32 +4940,32 @@
   <String id="146041" toolTip="[Increases Critical Factor]Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's White Lace Underwear [Uncommon]" />
   <String id="146042" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's White Lace Underwear [Uncommon]" />
   <String id="146043" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's White Lace Underwear [Uncommon]" />
-  <String id="146044" toolTip="[Increases Power] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's White Lace Underwear [Rare]" />
-  <String id="146045" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's White Lace Underwear [Rare]" />
-  <String id="146046" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's White Lace Underwear [Rare]" />
-  <String id="146047" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's White Lace Underwear [Rare]" />
-  <String id="146048" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's White Lace Underwear [Rare]" />
-  <String id="146049" toolTip="[Increases Power]Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's White Lace Underwear [Superior]" />
-  <String id="146050" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's White Lace Underwear [Superior]" />
-  <String id="146051" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's White Lace Underwear [Superior]" />
-  <String id="146052" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's White Lace Underwear [Superior]" />
-  <String id="146053" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's White Lace Underwear [Superior]" />
+  <String id="146044" toolTip="[Increases Power] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's White Lace Underwear [Rare]" />
+  <String id="146045" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's White Lace Underwear [Rare]" />
+  <String id="146046" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's White Lace Underwear [Rare]" />
+  <String id="146047" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's White Lace Underwear [Rare]" />
+  <String id="146048" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's White Lace Underwear [Rare]" />
+  <String id="146049" toolTip="[Increases Power]Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's White Lace Underwear [Superior]" />
+  <String id="146050" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's White Lace Underwear [Superior]" />
+  <String id="146051" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's White Lace Underwear [Superior]" />
+  <String id="146052" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's White Lace Underwear [Superior]" />
+  <String id="146053" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's White Lace Underwear [Superior]" />
   <String id="146054" toolTip="Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Genya's Black Lace Underwear [Common]" />
   <String id="146055" toolTip="[Increases Power] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's Black Lace Underwear [Uncommon]" />
   <String id="146056" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's Black Lace Underwear [Uncommon]" />
   <String id="146057" toolTip="[Increases Critical Factor]Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's Black Lace Underwear [Uncommon]" />
   <String id="146058" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's Black Lace Underwear [Uncommon]" />
   <String id="146059" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's Black Lace Underwear [Uncommon]" />
-  <String id="146060" toolTip="[Increases Power] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's Black Lace Underwear [Rare]" />
-  <String id="146061" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's Black Lace Underwear [Rare]" />
-  <String id="146062" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's Black Lace Underwear [Rare]" />
-  <String id="146063" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's Black Lace Underwear [Rare]" />
-  <String id="146064" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's Black Lace Underwear [Rare]" />
-  <String id="146065" toolTip="[Increases Power]Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's Black Lace Underwear [Superior]" />
-  <String id="146066" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's Black Lace Underwear [Superior]" />
-  <String id="146067" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's Black Lace Underwear [Superior]" />
-  <String id="146068" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's Black Lace Underwear [Superior]" />
-  <String id="146069" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya’s Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's Black Lace Underwear [Superior]" />
+  <String id="146060" toolTip="[Increases Power] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's Black Lace Underwear [Rare]" />
+  <String id="146061" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's Black Lace Underwear [Rare]" />
+  <String id="146062" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's Black Lace Underwear [Rare]" />
+  <String id="146063" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's Black Lace Underwear [Rare]" />
+  <String id="146064" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's Black Lace Underwear [Rare]" />
+  <String id="146065" toolTip="[Increases Power]Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Strong Genya's Black Lace Underwear [Superior]" />
+  <String id="146066" toolTip="[Increases Max HP] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Fitness Genya's Black Lace Underwear [Superior]" />
+  <String id="146067" toolTip="[Increases Critical Factor] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Edgy Genya's Black Lace Underwear [Superior]" />
+  <String id="146068" toolTip="[Increases Endurance] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Protective Genya's Black Lace Underwear [Superior]" />
+  <String id="146069" toolTip="[Regenerates MP every 5 seconds] Luxurious lace underwear designed by Genya the master of lace. &lt;br&gt;&lt;br&gt; If you combine with Genya's Lace Underwear cube (superior) there is a chance of getting superior underwear. &lt;br&gt;&lt;br&gt;Only for female characters." string="Tenacious Genya's Black Lace Underwear [Superior]" />
   <String id="147001" toolTip="" string="" />
   <String id="147002" toolTip="" string="" />
   <String id="147003" toolTip="" string="" />
@@ -4964,21 +4994,21 @@
   <String id="147026" toolTip="" string="" />
   <String id="147027" toolTip="" string="" />
   <String id="147028" toolTip="" string="" />
-  <String id="147029" toolTip="Use this manual to learn how to summon a Police Car a movement speed of 280 that restores 0.5% HP and MP every second.&lt;br&gt;Item expires in 10 days." string="[Event] Riding Skill: Police Car(10days)" />
-  <String id="147030" toolTip="Use this manual to learn how to summon a Silver Giraffe a movement speed of 280 that restores 0.5% HP and MP every second.&lt;br&gt;Item expires in 30 days." string="[Event] Riding Skill: Silver Giraffe(30days)" />
-  <String id="147031" toolTip="Use this manual to learn how to summon a Buzzer (Rare) a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Buzzer(Rare)" />
-  <String id="147032" toolTip="Use this manual to learn how to summon a Tweedle (Rare) a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Tweedle(Rare)" />
-  <String id="147033" toolTip="Use this manual to learn how to summon a Cutter (Rare) a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Cutter(Rare)" />
-  <String id="147034" toolTip="Use this manual to learn how to summon a Buzzer a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Buzzer" />
-  <String id="147035" toolTip="Use this manual to learn how to summon a Tweedle  a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Tweedle" />
-  <String id="147036" toolTip="Use this manual to learn how to summon a Cutter a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Cutter" />
-  <String id="147037" toolTip="Use this manual to learn how to summon a Glimmer a movement speed of 280 that restores 0.5% HP and MP every second." string="[Buddy Up Event] Riding Skill: Glimmer (30days)" />
+  <String id="147029" toolTip="Use this manual to learn how to summon a Police Car with a movement speed of 280 that restores 0.5% HP and MP every second.&lt;br&gt;Item expires in 10 days." string="[Event] Riding Skill: Police Car(10days)" />
+  <String id="147030" toolTip="Use this manual to learn how to summon a Silver Giraffe with a movement speed of 280 that restores 0.5% HP and MP every second.&lt;br&gt;Item expires in 30 days." string="[Event] Riding Skill: Silver Giraffe(30days)" />
+  <String id="147031" toolTip="Use this manual to learn how to summon a Buzzer (Rare) with a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Buzzer(Rare)" />
+  <String id="147032" toolTip="Use this manual to learn how to summon a Tweedle (Rare) with a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Tweedle(Rare)" />
+  <String id="147033" toolTip="Use this manual to learn how to summon a Cutter (Rare) with a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Cutter(Rare)" />
+  <String id="147034" toolTip="Use this manual to learn how to summon a Buzzer with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Buzzer" />
+  <String id="147035" toolTip="Use this manual to learn how to summon a Tweedle with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Tweedle" />
+  <String id="147036" toolTip="Use this manual to learn how to summon a Cutter with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Cutter" />
+  <String id="147037" toolTip="Use this manual to learn how to summon a Glimmer with a movement speed of 280 that restores 0.5% HP and MP every second.&lt;br&gt;Item expires in 30 days." string="[Buddy Up Event] Riding Skill: Glimmer (30days)" />
   <String id="147038" toolTip="Use this manual to learn how to summon Noble Socks(Rare_Flower Effects), a black egg- and sushi-loving cat with a movement speed of 280 that restores 1% HP and MP every second." string="Riding Skill: Noble Socks(Rare_Flower Effects)" />
   <String id="147039" toolTip="Use this manual to learn how to summon Saltyheart, a tawny salmon- and sushi-loving cat with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Saltyheart(Rare_Flower Effects)" />
   <String id="147040" toolTip="Use this manual to learn how to summon Sushi Cat Grey(Rare_Flower Effects), a grey salmon- and sushi-loving cat with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Sushi Cat Grey (Rare_Flower Effects)" />
   <String id="147041" toolTip="Use this manual to learn how to summon Socko, a black egg- and sushi-loving cat with a movement speed of 280. Restores your HP and MP." string="Riding Skill: Socko" />
-  <String id="147042" toolTip="Use this manual to learn how to summon Saltyko, a tawny salmon- and sushi-loving cat with a movement speed of 280 that rejuvenates HP and MP." string="Riding Skill: Saltyko" />
-  <String id="147043" toolTip="Use this manual to learn how to summon Sushi Cat Grey, a grey salmon- and sushi-loving cat with a movement speed of 280 that rejuvenates HP and MP." string="Riding Skill: Suchi Cat Grey" />
+  <String id="147042" toolTip="Use this manual to learn how to summon Saltyko, a tawny salmon- and sushi-loving cat with a movement speed of 280 that restores 0.5% of your max HP and MP every second." string="Riding Skill: Saltyko" />
+  <String id="147043" toolTip="Use this manual to learn how to summon Sushi Cat Grey, a grey salmon- and sushi-loving cat with a movement speed of 280 that restores 0.5% of your max HP and MP every second." string="Riding Skill: Suchi Cat Grey" />
   <String id="147044" toolTip="Use this manual to learn how to summon a Black Ookami with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Black Ookami" />
   <String id="147045" toolTip="Use this manual to learn how to summon a Green Ookami with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Green Ookami" />
   <String id="147046" toolTip="Use this manual to learn how to summon Friendship with a movement speed of 280 that restores 0.5% HP and MP every second." string="Riding Skill: Friendship" />
@@ -5228,19 +5258,19 @@
   <String id="148169" toolTip="Unique: A smart box with a permanent Shadow Hunter Weapon. [Smart boxes automatically generate the corresponding equipment for your character when you open them.]" string="Unique: Shadow Hunter Weapon Crate" />
   <String id="148170" toolTip="Combine materials to unlock the cube item containing [Shadow Hunter Weapon Cube of Cursed Islande]&lt;br&gt;&lt;br&gt; You might get more boxes or [Unique:Shadow Hunter Weapon Crate]." string="Shadow Hunter Weapon of Cursed Island Cube" />
   <String id="148171" toolTip="" string="" />
-  <String id="148172" toolTip="Open this box to obtain [Conqueror’s Equipment Box] for each class. &lt;br&gt;&lt;br&gt; You can open this box every hour, and the box will be stored in the inventory. Use it to obtain an item suitable for your class (Lv.65)." string="[PC Cafe] Conqueror's Equipment Box Bundle" />
-  <String id="148173" toolTip="Open this box to obtain Warrior’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Warrior)" />
-  <String id="148174" toolTip="Open this box to obtain Lancer’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Lancer)" />
-  <String id="148175" toolTip="Open this box to obtain Berserker’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Berserker)" />
-  <String id="148176" toolTip="Open this box to obtain Slayer’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Slayer)" />
-  <String id="148177" toolTip="Open this box to obtain Archer’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Archer)" />
-  <String id="148178" toolTip="Open this box to obtain Sorcerer’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Sorcerer)" />
-  <String id="148179" toolTip="Open this box to obtain Priest’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Priest)" />
-  <String id="148180" toolTip="Open this box to obtain Mystic’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Mystic)" />
-  <String id="148181" toolTip="Open this box to obtain Reaper’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Reaper)" />
-  <String id="148182" toolTip="Open this box to obtain Gunner’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Gunner)" />
-  <String id="148183" toolTip="Open this box to obtain Brawler’s [Conqueror’s Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Brawler)" />
-  <String id="148184" toolTip="Open this box to obtain [Conqueror’s Equipment Box] for each class. &lt;br&gt;&lt;br&gt; You can open this box every hour, and the box will be stored in the inventory. Use it to obtain an item suitable for your class (Lv.65)." string="[PC Cafe] Conqueror's Equipment Box Bundle" />
+  <String id="148172" toolTip="Open this box to obtain [Conqueror's Equipment Box] for each class. &lt;br&gt;&lt;br&gt; You can open this box every hour, and the box will be stored in the inventory. Use it to obtain an item suitable for your class (Lv.65)." string="[PC Cafe] Conqueror's Equipment Box Bundle" />
+  <String id="148173" toolTip="Open this box to obtain Warrior's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Warrior)" />
+  <String id="148174" toolTip="Open this box to obtain Lancer's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Lancer)" />
+  <String id="148175" toolTip="Open this box to obtain Berserker's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Berserker)" />
+  <String id="148176" toolTip="Open this box to obtain Slayer's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Slayer)" />
+  <String id="148177" toolTip="Open this box to obtain Archer's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Archer)" />
+  <String id="148178" toolTip="Open this box to obtain Sorcerer's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Sorcerer)" />
+  <String id="148179" toolTip="Open this box to obtain Priest's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Priest)" />
+  <String id="148180" toolTip="Open this box to obtain Mystic's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Mystic)" />
+  <String id="148181" toolTip="Open this box to obtain Reaper's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Reaper)" />
+  <String id="148182" toolTip="Open this box to obtain Gunner's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Gunner)" />
+  <String id="148183" toolTip="Open this box to obtain Brawler's [Conqueror's Equipment] for PC Café only. You can obtain a weapon, armor, gloves, shoes, and a belt." string="[PC Cafe] Conqueror's Equipment Box (Brawler)" />
+  <String id="148184" toolTip="Open this box to obtain [Conqueror's Equipment Box] for each class. &lt;br&gt;&lt;br&gt; You can open this box every hour, and the box will be stored in the inventory. Use it to obtain an item suitable for your class (Lv.65)." string="[PC Cafe] Conqueror's Equipment Box Bundle" />
   <String id="148185" toolTip="Princess Arin's gift or PC Café users." string="[PC Cafe] Arin's Gift Box" />
   <String id="148186" toolTip="Princess Arin's gift or PC Café users." string="[PC Cafe] Arin's Gift Box" />
   <String id="148187" toolTip="Contains enchantment scroll with enchanter's blessing. You may get enchantment scroll with Revered Enchanter's Blessing." string="[PC Cafe] Enchanter's Blessing Scroll Box" />
@@ -5722,8 +5752,8 @@
   <String id="149320" toolTip="[Right-click scroll, then left-click target enchantable equipment.]Changes the randomized equipment effects of an unenchantable equipment item." string="[PC Cafe] Semi-Enigmatic Scroll" />
   <String id="149321" toolTip="Use to change one character's race. Also allows gender and appearance change. &lt;br&gt;&lt;br&gt; You may change your character's race without limit for 1 day, and this item will disappear after 1 day." string="[PC Cafe] Race Change Voucher (1 day)" />
   <String id="149322" toolTip="Use to change one character's race. Also allows gender and appearance change. &lt;br&gt;&lt;br&gt; You may change your character's race without limit for 1 day, and this item will disappear after 1 day." string="[PC Cafe] Appearance Change Voucher (1 day)" />
-  <String id="149323" toolTip="This item can be used as material for [Promotion]Genya’s Lace Underwear Cube." string="Lucid Lace Cloth" />
-  <String id="149324" toolTip="This item can be used as material for Genya’s Lace Underwear Cube." string="Fancy Lace Cloth" />
+  <String id="149323" toolTip="This item can be used as material for [Promotion]Genya's Lace Underwear Cube." string="Lucid Lace Cloth" />
+  <String id="149324" toolTip="This item can be used as material for Genya's Lace Underwear Cube." string="Fancy Lace Cloth" />
   <String id="149325" toolTip="Right-click to get access to 2015 TERA Time Token Exchange Shop." string="[Event] 2015 TERA Time Token" />
   <String id="149326" toolTip="Resets cooldown for the following instance dungeons. &lt;br&gt;&lt;br&gt;{resetDungeonList}" string="[Event] Instance Reset Scroll" />
   <String id="149327" toolTip="Underwear item will be displayed to others for 5 days.&#xA;&#xA;F..Finally, I can show off my underwear!&#xA;-Lingerie Designer-&#xA;" string="[Promotion] Self-Confidence Potion (5 days)" />

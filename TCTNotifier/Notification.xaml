@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TCTNotifier"
         mc:Ignorable="d"
         Title="Notification" Cursor="None" MinHeight="50" Height="Auto" Width="200" ResizeMode="NoResize" Topmost="True" Focusable="False" IsHitTestVisible="False" IsTabStop="False" Background="Transparent" WindowStyle="None" Top="0" Left="0" AllowsTransparency="True" VerticalAlignment="Stretch" IsEnabled="False" Loaded="Window_Loaded">
+    
     <Grid x:Name="NotificationHolder" Margin="-200,0,0,0" VerticalAlignment="Center" Width="200" HorizontalAlignment="Left">
     </Grid>
 </Window>
