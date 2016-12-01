@@ -116,6 +116,7 @@ namespace TCTParser
 
                         SetTokens();
                     }
+                    CurrentChar().Ilvl = inventoryProcessor.GetItemLevel(data);
                     break; 
                 #endregion
 
@@ -1056,6 +1057,7 @@ namespace TCTParser
             const int AMOUNT_OFFSET_FROM_ID = 56;
             const int MULTIPLE_FLAG = 25*2;
             const int HEADER_LENGHT = 61 * 2;
+            const int ILVL_OFFSET = 35 * 2;
             const string MARK_ID = "5B500200";
             const string GFIN_ID = "36020000";
 
@@ -1137,7 +1139,10 @@ namespace TCTParser
                 }
                 else return 0;
             }
-
+            public int GetItemLevel(string content)
+            {
+                return StringUtils.Hex2BStringToInt(content.Substring(ILVL_OFFSET, 4));
+            }
             void fillIndexesArray(string content)
             {
                 int currentPointer = FIRST_POINTER;

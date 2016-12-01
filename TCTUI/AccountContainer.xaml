@@ -89,7 +89,7 @@
                 <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Class</TextBlock>
                 <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Name</TextBlock>
                 <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Credits</TextBlock>
-                <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Vanguard quests</TextBlock>
+                <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Weeklies - Dailies</TextBlock>
                 <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Marks of Valor</TextBlock>
                 <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Goldfinger Tokens</TextBlock>
 

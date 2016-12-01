@@ -22,6 +22,7 @@ namespace Tera
         string laurel;
         uint position;
         uint lvl;
+        int ilvl;
         int credits;
         int dailies;
         int weekly;
@@ -173,6 +174,20 @@ namespace Tera
             }
         }
 
+        [XmlAttribute("Ilvl")]
+        public int Ilvl
+        {
+            get { return ilvl; }
+            set
+            {
+                if (ilvl != value)
+                {
+                    ilvl = value;
+                    NotifyPropertyChanged("Ilvl");
+                }
+            }
+        }
+
         [XmlAttribute("Position")]
         public uint Position {
             get { return position; } set { position = value; }
@@ -297,6 +312,7 @@ namespace Tera
             position = _index;
             accountId = _accId;
 
+            ilvl = 0;
             credits = 0;
             dailies = 8;
             weekly = 0;

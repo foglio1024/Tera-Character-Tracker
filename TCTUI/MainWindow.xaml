@@ -92,8 +92,12 @@
                 <local:CharView x:Name="chView" Grid.Column="2" HorizontalAlignment="Stretch"/>
 
                 <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
+                    <Grid.Effect>
+                        <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="3"/>
+                    </Grid.Effect>
+
                     <!--Style="{StaticResource MaterialGrid}"-->
-                    <Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />
+                    <!--<Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />-->
                     <local:AccountContainer x:Name="accounts"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
                 </Grid>
 
