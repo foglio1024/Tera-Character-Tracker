@@ -71,7 +71,7 @@ namespace Tera
         public static List<XDocument> StrSheet_Item_List;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
 
-        public static List<uint> RiskList { get; } = new List<uint> { 9769, 9029, 9067, 9768, 9969, 9770, 9916, 9068, 9970 };
+        public static List<uint> RiskList { get; } = new List<uint> { 9769, 9029, 9067, 9768, 9969, 9770, 9916, 9068, 9970, 9950 };
 
         public static void AddCharacter(Character c)
         {

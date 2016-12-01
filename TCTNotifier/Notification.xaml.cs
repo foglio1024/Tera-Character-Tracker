@@ -43,6 +43,8 @@ namespace TCTNotifier
         }
         public void CloseAnim()
         {
+            this.Dispatcher.Invoke(() =>
+            {
             ThicknessAnimationUsingKeyFrames close = new ThicknessAnimationUsingKeyFrames();
             close.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-200, 0, 0, 0), TimeSpan.FromMilliseconds(300), new KeySpline(.5, 0, .3, 1)));
             close.Completed += (s, o) =>
@@ -52,7 +54,8 @@ namespace TCTNotifier
                 NotificationProvider.NQ.SetBusyToFalseOnEnd();
             };
 
-            NotificationHolder.BeginAnimation(Grid.MarginProperty, close);
+                NotificationHolder.BeginAnimation(Grid.MarginProperty, close);
+            });
 
         }
 
