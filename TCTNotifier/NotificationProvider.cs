@@ -37,9 +37,10 @@ namespace TCTNotifier
         public static Dictionary<NotificationType, string> imagesDictionary = new Dictionary<NotificationType, string>()
         {
             { NotificationType.Default, "default" },
-            { NotificationType.MarksNotification, "marks" },
+            { NotificationType.Marks, "marks" },
             { NotificationType.Crystalbind, "ccbBuff" },
             { NotificationType.Goldfinger, "gfin" },
+            { NotificationType.Scales, "scale" },
             { NotificationType.Connected, "connected" },
             { NotificationType.Credits, "rep" }
         };

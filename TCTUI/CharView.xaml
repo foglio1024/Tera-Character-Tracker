@@ -40,12 +40,14 @@
         </Style>
         <Style x:Key="TBlock" TargetType="TextBlock">
             <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
         <Style x:Key="info2grids" TargetType="Grid">
-            <Setter Property="Margin" Value="30,0,0,0"/>
+            <Setter Property="Margin" Value="30,5,0,5"/>
         </Style>
         <Style x:Key="info2defsL" TargetType="ColumnDefinition">
-            <Setter Property="Width" Value="70"/>
+            <Setter Property="Width" Value="90"/>
         </Style>
         <Style x:Key="info2defsR" TargetType="ColumnDefinition">
             <Setter Property="Width" Value="150"/>
@@ -73,11 +75,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <!--<Border BorderThickness="0,0,0,1" BorderBrush="Black" Opacity=".1"/>-->
-        <Grid Margin="10,10,10,3" Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="330"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Grid Margin="10,10,10,3" Grid.Row="0" Height="Auto">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
@@ -93,39 +91,40 @@
                 </Grid.Effect>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="12*"/>
-                    <RowDefinition Height="13*"/>
-                    <RowDefinition Height="12*"/>
-                    <RowDefinition Height="13*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Style="{StaticResource info2grids}" VerticalAlignment="Center" Margin="30,20,0,19" Height="16" Width="220">
+                <Grid Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Style="{StaticResource info2grids}" VerticalAlignment="Center" Height="16" Width="220">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Style="{StaticResource info2defsL}"/>
                         <ColumnDefinition Style="{StaticResource info2defsR}"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock  Foreground="#90000000" Style="{StaticResource TBlock}">Location:</TextBlock>
-                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="locationTB" Grid.Column="1" Margin="15,0,0,0" TextWrapping="Wrap">-</TextBlock>
+                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="locationTB" Grid.Column="1" Margin="0,0,0,0" Width="Auto" TextWrapping="Wrap">-</TextBlock>
 
                 </Grid>
-                <Grid  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource info2grids}" Margin="30,20,0,20" Height="16" Width="220">
+                <Grid  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource info2grids}" Height="16" Width="220">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Style="{StaticResource info2defsL}"/>
                         <ColumnDefinition Style="{StaticResource info2defsR}"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Foreground="#90000000" Style="{StaticResource TBlock}">Last online :</TextBlock>
-                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="lastOnlineTB" Grid.Column="1" Margin="15,0,0,0">-</TextBlock>
+                    <TextBlock Foreground="#90000000" Style="{StaticResource TBlock}">Last online:</TextBlock>
+                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="lastOnlineTB" Grid.Column="1" Width="Auto" Margin="0,0,0,0">-</TextBlock>
                 </Grid>
-                <Grid Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Left" Style="{StaticResource info2grids}" Grid.RowSpan="1" VerticalAlignment="Center" Height="30" Margin="30,18,0,18" Width="Auto">
+                <Grid Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Left" Style="{StaticResource info2grids}" Grid.RowSpan="1" VerticalAlignment="Center" Height="30" Width="Auto">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Style="{StaticResource info2defsL}"/>
                         <ColumnDefinition Width="Auto"/>
 
                     </Grid.ColumnDefinitions>
 
                     <TextBlock  Foreground="#90000000" Style="{StaticResource TBlock}"  VerticalAlignment="Center" Height="16" Margin="0,8,0,7" >Guild:</TextBlock>
-                    <Grid x:Name="guildGrid" Grid.Column="1" Margin="5,0,0,0" Height="30" Background="{DynamicResource {x:Static SystemParameters.WindowGlassBrush}}">
+                    <Grid x:Name="guildGrid" Grid.Column="1" Margin="0,0,0,0" Height="30" Background="{DynamicResource {x:Static SystemParameters.WindowGlassBrush}}">
                         <Grid.Effect>
                             <DropShadowEffect Opacity="0.2" ShadowDepth="2"/>
                         </Grid.Effect>
@@ -134,22 +133,31 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Foreground="#f0ffffff" Style="{StaticResource TBlock}" HorizontalAlignment="Left" Name="guildNameTB" VerticalAlignment="Center" Grid.Column="1"  Margin="5,0,5,0" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Foreground="#f0ffffff" Style="{StaticResource TBlock}" HorizontalAlignment="Left" Name="guildNameTB" VerticalAlignment="Center" Grid.Column="1"  Margin="5,0,5,0" TextWrapping="Wrap" Width="Auto"></TextBlock>
                         <Image  x:Name="guildLogo" Height="30" Width="30" HorizontalAlignment="Stretch" Margin="0" Source="resources/ui_images/0.bmp" Stretch="UniformToFill" Grid.Column="0"/>
                     </Grid>
                 </Grid>
 
-                <Grid  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource info2grids}" Margin="30,20,0,19" Height="16" Width="220">
+                <Grid  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource info2grids}"  Height="16" Width="220">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Style="{StaticResource info2defsL}"/>
                         <ColumnDefinition Style="{StaticResource info2defsR}"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Foreground="#90000000" Style="{StaticResource TBlock}">Item level:</TextBlock>
-                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="ilvlTB" Grid.Column="1" Margin="15,0,0,0">-</TextBlock>
+                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="ilvlTB" Grid.Column="1" Width="Auto" Margin="0,0,0,0">-</TextBlock>
                 </Grid>
-                <Image Opacity=".08" x:Name="classImg" Margin="50,0,0,0" Width="220" Height="220" Grid.RowSpan="4" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False" Grid.Column="1"/>
-                <StackPanel Grid.RowSpan="4" Width="Auto" Height="Auto"  Grid.ColumnSpan="1" Grid.Column="0" VerticalAlignment="Center">
+                <Grid  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource info2grids}"  Height="16" Width="220">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Style="{StaticResource info2defsL}"/>
+                        <ColumnDefinition Style="{StaticResource info2defsR}"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Foreground="#90000000" Style="{StaticResource TBlock}">Dragon Scales:</TextBlock>
+                    <TextBlock Foreground="#c0000000" Style="{StaticResource TBlock}" Name="dragonScalesTB" Grid.Column="1" Width="Auto">-</TextBlock>
+                </Grid>
+                <Image Opacity=".08" x:Name="classImg" Margin="50,0,0,0" Width="220" Height="220" Grid.RowSpan="5" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False" Grid.Column="1"/>
+                <StackPanel Grid.RowSpan="5" Width="Auto" Height="Auto"  Grid.ColumnSpan="1" Grid.Column="0" VerticalAlignment="Center">
                         <Image  x:Name="laurelImg" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Width="120" Height="130" Grid.ColumnSpan="1" Opacity="1">
                             <Image.Effect>
                                 <DropShadowEffect BlurRadius="15" ShadowDepth="5" Opacity="0.3"/>

@@ -296,6 +296,7 @@
     <Resource Include="resources\laurels\l_diamond.png" />
     <Resource Include="resources\laurels\l_gold.png" />
     <Resource Include="resources\laurels\l_silver.png" />
+    <Resource Include="resources\notifier_images\scale.png" />
     <Content Include="resources\opcodes-3907eu.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

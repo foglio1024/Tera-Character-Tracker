@@ -28,6 +28,7 @@ namespace Tera
         int weekly;
         int marks_of_valor;
         int goldfinger_tokens;
+        int dragonwing_scales;
         bool isDirty;
         string notes;
         string accountId;
@@ -289,6 +290,21 @@ namespace Tera
                 }
             } }
 
+        [XmlAttribute("DragonwingScales")]
+        public int DragonwingScales
+        {
+            get { return dragonwing_scales; }
+            set
+            {
+
+                if (dragonwing_scales != value)
+                {
+                    dragonwing_scales = value;
+                    NotifyPropertyChanged("DragonwingScales");
+                }
+            }
+        }
+
         [XmlAttribute("IsDirty")]
         public bool IsDirty
         {
@@ -318,6 +334,7 @@ namespace Tera
             weekly = 0;
             marks_of_valor = 0;
             goldfinger_tokens = 0;
+            dragonwing_scales = 0;
             locationId = _locationId;
             guildId = _guildId;
             lastOnline = _lastOnline;

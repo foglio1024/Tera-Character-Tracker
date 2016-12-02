@@ -454,13 +454,14 @@ namespace TCTParser
 
             var newMarks = inventoryProcessor.GetMarksFast(inventoryProcessor.inv);
             var newGoldfinger = inventoryProcessor.GetGoldfingerFast(inventoryProcessor.inv);
+            var newDragonScales = inventoryProcessor.GetDragonwingScaleFast(inventoryProcessor.inv);
             if (CurrentChar().MarksOfValor != newMarks)
             {
                 CurrentChar().MarksOfValor = newMarks;
                 if (CurrentChar().MarksOfValor > 82)
                 {
                     Tera.UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
-                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationType.MarksNotification, Colors.Orange, true);
+                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationType.Marks, Colors.Orange, true);
                 }
             }
 
@@ -469,11 +470,20 @@ namespace TCTParser
                 CurrentChar().GoldfingerTokens = newGoldfinger;
                 if (CurrentChar().GoldfingerTokens >= 80)
                 {
-                    Tera.UI.UpdateLog("You have more than 80 Goldfinger Tokens.");
+                    Tera.UI.UpdateLog("You have "+newGoldfinger+" Goldfinger Tokens.");
                     TCTNotifier.NotificationProvider.SendNotification("You have "+ CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationType.Goldfinger, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
                 }
             }
+            if(CurrentChar().DragonwingScales != newDragonScales)
+            {
+                CurrentChar().DragonwingScales = newDragonScales;
+                if(CurrentChar().DragonwingScales >= 50)
+                {
+                    Tera.UI.UpdateLog("You have "+ newDragonScales +" Dragonwing Scales.");
+                    TCTNotifier.NotificationProvider.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
 
+                }
+            }
             inventoryProcessor.Clear();
 
             Tera.UI.UpdateLog(currentCharName + " > received inventory data (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens).");
@@ -500,16 +510,18 @@ namespace TCTParser
                 CurrentChar().LocationId = sectionProcessor.GetLocationId(p);
                 if(TeraLogic.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
                 {
-                    crystalbindProcessor.CheckCcb(CurrentChar().LocationId);
+                   
+                    crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 }
 
-                guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
                 Tera.UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
+                guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
             }
 
             if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
             {
-                crystalbindProcessor.CheckCcb(CurrentChar().LocationId);
+                crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
+
             }
 
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
@@ -1060,6 +1072,7 @@ namespace TCTParser
             const int ILVL_OFFSET = 35 * 2;
             const string MARK_ID = "5B500200";
             const string GFIN_ID = "36020000";
+            const string SCALE_ID = "A2B10000";
 
             List<string> itemStrings = new List<string>();
             List<int> indexesArray = new List<int>();
@@ -1124,20 +1137,24 @@ namespace TCTParser
             }
             public int GetMarksFast(string content)
             {
-                if (content.Contains(MARK_ID))
-                {
-                        return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(MARK_ID) + AMOUNT_OFFSET_FROM_ID, 8));
-                }
-                else return 0;
+                return GetItemFastById(content, MARK_ID);
             }
             public int GetGoldfingerFast(string content)
             {
-                if (content.Contains(GFIN_ID))
+                return GetItemFastById(content, GFIN_ID);
+            }
+            public int GetDragonwingScaleFast(string content)
+            {
+                return GetItemFastById(content, SCALE_ID);
+            }
+            int GetItemFastById(string content, string id)
+            {
+                if (content.Contains(id))
                 {
-                        return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(GFIN_ID) + AMOUNT_OFFSET_FROM_ID, 8));
-
+                    return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(id) + AMOUNT_OFFSET_FROM_ID, 8));
                 }
                 else return 0;
+
             }
             public int GetItemLevel(string content)
             {
@@ -1222,6 +1239,16 @@ namespace TCTParser
         {
             const int SECTION_ID_OFFSET = 13 * 2;
         
+            public uint GetLocationNameId(string p)
+            {
+                uint id = Convert.ToUInt32(StringUtils.Hex4BStringToInt(p.Substring(SECTION_ID_OFFSET, 8)));
+                XElement s = Tera.TeraLogic.NewWorldMapData.Descendants("Section").Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
+                if(s != null)
+                {
+                    id = Convert.ToUInt32(s.Attribute("nameId").Value);
+                }
+                return id;
+            }
             public uint GetLocationId(string p)
             {
                 return Convert.ToUInt32(StringUtils.Hex4BStringToInt(p.Substring(SECTION_ID_OFFSET, 8)));
@@ -1253,7 +1280,7 @@ namespace TCTParser
                 BuffList.Clear();
                 ccbEnding = false;
             }
-            public void CheckCcb(uint locId)
+            public void CheckCcb(uint locId, uint locNameId)
             {
                 bool found = false;
                 foreach (var buff in BuffList)
@@ -1273,16 +1300,37 @@ namespace TCTParser
 
                 if (!Status)
                 {
-                    if (TeraLogic.RiskList.Contains(locId))
+                    if (TeraLogic.DungList.Find(x => x.Id == locId) != null)
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true);
+                        if(TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
+                        {
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true);
+                        }
+                    }
+                    else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
+                    {
+                        if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
+                        {
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true);
+                        }
                     }
                 }
+
                 else if (Time <= 1800000 && Time > 0)
                 {
-                    if (TeraLogic.RiskList.Contains(locId))
+                    if (TeraLogic.DungList.Find(x => x.Id == locId) != null)
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true);
+                        if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
+                        {
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true);
+                        }
+                    }
+                    else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
+                    {
+                        if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
+                        {
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true);
+                        }
                     }
                 }
             }

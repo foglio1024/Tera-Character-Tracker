@@ -10,8 +10,9 @@ namespace TCTData.Enums
     {
         Default,
         Crystalbind,
-        MarksNotification,
+        Marks,
         Goldfinger,
+        Scales,
         Connected,
         Credits
     }

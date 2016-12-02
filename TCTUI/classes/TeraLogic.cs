@@ -153,6 +153,7 @@ namespace Tera
             w.locationTB.SetBinding(    TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LocationId" , new Location_IdToName(), null));
             w.lastOnlineTB.SetBinding(  TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LastOnline", new UnixToDateTime(), null));
             w.ilvlTB.SetBinding(        TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Ilvl"));
+            w.dragonScalesTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "DragonwingScales"));
             w.notesTB.SetBinding(       TextBox.TextProperty,   DataBinder.GenericCharBinding(charIndex, "Notes"));
             
         // create width bindings for bars

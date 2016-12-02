@@ -28,7 +28,7 @@ namespace TCTNotifier
             InitializeComponent();
         }
 
-        private int notificaitonTime = 4000; // notification time in milliseconds
+        private int notificaitonTime = 6000; // notification time in milliseconds
         public Color glowColor;
         private Color darkColor;
 
@@ -37,10 +37,12 @@ namespace TCTNotifier
             GlowRing();
         }
 
-        static void GlowEnded(object sender, ElapsedEventArgs ev)
+        void GlowEnded(object sender, ElapsedEventArgs ev)
         {
             timer.Stop();
             NotificationProvider.N.CloseAnim();
+            icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty,null);
+            border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, null);
         }
 
         static System.Timers.Timer timer;
@@ -55,7 +57,7 @@ namespace TCTNotifier
             darkColor = new Color { A = a, R = glowColor.R, G = glowColor.G, B = glowColor.B };
 
             ColorAnimation unglow = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(1200)));
-            ColorAnimation glow = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(350)));
+            ColorAnimation glow = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(250)));
 
             //ColorAnimation ca1 = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(300)));
             //ColorAnimation ca2 = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(1200)));
