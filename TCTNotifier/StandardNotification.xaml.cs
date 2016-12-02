@@ -62,25 +62,28 @@ namespace TCTNotifier
             //ColorAnimation ca3 = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(1300)));
             //ColorAnimation ca4 = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(1200)));
 
-            //icon.Stroke = new SolidColorBrush(glowColor);
-            glowRect.Fill = new SolidColorBrush(darkColor);
+            icon.Stroke = new SolidColorBrush(glowColor);
+            //glowRect.Fill = new SolidColorBrush(darkColor);
             border.BorderBrush = new SolidColorBrush(darkColor);
 
             glow.Completed += (s0, o0) =>
             {
-                glowRect.Fill.BeginAnimation(SolidColorBrush.ColorProperty, unglow);
+                //glowRect.Fill.BeginAnimation(SolidColorBrush.ColorProperty, unglow);
                 border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, unglow);
+                icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, unglow);
             };
 
             unglow.Completed += (s1, o1) =>
             {
-                glowRect.Fill.BeginAnimation(SolidColorBrush.ColorProperty, glow);
+                //glowRect.Fill.BeginAnimation(SolidColorBrush.ColorProperty, glow);
                 border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, glow);
+                icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, glow);
             };
 
             timer.Enabled = true;
-            glowRect.Fill.BeginAnimation(SolidColorBrush.ColorProperty, glow);
+            //glowRect.Fill.BeginAnimation(SolidColorBrush.ColorProperty, glow);
             border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, glow);
+            icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, glow);
 
 
             //ca1.Completed += (s, o) =>
