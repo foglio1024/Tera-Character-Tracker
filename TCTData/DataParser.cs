@@ -49,6 +49,7 @@ namespace TCTParser
         static AccountLoginProcessor accountLoginProcessor = new AccountLoginProcessor();
         static GuildQuestListProcessor guildQuestListProcessor = new GuildQuestListProcessor();
         static BankProcessor bankProcessor = new BankProcessor();
+        static SystemMessageProcessor sysMsgProcessor = new SystemMessageProcessor();
 
         public static void StoreLastMessage(Message msg)
         {           
@@ -130,34 +131,35 @@ namespace TCTParser
 
                 case "S_SYSTEM_MESSAGE":
                     #region SYSTEM MESSAGE
-                    #region DUNGEON ENGAGED
-                    /*dungeon engaged*/
-                    if (data.Contains("40003200320031003400"))
-                    {
-                        wCforEngage = data;
-                        wCforEngage = wCforEngage.Substring(120);
-                        //setEngagedDung();
-                        newEngDung();
-                    } 
-                    #endregion
-                    #region VANGUARD QUEST COMPLETED
-                    /*vanguard completed*/
-                    else if (data.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
-                    {
-                        wCforVanguardCompleted = data;
-                        wCforVanguardCompleted = wCforVanguardCompleted.Substring(100);
-                        setCompletedVanguard();
-                    } 
-                    #endregion
-                    #region LAUREL
-                    /*earned laurel*/
-                    else if (data.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
-                    {
-                        wCforEarnedLaurel = data;
-                        //updateLaurel();
-                    }
+                    sysMsgProcessor.ParseSystemMessage(data);
+                    //#region DUNGEON ENGAGED
+                    ///*dungeon engaged*/
+                    //if (data.Contains("40003200320031003400"))
+                    //{
+                    //    wCforEngage = data;
+                    //    wCforEngage = wCforEngage.Substring(120);
+                    //    //setEngagedDung();
+                    //    newEngDung();
+                    //} 
+                    //#endregion
+                    //#region VANGUARD QUEST COMPLETED
+                    ///*vanguard completed*/
+                    //else if (data.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
+                    //{
+                    //    wCforVanguardCompleted = data;
+                    //    wCforVanguardCompleted = wCforVanguardCompleted.Substring(100);
+                    //    setCompletedVanguard();
+                    //} 
+                    //#endregion
+                    //#region LAUREL
+                    ///*earned laurel*/
+                    //else if (data.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
+                    //{
+                    //    wCforEarnedLaurel = data;
+                    //    //updateLaurel();
+                    //}
+                    //#endregion
                     break;  
-                #endregion
                 #endregion
 
                 case "S_VISIT_NEW_SECTION":
@@ -680,7 +682,9 @@ namespace TCTParser
             string stringId = StringUtils.GetStringFromHex(wCforEngage, 0, "0000");
             int id = 0;
             Int32.TryParse(stringId, out id);
+
             XElement dgNameEl = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
+
             if(dgNameEl != null)
             {
                 string dgName = dgNameEl.Attribute("string").Value;
@@ -1241,7 +1245,7 @@ namespace TCTParser
         
             public uint GetLocationNameId(string p)
             {
-                uint id = Convert.ToUInt32(StringUtils.Hex4BStringToInt(p.Substring(SECTION_ID_OFFSET, 8)));
+                uint id = GetLocationId(p); /*Convert.ToUInt32(StringUtils.Hex4BStringToInt(p.Substring(SECTION_ID_OFFSET, 8)));*/
                 XElement s = Tera.TeraLogic.NewWorldMapData.Descendants("Section").Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
                 if(s != null)
                 {
@@ -1683,7 +1687,64 @@ namespace TCTParser
         }
 
 
-        class SystemMessageProcessor { }
+        class SystemMessageProcessor
+        {
+            const int DUNGEON_ENGAGED_ID = 2229;
+            const int VANGUARD_COMPLETED_ID = 2952;
+
+            const int ID_OFFSET = 8 * 2;
+            const int DUNGEON_ID_OFFSET = 60 * 2;
+            const int QUEST_ID_OFFSET = 50 * 2;
+            public void ParseSystemMessage(string p)
+            {
+                int id = 0;
+                Int32.TryParse(StringUtils.GetStringFromHex(p, ID_OFFSET, "0B00"), out id);
+                Console.WriteLine(id);
+
+                switch (id)
+                {
+                    case DUNGEON_ENGAGED_ID:
+                        EngageDungeon(p);
+                        break;
+                    case VANGUARD_COMPLETED_ID:
+                        CompleteVanguard(p);
+                        break;
+                }
+            }
+
+            private void EngageDungeon(string p)
+            {
+
+                uint dungId = 0;
+                UInt32.TryParse(StringUtils.GetStringFromHex(p, DUNGEON_ID_OFFSET, "0000"), out dungId);
+                var c = new Location_IdToName();
+                var dgName = (string)c.Convert(dungId, null, null, null);
+                if (dgName != null)
+                {
+                    Tera.UI.UpdateLog(currentCharName + " > " + dgName + " engaged.");
+                    TCTNotifier.NotificationProvider.SendNotification(dgName + " engaged.");
+
+                    try
+                    {
+                        CurrentChar().Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == dungId).ShortName)).Runs--;
+                    }
+                    catch
+                    {
+                        Tera.UI.UpdateLog("Dungeon not found. Can't subtract run from entry counter.");
+                    }
+
+                }
+
+
+            }
+            private void CompleteVanguard(string p)
+            {
+                Console.WriteLine("Completed vanguard.");
+                int questId = 0;
+                Int32.TryParse(StringUtils.GetStringFromHex(p, QUEST_ID_OFFSET, "0B00"), out questId);
+
+            }
+        }
     }
 }
 

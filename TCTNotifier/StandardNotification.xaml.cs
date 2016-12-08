@@ -56,8 +56,8 @@ namespace TCTNotifier
             var a = Convert.ToByte(da);
             darkColor = new Color { A = a, R = glowColor.R, G = glowColor.G, B = glowColor.B };
 
-            ColorAnimation unglow = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(1200)));
-            ColorAnimation glow = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(250)));
+            ColorAnimation unglow = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(800)));
+            ColorAnimation glow = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(100)));
 
             //ColorAnimation ca1 = new ColorAnimation(glowColor, new Duration(TimeSpan.FromMilliseconds(300)));
             //ColorAnimation ca2 = new ColorAnimation(darkColor, new Duration(TimeSpan.FromMilliseconds(1200)));
