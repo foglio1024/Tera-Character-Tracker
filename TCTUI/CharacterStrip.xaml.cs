@@ -446,10 +446,7 @@ namespace Tera
             
         }
 
-        private void GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
-        {
-         //   (sender as TextBox).SelectAll();
-        }
+
 
 
 
@@ -461,7 +458,7 @@ namespace Tera
             }
             catch(Exception ex)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(ex);
             }
             //try
             //{

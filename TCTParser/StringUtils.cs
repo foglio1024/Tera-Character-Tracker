@@ -69,20 +69,24 @@ namespace TCTParser
             bool zeroes = false;
             while (!zeroes)
             {
-                string test = s[endIndex + 0].ToString() +
-                              s[endIndex + 1].ToString() +
-                              s[endIndex + 2].ToString() +
-                              s[endIndex + 3].ToString();
+                if (endIndex + 3 <= s.Length)
+                {
+                    string test = s[endIndex + 0].ToString() +
+                                  s[endIndex + 1].ToString() +
+                                  s[endIndex + 2].ToString() +
+                                  s[endIndex + 3].ToString();
 
-                if (test == terminator)
-                {
-                    zeroes = true;
+                    if (test == terminator)
+                    {
+                        zeroes = true;
+                    }
+                    else
+                    {
+                        zeroes = false;
+                        endIndex += 4;
+                    }
                 }
-                else
-                {
-                    zeroes = false;
-                    endIndex += 4;
-                }
+                else { return startIndex; }
             }
             return endIndex;
         }

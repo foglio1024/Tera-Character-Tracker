@@ -41,8 +41,11 @@ namespace TCTNotifier
         {
             timer.Stop();
             NotificationProvider.N.CloseAnim();
-            icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty,null);
-            border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, null);
+            Dispatcher.Invoke(() =>
+            {
+                icon.Stroke.BeginAnimation(SolidColorBrush.ColorProperty, null);
+                border.BorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, null);
+            });
         }
 
         static System.Timers.Timer timer;

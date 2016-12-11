@@ -17,6 +17,8 @@ namespace Tera.Converters
             if (s != null)
             {
                 XElement t = TeraLogic.StrSheet_Region.Descendants().Where(x => (string)x.Attribute("id") == s.Attribute("nameId").Value).FirstOrDefault();
+                
+
 
                 if (t != null)
                 {

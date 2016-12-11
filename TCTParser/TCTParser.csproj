@@ -96,7 +96,7 @@
       <Project>{32daa401-1ebe-4417-8795-58a38128502c}</Project>
       <Name>TeraData</Name>
     </ProjectReference>
-    <ProjectReference Include="TCTData\TCTData.csproj">
+    <ProjectReference Include="..\TCTData\TCTData\TCTData.csproj">
       <Project>{325deb0a-2e02-495d-9612-058385f9db9d}</Project>
       <Name>TCTData</Name>
     </ProjectReference>

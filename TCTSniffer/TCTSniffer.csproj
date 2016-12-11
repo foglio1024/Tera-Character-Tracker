@@ -117,7 +117,7 @@
       <Project>{325deb0a-2e02-495d-9612-058385f9db9d}</Project>
       <Name>TCTData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TCTData\TCTParser.csproj">
+    <ProjectReference Include="..\TCTParser\TCTParser.csproj">
       <Project>{e78b04c1-7848-4d51-a7a2-af00bbbcfb27}</Project>
       <Name>TCTParser</Name>
     </ProjectReference>
