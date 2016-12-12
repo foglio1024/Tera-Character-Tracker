@@ -58,6 +58,7 @@
     <Compile Include="StandardNotification.xaml.cs">
       <DependentUpon>StandardNotification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowServices.cs" />
     <None Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

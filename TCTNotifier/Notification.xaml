@@ -10,6 +10,6 @@
         <DropShadowEffect Opacity="0.2" BlurRadius="10"/>
     </Window.Effect>
 
-    <Grid x:Name="NotificationHolder" Margin="-200,0,0,0" VerticalAlignment="Center" Width="200" HorizontalAlignment="Left">
+    <Grid x:Name="NotificationHolder" Margin="-200,0,0,0" VerticalAlignment="Center" Width="200" HorizontalAlignment="Left" IsHitTestVisible="False">
     </Grid>
 </Window>
