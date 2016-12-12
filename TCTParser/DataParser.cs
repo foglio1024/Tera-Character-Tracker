@@ -1061,7 +1061,7 @@ namespace TCTParser
                         TeraLogic.GuildDictionary.Add(c.GuildId, getGuildName(str));
                     }
 
-                    Tera.UI.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + timeConverter.Convert(c.LastOnline, null, null, null) + ".");
+                    //Tera.UI.UpdateLog("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + timeConverter.Convert(c.LastOnline, null, null, null) + ".");
                 }
 
 
