@@ -463,12 +463,19 @@ namespace TCTParser
         }
         private static void SetTokens(bool forceLog)
         {
+            /*
             inventoryProcessor.MergeInventory();
             var tokens = inventoryProcessor.GetTokensAmounts(inventoryProcessor.inv);
 
             var newMarks =         tokens[0]; //inventoryProcessor.GetMarksFast(inventoryProcessor.inv);
             var newGoldfinger =    tokens[1]; //inventoryProcessor.GetGoldfingerFast(inventoryProcessor.inv);
             var newDragonScales =  tokens[2]; //inventoryProcessor.GetDragonwingScaleFast(inventoryProcessor.inv);
+            */
+
+            inventoryProcessor.FastMergeInventory();
+            var newMarks = inventoryProcessor.GetTokenAmountFast(InventoryProcessor.MARK_ID);
+            var newGoldfinger = inventoryProcessor.GetTokenAmountFast(InventoryProcessor.GFIN_ID);
+            var newDragonScales = inventoryProcessor.GetTokenAmountFast(InventoryProcessor.SCALE_ID);
 
             bool marks = false;
             bool gft = false;
@@ -1121,9 +1128,9 @@ namespace TCTParser
             const int MULTIPLE_FLAG = 25 * 2;
             const int HEADER_LENGHT = 61 * 2;
             const int ILVL_OFFSET = 35 * 2;
-            const string MARK_ID = "5B500200";
-            const string GFIN_ID = "36020000";
-            const string SCALE_ID = "A2B10000";
+            public const string MARK_ID = "5B500200";
+            public const string GFIN_ID = "36020000";
+            public const string SCALE_ID = "A2B10000";
 
             List<string> itemStrings = new List<string>();
             List<int> indexesArray = new List<int>();
@@ -1163,10 +1170,31 @@ namespace TCTParser
                 if (p2 != null)
                 {
                     inv = p1 + p2;
+                    fillItemStrings(p1);
+                    indexesArray.Clear();
+                    fillItemStrings(p2);
                 }
-                else inv = p1;
+                else
+                {
+                    inv = p1;
+                    fillItemStrings(p1);
+                }
             }
-            public int GetMarks(string content)
+
+            public int GetTokenAmountFast(string id)
+            {
+                int amount = 0;
+                foreach (string item in itemStrings)
+                {
+                    if (item.Substring(16,8) == id)
+                    {
+                        amount = GetItemFastById(item, id);
+                    }
+                }
+                return amount;
+            }
+
+            int GetMarks(string content)
             {
                 fillItemList(content);
                 if (itemsList.Find(x => x.Name == "Elleon's Mark of Valor") != null)
@@ -1177,7 +1205,7 @@ namespace TCTParser
 
 
             }
-            public int GetGoldfinger(string content)
+            int GetGoldfinger(string content)
             {
                 fillItemList(content);
                 if (itemsList.Find(x => x.Name == "Goldfinger Token") != null)
@@ -1187,15 +1215,15 @@ namespace TCTParser
                 else return 0;
 
             }
-            public int GetMarksFast(string content)
+            int GetMarksFast(string content)
             {
                 return GetItemFastById(content, MARK_ID);
             }
-            public int GetGoldfingerFast(string content)
+            int GetGoldfingerFast(string content)
             {
                 return GetItemFastById(content, GFIN_ID);
             }
-            public int GetDragonwingScaleFast(string content)
+            int GetDragonwingScaleFast(string content)
             {
                 return GetItemFastById(content, SCALE_ID);
             }
@@ -1244,10 +1272,18 @@ namespace TCTParser
 
                 do
                 {
-                    int lastPointer = readPointer(content, currentPointer * 2);
-                    indexesArray.Add(lastPointer);
-                    currentPointer = readPointer(content, lastPointer * 2 + 4);
+                    if(currentPointer < content.Length)
+                    {
+                        int lastPointer = readPointer(content, currentPointer * 2);
+                        indexesArray.Add(lastPointer);
+                        currentPointer = readPointer(content, lastPointer * 2 + 4);
+                    }
+                    else
+                    {
+                        currentPointer = 0;
+                    }
                 }
+
                 while (currentPointer != 0);
             }
             void fillItemStrings(string p)
@@ -1265,7 +1301,6 @@ namespace TCTParser
                     {
                         itemStrings.Add(p.Substring(indexesArray[i] * 2 + 4));
                     }
-
                 }
             }
             InventoryItem stringToItem(string s)
@@ -1297,7 +1332,8 @@ namespace TCTParser
             }
             int readPointer(string content, int start)
             {
-                return StringUtils.Hex2BStringToInt(content.Substring(start, 4));
+
+                return StringUtils.Hex2BStringToInt(content.Substring(start, 4));         
             }
             class InventoryItem
             {
@@ -1782,7 +1818,6 @@ namespace TCTParser
                 else isInCombat = true;
             }
         }
-
         class SystemMessageProcessor
         {
             const int DUNGEON_ENGAGED_ID = 2229;
