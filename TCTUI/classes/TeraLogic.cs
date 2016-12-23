@@ -325,7 +325,7 @@ namespace Tera
             {
                 ResetDailyData();
                 UI.UpdateLog("Daily data has been reset.");
-                TCTNotifier.NotificationProvider.SendNotification("Daily data has been reset.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true);
+                TCTNotifier.NotificationProvider.SendNotification("Daily data has been reset.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true, true);
 
                 dailyReset = false;
             }
@@ -333,7 +333,7 @@ namespace Tera
             {
                 ResetWeeklyData();
                 UI.UpdateLog("Weekly data has been reset.");
-                TCTNotifier.NotificationProvider.SendNotification("Weekly data has been reset.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true);
+                TCTNotifier.NotificationProvider.SendNotification("Weekly data has been reset.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true,true);
 
                 weeklyReset = false;
             }
@@ -363,21 +363,28 @@ namespace Tera
         }
 
     #region File Management
-        public static void SaveCharacters()
+        public static void SaveCharacters(bool log)
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Character>));
             FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/characters.xml", FileMode.Create, FileAccess.Write);
             xs.Serialize(fs, CharList);
             fs.Close();
-            UI.UpdateLog("Characters saved.");
+
+            if (log)
+            {
+                UI.UpdateLog("Characters saved."); 
+            }
         }
-        public static void SaveAccounts()
+        public static void SaveAccounts(bool log)
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Account>));
             FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/accounts.xml", FileMode.Create, FileAccess.Write);
             xs.Serialize(fs, AccountList);
             fs.Close();
-            UI.UpdateLog("Accounts saved.");
+            if (log)
+            {
+                UI.UpdateLog("Accounts saved."); 
+            }
 
         }
         public static void LoadCharacters()
@@ -396,7 +403,7 @@ namespace Tera
                 FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/characters.xml", FileMode.Create, FileAccess.Write);
                 fs.Close();
                 CharList = new List<Character>();
-                SaveCharacters();
+                SaveCharacters(false);
             }
         }
         public static void LoadAccounts()
@@ -415,7 +422,7 @@ namespace Tera
                 FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/accounts.xml", FileMode.Create, FileAccess.Write);
                 fs.Close();
                 AccountList = new List<Account>();
-                SaveAccounts();
+                SaveAccounts(false);
             }
         }
         public static void LoadDungeons()
@@ -442,7 +449,7 @@ namespace Tera
             }
 
         }
-        internal static void SaveGuildsDB()
+        internal static void SaveGuildsDB(bool log)
         {
             if (GuildDictionary.Count > 0)
             {
@@ -454,7 +461,11 @@ namespace Tera
                     i++;
                 }
                 File.WriteAllLines(Environment.CurrentDirectory + "\\content/data/guilds.txt", lines);
-                UI.UpdateLog("Guilds database saved.");
+
+                if (log)
+                {
+                    UI.UpdateLog("Guilds database saved."); 
+                }
             }
 
         }
@@ -484,7 +495,7 @@ namespace Tera
                 i++;
             }
         }
-        public static void SaveSettings()
+        public static void SaveSettings(bool log)
         {
             LastClosed = DateTime.Now;
 
@@ -510,8 +521,12 @@ namespace Tera
             settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Width.ToString();
             settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Height.ToString();
             settings.Save(Environment.CurrentDirectory + "\\content/data/settings.xml");
-            UI.UpdateLog("Settings saved.");
+            if (log)
+            {
+                UI.UpdateLog("Settings saved.");
+            }
         }
+
         public static void LoadSettings()
         {
             settings = new XDocument();

@@ -11,9 +11,9 @@ namespace Tera
 
     public class NotifierWrapper
     {
-        public static void SendNotification(string content, NotificationType nt, System.Windows.Media.Color col, bool repeat)
+        public static void SendNotification(string content, NotificationType nt, System.Windows.Media.Color col, bool repeat, bool sound)
         {
-            NotificationProvider.SendNotification(content, nt, col, repeat);
+            NotificationProvider.SendNotification(content, nt, col, repeat, sound);
         } 
         public static void SendDefaultNotification(string content)
         {

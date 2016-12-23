@@ -75,8 +75,8 @@ namespace TCTParser
                     }
                     charListProcessor.CurrentAccountId = accountLoginProcessor.id;
                     SetCharList(data);
-                    TeraLogic.SaveAccounts();
-                    TeraLogic.SaveCharacters();
+                    TeraLogic.SaveAccounts(true);
+                    TeraLogic.SaveCharacters(true);
 
                     Tera.UI.UpdateLog("Data saved.");
 
@@ -205,8 +205,8 @@ namespace TCTParser
                     break;
 
                 case "S_RETURN_TO_LOBBY":
-                    TeraLogic.SaveAccounts();
-                    TeraLogic.SaveCharacters();
+                    TeraLogic.SaveAccounts(true);
+                    TeraLogic.SaveCharacters(true);
                     inventoryProcessor.justLoggedIn = true;
                     vanguardWindowProcessor.justLoggedIn = true;
                     break;
@@ -488,7 +488,7 @@ namespace TCTParser
                 if (CurrentChar().MarksOfValor > 82)
                 {
                     UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
-                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationType.Marks, Colors.Orange, true);
+                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationType.Marks, Colors.Orange, true, true);
                 }
             }
 
@@ -499,7 +499,7 @@ namespace TCTParser
                 if (CurrentChar().GoldfingerTokens >= 80)
                 {
                     Tera.UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
-                    TCTNotifier.NotificationProvider.SendNotification("You have " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationType.Goldfinger, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
+                    TCTNotifier.NotificationProvider.SendNotification("You have " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationType.Goldfinger, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true);
                 }
             }
             if (CurrentChar().DragonwingScales != newDragonScales)
@@ -509,7 +509,7 @@ namespace TCTParser
                 if (CurrentChar().DragonwingScales >= 50)
                 {
                     Tera.UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
-                    TCTNotifier.NotificationProvider.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
+                    TCTNotifier.NotificationProvider.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true);
                 }
             }
             inventoryProcessor.Clear();
@@ -617,13 +617,20 @@ namespace TCTParser
                     if(diff > 0) //earned
                     {
                         UI.UpdateLog(currentCharName + " > " + "gained " + diff + " Vanguard credits. Current amount: " + cr + ".");
-                        TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " gained "+diff+" Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
+                        if(CurrentChar().Credits < 8500)
+                        {
+                            TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " gained "+diff+" Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, false);
+                        }
+                        else
+                        {
+                            TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " gained " + diff + " Vanguard Credits." + "\n" + "Current amount: " + CurrentChar().Credits + ", you've almost reached your maximum credits.", NotificationType.Credits, Colors.Orange, true, true);
+                        }
                     }
                     else //spent
                     {
                         diff = -diff;
                         UI.UpdateLog(currentCharName + " > " + "spent " + diff + " Vanguard credits. Current amount: " + cr + ".");
-                        TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " spent " + diff + " Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationType.Credits, Colors.Red, true);
+                        TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " spent " + diff + " Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationType.Credits, Colors.Red, true, false);
                     }
                 }
             }
@@ -1423,14 +1430,14 @@ namespace TCTParser
                     {
                         if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
                         {
-                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true);
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true, true);
                         }
                     }
                     else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
                     {
                         if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
                         {
-                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true);
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationType.Crystalbind, Colors.Red, true, true);
                         }
                     }
                 }
@@ -1441,14 +1448,14 @@ namespace TCTParser
                     {
                         if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
                         {
-                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true);
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true, true);
                         }
                     }
                     else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
                     {
                         if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
                         {
-                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true);
+                            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationType.Crystalbind, Colors.Orange, true, true);
                         }
                     }
                 }
@@ -1515,7 +1522,7 @@ namespace TCTParser
                 Time = 0;
                 CurrentChar().Crystalbind = Time;
                 BuffList.Clear();
-                TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind expired.", NotificationType.Crystalbind, Colors.Red, true);
+                TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind expired.", NotificationType.Crystalbind, Colors.Red, true, true);
             }
             class Buff
             {
@@ -1668,7 +1675,7 @@ namespace TCTParser
                         found = true;
                         if (quest.Status == GuildQuestStatus.Available)
                         {
-                            TCTNotifier.NotificationProvider.SendNotification("You have available guild quests for this dungeon.", NotificationType.Default, Colors.Red, true);
+                            TCTNotifier.NotificationProvider.SendNotification("You have available guild quests for this dungeon.", NotificationType.Default, Colors.Red, true,true);
                         }
                         break;
                     }
@@ -1900,7 +1907,7 @@ namespace TCTParser
                     Tera.TeraLogic.CharList.Find(ch => ch.Name.Equals(currentCharName)).Credits += addedCredits;
 
                     UI.UpdateLog("Earned " + addedCredits + " Vanguard Initiative credits. Total: " + CurrentChar().Credits + ".");
-                    TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits + " Vanguard Initiative credits. \nCurrent credits: " + CurrentChar().Credits + ".",NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
+                    TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits + " Vanguard Initiative credits. \nCurrent credits: " + CurrentChar().Credits + ".",NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, false);
                 }
             }
 

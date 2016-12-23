@@ -299,10 +299,10 @@ namespace Tera
         } 
         private void SaveButtonPressed(object sender, RoutedEventArgs e)
         {
-            TeraLogic.SaveCharacters();
-            TeraLogic.SaveAccounts();
-            TeraLogic.SaveGuildsDB();
-            TeraLogic.SaveSettings();
+            TeraLogic.SaveCharacters(true);
+            TeraLogic.SaveAccounts(true);
+            TeraLogic.SaveGuildsDB(true);
+            TeraLogic.SaveSettings(true);
             TeraLogic.IsSaved = true;
         }
         private void LeftSlideToggle(object sender, MouseButtonEventArgs e)
@@ -470,9 +470,9 @@ namespace Tera
         }
         private void Win_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TeraLogic.SaveCharacters();
-            TeraLogic.SaveAccounts();
-            TeraLogic.SaveGuildsDB();
+            TeraLogic.SaveCharacters(false);
+            TeraLogic.SaveAccounts(false);
+            TeraLogic.SaveGuildsDB(false);
             TeraLogic.TCTProps.Top = this.Top;
             TeraLogic.TCTProps.Left = this.Left;
             TeraLogic.TCTProps.Height = this.Height;
@@ -502,7 +502,7 @@ namespace Tera
         {
             string teststring = "Test" + i;
 
-           TCTNotifier.NotificationProvider.SendNotification(teststring, NotificationType.Credits, Colors.LightGreen, false);
+           TCTNotifier.NotificationProvider.SendNotification(teststring, NotificationType.Credits, Colors.LightGreen, false, true);
            i++;
         }
 

@@ -30,6 +30,7 @@ namespace TCTData.Enums
         Gunner = 9,
         Brawler = 10,
         Ninja = 11,
+        Moon_Dancer = 12
 
     }
     public enum Laurel

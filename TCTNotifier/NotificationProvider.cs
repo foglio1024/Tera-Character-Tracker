@@ -21,19 +21,21 @@ namespace TCTNotifier
         public NotificationType nType;
         public Color ringColor;
         public bool isRepeatable;
-        public NotificationInfo(string _c, NotificationType _nt, Color _co, bool _repeat)
+        public bool sound;
+        public NotificationInfo(string _c, NotificationType _nt, Color _co, bool _repeat, bool _sound)
         {
             content = _c;
             nType = _nt;
             ringColor = _co;
             isRepeatable = _repeat;
+            sound = _sound;
         }
     }
     public delegate void NotificationAddedEventHandler(object sender, EventArgs e, NotificationInfo ni);
     public delegate void NotificationEndedEventHandler(object sender, EventArgs e);
     public static class NotificationProvider
     {
-        public static NotificationInfo[] lastNotification = new NotificationInfo[2] { new NotificationInfo("Null notification", NotificationType.Default, Colors.Black, false), new NotificationInfo("Null notification", NotificationType.Default, Colors.Black, false) };
+        public static NotificationInfo[] lastNotification = new NotificationInfo[2] { new NotificationInfo("Null notification", NotificationType.Default, Colors.Black, false, false), new NotificationInfo("Null notification", NotificationType.Default, Colors.Black, false, false) };
         public static Dictionary<NotificationType, string> imagesDictionary = new Dictionary<NotificationType, string>()
         {
             { NotificationType.Default, "default" },
@@ -150,9 +152,9 @@ namespace TCTNotifier
                 nq = null;
             }
         }
-        public static void SendNotification(string _content, NotificationType _nType, Color col, bool rep)
+        public static void SendNotification(string _content, NotificationType _nType, Color col, bool rep, bool snd)
         {
-            NS.sendNotification(_content, _nType, col, rep);
+            NS.sendNotification(_content, _nType, col, rep, snd);
         }
         public static void SendNotification(string _content)
         {
@@ -178,7 +180,7 @@ namespace TCTNotifier
             }
             void initNotification()
             {
-                prepareNotification(new NotificationInfo("Empty", NotificationType.Default, Colors.WhiteSmoke, false));
+                prepareNotification(new NotificationInfo("Empty", NotificationType.Default, Colors.WhiteSmoke, false, false));
                 NotificationProvider.N.Dispatcher.Invoke(() => NotificationProvider.N.Hide());
             }
 
@@ -226,9 +228,9 @@ namespace TCTNotifier
                 }));
             }
 
-            public void sendNotification(string _content, NotificationType _nType, Color col, bool rep)
+            public void sendNotification(string _content, NotificationType _nType, Color col, bool rep, bool snd)
             {
-                var _n = new NotificationInfo(_content, _nType, col, rep);
+                var _n = new NotificationInfo(_content, _nType, col, rep, snd);
                 if (NotificationProvider.NQ.Count >= 0)
                 {
                     if (_n.content == NotificationProvider.lastNotification[0].content || _n.content == NotificationProvider.lastNotification[1].content)
@@ -253,7 +255,7 @@ namespace TCTNotifier
 
             public void sendNotification(string _content)
             {
-                var _n = new NotificationInfo(_content, NotificationType.Default, Color.FromArgb(255, 0, 123, 206), true);
+                var _n = new NotificationInfo(_content, NotificationType.Default, Color.FromArgb(255, 0, 123, 206), true, true);
 
                 NotificationProvider.AddNotification(_n);
 

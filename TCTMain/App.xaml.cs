@@ -34,7 +34,7 @@ namespace TCTMain
                 {
                     TCTNotifier.NotificationProvider.Init();
 
-                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running");
+                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running",TCTData.Enums.NotificationType.Default, Tera.UI.Colors.SolidBaseColor,true,false);
 
                     Tera.TeraMainWindow w = new Tera.TeraMainWindow();
                     w.InitializeComponent();
@@ -43,7 +43,7 @@ namespace TCTMain
                     w.Title = "Tera Character Tracker " + version;
                     w.ShowDialog();
 
-                    Tera.TeraLogic.SaveSettings();
+                    Tera.TeraLogic.SaveSettings(false);
                     Environment.Exit(0);
 
 
@@ -57,9 +57,9 @@ namespace TCTMain
                            "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
                         writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
                     }
-                    Tera.TeraLogic.SaveAccounts();
-                    Tera.TeraLogic.SaveSettings();
-                    Tera.TeraLogic.SaveCharacters();
+                    Tera.TeraLogic.SaveAccounts(false);
+                    Tera.TeraLogic.SaveSettings(false);
+                    Tera.TeraLogic.SaveCharacters(false);
                     MessageBox.Show("An error occured. Check error.txt for more info");
                     Environment.Exit(-1);
                 }

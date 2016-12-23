@@ -55,6 +55,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arc.cs" />
     <Compile Include="StandardNotification.xaml.cs">
       <DependentUpon>StandardNotification.xaml</DependentUpon>
     </Compile>

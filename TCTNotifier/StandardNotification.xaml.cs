@@ -28,13 +28,17 @@ namespace TCTNotifier
             InitializeComponent();
         }
 
-        private int notificaitonTime = 6000; // notification time in milliseconds
+        private int notificationTime = 6000; // notification time in milliseconds
         public Color glowColor;
         private Color darkColor;
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            GlowRing();
+            OpeningTimer = new Timer(350);
+            OpeningTimer.Elapsed += new ElapsedEventHandler(SweepArc);
+            OpeningTimer.Enabled = true;
+            //GlowRing();
+            //SweepArc();
         }
 
         void GlowEnded(object sender, ElapsedEventArgs ev)
@@ -48,11 +52,59 @@ namespace TCTNotifier
             });
         }
 
+        void SweepEnded(object sender, ElapsedEventArgs ev)
+        {
+            timer.Stop();
+            NotificationProvider.N.CloseAnim();
+            Dispatcher.Invoke(() =>
+            {
+                arc.BeginAnimation(Arc.EndAngleProperty, null);
+            });
+        }
+        static System.Timers.Timer OpeningTimer;
         static System.Timers.Timer timer;
         
+        void SweepArc(object sender, ElapsedEventArgs ev)
+        {
+            OpeningTimer.Stop();
+            timer = new System.Timers.Timer(notificationTime);
+            timer.Elapsed += new ElapsedEventHandler(SweepEnded);
+
+            Dispatcher.Invoke(() =>
+            {
+                arc.Stroke = new SolidColorBrush(glowColor);
+                border.BorderBrush = new SolidColorBrush(glowColor);
+
+                DoubleAnimationUsingKeyFrames end = new DoubleAnimationUsingKeyFrames();
+                end.KeyFrames.Add(new SplineDoubleKeyFrame(359, KeyTime.FromTimeSpan(TimeSpan.FromSeconds(1)), new KeySpline(.5, 0, .3, 1)));
+                end.FillBehavior = FillBehavior.HoldEnd;
+                DoubleAnimationUsingKeyFrames start = new DoubleAnimationUsingKeyFrames();
+                start.KeyFrames.Add(new SplineDoubleKeyFrame(359, KeyTime.FromTimeSpan(TimeSpan.FromSeconds(.8)), new KeySpline(.5, 0, .3, 1)));
+                start.FillBehavior = FillBehavior.Stop;
+
+
+
+                end.Completed += (s, o) => 
+                {
+                    arc.BeginAnimation(Arc.StartAngleProperty, start);
+                };
+
+                start.Completed += (s, o) =>
+                {
+                    arc.BeginAnimation(Arc.EndAngleProperty, null);
+                    arc.BeginAnimation(Arc.EndAngleProperty, end);
+                };
+
+
+                timer.Enabled = true;
+
+                arc.BeginAnimation(Arc.EndAngleProperty, end);
+            });
+
+        }
         public void GlowRing()
         {
-            timer = new System.Timers.Timer(notificaitonTime);
+            timer = new System.Timers.Timer(notificationTime);
             timer.Elapsed += new ElapsedEventHandler(GlowEnded);
             double da = glowColor.A;
             da = da * .2;

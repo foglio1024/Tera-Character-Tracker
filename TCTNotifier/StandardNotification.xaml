@@ -14,8 +14,13 @@
         <Rectangle Name="glowRect" Fill="#FF3E3D3D"/>
         <TextBlock Name="txt" Margin="5" Foreground="#fff2f2f2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Notification text." TextWrapping="Wrap"/>
         <Border Name="border" BorderBrush="#ff909090" BorderThickness="0,0,2,0" Grid.Column="1" Grid.ColumnSpan="1" Margin="0"/>
-        <Ellipse x:Name="icon" Width="40" Height="40" Stroke="Transparent" StrokeThickness="3" SnapsToDevicePixels="True">
-        </Ellipse>
+        <Ellipse x:Name="icon" Width="40" Height="40" Stroke="Transparent" StrokeThickness="3" SnapsToDevicePixels="True"/>
+        <Grid Width="50" Height="50">
+            <local:Arc x:Name="arc" Stroke="Transparent" Margin="0" StrokeThickness="4" EndAngle="1" StartAngle="0" Height="42" Width="42" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" SnapsToDevicePixels="True" />
+        </Grid>
+            
+
+
     </Grid>
 
 </UserControl>
