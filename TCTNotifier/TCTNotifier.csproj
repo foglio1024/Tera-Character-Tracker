@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arc.cs" />
+    <Compile Include="CounterNotification.xaml.cs">
+      <DependentUpon>CounterNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationInfo.cs" />
+    <Compile Include="NotificationListener.cs" />
+    <Compile Include="NotificationQueue.cs" />
     <Compile Include="StandardNotification.xaml.cs">
       <DependentUpon>StandardNotification.xaml</DependentUpon>
     </Compile>
@@ -69,6 +75,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Notification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CounterNotification.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

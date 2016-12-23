@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCTData.Enums
 {
-    public enum NotificationType
+    public enum NotificationImage
     {
         Default,
         Crystalbind,

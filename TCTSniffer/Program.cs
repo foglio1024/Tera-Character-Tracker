@@ -31,7 +31,7 @@ namespace TCTSniffer
         {
             Console.WriteLine("Connected to " + server.Name);
             UI.UpdateLog("Connected to: " + server.Name);
-            UI.SendNotification("Connected to: " + server.Name, NotificationType.Connected, System.Windows.Media.Color.FromArgb(255,0,255,100), false, false);
+            UI.SendNotification("Connected to: " + server.Name, NotificationImage.Connected, System.Windows.Media.Color.FromArgb(255,0,255,100), false, false);
         }
         static void teraSniffer_MessageReceived(Tera.Message message)
         {

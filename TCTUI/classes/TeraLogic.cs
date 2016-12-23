@@ -325,7 +325,7 @@ namespace Tera
             {
                 ResetDailyData();
                 UI.UpdateLog("Daily data has been reset.");
-                TCTNotifier.NotificationProvider.SendNotification("Daily data has been reset.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true, true);
+                TCTNotifier.NotificationProvider.SendNotification("Daily data has been reset.", NotificationImage.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true, true);
 
                 dailyReset = false;
             }
@@ -333,7 +333,7 @@ namespace Tera
             {
                 ResetWeeklyData();
                 UI.UpdateLog("Weekly data has been reset.");
-                TCTNotifier.NotificationProvider.SendNotification("Weekly data has been reset.", NotificationType.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true,true);
+                TCTNotifier.NotificationProvider.SendNotification("Weekly data has been reset.", NotificationImage.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true,true);
 
                 weeklyReset = false;
             }

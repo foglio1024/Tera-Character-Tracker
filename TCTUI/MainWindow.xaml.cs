@@ -502,7 +502,7 @@ namespace Tera
         {
             string teststring = "Test" + i;
 
-           TCTNotifier.NotificationProvider.SendNotification(teststring, NotificationType.Credits, Colors.LightGreen, false, true);
+           TCTNotifier.NotificationProvider.SendNotification(teststring, NotificationImage.Credits, Colors.LightGreen, false, true);
            i++;
         }
 

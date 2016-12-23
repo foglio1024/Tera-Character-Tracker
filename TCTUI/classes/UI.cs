@@ -16,7 +16,7 @@ namespace Tera
             MainWin.UpdateLog(data);
         }
 
-        public static void SendNotification(string content, NotificationType nt, Color col, bool repeat, bool sound)
+        public static void SendNotification(string content, NotificationImage nt, Color col, bool repeat, bool sound)
         {
             TCTNotifier.NotificationProvider.SendNotification(content, nt, col, repeat, sound);
         }
