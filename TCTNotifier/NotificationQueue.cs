@@ -10,8 +10,8 @@ namespace TCTNotifier
     {
         public bool Busy { get; set; } = false;
 
-        public event NotificationAddedEventHandler Added;
-        public event NotificationEndedEventHandler Over;
+        internal event NotificationAddedEventHandler Added;
+        internal event NotificationEndedEventHandler Over;
 
         protected virtual void OnNewNotification(EventArgs e)
         {
@@ -24,10 +24,8 @@ namespace TCTNotifier
 
         public new void Add(NotificationInfo value)
         {
-            //int i = Add(value);
             this.Insert(this.Count, value);
             OnNewNotification(EventArgs.Empty);
-            //return i;
         }
         public void SetBusyToFalseOnEnd()
         {

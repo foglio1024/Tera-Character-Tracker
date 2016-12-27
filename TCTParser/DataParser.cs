@@ -1675,6 +1675,7 @@ namespace TCTParser
                         found = true;
                         if (quest.Status == GuildQuestStatus.Available)
                         {
+                            UI.UpdateLog("You have available guild quests for this dungeon.");
                             TCTNotifier.NotificationProvider.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, Colors.Red, true,true);
                         }
                         break;

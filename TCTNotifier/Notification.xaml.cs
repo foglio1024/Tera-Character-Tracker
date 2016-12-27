@@ -33,14 +33,10 @@ namespace TCTNotifier
             var hwnd = new WindowInteropHelper(this).Handle;
             WindowsServices.SetWindowExTransparent(hwnd);
         }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
         NotificationInfo ni;
-        public void Pop(NotificationInfo _n)
+        public void Pop(NotificationInfo Ni)
         {
-            ni = _n;
+            ni = Ni;
             this.Dispatcher.Invoke(() =>
             {
                 ThicknessAnimationUsingKeyFrames open = new ThicknessAnimationUsingKeyFrames();
@@ -59,14 +55,17 @@ namespace TCTNotifier
         {
             this.Dispatcher.Invoke(() =>
             {
-            ThicknessAnimationUsingKeyFrames close = new ThicknessAnimationUsingKeyFrames();
-            close.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-200, 0, 0, 0), TimeSpan.FromMilliseconds(300), new KeySpline(.5, 0, .3, 1)));
-            close.Completed += (s, o) =>
-            {
-                Hide();
-                NotificationProvider.NQ.Remove(ni);
-                NotificationProvider.NQ.SetBusyToFalseOnEnd();
-            };
+                ThicknessAnimationUsingKeyFrames close = new ThicknessAnimationUsingKeyFrames();
+                close.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(-200, 0, 0, 0), TimeSpan.FromMilliseconds(300), new KeySpline(.5, 0, .3, 1)));
+                close.Completed += (s, o) =>
+                {
+                    Hide();
+                    ni.SetDelivered();
+                    NotificationProvider.deliveredNotifications.Add(ni);
+                    NotificationProvider.NQ.Remove(ni);
+                    NotificationProvider.NQ.SetBusyToFalseOnEnd();
+
+                };
 
                 NotificationHolder.BeginAnimation(Grid.MarginProperty, close);
             });

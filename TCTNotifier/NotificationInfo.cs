@@ -15,6 +15,7 @@ namespace TCTNotifier
         public Color Color { get; set; }
         public bool IsRepeatable { get; set; }
         public bool Sound { get; set; }
+        public bool IsDelivered { get; private set; }
         public NotificationInfo(string _c, NotificationImage _img, Color _co, bool _repeat, bool _sound)
         {
             Content = _c;
@@ -22,6 +23,13 @@ namespace TCTNotifier
             Color = _co;
             IsRepeatable = _repeat;
             Sound = _sound;
+
+            IsDelivered = false;
+        }
+
+        public void SetDelivered()
+        {
+            IsDelivered = true;
         }
     }
 }
