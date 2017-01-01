@@ -16,6 +16,13 @@ namespace TCTData.Enums
         Connected,
         Credits
     }
+
+    public enum NotificationType
+    {
+        Standard,
+        Counter
+    }
+
     public enum Class
     {
         Warrior = 0,

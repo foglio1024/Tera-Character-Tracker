@@ -21,7 +21,7 @@ namespace TCTParser.Processors
             var charId = packet.Substring(CHAR_ID_OFFSET, CHAR_ID_LENGTH);
             if(charId == currentCharId)
             {
-                var buffId = Convert.ToInt32(packet.Substring(B_BUFF_ID_OFFSET,8));
+                var buffId = StringUtils.Hex4BStringToInt(packet.Substring(B_BUFF_ID_OFFSET, 8));
                 if (NOCT_IDS.Contains(buffId))
                 {
                     SetNocteniumOn();
@@ -34,10 +34,11 @@ namespace TCTParser.Processors
             var charId = packet.Substring(CHAR_ID_OFFSET, CHAR_ID_LENGTH);
             if (charId == currentCharId)
             {
-                var buffId = Convert.ToInt32(packet.Substring(E_BUFF_ID_OFFSET, 8));
+                var buffId = StringUtils.Hex4BStringToInt(packet.Substring(E_BUFF_ID_OFFSET, 8));
                 if (NOCT_IDS.Contains(buffId))
                 {
                     SetNocteniumOff();
+
                 }
             }
         }

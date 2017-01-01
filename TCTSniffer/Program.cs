@@ -11,6 +11,7 @@ using PacketViewer.Network;
 using Tera;
 using TCTData.Enums;
 using TCTParser;
+using System.Threading;
 
 namespace TCTSniffer
 {
@@ -31,7 +32,7 @@ namespace TCTSniffer
         {
             Console.WriteLine("Connected to " + server.Name);
             UI.UpdateLog("Connected to: " + server.Name);
-            UI.SendNotification("Connected to: " + server.Name, NotificationImage.Connected, System.Windows.Media.Color.FromArgb(255,0,255,100), false, false);
+            UI.SendNotification("Connected to: " + server.Name, NotificationImage.Connected, NotificationType.Standard, UI.Colors.SolidGreen, false, false, false);
         }
         static void teraSniffer_MessageReceived(Tera.Message message)
         {

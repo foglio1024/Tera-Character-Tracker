@@ -16,13 +16,13 @@ namespace Tera
             MainWin.UpdateLog(data);
         }
 
-        public static void SendNotification(string content, NotificationImage nt, Color col, bool repeat, bool sound)
+        public static void SendNotification(string content, NotificationImage img, NotificationType t, Color col, bool repeat, bool sound, bool right)
         {
-            TCTNotifier.NotificationProvider.SendNotification(content, nt, col, repeat, sound);
+            TCTNotifier.NotificationProvider.SendNotification(content, img, t, col, repeat, sound, right);
         }
         public static void SendDefaultNotification(string content)
         {
-            TCTNotifier.NotificationProvider.SendNotification(content);
+            TCTNotifier.NotificationProvider.SendNotification(content, Colors.SolidBaseColor);
         }
 
         public static class Colors

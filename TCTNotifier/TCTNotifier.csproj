@@ -74,7 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Notification.xaml">
+    <Page Include="NotificationDeployer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -88,8 +88,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Notification.xaml.cs">
-      <DependentUpon>Notification.xaml</DependentUpon>
+    <Compile Include="NotificationDeployer.xaml.cs">
+      <DependentUpon>NotificationDeployer.xaml</DependentUpon>
     </Compile>
     <Compile Include="NotificationProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

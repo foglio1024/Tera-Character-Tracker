@@ -55,14 +55,14 @@ namespace TCTParser.Processors
                 {
                     if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, Colors.Red, true, true);
+                        UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Red, true, true, false);
                     }
                 }
                 else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
                 {
                     if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, Colors.Red, true, true);
+                        UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Red, true, true, false);
                     }
                 }
             }
@@ -73,14 +73,14 @@ namespace TCTParser.Processors
                 {
                     if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, Colors.Orange, true, true);
+                        UI.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Orange, true, true, false);
                     }
                 }
                 else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
                 {
                     if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
                     {
-                        TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, Colors.Orange, true, true);
+                        UI.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Orange, true, true, false);
                     }
                 }
             }
@@ -147,7 +147,7 @@ namespace TCTParser.Processors
             Time = 0;
             DataParser.CurrentChar().Crystalbind = Time;
             BuffList.Clear();
-            TCTNotifier.NotificationProvider.SendNotification("Your Complete Crystalbind expired.", NotificationImage.Crystalbind, Colors.Red, true, true);
+            UI.SendNotification("Your Complete Crystalbind expired.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Red, true, true, false);
         }
         class Buff
         {

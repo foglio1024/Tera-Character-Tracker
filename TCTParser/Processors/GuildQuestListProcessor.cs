@@ -23,7 +23,7 @@ namespace TCTParser.Processors
         List<int> addressList = new List<int>();
         List<string> questStringList = new List<string>();
         string guildListPacket;
-        public QuestParser questParser;
+        internal QuestParser questParser;
 
         void Clear()
         {
@@ -51,7 +51,6 @@ namespace TCTParser.Processors
                 }
             }
         }
-
         void FillAddressList()
         {
             var firstAddress = StringUtils.Hex2BStringToInt(guildListPacket.Substring(FIRST_ADDRESS_OFFSET));
@@ -131,7 +130,7 @@ namespace TCTParser.Processors
                     if (quest.Status == GuildQuestStatus.Available)
                     {
                         UI.UpdateLog("You have available guild quests for this dungeon.");
-                        TCTNotifier.NotificationProvider.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, Colors.Red, true, true);
+                        UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
                     }
                     break;
                 }
@@ -142,7 +141,7 @@ namespace TCTParser.Processors
             }
         }
 
-        public class QuestParser
+        internal class QuestParser
         {
             const int QUEST_ID_OFFSET = 22 * 2;
             const int TARGET_LIST_ADDRESS_OFFSET = 6 * 2;

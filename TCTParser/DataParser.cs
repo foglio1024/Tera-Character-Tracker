@@ -111,6 +111,10 @@ namespace TCTParser
                         }
                         CurrentChar().Ilvl = inventoryProcessor.GetItemLevel(data); 
                     }
+                    else
+                    {
+                        UI.UpdateLog("Combat status and noctenium infusion are in effect. Inventory parsing is disabled.");
+                    }
                     break;
 
                 case "S_DUNGEON_COOL_TIME_LIST":
@@ -213,7 +217,6 @@ namespace TCTParser
             charListProcessor.Clear();
 
             Tera.UI.UpdateLog("Found " + charList.Count + " characters.");
-            //TCTNotifier.NotificationProvider.NS.sendNotification("Found " + charList.Count + " characters.");
         }
         private static void LoginChar(string p)
         {
@@ -247,15 +250,17 @@ namespace TCTParser
             bool marks = false;
             bool gft = false;
             bool scales = false;
+            UI.SendNotification(newMarks.ToString(), NotificationImage.Marks, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
 
             if (CurrentChar().MarksOfValor != newMarks)
             {
                 marks = true;
                 CurrentChar().MarksOfValor = newMarks;
+
                 if (CurrentChar().MarksOfValor > 82)
                 {
                     UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
-                    TCTNotifier.NotificationProvider.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationImage.Marks, Colors.Orange, true, true);
+                    UI.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationImage.Marks, NotificationType.Standard, Colors.Orange, true, true, false);
                 }
             }
 
@@ -266,7 +271,7 @@ namespace TCTParser
                 if (CurrentChar().GoldfingerTokens >= 80)
                 {
                     Tera.UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
-                    TCTNotifier.NotificationProvider.SendNotification("You have " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true);
+                    UI.SendNotification("You have " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true, false);
                 }
             }
             if (CurrentChar().DragonwingScales != newDragonScales)
@@ -276,7 +281,7 @@ namespace TCTParser
                 if (CurrentChar().DragonwingScales >= 50)
                 {
                     Tera.UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
-                    TCTNotifier.NotificationProvider.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Default, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true);
+                    UI.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
                 }
             }
             inventoryProcessor.Clear();
@@ -353,6 +358,7 @@ namespace TCTParser
 
         //to be refactored
         const int VANGUARD_REP_ID = 609;
+
         private static string wCforDungeons;
         private static string wCforUpdatedCreditsAfterPurchase;
 
@@ -375,23 +381,22 @@ namespace TCTParser
                         UI.UpdateLog(currentCharName + " > " + "gained " + diff + " Vanguard credits. Current amount: " + cr + ".");
                         if(CurrentChar().Credits < 8500)
                         {
-                            TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " gained "+diff+" Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationImage.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, false);
+                            UI.SendNotification(CurrentChar().Name + " gained "+diff+" Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationImage.Credits, NotificationType.Standard, UI.Colors.SolidGreen, true, false, false);
                         }
                         else
                         {
-                            TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " gained " + diff + " Vanguard Credits." + "\n" + "Current amount: " + CurrentChar().Credits + ", you've almost reached your maximum credits.", NotificationImage.Credits, Colors.Orange, true, true);
+                            UI.SendNotification(CurrentChar().Name + " gained " + diff + " Vanguard Credits." + "\n" + "Current amount: " + CurrentChar().Credits + ", you've almost reached your maximum credits.", NotificationImage.Credits, NotificationType.Standard, Colors.Orange, true, true, false);
                         }
                     }
                     else //spent
                     {
                         diff = -diff;
                         UI.UpdateLog(currentCharName + " > " + "spent " + diff + " Vanguard credits. Current amount: " + cr + ".");
-                        TCTNotifier.NotificationProvider.SendNotification(CurrentChar().Name + " spent " + diff + " Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationImage.Credits, Colors.Red, true, false);
+                        UI.SendNotification(CurrentChar().Name + " spent " + diff + " Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationImage.Credits, NotificationType.Standard, Colors.Red, true, false, false);
                     }
                 }
             }
         }
-
 
         private static void setDungs()
         {

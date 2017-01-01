@@ -32,7 +32,7 @@ namespace TCTMain
             {
                 try
                 {
-                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running",TCTData.Enums.NotificationImage.Default, Tera.UI.Colors.SolidBaseColor,true,false);
+                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running",TCTData.Enums.NotificationImage.Default,TCTData.Enums.NotificationType.Standard, Tera.UI.Colors.SolidBaseColor,true,false,false);
 
                     Tera.TeraMainWindow w = new Tera.TeraMainWindow();
                     w.InitializeComponent();

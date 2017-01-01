@@ -53,8 +53,8 @@ namespace TCTParser.Processors
             if (dgName != null)
             {
 
-                Tera.UI.UpdateLog(DataParser.currentCharName + " > " + dgName + " engaged.");
-                TCTNotifier.NotificationProvider.SendNotification(dgName + " engaged.");
+                UI.UpdateLog(DataParser.currentCharName + " > " + dgName + " engaged.");
+                UI.SendDefaultNotification(dgName + " engaged.");
 
                 try
                 {
@@ -87,7 +87,7 @@ namespace TCTParser.Processors
                 Tera.TeraLogic.CharList.Find(ch => ch.Name.Equals(DataParser.currentCharName)).Credits += addedCredits;
 
                 UI.UpdateLog("Earned " + addedCredits + " Vanguard Initiative credits. Total: " + DataParser.CurrentChar().Credits + ".");
-                TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits + " Vanguard Initiative credits. \nCurrent credits: " +DataParser.CurrentChar().Credits + ".", NotificationImage.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, false);
+                UI.SendNotification("Earned " + addedCredits + " Vanguard Initiative credits. \nCurrent credits: " +DataParser.CurrentChar().Credits + ".", NotificationImage.Credits, NotificationType.Standard, UI.Colors.SolidGreen, true, false, false);
             }
         }
 

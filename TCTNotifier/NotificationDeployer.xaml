@@ -1,0 +1,15 @@
+﻿<Window x:Class="TCTNotifier.NotificationDeployer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCTNotifier"
+        mc:Ignorable="d"
+        Title="NotifDeployer" Cursor="None" MinHeight="50" Height="Auto" Width="220" ResizeMode="NoResize" Topmost="True" Focusable="False" IsHitTestVisible="False" IsTabStop="False" Background="Transparent" WindowStyle="None" Top="0" Left="0" AllowsTransparency="True" VerticalAlignment="Stretch" IsEnabled="False" >
+    <Window.Effect>
+        <DropShadowEffect Opacity="0.2" BlurRadius="10"/>
+    </Window.Effect>
+
+    <Grid x:Name="NotificationHolder" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="200" HorizontalAlignment="Left" IsHitTestVisible="False">
+    </Grid>
+</Window>

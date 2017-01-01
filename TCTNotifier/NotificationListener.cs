@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -26,19 +27,11 @@ namespace TCTNotifier
                 if (!queue.Busy)
                 {
                     queue.SetBusy();
-                    NotificationProvider.N.Dispatcher.Invoke(() =>
+                    NotificationProvider.NotificationDeployer.Dispatcher.Invoke(() =>
                     {
-                        NotificationProvider.N.NotificationHolder.Children.Clear();
-                        NotificationProvider.N.Show();
+                        NotificationProvider.NotificationDeployer.NotificationHolder.Children.Clear();
+                        NotificationProvider.NotificationDeployer.Show();
 
-                        var sn = new StandardNotification()
-                        {
-                            Margin = new System.Windows.Thickness(0, 0, 0, 0),
-                        };
-                        sn.txt.Text = n.Content;
-                        sn.glowColor = n.Color;
-                        NotificationProvider.N.NotificationHolder.Children.Add(sn);
-                        NotificationProvider.N.ShowInTaskbar = false;
                         ImageBrush imgB = new ImageBrush();
 
                         try
@@ -54,9 +47,36 @@ namespace TCTNotifier
 
                         }
 
-                        sn.icon.Fill = imgB;
+                        switch (n.Type)
+                        {
+                            case TCTData.Enums.NotificationType.Standard:
+                                var sn = new StandardNotification()
+                                {
+                                    Margin = new System.Windows.Thickness(0, 0, 0, 0)
+                                };
+                                sn.txt.Text = n.Content;
+                                sn.glowColor = n.Color;
+                                sn.icon.Fill = imgB;
+                                NotificationProvider.NotificationDeployer.NotificationHolder.Children.Add(sn);
+                                break;
 
-                        NotificationProvider.N.Pop(n);
+                            case TCTData.Enums.NotificationType.Counter:
+                                var cn = new CounterNotification()
+                                {
+                                    Margin = new System.Windows.Thickness(0, 0, 0, 0)
+                                };
+                                cn.amountTB.Text = n.Content;
+                                cn.icon.Stroke = new SolidColorBrush(n.Color);
+                                cn.icon.Fill = imgB;
+                                NotificationProvider.NotificationDeployer.NotificationHolder.Children.Add(cn);
+                                break;
+
+                            default:
+                                break;
+                        }
+
+                        NotificationProvider.NotificationDeployer.ShowInTaskbar = false;
+                        NotificationProvider.NotificationDeployer.Pop(n);
                     });
                 }
 

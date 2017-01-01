@@ -28,11 +28,8 @@ namespace TCTNotifier
             InitializeComponent();
         }
 
-        private int notificationTime = 3000; // notification time in milliseconds
-
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-
             OpeningTimer = new Timer(3350);
             OpeningTimer.Elapsed += new ElapsedEventHandler(EndNotification);
             OpeningTimer.Enabled = true;
@@ -40,11 +37,11 @@ namespace TCTNotifier
         
         private void EndNotification(object sender, ElapsedEventArgs ev)
         {
-            NotificationProvider.N.CloseAnim();
+            OpeningTimer.Stop();
+            NotificationProvider.NotificationDeployer.CloseAnim();
         }
 
         static System.Timers.Timer OpeningTimer;
-        static System.Timers.Timer timer;
         
     }
 }

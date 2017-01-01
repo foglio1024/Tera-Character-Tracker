@@ -27,7 +27,7 @@ namespace TCTNotifier
             InitializeComponent();
         }
 
-        private int notificationTime = 6000; // notification time in milliseconds
+        private int notificationTime = 1800*3; // notification time in milliseconds
         public Color glowColor;
         private Color darkColor;
         static System.Timers.Timer OpeningTimer;
@@ -44,7 +44,7 @@ namespace TCTNotifier
         void SweepEnded(object sender, ElapsedEventArgs ev)
         {
             timer.Stop();
-            NotificationProvider.N.CloseAnim();
+            NotificationProvider.NotificationDeployer.CloseAnim();
             Dispatcher.Invoke(() =>
             {
                 arc.BeginAnimation(Arc.EndAngleProperty, null);

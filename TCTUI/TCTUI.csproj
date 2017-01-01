@@ -104,7 +104,6 @@
     <Compile Include="MaterialSwitch.xaml.cs">
       <DependentUpon>MaterialSwitch.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\NotifierWrapper.cs" />
     <Compile Include="QuestGauge.xaml.cs">
       <DependentUpon>QuestGauge.xaml</DependentUpon>
     </Compile>
