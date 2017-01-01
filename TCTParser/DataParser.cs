@@ -26,16 +26,11 @@ namespace TCTParser
 {
     public static class DataParser
     {
-        const int VANGUARD_REP_ID = 609;
-
         static S_GET_USER_GUILD_LOGO mess;
 
-        private static string wCforDungeons;
-        private static string wCforUpdatedCreditsAfterPurchase;
-        private static List<string> wCforCcb = new List<string>();
         internal static string currentCharName;
         internal static string currentCharId;
-        internal static bool isInCombat;
+
         static BasicTeraData btd = new BasicTeraData();
         static OpCodeNamer opn = new OpCodeNamer(Path.Combine(btd.ResourceDirectory, string.Format("opcodes-{0}.txt", "3907eu")));
 
@@ -50,6 +45,7 @@ namespace TCTParser
         static BankProcessor bankProcessor = new BankProcessor();
         static SystemMessageProcessor sysMsgProcessor = new SystemMessageProcessor();
         static CombatProcessor combatParser = new CombatProcessor();
+        static NocteniumProcessor nocteniumProcessor = new NocteniumProcessor();
 
         public static void StoreLastMessage(Message msg)
         {
@@ -68,7 +64,6 @@ namespace TCTParser
             switch (opn.GetName(opCode))
             {
                 case "S_GET_USER_LIST":
-                    #region LIST
                     crystalbindProcessor.Clear();
                     if (!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
                     {
@@ -78,28 +73,21 @@ namespace TCTParser
                     SetCharList(data);
                     TeraLogic.SaveAccounts(true);
                     TeraLogic.SaveCharacters(true);
-
                     Tera.UI.UpdateLog("Data saved.");
-
                     break;
-                #endregion
 
                 case "S_LOGIN":
-                    #region LOGIN
                     crystalbindProcessor.Clear();
                     LoginChar(data);
                     break;
-                #endregion
 
                 case "S_AVAILABLE_EVENT_MATCHING_LIST":
-                    #region VANGUARD WINDOW
                     SetVanguardData(data, vanguardWindowProcessor.justLoggedIn);
                     vanguardWindowProcessor.justLoggedIn = false;
                     break;
-                #endregion
 
                 case "S_INVEN":
-                    if (!isInCombat)
+                    if (!(combatParser.IsInCombat && nocteniumProcessor.IsNocteniumOn))
                     {
                         if (data[53].ToString() == "1") /*wait next packet*/
                         {
@@ -126,76 +114,37 @@ namespace TCTParser
                     break;
 
                 case "S_DUNGEON_COOL_TIME_LIST":
-                    #region DUNGEONS RUNS
                     Tera.UI.UpdateLog(currentCharName + " > received dungeons data.");
                     wCforDungeons = data;
                     setDungs();
                     break;
-                #endregion
 
                 case "S_SYSTEM_MESSAGE":
-                    #region SYSTEM MESSAGE
                     sysMsgProcessor.ParseSystemMessage(data);
-                    //#region DUNGEON ENGAGED
-                    ///*dungeon engaged*/
-                    //if (data.Contains("40003200320031003400"))
-                    //{
-                    //    wCforEngage = data;
-                    //    wCforEngage = wCforEngage.Substring(120);
-                    //    //setEngagedDung();
-                    //    newEngDung();
-                    //} 
-                    //#endregion
-                    //#region VANGUARD QUEST COMPLETED
-                    ///*vanguard completed*/
-                    //else if (data.Contains("0B0071007500650073007400540065006D0070006C0061007400650049006400"))
-                    //{
-                    //    wCforVanguardCompleted = data;
-                    //    wCforVanguardCompleted = wCforVanguardCompleted.Substring(100);
-                    //    setCompletedVanguard();
-                    //} 
-                    //#endregion
-                    //#region LAUREL
-                    ///*earned laurel*/
-                    //else if (data.Contains("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"))
-                    //{
-                    //    wCforEarnedLaurel = data;
-                    //    //updateLaurel();
-                    //}
-                    //#endregion
                     break;
-                #endregion
 
                 case "S_VISIT_NEW_SECTION":
-                    #region SECTION
                     NewSection(data);
                     break;
-                #endregion
 
                 case "S_UPDATE_NPCGUILD":
-                    #region CREDITS UPDATE
                     wCforUpdatedCreditsAfterPurchase = data;
                     UpdateVanguardCredits();
                     break;
-                #endregion
 
-                #region CCB
                 case "S_ABNORMALITY_BEGIN":
-                    #region CCB START
                     crystalbindProcessor.ParseNewBuff(data, currentCharId);
+                    nocteniumProcessor.ParseBegin(data, currentCharId);
                     break;
-                #endregion
+
                 case "S_ABNORMALITY_END":
-                    #region CCB END
                     crystalbindProcessor.ParseEndingBuff(data, currentCharId);
+                    nocteniumProcessor.ParseEnd(data, currentCharId);
                     break;
-                #endregion
+
                 case "S_CLEAR_ALL_HOLDED_ABNORMALITY":
-                    #region CCB HOLD
                     crystalbindProcessor.CancelDeletion();
                     break;
-                #endregion
-                #endregion
 
                 case "S_LOGIN_ACCOUNT_INFO":
                     accountLoginProcessor.ParseLoginInfo(data);
@@ -220,33 +169,36 @@ namespace TCTParser
                 case "S_FINISH_GUILD_QUEST":
                     Tera.UI.UpdateLog("Guild quest completed.");
                     break;
+
                 case "S_START_GUILD_QUEST":
                     guildQuestListProcessor.TakeQuest(data);
                     Tera.UI.UpdateLog("Guild quest accepted.");
                     break;
+
                 case "S_VIEW_WARE_EX":
                     if (bankProcessor.IsOpenAction(data) == true && bankProcessor.GetBankType(data) == 1)
                     {
                         UI.UpdateLog("Received bank data: " + bankProcessor.GetGoldAmount(data).ToString() + " banked gold.");
                         /*
                          * add saving to file with timestamp
-                         *
-                         *
                          */
                     }
                     break;
+
                 case "S_USER_STATUS":
                     if(combatParser.GetUserId(data) == currentCharId)
                     {
                         combatParser.SetUserStatus(data);
                     }
                     break;
+
                 default:
                     break;
             }
 
         }
-        /*new methods*/
+
+        //Methods
         public static Tera.Character CurrentChar()
         {
             return TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name == currentCharName))];
@@ -399,23 +351,11 @@ namespace TCTParser
             }
         }
 
+        //to be refactored
+        const int VANGUARD_REP_ID = 609;
+        private static string wCforDungeons;
+        private static string wCforUpdatedCreditsAfterPurchase;
 
-        /*to refactor*/
-        private static void updateLaurel()
-        {
-            //string tmp = wCforEarnedLaurel;
-            //var _chName = tmp.Substring(56, tmp.IndexOf("0B00670072006100640065000B00400041006300680069006500760065006D0065006E0074004700720061006400650049006E0066006F003A00"));
-            //var chName = StringUtils.GetStringFromHex(_chName, 0,"0B00");
-
-            //if (currentCharName == chName)
-            //{
-            //    int laurId = Convert.ToInt32(tmp.Substring(200,2)) - 30;
-            //    TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(currentCharName)))].Laurel = ((Laurel)laurId).ToString();
-            //    Tera.UI.UpdateLog(currentCharName + " earned a " + ((Laurel)laurId).ToString() + " laurel.");
-
-            //}
-
-        }
         private static void UpdateVanguardCredits()
         {
             string _repId = wCforUpdatedCreditsAfterPurchase.Substring(40, 4);
@@ -451,132 +391,8 @@ namespace TCTParser
                 }
             }
         }
-        private static void setCompletedVanguard()
-        {
-            //if (wCforVanguardCompleted.Substring(wCforVanguardCompleted.Length - 8 ,2) =="32") {
-            //    StringBuilder sb0 = new StringBuilder();
-            //    for (int i = 0; i < 24; i = i + 2)
-            //    {
-            //        sb0.Append(wCforVanguardCompleted[i]);
-            //        sb0.Append(wCforVanguardCompleted[i + 1]);
-            //    }
-            //    sb0.Replace("00", "");
-
-            //    var questIdAsByteArray = StringUtils.StringToByteArray(sb0.ToString());
-            //    var questIdAsString = Encoding.UTF7.GetString(questIdAsByteArray);
-
-            //    var groupId = questIdAsString.Substring(0, 4);
-            //    var questId = questIdAsString.Substring(4);
-            //    if(questId.Length > 1 && questId[0] == '0') { questId = questId[1].ToString(); }
-            //    var query = from Quest in TeraLogic.DailyPlayGuideQuest.Descendants("Quest")
-            //                where Quest.Attribute("id").Value.Equals(questId) &&
-            //                      Quest.Attribute("groupId").Value.Equals(groupId)
-            //                select Quest;
-
-            //    if(query.Count() >= 1)
-            //    {
-            //        var nameId = query.First().Attribute("name").Value.Substring(21);
-            //        var correctedQuestId = questId;
-            //        if (correctedQuestId.Length < 2)
-            //        {
-            //            correctedQuestId = 0 + correctedQuestId;
-            //        }
-            //        XElement s = Tera.TeraLogic.EventMatching.Descendants().Where(x => (string)x.Attribute("questId") == groupId + correctedQuestId).FirstOrDefault();
-            //        var d = s.Descendants().Where(x => (string)x.Attribute("type") == "reputationPoint").FirstOrDefault();
-
-            //        if (d != null)
-            //        {
-
-            //            int addedCredits = 0;
-            //            Int32.TryParse(d.Attribute("amount").Value, out addedCredits);
-            //            addedCredits = addedCredits * 2;
-
-            //            Tera.TeraLogic.CharList.Find(ch => ch.Name.Equals(currentCharName)).Credits += addedCredits;
 
 
-
-            //            XElement t = TeraLogic.StrSheet_DailyPlayGuideQuest.Descendants().Where(x => (string)x.Attribute("id") == nameId).FirstOrDefault();
-            //            if (t != null)
-            //            {
-            //                var questname = t.Attribute("string").Value;
-            //                Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing \"" + questname + "\".");
-            //                TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing " + questname + ".", NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100),true);
-            //            }
-
-            //            else
-            //            {
-            //                Tera.UI.UpdateLog(currentCharName + " > earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")");
-            //                TCTNotifier.NotificationProvider.SendNotification("Earned " + addedCredits.ToString() + " Vanguard credits for completing a quest. (ID: " + nameId + ")", NotificationType.Credits, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true);
-            //            }
-            //        }
-            //    }
-            //}            
-        }
-        //private static void setEngagedDung()
-        //{
-        //    try
-        //    {
-        //        StringBuilder sb0 = new StringBuilder();
-        //        for (int i = 0; i < wCforEngage.Length; i = i + 2)
-        //        {
-        //            sb0.Append(wCforEngage[i]);
-        //            sb0.Append(wCforEngage[i + 1]);
-        //        }
-        //        sb0.Replace("00", "");
-        //        var decIndexAsByteArray = TCTSniffer.StringUtils.StringToByteArray(sb0.ToString());
-        //        var decIndexAsString = Encoding.UTF7.GetString(decIndexAsByteArray);
-        //        int decIndex = 0;
-        //        Int32.TryParse(decIndexAsString, out decIndex);
-
-        //        //string hexIndex = decIndex.ToString("X");
-        //        //StringBuilder sb = new StringBuilder();
-        //        //sb.Append(hexIndex[2]);
-        //        //sb.Append(hexIndex[3]);
-        //        //sb.Append(hexIndex[0]);
-        //        //sb.Append(hexIndex[1]);
-        //        if (TeraLogic.DungList.Find(x => x.Id == decIndex) != null)
-        //        {
-        //            Tera.UI.UpdateLog(currentCharName + " > " + Tera.TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
-        //            TCTNotifier.NotificationProvider.NS.sendNotification(TeraLogic.DungList.Find(x => x.Hex.Equals(sb.ToString())).FullName + " engaged.");
-
-        //            Tera.TeraLogic.CharList.Find(
-        //                x => x.Name.Equals(currentCharName)
-        //                ).Dungeons.Find(
-        //                d => d.Name.Equals(TeraLogic.DungList.Find(
-        //                    dg => dg.Id ==decIndex))
-        //                    ).ShortName
-        //                )).Runs--;
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-
-        //        Console.WriteLine(e.ToString());
-        //    }
-        //}
-        private static void newEngDung()
-        {
-            //string stringId = StringUtils.GetStringFromHex(wCforEngage, 0, "0000");
-            //int id = 0;
-            //Int32.TryParse(stringId, out id);
-
-            //XElement dgNameEl = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
-
-            //if(dgNameEl != null)
-            //{
-            //    string dgName = dgNameEl.Attribute("string").Value;
-            //    Tera.UI.UpdateLog(currentCharName + " > " + dgName + " engaged.");
-            //    TCTNotifier.NotificationProvider.SendNotification(dgName + " engaged.");
-            //    try
-            //    {
-            //        CurrentChar().Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == id).ShortName)).Runs--;
-            //    }
-            //    catch
-            //    {
-            //        Tera.UI.UpdateLog("Dungeon not found. Can't subtract run from entry counter.");
-            //    }
-            //}
-        }
         private static void setDungs()
         {
             var temp = wCforDungeons.Substring(24);

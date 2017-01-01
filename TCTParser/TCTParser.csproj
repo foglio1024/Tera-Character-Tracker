@@ -64,6 +64,7 @@
     <Compile Include="Processors\CrystalbindProcessor.cs" />
     <Compile Include="Processors\GuildQuestListProcessor.cs" />
     <Compile Include="Processors\InventoryProcessor.cs" />
+    <Compile Include="Processors\NocteniumProcessor.cs" />
     <Compile Include="Processors\SectionProcessor.cs" />
     <Compile Include="Processors\SystemMessageProcessor.cs" />
     <Compile Include="Processors\VanguardWindowProcessor.cs" />

@@ -12,6 +12,8 @@ namespace TCTParser.Processors
         const int ID_LENGHT = 6 * 2;
         const int STATUS_OFFSET = 12 * 2;
 
+        public bool IsInCombat { get; private set; }
+
         public string GetUserId(string p)
         {
             return p.Substring(ID_OFFSET, ID_LENGHT);
@@ -20,8 +22,8 @@ namespace TCTParser.Processors
         public void SetUserStatus(string p)
         {
             if (p.Substring(STATUS_OFFSET + 1, 1) == "0")
-                DataParser.isInCombat = false;
-            else DataParser.isInCombat = true;
+                IsInCombat = false;
+            else IsInCombat = true;
         }
     }
 
