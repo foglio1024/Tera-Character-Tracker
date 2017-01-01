@@ -56,6 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataParser.cs" />
+    <Compile Include="Processors\AccountLoginProcessor.cs" />
+    <Compile Include="Processors\BankProcessor.cs" />
+    <Compile Include="Processors\CharListProcessor.cs" />
+    <Compile Include="Processors\CharLoginProcessor.cs" />
+    <Compile Include="Processors\CombatProcessor.cs" />
+    <Compile Include="Processors\CrystalbindProcessor.cs" />
+    <Compile Include="Processors\GuildQuestListProcessor.cs" />
+    <Compile Include="Processors\InventoryProcessor.cs" />
+    <Compile Include="Processors\SectionProcessor.cs" />
+    <Compile Include="Processors\SystemMessageProcessor.cs" />
+    <Compile Include="Processors\VanguardWindowProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
