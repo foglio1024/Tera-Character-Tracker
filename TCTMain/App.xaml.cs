@@ -67,6 +67,7 @@ namespace TCTMain
                 Tera.TeraLogic.LoadTeraDB();
                 Tera.TeraLogic.LoadAccounts();
                 Tera.TeraLogic.LoadCharacters();
+                Tera.TeraLogic.SortChars();
                 Tera.TeraLogic.LoadDungeons();
 
                 if (Tera.TeraLogic.CharList != null && Tera.TeraLogic.DungList != null)

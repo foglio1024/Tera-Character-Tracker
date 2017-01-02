@@ -6,16 +6,22 @@
              xmlns:local="clr-namespace:TCTNotifier"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
-    <Grid x:Name="grid" Height="60" VerticalAlignment="Center" SnapsToDevicePixels="True" Background="#d1000000" HorizontalAlignment="Right" Width="60" Margin="0,0,0,0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Ellipse x:Name="icon" Width="50" Height="50" Stroke="Gray" StrokeThickness="3" SnapsToDevicePixels="True" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Grid Width="21" Height="21" Margin="3" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Ellipse Fill="#FF007BCE"/>
-            <TextBlock Name="amountTB" Foreground="#ffffffff" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping="NoWrap" FontSize="12" TextAlignment="Center">100</TextBlock>
-        </Grid>
 
+    <Grid x:Name="grid" Height="Auto" Width="Auto"  VerticalAlignment="Center" SnapsToDevicePixels="True" Background="#FF3E3D3D" HorizontalAlignment="Right" Margin="0,0,0,0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Ellipse x:Name="icon" Grid.Row="0" Width="40" Height="40" Margin="6,6,6,4" Fill="Gray"  SnapsToDevicePixels="True" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.RowSpan="1"/>
+            <Grid Grid.Row="1" Background="#d1000000" Height="20">
+                <TextBlock Name="amountTB" Foreground="#fff2f2f2" Text="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,2" TextWrapping="NoWrap" FontSize="12" TextAlignment="Center" Height="16" Width="19"/>
+            </Grid>
+            
+            <Border Name="border" Grid.Row="1" BorderBrush="#ff909090" BorderThickness="0,0,0,2" Grid.Column="1" Grid.ColumnSpan="1" Margin="0"/>
+        </Grid>
 
     </Grid>
 

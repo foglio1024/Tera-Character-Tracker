@@ -71,8 +71,6 @@ namespace Tera
         public static List<XDocument> StrSheet_Item_List;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
 
-        public static List<uint> RiskList { get; } = new List<uint> { 9769, 9029, 9067, 9768, 9969, 9770, 9916, 9068, 9970, 9950 };
-
         public static void AddCharacter(Character c)
         {
             bool found = false;
@@ -88,6 +86,7 @@ namespace Tera
                     cl.LocationId = c.LocationId;
                     cl.LastOnline = c.LastOnline;
                     cl.AccountId = c.AccountId;
+                    cl.Position = c.Position;
 
                     break;
                 }
@@ -361,6 +360,29 @@ namespace Tera
             }
 
         }
+        public static void SortChars()
+        {
+            var sortedList = new List<Character>();
+            foreach (var account in AccountList)
+            {
+                var list = new List<Character>();
+                foreach (var character in CharList)
+                {
+                    if(character.AccountId == account.Id)
+                    {
+                        list.Add(character);
+                    }
+                }
+                list.Sort();
+                foreach (var item in list)
+                {
+                    sortedList.Add(item);
+                    Console.WriteLine(item.Name + " " + item.Position);
+                }
+            }
+            CharList = sortedList;
+        }
+
 
     #region File Management
         public static void SaveCharacters(bool log)

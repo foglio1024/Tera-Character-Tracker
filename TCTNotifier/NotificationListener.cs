@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -47,12 +48,15 @@ namespace TCTNotifier
 
                         }
 
+                        var vertical_offset = SystemParameters.FullPrimaryScreenHeight * .6;
+
                         switch (n.Type)
                         {
                             case TCTData.Enums.NotificationType.Standard:
                                 var sn = new StandardNotification()
                                 {
-                                    Margin = new System.Windows.Thickness(0, 0, 0, 0)
+                                    VerticalAlignment = VerticalAlignment.Top,
+                                    Margin = new System.Windows.Thickness(0, vertical_offset, 0, 0)
                                 };
                                 sn.txt.Text = n.Content;
                                 sn.glowColor = n.Color;
@@ -63,11 +67,13 @@ namespace TCTNotifier
                             case TCTData.Enums.NotificationType.Counter:
                                 var cn = new CounterNotification()
                                 {
-                                    Margin = new System.Windows.Thickness(0, 0, 0, 0)
+                                    VerticalAlignment = VerticalAlignment.Top,
+                                    Margin = new System.Windows.Thickness(0, vertical_offset, 0, 0)
                                 };
                                 cn.amountTB.Text = n.Content;
-                                cn.icon.Stroke = new SolidColorBrush(n.Color);
+                                //cn.icon.Stroke = new SolidColorBrush(n.Color);
                                 cn.icon.Fill = imgB;
+                                cn.border.BorderBrush = new SolidColorBrush(n.Color);
                                 NotificationProvider.NotificationDeployer.NotificationHolder.Children.Add(cn);
                                 break;
 

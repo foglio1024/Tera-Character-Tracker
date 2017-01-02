@@ -419,7 +419,16 @@ namespace Tera
 
         public int CompareTo(object obj)
         {
-            return Position.CompareTo(obj);
+            Character other = (Character)obj;
+            if (this.Position > other.Position)
+            {
+                return 1;
+            }
+            else if (this.Position < other.Position)
+            {
+                return -1;
+            }
+            else return 0;
         }
     }
 

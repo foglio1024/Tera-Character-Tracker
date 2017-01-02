@@ -250,7 +250,6 @@ namespace TCTParser
             bool marks = false;
             bool gft = false;
             bool scales = false;
-            UI.SendNotification(newMarks.ToString(), NotificationImage.Marks, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
 
             if (CurrentChar().MarksOfValor != newMarks)
             {
@@ -262,26 +261,40 @@ namespace TCTParser
                     UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
                     UI.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationImage.Marks, NotificationType.Standard, Colors.Orange, true, true, false);
                 }
+                else
+                {
+                    UI.SendNotification(newMarks.ToString(), NotificationImage.Marks, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
+                }
             }
 
             if (CurrentChar().GoldfingerTokens != newGoldfinger)
             {
                 gft = true;
                 CurrentChar().GoldfingerTokens = newGoldfinger;
+
                 if (CurrentChar().GoldfingerTokens >= 80)
                 {
                     Tera.UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
                     UI.SendNotification("You have " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true, false);
+                }
+                else
+                {
+                    UI.SendNotification(newGoldfinger.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
                 }
             }
             if (CurrentChar().DragonwingScales != newDragonScales)
             {
                 scales = true;
                 CurrentChar().DragonwingScales = newDragonScales;
+
                 if (CurrentChar().DragonwingScales >= 50)
                 {
                     Tera.UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
                     UI.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                }
+                else
+                {
+                    UI.SendNotification(newDragonScales.ToString(), NotificationImage.Scales, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
                 }
             }
             inventoryProcessor.Clear();
@@ -397,7 +410,6 @@ namespace TCTParser
                 }
             }
         }
-
         private static void setDungs()
         {
             var temp = wCforDungeons.Substring(24);

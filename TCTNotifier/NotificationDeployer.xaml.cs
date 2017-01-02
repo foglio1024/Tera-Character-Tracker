@@ -77,7 +77,7 @@ namespace TCTNotifier
             this.Dispatcher.Invoke(() =>
             {
                 ThicknessAnimationUsingKeyFrames close = new ThicknessAnimationUsingKeyFrames();
-                close.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(StartingThickness), TimeSpan.FromMilliseconds(300), new KeySpline(.5, 0, .3, 1)));
+                close.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(StartingThickness,0,0,0), TimeSpan.FromMilliseconds(300), new KeySpline(.5, 0, .3, 1)));
                 close.Completed += (s, o) =>
                 {
                     NotificationHolder.BeginAnimation(Grid.MarginProperty, null);

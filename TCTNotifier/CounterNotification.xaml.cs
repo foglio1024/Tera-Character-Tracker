@@ -28,20 +28,25 @@ namespace TCTNotifier
             InitializeComponent();
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            OpeningTimer = new Timer(3350);
-            OpeningTimer.Elapsed += new ElapsedEventHandler(EndNotification);
-            OpeningTimer.Enabled = true;
-        }
-        
+
         private void EndNotification(object sender, ElapsedEventArgs ev)
         {
             OpeningTimer.Stop();
             NotificationProvider.NotificationDeployer.CloseAnim();
         }
-
+        public Color glowColor;
+        public int OldVal { get; set; } = 55;
+        public int NewVal { get; set; } = 70;
+        public int MaxVal { get; set; } = 100;
         static System.Timers.Timer OpeningTimer;
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            OpeningTimer = new Timer(3500);
+            OpeningTimer.Elapsed += new ElapsedEventHandler(EndNotification);
+            OpeningTimer.Enabled = true;
+        }
+
         
     }
 }

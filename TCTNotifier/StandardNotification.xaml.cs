@@ -39,8 +39,6 @@ namespace TCTNotifier
             OpeningTimer.Elapsed += new ElapsedEventHandler(SweepArc);
             OpeningTimer.Enabled = true;
         }
-
-
         void SweepEnded(object sender, ElapsedEventArgs ev)
         {
             timer.Stop();
@@ -50,7 +48,6 @@ namespace TCTNotifier
                 arc.BeginAnimation(Arc.EndAngleProperty, null);
             });
         }
-        
         void SweepArc(object sender, ElapsedEventArgs ev)
         {
             OpeningTimer.Stop();

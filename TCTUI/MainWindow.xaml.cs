@@ -532,6 +532,16 @@ namespace Tera
         {
             (sender as System.Windows.Controls.Image).BeginAnimation(OpacityProperty, BarButtonFadeOut);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, UI.Colors.FadedAccentColor, true, false, true);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Standard, UI.Colors.SolidAccentColor, true, false, false);
+        }
     }
 
 }
