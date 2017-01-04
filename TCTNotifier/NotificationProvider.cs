@@ -36,6 +36,8 @@ namespace TCTNotifier
         internal static NotificationDeployer NotificationDeployer = new NotificationDeployer();
         internal static List<NotificationInfo> deliveredNotifications = new List<NotificationInfo>();
 
+        internal static double VerticalOffset { get; set; } = SystemParameters.FullPrimaryScreenHeight * .4;
+
         static void AddNotification(string _content, NotificationImage _img, NotificationType type, Color col, bool rep, bool snd, bool right)
         {
             var n = new NotificationInfo(_content, _img, type, col, rep, snd, right);

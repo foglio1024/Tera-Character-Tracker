@@ -227,9 +227,6 @@ namespace TCTParser
             Tera.UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
 
             TeraLogic.cvcp.SelectedChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-            CurrentChar().GoldfingerTokens = 0;
-            CurrentChar().MarksOfValor = 0;
-            //TCTNotifier.NotificationProvider.NS.sendNotification(currentCharName + " logged in.");
         }
         private static void SetTokens(bool forceLog)
         {
@@ -254,6 +251,8 @@ namespace TCTParser
             if (CurrentChar().MarksOfValor != newMarks)
             {
                 marks = true;
+                var col = GetColor(CurrentChar().MarksOfValor, newMarks);
+
                 CurrentChar().MarksOfValor = newMarks;
 
                 if (CurrentChar().MarksOfValor > 82)
@@ -263,13 +262,15 @@ namespace TCTParser
                 }
                 else
                 {
-                    UI.SendNotification(newMarks.ToString(), NotificationImage.Marks, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
+                    UI.SendNotification(newMarks.ToString(), NotificationImage.Marks, NotificationType.Counter, col, true, false, true);
                 }
             }
 
             if (CurrentChar().GoldfingerTokens != newGoldfinger)
             {
                 gft = true;
+                var col = GetColor(CurrentChar().GoldfingerTokens, newGoldfinger);
+
                 CurrentChar().GoldfingerTokens = newGoldfinger;
 
                 if (CurrentChar().GoldfingerTokens >= 80)
@@ -279,12 +280,14 @@ namespace TCTParser
                 }
                 else
                 {
-                    UI.SendNotification(newGoldfinger.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
+                    UI.SendNotification(newGoldfinger.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, col, true, false, true);
                 }
             }
             if (CurrentChar().DragonwingScales != newDragonScales)
             {
                 scales = true;
+                var col = GetColor(CurrentChar().DragonwingScales, newDragonScales);
+
                 CurrentChar().DragonwingScales = newDragonScales;
 
                 if (CurrentChar().DragonwingScales >= 50)
@@ -294,7 +297,7 @@ namespace TCTParser
                 }
                 else
                 {
-                    UI.SendNotification(newDragonScales.ToString(), NotificationImage.Scales, NotificationType.Counter, UI.Colors.SolidGreen, true, false, true);
+                    UI.SendNotification(newDragonScales.ToString(), NotificationImage.Scales, NotificationType.Counter, col, true, false, true);
                 }
             }
             inventoryProcessor.Clear();
@@ -305,6 +308,18 @@ namespace TCTParser
             }
 
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+
+            System.Windows.Media.Color GetColor(int oldVal, int newVal)
+            {
+                if(oldVal > newVal)
+                {
+                    return UI.Colors.SolidRed;
+                }
+                else
+                {
+                    return UI.Colors.SolidGreen;
+                }
+            }
         }
         private static void SetVanguardData(string p, bool forceLog)
         {

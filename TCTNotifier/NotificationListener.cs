@@ -48,7 +48,6 @@ namespace TCTNotifier
 
                         }
 
-                        var vertical_offset = SystemParameters.FullPrimaryScreenHeight * .6;
 
                         switch (n.Type)
                         {
@@ -56,7 +55,7 @@ namespace TCTNotifier
                                 var sn = new StandardNotification()
                                 {
                                     VerticalAlignment = VerticalAlignment.Top,
-                                    Margin = new System.Windows.Thickness(0, vertical_offset, 0, 0)
+                                    Margin = new System.Windows.Thickness(0, NotificationProvider.VerticalOffset, 0, 0)
                                 };
                                 sn.txt.Text = n.Content;
                                 sn.glowColor = n.Color;
@@ -68,7 +67,7 @@ namespace TCTNotifier
                                 var cn = new CounterNotification()
                                 {
                                     VerticalAlignment = VerticalAlignment.Top,
-                                    Margin = new System.Windows.Thickness(0, vertical_offset, 0, 0)
+                                    Margin = new System.Windows.Thickness(0, NotificationProvider.VerticalOffset, 0, 0)
                                 };
                                 cn.amountTB.Text = n.Content;
                                 //cn.icon.Stroke = new SolidColorBrush(n.Color);
