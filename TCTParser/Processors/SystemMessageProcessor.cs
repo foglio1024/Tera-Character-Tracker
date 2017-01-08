@@ -29,7 +29,8 @@ namespace TCTParser.Processors
             {
                 s = StringUtils.GetStringFromHex(p, ID_OFFSET, "0000");
             }
-            Int32.TryParse(s, out int id);
+            int id = 0;
+            Int32.TryParse(s, out id);
 
             switch (id)
             {
@@ -46,7 +47,8 @@ namespace TCTParser.Processors
         }
         private void EngageDungeon(string p)
         {
-            UInt32.TryParse(StringUtils.GetStringFromHex(p, DUNGEON_ID_OFFSET, "0000"), out uint dungId);
+            uint dungId = 0;
+            UInt32.TryParse(StringUtils.GetStringFromHex(p, DUNGEON_ID_OFFSET, "0000"), out dungId);
             XElement t = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dungId.ToString()).FirstOrDefault();
 
             var dgName = t.Attribute("string").Value;

@@ -309,16 +309,16 @@ namespace TCTParser
 
             CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
-            System.Windows.Media.Color GetColor(int oldVal, int newVal)
+        }
+        static System.Windows.Media.Color GetColor(int oldVal, int newVal)
+        {
+            if (oldVal > newVal)
             {
-                if(oldVal > newVal)
-                {
-                    return UI.Colors.SolidRed;
-                }
-                else
-                {
-                    return UI.Colors.SolidGreen;
-                }
+                return UI.Colors.SolidRed;
+            }
+            else
+            {
+                return UI.Colors.SolidGreen;
             }
         }
         private static void SetVanguardData(string p, bool forceLog)

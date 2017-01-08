@@ -37,7 +37,8 @@ namespace TCTNotifier
 
                         try
                         {
-                            NotificationProvider.imagesDictionary.TryGetValue(n.Image, out string val);
+                            string val = "";
+                            NotificationProvider.imagesDictionary.TryGetValue(n.Image, out val);
                             imgB.ImageSource = new BitmapImage(new Uri("pack://application:,,,/resources/notifier_images/" + val + ".png", UriKind.RelativeOrAbsolute));
                         }
 
