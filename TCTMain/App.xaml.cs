@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -21,6 +23,19 @@ namespace TCTMain
     public partial class App : Application
     {
         static string version = "v"+Assembly.GetExecutingAssembly().GetName().Version.Major+"."+Assembly.GetExecutingAssembly().GetName().Version.Minor;
+
+        class Version
+        {
+            public int Primary { get; set; }
+            public int Secondary { get; set; }
+
+            public Version(int p, int s)
+            {
+                Primary = p;
+                Secondary = s;
+            }
+        }
+
         public class Threads
         {
             public static void NetThread()
@@ -113,13 +128,62 @@ namespace TCTMain
             }
         }
 
+        static void CheckForUpdates()
+        {
+            var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.Major, Assembly.GetExecutingAssembly().GetName().Version.Minor);
+
+            string newVersionAsString = "";
+            using (var client = new WebClient())
+            {
+                client.DownloadFile("http://tct.000webhostapp.com/tct-ver.txt", "tct-last-ver");
+            }
+            using (StreamReader sr = new StreamReader("tct-last-ver"))
+            {
+                newVersionAsString = sr.ReadToEnd();
+            }
+            var newVersion = new Version(Convert.ToInt32(newVersionAsString.Split('.')[0]), Convert.ToInt32(newVersionAsString.Split('.')[1]));
+
+            if (currentVersion.Primary == newVersion.Primary)
+            {
+                if (currentVersion.Secondary == newVersion.Secondary)
+                {
+                    //Do nothing                  
+                }
+                else if (currentVersion.Secondary < newVersion.Secondary)
+                {
+                    AskForUpdate();
+                }
+            }
+            else if (currentVersion.Primary < newVersion.Primary)
+            {
+                AskForUpdate();
+            }
+        }
+        static void AskForUpdate()
+        {
+            var result = System.Windows.MessageBox.Show("New version available. Do you want to update?", "Confirmation", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                Process.Start("TCTUpdater.exe");
+                Environment.Exit(0);
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                //do nothing
+            }
+
+        }
+
         [STAThread]
         public static void Main()
         {
 
             AppStartup();
             DeleteOldExe();
-            /*load settings*/
+
+            CheckForUpdates();
+
+            //load settings
             Tera.TeraLogic.LoadSettings();
             Tera.TeraLogic.ResetCheck();
 

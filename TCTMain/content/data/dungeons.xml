@@ -3,27 +3,29 @@
     <Dungeon ShortName="KC"  MaxBaseRuns="2" Tier="Tier2" Id="9860" />
     <Dungeon ShortName="CW"  MaxBaseRuns="2" Tier="Tier2" Id="9777" />
     <Dungeon ShortName="DFN" MaxBaseRuns="2" Tier="Tier2" Id="9767" />
-    <Dungeon ShortName="LKN" MaxBaseRuns="2" Tier="Tier3" Id="9769"/>
-    <Dungeon ShortName="CA"  MaxBaseRuns="2" Tier="Solo" Id="9830" />
-    <Dungeon ShortName="GL"  MaxBaseRuns="2" Tier="Solo" Id="9032" />
-    <Dungeon ShortName="AH"  MaxBaseRuns="2" Tier="Solo" Id="9031" />
-    <Dungeon ShortName="EA"  MaxBaseRuns="2" Tier="Solo" Id="9069" />
-    <Dungeon ShortName="GG"  MaxBaseRuns="2" Tier="Solo" Id="9713" />
-    <Dungeon ShortName="VoK" MaxBaseRuns="2" Tier="Tier3" Id="9029"/>
+<!--<Dungeon ShortName="BRN" MaxBaseRuns="?" Tier="Tier2" Id="????" />-->
+    <Dungeon ShortName="LKN" MaxBaseRuns="2" Tier="Tier3" Id="9769" />
+    <Dungeon ShortName="CA"  MaxBaseRuns="2" Tier="Solo"  Id="9830" />
+    <Dungeon ShortName="GL"  MaxBaseRuns="2" Tier="Solo"  Id="9032" />
+    <Dungeon ShortName="AH"  MaxBaseRuns="2" Tier="Solo"  Id="9031" />
+    <Dungeon ShortName="EA"  MaxBaseRuns="2" Tier="Solo"  Id="9069" />
+    <Dungeon ShortName="GG"  MaxBaseRuns="2" Tier="Solo"  Id="9713" />
+    <Dungeon ShortName="VoK" MaxBaseRuns="2" Tier="Tier3" Id="9029" />
 <!--<Dungeon ShortName="ABN" MaxBaseRuns="2" Tier="Tier2" Id="9511" />-->
-<!--<Dungeon ShortName="KDH" MaxBaseRuns="2" Tier="Tier3" Id="9060" />
-    <Dungeon ShortName="TS"  MaxBaseRuns="2" Tier="Tier3" Id="9756" />
-    <Dungeon ShortName="FI"  MaxBaseRuns="2" Tier="Tier3" Id="9059"/>
-    <Dungeon ShortName="WH"  MaxBaseRuns="1" Tier="Tier3" Id="9643" />-->
+<!--<Dungeon ShortName="KDH" MaxBaseRuns="2" Tier="Tier3" Id="9060" />-->
+<!--<Dungeon ShortName="TS"  MaxBaseRuns="2" Tier="Tier3" Id="9756" />-->
+<!--<Dungeon ShortName="FI"  MaxBaseRuns="2" Tier="Tier3" Id="9059" />-->
+<!--<Dungeon ShortName="WH"  MaxBaseRuns="1" Tier="Tier3" Id="9643" />-->
     <Dungeon ShortName="DFH" MaxBaseRuns="2" Tier="Tier3" Id="9067" />
     <Dungeon ShortName="SSN" MaxBaseRuns="2" Tier="Tier3" Id="9768" />
-    <Dungeon ShortName="LKH" MaxBaseRuns="1" Tier="Tier4" Id="9969"/>
+    <Dungeon ShortName="LKH" MaxBaseRuns="1" Tier="Tier4" Id="9969" />
 <!--<Dungeon ShortName="ABH" MaxBaseRuns="1" Tier="Tier4" Id="9611" />-->
-    <Dungeon ShortName="RMN" MaxBaseRuns="1" Tier="Tier4" Id="9770"/>
-    <Dungeon ShortName="SCH" MaxBaseRuns="1" Tier="Tier4" Id="9916"/>
+    <Dungeon ShortName="RMN" MaxBaseRuns="1" Tier="Tier4" Id="9770" />
+    <Dungeon ShortName="SCH" MaxBaseRuns="1" Tier="Tier4" Id="9916" />
 <!--<Dungeon ShortName="MM"  MaxBaseRuns="2" Tier="Tier4" Id="9070" />-->
     <Dungeon ShortName="SSH" MaxBaseRuns="1" Tier="Tier4" Id="9068" />
-    <Dungeon ShortName="RMH" MaxBaseRuns="1" Tier="Tier5" Id="9970"/>
+<!--<Dungeon ShortName="TLP" MaxBaseRuns="1" Tier="Tier4" Id="????" />-->
+    <Dungeon ShortName="RMH" MaxBaseRuns="1" Tier="Tier5" Id="9970" />
 <!--<Dungeon ShortName="DS"  MaxBaseRuns="1" Tier="Tier3" Id="9885" />-->
-    <Dungeon ShortName="HH"  MaxBaseRuns="0" Tier="Tier5" Id="9950"/>
+    <Dungeon ShortName="HH"  MaxBaseRuns="0" Tier="Tier5" Id="9950" />
 </ArrayOfDungeon>
