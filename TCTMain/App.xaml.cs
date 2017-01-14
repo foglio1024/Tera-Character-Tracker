@@ -169,7 +169,7 @@ namespace TCTMain
             }
             else if (result == MessageBoxResult.No)
             {
-                //do nothing
+                File.Delete("tct-last-ver");
             }
 
         }
