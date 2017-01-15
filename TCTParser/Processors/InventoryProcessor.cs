@@ -36,7 +36,6 @@ namespace TCTParser.Processors
         public bool justLoggedIn = true;
         public string p1;
         public string p2;
-        public string inv;
 
         public void Clear()
         {
