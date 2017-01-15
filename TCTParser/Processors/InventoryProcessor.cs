@@ -18,9 +18,15 @@ namespace TCTParser.Processors
         const int MULTIPLE_FLAG = 25 * 2;
         const int HEADER_LENGHT = 61 * 2;
         const int ILVL_OFFSET = 35 * 2;
-        public const string MARK_ID = "5B500200";
-        public const string GFIN_ID = "36020000";
-        public const string SCALE_ID = "A2B10000";
+
+        public const int MARK_ID = 151643;
+        public const int GFIN_ID = 566;
+        public const int SCALE_ID = 45474;
+
+        public int MarksOfValor { get; private set; }
+        public int GoldfingerTokens { get; private set; }
+        public int DragonwingScales { get; private set; }
+
 
         List<string> itemStrings = new List<string>();
         List<int> indexesArray = new List<int>();
@@ -41,7 +47,8 @@ namespace TCTParser.Processors
             itemStrings.Clear();
             indexesArray.Clear();
         }
-        public void MergeInventory()
+
+        private void MergeInventory()
         {
             if (p2 != null)
             {
@@ -55,101 +62,29 @@ namespace TCTParser.Processors
                 fillItemList(p1);
             }
         }
-        public void FastMergeInventory()
+
+        public void ParseInventory()
         {
-            if (p2 != null)
-            {
-                inv = p1 + p2;
-                fillItemStrings(p1);
-                indexesArray.Clear();
-                fillItemStrings(p2);
-            }
-            else
-            {
-                inv = p1;
-                fillItemStrings(p1);
-            }
+            MergeInventory();
+            GetTokensAmounts();
         }
 
-        public int GetTokenAmountFast(string id)
+        private void GetTokensAmounts()
         {
-            int amount = 0;
-            foreach (string item in itemStrings)
+            if (itemsList.Find(x => x.Id == GFIN_ID) != null)
             {
-                if (item.Substring(16, 8) == id)
-                {
-                    amount = GetItemFastById(item, id);
-                }
-            }
-            return amount;
-        }
-
-        int GetMarks(string content)
-        {
-            fillItemList(content);
-            if (itemsList.Find(x => x.Name == "Elleon's Mark of Valor") != null)
-            {
-                return itemsList.Find(x => x.Name == "Elleon's Mark of Valor").Amount;
-            }
-            else return 0;
-
-
-        }
-        int GetGoldfinger(string content)
-        {
-            fillItemList(content);
-            if (itemsList.Find(x => x.Name == "Goldfinger Token") != null)
-            {
-                return itemsList.Find(x => x.Name == "Goldfinger Token").Amount;
-            }
-            else return 0;
-
-        }
-        int GetMarksFast(string content)
-        {
-            return GetItemFastById(content, MARK_ID);
-        }
-        int GetGoldfingerFast(string content)
-        {
-            return GetItemFastById(content, GFIN_ID);
-        }
-        int GetDragonwingScaleFast(string content)
-        {
-            return GetItemFastById(content, SCALE_ID);
-        }
-        int GetItemFastById(string content, string id)
-        {
-            if (content.Contains(id))
-            {
-                return StringUtils.Hex4BStringToInt(content.Substring(content.IndexOf(id) + AMOUNT_OFFSET_FROM_ID, 8));
-            }
-            else return 0;
-
-        }
-        public int[] GetTokensAmounts(string content)
-        {
-            int marks = 0;
-            int gft = 0;
-            int dragonwing = 0;
-
-
-            if (itemsList.Find(x => x.Name == "Goldfinger Token") != null)
-            {
-                gft = itemsList.Find(x => x.Name == "Goldfinger Token").Amount;
+                GoldfingerTokens = itemsList.Find(x => x.Id == GFIN_ID).Amount;
             }
 
-            if (itemsList.Find(x => x.Name == "Elleon's Mark of Valor") != null)
+            if (itemsList.Find(x => x.Id == MARK_ID) != null)
             {
-                marks = itemsList.Find(x => x.Name == "Elleon's Mark of Valor").Amount;
+                MarksOfValor = itemsList.Find(x => x.Id == MARK_ID).Amount;
             }
 
-            if (itemsList.Find(x => x.Name == "Dragonwing Scale") != null)
+            if (itemsList.Find(x => x.Id == SCALE_ID) != null)
             {
-                dragonwing = itemsList.Find(x => x.Name == "Dragonwing Scale").Amount;
-            }
-
-            int[] amount = { marks, gft, dragonwing };
-            return amount;
+                DragonwingScales = itemsList.Find(x => x.Id == SCALE_ID).Amount;
+            }       
         }
 
         public int GetItemLevel(string content)
@@ -193,31 +128,31 @@ namespace TCTParser.Processors
                 }
             }
         }
-        InventoryItem stringToItem(string s)
+        InventoryItem StringToItem(string s)
         {
             int itemId = StringUtils.Hex4BStringToInt(s.Substring(ID_OFFSET, 8));
             int amount = StringUtils.Hex4BStringToInt(s.Substring(AMOUNT_OFFSET, 8));
-            string name = "Unknown";
-            XElement e;
-            foreach (var doc in TeraLogic.StrSheet_Item_List)
-            {
-                e = doc.Descendants().Where(x => (string)x.Attribute("id") == itemId.ToString()).FirstOrDefault();
-                if (e != null)
-                {
-                    name = e.Attribute("string").Value;
-                    break;
-                }
-            }
+            //string name = "Unknown";
+            //XElement e;
+            //foreach (var doc in TeraLogic.StrSheet_Item_List)
+            //{
+            //    e = doc.Descendants().Where(x => (string)x.Attribute("id") == itemId.ToString()).FirstOrDefault();
+            //    if (e != null)
+            //    {
+            //        name = e.Attribute("string").Value;
+            //        break;
+            //    }
+            //}
 
 
-            return new InventoryItem(itemId, amount, name);
+            return new InventoryItem(itemId, amount);
         }
         void fillItemList(string content)
         {
             fillItemStrings(content);
             foreach (var str in itemStrings)
             {
-                itemsList.Add(stringToItem(str));
+                itemsList.Add(StringToItem(str));
             }
         }
         int readPointer(string content, int start)
@@ -225,21 +160,22 @@ namespace TCTParser.Processors
 
             return StringUtils.Hex2BStringToInt(content.Substring(start, 4));
         }
+
         class InventoryItem
         {
             public int Id { get; set; }
             public int Amount { get; set; }
-            public string Name { get; set; }
-            public InventoryItem(int _itemId, int _amount, string _name)
+            //public string Name { get; set; }
+            public InventoryItem(int _itemId, int _amount /*, string _name*/)
             {
                 Id = _itemId;
                 Amount = _amount;
-                Name = _name;
+                //Name = _name;
             }
 
             public override string ToString()
             {
-                return Name + " id:" + Id + " (" + Amount + ")";
+                return " id:" + Id + " (" + Amount + ")";
             }
         }
 
