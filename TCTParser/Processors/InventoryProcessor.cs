@@ -18,9 +18,11 @@ namespace TCTParser.Processors
         const int MULTIPLE_FLAG = 25 * 2;
         const int HEADER_LENGHT = 61 * 2;
         const int ILVL_OFFSET = 35 * 2;
-        public const string MARK_ID = "5B500200";
-        public const string GFIN_ID = "36020000";
-        public const string SCALE_ID = "A2B10000";
+
+        public const int MARK_ID = 151643;
+        public const int GFIN_ID = 566;
+        public const int SCALE_ID = 45474;
+
 
         List<string> itemStrings = new List<string>();
         List<int> indexesArray = new List<int>();
@@ -225,6 +227,7 @@ namespace TCTParser.Processors
 
             return StringUtils.Hex2BStringToInt(content.Substring(start, 4));
         }
+
         class InventoryItem
         {
             public int Id { get; set; }
