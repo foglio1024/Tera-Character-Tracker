@@ -230,19 +230,11 @@ namespace TCTParser
         }
         private static void SetTokens(bool forceLog)
         {
-            /*
-            inventoryProcessor.MergeInventory();
-            var tokens = inventoryProcessor.GetTokensAmounts(inventoryProcessor.inv);
 
-            var newMarks =         tokens[0]; //inventoryProcessor.GetMarksFast(inventoryProcessor.inv);
-            var newGoldfinger =    tokens[1]; //inventoryProcessor.GetGoldfingerFast(inventoryProcessor.inv);
-            var newDragonScales =  tokens[2]; //inventoryProcessor.GetDragonwingScaleFast(inventoryProcessor.inv);
-            */
-
-            inventoryProcessor.FastMergeInventory();
-            var newMarks = inventoryProcessor.GetTokenAmountFast(InventoryProcessor.MARK_ID);
-            var newGoldfinger = inventoryProcessor.GetTokenAmountFast(InventoryProcessor.GFIN_ID);
-            var newDragonScales = inventoryProcessor.GetTokenAmountFast(InventoryProcessor.SCALE_ID);
+            inventoryProcessor.ParseInventory();
+            var newMarks = inventoryProcessor.MarksOfValor;
+            var newGoldfinger = inventoryProcessor.GoldfingerTokens;
+            var newDragonScales = inventoryProcessor.DragonwingScales;
 
             bool marks = false;
             bool gft = false;
