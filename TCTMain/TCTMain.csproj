@@ -54,7 +54,7 @@
     <StartupObject>TCTMain.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>flat_icon.ico</ApplicationIcon>
+    <ApplicationIcon>tctlogo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -77,6 +77,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -165,6 +166,7 @@
     <Content Include="resources\notifier_images\connected.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="tctlogo.ico" />
     <Resource Include="flat_icon.ico" />
     <Resource Include="resources\bigLaurels\bronze.png" />
     <Resource Include="resources\bigLaurels\champion.png" />
@@ -174,7 +176,7 @@
     <Resource Include="resources\bigLaurels\silver.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\data\dungeons.xml">
+    <Content Include="content\tera_database\dungeons.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>

@@ -450,7 +450,7 @@ namespace Tera
         public static void LoadDungeons()
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Dungeon>));
-            FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/data/dungeons.xml", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(Environment.CurrentDirectory + "\\content/tera_database/dungeons.xml", FileMode.Open, FileAccess.Read);
             DungList = xs.Deserialize(fs) as List<Dungeon>;
             fs.Close();
 
@@ -548,7 +548,27 @@ namespace Tera
                 UI.UpdateLog("Settings saved.");
             }
         }
+        public static void LoadDatabases()
+        {
+            LoadTeraDB();
+            LoadAccounts();
+            LoadCharacters();
+            SortChars();
+            LoadDungeons();
 
+            if (CharList != null && DungList != null)
+            {
+                CheckDungeonsList();
+            }
+
+            LoadGuildsDB();
+
+            if (!GuildDictionary.ContainsKey(0))
+            {
+                GuildDictionary.Add(0, "No guild");
+            }
+
+        }
         public static void LoadSettings()
         {
             settings = new XDocument();

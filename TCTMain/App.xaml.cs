@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+using System.IO.Compression;
 using TCTSniffer;
 
 namespace TCTMain
@@ -77,27 +78,7 @@ namespace TCTMain
                     Environment.Exit(-1);
                 }
             }
-            public static void LoadDatabases()
-            {
-                Tera.TeraLogic.LoadTeraDB();
-                Tera.TeraLogic.LoadAccounts();
-                Tera.TeraLogic.LoadCharacters();
-                Tera.TeraLogic.SortChars();
-                Tera.TeraLogic.LoadDungeons();
 
-                if (Tera.TeraLogic.CharList != null && Tera.TeraLogic.DungList != null)
-                {
-                    Tera.TeraLogic.CheckDungeonsList(); 
-                }
-
-                Tera.TeraLogic.LoadGuildsDB();
-
-                if (!Tera.TeraLogic.GuildDictionary.ContainsKey(0))
-                {
-                    Tera.TeraLogic.GuildDictionary.Add(0, "No guild");
-                }
-
-            }
         }
             
 
@@ -164,6 +145,15 @@ namespace TCTMain
             var result = System.Windows.MessageBox.Show("New version available. Do you want to update?", "Confirmation", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
+                using (var client = new WebClient())
+                {
+                    client.DownloadFile("http://tct.000webhostapp.com/TCTUpdater.zip", "updater.zip");
+                }
+                if (File.Exists("TCTUpdater.exe"))
+                {
+                    File.Delete("TCTUpdater.exe");
+                }
+                ZipFile.ExtractToDirectory("updater.zip", Environment.CurrentDirectory);
                 Process.Start("TCTUpdater.exe");
                 Environment.Exit(0);
             }
@@ -178,21 +168,21 @@ namespace TCTMain
         public static void Main()
         {
 
+            CheckForUpdates();
             AppStartup();
             DeleteOldExe();
 
-            CheckForUpdates();
 
             //load settings
             Tera.TeraLogic.LoadSettings();
             Tera.TeraLogic.ResetCheck();
+            Tera.TeraLogic.LoadDatabases();
 
             Thread uiThread = new Thread(new ThreadStart(Threads.UIThread));
             Thread netThread = new Thread(new ThreadStart(Threads.NetThread));
 
             uiThread.SetApartmentState(ApartmentState.STA);
             netThread.SetApartmentState(ApartmentState.STA);
-            Threads.LoadDatabases();
             uiThread.Start();
             netThread.Start();
 

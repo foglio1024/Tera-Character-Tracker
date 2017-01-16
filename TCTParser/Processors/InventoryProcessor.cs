@@ -45,6 +45,9 @@ namespace TCTParser.Processors
             itemsList.Clear();
             itemStrings.Clear();
             indexesArray.Clear();
+            MarksOfValor = 0;
+            GoldfingerTokens = 0;
+            DragonwingScales = 0;
         }
 
         private void MergeInventory()
