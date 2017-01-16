@@ -12,7 +12,7 @@ using Tera.Converters;
 
 namespace TCTParser.Processors
 {
-    internal class GuildQuestListProcessor
+    internal class GuildQuestListProcessor : ListParser
     {
         const int QUEST_COUNT_OFFSET = 4 * 2;
         const int FIRST_ADDRESS_OFFSET = 6 * 2;
@@ -20,8 +20,8 @@ namespace TCTParser.Processors
 
         List<GuildQuest> QuestList = new List<GuildQuest>();
 
-        List<int> addressList = new List<int>();
-        List<string> questStringList = new List<string>();
+        //List<int> addressList = new List<int>();
+        //List<string> questStringList = new List<string>();
         string guildListPacket;
         internal QuestParser questParser;
 
@@ -31,16 +31,18 @@ namespace TCTParser.Processors
             {
                 questParser.Clear();
             }
-            addressList.Clear();
-            questStringList.Clear();
+            //addressList.Clear();
+            //questStringList.Clear();
             QuestList.Clear();
         }
         public void ParseGuildListPacket(string p)
         {
+            Console.WriteLine("Parsing guild quests...");
             Clear();
             questParser = new QuestParser(p);
             guildListPacket = p;
-            FillQuestStringList();
+            //FillQuestStringList();
+            List<string> questStringList = ParseList(p);
             foreach (var item in questStringList)
             {
                 if (questParser.GetQuestSize(item) == GetGuildSize() && questParser.GetZoneID(item) != 152)
@@ -48,44 +50,8 @@ namespace TCTParser.Processors
                     QuestList.Add(new GuildQuest(questParser.GetQuestID(item),
                                                  questParser.GetStatus(item),
                                                  questParser.GetZoneID(item)));
+                    Console.WriteLine("id: {0} - status: {1} - zone: {2} ", QuestList.Last().ID, QuestList.Last().Status, QuestList.Last().ZoneId);
                 }
-            }
-        }
-        void FillAddressList()
-        {
-            var firstAddress = StringUtils.Hex2BStringToInt(guildListPacket.Substring(FIRST_ADDRESS_OFFSET));
-            var address = firstAddress * 2;
-            addressList.Add(address);
-            bool end = false;
-            while (!end)
-            {
-                address = StringUtils.Hex2BStringToInt(guildListPacket.Substring(address + 4)) * 2;
-                if (address == 0)
-                {
-                    end = true;
-                }
-                else
-                {
-                    addressList.Add(address);
-                }
-            }
-        }
-        void FillQuestStringList()
-        {
-            FillAddressList();
-            for (int i = 0; i < addressList.Count; i++)
-            {
-                if (i == addressList.Count - 1)
-                {
-                    questStringList.Add(guildListPacket.Substring(addressList[i]));
-                }
-                else
-                {
-                    var start = addressList[i];
-                    var len = addressList[i + 1] - start;
-                    questStringList.Add(guildListPacket.Substring(start, len));
-                }
-
             }
         }
         string GetGuildSize()
@@ -143,12 +109,12 @@ namespace TCTParser.Processors
 
         internal class QuestParser
         {
-            const int QUEST_ID_OFFSET = 22 * 2;
-            const int TARGET_LIST_ADDRESS_OFFSET = 6 * 2;
-            const int TEMPLATE_ID_OFFSET = 8 * 2;
+            const int QUEST_ID_OFFSET = 18 * 2;
+            const int TARGET_LIST_ADDRESS_OFFSET = 2 * 2;
+            const int TEMPLATE_ID_OFFSET = 4 * 2;
             const int ZONE_ID_OFFSET = 4 * 2;
-            const int QUEST_SIZE_OFFSET = 30 * 2;
-            const int QUEST_STATUS_OFFSET = 161 * 2;
+            const int QUEST_SIZE_OFFSET = 26 * 2;
+            const int QUEST_STATUS_OFFSET = 157 * 2;
             string guildListPacket;
             public void Clear()
             {
@@ -191,7 +157,7 @@ namespace TCTParser.Processors
             }
 
         }
-        class RegionToZoneID : IValueConverter
+        private class RegionToZoneID : IValueConverter
         {
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
@@ -217,8 +183,7 @@ namespace TCTParser.Processors
                 throw new NotImplementedException();
             }
         }
-
-        class GuildQuest
+        private class GuildQuest
         {
             public int ID { get; }
             public GuildQuestStatus Status { get; set; }

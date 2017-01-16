@@ -25,7 +25,7 @@ namespace TCTParser.Processors
             {
                 s = StringUtils.GetStringFromHex(p, ID_OFFSET, "0B00");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 s = StringUtils.GetStringFromHex(p, ID_OFFSET, "0000");
             }
