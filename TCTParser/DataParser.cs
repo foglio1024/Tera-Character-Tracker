@@ -345,8 +345,8 @@ namespace TCTParser
 
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 }
-
-                Tera.UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
+                                                                                            
+                Tera.UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationId(p).ToString()/*GetLocationName(p)*/ + ".");
                 guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
             }
 

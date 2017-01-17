@@ -14,49 +14,40 @@ namespace TCTParser.Processors
 {
     internal class GuildQuestListProcessor : ListParser
     {
-        const int QUEST_COUNT_OFFSET = 4 * 2;
-        const int FIRST_ADDRESS_OFFSET = 6 * 2;
         const int GUILD_SIZE_OFFSET = 56 * 2;
 
         List<GuildQuest> QuestList = new List<GuildQuest>();
 
-        //List<int> addressList = new List<int>();
-        //List<string> questStringList = new List<string>();
-        string guildListPacket;
         internal QuestParser questParser;
 
         void Clear()
         {
-            if (questParser != null)
-            {
-                questParser.Clear();
-            }
-            //addressList.Clear();
-            //questStringList.Clear();
             QuestList.Clear();
         }
         public void ParseGuildListPacket(string p)
         {
             Console.WriteLine("Parsing guild quests...");
-            Clear();
-            questParser = new QuestParser(p);
-            guildListPacket = p;
-            //FillQuestStringList();
+
+            questParser = new QuestParser();
+
             List<string> questStringList = ParseList(p);
+
             foreach (var item in questStringList)
             {
-                if (questParser.GetQuestSize(item) == GetGuildSize() && questParser.GetZoneID(item) != 152)
+                if (questParser.GetQuestSize(item) == GetGuildSize(p) && questParser.GetZoneID(p) != 152)
                 {
-                    QuestList.Add(new GuildQuest(questParser.GetQuestID(item),
+                    QuestList.Add(new GuildQuest(questParser.GetQuestID(p),
                                                  questParser.GetStatus(item),
-                                                 questParser.GetZoneID(item)));
+                                                 questParser.GetZoneID(p)));
                     Console.WriteLine("id: {0} - status: {1} - zone: {2} ", QuestList.Last().ID, QuestList.Last().Status, QuestList.Last().ZoneId);
                 }
             }
         }
-        string GetGuildSize()
+
+        //ok
+        string GetGuildSize(string p)
         {
-            int size = StringUtils.Hex4BStringToInt(guildListPacket.Substring(GUILD_SIZE_OFFSET));
+            int size = StringUtils.Hex4BStringToInt(p.Substring(GUILD_SIZE_OFFSET));
             return ((GuildSize)size).ToString();
         }
 
@@ -71,6 +62,7 @@ namespace TCTParser.Processors
                 }
             }
         }
+
         public void TakeQuest(string p)
         {
             var id = StringUtils.Hex2BStringToInt(p.Substring(7 * 2));
@@ -110,53 +102,48 @@ namespace TCTParser.Processors
         internal class QuestParser
         {
             const int QUEST_ID_OFFSET = 18 * 2;
-            const int TARGET_LIST_ADDRESS_OFFSET = 2 * 2;
-            const int TEMPLATE_ID_OFFSET = 4 * 2;
-            const int ZONE_ID_OFFSET = 4 * 2;
             const int QUEST_SIZE_OFFSET = 26 * 2;
-            const int QUEST_STATUS_OFFSET = 157 * 2;
-            string guildListPacket;
-            public void Clear()
-            {
-                guildListPacket = "";
-            }
+            const int QUEST_STATUS_OFFSET = 35 * 2;
+
+            const int TARGET_LIST_POINTER_OFFSET = 2 * 2;
+
+            const int ZONE_ID_OFFSET = 4 * 2;
+            const int TEMPLATE_ID_OFFSET = 8 * 2;
+
             public int GetQuestID(string q)
             {
                 int questId = StringUtils.Hex2BStringToInt(q.Substring(QUEST_ID_OFFSET));
                 return questId;
             }
-            public int GetTemplateID(string q)
-            {
-                int targetsAddress = StringUtils.Hex2BStringToInt(q.Substring(TARGET_LIST_ADDRESS_OFFSET));
-                string targets = guildListPacket.Substring(targetsAddress * 2);
 
+            public int GetTemplateID(string p)
+            {
+                int targetsAddress = StringUtils.Hex2BStringToInt(p.Substring(TARGET_LIST_POINTER_OFFSET));
+                string targets = p.Substring(targetsAddress * 2);
                 return StringUtils.Hex4BStringToInt(targets.Substring(TEMPLATE_ID_OFFSET));
-
             }
-            public int GetZoneID(string q)
+
+            public int GetZoneID(string p)
             {
-                int targetsAddress = StringUtils.Hex2BStringToInt(q.Substring(TARGET_LIST_ADDRESS_OFFSET));
-                string targets = guildListPacket.Substring(targetsAddress * 2);
+                int targetsAddress = StringUtils.Hex2BStringToInt(p.Substring(TARGET_LIST_POINTER_OFFSET));
+                string targets = p.Substring(targetsAddress * 2);
                 return StringUtils.Hex4BStringToInt(targets.Substring(ZONE_ID_OFFSET));
-
             }
+
             public string GetQuestSize(string q)
             {
                 int size = StringUtils.Hex2BStringToInt(q.Substring(QUEST_SIZE_OFFSET));
                 return ((GuildSize)size).ToString();
             }
-            public GuildQuestStatus GetStatus(string p)
+
+            public GuildQuestStatus GetStatus(string q)
             {
-                int status = StringUtils.Hex1BStringToInt(p.Substring(QUEST_STATUS_OFFSET, 2));
+                int status = StringUtils.Hex1BStringToInt(q.Substring(QUEST_STATUS_OFFSET, 2));
                 return (GuildQuestStatus)status;
-
             }
-            public QuestParser(string p)
-            {
-                guildListPacket = p;
-            }
-
         }
+
+
         private class RegionToZoneID : IValueConverter
         {
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
