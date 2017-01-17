@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TCTData.Enums;
 
 namespace Tera
 {
@@ -27,16 +28,25 @@ namespace Tera
         {
             InitializeComponent();
 
-            if (TeraLogic.TCTProps.Console)
+            if (TCTData.TCTProps.Notifications)
             {
-                Console_Switch.TurnOn();
+                Notifications_Switch.TurnOn();
             }
             else
             {
-                Console_Switch.TurnOff();
+                Notifications_Switch.TurnOff();
             }
 
-            if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.NotificationSound)
+            {
+                NotificationSound_Switch.TurnOn();
+            }
+            else
+            {
+                NotificationSound_Switch.TurnOff();
+            }
+
+            if (TCTData.TCTProps.CcbNM == TCTData.Enums.CcbNotificationMode.EverySection)
             {
                 CrystalbindNotificationType_Switch.TurnOn();
                 CrystalbindNotificationType_Text.Text = "Crystalbind notification: every section";
@@ -46,6 +56,8 @@ namespace Tera
                 CrystalbindNotificationType_Switch.TurnOff();
                 CrystalbindNotificationType_Text.Text = "Crystalbind notification: teleport only";
             }
+
+            /*new setting here*/
         }
 
         public void rowHighlight(object sender, MouseEventArgs e)
@@ -193,34 +205,59 @@ namespace Tera
         }
         private void SetConsole(object sender, MouseButtonEventArgs e)
         {
-            if (Tera.TeraLogic.TCTProps.Console)
+            if (TCTData.TCTProps.Console)
             {
-                Tera.TeraLogic.TCTProps.Console = false;
+                TCTData.TCTProps.Console = false;
                 FreeConsole();
             }
 
             else
             {
-                Tera.TeraLogic.TCTProps.Console = true;
+                TCTData.TCTProps.Console = true;
                 AllocConsole();
             }
         }
         private void SetCrystalbindNotificationType(object sender, MouseButtonEventArgs e)
         {
-            if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.CcbNM == CcbNotificationMode.EverySection)
             {
-                TeraLogic.TCTProps.CcbNM = CcbNotificationMode.TeleportOnly;
+                TCTData.TCTProps.CcbNM = CcbNotificationMode.TeleportOnly;
                 CrystalbindNotificationType_Text.Text = "Crystalbind notification: teleport only";
             }
 
             else
             {
-                TeraLogic.TCTProps.CcbNM = CcbNotificationMode.EverySection;
+                TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
                 CrystalbindNotificationType_Text.Text = "Crystalbind notification: every section";
             }
 
 
         }
+        private void SetNotificationSoundOnOff(object sender, MouseButtonEventArgs e)
+        {
+            if (TCTData.TCTProps.NotificationSound)
+            {
+                TCTData.TCTProps.NotificationSound = false;
+            }
+            else
+            {
+                TCTData.TCTProps.NotificationSound = true;
+            }
+        }
+        private void SetNotificationsOnOff(object sender, MouseButtonEventArgs e)
+        {
+            if (TCTData.TCTProps.Notifications)
+            {
+                TCTData.TCTProps.Notifications = false;
+            }
+            else
+            {
+                TCTData.TCTProps.Notifications = true;
+            }
+        }
+
+        /*new setting here*/
+
         [DllImport("kernel32.dll")]
         public static extern bool AllocConsole();
 

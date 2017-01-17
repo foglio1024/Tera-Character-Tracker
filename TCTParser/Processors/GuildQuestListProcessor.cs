@@ -15,32 +15,79 @@ namespace TCTParser.Processors
     internal class GuildQuestListProcessor : ListParser
     {
         const int GUILD_SIZE_OFFSET = 56 * 2;
+        const int GUILD_QUESTS_COMPLETED_OFFSET = 67 * 2;
+        const int GUILD_QUESTS_MAX_OFFSET = 71 * 2;
 
         List<GuildQuest> QuestList = new List<GuildQuest>();
 
         internal QuestParser questParser;
 
-        void Clear()
-        {
-            QuestList.Clear();
-        }
         public void ParseGuildListPacket(string p)
         {
             Console.WriteLine("Parsing guild quests...");
-
-            questParser = new QuestParser();
-
-            List<string> questStringList = ParseList(p);
-
-            foreach (var item in questStringList)
+            var oldList = QuestList;
+            QuestList.Clear();
+            if (CompletedQuests(p) < MaxQuests(p))
             {
-                if (questParser.GetQuestSize(item) == GetGuildSize(p) && questParser.GetZoneID(p) != 152)
+                questParser = new QuestParser(p);
+
+                List<string> questStringList = ParseList(p);
+
+                foreach (var quest in questStringList)
                 {
-                    QuestList.Add(new GuildQuest(questParser.GetQuestID(p),
-                                                 questParser.GetStatus(item),
-                                                 questParser.GetZoneID(p)));
-                    Console.WriteLine("id: {0} - status: {1} - zone: {2} ", QuestList.Last().ID, QuestList.Last().Status, QuestList.Last().ZoneId);
+                    if (questParser.GetQuestSize(quest) == GetGuildSize(p) && questParser.GetZoneID(quest) != 152 && questParser.GetZoneID(quest) != 0)
+                    {
+                        ZoneToRegionID c = new ZoneToRegionID();
+                        QuestList.Add(new GuildQuest(questParser.GetQuestID(quest), questParser.GetStatus(quest), (int)c.Convert(questParser.GetZoneID(quest), null, null, null)));
+                        Console.WriteLine("questID: {0} - status:{1} -- regionID:{2}", QuestList.Last().QuestID, QuestList.Last().Status, QuestList.Last().RegionID);
+                    }
                 }
+                UpdateUI(); 
+
+                if(QuestList == oldList)
+                {
+                    UI.UpdateLog("Guild quests list updated.");
+                }
+            }
+
+            else
+            {
+                ResetUI();
+            }
+
+        }
+
+        void ResetUI()
+        {
+            //clear all
+            UI.MainWin.Dispatcher.Invoke(() =>
+            {
+                foreach (var counter in TeraMainWindow.DungeonCounters)
+                {
+                    counter.SetGquestStatus(GuildQuestStatus.NotFound);
+                }
+            });
+        }
+
+        void UpdateUI()
+        {
+
+            ResetUI();
+            //update
+            foreach (var quest in QuestList)
+            {
+                UI.MainWin.Dispatcher.Invoke(() =>
+                {
+                    string dgShortName = TeraLogic.DungList.Find(d => d.Id == quest.RegionID).ShortName;
+
+                    foreach (var counter in TeraMainWindow.DungeonCounters)
+                    {
+                        if (counter.Name == dgShortName)
+                        {
+                            counter.SetGquestStatus(quest.Status);
+                        }
+                    }
+                });
             }
         }
 
@@ -56,11 +103,13 @@ namespace TCTParser.Processors
             int id = StringUtils.Hex2BStringToInt(p.Substring(10));
             foreach (var quest in QuestList)
             {
-                if (quest.ID == id)
+                if (quest.QuestID == id)
                 {
                     QuestList.Remove(quest);
+                    UI.UpdateLog("Guild quest completed.");
                 }
             }
+            UpdateUI();
         }
 
         public void TakeQuest(string p)
@@ -68,21 +117,21 @@ namespace TCTParser.Processors
             var id = StringUtils.Hex2BStringToInt(p.Substring(7 * 2));
             foreach (var quest in QuestList)
             {
-                if (quest.ID == id)
+                if (quest.QuestID == id)
                 {
                     quest.Status = GuildQuestStatus.Taken;
+                    Tera.UI.UpdateLog("Guild quest accepted.");
                 }
             }
+            UpdateUI();
         }
 
         public void CheckQuestStatus(uint locationId)
         {
-            RegionToZoneID regionConverter = new RegionToZoneID();
-            int zoneID = (int)regionConverter.Convert(locationId, null, null, null);
             bool found = false;
             foreach (var quest in QuestList)
             {
-                if (quest.ZoneId == zoneID)
+                if (quest.RegionID == locationId)
                 {
                     found = true;
                     if (quest.Status == GuildQuestStatus.Available)
@@ -99,6 +148,16 @@ namespace TCTParser.Processors
             }
         }
 
+        int MaxQuests(string p)
+        {
+            return StringUtils.Hex2BStringToInt(p.Substring(GUILD_QUESTS_MAX_OFFSET, 4));
+        }
+
+        int CompletedQuests(string p)
+        {
+            return StringUtils.Hex2BStringToInt(p.Substring(GUILD_QUESTS_COMPLETED_OFFSET, 4));
+        }
+
         internal class QuestParser
         {
             const int QUEST_ID_OFFSET = 18 * 2;
@@ -110,23 +169,25 @@ namespace TCTParser.Processors
             const int ZONE_ID_OFFSET = 4 * 2;
             const int TEMPLATE_ID_OFFSET = 8 * 2;
 
+            string wholePacket;
+
             public int GetQuestID(string q)
             {
                 int questId = StringUtils.Hex2BStringToInt(q.Substring(QUEST_ID_OFFSET));
                 return questId;
             }
 
-            public int GetTemplateID(string p)
+            public int GetTemplateID(string q)
             {
-                int targetsAddress = StringUtils.Hex2BStringToInt(p.Substring(TARGET_LIST_POINTER_OFFSET));
-                string targets = p.Substring(targetsAddress * 2);
+                int targetsAddress = StringUtils.Hex2BStringToInt(q.Substring(TARGET_LIST_POINTER_OFFSET));
+                string targets = wholePacket.Substring(targetsAddress * 2);
                 return StringUtils.Hex4BStringToInt(targets.Substring(TEMPLATE_ID_OFFSET));
             }
 
-            public int GetZoneID(string p)
+            public int GetZoneID(string q)
             {
-                int targetsAddress = StringUtils.Hex2BStringToInt(p.Substring(TARGET_LIST_POINTER_OFFSET));
-                string targets = p.Substring(targetsAddress * 2);
+                int targetsAddress = StringUtils.Hex2BStringToInt(q.Substring(TARGET_LIST_POINTER_OFFSET));
+                string targets = wholePacket.Substring(targetsAddress * 2);
                 return StringUtils.Hex4BStringToInt(targets.Substring(ZONE_ID_OFFSET));
             }
 
@@ -141,46 +202,25 @@ namespace TCTParser.Processors
                 int status = StringUtils.Hex1BStringToInt(q.Substring(QUEST_STATUS_OFFSET, 2));
                 return (GuildQuestStatus)status;
             }
-        }
 
-
-        private class RegionToZoneID : IValueConverter
-        {
-            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            //ctor
+            public QuestParser(string p)
             {
-                uint regionID = (uint)value;
-                var regionToName = new Location_IdToName();
-                string regionName = (string)regionToName.Convert(regionID, null, null, null);
-                var el = TeraLogic.StrSheet_ZoneName.Descendants().Where(x => (string)x.Attribute("string") == regionName).FirstOrDefault();
-                string zoneID = "";
-                if (el != null)
-                {
-                    zoneID = el.Attribute("id").Value;
-                    return System.Convert.ToInt32(zoneID);
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-
-
-            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-            {
-                throw new NotImplementedException();
+                wholePacket = p;
             }
         }
+
         private class GuildQuest
         {
-            public int ID { get; }
+            public int QuestID { get; }
             public GuildQuestStatus Status { get; set; }
-            public int ZoneId { get; }
+            public int RegionID { get; }
 
-            public GuildQuest(int _id, GuildQuestStatus _status, int _zId)
+            public GuildQuest(int _questId, GuildQuestStatus _status, int _rId)
             {
-                ID = _id;
+                QuestID = _questId;
                 Status = _status;
-                ZoneId = _zId;
+                RegionID = _rId;
             }
         }
     }

@@ -59,6 +59,14 @@ namespace TCTData.Enums
     {
         Available,
         Taken,
-        Completed
+        Completed,
+        NotFound = 9999
     }
+
+    public enum CcbNotificationMode
+    {
+        TeleportOnly = 0,
+        EverySection = 1
+    }
+
 }

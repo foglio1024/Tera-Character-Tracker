@@ -27,7 +27,6 @@ namespace TCTParser
                 if(nextPointer != 0)
                 {
                     list.Add(packet.Substring(pointer + 8, nextPointer - pointer));
-                    Console.WriteLine(list.Last());
                 }
 
                 else

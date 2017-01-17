@@ -19,11 +19,20 @@
             </Grid>
             <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Console</TextBlock>
-                <local:MaterialSwitch x:Name="Console_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetConsole" Margin="0,0,20,0"></local:MaterialSwitch>
+                <TextBlock x:Name="Notifications_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Notifications</TextBlock>
+                <local:MaterialSwitch x:Name="Notifications_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetNotificationsOnOff" Margin="0,0,20,0"></local:MaterialSwitch>
+
+            </Grid>
+            <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="NotificationSound_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Notification sounds</TextBlock>
+                <local:MaterialSwitch x:Name="NotificationSound_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetNotificationSoundOnOff" Margin="0,0,20,0"></local:MaterialSwitch>
 
             </Grid>
             <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
@@ -35,6 +44,7 @@
                 <local:MaterialSwitch x:Name="CrystalbindNotificationType_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetCrystalbindNotificationType" Margin="0,0,20,0"></local:MaterialSwitch>
 
             </Grid>
+
         </StackPanel>
     </Grid>
 </UserControl>

@@ -55,6 +55,7 @@ namespace TCTMain
 
                     Tera.TeraLogic.TryReset();
                     w.Title = "Tera Character Tracker " + version;
+
                     w.ShowDialog();
 
                     Tera.TeraLogic.SaveSettings(false);

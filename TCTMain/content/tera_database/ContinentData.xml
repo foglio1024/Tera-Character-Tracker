@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContinentData>
+  <Continent id="5" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="599" />
+  </Continent>
+  <Continent id="9827" channelType="dungeon">
+    <HuntingZone id="827" />
+  </Continent>
+  <Continent id="9828" channelType="dungeon">
+    <HuntingZone id="828" />
+  </Continent>
+  <Continent id="9829" channelType="dungeon">
+    <HuntingZone id="829" />
+  </Continent>
+  <Continent id="13" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="13" />
+    <HuntingZone id="64" />
+    <HuntingZone id="213" />
+    <HuntingZone id="313" />
+    <HuntingZone id="364" />
+  </Continent>
+  <Continent id="1" channelType="none" inChannelingContinent="7001,7002,7003,7004" isSpecificSpace="False">
+    <HuntingZone id="1" />
+    <HuntingZone id="58" />
+    <HuntingZone id="63" />
+    <HuntingZone id="201" />
+    <HuntingZone id="358" />
+    <HuntingZone id="363" />
+  </Continent>
+  <Continent id="2" channelType="none" inChannelingContinent="7011,7012,7013,7014,7015" isSpecificSpace="False">
+    <HuntingZone id="72" />
+    <HuntingZone id="372" />
+    <HuntingZone id="518" />
+    <HuntingZone id="519" />
+    <HuntingZone id="999" />
+    <HuntingZone id="550" />
+  </Continent>
+  <Continent id="3" channelType="none" inChannelingContinent="7021,7022,7023" isSpecificSpace="False">
+    <HuntingZone id="43" />
+    <HuntingZone id="82" />
+    <HuntingZone id="84" />
+    <HuntingZone id="85" />
+    <HuntingZone id="243" />
+    <HuntingZone id="282" />
+    <HuntingZone id="343" />
+    <HuntingZone id="384" />
+    <HuntingZone id="385" />
+    <HuntingZone id="528" />
+    <HuntingZone id="529" />
+  </Continent>
+  <Continent id="4" channelType="none" inChannelingContinent="7031" />
+  <Continent id="7001" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="2" />
+    <HuntingZone id="3" />
+    <HuntingZone id="5" />
+    <HuntingZone id="6" />
+    <HuntingZone id="7" />
+    <HuntingZone id="59" />
+    <HuntingZone id="60" />
+    <HuntingZone id="202" />
+    <HuntingZone id="203" />
+    <HuntingZone id="205" />
+    <HuntingZone id="206" />
+    <HuntingZone id="207" />
+    <HuntingZone id="302" />
+    <HuntingZone id="303" />
+    <HuntingZone id="305" />
+    <HuntingZone id="306" />
+    <HuntingZone id="307" />
+    <HuntingZone id="359" />
+    <HuntingZone id="360" />
+  </Continent>
+  <Continent id="7002" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="15" />
+    <HuntingZone id="16" />
+    <HuntingZone id="17" />
+    <HuntingZone id="22" />
+    <HuntingZone id="23" />
+    <HuntingZone id="67" />
+    <HuntingZone id="68" />
+    <HuntingZone id="215" />
+    <HuntingZone id="216" />
+    <HuntingZone id="217" />
+    <HuntingZone id="222" />
+    <HuntingZone id="223" />
+    <HuntingZone id="315" />
+    <HuntingZone id="316" />
+    <HuntingZone id="317" />
+    <HuntingZone id="322" />
+    <HuntingZone id="323" />
+    <HuntingZone id="367" />
+    <HuntingZone id="368" />
+  </Continent>
+  <Continent id="7003" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="18" />
+    <HuntingZone id="19" />
+    <HuntingZone id="20" />
+    <HuntingZone id="21" />
+    <HuntingZone id="24" />
+    <HuntingZone id="25" />
+    <HuntingZone id="65" />
+    <HuntingZone id="66" />
+    <HuntingZone id="218" />
+    <HuntingZone id="219" />
+    <HuntingZone id="220" />
+    <HuntingZone id="221" />
+    <HuntingZone id="224" />
+    <HuntingZone id="225" />
+    <HuntingZone id="318" />
+    <HuntingZone id="319" />
+    <HuntingZone id="320" />
+    <HuntingZone id="321" />
+    <HuntingZone id="324" />
+    <HuntingZone id="325" />
+    <HuntingZone id="365" />
+    <HuntingZone id="366" />
+  </Continent>
+  <Continent id="7004" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="4" />
+    <HuntingZone id="8" />
+    <HuntingZone id="9" />
+    <HuntingZone id="10" />
+    <HuntingZone id="11" />
+    <HuntingZone id="12" />
+    <HuntingZone id="61" />
+    <HuntingZone id="62" />
+    <HuntingZone id="204" />
+    <HuntingZone id="208" />
+    <HuntingZone id="209" />
+    <HuntingZone id="210" />
+    <HuntingZone id="211" />
+    <HuntingZone id="212" />
+    <HuntingZone id="304" />
+    <HuntingZone id="308" />
+    <HuntingZone id="309" />
+    <HuntingZone id="310" />
+    <HuntingZone id="311" />
+    <HuntingZone id="312" />
+    <HuntingZone id="361" />
+    <HuntingZone id="362" />
+  </Continent>
+  <Continent id="7011" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="26" />
+    <HuntingZone id="27" />
+    <HuntingZone id="28" />
+    <HuntingZone id="29" />
+    <HuntingZone id="69" />
+    <HuntingZone id="70" />
+    <HuntingZone id="226" />
+    <HuntingZone id="227" />
+    <HuntingZone id="228" />
+    <HuntingZone id="229" />
+    <HuntingZone id="326" />
+    <HuntingZone id="327" />
+    <HuntingZone id="328" />
+    <HuntingZone id="329" />
+    <HuntingZone id="369" />
+    <HuntingZone id="370" />
+  </Continent>
+  <Continent id="7012" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="31" />
+    <HuntingZone id="32" />
+    <HuntingZone id="33" />
+    <HuntingZone id="34" />
+    <HuntingZone id="231" />
+    <HuntingZone id="232" />
+    <HuntingZone id="233" />
+    <HuntingZone id="234" />
+    <HuntingZone id="331" />
+    <HuntingZone id="332" />
+    <HuntingZone id="333" />
+    <HuntingZone id="334" />
+    <HuntingZone id="73" />
+    <HuntingZone id="83" />
+    <HuntingZone id="373" />
+    <HuntingZone id="383" />
+  </Continent>
+  <Continent id="7013" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="39" />
+    <HuntingZone id="40" />
+    <HuntingZone id="41" />
+    <HuntingZone id="42" />
+    <HuntingZone id="239" />
+    <HuntingZone id="240" />
+    <HuntingZone id="241" />
+    <HuntingZone id="242" />
+    <HuntingZone id="339" />
+    <HuntingZone id="340" />
+    <HuntingZone id="341" />
+    <HuntingZone id="342" />
+    <HuntingZone id="75" />
+    <HuntingZone id="375" />
+  </Continent>
+  <Continent id="7014" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="35" />
+    <HuntingZone id="36" />
+    <HuntingZone id="37" />
+    <HuntingZone id="38" />
+    <HuntingZone id="235" />
+    <HuntingZone id="236" />
+    <HuntingZone id="237" />
+    <HuntingZone id="238" />
+    <HuntingZone id="335" />
+    <HuntingZone id="336" />
+    <HuntingZone id="337" />
+    <HuntingZone id="338" />
+    <HuntingZone id="74" />
+    <HuntingZone id="374" />
+  </Continent>
+  <Continent id="7015" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="71" />
+    <HuntingZone id="371" />
+    <HuntingZone id="30" />
+    <HuntingZone id="230" />
+    <HuntingZone id="330" />
+  </Continent>
+  <Continent id="7021" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="54" />
+    <HuntingZone id="55" />
+    <HuntingZone id="56" />
+    <HuntingZone id="57" />
+    <HuntingZone id="80" />
+    <HuntingZone id="81" />
+    <HuntingZone id="254" />
+    <HuntingZone id="255" />
+    <HuntingZone id="256" />
+    <HuntingZone id="257" />
+    <HuntingZone id="280" />
+    <HuntingZone id="281" />
+    <HuntingZone id="354" />
+    <HuntingZone id="355" />
+    <HuntingZone id="356" />
+    <HuntingZone id="357" />
+    <HuntingZone id="380" />
+    <HuntingZone id="381" />
+  </Continent>
+  <Continent id="7022" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="51" />
+    <HuntingZone id="52" />
+    <HuntingZone id="53" />
+    <HuntingZone id="79" />
+    <HuntingZone id="251" />
+    <HuntingZone id="252" />
+    <HuntingZone id="253" />
+    <HuntingZone id="279" />
+    <HuntingZone id="351" />
+    <HuntingZone id="352" />
+    <HuntingZone id="353" />
+    <HuntingZone id="379" />
+  </Continent>
+  <Continent id="7023" channelType="channelingZone" isSpecificSpace="False">
+    <HuntingZone id="45" />
+    <HuntingZone id="46" />
+    <HuntingZone id="47" />
+    <HuntingZone id="77" />
+    <HuntingZone id="245" />
+    <HuntingZone id="246" />
+    <HuntingZone id="247" />
+    <HuntingZone id="277" />
+    <HuntingZone id="345" />
+    <HuntingZone id="346" />
+    <HuntingZone id="347" />
+    <HuntingZone id="377" />
+  </Continent>
+  <Continent id="7031" channelType="channelingZone">
+    <HuntingZone id="172" />
+    <HuntingZone id="181" />
+    <HuntingZone id="182" />
+    <HuntingZone id="183" />
+    <HuntingZone id="191" />
+    <HuntingZone id="1022" />
+  </Continent>
+  <Continent id="7087" channelType="channelingZone" disableChannelListBtn="True" isSpecificSpace="False">
+    <HuntingZone id="87" />
+  </Continent>
+  <Continent id="8001" channelType="none" isSpecificSpace="False">
+    <HuntingZone id="44" />
+    <HuntingZone id="48" />
+    <HuntingZone id="49" />
+    <HuntingZone id="50" />
+    <HuntingZone id="76" />
+    <HuntingZone id="78" />
+    <HuntingZone id="244" />
+    <HuntingZone id="248" />
+    <HuntingZone id="249" />
+    <HuntingZone id="250" />
+    <HuntingZone id="344" />
+    <HuntingZone id="348" />
+    <HuntingZone id="349" />
+    <HuntingZone id="350" />
+    <HuntingZone id="376" />
+    <HuntingZone id="378" />
+  </Continent>
+  <Continent id="99" channelType="none" isSpecificSpace="False">
+    <HuntingZone id="998" />
+  </Continent>
+  <Continent id="102" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="102" />
+  </Continent>
+  <Continent id="103" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="103" />
+  </Continent>
+  <Continent id="110" channelType="battleField">
+    <HuntingZone id="110" />
+  </Continent>
+  <Continent id="111" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="111" />
+  </Continent>
+  <Continent id="112" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="112" />
+  </Continent>
+  <Continent id="113" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="113" />
+  </Continent>
+  <Continent id="114" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="114" />
+  </Continent>
+  <Continent id="115" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="115" />
+  </Continent>
+  <Continent id="116" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="116" />
+  </Continent>
+  <Continent id="117" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="117" />
+  </Continent>
+  <Continent id="118" channelType="battleField" isSpecificSpace="True">
+    <HuntingZone id="118" />
+  </Continent>
+  <Continent id="119" channelType="battleField">
+    <HuntingZone id="119" />
+  </Continent>
+  <Continent id="152" channelType="citywar" isSpecificSpace="False">
+    <HuntingZone id="152" />
+  </Continent>
+  <Continent id="8999" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="409" />
+  </Continent>
+  <Continent id="9001" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="401" />
+  </Continent>
+  <Continent id="9002" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="402" />
+  </Continent>
+  <Continent id="9003" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="403" />
+  </Continent>
+  <Continent id="9005" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="405" />
+  </Continent>
+  <Continent id="9007" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="407" />
+  </Continent>
+  <Continent id="9008" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="408" />
+  </Continent>
+  <Continent id="9010" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="410" />
+  </Continent>
+  <Continent id="9011" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="411" />
+  </Continent>
+  <Continent id="9012" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="412" />
+  </Continent>
+  <Continent id="9013" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="413" />
+  </Continent>
+  <Continent id="9014" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="414" />
+  </Continent>
+  <Continent id="9015" channelType="channelingZone" isSpecificSpace="True">
+    <HuntingZone id="415" />
+  </Continent>
+  <Continent id="9016" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="416" />
+  </Continent>
+  <Continent id="9017" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="417" />
+  </Continent>
+  <Continent id="9018" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="418" />
+  </Continent>
+  <Continent id="9019" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="419" />
+  </Continent>
+  <Continent id="9020" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="420" />
+  </Continent>
+  <Continent id="9021" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="421" />
+  </Continent>
+  <Continent id="9022" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="422" />
+  </Continent>
+  <Continent id="9023" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="423" />
+  </Continent>
+  <Continent id="9024" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="424" />
+  </Continent>
+  <Continent id="9025" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="425" />
+  </Continent>
+  <Continent id="9026" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="426" />
+  </Continent>
+  <Continent id="9027" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="427" />
+  </Continent>
+  <Continent id="9028" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="428" />
+  </Continent>
+  <Continent id="9036" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="436" />
+  </Continent>
+  <Continent id="9037" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="437" />
+  </Continent>
+  <Continent id="9038" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="438" />
+  </Continent>
+  <Continent id="9039" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="439" />
+  </Continent>
+  <Continent id="9040" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="440" />
+  </Continent>
+  <Continent id="9041" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="441" />
+  </Continent>
+  <Continent id="9042" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="442" />
+  </Continent>
+  <Continent id="9043" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="443" />
+  </Continent>
+  <Continent id="9643" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="643" />
+  </Continent>
+  <Continent id="9743" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="743" />
+  </Continent>
+  <Continent id="9050" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="450" />
+  </Continent>
+  <Continent id="9750" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="750" />
+  </Continent>
+  <Continent id="9046" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="446" />
+  </Continent>
+  <Continent id="9047" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="447" />
+  </Continent>
+  <Continent id="9053" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="453" />
+  </Continent>
+  <Continent id="9825" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="825" />
+  </Continent>
+  <Continent id="9061" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="461" />
+  </Continent>
+  <Continent id="9062" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="462" />
+  </Continent>
+  <Continent id="9063" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="463" />
+  </Continent>
+  <Continent id="9064" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="464" />
+  </Continent>
+  <Continent id="9065" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="465" />
+  </Continent>
+  <Continent id="9071" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="471" />
+  </Continent>
+  <Continent id="9072" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="472" />
+  </Continent>
+  <Continent id="9073" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="473" />
+  </Continent>
+  <Continent id="9074" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="474" />
+  </Continent>
+  <Continent id="9075" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="475" />
+  </Continent>
+  <Continent id="9076" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="476" />
+  </Continent>
+  <Continent id="9077" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="477" />
+  </Continent>
+  <Continent id="9078" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="478" />
+  </Continent>
+  <Continent id="9079" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="479" />
+  </Continent>
+  <Continent id="9080" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="480" />
+  </Continent>
+  <Continent id="9081" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="481" />
+  </Continent>
+  <Continent id="9082" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="482" />
+  </Continent>
+  <Continent id="9083" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="483" />
+  </Continent>
+  <Continent id="9087" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="487" />
+  </Continent>
+  <Continent id="9088" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="488" />
+  </Continent>
+  <Continent id="9089" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="489" />
+  </Continent>
+  <Continent id="9090" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="490" />
+  </Continent>
+  <Continent id="9091" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="491" />
+  </Continent>
+  <Continent id="9092" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="492" />
+  </Continent>
+  <Continent id="9093" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="493" />
+  </Continent>
+  <Continent id="9094" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="494" />
+  </Continent>
+  <Continent id="9095" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="495" />
+  </Continent>
+  <Continent id="9096" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="496" />
+  </Continent>
+  <Continent id="9795" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="795" />
+  </Continent>
+  <Continent id="9724" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="724" />
+  </Continent>
+  <Continent id="9725" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="725" />
+  </Continent>
+  <Continent id="9726" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="726" />
+  </Continent>
+  <Continent id="9727" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="727" />
+  </Continent>
+  <Continent id="9773" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="773" />
+  </Continent>
+  <Continent id="9775" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="775" />
+  </Continent>
+  <Continent id="9804" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="804" />
+  </Continent>
+  <Continent id="9776" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="776" />
+  </Continent>
+  <Continent id="9793" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="793" />
+  </Continent>
+  <Continent id="9911" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="911" />
+  </Continent>
+  <Continent id="9975" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="975" />
+  </Continent>
+  <Continent id="9801" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="801" />
+  </Continent>
+  <Continent id="9802" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="802" />
+  </Continent>
+  <Continent id="9803" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="803" />
+  </Continent>
+  <Continent id="9051" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="451" />
+  </Continent>
+  <Continent id="9052" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="452" />
+  </Continent>
+  <Continent id="9766" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="766" />
+  </Continent>
+  <Continent id="9777" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="777" />
+  </Continent>
+  <Continent id="9811" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="811" />
+  </Continent>
+  <Continent id="9711" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="711" />
+  </Continent>
+  <Continent id="9611" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="611" />
+  </Continent>
+  <Continent id="9511" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="511" />
+  </Continent>
+  <Continent id="9810" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="810" />
+  </Continent>
+  <Continent id="9887" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="887" />
+  </Continent>
+  <Continent id="9888" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="888" />
+  </Continent>
+  <Continent id="9889" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="889" />
+  </Continent>
+  <Continent id="9871" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="871" />
+  </Continent>
+  <Continent id="9872" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="872" />
+  </Continent>
+  <Continent id="9873" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="873" />
+  </Continent>
+  <Continent id="9813" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="813" />
+  </Continent>
+  <Continent id="9713" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="713" />
+  </Continent>
+  <Continent id="9714" channelType="dungeon">
+    <HuntingZone id="714" />
+  </Continent>
+  <Continent id="9808" channelType="dungeon">
+    <HuntingZone id="808" />
+  </Continent>
+  <Continent id="9809" channelType="dungeon">
+    <HuntingZone id="809" />
+  </Continent>
+  <Continent id="9054" channelType="dungeon">
+    <HuntingZone id="454" />
+  </Continent>
+  <Continent id="9754" channelType="dungeon">
+    <HuntingZone id="754" />
+  </Continent>
+  <Continent id="9069" channelType="dungeon">
+    <HuntingZone id="469" />
+    <HuntingZone id="569" />
+  </Continent>
+  <Continent id="9818" channelType="dungeon">
+    <HuntingZone id="818" />
+  </Continent>
+  <Continent id="9820" channelType="dungeon">
+    <HuntingZone id="820" />
+  </Continent>
+  <Continent id="9822" channelType="dungeon">
+    <HuntingZone id="822" />
+  </Continent>
+  <Continent id="9814" channelType="dungeon">
+    <HuntingZone id="814" />
+  </Continent>
+  <Continent id="9821" channelType="dungeon">
+    <HuntingZone id="821" />
+  </Continent>
+  <Continent id="9823" channelType="dungeon">
+    <HuntingZone id="823" />
+  </Continent>
+  <Continent id="9826" channelType="dungeon">
+    <HuntingZone id="826" />
+  </Continent>
+  <Continent id="9916" channelType="dungeon">
+    <HuntingZone id="916" />
+  </Continent>
+  <Continent id="9885" channelType="dungeon">
+    <HuntingZone id="885" />
+  </Continent>
+  <Continent id="9886" channelType="dungeon">
+    <HuntingZone id="886" />
+  </Continent>
+  <Continent id="9716" channelType="dungeon">
+    <HuntingZone id="716" />
+  </Continent>
+  <Continent id="9055" channelType="dungeon">
+    <HuntingZone id="455" />
+  </Continent>
+  <Continent id="9979" channelType="dungeon">
+    <HuntingZone id="979" />
+  </Continent>
+  <Continent id="9057" channelType="dungeon">
+    <HuntingZone id="457" />
+  </Continent>
+  <Continent id="9757" channelType="dungeon">
+    <HuntingZone id="757" />
+  </Continent>
+  <Continent id="9029" channelType="dungeon">
+    <HuntingZone id="429" />
+  </Continent>
+  <Continent id="9056" channelType="dungeon">
+    <HuntingZone id="456" />
+  </Continent>
+  <Continent id="9756" channelType="dungeon">
+    <HuntingZone id="756" />
+  </Continent>
+  <Continent id="9060" channelType="dungeon">
+    <HuntingZone id="460" />
+  </Continent>
+  <Continent id="9760" channelType="dungeon">
+    <HuntingZone id="760" />
+  </Continent>
+  <Continent id="9860" channelType="dungeon">
+    <HuntingZone id="860" />
+  </Continent>
+  <Continent id="9059" channelType="dungeon">
+    <HuntingZone id="459" />
+  </Continent>
+  <Continent id="9759" channelType="dungeon">
+    <HuntingZone id="759" />
+  </Continent>
+  <Continent id="9068" channelType="dungeon">
+    <HuntingZone id="468" />
+  </Continent>
+  <Continent id="9768" channelType="dungeon">
+    <HuntingZone id="768" />
+  </Continent>
+  <Continent id="9031" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="431" />
+  </Continent>
+  <Continent id="9032" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="432" />
+  </Continent>
+  <Continent id="9033" channelType="dungeon" isSpecificSpace="True">
+    <HuntingZone id="433" />
+  </Continent>
+  <Continent id="9830" channelType="dungeon">
+    <HuntingZone id="830" />
+  </Continent>
+  <Continent id="9067" channelType="dungeon">
+    <HuntingZone id="467" />
+  </Continent>
+  <Continent id="9767" channelType="dungeon">
+    <HuntingZone id="767" />
+  </Continent>
+  <Continent id="9769" channelType="dungeon">
+    <HuntingZone id="769" />
+  </Continent>
+  <Continent id="9969" channelType="dungeon">
+    <HuntingZone id="969" />
+  </Continent>
+  <Continent id="9070" channelType="dungeon">
+    <HuntingZone id="470" />
+  </Continent>
+  <Continent id="9970" channelType="dungeon">
+    <HuntingZone id="970" />
+  </Continent>
+  <Continent id="9770" channelType="dungeon">
+    <HuntingZone id="770" />
+  </Continent>
+  <Continent id="9950" channelType="dungeon">
+    <HuntingZone id="950" />
+  </Continent>
+</ContinentData>

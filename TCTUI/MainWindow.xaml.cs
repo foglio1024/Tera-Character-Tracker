@@ -38,10 +38,10 @@ namespace Tera
         public TeraMainWindow()
         {
             InitializeComponent();
-            Top = TeraLogic.TCTProps.Top;
-            Left = TeraLogic.TCTProps.Left;
-            Height = TeraLogic.TCTProps.Height;
-            Width = TeraLogic.TCTProps.Width;
+            Top = TCTData.TCTProps.Top;
+            Left = TCTData.TCTProps.Left;
+            Height = TCTData.TCTProps.Height;
+            Width = TCTData.TCTProps.Width;
 
             UI.MainWin = this;
         }
@@ -62,6 +62,7 @@ namespace Tera
 
         #region Properties
         public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
+        public static List<DungeonRunsCounter> DungeonCounters { get; set; } = new List<DungeonRunsCounter>();
         #endregion
 
         #region Methods
@@ -231,7 +232,9 @@ namespace Tera
                 {
                     d.ToolTip = dgNameEl.Attribute("string").Value;
                 }
-                    
+
+                DungeonCounters.Add(d);
+                
                 switch (dg.Tier)
                 {
                     case DungeonTier.Tier2:
@@ -299,10 +302,11 @@ namespace Tera
         } 
         private void SaveButtonPressed(object sender, RoutedEventArgs e)
         {
-            TeraLogic.SaveCharacters(true);
-            TeraLogic.SaveAccounts(true);
-            TeraLogic.SaveGuildsDB(true);
-            TeraLogic.SaveSettings(true);
+            TeraLogic.SaveCharacters(false);
+            TeraLogic.SaveAccounts(false);
+            TeraLogic.SaveGuildsDB(false);
+            TeraLogic.SaveSettings(false);
+            UI.UpdateLog("Data saved.");
             TeraLogic.IsSaved = true;
         }
         private void LeftSlideToggle(object sender, MouseButtonEventArgs e)
@@ -473,10 +477,10 @@ namespace Tera
             TeraLogic.SaveCharacters(false);
             TeraLogic.SaveAccounts(false);
             TeraLogic.SaveGuildsDB(false);
-            TeraLogic.TCTProps.Top = this.Top;
-            TeraLogic.TCTProps.Left = this.Left;
-            TeraLogic.TCTProps.Height = this.Height;
-            TeraLogic.TCTProps.Width = this.Width;
+            TCTData.TCTProps.Top = this.Top;
+            TCTData.TCTProps.Left = this.Left;
+            TCTData.TCTProps.Height = this.Height;
+            TCTData.TCTProps.Width = this.Width;
         }
         private void TeraMainWin_MouseDown(object sender, MouseButtonEventArgs e)
         {

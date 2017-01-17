@@ -167,16 +167,14 @@ namespace TCTParser
 
                 case "S_GUILD_QUEST_LIST":
                     guildQuestListProcessor.ParseGuildListPacket(data);
-                    Tera.UI.UpdateLog("Received guild quests list.");
                     break;
 
                 case "S_FINISH_GUILD_QUEST":
-                    Tera.UI.UpdateLog("Guild quest completed.");
+                    guildQuestListProcessor.RemoveQuest(data);
                     break;
 
                 case "S_START_GUILD_QUEST":
                     guildQuestListProcessor.TakeQuest(data);
-                    Tera.UI.UpdateLog("Guild quest accepted.");
                     break;
 
                 case "S_VIEW_WARE_EX":
@@ -285,7 +283,7 @@ namespace TCTParser
                 if (CurrentChar().DragonwingScales >= 50)
                 {
                     Tera.UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
-                    UI.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                    UI.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Scales, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
                 }
                 else
                 {
@@ -340,7 +338,7 @@ namespace TCTParser
             if (CurrentChar().LocationId != sectionProcessor.GetLocationId(p))
             {
                 CurrentChar().LocationId = sectionProcessor.GetLocationId(p);
-                if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
+                if (TCTData.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
                 {
 
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
@@ -350,7 +348,7 @@ namespace TCTParser
                 guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
             }
 
-            if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.CcbNM == CcbNotificationMode.EverySection)
             {
                 crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
 
