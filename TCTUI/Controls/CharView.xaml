@@ -87,7 +87,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.Effect>
-                    <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="4"/>
+                    <DropShadowEffect Opacity="0.2" ShadowDepth=".5" BlurRadius="4"/>
                 </Grid.Effect>
 
                 <Grid.RowDefinitions>
@@ -248,7 +248,7 @@
         <Grid Grid.Row="1" Width="Auto" HorizontalAlignment="Stretch" Margin="10,0,10,10" Height="Auto" VerticalAlignment="Bottom">
             <Grid x:Name="newDgPanel" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Top" Background="White" Width="Auto" Margin="10">
                 <Grid.Effect>
-                    <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="4"/>
+                    <DropShadowEffect Opacity="0.2" ShadowDepth=".5" BlurRadius="4"/>
                 </Grid.Effect>
 
                 <Grid.RowDefinitions>
@@ -319,7 +319,7 @@
         <!--<Border BorderThickness="0,0,0,1" BorderBrush="Black" Opacity=".1" Grid.Row="1"/>-->
         <Grid Grid.Row="2" Background="White" Width="310" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,20,20">
             <Grid.Effect>
-                <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="4"/>
+                <DropShadowEffect Opacity="0.2" ShadowDepth=".5" BlurRadius="4"/>
             </Grid.Effect>
 
             <Grid HorizontalAlignment="Stretch" Height="Auto" Margin="10" VerticalAlignment="Top" Width="Auto">

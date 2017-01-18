@@ -22,15 +22,16 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Border BorderBrush="#15000000" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
                 <TextBlock x:Name="Notifications_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Notifications</TextBlock>
                 <local:MaterialSwitch x:Name="Notifications_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetNotificationsOnOff" Margin="0,0,20,0"></local:MaterialSwitch>
-
             </Grid>
             <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Border BorderBrush="#15000000" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
                 <TextBlock x:Name="NotificationSound_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Notification sounds</TextBlock>
                 <local:MaterialSwitch x:Name="NotificationSound_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetNotificationSoundOnOff" Margin="0,0,20,0"></local:MaterialSwitch>
 
@@ -40,6 +41,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Border BorderBrush="#15000000" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
                 <TextBlock x:Name="CrystalbindNotificationType_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Crystalbind notification frequency</TextBlock>
                 <local:MaterialSwitch x:Name="CrystalbindNotificationType_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetCrystalbindNotificationType" Margin="0,0,20,0"></local:MaterialSwitch>
 

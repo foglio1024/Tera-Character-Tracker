@@ -21,7 +21,7 @@
 
         <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
             <Grid.Effect>
-                <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="3"/>
+                <DropShadowEffect Opacity="0.2" ShadowDepth=".5" BlurRadius="4"/>
             </Grid.Effect>
 
             <!--Style="{StaticResource MaterialGrid}"-->

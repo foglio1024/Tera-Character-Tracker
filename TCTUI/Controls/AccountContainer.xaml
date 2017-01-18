@@ -22,9 +22,9 @@
                 <Setter.Value>
                     <DropShadowEffect BlurRadius="4"
                                       Color="Black"
-                                      Opacity=".3"
+                                      Opacity=".2"
                                       x:Name="shadow"
-                                      ShadowDepth="1.5"/>
+                                      ShadowDepth=".5"/>
                 </Setter.Value>
             </Setter>
         </Style>

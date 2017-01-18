@@ -78,7 +78,8 @@
 <!--Add views here in row 2-->
             <local:MainView Grid.Row="2"/>
             
-            <local:leftSlide x:Name="leftSlide1" Height="870"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="400" Margin="-420,0,0,30" Grid.Row="2"/>
+            <local:leftSlide x:Name="leftSlide1" Height="870"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="400" Margin="-420,0,0,30" Grid.Row="2">
+            </local:leftSlide>
             <Grid Name="ToolBar" HorizontalAlignment="Stretch" Margin="0" Background="#FF607D8B" Grid.Row="1" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="35"/>
