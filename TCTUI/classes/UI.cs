@@ -11,6 +11,8 @@ namespace Tera
     public static class UI
     {
         public static TeraMainWindow MainWin;
+        public static CharViewContentProvider cvcp = new CharViewContentProvider();
+
         public static void UpdateLog(string data)
         {
             MainWin.UpdateLog(data);

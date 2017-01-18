@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Xml.Linq;
 
-namespace TCTParser
+namespace TCTData
 {
-    class ZoneToRegionID : IValueConverter
+    public class ZoneToRegionID : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             int zoneID = (int)value;
             if(zoneID != 0)
             {
-                return System.Convert.ToInt32(Tera.TeraLogic.ContinentData.Descendants().Where(x => x.Name == "Continent").Descendants().Where(y => (string)y.Attribute("id").Value == zoneID.ToString()).FirstOrDefault().Parent.Attribute("id").Value.ToString());
+                return System.Convert.ToInt32(TCTData.TCTDatabase.ContinentData.Descendants().Where(x => x.Name == "Continent").Descendants().Where(y => (string)y.Attribute("id").Value == zoneID.ToString()).FirstOrDefault().Parent.Attribute("id").Value.ToString());
 
             }
             else

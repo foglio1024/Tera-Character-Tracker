@@ -15,7 +15,7 @@ namespace TCTParser.Processors
         public uint GetLocationNameId(string p)
         {
             uint id = GetLocationId(p); /*Convert.ToUInt32(StringUtils.Hex4BStringToInt(p.Substring(SECTION_ID_OFFSET, 8)));*/
-            XElement s = Tera.TeraLogic.NewWorldMapData.Descendants("Section").Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
+            XElement s = TCTData.TCTDatabase.NewWorldMapData.Descendants("Section").Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
             if (s != null)
             {
                 id = Convert.ToUInt32(s.Attribute("nameId").Value);

@@ -37,7 +37,7 @@ namespace TCTParser.Processors
                 {
                     if (questParser.GetQuestSize(quest) == GetGuildSize(p) && questParser.GetZoneID(quest) != 152 && questParser.GetZoneID(quest) != 0)
                     {
-                        ZoneToRegionID c = new ZoneToRegionID();
+                        TCTData.ZoneToRegionID c = new TCTData.ZoneToRegionID();
                         QuestList.Add(new GuildQuest(questParser.GetQuestID(quest), questParser.GetStatus(quest), (int)c.Convert(questParser.GetZoneID(quest), null, null, null)));
                         Console.WriteLine("questID: {0} - status:{1} -- regionID:{2}", QuestList.Last().QuestID, QuestList.Last().Status, QuestList.Last().RegionID);
                     }

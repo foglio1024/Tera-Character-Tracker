@@ -46,6 +46,7 @@ namespace TCTParser
         static SystemMessageProcessor sysMsgProcessor = new SystemMessageProcessor();
         static CombatProcessor combatParser = new CombatProcessor();
         static NocteniumProcessor nocteniumProcessor = new NocteniumProcessor();
+        static DungeonClearsProcessor dungeonClearsProcessor = new DungeonClearsProcessor();
 
         public static void StoreLastMessage(Message msg)
         {
@@ -71,8 +72,8 @@ namespace TCTParser
                     }
                     charListProcessor.CurrentAccountId = accountLoginProcessor.id;
                     SetCharList(data);
-                    TeraLogic.SaveAccounts(true);
-                    TeraLogic.SaveCharacters(true);
+                    TeraLogic.SaveAccounts(false);
+                    TeraLogic.SaveCharacters(false);
                     Tera.UI.UpdateLog("Data saved.");
                     break;
 
@@ -122,7 +123,9 @@ namespace TCTParser
                     wCforDungeons = data;
                     setDungs();
                     break;
-
+                case "S_DUNGEON_CLEAR_COUNT_LIST":
+                    dungeonClearsProcessor.UpdateClears(data);
+                    break;
                 case "S_SYSTEM_MESSAGE":
                     sysMsgProcessor.ParseSystemMessage(data);
                     break;
@@ -159,8 +162,9 @@ namespace TCTParser
                     break;
 
                 case "S_RETURN_TO_LOBBY":
-                    TeraLogic.SaveAccounts(true);
-                    TeraLogic.SaveCharacters(true);
+                    TeraLogic.SaveAccounts(false);
+                    TeraLogic.SaveCharacters(false);
+                    UI.UpdateLog("Data saved.");
                     inventoryProcessor.justLoggedIn = true;
                     vanguardWindowProcessor.justLoggedIn = true;
                     break;
@@ -344,7 +348,7 @@ namespace TCTParser
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 }
                                                                                             
-                Tera.UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationId(p).ToString()/*GetLocationName(p)*/ + ".");
+                Tera.UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
                 guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
             }
 

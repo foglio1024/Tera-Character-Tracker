@@ -94,12 +94,20 @@
     <Compile Include="CharacterContainer.xaml.cs">
       <DependentUpon>CharacterContainer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Arc.cs" />
     <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Arc.cs" />
+    <Compile Include="Classes\Character.cs" />
+    <Compile Include="Classes\CharDungeon.cs" />
     <Compile Include="Classes\DataBinder.cs" />
+    <Compile Include="Classes\Dungeon.cs" />
+    <Compile Include="Converters\Dungeon_ClearsToColor.cs" />
+    <Compile Include="Classes\TeraLogic.cs" />
     <Compile Include="Converters\TimeToAngle.cs" />
     <Compile Include="CrystalbindIndicator.xaml.cs">
       <DependentUpon>CrystalbindIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungeonClearsCounter.xaml.cs">
+      <DependentUpon>DungeonClearsCounter.xaml</DependentUpon>
     </Compile>
     <Compile Include="MaterialSwitch.xaml.cs">
       <DependentUpon>MaterialSwitch.xaml</DependentUpon>
@@ -140,8 +148,6 @@
     <Compile Include="Converters\ValueToBarLenght.cs" />
     <Compile Include="Converters\ClassToImage.cs" />
     <Compile Include="Converters\Dungeon_RunsToColor.cs" />
-    <Compile Include="Classes\CharDungeon.cs" />
-    <Compile Include="Classes\Dungeon.cs" />
     <Compile Include="Converters\IntToString.cs" />
     <Compile Include="Converters\Laurel_GradeToColor.cs" />
     <Compile Include="DungeonRunsCounter.xaml.cs">
@@ -161,6 +167,10 @@
       <DependentUpon>AccountContainer.xaml</DependentUpon>
     </Compile>
     <Page Include="CrystalbindIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DungeonClearsCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,7 +214,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\Character.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -227,7 +236,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\TeraLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

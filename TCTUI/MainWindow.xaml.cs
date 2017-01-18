@@ -227,39 +227,64 @@ namespace Tera
                 d.Name = dg.ShortName;
                 d.Tag = dg.ShortName;
                 d.n.Text = dg.ShortName;
-                XElement dgNameEl = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dg.Id.ToString()).FirstOrDefault();
+                XElement dgNameEl = TCTData.TCTDatabase.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dg.Id.ToString()).FirstOrDefault();
                 if (dgNameEl != null)
                 {
                     d.ToolTip = dgNameEl.Attribute("string").Value;
                 }
 
                 DungeonCounters.Add(d);
-                
+
+                DungeonClearsCounter c = new DungeonClearsCounter();
+                c.Name = dg.ShortName;
+                c.Tag = dg.ShortName;
+                c.dungeonName.Text = dg.ShortName;
+                XElement dgNameEl1 = TCTData.TCTDatabase.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dg.Id.ToString()).FirstOrDefault();
+                if (dgNameEl != null)
+                {
+                    c.ToolTip = dgNameEl.Attribute("string").Value;
+                }
+
                 switch (dg.Tier)
                 {
                     case DungeonTier.Tier2:
                         chView.t2panel.Children.Add(d);
+                        chView.t2panelC.Children.Add(c);
                         break;
 
                     case DungeonTier.Tier3:
                         chView.t3panel.Children.Add(d);
+                        chView.t3panelC.Children.Add(c);
+
                         break;
 
                     case DungeonTier.Tier4:
                         chView.tier4panel.Children.Add(d);
+                        chView.t4panelC.Children.Add(c);
+
                         break;
 
                     case DungeonTier.Tier5:
                         chView.tier5panel.Children.Add(d);
+                        chView.t5panelC.Children.Add(c);
+
                         break;
 
                     case DungeonTier.Solo:
                         chView.soloPanel.Children.Add(d);
+
                         break;
 
                     default:
                         break;
                 }
+
+                /*
+                 * add dg clear counters 
+                 * 
+                 */
+
+
             }
 
             ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);

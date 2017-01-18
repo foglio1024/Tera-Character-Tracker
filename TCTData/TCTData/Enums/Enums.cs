@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace TCTData.Enums
 {
+    public enum DungeonTier
+    {
+        Solo,
+        Tier2,
+        Tier3,
+        Tier4,
+        Tier5
+    }
+
     public enum NotificationImage
     {
         Default,

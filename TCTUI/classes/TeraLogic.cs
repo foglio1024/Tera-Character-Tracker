@@ -44,15 +44,6 @@ namespace Tera
         public static Dictionary<uint, string> GuildDictionary { get; set; }
         private static XDocument settings;
         private static DateTime LastClosed;
-        public static XDocument EventMatching;
-        public static XDocument DailyPlayGuideQuest;
-        public static XDocument StrSheet_DailyPlayGuideQuest;
-        public static XDocument StrSheet_Region;
-        public static XDocument StrSheet_Dungeon;
-        public static XDocument StrSheet_ZoneName;
-        public static XDocument NewWorldMapData;
-        public static XDocument ContinentData;
-        public static List<XDocument> StrSheet_Item_List;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
 
         public static void AddCharacter(Character c)
@@ -95,11 +86,11 @@ namespace Tera
                     if (DungList[j].ShortName == "AH" || DungList[j].ShortName == "EA" || DungList[j].ShortName == "GL" || DungList[j].ShortName == "CA")
                     {
 
-                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns));
+                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns,0));
                     }
                     else
                     {
-                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc));
+                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc,0));
 
                     }
                 }
@@ -139,22 +130,9 @@ namespace Tera
             w.dragonScalesTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "DragonwingScales"));
             w.notesTB.SetBinding(       TextBox.TextProperty,   DataBinder.GenericCharBinding(charIndex, "Notes"));
             
-        // create width bindings for bars
-            //w.questsBar.SetBinding(     Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY) }));
-            //w.dailiesBar.SetBinding(    Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Dailies", new Daily_ValueToBarWidth(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY - CharList[charIndex].Weekly) }));
-            //w.creditsBar.SetBinding(    Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Credits", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_CREDITS) }));
-            //w.marksBar.SetBinding(      Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_MARKS) }));
-            //w.gfBar.SetBinding(         Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_GF_TOKENS) }));
-
-        // create color bindings for bars
-            //w.questsBar.SetBinding(     Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new ValueToBarColor(), 7));
-            //w.dailiesBar.SetBinding(    Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new ValueToBarColor(), 7));
-            //w.creditsBar.SetBinding(    Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Credits", new ValueToBarColor(), 8000));
-            //w.marksBar.SetBinding(      Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor", new ValueToBarColor(), 80));
-            //w.gfBar.SetBinding(         Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens", new ValueToBarColor(), 65));
-
         // create bindings for dungeon counters
             DataBinder.CreateDgBindings(charIndex, w);
+            DataBinder.CreateDgClearsBindings(charIndex, w);
 
         // highlight character row and scroll into view
             foreach (var ns in Tera.TeraMainWindow.CharacterStrips)
@@ -269,7 +247,7 @@ namespace Tera
                         {
                             tc = 2;
                         }
-                        CharList[i].Dungeons.Insert(j, new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc));
+                        CharList[i].Dungeons.Insert(j, new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc,0));
                     }
                 }
             }
@@ -475,27 +453,6 @@ namespace Tera
             }
 
         }
-        public static void LoadTeraDB()
-        {
-            DailyPlayGuideQuest             = LoadXDocument("DailyPlayGuideQuest");
-            EventMatching                   = LoadXDocument("EventMatching");
-            StrSheet_DailyPlayGuideQuest    = LoadXDocument("StrSheet_DailyPlayGuideQuest");
-            StrSheet_Region                 = LoadXDocument("StrSheet_Region");
-            NewWorldMapData                 = LoadXDocument("NewWorldMapData");
-            StrSheet_Dungeon                = LoadXDocument("StrSheet_Dungeon-0");
-            ContinentData                   = LoadXDocument("ContinentData");
-            StrSheet_ZoneName               = LoadXDocument("StrSheet_ZoneName");
-
-            StrSheet_Item_List              = new List<XDocument>();
-            int i = 0;
-            while (File.Exists(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Item/StrSheet_Item-" + i + ".xml"))
-            {
-                //var doc = LoadXDocument("StrSheet_Item-" + i);
-                //doc = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Item/StrSheet_Item-" + i + ".xml");
-                StrSheet_Item_List.Add(LoadXDocument("/StrSheet_Item/StrSheet_Item-" + i));
-                i++;
-            }
-        }
         public static void SaveSettings(bool log)
         {
             LastClosed = DateTime.Now;
@@ -534,9 +491,8 @@ namespace Tera
                 UI.UpdateLog("Settings saved.");
             }
         }
-        public static void LoadDatabases()
+        public static void LoadData()
         {
-            LoadTeraDB();
             LoadAccounts();
             LoadCharacters();
             SortChars();
@@ -556,11 +512,6 @@ namespace Tera
 
         }
 
-        private static XDocument LoadXDocument(string fileName)
-        {
-            XDocument doc = new XDocument();
-            return XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/" + fileName + ".xml");
-        }
 
         public static void LoadSettings()
         {

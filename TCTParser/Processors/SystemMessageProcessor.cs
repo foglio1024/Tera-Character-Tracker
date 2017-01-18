@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using TCTData.Enums;
 using Tera;
 
-namespace TCTParser.Processors
+namespace TCTParser
 {
     internal class SystemMessageProcessor
     {
@@ -49,7 +49,7 @@ namespace TCTParser.Processors
         {
             uint dungId = 0;
             UInt32.TryParse(StringUtils.GetStringFromHex(p, DUNGEON_ID_OFFSET, "0000"), out dungId);
-            XElement t = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dungId.ToString()).FirstOrDefault();
+            XElement t = TCTData.TCTDatabase.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dungId.ToString()).FirstOrDefault();
 
             var dgName = t.Attribute("string").Value;
             if (dgName != null)
@@ -76,7 +76,7 @@ namespace TCTParser.Processors
             Console.WriteLine("Completed vanguard.");
             int questId = 0;
             Int32.TryParse(StringUtils.GetStringFromHex(p, QUEST_ID_OFFSET, "0B00"), out questId);
-            XElement s = Tera.TeraLogic.EventMatching.Descendants().Where(x => (string)x.Attribute("questId") == questId.ToString()).FirstOrDefault();
+            XElement s = TCTData.TCTDatabase.EventMatching.Descendants().Where(x => (string)x.Attribute("questId") == questId.ToString()).FirstOrDefault();
             var d = s.Descendants().Where(x => (string)x.Attribute("type") == "reputationPoint").FirstOrDefault();
 
             if (d != null)
