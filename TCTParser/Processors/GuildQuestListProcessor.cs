@@ -98,20 +98,6 @@ namespace TCTParser.Processors
             return ((GuildSize)size).ToString();
         }
 
-        public void RemoveQuest(string p)
-        {
-            int id = StringUtils.Hex2BStringToInt(p.Substring(10));
-            foreach (var quest in QuestList)
-            {
-                if (quest.QuestID == id)
-                {
-                    QuestList.Remove(quest);
-                    UI.UpdateLog("Guild quest completed.");
-                }
-            }
-            UpdateUI();
-        }
-
         public void TakeQuest(string p)
         {
             var id = StringUtils.Hex2BStringToInt(p.Substring(7 * 2));

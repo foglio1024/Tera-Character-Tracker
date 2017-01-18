@@ -21,12 +21,11 @@ namespace TCTParser
 
             foreach (DungClear dgClear in ClearList)
             {
-                var c = new TCTData.RegionIDToName();
 
                 if(Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID) != null)
                 {
                     string dgName = Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID).ShortName; //find this dungeon name
-                    DataParser.CurrentChar().Dungeons.Find(y => y.Name == dgName).Clears = dgClear.Clears; //update clears              
+                    DataParser.CurrentChar.Dungeons.Find(y => y.Name == dgName).Clears = dgClear.Clears; //update clears              
                 }
 
             }
@@ -41,9 +40,14 @@ namespace TCTParser
                 ClearList.Add(ParseElement(dung));
             }
         }
+
         private DungClear ParseElement(string e)
         {
-            return new DungClear(StringUtils.Hex2BStringToInt(e.Substring(ID_OFFSET)), StringUtils.Hex2BStringToInt(e.Substring(COUNT_OFFSET)));
+            return new DungClear
+            (
+                id: StringUtils.Hex2BStringToInt(e.Substring(ID_OFFSET)), 
+                clears: StringUtils.Hex2BStringToInt(e.Substring(COUNT_OFFSET))
+            );
         }
 
         private class DungClear

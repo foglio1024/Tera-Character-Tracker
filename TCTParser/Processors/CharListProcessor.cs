@@ -10,58 +10,27 @@ using Tera.Converters;
 
 namespace TCTParser.Processors
 {
-    internal class CharListProcessor
+    internal class CharListProcessor : ListParser
     {
-        const int CLASS_OFFSET_FROM_START = 60;
-        const int LEVEL_OFFSET_FROM_START = 68;
-        const int LOCATION_OFFSET_FROM_START = 108;
-        const int LAST_ONLINE_OFFSET_FROM_START = 116;
-        const int LAUREL_OFFSET_FROM_START = 600;
-        const int POSITION_OFFSET_FROM_START = 608;
-        const int GUILD_ID_OFFSET_FROM_START = 616;
-        const int NAME_OFFSET_FROM_START = 624;
-        const int GUILD_NAME_OFFSET_FROM_NAME = 196;
+        const int CLASS_OFFSET_FROM_START = 28*2;
+        const int LEVEL_OFFSET_FROM_START = 32*2;
+        const int LOCATION_OFFSET_FROM_START = 52*2;
+        const int LAST_ONLINE_OFFSET_FROM_START = 56*2;
+        const int LAUREL_OFFSET_FROM_START = 298*2;
+        const int POSITION_OFFSET_FROM_START = 302*2;
+        const int GUILD_ID_OFFSET_FROM_START = 306*2;
+        const int NAME_OFFSET_FROM_START = 310*2;
+        const int GUILD_NAME_OFFSET_FROM_NAME = 96*2;
         const int FIRST_POINTER = 6;
 
         public string CurrentAccountId { get; set; }
 
         UnixToDateTime timeConverter = new UnixToDateTime();
-        Location_IdToName lcc = new Location_IdToName();
+        LocationIdToName lcc = new LocationIdToName();
 
         List<string> charStrings = new List<string>();
-        List<int> indexesArray = new List<int>();
 
-        private List<Tera.Character> sortChars(List<Tera.Character> c)
-        {
-            List<Tera.Character> newList = new List<Tera.Character>();
-            uint maxIndex = 0;
-            for (int i = 0; i < c.Count; i++)
-            {
-                if (maxIndex <= c[i].Position)
-                {
-                    maxIndex = c[i].Position;
-                }
-            }
-
-            if (maxIndex == 0)
-            {
-                return c;
-            }
-
-            else
-            {
-                for (int i = 0; i <= maxIndex; i++)
-                {
-                    int newIndex = c.IndexOf(c.Find(x => x.Position == i));
-                    if (newIndex >= 0)
-                    {
-                        newList.Add(c[newIndex]);
-                    }
-                }
-                return newList;
-            }
-        }
-        private string getName(string s)
+        private string GetName(string s)
         {
             StringBuilder b = new StringBuilder();
             bool eos = false;
@@ -86,7 +55,7 @@ namespace TCTParser.Processors
             return name;
 
         }
-        private uint getPosition(string s)
+        private uint GetPosition(string s)
         {
             StringBuilder b = new StringBuilder();
             string c = s.Substring(POSITION_OFFSET_FROM_START, 8);
@@ -101,7 +70,7 @@ namespace TCTParser.Processors
             return pos;
 
         }
-        private string getClass(string s)
+        private string GetClass(string s)
         {
             StringBuilder b = new StringBuilder();
             string c = s.Substring(CLASS_OFFSET_FROM_START, 8);
@@ -118,7 +87,7 @@ namespace TCTParser.Processors
             return cl;
 
         }
-        private string getLaurel(string s)
+        private string GetLaurel(string s)
         {
             StringBuilder b = new StringBuilder();
             string c = s.Substring(LAUREL_OFFSET_FROM_START, 8);
@@ -134,7 +103,7 @@ namespace TCTParser.Processors
             string lr = ((Laurel)lrIndex).ToString();
             return lr;
         }
-        private uint getLevel(string s)
+        private uint GetLevel(string s)
         {
             StringBuilder b = new StringBuilder();
             string c = s.Substring(LEVEL_OFFSET_FROM_START, 8);
@@ -149,7 +118,7 @@ namespace TCTParser.Processors
             return lv;
 
         }
-        private uint getGuildId(string s)
+        private uint GetGuildId(string s)
         {
             StringBuilder b = new StringBuilder();
             string c = "";
@@ -166,7 +135,7 @@ namespace TCTParser.Processors
             return gid;
 
         }
-        private uint getLocationId(string s)
+        private uint GetLocationId(string s)
         {
             StringBuilder b = new StringBuilder();
             string c = "";
@@ -181,7 +150,7 @@ namespace TCTParser.Processors
             uint loc = Convert.ToUInt32(b.ToString(), 16);
             return loc;
         }
-        private long getLastOnline(string s)
+        private long GetLastOnline(string s)
         {
             StringBuilder b = new StringBuilder();
             StringReader r = new StringReader(s);
@@ -197,7 +166,7 @@ namespace TCTParser.Processors
             long lastOn = Convert.ToInt64(b.ToString(), 16);
             return lastOn;
         }
-        private string getGuildName(string s)
+        private string GetGuildName(string s)
         {
             StringBuilder b = new StringBuilder();
             StringReader r = new StringReader(s);
@@ -206,7 +175,7 @@ namespace TCTParser.Processors
             string c = "";
             while (!eos)
             {
-                c = s.Substring(NAME_OFFSET_FROM_START + getName(s).Length * 4 + GUILD_NAME_OFFSET_FROM_NAME + 4 * i, 4);
+                c = s.Substring(NAME_OFFSET_FROM_START + GetName(s).Length * 4 + GUILD_NAME_OFFSET_FROM_NAME + 4 * i, 4);
                 if (c != "0000")
                 {
                     b.Append(c);
@@ -220,51 +189,20 @@ namespace TCTParser.Processors
 
             b.Replace("00", "");
             string gname = Encoding.UTF7.GetString(StringUtils.StringToByteArray(b.ToString()));
-            //Console.WriteLine(gname);
             return gname;
 
         }
 
-        void fillIndexesArray(string content)
-        {
-            int currentPointer = FIRST_POINTER;
-
-            do
-            {
-                int lastPointer = readPointer(content, currentPointer * 2);
-                indexesArray.Add(lastPointer);
-                currentPointer = readPointer(content, lastPointer * 2 + 4);
-            }
-            while (currentPointer != 0);
-        }
-        void fillCharStrings(string content)
-        {
-            fillIndexesArray(content);
-            int itemLenght = 0;
-            for (int i = 0; i < indexesArray.Count; i++)
-            {
-                if (i != indexesArray.Count - 1)
-                {
-                    itemLenght = indexesArray[i + 1] - indexesArray[i];
-                    charStrings.Add(content.Substring(indexesArray[i] * 2 + 4, itemLenght * 2));
-                }
-                else
-                {
-                    charStrings.Add(content.Substring(indexesArray[i] * 2 + 4));
-                }
-
-            }
-        }
         Character StringToCharacter(string s)
         {
-            uint guildId = getGuildId(s);
-            uint pos = getPosition(s);
-            string name = getName(s);
-            string charClass = getClass(s);
-            uint level = getLevel(s);
-            uint loc = getLocationId(s);
-            long lastOn = getLastOnline(s);
-            string laurel = getLaurel(s);
+            uint guildId = GetGuildId(s);
+            uint pos = GetPosition(s);
+            string name = GetName(s);
+            string charClass = GetClass(s);
+            uint level = GetLevel(s);
+            uint loc = GetLocationId(s);
+            long lastOn = GetLastOnline(s);
+            string laurel = GetLaurel(s);
 
 
             return new Character(_index: pos,
@@ -278,16 +216,10 @@ namespace TCTParser.Processors
                                 _accId: CurrentAccountId
                                 );
         }
-        int readPointer(string content, int start)
-        {
-            return StringUtils.Hex2BStringToInt(content.Substring(start, 4));
-        }
-
         public List<Character> ParseCharacters(string p)
         {
             List<Character> _charList = new List<Character>();
-            fillCharStrings(p);
-
+            charStrings = ParseList(p);
             foreach (var str in charStrings)
             {
                 var c = StringToCharacter(str);
@@ -295,20 +227,15 @@ namespace TCTParser.Processors
 
                 if (!Tera.TeraLogic.GuildDictionary.ContainsKey(c.GuildId))
                 {
-                    TeraLogic.GuildDictionary.Add(c.GuildId, getGuildName(str));
+                    TeraLogic.GuildDictionary.Add(c.GuildId, GetGuildName(str));
                 }
 
                 Console.WriteLine(("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + timeConverter.Convert(c.LastOnline, null, null, null) + "."));
             }
-
-
-            // var charList = sortChars(_charList);
-            // return charList;
             return _charList;
         }
         public void Clear()
         {
-            indexesArray.Clear();
             charStrings.Clear();
         }
 

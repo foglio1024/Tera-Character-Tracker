@@ -29,7 +29,7 @@ namespace TCTParser.Processors
         public string GetLocationName(string p)
         {
             var locId = GetLocationId(p);
-            var c = new Location_IdToName();
+            var c = new LocationIdToName();
             return (string)c.Convert(locId, null, null, null);
         }
     }

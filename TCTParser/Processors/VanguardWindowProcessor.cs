@@ -12,6 +12,7 @@ namespace TCTParser.Processors
         const int WEEKLY_OFFSET = 28 * 2;
         const int CREDITS_OFFSET = 32 * 2;
         const int DAILY_OFFSET = 12 * 2;
+
         public bool justLoggedIn = true;
 
         public int GetWeekly(string content)

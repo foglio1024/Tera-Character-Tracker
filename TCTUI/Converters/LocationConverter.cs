@@ -6,7 +6,7 @@ using System.Xml.Linq;
 
 namespace Tera.Converters
 {
-    public class Location_IdToName : IValueConverter
+    public class LocationIdToName : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -17,17 +17,12 @@ namespace Tera.Converters
             if (s != null)
             {
                 XElement t = TCTData.TCTDatabase.StrSheet_Region.Descendants().Where(x => (string)x.Attribute("id") == s.Attribute("nameId").Value).FirstOrDefault();
-                
-
 
                 if (t != null)
                 {
                     locationName =  t.Attribute("string").Value;
                 }
             }
-
-            
-
             return locationName;
         }
 
