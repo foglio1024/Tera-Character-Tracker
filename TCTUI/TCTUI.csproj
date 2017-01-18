@@ -54,7 +54,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>flat_icon.ico</ApplicationIcon>
+    <ApplicationIcon>resources\flat_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -91,9 +91,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharacterContainer.xaml.cs">
-      <DependentUpon>CharacterContainer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Arc.cs" />
     <Compile Include="Classes\Character.cs" />
@@ -103,19 +100,22 @@
     <Compile Include="Converters\Dungeon_ClearsToColor.cs" />
     <Compile Include="Classes\TeraLogic.cs" />
     <Compile Include="Converters\TimeToAngle.cs" />
-    <Compile Include="CrystalbindIndicator.xaml.cs">
+    <Compile Include="Controls\CrystalbindIndicator.xaml.cs">
       <DependentUpon>CrystalbindIndicator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DungeonClearsCounter.xaml.cs">
+    <Compile Include="Controls\DungeonClearsCounter.xaml.cs">
       <DependentUpon>DungeonClearsCounter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MaterialSwitch.xaml.cs">
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MaterialSwitch.xaml.cs">
       <DependentUpon>MaterialSwitch.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QuestGauge.xaml.cs">
+    <Compile Include="Controls\QuestGauge.xaml.cs">
       <DependentUpon>QuestGauge.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BarGauge.xaml.cs">
+    <Compile Include="Controls\BarGauge.xaml.cs">
       <DependentUpon>BarGauge.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ValueToBarColor.cs" />
@@ -123,25 +123,18 @@
     <Compile Include="Converters\Guild_IdToName.cs" />
     <Compile Include="Converters\LocationConverter.cs" />
     <Compile Include="Converters\ValueToAngle.cs" />
-    <Compile Include="DungeonsWindow.xaml.cs">
+    <Compile Include="Controls\DungeonsWindow.xaml.cs">
       <DependentUpon>DungeonsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\UnixToDateTime.cs" />
     <Compile Include="Converters\ProgressToColor.cs" />
     <Compile Include="Classes\UI.cs" />
     <Compile Include="Converters\TicksToTimespan.cs" />
-    <Compile Include="WeeklyGauge.xaml.cs">
-      <DependentUpon>WeeklyGauge.xaml</DependentUpon>
-    </Compile>
-    <Page Include="CharacterContainer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="CharView.xaml.cs">
+    <Compile Include="Controls\CharView.xaml.cs">
       <DependentUpon>CharView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\CharViewContentProvider.cs" />
@@ -150,59 +143,56 @@
     <Compile Include="Converters\Dungeon_RunsToColor.cs" />
     <Compile Include="Converters\IntToString.cs" />
     <Compile Include="Converters\Laurel_GradeToColor.cs" />
-    <Compile Include="DungeonRunsCounter.xaml.cs">
+    <Compile Include="Controls\DungeonRunsCounter.xaml.cs">
       <DependentUpon>DungeonRunsCounter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="exitDiag.xaml.cs">
-      <DependentUpon>exitDiag.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\LaurelToImage.cs" />
-    <Compile Include="CharacterStrip.xaml.cs">
+    <Compile Include="Controls\CharacterStrip.xaml.cs">
       <DependentUpon>CharacterStrip.xaml</DependentUpon>
     </Compile>
-    <Compile Include="leftSlide.xaml.cs">
+    <Compile Include="Controls\leftSlide.xaml.cs">
       <DependentUpon>leftSlide.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AccountContainer.xaml.cs">
+    <Compile Include="Controls\AccountContainer.xaml.cs">
       <DependentUpon>AccountContainer.xaml</DependentUpon>
     </Compile>
-    <Page Include="CrystalbindIndicator.xaml">
+    <Page Include="Controls\CrystalbindIndicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DungeonClearsCounter.xaml">
+    <Page Include="Controls\DungeonClearsCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MaterialSwitch.xaml">
+    <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="QuestGauge.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="BarGauge.xaml">
+    <Page Include="Controls\MaterialSwitch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CharView.xaml">
+    <Page Include="Controls\QuestGauge.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\BarGauge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DungeonRunsCounter.xaml">
+    <Page Include="Controls\CharView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DungeonsWindow.xaml">
+    <Page Include="Controls\DungeonRunsCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="exitDiag.xaml">
+    <Page Include="Controls\DungeonsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="leftSlide.xaml">
+    <Page Include="Controls\leftSlide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,21 +208,17 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="CharacterStrip.xaml">
+    <Page Include="Controls\CharacterStrip.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="AccountContainer.xaml">
+    <Page Include="Controls\AccountContainer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="WeeklyGauge.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -275,7 +261,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="flat_icon.ico" />
+    <Resource Include="resources\flat_icon.ico" />
     <Resource Include="resources\bigLaurels\bronze.png" />
     <Resource Include="resources\bigLaurels\champion.png" />
     <Resource Include="resources\bigLaurels\diamond.png" />
@@ -329,6 +315,7 @@
   <ItemGroup>
     <Resource Include="tctlogo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

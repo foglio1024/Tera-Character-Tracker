@@ -16,7 +16,7 @@
         Foreground="#FFFaFaFa" 
         UseLayoutRounding="True" 
         SnapsToDevicePixels="True" 
-        Icon="flat_icon.ico" 
+        Icon="resources/flat_icon.ico" 
         Visibility="Visible" 
         HorizontalAlignment="Stretch" 
         VerticalAlignment="Stretch" 
@@ -69,45 +69,15 @@
     <!--<Border Name="MainBorder" Width="{StaticResource _Width}" Height="900" Grid.RowSpan="5" BorderBrush="#FF506d7b" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">-->
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <Grid Name="MainGrid"  AllowDrop="True"  Margin="0"  Background="#FFf0f0f0" HorizontalAlignment="Stretch">
-            <!--#region Rows/Columns Defs-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <!--#endregion-->
-
-            <Grid Name="sepGrid" HorizontalAlignment="Stretch"  Grid.Row="2">
-                <!--#region Rows/Columns Defs-->
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <!--#endregion-->
-
-                <local:CharView x:Name="chView" Grid.Column="2" HorizontalAlignment="Stretch"/>
-
-                <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
-                    <Grid.Effect>
-                        <DropShadowEffect Opacity="0.2" ShadowDepth="2" BlurRadius="3"/>
-                    </Grid.Effect>
-
-                    <!--Style="{StaticResource MaterialGrid}"-->
-                    <!--<Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />-->
-                    <local:AccountContainer x:Name="accounts"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
-                </Grid>
-
-
-                <Grid x:Name="spacer" Width="0"/>
-
-
-
-
-            </Grid>
+<!--Add views here in row 2-->
+            <local:MainView Grid.Row="2"/>
+            
             <local:leftSlide x:Name="leftSlide1" Height="870"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="400" Margin="-420,0,0,30" Grid.Row="2"/>
             <Grid Name="ToolBar" HorizontalAlignment="Stretch" Margin="0" Background="#FF607D8B" Grid.Row="1" >
                 <Grid.ColumnDefinitions>

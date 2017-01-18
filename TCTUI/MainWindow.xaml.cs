@@ -130,7 +130,7 @@ namespace Tera
         {
             /*adds strip to panel*/
             (CharacterStrips[i].Content as Grid).Height = 1;
-            accounts.chContainer.Items.Add(CharacterStrips[i]);
+            UI.CharList.chContainer.Items.Add(CharacterStrips[i]);
             (CharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
         }
         public void CreateStrip(int i)
@@ -201,7 +201,7 @@ namespace Tera
                 result.StreamSource = stream;
                 result.EndInit();
                 result.Freeze();
-                chView.guildLogo.Source = result;
+                UI.CharView.guildLogo.Source = result;
 
 
             }));
@@ -248,30 +248,30 @@ namespace Tera
                 switch (dg.Tier)
                 {
                     case DungeonTier.Tier2:
-                        chView.t2panel.Children.Add(d);
-                        chView.t2panelC.Children.Add(c);
+                        UI.CharView.t2panel.Children.Add(d);
+                        UI.CharView.t2panelC.Children.Add(c);
                         break;
 
                     case DungeonTier.Tier3:
-                        chView.t3panel.Children.Add(d);
-                        chView.t3panelC.Children.Add(c);
+                        UI.CharView.t3panel.Children.Add(d);
+                        UI.CharView.t3panelC.Children.Add(c);
 
                         break;
 
                     case DungeonTier.Tier4:
-                        chView.tier4panel.Children.Add(d);
-                        chView.t4panelC.Children.Add(c);
+                        UI.CharView.tier4panel.Children.Add(d);
+                        UI.CharView.t4panelC.Children.Add(c);
 
                         break;
 
                     case DungeonTier.Tier5:
-                        chView.tier5panel.Children.Add(d);
-                        chView.t5panelC.Children.Add(c);
+                        UI.CharView.tier5panel.Children.Add(d);
+                        UI.CharView.t5panelC.Children.Add(c);
 
                         break;
 
                     case DungeonTier.Solo:
-                        chView.soloPanel.Children.Add(d);
+                        UI.CharView.soloPanel.Children.Add(d);
 
                         break;
 
@@ -289,7 +289,7 @@ namespace Tera
 
             ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);
             StatusBar.Background =          new SolidColorBrush(UI.Colors.SolidBaseColor);
-            chView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
+            UI.CharView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
 
             this.Activate();
 
@@ -543,7 +543,7 @@ namespace Tera
                 TeraLogic.DeletedChars.Add(TeraLogic.CharList[ind]);
                 TeraLogic.CharList.Remove(TeraLogic.cvcp.SelectedChar);
                 TeraLogic.cvcp.SelectedChar = null;
-                UI.MainWin.accounts.chContainer.Items.RemoveAt(ind);
+                UI.CharList.chContainer.Items.RemoveAt(ind);
                 TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => (string)x.Tag == TeraLogic.DeletedChars.Last().Name));
 
                 UI.MainWin.undoButton.Opacity = 1;

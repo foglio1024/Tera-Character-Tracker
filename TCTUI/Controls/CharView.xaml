@@ -55,7 +55,7 @@
         <Style x:Key="Star" TargetType="Rectangle">
             <Setter Property="OpacityMask">
                 <Setter.Value>
-                    <ImageBrush ImageSource="resources/ui_images/star_mask.png"/>
+                    <ImageBrush ImageSource="/TCTUI;component/resources/ui_images/star_mask.png"/>
                 </Setter.Value>
             </Setter>
             <Setter Property="Fill" Value="#a0ffa64d"/>
@@ -134,7 +134,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Foreground="#f0ffffff" Style="{StaticResource TBlock}" HorizontalAlignment="Left" Name="guildNameTB" VerticalAlignment="Center" Grid.Column="1"  Margin="5,0,5,0" TextWrapping="Wrap" Width="Auto"></TextBlock>
-                        <Image  x:Name="guildLogo" Height="30" Width="30" HorizontalAlignment="Stretch" Margin="0" Source="resources/ui_images/0.bmp" Stretch="UniformToFill" Grid.Column="0"/>
+                        <Image  x:Name="guildLogo" Height="30" Width="30" HorizontalAlignment="Stretch" Margin="0" Source="/TCTUI;component/resources/ui_images/0.bmp" Stretch="UniformToFill" Grid.Column="0"/>
                     </Grid>
                 </Grid>
 

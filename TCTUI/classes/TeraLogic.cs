@@ -106,7 +106,7 @@ namespace Tera
 
             cvcp.SelectedChar = TeraLogic.CharList.Find(x => x.Name.Equals(name));
             var charIndex = (TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Equals(TeraLogic.cvcp.SelectedChar))));
-            var w = UI.MainWin.chView;
+            var w = UI.CharView;
 
         // set name and class
             w.charName.Text = TeraLogic.cvcp.SelectedChar.Name;
@@ -142,7 +142,7 @@ namespace Tera
                     if (ns.Tag.Equals(name))
                     {
                         ns.rowSelect(true);
-                        UI.MainWin.accounts.chContainer.ScrollIntoView(ns);
+                        UI.CharList.chContainer.ScrollIntoView(ns);
                     }
                     else
                     {
