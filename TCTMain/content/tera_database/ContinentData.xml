@@ -769,4 +769,7 @@
   <Continent id="9950" channelType="dungeon">
     <HuntingZone id="950" />
   </Continent>
+  <Continent id="9710" channelType="dungeon">
+    <HuntingZone id="710" />
+  </Continent>
 </ContinentData>

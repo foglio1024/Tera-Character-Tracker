@@ -424,6 +424,9 @@
   <String id="700025001" string="Conquer the Demokron Factory" />
   <String id="700025100" string="[Demokron Factory] Gather your allies and defeat Verno!" />
   <String id="700025101" string="Claim your reward!" />
+  <String id="700026001" string="Burn Out the Broken Prison" />
+  <String id="700026100" string="[Broken Prison] Gather your allies and defeat Balbatos!" />
+  <String id="700026101" string="Claim your reward!" />
   <String id="700110001" string="Option: Conquer the Shadow Sanguinary" />
   <String id="700110100" string="[Shadow Sanguinary] Defeat Imperator with your allies!" />
   <String id="700110101" string="Claim your reward!" />
@@ -460,6 +463,9 @@
   <String id="700124001" string="Option: Conquer Runis Manor (Hard)" />
   <String id="700124100" string="[Runis Manor (Hard)] Defeat Nightmare Lachelith with your allies! " />
   <String id="700124101" string="Claim your reward!" />
+  <String id="700126001" string="Option: Burn Out the Broken Prison" />
+  <String id="700126100" string="[Broken Prison] Gather your allies and defeat Balbatos!" />
+  <String id="700126101" string="Claim your reward!" />
   <String id="800010001" string="Assault the Ebon Tower!" />
   <String id="800010100" string="[Ebon Tower] Eliminate Thulsa." />
   <String id="800010101" string="Claim your reward!" />
