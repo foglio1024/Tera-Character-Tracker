@@ -525,4 +525,25 @@
       </TargetList>
     </ClearCondition>
   </Quest>
+  <Quest id="21031" name="뒤틀린 라칸의 제단 (상)" desc="@GuildQuest:21031002" title="@GuildQuest:21031001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="710" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21032" name="뒤틀린 라칸의 제단 (상)" desc="@GuildQuest:21032002" title="@GuildQuest:21032001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="710" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
+  <Quest id="21033" name="뒤틀린 라칸의 제단 (상)" desc="@GuildQuest:21033002" title="@GuildQuest:21033001">
+    <ClearCondition>
+      <TargetList>
+        <Npc huntingZoneId="710" templateId="3000" />
+      </TargetList>
+    </ClearCondition>
+  </Quest>
 </GuildQuest>

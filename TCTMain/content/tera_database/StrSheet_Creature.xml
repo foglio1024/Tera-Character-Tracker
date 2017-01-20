@@ -4842,6 +4842,7 @@
     <String name="Demokron Factory Entrance" class="" templateId="9067" title="Teleportal" gender="" race="" />
     <String name="Manglemire Entrance" class="" templateId="9070" title="Playground Teleport Master" gender="" race="" />
     <String name="Harrowhold Entrance" class="" templateId="9501" title="" gender="" race="" />
+    <String name="Entrance to the Broken Prison" class="" templateId="9710" title="Teleportal" gender="" race="" />
     <String name="Entrance to Lilith's Keep" class="" templateId="9769" title="Teleportal" gender="" race="" />
     <String name="Qeldar Station" class="" templateId="18101" title="" gender="" race="" />
     <String name="Hulran Watch" class="" templateId="18102" title="" gender="" race="" />
@@ -11844,6 +11845,29 @@
     <String name="Fanblade Naga" class="" templateId="64309" title="" gender="" race="" />
     <String name="Naga Warrior" class="" templateId="64310" title="" gender="" race="" />
   </HuntingZone>
+  <HuntingZone id="710">
+    <String name="Defeat Gorgoth summoned by Balbatos." class="" templateId="911" title="" gender="male" race="monster" />
+    <String name="Defeat Molek summoned by Balbatos." class="" templateId="912" title="" gender="male" race="monster" />
+    <String name="Defeat Balbatos." class="" templateId="913" title="" gender="male" race="monster" />
+    <String name="Gorgoth" class="" templateId="1000" title="Mad Conjurer" gender="male" race="" />
+    <String name="Exit Teleportal" templateId="1501" title="" />
+    <String name="Teleportal" templateId="1502" title="" />
+    <String name="Teleportal" templateId="1503" title="" />
+    <String name="Molek" class="" templateId="2000" title="Bipolar Destroyer" gender="male" race="" />
+    <String name="Balbatos" class="" templateId="3000" title="Dimensional Conduit" gender="male" race="" />
+    <String name="Wounded Soldier" class="" templateId="5001" title="Vanguard Scout" gender="male" race="" />
+    <String name="Wounded Soldier" class="" templateId="5002" title="Vanguard Scout" gender="male" race="" />
+    <String name="Wounded Soldier" class="" templateId="5003" title="Vanguard Scout" gender="male" race="" />
+    <String name="Archdevan Sorcerer" class="" templateId="5004" title="Lakan's Legion" gender="male" race="" />
+    <String name="Archdevan Archer" class="" templateId="5005" title="Lakan's Legion" gender="male" race="" />
+    <String name="Archdevan Warrior" class="" templateId="5006" title="Lakan's Legion" gender="male" race="" />
+    <String name="Soldier" class="" templateId="5007" title="Vanguard Scout" gender="male" race="" />
+    <String name="Soldier" class="" templateId="5008" title="Vanguard Scout" gender="male" race="" />
+    <String name="Soldier" class="" templateId="5009" title="Vanguard Scout" gender="male" race="" />
+    <String name="Soldier" class="" templateId="5010" title="Vanguard Scout" gender="male" race="" />
+    <String name="Balbatos" class="" templateId="6001" title="Dimensional Conduit" gender="male" race="" />
+    <String name="Balbatos" class="" templateId="6002" title="Dimensional Conduit" gender="male" race="" />
+  </HuntingZone>
   <HuntingZone id="711">
     <String name="Exit Teleportal" class="" templateId="1601" title="" gender="Male" race="Object" />
     <String name="Nightmare Krakatox" class="" templateId="81101" title="King Demokron" gender="Male" race="" />
@@ -13912,7 +13936,7 @@
     <String name="Montori's Haul: 4th Challenge" class="" templateId="885055" title="" gender="male" race="" />
     <String name="Montori's Haul: 9th Challenge" class="" templateId="885056" title="" gender="male" race="" />
     <String name="Montori's Haul: 14th Challenge" class="" templateId="885057" title="" gender="male" race="" />
-    <String name="Montori's Haul: 22nd Challenge" class="" templateId="885058" title="" gender="male" race="" />
+    <String name="Montori's Haul: 22nd Challenge" class="" templateId="885058" title="22nd Challenge" gender="male" race="" />
     <String name="Sturdy Arzakaar" class="" templateId="885061" title="6th Challenge" gender="male" race="" />
     <String name="Invincible Arzakaar" class="" templateId="885062" title="6th Challenge" gender="male" race="" />
     <String name="Twisted Arzakaar" class="" templateId="885064" title="6th Challenge" gender="male" race="" />
