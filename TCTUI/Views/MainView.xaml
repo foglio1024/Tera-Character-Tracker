@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Tera.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tera"
+             mc:Ignorable="d" 
+             d:DesignHeight="930" d:DesignWidth="1280">
+    <Grid Name="sepGrid" HorizontalAlignment="Stretch"  Grid.Row="2">
+        <!--#region Rows/Columns Defs-->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--#endregion-->
+
+        <local:CharView x:Name="chView" Grid.Column="2" HorizontalAlignment="Stretch"/>
+
+        <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch">
+            <Grid.Effect>
+                <DropShadowEffect Opacity="0.2" ShadowDepth=".5" BlurRadius="4"/>
+            </Grid.Effect>
+
+            <!--Style="{StaticResource MaterialGrid}"-->
+            <!--<Border BorderThickness="0,0,1,0" BorderBrush="Black" Opacity=".2" VerticalAlignment="Stretch" />-->
+            <local:AccountContainer x:Name="accounts"  AllowDrop="False"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+        </Grid>
+
+
+        <Grid x:Name="spacer" Width="0"/>
+
+
+
+
+    </Grid>
+
+</UserControl>

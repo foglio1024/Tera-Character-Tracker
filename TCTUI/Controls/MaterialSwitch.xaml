@@ -11,7 +11,7 @@
             <Rectangle.OpacityMask>
                 <ImageBrush Stretch="Uniform">
                     <ImageBrush.ImageSource>
-                        <BitmapImage UriSource="resources/ui_images/switch_base.png"/>
+                        <ImageSource>/TCTUI;component/resources/ui_images/switch_base.png</ImageSource>
                     </ImageBrush.ImageSource>
                 </ImageBrush>
             </Rectangle.OpacityMask>

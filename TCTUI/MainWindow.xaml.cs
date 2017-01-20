@@ -38,10 +38,10 @@ namespace Tera
         public TeraMainWindow()
         {
             InitializeComponent();
-            Top = TeraLogic.TCTProps.Top;
-            Left = TeraLogic.TCTProps.Left;
-            Height = TeraLogic.TCTProps.Height;
-            Width = TeraLogic.TCTProps.Width;
+            Top = TCTData.TCTProps.Top;
+            Left = TCTData.TCTProps.Left;
+            Height = TCTData.TCTProps.Height;
+            Width = TCTData.TCTProps.Width;
 
             UI.MainWin = this;
         }
@@ -62,6 +62,7 @@ namespace Tera
 
         #region Properties
         public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
+        public static List<DungeonRunsCounter> DungeonCounters { get; set; } = new List<DungeonRunsCounter>();
         #endregion
 
         #region Methods
@@ -129,7 +130,7 @@ namespace Tera
         {
             /*adds strip to panel*/
             (CharacterStrips[i].Content as Grid).Height = 1;
-            accounts.chContainer.Items.Add(CharacterStrips[i]);
+            UI.CharList.chContainer.Items.Add(CharacterStrips[i]);
             (CharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
         }
         public void CreateStrip(int i)
@@ -200,7 +201,7 @@ namespace Tera
                 result.StreamSource = stream;
                 result.EndInit();
                 result.Freeze();
-                chView.guildLogo.Source = result;
+                UI.CharView.guildLogo.Source = result;
 
 
             }));
@@ -226,42 +227,69 @@ namespace Tera
                 d.Name = dg.ShortName;
                 d.Tag = dg.ShortName;
                 d.n.Text = dg.ShortName;
-                XElement dgNameEl = TeraLogic.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dg.Id.ToString()).FirstOrDefault();
+                XElement dgNameEl = TCTData.TCTDatabase.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dg.Id.ToString()).FirstOrDefault();
                 if (dgNameEl != null)
                 {
                     d.ToolTip = dgNameEl.Attribute("string").Value;
                 }
-                    
+
+                DungeonCounters.Add(d);
+
+                DungeonClearsCounter c = new DungeonClearsCounter();
+                c.Name = dg.ShortName;
+                c.Tag = dg.ShortName;
+                c.dungeonName.Text = dg.ShortName;
+                XElement dgNameEl1 = TCTData.TCTDatabase.StrSheet_Dungeon.Descendants().Where(x => (string)x.Attribute("id") == dg.Id.ToString()).FirstOrDefault();
+                if (dgNameEl != null)
+                {
+                    c.ToolTip = dgNameEl.Attribute("string").Value;
+                }
+
                 switch (dg.Tier)
                 {
                     case DungeonTier.Tier2:
-                        chView.t2panel.Children.Add(d);
+                        UI.CharView.t2panel.Children.Add(d);
+                        UI.CharView.t2panelC.Children.Add(c);
                         break;
 
                     case DungeonTier.Tier3:
-                        chView.t3panel.Children.Add(d);
+                        UI.CharView.t3panel.Children.Add(d);
+                        UI.CharView.t3panelC.Children.Add(c);
+
                         break;
 
                     case DungeonTier.Tier4:
-                        chView.tier4panel.Children.Add(d);
+                        UI.CharView.tier4panel.Children.Add(d);
+                        UI.CharView.t4panelC.Children.Add(c);
+
                         break;
 
                     case DungeonTier.Tier5:
-                        chView.tier5panel.Children.Add(d);
+                        UI.CharView.tier5panel.Children.Add(d);
+                        UI.CharView.t5panelC.Children.Add(c);
+
                         break;
 
                     case DungeonTier.Solo:
-                        chView.soloPanel.Children.Add(d);
+                        UI.CharView.soloPanel.Children.Add(d);
+
                         break;
 
                     default:
                         break;
                 }
+
+                /*
+                 * add dg clear counters 
+                 * 
+                 */
+
+
             }
 
             ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);
             StatusBar.Background =          new SolidColorBrush(UI.Colors.SolidBaseColor);
-            chView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
+            UI.CharView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
 
             this.Activate();
 
@@ -299,10 +327,11 @@ namespace Tera
         } 
         private void SaveButtonPressed(object sender, RoutedEventArgs e)
         {
-            TeraLogic.SaveCharacters(true);
-            TeraLogic.SaveAccounts(true);
-            TeraLogic.SaveGuildsDB(true);
-            TeraLogic.SaveSettings(true);
+            TeraLogic.SaveCharacters(false);
+            TeraLogic.SaveAccounts(false);
+            TeraLogic.SaveGuildsDB(false);
+            TeraLogic.SaveSettings(false);
+            UI.UpdateLog("Data saved.");
             TeraLogic.IsSaved = true;
         }
         private void LeftSlideToggle(object sender, MouseButtonEventArgs e)
@@ -473,10 +502,10 @@ namespace Tera
             TeraLogic.SaveCharacters(false);
             TeraLogic.SaveAccounts(false);
             TeraLogic.SaveGuildsDB(false);
-            TeraLogic.TCTProps.Top = this.Top;
-            TeraLogic.TCTProps.Left = this.Left;
-            TeraLogic.TCTProps.Height = this.Height;
-            TeraLogic.TCTProps.Width = this.Width;
+            TCTData.TCTProps.Top = this.Top;
+            TCTData.TCTProps.Left = this.Left;
+            TCTData.TCTProps.Height = this.Height;
+            TCTData.TCTProps.Width = this.Width;
         }
         private void TeraMainWin_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -514,7 +543,7 @@ namespace Tera
                 TeraLogic.DeletedChars.Add(TeraLogic.CharList[ind]);
                 TeraLogic.CharList.Remove(TeraLogic.cvcp.SelectedChar);
                 TeraLogic.cvcp.SelectedChar = null;
-                UI.MainWin.accounts.chContainer.Items.RemoveAt(ind);
+                UI.CharList.chContainer.Items.RemoveAt(ind);
                 TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => (string)x.Tag == TeraLogic.DeletedChars.Last().Name));
 
                 UI.MainWin.undoButton.Opacity = 1;

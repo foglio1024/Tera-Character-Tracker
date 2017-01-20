@@ -40,13 +40,18 @@ namespace TCTNotifier
 
         static void AddNotification(string _content, NotificationImage _img, NotificationType type, Color col, bool rep, bool snd, bool right)
         {
-            var n = new NotificationInfo(_content, _img, type, col, rep, snd, right);
-            NQ.Add(n);
+            if (TCTData.TCTProps.Notifications)
+            {
+                var n = new NotificationInfo(_content, _img, type, col, rep, snd, right);
+                NQ.Add(n);
+            }
         }
+
         public static void SendNotification(string _content, NotificationImage img, NotificationType t, Color col, bool rep, bool snd, bool right)
         {
             AddNotification(_content, img, t, col, rep, snd, right);
         }
+
         public static void SendNotification(string _content, Color c)
         {
             AddNotification(_content, NotificationImage.Default, NotificationType.Standard, c, true, true, false);

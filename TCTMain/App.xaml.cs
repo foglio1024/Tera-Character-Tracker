@@ -55,6 +55,7 @@ namespace TCTMain
 
                     Tera.TeraLogic.TryReset();
                     w.Title = "Tera Character Tracker " + version;
+
                     w.ShowDialog();
 
                     Tera.TeraLogic.SaveSettings(false);
@@ -176,7 +177,8 @@ namespace TCTMain
             //load settings
             Tera.TeraLogic.LoadSettings();
             Tera.TeraLogic.ResetCheck();
-            Tera.TeraLogic.LoadDatabases();
+            Tera.TeraLogic.LoadData();
+            TCTData.TCTDatabase.LoadTeraDB();
 
             Thread uiThread = new Thread(new ThreadStart(Threads.UIThread));
             Thread netThread = new Thread(new ThreadStart(Threads.NetThread));

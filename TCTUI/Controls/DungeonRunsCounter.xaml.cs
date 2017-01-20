@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TCTData.Enums;
 
 namespace Tera
 {
@@ -66,6 +67,32 @@ namespace Tera
             }
 
         }
+        public void SetGquestStatus(GuildQuestStatus status)
+        {
+            switch (status)
+            {
+                case GuildQuestStatus.Available:
+                    gQuestLed.Fill = new SolidColorBrush(UI.Colors.FadedBaseColor);
+                    gQuestLed.Opacity = 1;
+                    break;
 
+                case GuildQuestStatus.Taken:
+                    gQuestLed.Fill = new SolidColorBrush(UI.Colors.SolidYellow);
+                    gQuestLed.Opacity = 1;
+                    break;
+
+                case GuildQuestStatus.Completed:
+                    gQuestLed.Fill = new SolidColorBrush(UI.Colors.SolidGreen);
+                    gQuestLed.Opacity = 1;
+                    break;
+
+                case GuildQuestStatus.NotFound:
+                    gQuestLed.Opacity = 0;
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }

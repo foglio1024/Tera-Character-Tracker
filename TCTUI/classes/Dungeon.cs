@@ -4,16 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using TCTData.Enums;
+
 namespace Tera
 {
-    public enum DungeonTier
-    {
-        Solo,
-        Tier2,
-        Tier3,
-        Tier4,
-        Tier5
-    }
     [Serializable]
     public class Dungeon
     {

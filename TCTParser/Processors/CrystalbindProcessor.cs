@@ -100,7 +100,7 @@ namespace TCTParser.Processors
                     Status = true;
                     Time = b.TimeLeft;
                     ccbEnding = false;
-                    DataParser.CurrentChar().Crystalbind = Time;
+                    DataParser.CurrentChar.Crystalbind = Time;
                 }
             }
         }
@@ -145,7 +145,7 @@ namespace TCTParser.Processors
         {
             Status = false;
             Time = 0;
-            DataParser.CurrentChar().Crystalbind = Time;
+            DataParser.CurrentChar.Crystalbind = Time;
             BuffList.Clear();
             UI.SendNotification("Your Complete Crystalbind expired.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Red, true, true, false);
         }

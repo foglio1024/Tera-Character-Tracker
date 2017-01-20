@@ -21,27 +21,10 @@ using TCTData.Enums;
 
 namespace Tera
 {
-    public enum CcbNotificationMode
-    {
-        TeleportOnly = 0,
-        EverySection = 1
-    }
 
     public static class TeraLogic
     {
 
-        public static class TCTProps
-        {
-            public static bool Reset { get; set; }
-            public static bool FirstLaunchAfterReset { get; set; }
-            public static DateTime LastClosed { get; set; }
-            public static double Top { get; set; }
-            public static double Left { get; set; }
-            public static double Width { get; set; }
-            public static double Height { get; set; }
-            public static bool Console { get; set; }
-            public static CcbNotificationMode CcbNM { get; set; } = CcbNotificationMode.TeleportOnly;
-        }
 
 
         public const int MAX_WEEKLY = 15;
@@ -61,14 +44,6 @@ namespace Tera
         public static Dictionary<uint, string> GuildDictionary { get; set; }
         private static XDocument settings;
         private static DateTime LastClosed;
-        public static XDocument EventMatching;
-        public static XDocument DailyPlayGuideQuest;
-        public static XDocument StrSheet_DailyPlayGuideQuest;
-        public static XDocument StrSheet_Region;
-        public static XDocument StrSheet_Dungeon;
-        public static XDocument StrSheet_ZoneName;
-        public static XDocument NewWorldMapData;
-        public static List<XDocument> StrSheet_Item_List;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
 
         public static void AddCharacter(Character c)
@@ -111,11 +86,11 @@ namespace Tera
                     if (DungList[j].ShortName == "AH" || DungList[j].ShortName == "EA" || DungList[j].ShortName == "GL" || DungList[j].ShortName == "CA")
                     {
 
-                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns));
+                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns,0));
                     }
                     else
                     {
-                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc));
+                        CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc,0));
 
                     }
                 }
@@ -131,7 +106,7 @@ namespace Tera
 
             cvcp.SelectedChar = TeraLogic.CharList.Find(x => x.Name.Equals(name));
             var charIndex = (TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Equals(TeraLogic.cvcp.SelectedChar))));
-            var w = UI.MainWin.chView;
+            var w = UI.CharView;
 
         // set name and class
             w.charName.Text = TeraLogic.cvcp.SelectedChar.Name;
@@ -149,28 +124,15 @@ namespace Tera
             //w.mvTB.SetBinding(          TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor"));
             //w.gfTB.SetBinding(          TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens"));
             w.guildNameTB.SetBinding(   TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "GuildId", new Guild_IdToName(), null));
-            w.locationTB.SetBinding(    TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LocationId" , new Location_IdToName(), null));
+            w.locationTB.SetBinding(    TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LocationId" , new LocationIdToName(), null));
             w.lastOnlineTB.SetBinding(  TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LastOnline", new UnixToDateTime(), null));
             w.ilvlTB.SetBinding(        TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Ilvl"));
             w.dragonScalesTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "DragonwingScales"));
             w.notesTB.SetBinding(       TextBox.TextProperty,   DataBinder.GenericCharBinding(charIndex, "Notes"));
             
-        // create width bindings for bars
-            //w.questsBar.SetBinding(     Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY) }));
-            //w.dailiesBar.SetBinding(    Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Dailies", new Daily_ValueToBarWidth(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_WEEKLY - CharList[charIndex].Weekly) }));
-            //w.creditsBar.SetBinding(    Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "Credits", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_CREDITS) }));
-            //w.marksBar.SetBinding(      Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_MARKS) }));
-            //w.gfBar.SetBinding(         Shape.WidthProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens", new ValueToBarLenght(), new double[] { UI.MainWin.chView.baseBar.ActualWidth, Convert.ToDouble(MAX_GF_TOKENS) }));
-
-        // create color bindings for bars
-            //w.questsBar.SetBinding(     Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new ValueToBarColor(), 7));
-            //w.dailiesBar.SetBinding(    Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Weekly", new ValueToBarColor(), 7));
-            //w.creditsBar.SetBinding(    Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "Credits", new ValueToBarColor(), 8000));
-            //w.marksBar.SetBinding(      Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "MarksOfValor", new ValueToBarColor(), 80));
-            //w.gfBar.SetBinding(         Shape.FillProperty, DataBinder.GenericCharBinding(charIndex, "GoldfingerTokens", new ValueToBarColor(), 65));
-
         // create bindings for dungeon counters
             DataBinder.CreateDgBindings(charIndex, w);
+            DataBinder.CreateDgClearsBindings(charIndex, w);
 
         // highlight character row and scroll into view
             foreach (var ns in Tera.TeraMainWindow.CharacterStrips)
@@ -180,7 +142,7 @@ namespace Tera
                     if (ns.Tag.Equals(name))
                     {
                         ns.rowSelect(true);
-                        UI.MainWin.accounts.chContainer.ScrollIntoView(ns);
+                        UI.CharList.chContainer.ScrollIntoView(ns);
                     }
                     else
                     {
@@ -285,7 +247,7 @@ namespace Tera
                         {
                             tc = 2;
                         }
-                        CharList[i].Dungeons.Insert(j, new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc));
+                        CharList[i].Dungeons.Insert(j, new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc,0));
                     }
                 }
             }
@@ -491,32 +453,6 @@ namespace Tera
             }
 
         }
-        public static void LoadTeraDB()
-        {
-            DailyPlayGuideQuest             = new XDocument();
-            DailyPlayGuideQuest             = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/DailyPlayGuideQuest.xml");
-            EventMatching                   = new XDocument();
-            EventMatching                   = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/EventMatching.xml");
-            StrSheet_DailyPlayGuideQuest    = new XDocument();
-            StrSheet_DailyPlayGuideQuest    = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_DailyPlayGuideQuest.xml");
-            StrSheet_Region                 = new XDocument();
-            StrSheet_Region                 = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Region.xml");
-            NewWorldMapData                 = new XDocument();
-            NewWorldMapData                 = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/NewWorldMapData.xml");
-            StrSheet_Dungeon                = new XDocument();
-            StrSheet_Dungeon                = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Dungeon-0.xml");
-            StrSheet_ZoneName               = new XDocument();
-            StrSheet_ZoneName               = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_ZoneName.xml");
-            StrSheet_Item_List              = new List<XDocument>();
-            int i = 0;
-            while (File.Exists(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Item/StrSheet_Item-" + i + ".xml"))
-            {
-                var doc = new XDocument();
-                doc = XDocument.Load(Environment.CurrentDirectory + "\\content/tera_database/StrSheet_Item/StrSheet_Item-" + i + ".xml");
-                StrSheet_Item_List.Add(doc);
-                i++;
-            }
-        }
         public static void SaveSettings(bool log)
         {
             LastClosed = DateTime.Now;
@@ -531,26 +467,32 @@ namespace Tera
                        new XElement("Top", new XAttribute("value", "")),
                        new XElement("Left", new XAttribute("value", "")),
                        new XElement("Width", new XAttribute("value", "")),
-                       new XElement("Height", new XAttribute("value", ""))
+                       new XElement("Height", new XAttribute("value", "")),
+                       new XElement("NotificationSound", new XAttribute("value", "")),
+                       new XElement("Notifications", new XAttribute("value", ""))
+                       /*new setting here*/
                     )
                 );
 
             settings.Descendants().Where(x => x.Name == "LastClosed").FirstOrDefault().Attribute("value").Value = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
-            settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Console.ToString();
-            settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.CcbNM.ToString();
-            settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Top.ToString();
-            settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Left.ToString();
-            settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Width.ToString();
-            settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value = Tera.TeraLogic.TCTProps.Height.ToString();
+            settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Console.ToString();
+            settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.CcbNM.ToString();
+            settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Top.ToString();
+            settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Left.ToString();
+            settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Width.ToString();
+            settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Height.ToString();
+            settings.Descendants().Where(x => x.Name == "NotificationSound").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.NotificationSound.ToString();
+            settings.Descendants().Where(x => x.Name == "Notifications").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Notifications.ToString();
+            /*new setting here*/
+
             settings.Save(Environment.CurrentDirectory + "\\content/data/settings.xml");
             if (log)
             {
                 UI.UpdateLog("Settings saved.");
             }
         }
-        public static void LoadDatabases()
+        public static void LoadData()
         {
-            LoadTeraDB();
             LoadAccounts();
             LoadCharacters();
             SortChars();
@@ -569,6 +511,8 @@ namespace Tera
             }
 
         }
+
+
         public static void LoadSettings()
         {
             settings = new XDocument();
@@ -583,39 +527,70 @@ namespace Tera
                 LastClosed = dtDateTime.AddSeconds(_LastClosed).ToLocalTime();
 
 
-                Tera.TeraLogic.TCTProps.Top = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value);
-                Tera.TeraLogic.TCTProps.Left = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value);
-                Tera.TeraLogic.TCTProps.Width = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value);
-                Tera.TeraLogic.TCTProps.Height = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value);
+                TCTData.TCTProps.Top = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Top").FirstOrDefault().Attribute("value").Value);
+                TCTData.TCTProps.Left = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Left").FirstOrDefault().Attribute("value").Value);
+                TCTData.TCTProps.Width = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Width").FirstOrDefault().Attribute("value").Value);
+                TCTData.TCTProps.Height = Convert.ToDouble(settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value);
+
+
 
                 if (settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value == "EverySection")
                 {
-                    Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.EverySection;
+                    TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
                 }
                 else
                 {
-                    Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.TeleportOnly;
+                    TCTData.TCTProps.CcbNM = CcbNotificationMode.TeleportOnly;
                 }
 
-                if (settings.Descendants().Where(x => x.Name == "Console").FirstOrDefault().Attribute("value").Value == "True")
+
+                if (settings.Descendants().Where(x => x.Name == "NotificationSound").FirstOrDefault() == null)
                 {
-                    Tera.TeraLogic.TCTProps.Console = true;
-                    AllocConsole();
+                    TCTData.TCTProps.NotificationSound = true;
                 }
+
                 else
                 {
-                    Tera.TeraLogic.TCTProps.Console = false;
+                    if (settings.Descendants().Where(x => x.Name == "NotificationSound").FirstOrDefault().Attribute("value").Value == "False")
+                    {
+                        TCTData.TCTProps.NotificationSound = false;
+                    }
+                    else
+                    {
+                        TCTData.TCTProps.NotificationSound = true;
+                    }
                 }
+                if (settings.Descendants().Where(x => x.Name == "Notifications").FirstOrDefault() == null)
+                {
+                    TCTData.TCTProps.Notifications = true;
+                }
+
+                else
+                {
+                    if (settings.Descendants().Where(x => x.Name == "Notifications").FirstOrDefault().Attribute("value").Value == "False")
+                    {
+                        TCTData.TCTProps.Notifications = false;
+                    }
+                    else
+                    {
+                        TCTData.TCTProps.Notifications = true;
+                    }
+                }
+                /*new setting here*/
+
             }
 
             else
             {
-                Tera.TeraLogic.TCTProps.Top = 20;
-                Tera.TeraLogic.TCTProps.Left = 20;
-                Tera.TeraLogic.TCTProps.Width = 1280;
-                Tera.TeraLogic.TCTProps.Height = 930;
-                Tera.TeraLogic.TCTProps.CcbNM = Tera.CcbNotificationMode.EverySection;
-                Tera.TeraLogic.TCTProps.Console = false;
+                TCTData.TCTProps.Top = 20;
+                TCTData.TCTProps.Left = 20;
+                TCTData.TCTProps.Width = 1280;
+                TCTData.TCTProps.Height = 930;
+                TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
+                TCTData.TCTProps.Console = false;
+                TCTData.TCTProps.NotificationSound = true;
+                TCTData.TCTProps.Notifications = true;
+                /*new setting here*/
             }
         }
 

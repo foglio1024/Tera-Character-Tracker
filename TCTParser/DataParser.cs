@@ -46,6 +46,16 @@ namespace TCTParser
         static SystemMessageProcessor sysMsgProcessor = new SystemMessageProcessor();
         static CombatProcessor combatParser = new CombatProcessor();
         static NocteniumProcessor nocteniumProcessor = new NocteniumProcessor();
+        static DungeonClearsProcessor dungeonClearsProcessor = new DungeonClearsProcessor();
+        static DungeonRunsProcessor dungeonRunsProcessor = new DungeonRunsProcessor();
+        static CreditsUpdateProcessor creditsUpdateProcessor = new CreditsUpdateProcessor();
+
+        public static Character CurrentChar
+        { get
+            {
+                return TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name == currentCharName))];
+            }
+        }
 
         public static void StoreLastMessage(Message msg)
         {
@@ -71,9 +81,9 @@ namespace TCTParser
                     }
                     charListProcessor.CurrentAccountId = accountLoginProcessor.id;
                     SetCharList(data);
-                    TeraLogic.SaveAccounts(true);
-                    TeraLogic.SaveCharacters(true);
-                    Tera.UI.UpdateLog("Data saved.");
+                    TeraLogic.SaveAccounts(false);
+                    TeraLogic.SaveCharacters(false);
+                    UI.UpdateLog("Data saved.");
                     break;
 
                 case "S_LOGIN":
@@ -109,20 +119,20 @@ namespace TCTParser
                             SetTokens(inventoryProcessor.justLoggedIn);
                             inventoryProcessor.justLoggedIn = false;
                         }
-                        CurrentChar().Ilvl = inventoryProcessor.GetItemLevel(data); 
+                        CurrentChar.Ilvl = inventoryProcessor.GetItemLevel(data); 
                     }
                     else
                     {
-                        UI.UpdateLog("Combat status and noctenium infusion are in effect. Inventory parsing is disabled.");
+                        UI.UpdateLog("Combat status and Noctenium Infusion are in effect. Inventory parsing disabled.");
                     }
                     break;
 
                 case "S_DUNGEON_COOL_TIME_LIST":
-                    Tera.UI.UpdateLog(currentCharName + " > received dungeons data.");
-                    wCforDungeons = data;
-                    setDungs();
+                    dungeonRunsProcessor.UpdateCoolTimes(data);
                     break;
-
+                case "S_DUNGEON_CLEAR_COUNT_LIST":
+                    dungeonClearsProcessor.UpdateClears(data);
+                    break;
                 case "S_SYSTEM_MESSAGE":
                     sysMsgProcessor.ParseSystemMessage(data);
                     break;
@@ -132,8 +142,8 @@ namespace TCTParser
                     break;
 
                 case "S_UPDATE_NPCGUILD":
-                    wCforUpdatedCreditsAfterPurchase = data;
-                    UpdateVanguardCredits();
+                    creditsUpdateProcessor.UpdateCredits(data);
+                    UpdateLastOnline();
                     break;
 
                 case "S_ABNORMALITY_BEGIN":
@@ -159,24 +169,23 @@ namespace TCTParser
                     break;
 
                 case "S_RETURN_TO_LOBBY":
-                    TeraLogic.SaveAccounts(true);
-                    TeraLogic.SaveCharacters(true);
+                    TeraLogic.SaveAccounts(false);
+                    TeraLogic.SaveCharacters(false);
+                    UI.UpdateLog("Data saved.");
                     inventoryProcessor.justLoggedIn = true;
                     vanguardWindowProcessor.justLoggedIn = true;
                     break;
 
                 case "S_GUILD_QUEST_LIST":
                     guildQuestListProcessor.ParseGuildListPacket(data);
-                    Tera.UI.UpdateLog("Received guild quests list.");
                     break;
 
                 case "S_FINISH_GUILD_QUEST":
-                    Tera.UI.UpdateLog("Guild quest completed.");
+                    UI.UpdateLog("Guild quest completed.");
                     break;
 
                 case "S_START_GUILD_QUEST":
                     guildQuestListProcessor.TakeQuest(data);
-                    Tera.UI.UpdateLog("Guild quest accepted.");
                     break;
 
                 case "S_VIEW_WARE_EX":
@@ -203,20 +212,16 @@ namespace TCTParser
         }
 
         //Methods
-        public static Tera.Character CurrentChar()
-        {
-            return TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name == currentCharName))];
-        }
         private static void SetCharList(string p)
         {
             var charList = charListProcessor.ParseCharacters(p);
             for (int i = 0; i < charList.Count; i++)
             {
-                Tera.UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.AddCharacter(charList[i])));
+                UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(charList[i])));
             }
             charListProcessor.Clear();
 
-            Tera.UI.UpdateLog("Found " + charList.Count + " characters.");
+            UI.UpdateLog("Found " + charList.Count + " characters.");
         }
         private static void LoginChar(string p)
         {
@@ -226,7 +231,7 @@ namespace TCTParser
             Tera.UI.UpdateLog(currentCharName + " logged in.");
             Tera.UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
 
-            TeraLogic.cvcp.SelectedChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            UpdateLastOnline();
         }
         private static void SetTokens(bool forceLog)
         {
@@ -240,17 +245,17 @@ namespace TCTParser
             bool gft = false;
             bool scales = false;
 
-            if (CurrentChar().MarksOfValor != newMarks)
+            if (CurrentChar.MarksOfValor != newMarks)
             {
                 marks = true;
-                var col = GetColor(CurrentChar().MarksOfValor, newMarks);
+                var col = GetColor(CurrentChar.MarksOfValor, newMarks);
 
-                CurrentChar().MarksOfValor = newMarks;
+                CurrentChar.MarksOfValor = newMarks;
 
-                if (CurrentChar().MarksOfValor > 82)
+                if (CurrentChar.MarksOfValor > 82)
                 {
                     UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
-                    UI.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar().MarksOfValor + ").", NotificationImage.Marks, NotificationType.Standard, Colors.Orange, true, true, false);
+                    UI.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar.MarksOfValor + ").", NotificationImage.Marks, NotificationType.Standard, Colors.Orange, true, true, false);
                 }
                 else
                 {
@@ -258,34 +263,34 @@ namespace TCTParser
                 }
             }
 
-            if (CurrentChar().GoldfingerTokens != newGoldfinger)
+            if (CurrentChar.GoldfingerTokens != newGoldfinger)
             {
                 gft = true;
-                var col = GetColor(CurrentChar().GoldfingerTokens, newGoldfinger);
+                var col = GetColor(CurrentChar.GoldfingerTokens, newGoldfinger);
 
-                CurrentChar().GoldfingerTokens = newGoldfinger;
+                CurrentChar.GoldfingerTokens = newGoldfinger;
 
-                if (CurrentChar().GoldfingerTokens >= 80)
+                if (CurrentChar.GoldfingerTokens >= 80)
                 {
                     Tera.UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
-                    UI.SendNotification("You have " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true, false);
+                    UI.SendNotification("You have " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true, false);
                 }
                 else
                 {
                     UI.SendNotification(newGoldfinger.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, col, true, false, true);
                 }
             }
-            if (CurrentChar().DragonwingScales != newDragonScales)
+            if (CurrentChar.DragonwingScales != newDragonScales)
             {
                 scales = true;
-                var col = GetColor(CurrentChar().DragonwingScales, newDragonScales);
+                var col = GetColor(CurrentChar.DragonwingScales, newDragonScales);
 
-                CurrentChar().DragonwingScales = newDragonScales;
+                CurrentChar.DragonwingScales = newDragonScales;
 
-                if (CurrentChar().DragonwingScales >= 50)
+                if (CurrentChar.DragonwingScales >= 50)
                 {
                     Tera.UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
-                    UI.SendNotification("You have " + CurrentChar().DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                    UI.SendNotification("You have " + CurrentChar.DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Scales, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
                 }
                 else
                 {
@@ -296,10 +301,10 @@ namespace TCTParser
 
             if(marks || gft || scales || forceLog)
             {
-                Tera.UI.UpdateLog(currentCharName + " > inventory data updated (" + CurrentChar().MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar().GoldfingerTokens + " Goldfinger Tokens, "+CurrentChar().DragonwingScales+" Dragonwing Scales).");
+                Tera.UI.UpdateLog(currentCharName + " > inventory data updated (" + CurrentChar.MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens, "+CurrentChar.DragonwingScales+" Dragonwing Scales).");
             }
 
-            CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            UpdateLastOnline();
 
         }
         static System.Windows.Media.Color GetColor(int oldVal, int newVal)
@@ -315,48 +320,48 @@ namespace TCTParser
         }
         private static void SetVanguardData(string p, bool forceLog)
         {
-            int weekly = vanguardWindowProcessor.getWeekly(p); //Convert.ToInt32(wCforVGData[7 * 8].ToString() + wCforVGData[7 * 8 + 1].ToString(), 16);
-            int credits = vanguardWindowProcessor.getCredits(p); //Convert.ToInt32(wCforVGData[8 * 8 + 2].ToString() + wCforVGData[8 * 8 + 3].ToString()+ wCforVGData[8 * 8 + 0].ToString() + wCforVGData[8 * 8 + 1].ToString() , 16);
-            int completed_dailies = vanguardWindowProcessor.getDaily(p); //Convert.ToInt32(wCforVGData.Substring(3 * 8, 2).ToString(), 16);
+            int weekly = vanguardWindowProcessor.GetWeekly(p); //Convert.ToInt32(wCforVGData[7 * 8].ToString() + wCforVGData[7 * 8 + 1].ToString(), 16);
+            int credits = vanguardWindowProcessor.GetCredits(p); //Convert.ToInt32(wCforVGData[8 * 8 + 2].ToString() + wCforVGData[8 * 8 + 3].ToString()+ wCforVGData[8 * 8 + 0].ToString() + wCforVGData[8 * 8 + 1].ToString() , 16);
+            int completed_dailies = vanguardWindowProcessor.GetDaily(p); //Convert.ToInt32(wCforVGData.Substring(3 * 8, 2).ToString(), 16);
             int remaining_dailies = Tera.TeraLogic.MAX_DAILY - completed_dailies;
 
-            if(CurrentChar().Weekly != weekly ||
-                CurrentChar().Credits != credits ||
-                CurrentChar().Dailies != remaining_dailies ||
+            if (CurrentChar.Weekly != weekly ||
+                CurrentChar.Credits != credits ||
+                CurrentChar.Dailies != remaining_dailies ||
                 forceLog)
-                {
+            {
 
-                    UI.UpdateLog(CurrentChar().Name + " > vanguard data updated (" + credits + " credits, " + weekly + " weekly quests done, " + remaining_dailies + " dailies left).");
-                }
+                UI.UpdateLog(CurrentChar.Name + " > vanguard data updated (" + credits + " credits, " + weekly + " weekly quests done, " + remaining_dailies + " dailies left).");
+            }
 
-                CurrentChar().Weekly = weekly;
-                CurrentChar().Credits = credits;
-                CurrentChar().Dailies = remaining_dailies;
-            CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            CurrentChar.Weekly = weekly;
+            CurrentChar.Credits = credits;
+            CurrentChar.Dailies = remaining_dailies;
 
+            UpdateLastOnline();
         }
         private static void NewSection(string p)
         {
-            if (CurrentChar().LocationId != sectionProcessor.GetLocationId(p))
+            if (CurrentChar.LocationId != sectionProcessor.GetLocationId(p))
             {
-                CurrentChar().LocationId = sectionProcessor.GetLocationId(p);
-                if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
+                CurrentChar.LocationId = sectionProcessor.GetLocationId(p);
+                if (TCTData.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
                 {
 
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 }
-
-                Tera.UI.UpdateLog(CurrentChar().Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
-                guildQuestListProcessor.CheckQuestStatus(CurrentChar().LocationId);
+                                                                                            
+                Tera.UI.UpdateLog(CurrentChar.Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
+                guildQuestListProcessor.CheckQuestStatus(CurrentChar.LocationId);
             }
 
-            if (TeraLogic.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.CcbNM == CcbNotificationMode.EverySection)
             {
                 crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
 
             }
 
-            CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            UpdateLastOnline();
         }
         private static void SetLogo()
         {
@@ -375,72 +380,10 @@ namespace TCTParser
                 }
             }
         }
-
-        //to be refactored
-        const int VANGUARD_REP_ID = 609;
-
-        private static string wCforDungeons;
-        private static string wCforUpdatedCreditsAfterPurchase;
-
-        private static void UpdateVanguardCredits()
+        
+        public static void UpdateLastOnline()
         {
-            string _repId = wCforUpdatedCreditsAfterPurchase.Substring(40, 4);
-            var repId = StringUtils.Hex2BStringToInt(_repId);
-            if (repId == VANGUARD_REP_ID)
-            {
-                string _cr = wCforUpdatedCreditsAfterPurchase.Substring(64, 8);
-                var cr = StringUtils.Hex4BStringToInt(_cr);
-                if(CurrentChar().Credits != cr)
-                {
-                    var diff = cr - CurrentChar().Credits;
-
-                    CurrentChar().Credits = cr;
-
-                    if(diff > 0) //earned
-                    {
-                        UI.UpdateLog(currentCharName + " > " + "gained " + diff + " Vanguard credits. Current amount: " + cr + ".");
-                        if(CurrentChar().Credits < 8500)
-                        {
-                            UI.SendNotification(CurrentChar().Name + " gained "+diff+" Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationImage.Credits, NotificationType.Standard, UI.Colors.SolidGreen, true, false, false);
-                        }
-                        else
-                        {
-                            UI.SendNotification(CurrentChar().Name + " gained " + diff + " Vanguard Credits." + "\n" + "Current amount: " + CurrentChar().Credits + ", you've almost reached your maximum credits.", NotificationImage.Credits, NotificationType.Standard, Colors.Orange, true, true, false);
-                        }
-                    }
-                    else //spent
-                    {
-                        diff = -diff;
-                        UI.UpdateLog(currentCharName + " > " + "spent " + diff + " Vanguard credits. Current amount: " + cr + ".");
-                        UI.SendNotification(CurrentChar().Name + " spent " + diff + " Vanguard Credits."+"\n"+"Current amount: " + CurrentChar().Credits + ".", NotificationImage.Credits, NotificationType.Standard, Colors.Red, true, false, false);
-                    }
-                }
-            }
-        }
-        private static void setDungs()
-        {
-            var temp = wCforDungeons.Substring(24);
-            List<string> dgList = new List<string>();
-            for (int i = 0; i < temp.Length / 36; i++)
-            {
-                dgList.Add(temp.Substring(36 * i, 36));
-            }
-            foreach (var ds in dgList)
-            {
-                int dgId = StringUtils.Hex2BStringToInt(ds.Substring(8, 4));
-
-                if (Tera.TeraLogic.DungList.Find(d => d.Id == dgId) != null)
-                {
-                    var dgName = Tera.TeraLogic.DungList.Find(d => d.Id == dgId).ShortName;
-                    CurrentChar().Dungeons.Find(d => d.Name == dgName).Runs = Convert.ToInt32(ds.Substring(32, 2));
-                }
-            }
-
-
-
-
-            CurrentChar().LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-
+            CurrentChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
         }
     }
 }

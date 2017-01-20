@@ -12,7 +12,7 @@ namespace Tera
     public class CharDungeon : INotifyPropertyChanged
     {
         private int runs;
-        
+        private int clears;
         public event PropertyChangedEventHandler PropertyChanged;
         protected void NotifyPropertyChanged(string _prop)
         {
@@ -35,13 +35,26 @@ namespace Tera
                 }
             }
         }
+        [XmlAttribute("Clears")]
+        public int Clears
+        {
+            get { return clears; }
+            set
+            {
+                if (clears != value)
+                {
+                    clears = value;
+                    NotifyPropertyChanged("Clears");
+                }
+            }
+        }
 
-      
         public CharDungeon() { }
-        public CharDungeon(string _name, int _runs)
+        public CharDungeon(string _name, int _runs, int _clears)
         {
             Name = _name;
             Runs = _runs;
+            Clears = _clears;
         }
     }
 }

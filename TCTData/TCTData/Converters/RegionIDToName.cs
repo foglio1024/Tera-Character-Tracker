@@ -1,28 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Windows.Data;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
+using TCTData;
 
-namespace Tera.Converters
+namespace TCTData
 {
-    public class LocationIdToName : IValueConverter
+    public class RegionIDToName
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var id = (uint)value;
+            var id = (int)value;
             string locationName = "Unknown location";
 
-            XElement s = TCTData.TCTDatabase.NewWorldMapData.Descendants("Section").Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
+            XElement s = TCTDatabase.NewWorldMapData.Descendants("Section").Where(x => (string)x.Attribute("id") == id.ToString()).FirstOrDefault();
             if (s != null)
             {
-                XElement t = TCTData.TCTDatabase.StrSheet_Region.Descendants().Where(x => (string)x.Attribute("id") == s.Attribute("nameId").Value).FirstOrDefault();
+                XElement t = TCTDatabase.StrSheet_Region.Descendants().Where(x => (string)x.Attribute("id") == s.Attribute("nameId").Value).FirstOrDefault();
 
                 if (t != null)
                 {
-                    locationName =  t.Attribute("string").Value;
+                    locationName = t.Attribute("string").Value;
                 }
             }
+
+
+
             return locationName;
         }
 
@@ -30,5 +36,6 @@ namespace Tera.Converters
         {
             throw new NotImplementedException();
         }
+
     }
 }

@@ -29,7 +29,6 @@ namespace TCTNotifier
 
         private int notificationTime = 1800*3; // notification time in milliseconds
         public Color glowColor;
-        private Color darkColor;
         static System.Timers.Timer OpeningTimer;
         static System.Timers.Timer timer;
 

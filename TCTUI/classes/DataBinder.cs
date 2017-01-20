@@ -94,6 +94,34 @@ namespace Tera
             CreateDgBindingsForTier(charIndex, w.tier5panel.Children);
             CreateDgBindingsForTier(charIndex, w.soloPanel.Children);
         }
+        public static void CreateDgClearsBindingsForTier(int charIndex, UIElementCollection coll)
+        {
+            foreach (DungeonClearsCounter dc in coll)
+            {
+                var counterText = new Binding
+                {
+                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
+                    Path = new PropertyPath("Clears"),
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                    Mode = BindingMode.OneWay,
+                    Converter = new IntToString(),
+                };
+
+                var fill = new Binding
+                {
+                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
+                    Path = new PropertyPath("Clears"),
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                    Mode = BindingMode.OneWay,
+                    Converter = new Dungeon_ClearsToColor(),
+                };
+
+
+                dc.bgRect.SetBinding(Shape.FillProperty, fill);
+                dc.clearsText.SetBinding(TextBlock.TextProperty, counterText);
+            }
+
+        }
         public static void CreateDgBindingsForTier(int charIndex, UIElementCollection coll)
         {
             foreach (DungeonRunsCounter dc in coll)
@@ -105,18 +133,6 @@ namespace Tera
                     tc = 2;
                 }
 
-
-
-                //int dgIndex = TeraLogic.CharList[charIndex].Dungeons.IndexOf(TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name.Equals(dc.Name)));
-
-                //var counterText = new Binding
-                //{
-                //    Source = TeraLogic.CharList[charIndex].Dungeons[dgIndex],
-                //    Path = new PropertyPath("Runs"),
-                //    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-                //    Mode = BindingMode.OneWay,
-                //    Converter = new IntToString(),
-                //};
                 var counterText = new Binding
                 {
                     Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
@@ -126,15 +142,6 @@ namespace Tera
                     Converter = new IntToString(),
                 };
 
-                //int p = 0;
-                //if (dc.n.Text == "AH" || dc.n.Text == "EA" || dc.n.Text == "GL" || dc.n.Text == "CA")
-                //{
-                //    p = TeraLogic.DungList[dgIndex].MaxBaseRuns;
-                //}
-                //else
-                //{
-                //    p = TeraLogic.DungList[dgIndex].MaxBaseRuns * tc;
-                //}
                 int p = 0;
                 if (dc.n.Text == "AH" || dc.n.Text == "EA" || dc.n.Text == "GL" || dc.n.Text == "CA")
                 {
@@ -158,6 +165,15 @@ namespace Tera
                 dc.ell.SetBinding(Shape.FillProperty, ellipseFill);
                 dc.t.SetBinding(TextBlock.TextProperty, counterText);
             }
+        }
+
+        internal static void CreateDgClearsBindings(int charIndex, CharView w)
+        {
+            CreateDgClearsBindingsForTier(charIndex, w.t2panelC.Children);
+            CreateDgClearsBindingsForTier(charIndex, w.t3panelC.Children);
+            CreateDgClearsBindingsForTier(charIndex, w.t4panelC.Children);
+            CreateDgClearsBindingsForTier(charIndex, w.t5panelC.Children);
+
         }
 
         internal static void BindParameterToArcGauge(int i, string v, CrystalbindIndicator ccbInd, IValueConverter valueToAngle)

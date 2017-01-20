@@ -90,7 +90,6 @@
     <Compile Include="Sha.cs" />
     <Compile Include="SpawnMeServerMessage.cs" />
     <Compile Include="StreamHelper.cs" />
-    <Compile Include="S_GET_USER_LIST.cs" />
     <Compile Include="TcpConnection.cs" />
     <Compile Include="TcpFlags.cs" />
     <Compile Include="TcpPacket.cs" />
@@ -106,9 +105,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resources\opcodes-3907eu.txt" />
-    <Content Include="resources\regions.txt" />
-    <Content Include="resources\servers.txt" />
     <Content Include="spclibs\PacketDotNet.dll" />
     <Content Include="spclibs\SharpPcap.dll" />
   </ItemGroup>
@@ -129,6 +125,9 @@
       <Project>{32daa401-1ebe-4417-8795-58a38128502c}</Project>
       <Name>TeraData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -61,11 +61,14 @@ namespace TCTNotifier
                 ThicknessAnimationUsingKeyFrames open = new ThicknessAnimationUsingKeyFrames();
                 open.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(EndThickness), TimeSpan.FromMilliseconds(300), new KeySpline(.5, 0, .3, 1)));
                 NotificationHolder.BeginAnimation(Grid.MarginProperty, open);
-                if (ni.Sound)
+                if (TCTData.TCTProps.NotificationSound)
                 {
-                    System.Media.SoundPlayer sp = new System.Media.SoundPlayer(Environment.CurrentDirectory + "\\content\\served.wav");
-                    sp.Load();
-                    sp.Play();
+                    if (ni.Sound)
+                    {
+                        System.Media.SoundPlayer sp = new System.Media.SoundPlayer(Environment.CurrentDirectory + "\\content\\served.wav");
+                        sp.Load();
+                        sp.Play();
+                    }
                 }
             });
         }
