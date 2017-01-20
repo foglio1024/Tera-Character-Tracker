@@ -12,11 +12,8 @@ https://github.com/Foglio1024/Tera-Character-Tracker/wiki
 https://drive.google.com/drive/folders/0B_Cqa6A1OUxdeDFvTEpZYmtzT2M
 
 ## TODO
-* Account type detection (not displayed yet, but implemented)
-* Dungeon guild quest check upon teleporting to dungeon - DONE
 * Customizable notification types
 * Exclusion list for characters
-* Crystalbind indicator for each character - DONE
 * Hide character
-* Auto-update
-* Error log - DONE
+* Export NA database and switch to it when NA version is detected
+* More views with stats, charts and additional info about characters
