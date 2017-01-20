@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StrSheet_ZoneName>
+  <String id="1" string="Ruinweald " />
+  <String id="2" string="Fey Forest" />
+  <String id="3" string="Oblivion Woods" />
+  <String id="4" string="Fyrmount" />
+  <String id="5" string="Tuwangi Mire" />
+  <String id="6" string="Valley of Titans" />
+  <String id="7" string="Celestial Hills" />
+  <String id="8" string="Hungry Caverns" />
+  <String id="9" string="Ascension Valley" />
+  <String id="10" string="Serpentis Isle" />
+  <String id="11" string="Jagged Coast" />
+  <String id="12" string="Mistmoor Island" />
+  <String id="13" string="Island of Dawn" />
+  <String id="15" string="Cliffs of Insanity" />
+  <String id="16" string="Vale of the Fang" />
+  <String id="17" string="Paraanon Ravine" />
+  <String id="18" string="Colossal Ruins" />
+  <String id="19" string="Freeholds" />
+  <String id="20" string="Tenebrous Mines" />
+  <String id="21" string="Basilisk Crag" />
+  <String id="22" string="Eldritch Academy Grounds" />
+  <String id="23" string="Lake of Tears" />
+  <String id="24" string="Aurum Road" />
+  <String id="25" string="Dark Cathedral" />
+  <String id="26" string="Blessing Basin" />
+  <String id="27" string="Essenian Crest" />
+  <String id="28" string="Blightwood" />
+  <String id="29" string="Timeless Woods" />
+  <String id="30" string="Balder's Refuge" />
+  <String id="31" string="Tempest Reach" />
+  <String id="32" string="Mount Tyrannas" />
+  <String id="33" string="Citadel of Torment" />
+  <String id="34" string="Frost Reach" />
+  <String id="35" string="Wyrmgorge" />
+  <String id="36" string="Tor Exsul" />
+  <String id="37" string="Doomcrypt" />
+  <String id="38" string="Sienna Canyon" />
+  <String id="39" string="Arachnaea" />
+  <String id="40" string="Quarantine Zone" />
+  <String id="41" string="Feral Valley" />
+  <String id="42" string="Temple of Dagon" />
+  <String id="43" string="Cathuulrach" />
+  <String id="44" string="Ebonmaw" />
+  <String id="45" string="Thrallhold" />
+  <String id="46" string="Three Towers" />
+  <String id="47" string="Tirkai Forest" />
+  <String id="48" string="Khanovar Front" />
+  <String id="49" string="Argonea" />
+  <String id="50" string="Granarkus" />
+  <String id="51" string="Vale of Spires" />
+  <String id="52" string="Plain of the Damned" />
+  <String id="53" string="Labyrinth of Terror" />
+  <String id="54" string="Seeliewood" />
+  <String id="55" string="Darkquaver Woods" />
+  <String id="56" string="Susurrus Woods" />
+  <String id="57" string="Amena Quatla" />
+  <String id="58" string="Balderon" />
+  <String id="59" string="Crescentia" />
+  <String id="60" string="Lumbertown" />
+  <String id="61" string="Castanica" />
+  <String id="62" string="Cutthroat Harbor" />
+  <String id="63" string="Velika" />
+  <String id="64" string="Tower Base" />
+  <String id="65" string="Chebika" />
+  <String id="66" string="Tulufan" />
+  <String id="67" string="Popolion" />
+  <String id="68" string="Pora Elinu" />
+  <String id="69" string="Tralion" />
+  <String id="70" string="Tria" />
+  <String id="71" string="Bastion" />
+  <String id="72" string="Allemantheia" />
+  <String id="73" string="Acarum" />
+  <String id="74" string="Elenea" />
+  <String id="75" string="Frontera" />
+  <String id="76" string="Kanstria" />
+  <String id="77" string="Pathfinder Post" />
+  <String id="78" string="Zulfikar Fortress" />
+  <String id="79" string="Habere" />
+  <String id="80" string="Dragonfall" />
+  <String id="81" string="Scythera Fae" />
+  <String id="83" string="Bleakrock" />
+  <String id="84" string="Kaiator" />
+  <String id="85" string="Davarn's Refuge" />
+  <String id="121" string="Free Traders Territory" />
+  <String id="122" string="Enlightened Union Territory" />
+  <String id="123" string="Iron Order Territory" />
+  <String id="124" string="Vault of Seas" />
+  <String id="125" string="Vault of Winter" />
+  <String id="126" string="Vault of Flames" />
+  <String id="127" string="Vault of Allies" />
+  <String id="151" string="Noctenium Research Grounds" />
+  <String id="152" string="Civil Unrest: Velika" />
+  <String id="975" string="Kelsaik's Raid (20-Person Raid)" />
+  <String id="911" string="Kelsaik's Raid (10-Person Raid) " />
+  <String id="401" string="Samael's Residence" />
+  <String id="402" string="Fountain of Shara" />
+  <String id="403" string="Fyrmount Abyss" />
+  <String id="404" string="Highlands of the Beast" />
+  <String id="405" string="Crypt of Restraint" />
+  <String id="407" string="Hidden Shrine" />
+  <String id="408" string="Malachai's Lab" />
+  <String id="410" string="Kaiator Headquarters" />
+  <String id="411" string="Workshop of the Blacksmith" />
+  <String id="412" string="Three Towers Spires" />
+  <String id="413" string="Argon Commanding Fortress" />
+  <String id="414" string="Khanovar Gauntlet" />
+  <String id="416" string="Island of Dawn (Prologue)" />
+  <String id="417" string="Lighthouse of the Sun" />
+  <String id="418" string="Frontline Underground Tunnel" />
+  <String id="419" string="Hills of Divine Knowledge" />
+  <String id="421" string="Tenebrous Mines" />
+  <String id="422" string="Colossal Ruins" />
+  <String id="423" string="Azarel's Labyrinth" />
+  <String id="424" string="Fane of Kaprima" />
+  <String id="425" string="Balder's Temple" />
+  <String id="426" string="Argon Corpus" />
+  <String id="427" string="Manaya's Core (Hard)" />
+  <String id="428" string="Malachai's Lab" />
+  <String id="436" string="Karascha's Lair" />
+  <String id="437" string="Tainted Gorge Bridge" />
+  <String id="438" string="Mysterious Jungle" />
+  <String id="439" string="Caravan Ambush Site" />
+  <String id="440" string="Velika Plaza" />
+  <String id="441" string="Velika Eastern Gate" />
+  <String id="442" string="Velika Headquarters" />
+  <String id="443" string="Wonderholme (Hard)" />
+  <String id="445" string="Bluefirst Mountain" />
+  <String id="446" string="Accursed Oasis" />
+  <String id="447" string="Harvest Festival Hall" />
+  <String id="451" string="Squalid Temple" />
+  <String id="452" string="Banquet of Blood" />
+  <String id="453" string="Kezzel's Gorge" />
+  <String id="455" string="Ravenous Gorge" />
+  <String id="461" string="Ruin of the Giants" />
+  <String id="462" string="Jester's Villa" />
+  <String id="463" string="Susurrus Woods" />
+  <String id="464" string="Molten Chamber" />
+  <String id="465" string="Twilight Valley" />
+  <String id="469" string="Castle Aranea" />
+  <String id="471" string="Necromancer Tomb" />
+  <String id="472" string="Golden Labyrinth" />
+  <String id="473" string="Ebon Tower" />
+  <String id="474" string="Sanctum of Resurrection" />
+  <String id="475" string="Kelsaik's Nest" />
+  <String id="476" string="Labyrinth of Terror" />
+  <String id="477" string="Batu Desert" />
+  <String id="478" string="Suryati's Peak" />
+  <String id="479" string="Saravash's Ascent" />
+  <String id="480" string="Sigil Adstringo" />
+  <String id="481" string="Training Grounds" />
+  <String id="482" string="Temple of Temerity" />
+  <String id="483" string="Breaching Grounds" />
+  <String id="487" string="Bastion of Lok" />
+  <String id="488" string="Sinestral Manor" />
+  <String id="489" string="Cultists' Refuge" />
+  <String id="490" string="Woodland Path" />
+  <String id="491" string="Altar of Vadoma" />
+  <String id="492" string="Dagon's Chantry" />
+  <String id="493" string="Akasha's Hideout" />
+  <String id="494" string="Saleron's Sky Garden" />
+  <String id="495" string="Crucible of Flame" />
+  <String id="496" string="Sirjuka Gallery" />
+  <String id="569" string="Castle Aranea" />
+  <String id="724" string="Fane of Kaprima (Hard)" />
+  <String id="725" string="Balder's Temple (Hard)" />
+  <String id="726" string="Argon Corpus (Hard)" />
+  <String id="727" string="Manaya's Core" />
+  <String id="643" string="Wonderholme" />
+  <String id="743" string="Wonderholme (Hard)" />
+  <String id="766" string="Shattered Fleet" />
+  <String id="773" string="Ebon Tower (Hard)" />
+  <String id="775" string="Kelsaik's Nest (Hard)" />
+  <String id="776" string="Labyrinth of Terror (Hard)" />
+  <String id="793" string="Akasha's Hideout (Hard)" />
+  <String id="801" string="Nexus Traverse" />
+  <String id="1022" string="Nexus" />
+  <String id="777" string="Channelworks" />
+  <String id="825" string="Balder's Temple (Solo)" />
+  <String id="511" string="The Abscess" />
+  <String id="811" string="The Abscess" />
+  <String id="810" string="Lakan's Prison" />
+  <String id="450" string="Rift's Edge (Hard)" />
+  <String id="750" string="Rift's Edge" />
+  <String id="887" string="Bastion of Lok (Solo)" />
+  <String id="888" string="Sinestral Manor (Solo)" />
+  <String id="889" string="Cultists' Refuge (Solo)" />
+  <String id="871" string="Necromancer Tomb (Solo)" />
+  <String id="872" string="Golden Labyrinth (Solo)" />
+  <String id="873" string="Ebon Tower (1 person)" />
+  <String id="808" string="Sabex Armory (Lv. 62)" />
+  <String id="809" string="Macellarius Catacombs (Lv. 64)" />
+  <String id="979" string="Saravash's Ascent" />
+  <String id="760" string="Kalivan's Dreadnaught" />
+  <String id="460" string="Kalivan's Dreadnaught (Hard)" />
+  <String id="860" string="Kalivan's Challenge" />
+  <String id="459" string="Forsaken Island" />
+  <String id="759" string="Forsaken Island (Hard)" />
+  <String id="830" string="Celestial Arena (Solo)" />
+  <String id="970" string="Ruinous Manor (Hard)" />
+  <String id="770" string="Ruinous Manor" />
+  <String id="813" string="Ghillieglade" />
+  <String id="713" string="Ghillieglade" />
+  <String id="468" string="Shadow Sanguinary (Hard)" />
+  <String id="768" string="Shadow Sanguinary" />
+  <String id="456" string="Timescape (Hard)" />
+  <String id="756" string="Timescape" />
+  <String id="467" string="Demokron Factory (Hard)" />
+  <String id="767" string="Demokron Factory" />
+  <String id="429" string="Vault of Kaprima" />
+  <String id="454" string="Bathysmal Rise (Hard)" />
+  <String id="754" string="Bathysmal Rise" />
+  <String id="457" string="Akeron's Inferno (Hard)" />
+  <String id="757" string="Akeron's Inferno" />
+  <String id="916" string="Sky Cruiser Endeavor (Hard)" />
+  <String id="716" string="Sky Cruiser Endeavor" />
+  <String id="823" string="Sky Cruiser Intrepid" />
+  <String id="711" string="The Abscess (Hard)" />
+  <String id="611" string="The Abscess (Hard)" />
+  <String id="885" string="Dreadspire" />
+  <String id="886" string="Dreadspire: Upper Levels" />
+  <String id="769" string="Lilith's Keep" />
+  <String id="969" string="Nightmare Lilith's Keep" />
+  <String id="710" string="Broken Prison" />
+</StrSheet_ZoneName>

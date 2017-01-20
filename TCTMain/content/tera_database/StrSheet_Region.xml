@@ -1,0 +1,1764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StrSheet_Region>
+  <String id="1" string="The World" />
+  <String id="101" string="Arun" />
+  <String id="102" string="Southern Shara" />
+  <String id="103" string="Northern Shara" />
+  <String id="104" string="Northern Arun" />
+  <String id="110" string="Gridiron" />
+  <String id="111" string="Iron Battleground" />
+  <String id="112" string="Fraywind Canyon" />
+  <String id="113" string="Champions' Skyring (Old)" />
+  <String id="114" string="Acradan Base (Old)" />
+  <String id="115" string="Champions' Skyring" />
+  <String id="116" string="Corsairs' Stronghold" />
+  <String id="117" string="Kumasylum" />
+  <String id="118" string="Kumas Royale" />
+  <String id="152" string="Civil Unrest: Velika" />
+  <String id="200" string="Island of Dawn" />
+  <String id="201" string="Velika" />
+  <String id="202" string="Island of Dawn" />
+  <String id="203" string="Arcadia" />
+  <String id="204" string="Poporia" />
+  <String id="205" string="Val Aureum" />
+  <String id="206" string="Ostgarath" />
+  <String id="207" string="Baldera" />
+  <String id="208" string="Velika Wilds" />
+  <String id="209" string="TBD" />
+  <String id="210" string="Allemantheia" />
+  <String id="211" string="Val Elenium" />
+  <String id="212" string="Westonia" />
+  <String id="213" string="Essenia" />
+  <String id="214" string="Val Palrada" />
+  <String id="215" string="Veritas District" />
+  <String id="216" string="TBD" />
+  <String id="217" string="TBD" />
+  <String id="218" string="Kaiator" />
+  <String id="219" string="Lorcada" />
+  <String id="220" string="Sylvanoth" />
+  <String id="221" string="Val Tirkai" />
+  <String id="222" string="Val Kaeli" />
+  <String id="223" string="Helkan District" />
+  <String id="224" string="TBD" />
+  <String id="225" string="TBD" />
+  <String id="226" string="Val Oriyn" />
+  <String id="227" string="Stepstone Isle" />
+  <String id="260" string="Battleground" />
+  <String id="291" string="Western Battlefield" />
+  <String id="500" string="Melricas Passage" />
+  <String id="1001" string="Ruinweald" />
+  <String id="2001" string="Fey Forest" />
+  <String id="2002" string="Woodcutter Palisade" />
+  <String id="2003" string="Faerie Pond" />
+  <String id="2004" string="Scarwood" />
+  <String id="2005" string="Deserted Homestead" />
+  <String id="2007" string="Woodland Path" />
+  <String id="2008" string="Eldrun Woods" />
+  <String id="2009" string="Darkroot Wood" />
+  <String id="2010" string="Faevine Vale Camp" />
+  <String id="2011" string="Crossroads" />
+  <String id="2012" string="Marsh Trailhead" />
+  <String id="2013" string="Evergreen Village" />
+  <String id="2015" string="Maon's Cabin" />
+  <String id="2016" string="Aron's Camp" />
+  <String id="2017" string="Spirit Refuge" />
+  <String id="2018" string="Wizened Forest" />
+  <String id="3001" string="Oblivion Woods" />
+  <String id="3002" string="Berzerad Cemetery" />
+  <String id="3003" string="Blood Run" />
+  <String id="3004" string="Deva Silva" />
+  <String id="3005" string="Bestial Vale" />
+  <String id="3006" string="Bulwark Camp" />
+  <String id="3007" string="Vanguard Outpost" />
+  <String id="3008" string="Grave of the Risen Knight" />
+  <String id="3009" string="Cave of Bleak Echoes" />
+  <String id="3010" string="Bestial Vale" />
+  <String id="3011" string="Vanguard Outpost " />
+  <String id="4001" string="Fyrmount" />
+  <String id="4002" string="Brimstone Highlands" />
+  <String id="4003" string="Blazing Vale" />
+  <String id="4004" string="Molten Reach" />
+  <String id="4005" string="Bahaar's Maw" />
+  <String id="4006" string="Forge of Fury" />
+  <String id="4007" string="Cauldron Outpost" />
+  <String id="4008" string="Firebase Intrepid" />
+  <String id="4009" string="Firebase Valor" />
+  <String id="4010" string="Delthin Mine" />
+  <String id="4011" string="Tansin Mine" />
+  <String id="4012" string="Akasha's Hideout Entrance" />
+  <String id="5001" string="Tuwangi Mire" />
+  <String id="5002" string="Tuwangi Garrison" />
+  <String id="5003" string="Babok Hollow" />
+  <String id="5004" string="Marshlands" />
+  <String id="5005" string="Tuwangi Thorp" />
+  <String id="5006" string="Mighty Frog Pond" />
+  <String id="5008" string="Moss Glen" />
+  <String id="5009" string="Burning Frog Altar" />
+  <String id="5010" string="Sacred Spawning Pond" />
+  <String id="6001" string="Valley of Titans" />
+  <String id="6002" string="Invasion-free Zone" />
+  <String id="6003" string="Mags Strix" />
+  <String id="6004" string="Silent Fields" />
+  <String id="6005" string="Colchester" />
+  <String id="6006" string="Mags Kulkar" />
+  <String id="6007" string="Kulkari Village" />
+  <String id="6008" string="Feral Road" />
+  <String id="6009" string="Valselok Shrine" />
+  <String id="6010" string="Altar of Anguish" />
+  <String id="6011" string="Two Oaks Ranch" />
+  <String id="6012" string="Echo Ranch" />
+  <String id="6013" string="Vindicator Camp" />
+  <String id="6017" string="Crescentia Gate" />
+  <String id="6464" string="Nearby Town" />
+  <String id="6465" string="Travel to Skycastle" />
+  <String id="6466" string="Skycastle" />
+  <String id="6467" string="Upper Plaza of Velika" />
+  <String id="6468" string="Symposium of Elders in Allemantheia" />
+  <String id="7001" string="Celestial Hills" />
+  <String id="7002" string="Omphalos Plains" />
+  <String id="7003" string="Muricai Ruins" />
+  <String id="7004" string="Sanctum Mysterium" />
+  <String id="7005" string="Casidhe's Stand" />
+  <String id="7006" string="Cardovek Remnants" />
+  <String id="7007" string="Godric's Farm" />
+  <String id="7008" string="Orcan Bivouac" />
+  <String id="7009" string="Consecrated Stone" />
+  <String id="7010" string="Crossroads of Pythia" />
+  <String id="8001" string="Hungry Caverns" />
+  <String id="8002" string="Hungry Caverns Vaults" />
+  <String id="8003" string="Hungry Caverns Catacombs" />
+  <String id="8004" string="Hungry Caverns Depths" />
+  <String id="8005" string="Avenger Outpost" />
+  <String id="8006" string="Cavern of Shackles" />
+  <String id="8007" string="Cavern of Hunger" />
+  <String id="8008" string="Cavern of Slaughter" />
+  <String id="8009" string="Cavern of Pain" />
+  <String id="8010" string="Cavern of Tears" />
+  <String id="8011" string="Hungry Caverns Entrance" />
+  <String id="8012" string="Vanguard Post Alpha" />
+  <String id="8013" string="Vanguard Post Beta" />
+  <String id="8014" string="Golden Labyrinth Entrance" />
+  <String id="8888" string="TERA Battleground" />
+  <String id="9001" string="Ascension Valley" />
+  <String id="9002" string="Azarel's Labyrinth" />
+  <String id="9003" string="Azarel's Labyrinth Depths" />
+  <String id="9004" string="Gallery of Chaos" />
+  <String id="9005" string="Gallery of Lust" />
+  <String id="9006" string="Gallery of Deceit" />
+  <String id="9008" string="Destroyed Advance Camp" />
+  <String id="9009" string="Gallery of Fate" />
+  <String id="9010" string="Bastion Forest" />
+  <String id="9011" string="Relic Hunter Outpost" />
+  <String id="9012" string="Vexatus Swamp" />
+  <String id="9013" string="Saravash's Ascent Entrance" />
+  <String id="9054" string="Bathysmal Rise Entrance" />
+  <String id="9056" string="Timescape (Hard)" />
+  <String id="9059" string="Forsaken Island" />
+  <String id="9060" string="Kalivan's Dreadnaught (Hard)" />
+  <String id="9067" string="Demokron Factory (Hard)" />
+  <String id="9068" string="Shadow Sanguinary (Hard)" />
+  <String id="9069" string="Castle Aranea" />
+  <String id="9070" string="Manglemire" />
+  <String id="9710" string="Broken Prison" />
+  <String id="9756" string="Timescape" />
+  <String id="9759" string="Forsaken Island (Hard)" />
+  <String id="9760" string="Kalivan's Dreadnaught" />
+  <String id="9767" string="Demokron Factory" />
+  <String id="9768" string="Shadow Sanguinary" />
+  <String id="9769" string="Lilith's Keep" />
+  <String id="9770" string="Ruinous Manor" />
+  <String id="9795" string="Crucible of Fame" />
+  <String id="9810" string="Entrance to Lakan's Prison" />
+  <String id="9830" string="Celestial Arena" />
+  <String id="9860" string="Kalivan's Challenge" />
+  <String id="9950" string="Harrowhold" />
+  <String id="9969" string="Nightmare Lilith's Keep" />
+  <String id="9970" string="Ruinous Manor (Hard)" />
+  <String id="9999" string="TERA Instanced Space" />
+  <String id="10001" string="Serpentis Isle" />
+  <String id="10002" string="Boan Strand" />
+  <String id="10003" string="Dragonturtle Beach" />
+  <String id="10004" string="Kerozen Isle" />
+  <String id="10005" string="Adderkin Jungle" />
+  <String id="10006" string="Dagon's Tomb" />
+  <String id="10007" string="The Beachhead" />
+  <String id="10008" string="Coastal Overwatch" />
+  <String id="10009" string="Viper Camp" />
+  <String id="10010" string="West Beach Tavern" />
+  <String id="10011" string="Wahmel's Watermelon Patch" />
+  <String id="10012" string="Chelton's Splash Cannon Battery" />
+  <String id="10013" string="Zaith's Splash Cannon Battery" />
+  <String id="10014" string="Dolme's Horn Workshop" />
+  <String id="10015" string="East Beach Tavern" />
+  <String id="10016" string="Beach Party" />
+  <String id="10017" string="Nakatam Tower" />
+  <String id="10018" string="Gruber's Hideout" />
+  <String id="11001" string="Jagged Coast" />
+  <String id="11002" string="Jungle Road" />
+  <String id="11003" string="Jungle Patrol Camp" />
+  <String id="11004" string="Sunken Yards" />
+  <String id="11005" string="Pirate Grotto" />
+  <String id="11006" string="Pier Boundary" />
+  <String id="11007" string="Dark Anchorage" />
+  <String id="11008" string="Pirate Captain's Cabin" />
+  <String id="11009" string="Vanguard Bastion" />
+  <String id="11010" string="Goat Locker" />
+  <String id="11011" string="Bosuns' Roost" />
+  <String id="11012" string="Freebooters' Roost" />
+  <String id="11013" string="Press Camp" />
+  <String id="11014" string="The Planks" />
+  <String id="11015" string="Briny Outpost" />
+  <String id="11016" string="The Hold" />
+  <String id="11017" string="Repositorium" />
+  <String id="12001" string="Mistmoor Island" />
+  <String id="12002" string="Cutthroat Beach" />
+  <String id="12003" string="Rain Cages" />
+  <String id="12004" string="Mistmoor Forest" />
+  <String id="12005" string="Desolate Coast" />
+  <String id="12006" string="Grim Coast" />
+  <String id="12007" string="Shrouded Route" />
+  <String id="12008" string="Sandbar Beach" />
+  <String id="12009" string="{@Rgn:9024001} Entrance" />
+  <String id="12012" string="Vindicator Basecamp" />
+  <String id="12013" string="Vindicator Outpost" />
+  <String id="13001" string="Island of Dawn" />
+  <String id="13002" string="Pegasus Platform" />
+  <String id="13003" string="Mysterious Ruins" />
+  <String id="13004" string="Tainted Gorge" />
+  <String id="13005" string="Northern Checkpoint" />
+  <String id="13006" string="Shrine of the Demon God" />
+  <String id="13007" string="Mathar Spire" />
+  <String id="13008" string="Orcan Bivouac" />
+  <String id="13009" string="Tainted Gorge Bridge" />
+  <String id="13010" string="Eastern Overwatch" />
+  <String id="13011" string="Karascha's Lair" />
+  <String id="13012" string="Mysterious Temple" />
+  <String id="13013" string="Airship Approach" />
+  <String id="13014" string="Tainted Gorge Bridge" />
+  <String id="13015" string="Abandoned Camp" />
+  <String id="13016" string="Bridge of Dawn" />
+  <String id="13017" string="Dulari's Camp" />
+  <String id="13018" string="Northern Overwatch" />
+  <String id="13019" string="Western Island of Dawn" />
+  <String id="13020" string="Southern Checkpoint" />
+  <String id="13021" string="Eastern Island of Dawn" />
+  <String id="13022" string="Tainted Gorge Garrison" />
+  <String id="13023" string="Southern Island of Dawn" />
+  <String id="13024" string="Shrine of Yurian" />
+  <String id="13025" string="Tainted Tor" />
+  <String id="13026" string="Northern Tainted Gorge" />
+  <String id="13027" string="Tainted Gorge Outpost" />
+  <String id="13028" string="Arun Heights" />
+  <String id="13029" string="Tainted Gorge Maw" />
+  <String id="13030" string="Timeless Woods" />
+  <String id="13031" string="North Dock" />
+  <String id="13032" string="Dulari's Camp" />
+  <String id="13033" string="Southern Checkpoint" />
+  <String id="13034" string="Tainted Gorge Outpost" />
+  <String id="13035" string="Ruined Temple" />
+  <String id="14001" string="Newbaria" />
+  <String id="15001" string="Cliffs of Insanity" />
+  <String id="15002" string="Land of Fury" />
+  <String id="15003" string="Knoll of Screams" />
+  <String id="15004" string="Southern Farmland" />
+  <String id="15005" string="Ordnarath" />
+  <String id="15006" string="Camp Vigilance" />
+  <String id="15007" string="Camp Retribution" />
+  <String id="15008" string="Dementalith" />
+  <String id="15009" string="Camp Redemption" />
+  <String id="15201" string="Dock" />
+  <String id="15202" string="North Gate" />
+  <String id="15203" string="West Gate" />
+  <String id="15204" string="Ruins" />
+  <String id="15205" string="Gidd Mountain" />
+  <String id="15206" string="Ranch" />
+  <String id="16001" string="Vale of the Fang" />
+  <String id="16002" string="Twisted Plains" />
+  <String id="16003" string="Forsaken Fields" />
+  <String id="16006" string="Sinestral Manor" />
+  <String id="16007" string="Alethea's Last Hope" />
+  <String id="16008" string="Runicar Research Camp" />
+  <String id="16009" string="Primrose Path" />
+  <String id="16010" string="Sinestral Manor Servants' Entrance" />
+  <String id="17001" string="Paraanon Ravine" />
+  <String id="17002" string="Paraanon Plains" />
+  <String id="17003" string="Fanatics Paradise" />
+  <String id="17004" string="Altar of Belief" />
+  <String id="17006" string="Embattled Outpost" />
+  <String id="17007" string="Gloomy Outpost" />
+  <String id="18001" string="Colossal Ruins" />
+  <String id="18002" string="Mags Kuchanaru" />
+  <String id="18003" string="Mags Kurata" />
+  <String id="18004" string="Temple of Tithus" />
+  <String id="18005" string="Plaza of the Mighty" />
+  <String id="18006" string="Arena of the Exalted" />
+  <String id="18007" string="Camp Marrakeen" />
+  <String id="18008" string="Sietch Bidaum" />
+  <String id="19001" string="Freeholds" />
+  <String id="19002" string="Bleak Fields" />
+  <String id="19003" string="Digory's Farmstead" />
+  <String id="19004" string="Lein's Farm" />
+  <String id="19005" string="Velik's Vigil" />
+  <String id="19006" string="Thrallfield" />
+  <String id="19007" string="Ruined Hamlet" />
+  <String id="19008" string="Lee's End Stead" />
+  <String id="19009" string="Lee's End" />
+  <String id="19010" string="Filton's Dairy Farm" />
+  <String id="19011" string="Free Brotherhood Encampment" />
+  <String id="19012" string="Rootstock Fairground" />
+  <String id="19013" string="Bamarama" />
+  <String id="19014" string="Lein's Farm" />
+  <String id="19015" string="Public Pen" />
+  <String id="19016" string="Pig Pen" />
+  <String id="19017" string="Sheep Ranch" />
+  <String id="19018" string="Sky Pond" />
+  <String id="19019" string="Fairground—Cauldron" />
+  <String id="19020" string="Fairground—Frying Pan and Stove" />
+  <String id="19021" string="Fairground—Fire Pit" />
+  <String id="19022" string="Fairground—Salad Table" />
+  <String id="19101" string="Arx Umbra" />
+  <String id="19102" string="Inferus Approach" />
+  <String id="19103" string="Domare Outpost" />
+  <String id="19104" string="Frostvale" />
+  <String id="19105" string="The Breach" />
+  <String id="19106" string="Parthian Outpost Alpha" />
+  <String id="19107" string="Parthian Outpost Beta" />
+  <String id="19108" string="Delvias Front" />
+  <String id="19109" string="Trellum Consurgo" />
+  <String id="19110" string="Mingor Cliffs" />
+  <String id="19111" string="Mingor Cliffs" />
+  <String id="19112" string="Tempest Outpost" />
+  <String id="19113" string="Infernal Span" />
+  <String id="19114" string="Delvias Front Teleport Platform" />
+  <String id="19115" string="Overlook Teleport Platform" />
+  <String id="19116" string="Eastern Teleport Platform" />
+  <String id="19117" string="Western Teleport Platform" />
+  <String id="19118" string="Northern Teleport Platform" />
+  <String id="19119" string="Trellum Consurgo" />
+  <String id="19120" string="Airship Platform" />
+  <String id="19121" string="Fortress's Core" />
+  <String id="19122" string="Parthian Outpost" />
+  <String id="19123" string="Inner Ward" />
+  <String id="19124" string="Southern Gate" />
+  <String id="20001" string="Tenebrous Mines" />
+  <String id="20002" string="Halls of Gloom" />
+  <String id="20003" string="Halls of Shadow" />
+  <String id="20004" string="Halls of Utterdark" />
+  <String id="20005" string="The Pit" />
+  <String id="20006" string="Foreman's Outlook" />
+  <String id="20007" string="Reliquary Station" />
+  <String id="20008" string="Utterdark Outpost" />
+  <String id="21001" string="Basilisk Crag" />
+  <String id="21002" string="Ubari Oasis" />
+  <String id="21003" string="Blasted Valley" />
+  <String id="21004" string="Vast Sands" />
+  <String id="21005" string="Old Mine Trail" />
+  <String id="21006" string="Howling Vale" />
+  <String id="21007" string="Vale of Graves" />
+  <String id="21008" string="Desert Overwatch" />
+  <String id="21009" string="Barrens Outpost" />
+  <String id="21010" string="Desert Research Station" />
+  <String id="21011" string="Stone Pillar Relics" />
+  <String id="21012" string="Mags Tohopka" />
+  <String id="22001" string="Eldritch Academy Grounds" />
+  <String id="22002" string="Eldritch Academy" />
+  <String id="22003" string="Halls of Knowledge" />
+  <String id="22004" string="Halls of Power" />
+  <String id="22005" string="Malefic Laboratories" />
+  <String id="22006" string="Witch-Queen Catacombs" />
+  <String id="22007" string="Serena's Park" />
+  <String id="22008" string="Eldritch Bastion" />
+  <String id="22009" string="Professors Redoubt" />
+  <String id="22010" string="Athenaeum" />
+  <String id="22011" string="Gallery" />
+  <String id="22012" string="Occult Library" />
+  <String id="22013" string="Research Library" />
+  <String id="22014" string="Thaumaturge Chamber" />
+  <String id="22015" string="Grand Hall" />
+  <String id="22016" string="Arcane Sanctum" />
+  <String id="22017" string="Chirurgeons Laboratory" />
+  <String id="22018" string="Hall of Vadoma" />
+  <String id="23001" string="Lake of Tears" />
+  <String id="23002" string="Pora Elinu Pegasus Platform" />
+  <String id="23004" string="Elin's Grove" />
+  <String id="23005" string="Blessed Woods" />
+  <String id="23006" string="Bloodtalon Camp" />
+  <String id="23007" string="Mad Jester Pass" />
+  <String id="23008" string="Valkyon Federation Camp" />
+  <String id="23009" string="Emergency Camp" />
+  <String id="23010" string="Spirit Outpost" />
+  <String id="23011" string="Exile's Shack" />
+  <String id="23012" string="Kobold Scout Base" />
+  <String id="24001" string="Aurum Road" />
+  <String id="24002" string="Desert of Plunder" />
+  <String id="24003" string="Aurum Road North" />
+  <String id="24004" string="Aurum Road South" />
+  <String id="24005" string="Sand Wind Village" />
+  <String id="24006" string="Redoubt of Lok" />
+  <String id="24007" string="Storst Ruins" />
+  <String id="24008" string="West Watchpost" />
+  <String id="24009" string="Sandwalker Refuge" />
+  <String id="24010" string="Torrent Outpost" />
+  <String id="24011" string="The Shattered City" />
+  <String id="24012" string="Crusader Camp" />
+  <String id="24013" string="Cathedral Redoubt" />
+  <String id="24014" string="Underground river" />
+  <String id="25001" string="Cathedral Passageway" />
+  <String id="25002" string="Dark Cathedral" />
+  <String id="25003" string="Transepts" />
+  <String id="25004" string="Vindicator Redoubt" />
+  <String id="25005" string="Vault of Tomes" />
+  <String id="25006" string="Altar of the Blood Pearl" />
+  <String id="25007" string="Dark Cathedral" />
+  <String id="25008" string="Grand Chapel" />
+  <String id="25009" string="Stadium of Rebirth" />
+  <String id="25010" string="Chapterhouse" />
+  <String id="25011" string="Stadium of Sacrifice" />
+  <String id="25012" string="The Portal" />
+  <String id="25013" string="Stadium of Devotion" />
+  <String id="26001" string="Blessing Basin" />
+  <String id="26002" string="White Hart Run" />
+  <String id="26003" string="Celestus Rest" />
+  <String id="26004" string="Ethereal Forest" />
+  <String id="26005" string="Fountain of Shara" />
+  <String id="26006" string="Crossroads Camp" />
+  <String id="26007" string="Seekers' Locus" />
+  <String id="27001" string="Essenian Crest" />
+  <String id="27002" string="Shakazen's Refuge" />
+  <String id="27003" string="Serenity Valley" />
+  <String id="27004" string="Stronghold of Blood" />
+  <String id="27005" string="Silent Hills" />
+  <String id="27006" string="Castra Mysterium" />
+  <String id="27007" string="Liberation Station" />
+  <String id="27008" string="Haven Farm" />
+  <String id="28001" string="Blightwood" />
+  <String id="28002" string="Shakan's Revenge" />
+  <String id="28003" string="Herath Trail" />
+  <String id="28004" string="Twisted Vale" />
+  <String id="28009" string="Camp Zakai" />
+  <String id="28010" string="Garbi Outpost" />
+  <String id="29001" string="Timeless Woods" />
+  <String id="29002" string="Windwhistle Woods" />
+  <String id="29003" string="Heartwood" />
+  <String id="29004" string="Startree Forest" />
+  <String id="29005" string="Woodstrider Point" />
+  <String id="29006" string="Dorana Outpost" />
+  <String id="30001" string="Balder's Refuge" />
+  <String id="30002" string="High Vale" />
+  <String id="30003" string="Seren's Hall" />
+  <String id="30004" string="Hall of the Forest" />
+  <String id="30005" string="Seren's Garden" />
+  <String id="30006" string="Brightleaf Glade" />
+  <String id="30007" string="Balder's Pavilion" />
+  <String id="30008" string="Lower Archive" />
+  <String id="30009" string="Upper Archive" />
+  <String id="30010" string="Camp Sunlight" />
+  <String id="30011" string="Camp Sagacity" />
+  <String id="30012" string="Camp Curiosity" />
+  <String id="30013" string="Archive Grounds" />
+  <String id="30014" string="Seren's Lake" />
+  <String id="30015" string="Archive Stronghold" />
+  <String id="30016" string="Stronghold Camp" />
+  <String id="30017" string="Lok's Spear" />
+  <String id="30018" string="Arkai Perch" />
+  <String id="30019" string="Balder's Temple Entrance" />
+  <String id="30020" string="Lighthouse of the Sun Entrance" />
+  <String id="30021" string="Tree of Wisdom" />
+  <String id="31000" string="Lakan's Prison" />
+  <String id="31001" string="Tempest Reach" />
+  <String id="31002" string="Frost Wastes" />
+  <String id="31003" string="Deathfrost Plains" />
+  <String id="31004" string="Frostclaw Lake" />
+  <String id="31005" string="Icefang Inlet" />
+  <String id="31006" string="The Maelstrom" />
+  <String id="31007" string="Glacial Bay" />
+  <String id="31008" string="Glacial Bay Research Station" />
+  <String id="31009" string="Beacon Point Garrison" />
+  <String id="31010" string="Batia's Hulk" />
+  <String id="32001" string="Mount Tyrannas" />
+  <String id="32002" string="Daunting Pass" />
+  <String id="32003" string="Winterwolves Encampment" />
+  <String id="32004" string="Gloomy Tundra" />
+  <String id="32005" string="Bloodblade Mercenary Camp" />
+  <String id="32006" string="Frigid Vigil" />
+  <String id="32007" string="Tyrant's Overwatch" />
+  <String id="32008" string="Holdouts Redoubt" />
+  <String id="32009" string="Dauntless Palisade" />
+  <String id="32010" string="Acarum Boneyard" />
+  <String id="33001" string="Citadel of Torment" />
+  <String id="33002" string="Path of Torment" />
+  <String id="33003" string="East Supply Route" />
+  <String id="33004" string="Antechambers" />
+  <String id="33005" string="Hall of Maidens" />
+  <String id="33006" string="Hall of Masters" />
+  <String id="33007" string="Jesters Quarters" />
+  <String id="33008" string="Vertigo Reach" />
+  <String id="33009" string="Anguish Heights" />
+  <String id="33010" string="Shrieking Catacombs" />
+  <String id="33011" string="Catacomb of Misery" />
+  <String id="33012" string="Distortion Prison" />
+  <String id="33013" string="Bloody Depths" />
+  <String id="33014" string="Gloomhaunt Sentry Post" />
+  <String id="33015" string="Infiltrators Refuge" />
+  <String id="33016" string="Sanguine Hideout" />
+  <String id="33017" string="Shattered Path" />
+  <String id="33018" string="Bloody Depths" />
+  <String id="34001" string="Frost Reach" />
+  <String id="34002" string="Ice Trail" />
+  <String id="34003" string="Howling Glacier" />
+  <String id="34004" string="Screaming Snowfield" />
+  <String id="34005" string="Celsian Lake" />
+  <String id="34006" string="Azurice Shrine" />
+  <String id="34007" string="Icebase Stalker" />
+  <String id="34008" string="Wayfarer Camp" />
+  <String id="34009" string="Junaidar Base" />
+  <String id="35001" string="Wyrmgorge" />
+  <String id="35002" string="Zaeltarazad Shrine" />
+  <String id="35003" string="Deathgorge" />
+  <String id="35004" string="Croskurn Mines" />
+  <String id="35005" string="Croskurn Approach" />
+  <String id="35006" string="Jagged Crest" />
+  <String id="35007" string="Firespine Outpost" />
+  <String id="36001" string="Tor Exsul" />
+  <String id="36002" string="Searing Vale" />
+  <String id="36003" string="Outlaws' Nest" />
+  <String id="36004" string="Raintree Oasis" />
+  <String id="36005" string="Blood Valley" />
+  <String id="36006" string="Checkpoint Ebony" />
+  <String id="36007" string="Manafire Outpost" />
+  <String id="36008" string="Runner's Watch" />
+  <String id="36009" string="Sigil Adstringo Portal" />
+  <String id="37001" string="Crypt of the Forsaken" />
+  <String id="37002" string="Crypt of the Lost" />
+  <String id="37003" string="Crypt of the Damned" />
+  <String id="37004" string="Phalangeal Research Camp" />
+  <String id="37005" string="Corpus Research Camp" />
+  <String id="37006" string="Uprising Redoubt" />
+  <String id="37007" string="Saleron Research Camp" />
+  <String id="37008" string="Bridge of Pain" />
+  <String id="37009" string="Ebon Span" />
+  <String id="37010" string="Incursion Zone" />
+  <String id="37011" string="Doomcrypt" />
+  <String id="38001" string="Sienna Canyon" />
+  <String id="38004" string="Feldrin Ravine" />
+  <String id="38005" string="Field of Fire" />
+  <String id="38006" string="Thunder Hold" />
+  <String id="38007" string="Roostcliff Quarter" />
+  <String id="38008" string="Craterview Outpost" />
+  <String id="38009" string="Wyvern Watch" />
+  <String id="38010" string="Desolate Rise" />
+  <String id="38011" string="Barbtail Coulee" />
+  <String id="39001" string="Arachnaea" />
+  <String id="39002" string="Arachnaea Main" />
+  <String id="39003" string="The Lair" />
+  <String id="39004" string="Roughneck Outpost" />
+  <String id="39005" string="Retribution Point" />
+  <String id="39006" string="The Hatchery" />
+  <String id="39007" string="Sanctuary" />
+  <String id="39008" string="Retribution Point" />
+  <String id="39009" string="Altar of Resurrection" />
+  <String id="39010" string="Retribution Point" />
+  <String id="39011" string="Cocoon Tombs" />
+  <String id="40001" string="Quarantine Zone" />
+  <String id="40002" string="Quarantined Village" />
+  <String id="40003" string="Blighted Village" />
+  <String id="40004" string="Lost Mines" />
+  <String id="40005" string="Defiled Vale" />
+  <String id="40008" string="Quarantine Outpost" />
+  <String id="40009" string="Quarantine Zone Research Center" />
+  <String id="40010" string="Arachanaea Caverns" />
+  <String id="40011" string="Arachne's Bane" />
+  <String id="41001" string="Feral Valley" />
+  <String id="41002" string="Emissary Point" />
+  <String id="41003" string="Feral Valley Station" />
+  <String id="41004" string="Feral Valley North" />
+  <String id="41005" string="Experior Outpost" />
+  <String id="41006" string="Arena of Blood" />
+  <String id="41007" string="Feral Valley South" />
+  <String id="41008" string="Paxomnia" />
+  <String id="42001" string="Temple of Dagon" />
+  <String id="42002" string="Corridors of Corruption" />
+  <String id="42003" string="Depths of Corruption" />
+  <String id="42004" string="Chamber of Avarice" />
+  <String id="42005" string="Chamber of Malice" />
+  <String id="42006" string="Chamber of Lost Souls" />
+  <String id="42007" string="Temple Chapterhouse" />
+  <String id="42008" string="The Sanctum" />
+  <String id="42009" string="Chamber of the Exalted" />
+  <String id="42010" string="Chamber of Enlightenment" />
+  <String id="42011" string="Ecdysi Atrium" />
+  <String id="42012" string="Camp Venom" />
+  <String id="42013" string="Coiling Transepts" />
+  <String id="42014" string="Chamber of Mighty Souls" />
+  <String id="43001" string="Cathuulrach" />
+  <String id="44001" string="Ebonmaw Approach" />
+  <String id="44002" string="Ebonmaw" />
+  <String id="44003" string="Ebonmaw Second Floor" />
+  <String id="44004" string="Ebonmaw Third Floor" />
+  <String id="44005" string="Ebonmaw Fourth Floor" />
+  <String id="45001" string="Thrallhold" />
+  <String id="45002" string="Tower Approach" />
+  <String id="45003" string="Vale of the Reaper" />
+  <String id="45004" string="Lookout Point" />
+  <String id="45005" string="Skyfields" />
+  <String id="45006" string="Field Base Reciprocity" />
+  <String id="45007" string="Field Base Tenacity" />
+  <String id="45008" string="Field Base Valiance" />
+  <String id="45009" string="Camp Insanity" />
+  <String id="45010" string="Valor Watchpoint" />
+  <String id="45011" string="Swampwatch Camp" />
+  <String id="45012" string="Collapsed Argon Fortress Entrance" />
+  <String id="45013" string="Khanovar Post" />
+  <String id="46001" string="Three Towers" />
+  <String id="46002" string="Raga Evala" />
+  <String id="46003" string="Raga Shadi" />
+  <String id="46004" string="Raga Kabash" />
+  <String id="46005" string="Three Towers Depths" />
+  <String id="46006" string="Raga Shadi Depths" />
+  <String id="46007" string="Raga Evala Depths" />
+  <String id="46008" string="Raga Kabash Depths" />
+  <String id="46009" string="Three Towers Spires" />
+  <String id="46010" string="Raga Evala Spire" />
+  <String id="46011" string="Raga Shadi Spire" />
+  <String id="46012" string="Raga Kabash Spire" />
+  <String id="46013" string="Exetron" />
+  <String id="46014" string="Three Towers Research Base" />
+  <String id="46015" string="Hexheart Chamber" />
+  <String id="46016" string="Mindcrown Chamber" />
+  <String id="46017" string="Shadowspark Chamber" />
+  <String id="46018" string="Three Towers Spires" />
+  <String id="46019" string="Beastroar Chamber" />
+  <String id="46020" string="Shineroot Chamber" />
+  <String id="46021" string="Strifecore Chamber" />
+  <String id="46022" string="Metaseed Chamber" />
+  <String id="46023" string="Twistblood Chamber" />
+  <String id="46024" string="Soulsurge Chamber" />
+  <String id="46025" string="Raga Transmission Room" />
+  <String id="47001" string="Tirkai Forest" />
+  <String id="47002" string="Whitefrost Forest" />
+  <String id="47003" string="Bridgehead" />
+  <String id="47004" string="Blightroar" />
+  <String id="47005" string="Argon Frontier" />
+  <String id="47006" string="Field Base Lunacy" />
+  <String id="47007" string="Blightroar Research Station" />
+  <String id="47008" string="Eastwatch" />
+  <String id="47009" string="Temporary Patrol Camp" />
+  <String id="47010" string="Argon Power Lattice" />
+  <String id="47011" string="Spore Emitter Zone" />
+  <String id="47012" string="Argon Shield Emitter" />
+  <String id="47013" string="Old Scout Camp" />
+  <String id="47014" string="Argon Wreckage" />
+  <String id="47015" string="Petrified Mushroom Field" />
+  <String id="47017" string="Blighted Pond" />
+  <String id="48001" string="Khanovar Front" />
+  <String id="48002" string="Khanovar Citadel" />
+  <String id="48003" string="Peril Cavern" />
+  <String id="48004" string="Cyanocannon Foundry" />
+  <String id="48005" string="Valgurati Stronghold" />
+  <String id="48006" string="Carnage Vale" />
+  <String id="48007" string="Argon Bulwark" />
+  <String id="48008" string="Magthulk Crater" />
+  <String id="48009" string="Cyasma Converter" />
+  <String id="48010" string="Catacombs Cavern" />
+  <String id="49001" string="Argonea" />
+  <String id="49002" string="Ilithieri Mana Extractor" />
+  <String id="49003" string="Agnurok Engine" />
+  <String id="49004" string="Melgatol Portal" />
+  <String id="49005" string="Casian Tree" />
+  <String id="49090" string="Southern Teleport Platform" />
+  <String id="49091" string="Northern Teleport Platform" />
+  <String id="49092" string="Eastern Teleport Platform" />
+  <String id="50001" string="Granarkus" />
+  <String id="50002" string="Shroud Outpost" />
+  <String id="50003" string="Helkir Grotto" />
+  <String id="50004" string="Nest of the Shaper" />
+  <String id="50005" string="Noyul Extractor" />
+  <String id="50006" string="Sorgalur Complex" />
+  <String id="50007" string="Dryuul Cyasma Infuser" />
+  <String id="50008" string="Viridian Caverns" />
+  <String id="50009" string="Queen's Lair Entrance" />
+  <String id="50090" string="Granarkus Teleport Platform" />
+  <String id="51001" string="Vale of Spires" />
+  <String id="51002" string="Ebon Tower" />
+  <String id="51003" string="Wendigo's Howl" />
+  <String id="51004" string="Raseri Festning" />
+  <String id="51005" string="Frostclaw Crag" />
+  <String id="51006" string="Icebase Defiance" />
+  <String id="52001" string="Plain of the Damned" />
+  <String id="52002" string="Scorched Snowfield" />
+  <String id="52003" string="Crypt of Snow and Ash" />
+  <String id="52004" string="Betrayer's Pyre" />
+  <String id="52005" string="Divine Furnace" />
+  <String id="52006" string="Firebase Audacity" />
+  <String id="52007" string="Gravewatch of the Exiled" />
+  <String id="52008" string="Furnace Approach" />
+  <String id="52009" string="Ventral Command Center" />
+  <String id="52010" string="Bridge of Grief" />
+  <String id="52011" string="Remote Lodge" />
+  <String id="52012" string="Muhrak's Workshop Entrance" />
+  <String id="53001" string="Labyrinth of Terror" />
+  <String id="53002" string="Shriekaal Hall" />
+  <String id="53003" string="Tragieron Hall" />
+  <String id="53004" string="Agonal Hall" />
+  <String id="53006" string="Hall of Nightmares" />
+  <String id="53007" string="Hall of Screams" />
+  <String id="53008" string="Kriegar Hall" />
+  <String id="53009" string="Anarxis Hall" />
+  <String id="54001" string="Seeliewood" />
+  <String id="54002" string="Deepsound Woods" />
+  <String id="54003" string="The Bower" />
+  <String id="54004" string="Faevine Cradle" />
+  <String id="54005" string="Faeglen" />
+  <String id="54006" string="Grand Gate Watchpost" />
+  <String id="54007" string="Camp Verdant" />
+  <String id="54008" string="Arcanum Outpost" />
+  <String id="55001" string="Darkquaver Woods" />
+  <String id="55002" string="Vale of Solitude" />
+  <String id="55003" string="Garden of Looming Shadows" />
+  <String id="55004" string="Plaza of the Fallen" />
+  <String id="55005" string="The Skyleaves" />
+  <String id="55006" string="Darkquaver Garrison" />
+  <String id="55007" string="Ceravin Point" />
+  <String id="55008" string="Araste Vigil" />
+  <String id="55009" string="Plaza of the Fallen" />
+  <String id="55010" string="Staff of Isren" />
+  <String id="55011" string="Valumnir Outpost" />
+  <String id="55012" string="Darkenvale" />
+  <String id="56001" string="Susurrus Woods" />
+  <String id="56002" string="Dakonan Junction" />
+  <String id="56003" string="Nightwood" />
+  <String id="56004" string="Raven Altar" />
+  <String id="56005" string="Dakonan Overwatch" />
+  <String id="56006" string="Blackspring Camp" />
+  <String id="56007" string="Camp Umbra" />
+  <String id="57001" string="Amena Quatla" />
+  <String id="57002" string="Amena Quatla Courtyard" />
+  <String id="57003" string="The Barbican" />
+  <String id="57004" string="The Hatchery" />
+  <String id="57005" string="Crimson Hammer Camp" />
+  <String id="57006" string="Broken Bridge Camp" />
+  <String id="57007" string="Accipiter Watchpost" />
+  <String id="57008" string="Temple of Sikander" />
+  <String id="57009" string="Altar of Resurrection" />
+  <String id="58001" string="Balderon" />
+  <String id="59001" string="Crescentia" />
+  <String id="59002" string="Crescentia Plaza" />
+  <String id="59003" string="Crescentia Pegasus Platform" />
+  <String id="60001" string="Lumbertown" />
+  <String id="60002" string="Lumbertown Plaza" />
+  <String id="60003" string="Lumberyard" />
+  <String id="60004" string="Lumbertown Pegasus Platform" />
+  <String id="61001" string="Castanica" />
+  <String id="61002" string="Pleasure Street" />
+  <String id="61003" string="Quandary Bazaar" />
+  <String id="61004" string="Memorial Square" />
+  <String id="61005" string="Masters Square" />
+  <String id="61006" string="Desire Square" />
+  <String id="61007" string="Pleasure Street" />
+  <String id="61008" string="Dusk Street" />
+  <String id="61009" string="Defiance Street" />
+  <String id="62001" string="Cutthroat Harbor" />
+  <String id="62002" string="Cutthroat Harbor Pegasus Platform" />
+  <String id="62003" string="Sentry Command" />
+  <String id="63001" string="Velika" />
+  <String id="63002" string="Velika Travel Control Office" />
+  <String id="63003" string="Creation Workshop" />
+  <String id="63004" string="North Gate Market" />
+  <String id="63005" string="Velika North Gate" />
+  <String id="63006" string="Collegium Arcane" />
+  <String id="63007" string="Velik's Steps" />
+  <String id="63008" string="Freedom Plaza" />
+  <String id="63009" string="Valkyon Federation Headquarters" />
+  <String id="63010" string="Plaza of the Huntress" />
+  <String id="63011" string="Legion of Arms" />
+  <String id="63012" string="Velika Vanarch Office" />
+  <String id="63013" string="Velika West Gate" />
+  <String id="63014" string="Strategic Command" />
+  <String id="63015" string="Notus Alley" />
+  <String id="63016" string="Boreas Alley" />
+  <String id="63017" string="Velika Consul Office" />
+  <String id="63023" string="Velika Outskirts" />
+  <String id="63024" string="Ring Plaza" />
+  <String id="63025" string="City Teleportal" />
+  <String id="63026" string="Airship Platform" />
+  <String id="64001" string="Tower Base" />
+  <String id="64002" string="Explorer Command Post" />
+  <String id="64003" string="Leander's Outpost" />
+  <String id="64004" string="Tower Base" />
+  <String id="64005" string="Expedition Main Camp" />
+  <String id="64006" string="Eastern Overwatch" />
+  <String id="64007" string="Researcher Quarters" />
+  <String id="64008" string="Mysterious Temple" />
+  <String id="64009" string="Pillar of Wonder" />
+  <String id="65001" string="Chebika" />
+  <String id="65002" string="Chebika Pegasus Platform" />
+  <String id="66001" string="Tulufan" />
+  <String id="66002" string="Tulufan Pegasus Platform" />
+  <String id="67001" string="Popolion" />
+  <String id="67002" string="Popolion Pegasus Platform" />
+  <String id="68001" string="Pora Elinu" />
+  <String id="69001" string="Tralion" />
+  <String id="69002" string="Tralion Pegasus Platform" />
+  <String id="70001" string="Tria" />
+  <String id="70002" string="Tria Pegasus Platform" />
+  <String id="70003" string="Tria Plaza" />
+  <String id="70004" string="Tria Magistrate Residence" />
+  <String id="70101" string="Festival of the Sun (Tree of Wisdom)" />
+  <String id="70102" string="Beach Party (Dragonturtle Beach)" />
+  <String id="70103" string="Rootstock (Fairground)" />
+  <String id="70104" string="Pond Faire (Tuwangi Garrison)" />
+  <String id="71001" string="Bastion" />
+  <String id="71002" string="Bastion Pegasus Platform" />
+  <String id="72001" string="Allemantheia" />
+  <String id="72002" string="Allemantheia Outskirts" />
+  <String id="72003" string="Western Allemantheia" />
+  <String id="72004" string="Pillar of Eons" />
+  <String id="72005" string="Arcane Symposium" />
+  <String id="72006" string="Symposium of Elders" />
+  <String id="72007" string="Agora" />
+  <String id="72008" string="Symposium of Artisans" />
+  <String id="72009" string="Martial Symposium" />
+  <String id="72010" string="Strategic Command" />
+  <String id="72011" string="Sharan Command" />
+  <String id="72012" string="Gates of Honor Hub" />
+  <String id="72013" string="Consul's Hall" />
+  <String id="72099" string="Allemantheia Headquarters" />
+  <String id="72100" string="Via Westonia" />
+  <String id="72101" string="Via Essenia" />
+  <String id="72102" string="Via Palrada" />
+  <String id="72103" string="Allemantheia Pegasus Platform" />
+  <String id="72112" string="Symposium of Elders" />
+  <String id="72113" string="Mysterium" />
+  <String id="72114" string="Unified Field Lab" />
+  <String id="73001" string="Acarum" />
+  <String id="73002" string="Acarum Pegasus Platform" />
+  <String id="74001" string="Elenea" />
+  <String id="74002" string="Elenea Pegasus Platform" />
+  <String id="75001" string="Frontera" />
+  <String id="75002" string="Frontera Pegasus Platform" />
+  <String id="75003" string="Kezzel's Gorge Entrance" />
+  <String id="76001" string="Kanstria" />
+  <String id="76002" string="{@Rgn:76001} Flight Platform" />
+  <String id="76090" string="Kanstria Winged Stone" />
+  <String id="76901" string="Manor Grounds" />
+  <String id="77001" string="Pathfinder Post" />
+  <String id="77002" string="Pathfinder Post Flight Platform" />
+  <String id="78001" string="Zulfikar Fortress" />
+  <String id="78002" string="{@Rgn:78001} Flight Platform" />
+  <String id="79001" string="Habere" />
+  <String id="79002" string="Habere Flight Platform" />
+  <String id="80001" string="Dragonfall" />
+  <String id="80002" string="Dragonfall Flight Platform" />
+  <String id="81001" string="Scythera Fae" />
+  <String id="81002" string="Scythera Fae Flight Platform" />
+  <String id="83001" string="Bleakrock" />
+  <String id="83002" string="Bleakrock Pegasus Platform" />
+  <String id="84001" string="Kaiator" />
+  <String id="84002" string="Kaiator Outskirts" />
+  <String id="84003" string="Kaiator Western Gate" />
+  <String id="84004" string="Kaia's Shield Bridge" />
+  <String id="84005" string="Anicetus Bridge" />
+  <String id="84006" string="Victory Bridge" />
+  <String id="84007" string="Plaza of Triumph" />
+  <String id="84008" string="Chamber of Valor" />
+  <String id="84009" string="Chamber of Artisans" />
+  <String id="84010" string="High Street" />
+  <String id="84011" string="Link Street" />
+  <String id="84012" string="Emporium" />
+  <String id="84013" string="Kaiator Flight Platform" />
+  <String id="84014" string="Forgeheart" />
+  <String id="84015" string="Redoubt Entrance" />
+  <String id="84016" string="Hall of Power" />
+  <String id="84017" string="Kaiator Command Center" />
+  <String id="84018" string="Hall of Strength" />
+  <String id="84019" string="Emporium" />
+  <String id="84020" string="Kaiator Northern Gateway" />
+  <String id="84021" string="Kaiator Western Gate" />
+  <String id="84022" string="Kaiator Northern Gate" />
+  <String id="84023" string="Kaiator Southern Gate" />
+  <String id="84024" string="Kaiator Consul's Office" />
+  <String id="84025" string="Plaza of Triumph Northern Street" />
+  <String id="84026" string="Transporation Hall" />
+  <String id="84027" string="Kaiator" />
+  <String id="84101" string="Kapina Camp" />
+  <String id="85001" string="Davarn's Refuge" />
+  <String id="86001" string="Eastern Allemantheia" />
+  <String id="87001" string="Ashen Hope" />
+  <String id="87002" string="Camp Mournhome" />
+  <String id="87003" string="Lost Woods" />
+  <String id="87004" string="Orcan Hold" />
+  <String id="87005" string="Ruined Elinu" />
+  <String id="87006" string="Camp Tearfall" />
+  <String id="90000" string="1–11" />
+  <String id="90001" string="10–25" />
+  <String id="90002" string="23–36" />
+  <String id="90003" string="27–38" />
+  <String id="90004" string="30–51" />
+  <String id="90005" string="38–43" />
+  <String id="90006" string="40–45" />
+  <String id="90007" string="44–46" />
+  <String id="90008" string="50–59" />
+  <String id="90009" string="53–58" />
+  <String id="90010" string="56–60" />
+  <String id="90011" string="58–59" />
+  <String id="90012" string="59–60" />
+  <String id="90013" string="59–60" />
+  <String id="90014" string="59–60" />
+  <String id="90015" string="60-65" />
+  <String id="99000" string="1–11" />
+  <String id="99001" string="10–15" />
+  <String id="99002" string="11~20" />
+  <String id="99003" string="16–20" />
+  <String id="99004" string="19–23" />
+  <String id="99005" string="21–25" />
+  <String id="99006" string="23–25" />
+  <String id="99007" string="24–29" />
+  <String id="99008" string="24–29" />
+  <String id="99009" string="27–30" />
+  <String id="99010" string="28–31" />
+  <String id="99011" string="30–33" />
+  <String id="99012" string="31–32" />
+  <String id="99013" string="32–33" />
+  <String id="99014" string="33–36" />
+  <String id="99015" string="35–38" />
+  <String id="99016" string="35–38" />
+  <String id="99017" string="38–41" />
+  <String id="99018" string="38–41" />
+  <String id="99019" string="38–42" />
+  <String id="99020" string="38–43" />
+  <String id="99021" string="40–45" />
+  <String id="99022" string="41–43" />
+  <String id="99023" string="41–45" />
+  <String id="99024" string="44–46" />
+  <String id="99025" string="45–46" />
+  <String id="99026" string="47–51" />
+  <String id="99027" string="47–51" />
+  <String id="99028" string="47–51" />
+  <String id="99029" string="50–53" />
+  <String id="99030" string="50–53" />
+  <String id="99031" string="50–54" />
+  <String id="99032" string="53–56" />
+  <String id="99033" string="53–57" />
+  <String id="99034" string="53–58" />
+  <String id="99035" string="56–59" />
+  <String id="99036" string="56–59" />
+  <String id="99037" string="56–60" />
+  <String id="99038" string="58–59" />
+  <String id="99039" string="58–59" />
+  <String id="99040" string="59–60" />
+  <String id="99041" string="59–60" />
+  <String id="99042" string="59–60" />
+  <String id="99043" string="59–60" />
+  <String id="99044" string="60-61" />
+  <String id="99045" string="61-62" />
+  <String id="99046" string="62-63" />
+  <String id="99047" string="63-65" />
+  <String id="99048" string="65" />
+  <String id="99999" string="Undiscovered" />
+  <String id="102001" string="Wintera Snowfield (Classic)" />
+  <String id="103001" string="Wintera Snowfield" />
+  <String id="103002" string="Wintera Snowfield" />
+  <String id="111001" string="Iron Battleground" />
+  <String id="111002" string="Blue Wing Fortress" />
+  <String id="111003" string="Red Ensign Fortress" />
+  <String id="111004" string="Iron Lake Battlefront" />
+  <String id="111005" string="Blue Wing Advance Base" />
+  <String id="111006" string="Pointed Tree Scout Base" />
+  <String id="111007" string="Red Ensign Advance Base" />
+  <String id="111008" string="Old Valley Scout Base" />
+  <String id="112001" string="Fraywind Canyon" />
+  <String id="112002" string="B Team Base" />
+  <String id="112003" string="A Team Base" />
+  <String id="112004" string="Central Pyre (1)" />
+  <String id="112005" string="Southern Pyre (2)" />
+  <String id="112006" string="Northern Pyre (3)" />
+  <String id="113001" string="Champions' Skyring" />
+  <String id="113002" string="A Team Base" />
+  <String id="113003" string="B Team Base" />
+  <String id="113004" string="Training Sanctum" />
+  <String id="114001" string="Acradan Base" />
+  <String id="115001" string="Champions' Skyring" />
+  <String id="115002" string="A Team Base" />
+  <String id="115003" string="B Team Base" />
+  <String id="115004" string="Training Sanctum" />
+  <String id="116001" string="Corsairs' Stronghold" />
+  <String id="116002" string="Attacker's Keep" />
+  <String id="116003" string="Defender's Stronghold" />
+  <String id="116004" string="Central Pyre (1)" />
+  <String id="116005" string="Northern Pyre (3)" />
+  <String id="116006" string="Southern Pyre (2)" />
+  <String id="116007" string="Left Outer Gate" />
+  <String id="116008" string="Right Outer Gate" />
+  <String id="116009" string="Left Ladder" />
+  <String id="116010" string="Right Ladder" />
+  <String id="117001" string="Kumasylum" />
+  <String id="117002" string="Playpen" />
+  <String id="117003" string="Playground" />
+  <String id="117004" string="Loading Dock" />
+  <String id="117005" string="Sanctum of Restoration" />
+  <String id="118001" string="Gridiron" />
+  <String id="119001" string="Coliseum" />
+  <String id="152001" string="Anansha's Nest" />
+  <String id="152002" string="Frygaras' Nest" />
+  <String id="152003" string="Sabranak's Nest" />
+  <String id="172001" string="Savage Reach" />
+  <String id="172011" string="Eerie Rise" />
+  <String id="172012" string="Boscan Terrace" />
+  <String id="172013" string="Mjusu Kraal" />
+  <String id="172014" string="Pools of Zurusuru" />
+  <String id="172015" string="Yaldaru Hills" />
+  <String id="172016" string="Jungle Pool" />
+  <String id="172017" string="Khirian Outpost" />
+  <String id="172019" string="Mendara Cavern" />
+  <String id="172020" string="Oracle Cave" />
+  <String id="172021" string="Pools of Zurusuru" />
+  <String id="172022" string="Placid Tarn" />
+  <String id="172023" string="Yaldaru Hills" />
+  <String id="172024" string="Uchawi Hollow" />
+  <String id="172100" string="Velika" />
+  <String id="172101" string="Savage Reach" />
+  <String id="172111" string="Khirian Sanctuary" />
+  <String id="172112" string="Yaldaru Hills Teleport Platform" />
+  <String id="172113" string="Mjusu Kraal Teleport Platform" />
+  <String id="172114" string="Khirian Sanctuary Teleport Platform" />
+  <String id="172115" string="Khirian Outpost Teleport Platform" />
+  <String id="181001" string="Ex Prima" />
+  <String id="181002" string="Havenstone Ruins" />
+  <String id="181003" string="Diranas Quarry" />
+  <String id="181004" string="Arch of the Seeker" />
+  <String id="181005" string="Verdantfire Rift" />
+  <String id="181006" string="Qeldar Station" />
+  <String id="181007" string="Verdantfire Rift" />
+  <String id="181008" string="Sundered Cave" />
+  <String id="181009" string="Hulran Watch" />
+  <String id="181010" string="Plunder Canyon" />
+  <String id="181011" string="Energia Celo Entrance" />
+  <String id="181012" string="River's Edge" />
+  <String id="181013" string="Baaldaz Post" />
+  <String id="181014" string="Highwatch South Gate" />
+  <String id="181015" string="Molten Spire Teleport Platform" />
+  <String id="181016" string="Diranas Quarry Teleport Platform" />
+  <String id="181017" string="Ancient Heart Teleport Platform - Archdeva Temporary Camp" />
+  <String id="181018" string="Havenstone Ruins Teleport Platform" />
+  <String id="181019" string="Ruins of Shalek" />
+  <String id="181020" string="Diranas Quarry" />
+  <String id="181021" string="Molten Spire" />
+  <String id="181041" string="Qeldar Station Teleport Platform" />
+  <String id="181042" string="Baaldaz Post Teleport Platform" />
+  <String id="181043" string="Hulran Watch Teleport Platform" />
+  <String id="182001" string="Spring Valley" />
+  <String id="182002" string="Amadjuak Trading Post" />
+  <String id="182003" string="Nerine Trough" />
+  <String id="182004" string="Hina Hot Springs" />
+  <String id="182005" string="Parthian Overwatch" />
+  <String id="182006" string="Bloodshadow Laboratory" />
+  <String id="182007" string="Demokron Proving Ground" />
+  <String id="182008" string="Seeker's Point" />
+  <String id="182009" string="Seeker's Overwatch" />
+  <String id="182010" string="Springview" />
+  <String id="182011" string="Eleutheros" />
+  <String id="182012" string="Tranquility Falls" />
+  <String id="182013" string="Inky Den" />
+  <String id="182014" string="Cave Warehouse" />
+  <String id="182015" string="Kazan's Ridge" />
+  <String id="182016" string="Sabex Armory Entrance" />
+  <String id="182017" string="Emerald Hills" />
+  <String id="182018" string="Sabex Armory Entrance" />
+  <String id="182030" string="Amadjuak Trading Post Teleport Platform" />
+  <String id="182100" string="Western Springs Teleport Platform" />
+  <String id="182101" string="Eastern Springs Teleport Platform" />
+  <String id="182102" string="Godsteps Teleport Platform" />
+  <String id="182103" string="Emerald Hills Teleport Platform" />
+  <String id="182200" string="Hina Hot Springs" />
+  <String id="182300" string="Hina Hot Springs" />
+  <String id="182400" string="Kazan's Ridge" />
+  <String id="182500" string="Emerald Hills" />
+  <String id="182838" string="" />
+  <String id="183001" string="Highwatch Outskirts" />
+  <String id="183002" string="Highwatch" />
+  <String id="183003" string="Sanctuary of Illumination" />
+  <String id="183004" string="Meditation Way" />
+  <String id="183005" string="Veritas Vault" />
+  <String id="183006" string="Hall of Arms" />
+  <String id="183007" string="Hall of Accord" />
+  <String id="183008" string="Erudar Command" />
+  <String id="183009" string="Court of Enlightenment" />
+  <String id="183010" string="Bazaar" />
+  <String id="183011" string="Artisans Hall" />
+  <String id="183012" string="Oriyn's Vigil" />
+  <String id="183013" string="Hall of Accord" />
+  <String id="183014" string="Teleportal" />
+  <String id="183015" string="Shadow Sanguinary Entrance" />
+  <String id="191001" string="Trellum Consurgo" />
+  <String id="200001" string="Flight Manager" />
+  <String id="200002" string="Teleportal" />
+  <String id="200003" string="Guild Manager" />
+  <String id="200004" string="Dye Merchant" />
+  <String id="200005" string="Trade Broker" />
+  <String id="200006" string="Merchant" />
+  <String id="200007" string="Reputation Merchant" />
+  <String id="200008" string="Token Rewards" />
+  <String id="221501" string="Manglemire Entrance" />
+  <String id="248001" string="Khanovar Front" />
+  <String id="249001" string="Argonea" />
+  <String id="250001" string="Granarkus" />
+  <String id="469001" string="Arx Umbra: About 50 years ago" />
+  <String id="599001" string="Stepstone Isle" />
+  <String id="599002" string="Tangle Point" />
+  <String id="599003" string="Shadetree Entrance" />
+  <String id="599004" string="Shadetree" />
+  <String id="599005" string="Temple of the Tree" />
+  <String id="599006" string="Valkyon Federation Post" />
+  <String id="599007" string="Windmill Hill" />
+  <String id="599008" string="Stoneroot Bridge" />
+  <String id="599009" string="Great Root Arches" />
+  <String id="599010" string="Storehouse" />
+  <String id="599011" string="Stepstone Pegasus Platform" />
+  <String id="599012" string="Saproot Cave" />
+  <String id="818001" string="Secret Lab" />
+  <String id="818002" string="Laboratory Approach Corridor" />
+  <String id="818003" string="Experiment Cages" />
+  <String id="818004" string="Main Laboratory Corridor" />
+  <String id="818005" string="Main Laboratory" />
+  <String id="826001" string="Raqnan Fortress Basement Laboratory" />
+  <String id="827001" string="Stepstone Isle" />
+  <String id="827002" string="Tangle Point" />
+  <String id="827003" string="Shadetree" />
+  <String id="827004" string="Shadetree Entrance" />
+  <String id="827005" string="Storehouse" />
+  <String id="828001" string="Shadetree" />
+  <String id="828002" string="Storehouse" />
+  <String id="828003" string="Tactics/Magic Instructor" />
+  <String id="828004" string="Flight Manager" />
+  <String id="829001" string="Tiaran the Sorrow Tree" />
+  <String id="829002" string="Heart of Sorrow" />
+  <String id="905601" string="Timescape (Hard)" />
+  <String id="905602" string="Scarlet Way" />
+  <String id="905603" string="Beyond Thundertrial" />
+  <String id="905604" string="Final Judgment" />
+  <String id="905901" string="The Mists" />
+  <String id="905902" string="Breakers Point" />
+  <String id="905903" string="Execution Square" />
+  <String id="906701" string="Demokron Factory Entrance" />
+  <String id="906702" string="Odon's Chamber" />
+  <String id="906703" string="Verno's Chamber" />
+  <String id="906900" string="Castle Aranea Grounds" />
+  <String id="906901" string="Castle Aranea Gatehouse" />
+  <String id="906902" string="Monstrous Arena" />
+  <String id="906903" string="Castle Dungeons" />
+  <String id="906904" string="Slave Pens" />
+  <String id="906905" string="Castle Sewers" />
+  <String id="906906" string="Torture Chamber" />
+  <String id="906907" string="Secret Passage" />
+  <String id="906908" string="Castle Courtyard" />
+  <String id="906909" string="Weapons Lab" />
+  <String id="906910" string="Throne Room" />
+  <String id="906911" string="Queen's Chambers" />
+  <String id="906912" string="Hidden Altar" />
+  <String id="906913" string="Anea's Palace Entrance" />
+  <String id="907001" string="Playpen Entrance" />
+  <String id="907002" string="Playpen" />
+  <String id="950001" string="Harrowhold" />
+  <String id="950002" string="Harrowhold Entrance" />
+  <String id="975601" string="Timescape" />
+  <String id="975602" string="Scarlet Way" />
+  <String id="975603" string="Beyond Thundertrial" />
+  <String id="975604" string="Final Judgment" />
+  <String id="976701" string="Demokron Factory Entrance" />
+  <String id="976702" string="Odon's Chamber" />
+  <String id="976703" string="Verno's Chamber" />
+  <String id="976901" string="Manor Grounds" />
+  <String id="976902" string="Burning Garden" />
+  <String id="976903" string="Grand Hall" />
+  <String id="976904" string="Lady's Chamber" />
+  <String id="976905" string="Manor Hallway" />
+  <String id="976906" string="Entrance to Lilith's Keep" />
+  <String id="979501" string="Crucible of Fame" />
+  <String id="996901" string="Manor Grounds" />
+  <String id="996902" string="Burning Garden" />
+  <String id="996903" string="Grand Hall" />
+  <String id="996904" string="Lady's Chamber" />
+  <String id="996905" string="Manor Hallway" />
+  <String id="996906" string="Entrance to Lilith's Keep" />
+  <String id="1810041" string="Bathysmal Rise Entrance" />
+  <String id="8000001" string="Relic Hunter Outpost" />
+  <String id="8000002" string="Valkyon Federation Headquarters" />
+  <String id="8000003" string="Seekers' Locus" />
+  <String id="8000004" string="Firebase Valor" />
+  <String id="8000005" string="Firebase Audacity" />
+  <String id="8000006" string="Retribution Point" />
+  <String id="8000007" string="Sanctum Mysterium" />
+  <String id="8000008" string="The Pit" />
+  <String id="8000009" string="Vindicator Camp" />
+  <String id="8000010" string="Sietch Bidaum" />
+  <String id="8000011" string="Tainted Gorge Outpost" />
+  <String id="8000012" string="Vindicator Basecamp" />
+  <String id="8000013" string="The Hatchery" />
+  <String id="8000014" string="Broken Bridge Camp" />
+  <String id="8000015" string="Exetron" />
+  <String id="8000016" string="Raga Kabash: Tower of Harmony" />
+  <String id="8000017" string="Faerie Pond" />
+  <String id="8000018" string="Professors Redoubt" />
+  <String id="8000019" string="Depths of Corruption" />
+  <String id="8000020" string="Bloody Depths" />
+  <String id="8000021" string="Golden Labyrinth Entrance" />
+  <String id="8000022" string="Thulsa's Foil" />
+  <String id="8000023" string="Bestial Vale" />
+  <String id="8000024" string="Sinestral Manor Servants' Entrance" />
+  <String id="8000025" string="Dark Cathedral" />
+  <String id="8000026" string="Azarel's Labyrinth Depths" />
+  <String id="8000027" string="Vanguard Bastion" />
+  <String id="8000028" string="Press Camp" />
+  <String id="8000029" string="Cathedral Redoubt" />
+  <String id="8000030" string="Vindicator Redoubt" />
+  <String id="8000031" string="Grand Chapel" />
+  <String id="8000032" string="Hungry Caverns Vaults - Alpha Post" />
+  <String id="8000033" string="Hungry Caverns Depths - Beta Post" />
+  <String id="8000034" string="Gloomhaunt Sentry Post" />
+  <String id="8000035" string="Infiltrators Refuge" />
+  <String id="8000036" string="Roughneck Outpost" />
+  <String id="8000037" string="Sanctuary" />
+  <String id="8000038" string="Akasha's Hideout" />
+  <String id="8000039" string="Akasha's Hideout Entrance" />
+  <String id="8000040" string="Hungry Caverns Entrance" />
+  <String id="8000041" string="Camp Redemption" />
+  <String id="8000042" string="Halls of Shadow" />
+  <String id="8000043" string="Halls of Utterdark" />
+  <String id="8000044" string="Halls of Gloom" />
+  <String id="8000045" string="Witch-Queen Catacombs" />
+  <String id="8000046" string="Halls of Knowledge" />
+  <String id="8000047" string="Shrieking Catacombs" />
+  <String id="8000048" string="Catacomb of Misery" />
+  <String id="8000049" string="Antechambers" />
+  <String id="8000050" string="Raven Altar" />
+  <String id="8000051" string="Sanctum of Resurrection" />
+  <String id="8000052" string="Jester's Villa" />
+  <String id="8000053" string="Molten Chamber" />
+  <String id="8000054" string="Camp Umbra" />
+  <String id="8000055" string="Broken Bridge Camp" />
+  <String id="8000056" string="Checkpoint Ebony" />
+  <String id="8000057" string="Gravewatch of the Exiled" />
+  <String id="8000058" string="Entrance to Kelsaik's Nest" />
+  <String id="8000059" string="Kaiator Command Center" />
+  <String id="8000060" string="Kaiator Consul's Office" />
+  <String id="8000061" string="Forgeheart" />
+  <String id="8000062" string="Saleron Research Camp" />
+  <String id="8000063" string="Corpus Research Camp" />
+  <String id="8000064" string="Uprising Redoubt" />
+  <String id="8000065" string="Phalangeal Research Camp" />
+  <String id="8000066" string="Corpus Research Camp" />
+  <String id="8000067" string="Uprising Redoubt" />
+  <String id="8000068" string="Phalangeal Research Camp" />
+  <String id="8000069" string="Saleron Research Camp" />
+  <String id="8000070" string="Uprising Redoubt" />
+  <String id="8000071" string="Phalangeal Research Camp" />
+  <String id="8000072" string="Saleron Research Camp" />
+  <String id="8000073" string="Corpus Research Camp" />
+  <String id="8000074" string="Ebon Span" />
+  <String id="8000075" string="Forgeheart" />
+  <String id="8000076" string="Jester's Villa" />
+  <String id="8000077" string="Ebon Tower (Hard)" />
+  <String id="8000078" string="Labyrinth of Terror (Hard)" />
+  <String id="8000079" string="Akasha's Hideout (Hard)" />
+  <String id="8000080" string="Kelsaik's Nest (Hard)" />
+  <String id="8000081" string="Ebon Tower Entrance" />
+  <String id="8000082" string="Kaiator Command Center" />
+  <String id="8000083" string="Labyrinth of Terror Entrance" />
+  <String id="8000084" string="Altar of Death Entrance" />
+  <String id="8000085" string="Arachne's Bane" />
+  <String id="8000086" string="Saravash's Ascent Entrance" />
+  <String id="8000087" string="Sigil Adstringo Portal" />
+  <String id="8000088" string="Forgeheart" />
+  <String id="8000089" string="Dratheel Haven" />
+  <String id="8000090" string="Acarum Boneyard" />
+  <String id="8000091" string="Frontline Underground Tunnel Entrance" />
+  <String id="8000092" string="Lighthouse of the Sun Entrance" />
+  <String id="8000093" string="Velika" />
+  <String id="8104000" string="Entrance to Lakan's Prison" />
+  <String id="8104002" string="Entrance to Broken Prison" />
+  <String id="8999001" string="Velik's Sanctuary" />
+  <String id="9001001" string="Samael's Residence" />
+  <String id="9002001" string="Fountain of Shara" />
+  <String id="9003001" string="Fyrmount Abyss" />
+  <String id="9006001" string="Labyrinth of Terror" />
+  <String id="9007001" string="Hidden Shrine" />
+  <String id="9008001" string="Malachai's Lab" />
+  <String id="9009001" string="Malachai's Lab" />
+  <String id="9011001" string="Muhrak's Workshop" />
+  <String id="9012001" string="Three Towers Spires" />
+  <String id="9013001" string="Cyasma Spire" />
+  <String id="9014001" string="Khanovar Gauntlet" />
+  <String id="9015001" string="Island of Dawn Coast" />
+  <String id="9016001" string="Island of Dawn Clifftops" />
+  <String id="9017001" string="Lighthouse of the Sun" />
+  <String id="9018001" string="Argon Catacombs" />
+  <String id="9019001" string="Sanctum Mysterium Forecourt" />
+  <String id="9020001" string="Bastion of Lok Armory" />
+  <String id="9021001" string="Hidden Tunnel" />
+  <String id="9022001" string="Vault of Glory" />
+  <String id="9023001" string="Kutmaschuk's Hideout" />
+  <String id="9024001" string="Fane of Kaprima" />
+  <String id="9024002" string="Destroyed Cathedral" />
+  <String id="9024003" string="Hall of the Harbinger" />
+  <String id="9024004" string="Kaprima Summoning Room" />
+  <String id="9025001" string="Balder's Temple" />
+  <String id="9025090" string="Temple Entrance" />
+  <String id="9025091" string="Temple Labyrinth" />
+  <String id="9025092" string="Temple Pond" />
+  <String id="9025093" string="Temple Garden" />
+  <String id="9025094" string="Temple Cellar" />
+  <String id="9025095" string="Temple Center" />
+  <String id="9025096" string="Temple Sanctum" />
+  <String id="9025097" string="Room of Relics" />
+  <String id="9025098" string="Temple Bridge" />
+  <String id="9026001" string="Argon Corpus" />
+  <String id="9026002" string="Cell of the Fist" />
+  <String id="9026003" string="Liftwarden's Chamber" />
+  <String id="9026004" string="Hall of the Arbiter" />
+  <String id="9026005" string="Sanctuary of the Seer" />
+  <String id="9027001" string="Manaya's Core (Hard)" />
+  <String id="9027002" string="The Plexus (Hard)" />
+  <String id="9028001" string="Malachai's Lab" />
+  <String id="9029001" string="Vault of Kaprima" />
+  <String id="9029002" string="Drill Chamber" />
+  <String id="9029003" string="Hall of the Harbinger" />
+  <String id="9029004" string="Resurrection Hall" />
+  <String id="9029005" string="Entrance to Vault of Kaprima" />
+  <String id="9031001" string="Akasha's Trial" />
+  <String id="9032001" string="Baracos' Trial" />
+  <String id="9033001" string="Krakatox's Trial" />
+  <String id="9036001" string="Karascha's Lair" />
+  <String id="9037001" string="Tainted Gorge Bridge" />
+  <String id="9038001" string="Mysterious Jungle" />
+  <String id="9039001" string="Caravan Ambush Site" />
+  <String id="9040001" string="Velika Plaza" />
+  <String id="9041001" string="Velika Eastern Gate" />
+  <String id="9042001" string="Velika Headquarters" />
+  <String id="9043000" string="Wonderholme Entrance" />
+  <String id="9043001" string="Wonderholme (Hard)" />
+  <String id="9043002" string="Mockinghall (Hard)" />
+  <String id="9043003" string="Wonderholme Entrance" />
+  <String id="9043004" string="Beaminous Plateau" />
+  <String id="9043005" string="Mockinghall" />
+  <String id="9043006" string="Wonderholme" />
+  <String id="9043011" string="Great Hall (Hard)" />
+  <String id="9043021" string="Cloud Bridge (Hard)" />
+  <String id="9043031" string="Two-Ring Circus (Hard)" />
+  <String id="9043041" string="Follybridge (Hard)" />
+  <String id="9043051" string="Brokish Corridor (Hard)" />
+  <String id="9043061" string="Beaminous Plateau (Hard)" />
+  <String id="9043071" string="Frolickish Corridor (Hard)" />
+  <String id="9043081" string="Play Room (Hard)" />
+  <String id="9043091" string="Aliss's Lab (Hard)" />
+  <String id="9043101" string="Solonesome Cage(Hard)" />
+  <String id="9043111" string="Unceremonious Landing (Hard)" />
+  <String id="9043121" string="Vacant Stair (Hard)" />
+  <String id="9045001" string="Bluefist Mountain" />
+  <String id="9045002" string="Lilipart Village" />
+  <String id="9046001" string="Accursed Oasis" />
+  <String id="9046002" string="Giant Growth Testing Ground" />
+  <String id="9047001" string="Harvest Festival Hall" />
+  <String id="9048001" string="Dice Instance Dungeon (Temp Title)" />
+  <String id="9048002" string="Dice Instance Dungeon (Temp Title)" />
+  <String id="9050000" string="Entrance to Rift's Edge" />
+  <String id="9050001" string="Guwangi Village" />
+  <String id="9050002" string="Guwangi Village Landing" />
+  <String id="9050003" string="Garden of Yativio" />
+  <String id="9050004" string="Vesporax Cave" />
+  <String id="9050005" string="Koleogg Nest" />
+  <String id="9050006" string="Rift's Edge" />
+  <String id="9050007" string="Rift's Edge (Hard)" />
+  <String id="9050008" string="Cliffside Airship Gate" />
+  <String id="9051001" string="Squalid Temple" />
+  <String id="9051002" string="Temple Cellar" />
+  <String id="9051003" string="Temple Garden" />
+  <String id="9051004" string="Temple Center" />
+  <String id="9051005" string="Ladder" />
+  <String id="9051006" string="Temple Cellar" />
+  <String id="9051007" string="Temple Garden" />
+  <String id="9051008" string="Temple Center" />
+  <String id="9052001" string="Banquet of Blood" />
+  <String id="9052002" string="Ceremonial Room" />
+  <String id="9052003" string="Banquet Hall" />
+  <String id="9052004" string="Banquet Hall" />
+  <String id="9052005" string="Ceremonial Room" />
+  <String id="9053001" string="Kezzel's Gorge" />
+  <String id="9054001" string="Bathysmal Rise (Hard)" />
+  <String id="9054002" string="Cavern of Runes" />
+  <String id="9054003" string="Toxic Conservatory" />
+  <String id="9054004" string="Alsetnode Corridor" />
+  <String id="9054005" string="Pool of Fear" />
+  <String id="9054006" string="Elemental Hall" />
+  <String id="9054007" string="Faridei Vault" />
+  <String id="9054008" string="Faridei Vault" />
+  <String id="9054009" string="Bathysmal Rise" />
+  <String id="9055002" string="Ravenous Gorge" />
+  <String id="9055003" string="The Gorger's Grotto" />
+  <String id="9055004" string="Den of the Devourer" />
+  <String id="9055005" string="Nest of Nimistrix" />
+  <String id="9055008" string="Entrance to Ravenous Gorge" />
+  <String id="9055009" string="Nest of Nimistrix" />
+  <String id="9056001" string="Timescape Entrance" />
+  <String id="9056002" string="Thundertrial" />
+  <String id="9056003" string="The Basalt Cradle" />
+  <String id="9056004" string="Timecore" />
+  <String id="9056005" string="Timecore" />
+  <String id="9057001" string="Akeron's Inferno (Hard)" />
+  <String id="9057002" string="Akeron's Inferno Entrance" />
+  <String id="9060001" string="Sentry Ship" />
+  <String id="9060002" string="Dreadnaught Deck" />
+  <String id="9060003" string="Boarding Ramp" />
+  <String id="9060004" string="Dreadnaught Deck" />
+  <String id="9060005" string="Cargo Hold" />
+  <String id="9060006" string="Sentry Ship Deck" />
+  <String id="9061001" string="Ruin of the Giants" />
+  <String id="9065001" string="Twilight Valley" />
+  <String id="9068001" string="Shadow Sanguinary (Hard)" />
+  <String id="9068002" string="Guardian's Chamber" />
+  <String id="9068003" string="Bloodshard Repository" />
+  <String id="9068004" string="Imperator's Sanctum" />
+  <String id="9068005" string="Foramen Chamber" />
+  <String id="9070001" string="Manglemire Entrance" />
+  <String id="9071001" string="Necromancer Tomb" />
+  <String id="9071003" string="Necromancy Cell" />
+  <String id="9071004" string="Chief Guard Room" />
+  <String id="9071005" string="Brotherhood Quarters" />
+  <String id="9071006" string="Necromancy Lab" />
+  <String id="9071007" string="Chapel of Pain" />
+  <String id="9071008" string="Thulsa's Chamber" />
+  <String id="9071009" string="Secret Passage" />
+  <String id="9072001" string="Golden Labyrinth" />
+  <String id="9072002" string="Chamber of the Wild" />
+  <String id="9072003" string="Supply Room" />
+  <String id="9072004" string="Chamber of Sacrifice" />
+  <String id="9072005" string="Chamber of Trial" />
+  <String id="9072006" string="Chamber of Gatekeeper" />
+  <String id="9073001" string="Ebon Tower" />
+  <String id="9073002" string="Ebon Tower - Primus" />
+  <String id="9073003" string="Ebon Tower - Secundus" />
+  <String id="9073004" string="Ebon Tower - Tertius" />
+  <String id="9073005" string="Ebon Tower - Quartus" />
+  <String id="9073006" string="Ebon Tower - Quintus" />
+  <String id="9073007" string="Hall of Shadows" />
+  <String id="9073008" string="Chamber of Anguish" />
+  <String id="9073009" string="Altar of Death" />
+  <String id="9073010" string="Tomb of Torment" />
+  <String id="9074001" string="Sanctum of Resurrection" />
+  <String id="9075001" string="Kelsaik's Nest" />
+  <String id="9075002" string="Guardian's Chamber" />
+  <String id="9075003" string="Kelsaik's Hall" />
+  <String id="9076001" string="Labyrinth of Terror" />
+  <String id="9077001" string="Batu Desert" />
+  <String id="9077002" string="Mejdanar Arena" />
+  <String id="9077003" string="Mags Thulanax" />
+  <String id="9077004" string="Mags Kormas" />
+  <String id="9078001" string="Suryati's Peak" />
+  <String id="9078002" string="Suryati's Control Zone" />
+  <String id="9078003" string="Sihranar Command Post" />
+  <String id="9078004" string="Sihranar Research Site" />
+  <String id="9079001" string="Saravash's Ascent" />
+  <String id="9079002" string="Saravash's Catchment" />
+  <String id="9079003" string="Feldrenen Forest" />
+  <String id="9079004" string="Mercenary Camp" />
+  <String id="9080001" string="Sigil Adstringo" />
+  <String id="9080002" string="Dratheel Haven" />
+  <String id="9080003" string="Aetrial Sanctuary" />
+  <String id="9080004" string="Infinity Woods" />
+  <String id="9081001" string="Training Grounds" />
+  <String id="9082001" string="Temple of Temerity" />
+  <String id="9083001" string="Breaching Grounds" />
+  <String id="9087001" string="Bastion of Lok" />
+  <String id="9087002" string="Bastion of Lok" />
+  <String id="9087003" string="Atel Akaad Stronghold" />
+  <String id="9088001" string="Sinestral Manor" />
+  <String id="9088002" string="Manor Cellar" />
+  <String id="9088003" string="Manor Floor" />
+  <String id="9088004" string="Menhir Production Device" />
+  <String id="9089001" string="Cultists' Refuge" />
+  <String id="9089002" string="Chamber of Wonder" />
+  <String id="9089003" string="Chamber of Immorality" />
+  <String id="9089004" string="Chamber of Hatred" />
+  <String id="9090001" string="Woodland Path" />
+  <String id="9091001" string="Altar of Vadoma" />
+  <String id="9092001" string="Dagon's Chantry" />
+  <String id="9093001" string="Akasha's Hideout" />
+  <String id="9093002" string="Corridor of Pestilence" />
+  <String id="9093003" string="Sanguinarium" />
+  <String id="9093004" string="Karascha's Menagerie" />
+  <String id="9093005" string="Chamber of Electricity" />
+  <String id="9093006" string="Chamber of Awe" />
+  <String id="9093007" string="Akasha's Chamber" />
+  <String id="9094001" string="Saleron's Sky Garden" />
+  <String id="9094002" string="First Trial Terrace" />
+  <String id="9094003" string="Second Trial Terrace" />
+  <String id="9094004" string="Third Trial Terrace" />
+  <String id="9094005" string="Final Terrace" />
+  <String id="9095001" string="Crucible of Flame" />
+  <String id="9095002" string="Crucible Foundation" />
+  <String id="9095003" string="Crucible Bower" />
+  <String id="9095004" string="South Brazier" />
+  <String id="9095005" string="West Brazier" />
+  <String id="9095006" string="North Brazier" />
+  <String id="9095007" string="Crucible Hub" />
+  <String id="9095008" string="East Brazier" />
+  <String id="9096001" string="Sirjuka Gallery" />
+  <String id="9124002" string="Velika—Velik's Steps" />
+  <String id="9126101" string="Allemantheia—Gates of Honor" />
+  <String id="9128101" string="Kaiator—Plaza of Triumph" />
+  <String id="9611001" string="The Abscess (Hard) " />
+  <String id="9643001" string="Wonderholme" />
+  <String id="9643002" string="Mockinghall" />
+  <String id="9643011" string="Great Hall" />
+  <String id="9643021" string="Cloud Bridge" />
+  <String id="9643031" string="Two-Ring Circus" />
+  <String id="9643041" string="Follybridge" />
+  <String id="9643051" string="Brokish Corridor" />
+  <String id="9643061" string="Beaminous Plateau" />
+  <String id="9643071" string="Frolickish Corridor" />
+  <String id="9643081" string="Play Room" />
+  <String id="9643091" string="Aliss' Lab" />
+  <String id="9643101" string="Solonesome Cage" />
+  <String id="9643111" string="Unceremonious Landing" />
+  <String id="9643121" string="Vacant Stair" />
+  <String id="9710001" string="Broken Prison" />
+  <String id="9710002" string="Cathedral of Spite" />
+  <String id="9710003" string="Chamber of Woe" />
+  <String id="9710004" string="Gallery of Despair" />
+  <String id="9711001" string="The Abscess (Hard)" />
+  <String id="9711002" string="Entrance to the Abscess" />
+  <String id="9713001" string="Ghillieglade Entrance" />
+  <String id="9713002" string="Ghillieglade Entrance" />
+  <String id="9713003" string="Gatekeeper's Grotto" />
+  <String id="9713004" string="Guardian's Plaza" />
+  <String id="9713005" string="Banyakas's Sanctum" />
+  <String id="9714001" string="Velik's Sanctuary" />
+  <String id="9716001" string="Sky Cruiser Endeavor" />
+  <String id="9716002" string="Sky Cruiser Endeavor - Platform" />
+  <String id="9716003" string="Control Room" />
+  <String id="9716004" string="Engine Room" />
+  <String id="9716005" string="Sky Cruiser Deck" />
+  <String id="9724001" string="Fane of Kaprima (Hard)" />
+  <String id="9724002" string="Destroyed Cathedral" />
+  <String id="9724003" string="Hall of the Harbinger" />
+  <String id="9724004" string="Kaprima Summoning Room" />
+  <String id="9725001" string="Balder's Temple (Hard)" />
+  <String id="9725090" string="Temple Entrance (Hard)" />
+  <String id="9725091" string="Temple Labyrinth (Hard)" />
+  <String id="9725092" string="Temple Pond (Hard)" />
+  <String id="9725093" string="Temple Garden (Hard)" />
+  <String id="9725094" string="Temple Cellar (Hard)" />
+  <String id="9725095" string="Temple Center (Hard)" />
+  <String id="9725096" string="Temple Sanctum (Hard)" />
+  <String id="9725097" string="Room of Relics (Hard)" />
+  <String id="9725098" string="Temple Bridge (Hard)" />
+  <String id="9726001" string="Argon Corpus (Hard)" />
+  <String id="9726002" string="Cell of the Fist (Hard)" />
+  <String id="9726003" string="Liftwarden's Chamber (Hard)" />
+  <String id="9726004" string="Hall of the Arbiter (Hard)" />
+  <String id="9726005" string="Sanctuary of the Seer (Hard)" />
+  <String id="9727001" string="Manaya's Core" />
+  <String id="9727002" string="The Plexus" />
+  <String id="9743001" string="Wonderholme" />
+  <String id="9743002" string="Mockinghall" />
+  <String id="9743011" string="Great Hall" />
+  <String id="9743021" string="Cloud Bridge" />
+  <String id="9743031" string="Two-Ring Circus" />
+  <String id="9743041" string="Follybridge" />
+  <String id="9743051" string="Brokish Corridor" />
+  <String id="9743061" string="Beaminous Plateau" />
+  <String id="9743071" string="Frolickish Corridor" />
+  <String id="9743081" string="Play Room" />
+  <String id="9743091" string="Aliss's Lab" />
+  <String id="9743101" string="Solonesome Cage" />
+  <String id="9743111" string="Unceremonious Landing" />
+  <String id="9743121" string="Vacant Stair" />
+  <String id="9756001" string="Timescape Entrance" />
+  <String id="9756002" string="Thundertrial" />
+  <String id="9756003" string="The Basalt Cradle" />
+  <String id="9756004" string="Timecore" />
+  <String id="9756005" string="Timecore" />
+  <String id="9757001" string="Akeron's Inferno" />
+  <String id="9757002" string="Entrance to Akeron's Inferno" />
+  <String id="9757003" string="The Hand of Akeron" />
+  <String id="9757004" string="Akeron's Reach" />
+  <String id="9757005" string="Theater of Terror" />
+  <String id="9760001" string="Sentry Ship" />
+  <String id="9760002" string="Dreadnaught Deck" />
+  <String id="9760003" string="Boarding Ramp" />
+  <String id="9760004" string="Dreadnaught Deck" />
+  <String id="9760005" string="Cargo Hold" />
+  <String id="9760006" string="Sentry Ship Deck" />
+  <String id="9766001" string="Shattered Fleet" />
+  <String id="9766002" string="Entrance to the Shattered Fleet" />
+  <String id="9766003" string="Entrance to the Shattered Fleet" />
+  <String id="9768001" string="Shadow Sanguinary" />
+  <String id="9768002" string="Guardian's Chamber" />
+  <String id="9768003" string="Bloodshard Repository" />
+  <String id="9768004" string="Imperator's Sanctum" />
+  <String id="9768005" string="Foramen Chamber" />
+  <String id="9770001" string="Destroyed Garden" />
+  <String id="9770002" string="Destroyed Keep" />
+  <String id="9770003" string="Lady's Chamber" />
+  <String id="9770004" string="Entrance to Ruinous Manor" />
+  <String id="9773001" string="Ebon Tower (Hard)" />
+  <String id="9773002" string="Ebon Tower (Hard) - Primus" />
+  <String id="9773003" string="Ebon Tower (Hard) - Secundus" />
+  <String id="9773004" string="Ebon Tower (Hard) - Tertius" />
+  <String id="9773005" string="Ebon Tower (Hard) - Quartus" />
+  <String id="9773006" string="Ebon Tower (Hard) - Quintus" />
+  <String id="9773007" string="Hall of Shadows (Hard)" />
+  <String id="9773008" string="Chamber of Anguish (Hard)" />
+  <String id="9773009" string="Altar of Death (Hard)" />
+  <String id="9773010" string="Tomb of Torment (Hard)" />
+  <String id="9775001" string="Kelsaik's Nest (Hard)" />
+  <String id="9775002" string="Guardian's Chamber (Hard)" />
+  <String id="9775003" string="Kelsaik's Hall (Hard)" />
+  <String id="9776001" string="Labyrinth of Terror (Hard)" />
+  <String id="9776002" string="Shriekaal Hall (Hard)" />
+  <String id="9776003" string="Tragieron Hall (Hard)" />
+  <String id="9776004" string="Agonal Hall (Hard)" />
+  <String id="9776005" string="Hall of Nightmares (Hard)" />
+  <String id="9776006" string="Hall of Screams (Hard)" />
+  <String id="9776007" string="Kriegar Hall (Hard)" />
+  <String id="9776008" string="Anarxis Hall (Hard)" />
+  <String id="9777001" string="Channelworks" />
+  <String id="9777002" string="Channelworks—Spillway" />
+  <String id="9777003" string="Channelworks—All-Seeing Eye" />
+  <String id="9777004" string="Channelworks—Spawning Chamber" />
+  <String id="9777005" string="Channelworks—Great Cistern" />
+  <String id="9777006" string="Channelworks—Cistern Access" />
+  <String id="9793001" string="Akasha's Hideout (Hard)" />
+  <String id="9793002" string="Corridor of Pestilence (Hard)" />
+  <String id="9793003" string="Sanguinarium (Hard)" />
+  <String id="9793004" string="Karascha's Menagerie (Hard)" />
+  <String id="9793005" string="Chamber of Eccentricity (Hard)" />
+  <String id="9793006" string="Chamber of Awe (Hard)" />
+  <String id="9793007" string="Akasha's Chamber (Hard)" />
+  <String id="9801001" string="Nexus Traverse" />
+  <String id="9801002" string="Velika " />
+  <String id="9801003" string="Allemantheia " />
+  <String id="9801004" string="Kaiator " />
+  <String id="9802001" string="Nexus Traverse" />
+  <String id="9803001" string="Nexus Traverse" />
+  <String id="9804001" string="Kelsaik's Nest" />
+  <String id="9808001" string="Sabex Armory" />
+  <String id="9808002" string="Pikes and Spikes" />
+  <String id="9808003" string="Forge" />
+  <String id="9808004" string="Storage B" />
+  <String id="9808005" string="Sabex Vault" />
+  <String id="9808006" string="Power Source" />
+  <String id="9808007" string="Power Source" />
+  <String id="9808008" string="Power Source" />
+  <String id="9808009" string="Power Source" />
+  <String id="9809001" string="Macellarius Catacombs" />
+  <String id="9809002" string="Macellarius Catacombs" />
+  <String id="9809003" string="Macellarius Catacombs" />
+  <String id="9809004" string="Macellarius Catacombs" />
+  <String id="9809005" string="Macellarius Catacombs" />
+  <String id="9809010" string="Macellarius Catacombs Entrance" />
+  <String id="9810001" string="Lakan's Prison" />
+  <String id="9810002" string="Lakan's Prison" />
+  <String id="9810003" string="Lakan's Prison (Entrance Stairs)" />
+  <String id="9810004" string="Lakan's Prison (Path of Lakan)" />
+  <String id="9810005" string="Lakan's Prison (Chamber of Worship)" />
+  <String id="9811001" string="The Abscess" />
+  <String id="9811002" string="Entrance to the Abscess" />
+  <String id="9813001" string="Ghillieglade (1-Person)" />
+  <String id="9813002" string="Ghillieglade Entrance" />
+  <String id="9813003" string="Gatekeeper's Grotto" />
+  <String id="9813004" string="Guardian's Plaza" />
+  <String id="9813005" string="Banyakas's Sanctum" />
+  <String id="9814001" string="The Vault of Oriyn" />
+  <String id="9821001" string="Dakuryon's Sanctum" />
+  <String id="9822001" string="Archdeva Listening Post" />
+  <String id="9823001" string="Sky Cruiser Intrepid" />
+  <String id="9823002" string="Sky Cruiser Intrepid" />
+  <String id="9823003" string="Weather Deck" />
+  <String id="9825001" string="Balder's Temple (Solo)" />
+  <String id="9825090" string="Temple Entrance" />
+  <String id="9825091" string="Temple Labyrinth" />
+  <String id="9825092" string="Temple Pond" />
+  <String id="9825093" string="Temple Garden" />
+  <String id="9825094" string="Temple Cellar" />
+  <String id="9825095" string="Temple Center" />
+  <String id="9825096" string="Temple Sanctum" />
+  <String id="9825097" string="Room of Relics" />
+  <String id="9825098" string="Temple Bridge" />
+  <String id="9830001" string="Celestial Arena" />
+  <String id="9830002" string="Highwatch - Hall of Arms" />
+  <String id="9860001" string="Sentry Ship" />
+  <String id="9860002" string="Dreadnaught Deck" />
+  <String id="9860003" string="Boarding Ramp" />
+  <String id="9860004" string="Dreadnaught Deck" />
+  <String id="9860005" string="Cargo Hold" />
+  <String id="9860006" string="Sentry Ship Deck" />
+  <String id="9871001" string="Necromancer Tomb (Solo)" />
+  <String id="9871003" string="Necromancy Cell (Solo)" />
+  <String id="9871004" string="Chief Guard Room (1-Person)" />
+  <String id="9871005" string="Brotherhood Quarters (1-Person)" />
+  <String id="9871006" string="Necromancy Lab (1-Person)" />
+  <String id="9871007" string="Chapel of Pain (1-Person)" />
+  <String id="9871008" string="Thulsa's Chamber (1-Person)" />
+  <String id="9871009" string="Secret Passage (1-Person)" />
+  <String id="9872001" string="Golden Labyrinth (Solo)" />
+  <String id="9872002" string="Chamber of the Wild (1-Person)" />
+  <String id="9872003" string="Supply Room (1-Person)" />
+  <String id="9872004" string="Chamber of Sacrifice (1-Person)" />
+  <String id="9872005" string="Chamber of Trial (1-Person)" />
+  <String id="9872006" string="Chamber of Gatekeeper (1-Person)" />
+  <String id="9873001" string="Ebon Tower (Solo)" />
+  <String id="9873002" string="Ebon Tower - Primus (1-Person)" />
+  <String id="9873003" string="Ebon Tower - Secundus (1-Person)" />
+  <String id="9873004" string="Ebon Tower - Tertius (1-Person)" />
+  <String id="9873005" string="Ebon Tower - Quartus (1-Person)" />
+  <String id="9873006" string="Chamber of Anguish (1-Person)" />
+  <String id="9873007" string="Hall of Shadows (1-Person)" />
+  <String id="9873008" string="Chamber of Anguish (1-Person)" />
+  <String id="9873009" string="Altar of Death (1-Person)" />
+  <String id="9873010" string="Tomb of Torment (1-Person)" />
+  <String id="9885001" string="Dreadspire" />
+  <String id="9885002" string="Challenge" />
+  <String id="9885003" string="Dreadspire Entrance" />
+  <String id="9885004" string="Dreadspire - Top Challenges" />
+  <String id="9887001" string="Bastion of Lok (Solo)" />
+  <String id="9887002" string="Bastion of Lok (Solo)" />
+  <String id="9887003" string="Atel Akaad Stronghold (1-Person)" />
+  <String id="9888001" string="Sinestral Manor (Solo)" />
+  <String id="9888002" string="Manor Cellar (1-Person)" />
+  <String id="9888003" string="Manor Floor (1-Person)" />
+  <String id="9888004" string="Menhir Production Floor (1-Person)" />
+  <String id="9889001" string="Cultists' Refuge (Solo)" />
+  <String id="9889002" string="Chamber of Wonder (1-Person)" />
+  <String id="9889003" string="Chamber of Immorality (1-Person)" />
+  <String id="9889004" string="Chamber of Hatred (1-Person)" />
+  <String id="9900001" string="Original Position" />
+  <String id="9911001" string="Kelsaik's Raid (10-Person)" />
+  <String id="9911002" string="Guardian's Chamber (10-Person)" />
+  <String id="9911003" string="Kelsaik's Hall (10-Person)" />
+  <String id="9916001" string="Sky Cruiser Endeavor (Hard)" />
+  <String id="9916002" string="Trellum Consurgo's Southern Gate" />
+  <String id="9916003" string="Control Room (Hard)" />
+  <String id="9916004" string="Engine Room (Hard) " />
+  <String id="9916005" string="Sky Cruiser Deck (Hard) " />
+  <String id="9950001" string="Harrowhold" />
+  <String id="9950002" string="Harrowhold - Courtyard" />
+  <String id="9950003" string="Harrowhold - Cliffs" />
+  <String id="9970001" string="Destroyed Garden" />
+  <String id="9970002" string="Destroyed Keep" />
+  <String id="9970003" string="Lady's Chamber" />
+  <String id="9970004" string="Entrance to Ruinous Manor" />
+  <String id="9975001" string="Kelsaik's Raid (20-Person)" />
+  <String id="9975002" string="Guardian's Chamber (20-Person)" />
+  <String id="9975003" string="Kelsaik's Hall (20-Person)" />
+  <String id="9979001" string="Saravash's Ascent" />
+  <String id="9979002" string="Saravash's Catchment" />
+  <String id="9979003" string="Feldrenen Forest" />
+  <String id="9979004" string="Threat Camp" />
+  <String id="9990001" string="Attack!" />
+  <String id="9990002" string="Defend!" />
+  <String id="9990003" string="Danger!" />
+  <String id="9990004" string="Converge!" />
+  <String id="9999998" string="A map is being developed for this area." />
+  <String id="9999999" string="Map cannot be displayed for this area." />
+  <String id="96431504" string="Shortcut" />
+</StrSheet_Region>

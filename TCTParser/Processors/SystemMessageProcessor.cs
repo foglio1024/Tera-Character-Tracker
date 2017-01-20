@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using TCTData.Enums;
 using Tera;
+using Tera.Game;
 
 namespace TCTParser
 {
-    internal class SystemMessageProcessor
+    public class SystemMessageProcessor
     {
         const int DUNGEON_ENGAGED_ID = 2229;
         const int VANGUARD_COMPLETED_ID = 2952;
@@ -18,7 +19,18 @@ namespace TCTParser
         const int DUNGEON_ID_OFFSET = 60 * 2;
         const int QUEST_ID_OFFSET = 50 * 2;
         const int TASK_ID_OFFSET = 68 * 2;
+
         public void ParseSystemMessage(string p)
+        {
+            switch (DataParser.SystemOpCodeNamer.GetName(GetSystemOpCode(p)))
+            {
+                case "SMT_GRANT_DUNGEON_COOLTIME_AND_COUNT":
+                    EngageDungeon(p);
+                    break;
+            }
+        }
+        
+        private ushort GetSystemOpCode(string p)
         {
             string s = "";
             try
@@ -29,22 +41,12 @@ namespace TCTParser
             {
                 s = StringUtils.GetStringFromHex(p, ID_OFFSET, "0000");
             }
-            int id = 0;
-            Int32.TryParse(s, out id);
+            ushort id = 0;
+            UInt16.TryParse(s, out id);
 
-            switch (id)
-            {
-                case DUNGEON_ENGAGED_ID:
-                    EngageDungeon(p);
-                    break;
-                    //    case VANGUARD_COMPLETED_ID:
-                    //        if(p.Substring(TASK_ID_OFFSET,2) == "31")
-                    //        {
-                    //            CompleteVanguard(p);
-                    //        }
-                    //        break;
-            }
+            return id;
         }
+
         private void EngageDungeon(string p)
         {
             uint dungId = 0;

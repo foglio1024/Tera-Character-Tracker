@@ -14,7 +14,7 @@ using System.Windows;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.IO.Compression;
-using TCTSniffer;
+
 
 namespace TCTMain
 {
@@ -41,7 +41,8 @@ namespace TCTMain
         {
             public static void NetThread()
             {
-                TCTSniffer.SnifferProgram.startNewSniffingSession();
+                //TCTSniffer.SnifferProgram.startNewSniffingSession();
+                DamageMeter.Sniffing.TeraSniffer.Instance.Enabled = true;
 
             }
             public static void UIThread()

@@ -29,6 +29,15 @@ namespace Tera
             TCTNotifier.NotificationProvider.SendNotification(content, Colors.SolidBaseColor);
         }
 
+        public static void SetLogColor(Color c)
+        {
+            MainWin.Dispatcher.Invoke(() =>
+            {
+                MainWin.Log.Background = new SolidColorBrush(c);
+            });
+        }
+
+
         public static class Colors
         {
             public static Color SolidBaseColor = Color.FromArgb(255, 0, 123, 206);

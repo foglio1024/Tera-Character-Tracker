@@ -39,12 +39,16 @@ namespace Tera
         public static bool IsSaved { get; set; }
         public static List<Character> CharList { get; set; }
         public static List<Character> DeletedChars = new List<Character>();
+        public static Dictionary<string, int> ResettedDailies = new Dictionary<string, int>();
+        public static Dictionary<string, int> ResettedWeekly = new Dictionary<string, int>();
         public static List<Dungeon> DungList{ get; set; }
         public static List<Account> AccountList { get; set; }
         public static Dictionary<uint, string> GuildDictionary { get; set; }
         private static XDocument settings;
         private static DateTime LastClosed;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
+
+        public static List<Delegate> UndoList { get; set; }
 
         public static void AddCharacter(Character c)
         {

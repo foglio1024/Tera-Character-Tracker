@@ -34,10 +34,12 @@ namespace Tera
 
     public partial class TeraMainWindow : Window
     {
-        #region Constructor
         public TeraMainWindow()
         {
             InitializeComponent();
+
+            TeraLogic.UndoList = new List<Delegate>();
+
             Top = TCTData.TCTProps.Top;
             Left = TCTData.TCTProps.Left;
             Height = TCTData.TCTProps.Height;
@@ -45,9 +47,7 @@ namespace Tera
 
             UI.MainWin = this;
         }
-        #endregion
 
-        #region Fields
         const int LOG_CAP = 100;
         bool leftSlideIsOpen = false;
         bool isLogExpanded = false;
@@ -58,14 +58,9 @@ namespace Tera
         public DoubleAnimation glowOut = new DoubleAnimation( .3, TimeSpan.FromMilliseconds(150));
         public DoubleAnimation expand = new DoubleAnimation(40, TimeSpan.FromMilliseconds(100));
 
-        #endregion
-
-        #region Properties
         public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
         public static List<DungeonRunsCounter> DungeonCounters { get; set; } = new List<DungeonRunsCounter>();
-        #endregion
 
-        #region Methods
         public static T FindChild<T>(DependencyObject parent, string childName)
    where T : DependencyObject
         {
@@ -206,9 +201,6 @@ namespace Tera
 
             }));
         }
-        #endregion
-
-        #region Event Handlers
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -278,17 +270,11 @@ namespace Tera
                     default:
                         break;
                 }
-
-                /*
-                 * add dg clear counters 
-                 * 
-                 */
-
-
             }
 
             ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);
             StatusBar.Background =          new SolidColorBrush(UI.Colors.SolidBaseColor);
+            Log.BorderThickness = new Thickness(0);
             UI.CharView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
 
             this.Activate();
@@ -511,20 +497,42 @@ namespace Tera
         {
             Keyboard.ClearFocus();
         }
-        private void undoDeletion(object sender, MouseButtonEventArgs e)
+
+        private delegate void UndoDelegate();
+        private void UndoDeletion()
         {
             if(TeraLogic.DeletedChars.Count > 0)
             {
                 TeraLogic.AddCharacter(TeraLogic.DeletedChars.Last());
                 TeraLogic.DeletedChars.Remove(TeraLogic.DeletedChars.Last());
             }
-            if (TeraLogic.DeletedChars.Count == 0)
+        }
+        private void UndoWeeklyReset()
+        {
+            foreach (var item in TeraLogic.ResettedWeekly)
             {
-                UI.MainWin.undoButton.Opacity = .3;
+                TeraLogic.CharList.Find(c => c.Name == item.Key).Weekly = item.Value;
             }
+            TeraLogic.ResettedWeekly.Clear();
+        }
+        private void UndoDailyReset()
+        {
+            foreach (var item in TeraLogic.ResettedDailies)
+            {
+                TeraLogic.CharList.Find(c => c.Name == item.Key).Dailies = item.Value;
+            }
+            TeraLogic.ResettedDailies.Clear();
         }
 
-        #endregion
+        private void UndoButtonClick(object sender, MouseButtonEventArgs e)
+        {
+            if (TeraLogic.UndoList.Count > 0)
+            {
+                TeraLogic.UndoList.Last().DynamicInvoke();
+                TeraLogic.UndoList.RemoveAt(TeraLogic.UndoList.Count - 1);
+            }
+
+        }
 
         int i = 0;
         private void TestButton(object sender, MouseButtonEventArgs e)
@@ -535,7 +543,7 @@ namespace Tera
            i++;
         }
 
-        private void image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void deleteCharButtonClick(object sender, MouseButtonEventArgs e)
         {
             if (TeraLogic.cvcp.SelectedChar != null)
             {
@@ -547,6 +555,8 @@ namespace Tera
                 TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => (string)x.Tag == TeraLogic.DeletedChars.Last().Name));
 
                 UI.MainWin.undoButton.Opacity = 1;
+
+                TeraLogic.UndoList.Add(new UndoDelegate(UndoDeletion));
             }
         }
         DoubleAnimation BarButtonFadeIn = new DoubleAnimation(1, TimeSpan.FromMilliseconds(70));
@@ -562,11 +572,47 @@ namespace Tera
             (sender as System.Windows.Controls.Image).BeginAnimation(OpacityProperty, BarButtonFadeOut);
         }
 
+
+        private void resetWeeklyButtonClick(object sender, MouseButtonEventArgs e)
+        {
+            TeraLogic.UndoList.Add(new UndoDelegate(UndoWeeklyReset));
+            foreach (var character in TeraLogic.CharList)
+            {
+                if (TeraLogic.ResettedWeekly.ContainsKey(character.Name))
+                {
+                    TeraLogic.ResettedWeekly.Remove(character.Name);
+                }
+
+                TeraLogic.ResettedWeekly.Add(character.Name, character.Weekly);
+            }
+
+            TeraLogic.UndoList.Add(new UndoDelegate(UndoWeeklyReset));
+            TeraLogic.ResetWeeklyData();
+
+        }
+        private void resetDailyButtonClick(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var character in TeraLogic.CharList)
+            {
+                if (TeraLogic.ResettedDailies.ContainsKey(character.Name))
+                {
+                    TeraLogic.ResettedDailies.Remove(character.Name);
+                }
+                TeraLogic.ResettedDailies.Add(character.Name, character.Dailies);
+
+            }
+
+            TeraLogic.UndoList.Add(new UndoDelegate(UndoDailyReset));
+            TeraLogic.ResetDailyData();
+        }
+
+
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, UI.Colors.FadedAccentColor, true, false, true);
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Standard, UI.Colors.SolidAccentColor, true, false, false);
