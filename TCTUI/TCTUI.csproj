@@ -236,7 +236,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -312,6 +312,9 @@
   <ItemGroup>
     <Resource Include="resources\ui_images\ic_event_busy_white_24dp_2x.png" />
     <Resource Include="resources\ui_images\ic_event_note_white_24dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\tctlogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

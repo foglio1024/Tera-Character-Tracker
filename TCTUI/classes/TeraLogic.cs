@@ -146,7 +146,7 @@ namespace Tera
                     if (ns.Tag.Equals(name))
                     {
                         ns.rowSelect(true);
-                        UI.CharList.chContainer.ScrollIntoView(ns);
+                        UI.CharListContainer.chContainer.ScrollIntoView(ns);
                     }
                     else
                     {

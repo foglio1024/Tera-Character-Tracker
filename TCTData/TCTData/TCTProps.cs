@@ -20,6 +20,8 @@ namespace TCTData
         public static CcbNotificationMode CcbNM { get; set; } = CcbNotificationMode.TeleportOnly;
         public static bool NotificationSound { get; set; }
         public static bool Notifications { get; set; }
+
+        public static string CurrentVersion { get; set; }
     }
 
 }

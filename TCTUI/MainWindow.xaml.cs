@@ -45,12 +45,18 @@ namespace Tera
             Height = TCTData.TCTProps.Height;
             Width = TCTData.TCTProps.Width;
 
+            NI = new System.Windows.Forms.NotifyIcon();
+            NI.DoubleClick += new EventHandler(notifyIcon_DoubleClick);
+            NI.Icon = Properties.Resources.tctlogo;
+            NI.Text = "Tera Character Tracker " + TCTData.TCTProps.CurrentVersion;
             UI.MainWin = this;
+            UI.NotifyIcon = NI;
         }
 
         const int LOG_CAP = 100;
         bool leftSlideIsOpen = false;
         bool isLogExpanded = false;
+        static System.Windows.Forms.NotifyIcon NI;
         Popup dgWindow = new Popup();
         public DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(500));
         public DoubleAnimation fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(100));
@@ -125,7 +131,7 @@ namespace Tera
         {
             /*adds strip to panel*/
             (CharacterStrips[i].Content as Grid).Height = 1;
-            UI.CharList.chContainer.Items.Add(CharacterStrips[i]);
+            UI.CharListContainer.chContainer.Items.Add(CharacterStrips[i]);
             (CharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
         }
         public void CreateStrip(int i)
@@ -203,6 +209,8 @@ namespace Tera
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+            
 
             /*creates strips for loaded chars*/
             for (int i = 0; i < TeraLogic.CharList.Count; i++)
@@ -488,10 +496,13 @@ namespace Tera
             TeraLogic.SaveCharacters(false);
             TeraLogic.SaveAccounts(false);
             TeraLogic.SaveGuildsDB(false);
+            
             TCTData.TCTProps.Top = this.Top;
             TCTData.TCTProps.Left = this.Left;
             TCTData.TCTProps.Height = this.Height;
             TCTData.TCTProps.Width = this.Width;
+
+            
         }
         private void TeraMainWin_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -551,7 +562,7 @@ namespace Tera
                 TeraLogic.DeletedChars.Add(TeraLogic.CharList[ind]);
                 TeraLogic.CharList.Remove(TeraLogic.cvcp.SelectedChar);
                 TeraLogic.cvcp.SelectedChar = null;
-                UI.CharList.chContainer.Items.RemoveAt(ind);
+                UI.CharListContainer.chContainer.Items.RemoveAt(ind);
                 TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => (string)x.Tag == TeraLogic.DeletedChars.Last().Name));
 
                 UI.MainWin.undoButton.Opacity = 1;
@@ -606,7 +617,13 @@ namespace Tera
             TeraLogic.ResetDailyData();
         }
 
+        
 
+        private void notifyIcon_DoubleClick(object sender, EventArgs e)
+        {
+            this.WindowState = WindowState.Normal;
+            this.Activate();
+        }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -616,6 +633,19 @@ namespace Tera
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Standard, UI.Colors.SolidAccentColor, true, false, false);
+        }
+        private void TeraMainWin_StateChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == WindowState.Minimized)
+            {
+                this.ShowInTaskbar = false;
+                NI.Visible = true;
+            }
+            else if (this.WindowState == WindowState.Normal)
+            {
+                NI.Visible = false;
+                this.ShowInTaskbar = true;
+            }
         }
     }
 

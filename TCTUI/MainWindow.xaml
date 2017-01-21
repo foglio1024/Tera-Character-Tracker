@@ -22,7 +22,6 @@
         VerticalAlignment="Stretch" 
         d:DesignHeight="930" 
         d:DesignWidth="1280" 
-         
         WindowStartupLocation="Manual" 
         MaxWidth="1280"
         MinWidth="739"
@@ -31,7 +30,7 @@
         VisualEdgeMode="Aliased"
         VisualClearTypeHint="Auto"
         VisualBitmapScalingMode="NearestNeighbor"
-        ResizeMode="CanResize" MouseDown="TeraMainWin_MouseDown">
+        ResizeMode="CanResize" MouseDown="TeraMainWin_MouseDown" StateChanged="TeraMainWin_StateChanged">
     <Window.Resources>
         <Storyboard x:Key="sb">
             <DoubleAnimation Storyboard.TargetName="Win" 

@@ -25,7 +25,7 @@ namespace Tera
             InitializeComponent();
 
             UI.CharView = this.chView;
-            UI.CharList = this.accounts;
+            UI.CharListContainer = this.accounts;
         }
     }
 }

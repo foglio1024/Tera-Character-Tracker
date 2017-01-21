@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TCTData.Enums;
+using System.Windows.Forms;
 
 namespace Tera
 {
@@ -12,8 +13,10 @@ namespace Tera
     {
         public static TeraMainWindow MainWin;
         public static CharView CharView;
-        internal static AccountContainer CharList;
+        internal static AccountContainer CharListContainer;
         public static CharViewContentProvider cvcp = new CharViewContentProvider();
+
+        public static NotifyIcon NotifyIcon;
 
         public static void UpdateLog(string data)
         {
