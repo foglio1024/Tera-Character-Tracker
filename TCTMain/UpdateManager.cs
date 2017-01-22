@@ -16,7 +16,7 @@ namespace TCTMain
     {
         static bool failedUpdate = false;
 
-        static string versionPath = "http://tct.000webhostapp.com/tc2t-ver.txt";
+        static string versionPath = "http://tct.000webhostapp.com/tct-ver.txt";
         static string versionNumberFileName = "tct-last-ver";
 
         internal static void CheckForUpdates()
