@@ -31,8 +31,6 @@ namespace TCTParser
         internal static string currentCharName;
         internal static string currentCharId;
 
-        //static BasicTeraData btd = new BasicTeraData();
-        //static OpCodeNamer opn = new OpCodeNamer(Path.Combine(btd.ResourceDirectory, string.Format("opcodes-{0}.txt", "3907eu")));
 
         static CharListProcessor charListProcessor = new CharListProcessor();
         static CharLoginProcessor charLoginProcessor = new CharLoginProcessor();
@@ -60,19 +58,6 @@ namespace TCTParser
                 return TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name == currentCharName))];
             }
         }
-
-        //public static void StoreLastMessage(Message msg)
-        //{
-        //    if (opn.GetName(msg.OpCode) == "S_GET_USER_GUILD_LOGO")
-        //    {
-        //        TeraMessageReader tmr = new TeraMessageReader(msg, opn);
-        //        mess = new S_GET_USER_GUILD_LOGO(tmr);
-        //        var t = new Thread(new ThreadStart(SetLogo));
-        //        t.SetApartmentState(ApartmentState.STA);
-        //        t.Start();
-        //    }
-        //}
-        /*****/
 
         public static void StoreMessage(Message msg)
         {
