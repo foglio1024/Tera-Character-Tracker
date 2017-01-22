@@ -27,7 +27,8 @@ namespace TCTNotifier
         public static double EndThickness { get; set; }
         public NotificationDeployer()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            this.ShowActivated = false;     
 
         }
         protected override void OnSourceInitialized(EventArgs e)

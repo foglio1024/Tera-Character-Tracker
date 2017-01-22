@@ -11,7 +11,6 @@ using System.Xml.Linq;
 using Tera;
 using Tera.Game.Messages;
 using Tera.Game;
-using Tera.Data;
 using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -21,6 +20,7 @@ using System.Windows.Data;
 using System.Globalization;
 using TCTData.Enums;
 using TCTParser.Processors;
+using Data;
 
 namespace TCTParser
 {
@@ -31,8 +31,8 @@ namespace TCTParser
         internal static string currentCharName;
         internal static string currentCharId;
 
-        static BasicTeraData btd = new BasicTeraData();
-        static OpCodeNamer opn = new OpCodeNamer(Path.Combine(btd.ResourceDirectory, string.Format("opcodes-{0}.txt", "3907eu")));
+        //static BasicTeraData btd = new BasicTeraData();
+        //static OpCodeNamer opn = new OpCodeNamer(Path.Combine(btd.ResourceDirectory, string.Format("opcodes-{0}.txt", "3907eu")));
 
         static CharListProcessor charListProcessor = new CharListProcessor();
         static CharLoginProcessor charLoginProcessor = new CharLoginProcessor();
@@ -50,6 +50,8 @@ namespace TCTParser
         static DungeonRunsProcessor dungeonRunsProcessor = new DungeonRunsProcessor();
         static CreditsUpdateProcessor creditsUpdateProcessor = new CreditsUpdateProcessor();
 
+        public static OpCodeNamer SystemOpCodeNamer;
+
         public static Character CurrentChar
         { get
             {
@@ -57,21 +59,21 @@ namespace TCTParser
             }
         }
 
-        public static void StoreLastMessage(Message msg)
-        {
-            if (opn.GetName(msg.OpCode) == "S_GET_USER_GUILD_LOGO")
-            {
-                TeraMessageReader tmr = new TeraMessageReader(msg, opn);
-                mess = new S_GET_USER_GUILD_LOGO(tmr);
-                var t = new Thread(new ThreadStart(SetLogo));
-                t.SetApartmentState(ApartmentState.STA);
-                t.Start();
-            }
-        }
+        //public static void StoreLastMessage(Message msg)
+        //{
+        //    if (opn.GetName(msg.OpCode) == "S_GET_USER_GUILD_LOGO")
+        //    {
+        //        TeraMessageReader tmr = new TeraMessageReader(msg, opn);
+        //        mess = new S_GET_USER_GUILD_LOGO(tmr);
+        //        var t = new Thread(new ThreadStart(SetLogo));
+        //        t.SetApartmentState(ApartmentState.STA);
+        //        t.Start();
+        //    }
+        //}
         /*****/
-        public static void StoreLastPacket(ushort opCode, string data)
+        public static void StoreLastPacket(string opCodeName, string data)
         {
-            switch (opn.GetName(opCode))
+            switch (opCodeName)
             {
                 case "S_GET_USER_LIST":
                     crystalbindProcessor.Clear();
@@ -381,7 +383,7 @@ namespace TCTParser
             }
         }
         
-        public static void UpdateLastOnline()
+        internal static void UpdateLastOnline()
         {
             CurrentChar.LastOnline = (long)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
         }

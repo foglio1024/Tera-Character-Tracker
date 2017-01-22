@@ -14,34 +14,25 @@ using System.Windows;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.IO.Compression;
-using TCTSniffer;
+using System.Windows.Forms;
 
 namespace TCTMain
 {
     /// <summary>
     /// Logica di interazione per App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : System.Windows.Application
     {
         static string version = "v"+Assembly.GetExecutingAssembly().GetName().Version.Major+"."+Assembly.GetExecutingAssembly().GetName().Version.Minor;
 
-        class Version
-        {
-            public int Primary { get; set; }
-            public int Secondary { get; set; }
-
-            public Version(int p, int s)
-            {
-                Primary = p;
-                Secondary = s;
-            }
-        }
 
         public class Threads
         {
+
             public static void NetThread()
             {
-                TCTSniffer.SnifferProgram.startNewSniffingSession();
+                //TCTSniffer.SnifferProgram.startNewSniffingSession();
+                DamageMeter.Sniffing.TeraSniffer.Instance.Enabled = true;
 
             }
             public static void UIThread()
@@ -55,7 +46,7 @@ namespace TCTMain
 
                     Tera.TeraLogic.TryReset();
                     w.Title = "Tera Character Tracker " + version;
-
+                    UpdateManager.NotifyUpdateFail();
                     w.ShowDialog();
 
                     Tera.TeraLogic.SaveSettings(false);
@@ -75,19 +66,13 @@ namespace TCTMain
                     Tera.TeraLogic.SaveAccounts(false);
                     Tera.TeraLogic.SaveSettings(false);
                     Tera.TeraLogic.SaveCharacters(false);
-                    MessageBox.Show("An error occured. Check error.txt for more info");
+                    System.Windows.MessageBox.Show("An error occured. Check error.txt for more info");
                     Environment.Exit(-1);
                 }
             }
 
         }
             
-
-        [DllImport("kernel32.dll")]
-        public static extern bool AllocConsole();
-
-        [DllImport("kernel32.dll")]
-        public static extern bool FreeConsole();
 
         static Mutex m;
 
@@ -97,7 +82,7 @@ namespace TCTMain
             m = new Mutex(true, "TeraCharacterTracker.exe", out isNewInstance);
             if (!isNewInstance)
             {
-                MessageBox.Show("A TCT instance is already running.","Warning");
+                System.Windows.MessageBox.Show("A TCT instance is already running.","Warning");
                 App.Current.Shutdown();
                    
             }
@@ -110,68 +95,16 @@ namespace TCTMain
             }
         }
 
-        static void CheckForUpdates()
-        {
-            var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.Major, Assembly.GetExecutingAssembly().GetName().Version.Minor);
 
-            string newVersionAsString = "";
-            using (var client = new WebClient())
-            {
-                client.DownloadFile("http://tct.000webhostapp.com/tct-ver.txt", "tct-last-ver");
-            }
-            using (StreamReader sr = new StreamReader("tct-last-ver"))
-            {
-                newVersionAsString = sr.ReadToEnd();
-            }
-            var newVersion = new Version(Convert.ToInt32(newVersionAsString.Split('.')[0]), Convert.ToInt32(newVersionAsString.Split('.')[1]));
-
-            if (currentVersion.Primary == newVersion.Primary)
-            {
-                if (currentVersion.Secondary == newVersion.Secondary)
-                {
-                    //Do nothing                  
-                }
-                else if (currentVersion.Secondary < newVersion.Secondary)
-                {
-                    AskForUpdate();
-                }
-            }
-            else if (currentVersion.Primary < newVersion.Primary)
-            {
-                AskForUpdate();
-            }
-        }
-        static void AskForUpdate()
-        {
-            var result = System.Windows.MessageBox.Show("New version available. Do you want to update?", "Confirmation", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
-            {
-                using (var client = new WebClient())
-                {
-                    client.DownloadFile("http://tct.000webhostapp.com/TCTUpdater.zip", "updater.zip");
-                }
-                if (File.Exists("TCTUpdater.exe"))
-                {
-                    File.Delete("TCTUpdater.exe");
-                }
-                ZipFile.ExtractToDirectory("updater.zip", Environment.CurrentDirectory);
-                Process.Start("TCTUpdater.exe");
-                Environment.Exit(0);
-            }
-            else if (result == MessageBoxResult.No)
-            {
-                File.Delete("tct-last-ver");
-            }
-
-        }
 
         [STAThread]
         public static void Main()
         {
-
-            CheckForUpdates();
+            TCTData.TCTProps.CurrentVersion = version;
+            UpdateManager.CheckForUpdates();
             AppStartup();
             DeleteOldExe();
+
 
 
             //load settings

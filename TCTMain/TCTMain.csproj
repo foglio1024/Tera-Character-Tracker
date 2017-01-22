@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TCTMain</RootNamespace>
     <AssemblyName>TeraCharacterTracker</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -30,6 +30,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,8 +78,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -93,6 +96,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UpdateManager.cs" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -133,6 +137,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Shinra Meter\DamageMeter.Sniffing\DamageMeter.Sniffing.csproj">
+      <Project>{66bb1685-8ff5-4431-b77f-7f80c92a5da4}</Project>
+      <Name>DamageMeter.Sniffing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shinra Meter\NetworkSniffer\NetworkSniffer.csproj">
+      <Project>{5b431143-1a77-44ff-8bc3-926fec8ad97c}</Project>
+      <Name>NetworkSniffer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TCTData\TCTData\TCTData.csproj">
       <Project>{325deb0a-2e02-495d-9612-058385f9db9d}</Project>
       <Name>TCTData</Name>
@@ -140,10 +152,6 @@
     <ProjectReference Include="..\TCTNotifier\TCTNotifier.csproj">
       <Project>{ae9993a3-7636-4bed-9afc-f6d726bf9696}</Project>
       <Name>TCTNotifier</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TCTSniffer\TCTSniffer.csproj">
-      <Project>{cf031918-2ac0-4f8e-bd89-601975a9af87}</Project>
-      <Name>TCTSniffer</Name>
     </ProjectReference>
     <ProjectReference Include="..\TCTUI\TCTUI.csproj">
       <Project>{17ec9a9a-527c-47ca-a4f3-682fc1b9163c}</Project>
@@ -163,11 +171,32 @@
     <Content Include="content\tera_database\StrSheet_ZoneName.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="resources\data\opcodes\306637.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\data\opcodes\311259.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\data\opcodes\311378.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\data\opcodes\smt_306637.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\data\opcodes\smt_311259.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\data\opcodes\smt_311378.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\notifier_images\rep.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\notifier_images\connected.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\data\servers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="tctlogo.ico" />
     <Resource Include="flat_icon.ico" />
@@ -305,15 +334,6 @@
     <Resource Include="resources\laurels\l_gold.png" />
     <Resource Include="resources\laurels\l_silver.png" />
     <Resource Include="resources\notifier_images\scale.png" />
-    <Content Include="resources\opcodes-3907eu.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\regions.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\servers.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\notifier_images\ccbBuff.png">

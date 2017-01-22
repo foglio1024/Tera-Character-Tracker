@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TCTParser</RootNamespace>
     <AssemblyName>TCTParser</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -100,6 +101,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Shinra Meter\Data\Data.csproj">
+      <Project>{4B6AA9BD-CEC2-4AA6-B35A-1ACB2FA7767B}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shinra Meter\TeraCommon\Tera.Core.csproj">
+      <Project>{ee476c7c-2942-4ba4-ab47-7adbe65635fd}</Project>
+      <Name>Tera.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TCTNotifier\TCTNotifier.csproj">
       <Project>{AE9993A3-7636-4BED-9AFC-F6D726BF9696}</Project>
       <Name>TCTNotifier</Name>
@@ -107,10 +116,6 @@
     <ProjectReference Include="..\TCTUI\TCTUI.csproj">
       <Project>{17ec9a9a-527c-47ca-a4f3-682fc1b9163c}</Project>
       <Name>TCTUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TeraData\TeraData\TeraData.csproj">
-      <Project>{32daa401-1ebe-4417-8795-58a38128502c}</Project>
-      <Name>TeraData</Name>
     </ProjectReference>
     <ProjectReference Include="..\TCTData\TCTData\TCTData.csproj">
       <Project>{325deb0a-2e02-495d-9612-058385f9db9d}</Project>
