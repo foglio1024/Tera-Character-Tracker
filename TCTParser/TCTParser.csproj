@@ -59,6 +59,7 @@
     <Compile Include="DataParser.cs" />
     <Compile Include="Processors\CreditsUpdateProcessor.cs" />
     <Compile Include="Processors\DungeonRunsProcessor.cs" />
+    <Compile Include="Processors\GuildLogoProcessor.cs" />
     <Compile Include="Processors\ListParser.cs" />
     <Compile Include="Processors\AccountLoginProcessor.cs" />
     <Compile Include="Processors\BankProcessor.cs" />

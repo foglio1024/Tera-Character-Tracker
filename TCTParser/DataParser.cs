@@ -49,7 +49,9 @@ namespace TCTParser
         static DungeonClearsProcessor dungeonClearsProcessor = new DungeonClearsProcessor();
         static DungeonRunsProcessor dungeonRunsProcessor = new DungeonRunsProcessor();
         static CreditsUpdateProcessor creditsUpdateProcessor = new CreditsUpdateProcessor();
+        static GuildLogoProcessor guildLogoProcessor = new GuildLogoProcessor();
 
+        public static OpCodeNamer OpCodeNamer;
         public static OpCodeNamer SystemOpCodeNamer;
 
         public static Character CurrentChar
@@ -71,7 +73,19 @@ namespace TCTParser
         //    }
         //}
         /*****/
-        public static void StoreLastPacket(string opCodeName, string data)
+
+        public static void StoreMessage(Message msg)
+        {
+            byte[] data = new byte[msg.Data.Count];
+            Array.Copy(msg.Data.Array, 0, data, 2, msg.Data.Count - 2);
+            data[0] = (byte)(((short)msg.Data.Count) & 255);
+            data[1] = (byte)(((short)msg.Data.Count) >> 8);
+
+            ParseLastMessage(OpCodeNamer.GetName(msg.OpCode), StringUtils.ByteArrayToString(data).ToUpper());
+
+        }
+
+        static void ParseLastMessage(string opCodeName, string data)
         {
             switch (opCodeName)
             {
@@ -88,6 +102,9 @@ namespace TCTParser
                     UI.UpdateLog("Data saved.");
                     break;
 
+                case "S_GET_USER_GUILD_LOGO": 
+                    SetLogo(data);
+                    break;
                 case "S_LOGIN":
                     crystalbindProcessor.Clear();
                     LoginChar(data);
@@ -365,22 +382,20 @@ namespace TCTParser
 
             UpdateLastOnline();
         }
-        private static void SetLogo()
+        private static void SetLogo(string p)
         {
-            if (mess != null)
-            {
-                Bitmap logo = mess.GuildLogo;
-                uint guildId = mess.GuildId;
 
-                try
-                {
-                    logo.Save(Environment.CurrentDirectory + "\\content/data/guild_images/" + guildId.ToString() + ".bmp");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
+            Bitmap logo = guildLogoProcessor.GetLogo(p);
+            uint guildId = guildLogoProcessor.GetGuildID(p);
+
+            try
+            {
+                logo.Save(Environment.CurrentDirectory + "\\content/data/guild_images/" + guildId.ToString() + ".bmp");
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }            
         }
         
         internal static void UpdateLastOnline()
