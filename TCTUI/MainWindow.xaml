@@ -23,8 +23,6 @@
         d:DesignHeight="930" 
         d:DesignWidth="1280" 
         WindowStartupLocation="Manual" 
-        MaxWidth="1280"
-        MinWidth="739"
         WindowStyle="SingleBorderWindow" 
         Closing="Win_Closing"
         VisualEdgeMode="Aliased"

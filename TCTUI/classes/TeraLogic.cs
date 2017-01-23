@@ -32,6 +32,7 @@ namespace Tera
         public const int MAX_CREDITS = 9000;
         public const int MAX_MARKS = 100;
         public const int MAX_GF_TOKENS = 80;
+        public const int MAX_DRAGONWING_SCALES = 50;
         private const int DAILY_RESET_HOUR = 5;
 
         public static bool dailyReset = false;
@@ -130,8 +131,8 @@ namespace Tera
             w.guildNameTB.SetBinding(   TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "GuildId", new Guild_IdToName(), null));
             w.locationTB.SetBinding(    TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LocationId" , new LocationIdToName(), null));
             w.lastOnlineTB.SetBinding(  TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LastOnline", new UnixToDateTime(), null));
-            w.ilvlTB.SetBinding(        TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Ilvl"));
-            w.dragonScalesTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "DragonwingScales"));
+            //w.ilvlTB.SetBinding(        TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Ilvl"));
+            //w.dragonScalesTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "DragonwingScales"));
             w.notesTB.SetBinding(       TextBox.TextProperty,   DataBinder.GenericCharBinding(charIndex, "Notes"));
             
         // create bindings for dungeon counters
@@ -139,7 +140,7 @@ namespace Tera
             DataBinder.CreateDgClearsBindings(charIndex, w);
 
         // highlight character row and scroll into view
-            foreach (var ns in Tera.TeraMainWindow.CharacterStrips)
+            foreach (var ns in Tera.TeraMainWindow.ExtendedCharacterStrips)
             {
                 if (ns.Tag != null)
                 {
@@ -174,6 +175,7 @@ namespace Tera
                 System.Drawing.Bitmap bmp = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(Environment.CurrentDirectory + "\\content/data/guild_images/" + "0" + ".bmp");
                 UI.MainWin.SetGuildImage(bmp);
             }
+
         }
         public static void ResetDailyData()
         {

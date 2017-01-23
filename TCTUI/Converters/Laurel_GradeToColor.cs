@@ -11,7 +11,7 @@ namespace Tera.Converters
     {
         private Dictionary<string, Color> LaurelDict = new Dictionary<string, Color>
         {
-           { "None",     Colors.White },
+           { "None",     Color.FromArgb(0x00, 0xff, 0xff, 0xff) },
            { "Bronze",   Color.FromRgb(0xdc, 0x8f, 0x70)},
            { "Silver" ,  Color.FromRgb(0xcc, 0xcc, 0xcc)},
            { "Gold",     Color.FromRgb(0xff, 0xdd, 0x00)},

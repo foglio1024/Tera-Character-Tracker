@@ -56,48 +56,8 @@ namespace Tera
         DoubleAnimationUsingKeyFrames barExp = new DoubleAnimationUsingKeyFrames();
         DoubleAnimationUsingKeyFrames barShr = new DoubleAnimationUsingKeyFrames();
 
-        public void rowHighlight(object sender, MouseEventArgs e)
-        {
-            var s = sender as CharacterStrip;
-            var an = new ColorAnimation();
-            an.From = Color.FromArgb(0, 0, 0, 0);
-            an.To = Color.FromArgb(30, 155, 155, 155);
-            an.Duration = TimeSpan.FromMilliseconds(0);
-            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an);
-            showArrow(s, e);
-            showDel(s, e);
-        }
 
-        private void rowNormal(object sender, MouseEventArgs e)
-        {
-           // if (classSelPopup.IsOpen == false)
-           // {
-            var s = sender as CharacterStrip;
-            var an = new ColorAnimation();
-            an.From = Color.FromArgb(30, 155, 155, 155);
-            an.To = Color.FromArgb(0, 0, 0, 0);
-            an.Duration = TimeSpan.FromMilliseconds(90);
-            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an); 
-            hideArrow(s, e);
-            hideDel(s, e);
-           // }
-        }
 
-        public void rowSelect(bool state)
-        {
-            Color col;
-
-            if (state)
-            {
-                col = new Color { A = 10, R = 0, G = 0, B = 0 };
-            }
-            else
-            {
-                col = new Color { A = 0, R = 230, G = 245, B = 255 };
-            }
-
-            select.Fill = new SolidColorBrush(col);
-        }
         private void classSelShowMenu(object sender, MouseEventArgs e)
         {
 
@@ -190,7 +150,7 @@ namespace Tera
         private void showDel(object sender, MouseEventArgs e)
         {
 
-            del.BeginAnimation(OpacityProperty, fadeIn_03);
+            //del.BeginAnimation(OpacityProperty, fadeIn_03);
         }
         private void hideArrow(object sender, MouseEventArgs e)
         {
@@ -198,14 +158,7 @@ namespace Tera
         }
         private void hideDel(object sender, MouseEventArgs e)
         {
-            del.BeginAnimation(OpacityProperty, fadeOut);
-        }
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            sizeInH.KeyFrames.Add(new SplineDoubleKeyFrame(260, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
-            sizeInW.KeyFrames.Add(new SplineDoubleKeyFrame(350, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
-            sizeOut.KeyFrames.Add(new SplineDoubleKeyFrame(1, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
-
+            //del.BeginAnimation(OpacityProperty, fadeOut);
         }
         private void dragMD(object sender, MouseButtonEventArgs e)
         {
@@ -446,10 +399,6 @@ namespace Tera
             
         }
 
-
-
-
-
         private void selectChar(object sender, MouseButtonEventArgs e)
         {
             try
@@ -496,6 +445,53 @@ namespace Tera
 
 
 
+        }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            sizeInH.KeyFrames.Add(new SplineDoubleKeyFrame(260, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
+            sizeInW.KeyFrames.Add(new SplineDoubleKeyFrame(350, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
+            sizeOut.KeyFrames.Add(new SplineDoubleKeyFrame(1, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
+
+        }
+        private void rowNormal(object sender, MouseEventArgs e)
+        {
+           // if (classSelPopup.IsOpen == false)
+           // {
+            var s = sender as CharacterStrip;
+            var an = new ColorAnimation();
+            an.From = Color.FromArgb(30, 155, 155, 155);
+            an.To = Color.FromArgb(0, 0, 0, 0);
+            an.Duration = TimeSpan.FromMilliseconds(90);
+            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an); 
+            hideArrow(s, e);
+            hideDel(s, e);
+           // }
+        }
+        public void rowHighlight(object sender, MouseEventArgs e)
+        {
+            var s = sender as CharacterStrip;
+            var an = new ColorAnimation();
+            an.From = Color.FromArgb(0, 0, 0, 0);
+            an.To = Color.FromArgb(30, 155, 155, 155);
+            an.Duration = TimeSpan.FromMilliseconds(0);
+            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an);
+            showArrow(s, e);
+            showDel(s, e);
+        }
+        public void rowSelect(bool state)
+        {
+            Color col;
+
+            if (state)
+            {
+                col = new Color { A = 10, R = 0, G = 0, B = 0 };
+            }
+            else
+            {
+                col = new Color { A = 0, R = 230, G = 245, B = 255 };
+            }
+
+            select.Fill = new SolidColorBrush(col);
         }
 
 

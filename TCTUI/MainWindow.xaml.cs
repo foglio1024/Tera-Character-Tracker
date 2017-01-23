@@ -25,6 +25,7 @@ using System.ComponentModel;
 using Tera.Converters;
 using System.Xml.Linq;
 using TCTData.Enums;
+using Tera.Controls;
 
 namespace Tera
 {
@@ -65,6 +66,7 @@ namespace Tera
         public DoubleAnimation expand = new DoubleAnimation(40, TimeSpan.FromMilliseconds(100));
 
         public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
+        public static List<ExtendedCharacterStrip> ExtendedCharacterStrips { get; set; } = new List<ExtendedCharacterStrip>();
         public static List<DungeonRunsCounter> DungeonCounters { get; set; } = new List<DungeonRunsCounter>();
 
         public static T FindChild<T>(DependencyObject parent, string childName)
@@ -146,6 +148,48 @@ namespace Tera
             AddStripToContainer(i);
 
         }
+        public void CreateExtStrip(int i)
+        {
+            /*adds strip to array*/
+            ExtendedCharacterStrips.Add(new ExtendedCharacterStrip());
+
+            /*create bindings for controls*/
+            CreateExtendedStripControlsBindings(i);
+
+            /*add strip to container*/
+            AddExtendedStripToContainer(i);
+
+        }
+        public void AddExtendedStripToContainer(int i)
+        {
+            /*adds strip to panel*/
+            //(ExtendedCharacterStrips[i].Content as Grid).Height = 1;
+            UI.CharListContainer.chContainer.Items.Add(ExtendedCharacterStrips[i]);
+            //(ExtendedCharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
+        }
+
+        private void CreateExtendedStripControlsBindings(int i)
+        {
+
+            /*creates text boxes data bindings*/
+            ExtendedCharacterStrips[i].nameTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Name"));
+            ExtendedCharacterStrips[i].lvlTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Level"));
+            ExtendedCharacterStrips[i].ilvlTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Ilvl"));
+
+            DataBinder.BindParameterToBarGauge(i, "Credits", ExtendedCharacterStrips[i].creditsTB, TeraLogic.MAX_CREDITS, TeraLogic.MAX_CREDITS - 300, true, true);
+            DataBinder.BindParameterToBarGauge(i, "MarksOfValor", ExtendedCharacterStrips[i].mvTB, TeraLogic.MAX_MARKS, TeraLogic.MAX_MARKS - 10, true, true);
+            DataBinder.BindParameterToBarGauge(i, "GoldfingerTokens", ExtendedCharacterStrips[i].gftTB, TeraLogic.MAX_GF_TOKENS, TeraLogic.MAX_GF_TOKENS - 10, true, true);
+            DataBinder.BindParameterToBarGauge(i, "DragonwingScales", ExtendedCharacterStrips[i].scTB, TeraLogic.MAX_DRAGONWING_SCALES, TeraLogic.MAX_DRAGONWING_SCALES - 5, true, true);
+
+            DataBinder.BindParameterToQuestBarGauge(i, "Weekly", "Dailies", ExtendedCharacterStrips[i].questTB, TeraLogic.MAX_WEEKLY, TeraLogic.MAX_WEEKLY - TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, true, false);
+            DataBinder.BindParameterToImageSourceWithConverter(i, "CharClass", ExtendedCharacterStrips[i].classImage, "sd", new ClassToImage());
+            DataBinder.BindCharPropertyToShapeFillColor(i, "Laurel", ExtendedCharacterStrips[i].laurelRect, new Laurel_GradeToColor());
+            DataBinder.BindParameterToArcGauge(i, "Crystalbind", ExtendedCharacterStrips[i].ccbInd, new TimeToAngle());
+            ExtendedCharacterStrips[i].ccbInd.SetBinding(ToolTipProperty, DataBinder.GenericCharBinding(i, "Crystalbind", new TicksToTimespan(), null));
+            ExtendedCharacterStrips[i].SetBinding(TagProperty, DataBinder.GenericCharBinding(i, "Name"));
+
+        }
+
         public void UpdateLog(string txt)
         {
             this.Dispatcher.Invoke(new Action(() =>
@@ -215,7 +259,8 @@ namespace Tera
             /*creates strips for loaded chars*/
             for (int i = 0; i < TeraLogic.CharList.Count; i++)
             {
-                CreateStrip(i);
+                //CreateStrip(i);
+                CreateExtStrip(i);
             }
                
 
