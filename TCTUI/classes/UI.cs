@@ -46,7 +46,7 @@ namespace Tera
             public static Color SolidBaseColor = Color.FromArgb(255, 0, 123, 206);
             public static Color SolidAccentColor = Color.FromArgb(255, 255, 120, 42);
             public static Color SolidYellow = Color.FromArgb(255, 255, 166, 77);
-            public static Color SolidGreen = Color.FromArgb(255, 110, 200, 130);
+            public static Color SolidGreen = Color.FromArgb(255, 90, 180, 110);
             public static Color SolidRed = Color.FromArgb(255, 255, 80, 80);
             public static Color SolidGray = Color.FromArgb(255, 200, 200, 200);
 
