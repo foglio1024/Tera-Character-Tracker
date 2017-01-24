@@ -40,6 +40,19 @@ namespace TCTParser
             var result = Convert.ToInt64(sb.ToString(), 16);
             return result;
         }
+        public static float Hex4BStringToFloat(string hex)
+        {
+            var sb = new StringBuilder();
+            for (int i = 8 - 2; i >= 0; i -= 2)
+            {
+                sb.Append(hex[i]);
+                sb.Append(hex[i + 1]);
+            }
+            uint num = uint.Parse(sb.ToString(), System.Globalization.NumberStyles.AllowHexSpecifier);
+            byte[] floatVals = BitConverter.GetBytes(num);
+            float result = BitConverter.ToSingle(floatVals, 0);
+            return result;
+        }
 
         public static int Hex4BStringToInt(string hex)
         {
