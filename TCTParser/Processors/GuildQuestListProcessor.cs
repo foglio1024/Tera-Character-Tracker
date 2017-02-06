@@ -9,6 +9,7 @@ using System.Windows.Media;
 using TCTData.Enums;
 using Tera;
 using Tera.Converters;
+using TCTUI;
 
 namespace TCTParser.Processors
 {
@@ -106,7 +107,7 @@ namespace TCTParser.Processors
                 if (quest.QuestID == id)
                 {
                     quest.Status = GuildQuestStatus.Taken;
-                    Tera.UI.UpdateLog("Guild quest accepted.");
+                    UI.UpdateLog("Guild quest accepted.");
                 }
             }
             UpdateUI();

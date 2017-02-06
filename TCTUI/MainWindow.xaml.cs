@@ -26,6 +26,7 @@ using Tera.Converters;
 using System.Xml.Linq;
 using TCTData.Enums;
 using Tera.Controls;
+using TCTUI;
 
 namespace Tera
 {
@@ -48,7 +49,7 @@ namespace Tera
 
             NI = new System.Windows.Forms.NotifyIcon();
             NI.DoubleClick += new EventHandler(notifyIcon_DoubleClick);
-            NI.Icon = Properties.Resources.tctlogo;
+            NI.Icon = Tera.Properties.Resources.tctlogo;
             NI.Text = "Tera Character Tracker " + TCTData.TCTProps.CurrentVersion;
             UI.MainWin = this;
             UI.NotifyIcon = NI;
@@ -325,8 +326,8 @@ namespace Tera
                 }
             }
 
-            ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);
-            StatusBar.Background =          new SolidColorBrush(UI.Colors.SolidBaseColor);
+            this.ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);
+            this.StatusBar.Background =          new SolidColorBrush(UI.Colors.SolidBaseColor);
             Log.BorderThickness = new Thickness(0);
             UI.CharView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
 

@@ -15,6 +15,12 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.IO.Compression;
 using System.Windows.Forms;
+using TCTParser;
+using TCTUI;
+using Tera.Game;
+using Data;
+using System.Text;
+using Tera;
 
 namespace TCTMain
 {
@@ -33,13 +39,116 @@ namespace TCTMain
             {
                 //TCTSniffer.SnifferProgram.startNewSniffingSession();
                 DamageMeter.Sniffing.TeraSniffer.Instance.Enabled = true;
+                DamageMeter.Sniffing.TeraSniffer.Instance.MessageReceived += (message) =>
+                {
+                    if (message.Direction == MessageDirection.ClientToServer && message.OpCode == 19900)
+                    {
+                        var msg = new C_CHECK_VERSION_CUSTOM(new CustomReader(message));
+                        DamageMeter.Sniffing.TeraSniffer.Instance.opn = new OpCodeNamer(System.IO.Path.Combine(BasicTeraData.Instance.ResourceDirectory, $"data/opcodes/{msg.Versions[0]}.txt"));
+                        TCTParser.DataParser.OpCodeNamer = DamageMeter.Sniffing.TeraSniffer.Instance.opn;
+                        TCTParser.DataParser.SystemOpCodeNamer = new OpCodeNamer(System.IO.Path.Combine(BasicTeraData.Instance.ResourceDirectory, $"data/opcodes/smt_{msg.Versions[0]}.txt"));
+                    }
+
+                    TCTParser.DataParser.StoreMessage(message);
+                };
+                DamageMeter.Sniffing.TeraSniffer.Instance.NewConnection += (server) =>
+                {
+                    TCTNotifier.NotificationProvider.SendNotification(String.Format("Connected to:\n{0} - {1}", server.Region, server.Name), TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, UI.Colors.SolidGreen, true, false, false);
+                    UI.SetLogColor(UI.Colors.SolidGreen);
+                    UI.UpdateLog(String.Format("Connected to: {0} - {1}", server.Region, server.Name));
+                };
+                DamageMeter.Sniffing.TeraSniffer.Instance.EndConnection += () =>
+                {
+                    TCTNotifier.NotificationProvider.SendNotification("Connection lost.", TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, UI.Colors.SolidRed, true, false, false);
+                    UI.SetLogColor(UI.Colors.SolidRed);
+                    UI.UpdateLog("Connection lost.");
+
+                };
+            }
+            class C_CHECK_VERSION_CUSTOM
+            {
+                public C_CHECK_VERSION_CUSTOM(CustomReader reader)
+                {
+                    var count = reader.ReadUInt16();
+                    var offset = reader.ReadUInt16();
+                    for (var i = 1; i <= count; i++)
+                    {
+                        reader.BaseStream.Position = offset - 4;
+                        var pointer = reader.ReadUInt16();
+                        var nextOffset = reader.ReadUInt16();
+                        var VersionKey = reader.ReadUInt32();
+                        var VersionValue = reader.ReadUInt32();
+                        Versions.Add(VersionKey, VersionValue);
+                        offset = nextOffset;
+                    }
+                }
+
+                public Dictionary<uint, uint> Versions { get; } = new Dictionary<uint, uint>();
+            }
+            class CustomReader : BinaryReader
+            {
+                public CustomReader(Tera.Message message)
+                : base(GetStream(message), Encoding.Unicode)
+                {
+                    Message = message;
+                }
+
+                public Tera.Message Message { get; private set; }
+                public string OpCodeName { get; private set; }
+                public uint Version { get; private set; }
+                internal OpCodeNamer SysMsgNamer { get; private set; }
+
+                private static MemoryStream GetStream(Tera.Message message)
+                {
+                    return new MemoryStream(message.Payload.Array, message.Payload.Offset, message.Payload.Count, false, true);
+                }
+
+                public EntityId ReadEntityId()
+                {
+                    var id = ReadUInt64();
+                    return new EntityId(id);
+                }
+
+                public Vector3f ReadVector3f()
+                {
+                    Vector3f result;
+                    result.X = ReadSingle();
+                    result.Y = ReadSingle();
+                    result.Z = ReadSingle();
+                    return result;
+                }
+
+                public Angle ReadAngle()
+                {
+                    return new Angle(ReadInt16());
+                }
+
+                public void Skip(int count)
+                {
+                    ReadBytes(count);
+                }
+
+                // Tera uses null terminated litte endian UTF-16 strings
+                public string ReadTeraString()
+                {
+                    var builder = new StringBuilder();
+                    while (true)
+                    {
+                        var c = ReadChar();
+                        if (c == 0)
+                            return builder.ToString();
+                        builder.Append(c);
+                    }
+                }
 
             }
+
+
             public static void UIThread()
             {
                 try
                 {
-                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running",TCTData.Enums.NotificationImage.Default,TCTData.Enums.NotificationType.Standard, Tera.UI.Colors.SolidBaseColor,true,false,false);
+                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running", TCTData.Enums.NotificationImage.Default, TCTData.Enums.NotificationType.Standard, UI.Colors.SolidBaseColor, true, false, false);
 
                     Tera.TeraMainWindow w = new Tera.TeraMainWindow();
                     w.InitializeComponent();

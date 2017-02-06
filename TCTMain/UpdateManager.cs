@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using TCTUI;
 
 namespace TCTMain
 {
@@ -95,7 +96,7 @@ namespace TCTMain
         {
             if (failedUpdate)
             {
-                TCTNotifier.NotificationProvider.SendNotification("Failed to check for updates", TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, Tera.UI.Colors.SolidRed, true, true, false);
+                TCTNotifier.NotificationProvider.SendNotification("Failed to check for updates", TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, UI.Colors.SolidRed, true, true, false);
 
             }
         }

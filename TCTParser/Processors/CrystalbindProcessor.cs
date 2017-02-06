@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using TCTData.Enums;
 using Tera;
+using TCTUI;
 
 
 namespace TCTParser.Processors

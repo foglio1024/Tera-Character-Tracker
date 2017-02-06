@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using TCTData.Enums;
 using System.Windows.Forms;
+using Tera;
 
-namespace Tera
+namespace TCTUI
 {
     public static class UI
     {

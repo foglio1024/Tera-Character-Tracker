@@ -21,6 +21,7 @@ using System.Globalization;
 using TCTData.Enums;
 using TCTParser.Processors;
 using Data;
+using TCTUI;
 
 namespace TCTParser
 {
@@ -232,8 +233,8 @@ namespace TCTParser
             currentCharName = charLoginProcessor.GetName(p);
             currentCharId = charLoginProcessor.GetId(p);
 
-            Tera.UI.UpdateLog(currentCharName + " logged in.");
-            Tera.UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
+            UI.UpdateLog(currentCharName + " logged in.");
+            UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
 
             UpdateLastOnline();
         }
@@ -276,7 +277,7 @@ namespace TCTParser
 
                 if (CurrentChar.GoldfingerTokens >= 80)
                 {
-                    Tera.UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
+                    UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
                     UI.SendNotification("You have " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true, false);
                 }
                 else
@@ -293,7 +294,7 @@ namespace TCTParser
 
                 if (CurrentChar.DragonwingScales >= 50)
                 {
-                    Tera.UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
+                    UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
                     UI.SendNotification("You have " + CurrentChar.DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Scales, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
                 }
                 else
@@ -305,7 +306,7 @@ namespace TCTParser
 
             if(marks || gft || scales || forceLog)
             {
-                Tera.UI.UpdateLog(currentCharName + " > inventory data updated (" + CurrentChar.MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens, "+CurrentChar.DragonwingScales+" Dragonwing Scales).");
+                UI.UpdateLog(currentCharName + " > inventory data updated (" + CurrentChar.MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens, "+CurrentChar.DragonwingScales+" Dragonwing Scales).");
             }
 
             UpdateLastOnline();
@@ -355,7 +356,7 @@ namespace TCTParser
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 }
                                                                                             
-                Tera.UI.UpdateLog(CurrentChar.Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
+                UI.UpdateLog(CurrentChar.Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
                 guildQuestListProcessor.CheckQuestStatus(CurrentChar.LocationId);
             }
 

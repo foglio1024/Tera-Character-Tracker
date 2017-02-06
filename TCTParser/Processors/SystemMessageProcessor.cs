@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using TCTData.Enums;
 using Tera;
 using Tera.Game;
+using TCTUI;
 
 namespace TCTParser
 {
@@ -66,7 +67,7 @@ namespace TCTParser
                 }
                 catch
                 {
-                    Tera.UI.UpdateLog("Dungeon not found. Can't subtract run from entry counter.");
+                    UI.UpdateLog("Dungeon not found. Can't subtract run from entry counter.");
                 }
 
             }

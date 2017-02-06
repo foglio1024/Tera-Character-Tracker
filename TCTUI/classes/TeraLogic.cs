@@ -18,6 +18,7 @@ using System.Windows.Media;
 using Tera.Converters;
 using System.Runtime.InteropServices;
 using TCTData.Enums;
+using TCTUI;
 
 namespace Tera
 {

@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
+using TCTUI;
 
 namespace Tera
 {
