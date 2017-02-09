@@ -25,7 +25,7 @@ namespace Tera
         public CrystalbindIndicator()
         {
             InitializeComponent();
-            arc.Stroke = new SolidColorBrush(UI.Colors.SolidBaseColor);
+            arc.Stroke = new SolidColorBrush(TCTData.Colors.SolidBaseColor);
             var b = new Binding
             {
                 Source = arc,
@@ -45,13 +45,13 @@ namespace Tera
                 double th = 359.999 / 12;
                 if (v < th && v > 0)
                 {
-                    return new SolidColorBrush(UI.Colors.SolidAccentColor);
+                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);
                 }
                 else if(v == 0)
                 {
-                    return new SolidColorBrush(UI.Colors.FadedGray);
+                    return new SolidColorBrush(TCTData.Colors.FadedGray);
                 }
-                else return new SolidColorBrush(UI.Colors.SolidBaseColor);
+                else return new SolidColorBrush(TCTData.Colors.SolidBaseColor);
 
             }
 

@@ -25,7 +25,11 @@ namespace TCTParser
                 if(Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID) != null)
                 {
                     string dgName = Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID).ShortName; //find this dungeon name
-                    DataParser.CurrentChar.Dungeons.Find(y => y.Name == dgName).Clears = dgClear.Clears; //update clears              
+
+                    if(DataRouter.CurrentChar.Dungeons.Find(y => y.Name == dgName).Clears <= dgClear.Clears) //check that new value is greater than current value
+                    {
+                        DataRouter.CurrentChar.Dungeons.Find(y => y.Name == dgName).Clears = dgClear.Clears; //update clears              
+                    }
                 }
 
             }

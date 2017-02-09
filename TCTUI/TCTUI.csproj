@@ -97,6 +97,10 @@
     <Compile Include="Classes\CharDungeon.cs" />
     <Compile Include="Classes\DataBinder.cs" />
     <Compile Include="Classes\Dungeon.cs" />
+    <Compile Include="Classes\UI.cs" />
+    <Compile Include="Controls\DungeonRunsCounter.xaml.cs">
+      <DependentUpon>DungeonRunsCounter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ExtendedCharacterStrip.xaml.cs">
       <DependentUpon>ExtendedCharacterStrip.xaml</DependentUpon>
     </Compile>
@@ -131,7 +135,6 @@
     </Compile>
     <Compile Include="Converters\UnixToDateTime.cs" />
     <Compile Include="Converters\ProgressToColor.cs" />
-    <Compile Include="Classes\UI.cs" />
     <Compile Include="Converters\TicksToTimespan.cs" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -146,9 +149,6 @@
     <Compile Include="Converters\Dungeon_RunsToColor.cs" />
     <Compile Include="Converters\IntToString.cs" />
     <Compile Include="Converters\Laurel_GradeToColor.cs" />
-    <Compile Include="Controls\DungeonRunsCounter.xaml.cs">
-      <DependentUpon>DungeonRunsCounter.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\LaurelToImage.cs" />
     <Compile Include="Controls\CharacterStrip.xaml.cs">
       <DependentUpon>CharacterStrip.xaml</DependentUpon>
@@ -166,6 +166,10 @@
     <Page Include="Controls\DungeonClearsCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DungeonRunsCounter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Controls\ExtendedCharacterStrip.xaml">
       <SubType>Designer</SubType>
@@ -188,10 +192,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\CharView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\DungeonRunsCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -78,7 +78,7 @@ namespace Tera.Controls
         {
             Color col;
 
-            var c = UI.Colors.FadedBaseColor;
+            var c = TCTData.Colors.FadedBaseColor;
 
             if (state)
             {

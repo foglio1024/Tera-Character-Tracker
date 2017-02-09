@@ -102,7 +102,7 @@ namespace Tera
                 }
 
                 // create and add strip to list
-                UI.MainWin.CreateStrip(CharList.Count - 1);
+                UI.MainWin.CreateExtStrip(CharList.Count - 1);
 
             }
 
@@ -293,7 +293,7 @@ namespace Tera
             {
                 ResetDailyData();
                 UI.UpdateLog("Daily data has been reset.");
-                UI.SendNotification("Daily data has been reset.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen,true, true, false);
+                UI.SendNotification("Daily data has been reset.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.SolidGreen,true, true, false);
 
                 dailyReset = false;
             }
@@ -301,7 +301,7 @@ namespace Tera
             {
                 ResetWeeklyData();
                 UI.UpdateLog("Weekly data has been reset.");
-                UI.SendNotification("Weekly data has been reset.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                UI.SendNotification("Weekly data has been reset.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.SolidGreen, true, true, false);
 
                 weeklyReset = false;
             }

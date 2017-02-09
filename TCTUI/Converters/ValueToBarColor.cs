@@ -15,11 +15,11 @@ namespace Tera.Converters
             var m = (int)parameter;
             if(v > m)
             {
-                return new SolidColorBrush(UI.Colors.SolidAccentColor);
+                return new SolidColorBrush(TCTData.Colors.SolidAccentColor);
             }
             else
             {
-                return new SolidColorBrush(UI.Colors.SolidBaseColor);
+                return new SolidColorBrush(TCTData.Colors.SolidBaseColor);
             }
         }
 

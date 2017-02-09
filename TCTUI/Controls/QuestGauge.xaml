@@ -26,12 +26,12 @@
             <Grid Width="Auto" HorizontalAlignment="Center" Margin="0,0,0,1" Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="16"/>
-                    <ColumnDefinition Width="8"/>
-                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition Width="12"/>
+                    <ColumnDefinition Width="12"/>
                 </Grid.ColumnDefinitions>
 
             <TextBlock x:Name="txtW" Style="{StaticResource text}" Grid.Column="0">ww</TextBlock>
-            <TextBlock x:Name="sep"  Style="{StaticResource text}" Grid.Column="1">/</TextBlock>
+                <TextBlock x:Name="sep"  Style="{StaticResource text}" Grid.Column="1">-</TextBlock>
             <TextBlock x:Name="txtD" Style="{StaticResource text}" Grid.Column="2">d</TextBlock>
             </Grid>
             

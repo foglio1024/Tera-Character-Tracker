@@ -73,17 +73,17 @@ namespace Tera
             switch (status)
             {
                 case GuildQuestStatus.Available:
-                    gQuestLed.Fill = new SolidColorBrush(UI.Colors.FadedBaseColor);
+                    gQuestLed.Fill = new SolidColorBrush(TCTData.Colors.FadedBaseColor);
                     gQuestLed.Opacity = 1;
                     break;
 
                 case GuildQuestStatus.Taken:
-                    gQuestLed.Fill = new SolidColorBrush(UI.Colors.SolidYellow);
+                    gQuestLed.Fill = new SolidColorBrush(TCTData.Colors.SolidYellow);
                     gQuestLed.Opacity = 1;
                     break;
 
                 case GuildQuestStatus.Completed:
-                    gQuestLed.Fill = new SolidColorBrush(UI.Colors.SolidGreen);
+                    gQuestLed.Fill = new SolidColorBrush(TCTData.Colors.SolidGreen);
                     gQuestLed.Opacity = 1;
                     break;
 

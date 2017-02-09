@@ -56,14 +56,14 @@ namespace TCTParser.Processors
                 {
                     if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
                     {
-                        UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Red, true, true, false);
+                        UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, TCTData.Colors.BrightRed, true, true, false);
                     }
                 }
                 else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
                 {
                     if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
                     {
-                        UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Red, true, true, false);
+                        UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, TCTData.Colors.BrightRed, true, true, false);
                     }
                 }
             }
@@ -101,7 +101,7 @@ namespace TCTParser.Processors
                     Status = true;
                     Time = b.TimeLeft;
                     ccbEnding = false;
-                    DataParser.CurrentChar.Crystalbind = Time;
+                    DataRouter.CurrentChar.Crystalbind = Time;
                 }
             }
         }
@@ -146,9 +146,9 @@ namespace TCTParser.Processors
         {
             Status = false;
             Time = 0;
-            DataParser.CurrentChar.Crystalbind = Time;
+            DataRouter.CurrentChar.Crystalbind = Time;
             BuffList.Clear();
-            UI.SendNotification("Your Complete Crystalbind expired.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Red, true, true, false);
+            UI.SendNotification("Your Complete Crystalbind expired.", NotificationImage.Crystalbind, NotificationType.Standard, TCTData.Colors.BrightRed, true, true, false);
         }
         class Buff
         {

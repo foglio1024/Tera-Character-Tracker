@@ -29,7 +29,8 @@ namespace TCTData.Enums
     public enum NotificationType
     {
         Standard,
-        Counter
+        Counter,
+        DungeonCounter
     }
 
     public enum Class

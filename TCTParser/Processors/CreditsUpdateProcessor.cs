@@ -21,30 +21,30 @@ namespace TCTParser.Processors
         {
             if(GetId(p) == VANGUARD_REP_ID)
             {
-                if(DataParser.CurrentChar.Credits != GetAmount(p))
+                if(DataRouter.CurrentChar.Credits != GetAmount(p))
                 {
-                    var difference = GetAmount(p) - DataParser.CurrentChar.Credits;
-                    DataParser.CurrentChar.Credits = GetAmount(p);
+                    var difference = GetAmount(p) - DataRouter.CurrentChar.Credits;
+                    DataRouter.CurrentChar.Credits = GetAmount(p);
 
                     if(difference > 0) //earned
                     {
-                        UI.UpdateLog(DataParser.CurrentChar.Name + " > " + "gained " + difference + " Vanguard credits. Current amount: " + DataParser.CurrentChar.Credits + ".");
+                        UI.UpdateLog(DataRouter.CurrentChar.Name + " > " + "gained " + difference + " Vanguard credits. Current amount: " + DataRouter.CurrentChar.Credits + ".");
 
-                        if (DataParser.CurrentChar.Credits < 8500)
+                        if (DataRouter.CurrentChar.Credits < 8500)
                         {
-                            UI.SendNotification(DataParser.CurrentChar.Name + " gained " + difference + " Vanguard Credits." + "\n" + "Current amount: " + DataParser.CurrentChar.Credits + ".", NotificationImage.Credits, NotificationType.Standard, UI.Colors.SolidGreen, true, false, false);
+                            UI.SendNotification(DataRouter.CurrentChar.Name + " gained " + difference + " Vanguard Credits." + "\n" + "Current amount: " + DataRouter.CurrentChar.Credits + ".", NotificationImage.Credits, NotificationType.Standard, TCTData.Colors.BrightGreen, true, false, false);
                         }
                         else
                         {
-                            UI.SendNotification(DataParser.CurrentChar.Name + " gained " + difference + " Vanguard Credits." + "\n" + "Current amount: " + DataParser.CurrentChar.Credits + ", you've almost reached your maximum credits.", NotificationImage.Credits, NotificationType.Standard, Colors.Orange, true, true, false);
+                            UI.SendNotification(DataRouter.CurrentChar.Name + " gained " + difference + " Vanguard Credits." + "\n" + "Current amount: " + DataRouter.CurrentChar.Credits + ", you've almost reached your maximum credits.", NotificationImage.Credits, NotificationType.Standard, Colors.Orange, true, true, false);
                         }
 
                     }
                     else //spent
                     {
                         difference = -difference;
-                        UI.UpdateLog(DataParser.CurrentChar.Name + " > " + "spent " + difference + " Vanguard credits. Current amount: " + DataParser.CurrentChar.Credits + ".");
-                        UI.SendNotification(DataParser.CurrentChar.Name + " spent " + difference + " Vanguard Credits." + "\n" + "Current amount: " + DataParser.CurrentChar.Credits + ".", NotificationImage.Credits, NotificationType.Standard, Colors.Red, true, false, false);
+                        UI.UpdateLog(DataRouter.CurrentChar.Name + " > " + "spent " + difference + " Vanguard credits. Current amount: " + DataRouter.CurrentChar.Credits + ".");
+                        UI.SendNotification(DataRouter.CurrentChar.Name + " spent " + difference + " Vanguard Credits." + "\n" + "Current amount: " + DataRouter.CurrentChar.Credits + ".", NotificationImage.Credits, NotificationType.Standard, TCTData.Colors.BrightRed, true, false, false);
                     }
 
                 }

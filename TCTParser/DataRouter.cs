@@ -25,9 +25,8 @@ using TCTUI;
 
 namespace TCTParser
 {
-    public static class DataParser
+    public static class DataRouter
     {
-        static S_GET_USER_GUILD_LOGO mess;
 
         internal static string currentCharName;
         internal static string currentCharId;
@@ -80,6 +79,12 @@ namespace TCTParser
                     if (!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
                     {
                         TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
+                    }
+                    else
+                    {
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
                     }
                     charListProcessor.CurrentAccountId = accountLoginProcessor.id;
                     SetCharList(data);
@@ -167,10 +172,22 @@ namespace TCTParser
 
                 case "S_LOGIN_ACCOUNT_INFO":
                     accountLoginProcessor.ParseLoginInfo(data);
+
                     break;
 
                 case "S_ACCOUNT_PACKAGE_LIST":
                     accountLoginProcessor.ParsePackageInfo(data);
+                    if (!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
+                    {
+                        TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
+                    }
+                    else
+                    {
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
+                    }
+
                     break;
 
                 case "S_RETURN_TO_LOBBY":
@@ -220,9 +237,14 @@ namespace TCTParser
         private static void SetCharList(string p)
         {
             var charList = charListProcessor.ParseCharacters(p);
-            for (int i = 0; i < charList.Count; i++)
+            //for (int i = 0; i < charList.Count; i++)
+            //{
+            //    UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(charList[i])));
+            //}
+
+            foreach (var c in charList)
             {
-                UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(charList[i])));
+                UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(c)));
             }
             charListProcessor.Clear();
 
@@ -278,7 +300,7 @@ namespace TCTParser
                 if (CurrentChar.GoldfingerTokens >= 80)
                 {
                     UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
-                    UI.SendNotification("You have " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true, false);
+                    UI.SendNotification("You have " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
                 }
                 else
                 {
@@ -295,7 +317,7 @@ namespace TCTParser
                 if (CurrentChar.DragonwingScales >= 50)
                 {
                     UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
-                    UI.SendNotification("You have " + CurrentChar.DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Scales, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                    UI.SendNotification("You have " + CurrentChar.DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Scales, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
                 }
                 else
                 {
@@ -316,11 +338,11 @@ namespace TCTParser
         {
             if (oldVal > newVal)
             {
-                return UI.Colors.SolidRed;
+                return TCTData.Colors.BrightRed;
             }
             else
             {
-                return UI.Colors.SolidGreen;
+                return TCTData.Colors.BrightGreen;
             }
         }
         private static void SetVanguardData(string p, bool forceLog)

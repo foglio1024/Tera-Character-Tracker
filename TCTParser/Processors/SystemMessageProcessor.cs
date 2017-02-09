@@ -23,7 +23,7 @@ namespace TCTParser
 
         public void ParseSystemMessage(string p)
         {
-            switch (DataParser.SystemOpCodeNamer.GetName(GetSystemOpCode(p)))
+            switch (DataRouter.SystemOpCodeNamer.GetName(GetSystemOpCode(p)))
             {
                 case "SMT_GRANT_DUNGEON_COOLTIME_AND_COUNT":
                     EngageDungeon(p);
@@ -58,12 +58,13 @@ namespace TCTParser
             if (dgName != null)
             {
 
-                UI.UpdateLog(DataParser.currentCharName + " > " + dgName + " engaged.");
-                UI.SendDefaultNotification(dgName + " engaged.");
+                UI.UpdateLog(DataRouter.currentCharName + " > " + dgName + " engaged.");
 
                 try
                 {
-                    DataParser.CurrentChar.Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == dungId).ShortName)).Runs--;
+                    DataRouter.CurrentChar.Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == dungId).ShortName)).Runs--;
+                    // notification content is "fullName$shortName$runs"
+                    UI.SendNotification(dgName + "$"+ TeraLogic.DungList.Find(dg => dg.Id == dungId).ShortName + "$"+ DataRouter.CurrentChar.Dungeons.Find(d => d.Name.Equals(TeraLogic.DungList.Find(dg => dg.Id == dungId).ShortName)).Runs,NotificationImage.Default, NotificationType.DungeonCounter,TCTData.Colors.SolidBaseColor,true, true, false);
                 }
                 catch
                 {
@@ -89,10 +90,10 @@ namespace TCTParser
                 Int32.TryParse(d.Attribute("amount").Value, out addedCredits);
                 addedCredits = addedCredits * 2;
 
-                Tera.TeraLogic.CharList.Find(ch => ch.Name.Equals(DataParser.currentCharName)).Credits += addedCredits;
+                Tera.TeraLogic.CharList.Find(ch => ch.Name.Equals(DataRouter.currentCharName)).Credits += addedCredits;
 
-                UI.UpdateLog("Earned " + addedCredits + " Vanguard Initiative credits. Total: " + DataParser.CurrentChar.Credits + ".");
-                UI.SendNotification("Earned " + addedCredits + " Vanguard Initiative credits. \nCurrent credits: " +DataParser.CurrentChar.Credits + ".", NotificationImage.Credits, NotificationType.Standard, UI.Colors.SolidGreen, true, false, false);
+                UI.UpdateLog("Earned " + addedCredits + " Vanguard Initiative credits. Total: " + DataRouter.CurrentChar.Credits + ".");
+                UI.SendNotification("Earned " + addedCredits + " Vanguard Initiative credits. \nCurrent credits: " +DataRouter.CurrentChar.Credits + ".", NotificationImage.Credits, NotificationType.Standard, TCTData.Colors.BrightGreen, true, false, false);
             }
         }
 

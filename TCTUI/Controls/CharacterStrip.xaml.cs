@@ -201,57 +201,57 @@ namespace Tera
             _visual.Top = w32Mouse.Y +20;
 
         }
-        private void nsDrop(object sender, DragEventArgs e)
-        {
+        //private void nsDrop(object sender, DragEventArgs e)
+        //{
 
-          //  var p = MainWindow.FindChild<overviewPage2>(Application.Current.MainWindow, "ovPage");
-         //   var q = p.FindName("CreditsGraph");
-         //   var r = q as StackPanel;
-            var xt = e.Source.GetType().ToString();
+        //  //  var p = MainWindow.FindChild<overviewPage2>(Application.Current.MainWindow, "ovPage");
+        // //   var q = p.FindName("CreditsGraph");
+        // //   var r = q as StackPanel;
+        //    var xt = e.Source.GetType().ToString();
            
-                if (e.Data.GetDataPresent("UIElement"))
-                {
-                    UIElement droptarget = e.Source as UIElement;
-                    var panel = (droptarget as CharacterStrip).Parent as StackPanel;
-                    int droptargetIndex = -1, i = 0;
-                    foreach (UIElement element in panel.Children)
-                    {
-                        if (element.Equals(droptarget))
-                        {
-                            droptargetIndex = i;
-                            break;
-                        }
-                        i++;
-                    }
-                    var sourceItem = e.Data.GetData("UIElement") as CharacterStrip;
+        //        if (e.Data.GetDataPresent("UIElement"))
+        //        {
+        //            UIElement droptarget = e.Source as UIElement;
+        //            var panel = (droptarget as CharacterStrip).Parent as StackPanel;
+        //            int droptargetIndex = -1, i = 0;
+        //            foreach (UIElement element in panel.Children)
+        //            {
+        //                if (element.Equals(droptarget))
+        //                {
+        //                    droptargetIndex = i;
+        //                    break;
+        //                }
+        //                i++;
+        //            }
+        //            var sourceItem = e.Data.GetData("UIElement") as CharacterStrip;
 
-                    if (droptargetIndex != -1)
-                    {
-                        Character temp = new Character();
-                    CharacterStrip temp2 = new CharacterStrip();
-                        var originIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(sourceItem.Tag)));
-                        temp = TeraLogic.CharList[originIndex];
-                        temp2 = TeraMainWindow.CharacterStrips[originIndex];
-                        panel.Children.Remove(sourceItem);
-                        panel.Children.Insert(droptargetIndex, sourceItem);
-                        (sourceItem.Content as Grid).BeginAnimation(HeightProperty, expand);
-                        TeraLogic.CharList.RemoveAt(originIndex);
-                        TeraLogic.CharList.Insert(droptargetIndex, temp);
-                        TeraMainWindow.CharacterStrips.RemoveAt(originIndex);
-                        TeraMainWindow.CharacterStrips.Insert(droptargetIndex, temp2);
+        //            if (droptargetIndex != -1)
+        //            {
+        //                Character temp = new Character();
+        //            CharacterStrip temp2 = new CharacterStrip();
+        //                var originIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(sourceItem.Tag)));
+        //                temp = TeraLogic.CharList[originIndex];
+        //                temp2 = TeraMainWindow.CharacterStrips[originIndex];
+        //                panel.Children.Remove(sourceItem);
+        //                panel.Children.Insert(droptargetIndex, sourceItem);
+        //                (sourceItem.Content as Grid).BeginAnimation(HeightProperty, expand);
+        //                TeraLogic.CharList.RemoveAt(originIndex);
+        //                TeraLogic.CharList.Insert(droptargetIndex, temp);
+        //                TeraMainWindow.CharacterStrips.RemoveAt(originIndex);
+        //                TeraMainWindow.CharacterStrips.Insert(droptargetIndex, temp2);
 
-                      //  var t = r.Children[originIndex];
-                     //   r.Children.RemoveAt(originIndex);
-                    //    r.Children.Insert(droptargetIndex, t);
-                    }
-                }
+        //              //  var t = r.Children[originIndex];
+        //             //   r.Children.RemoveAt(originIndex);
+        //            //    r.Children.Insert(droptargetIndex, t);
+        //            }
+        //        }
             
             
-            _isDown = false;
-                _drag = false;
-            TeraLogic.IsSaved = false;
+        //    _isDown = false;
+        //        _drag = false;
+        //    TeraLogic.IsSaved = false;
 
-        }
+        //}
         public void CreateDragDropWindow(Visual dragElement, Point xy)
         {
             _visual = new TeraMainWindow();
@@ -305,7 +305,7 @@ namespace Tera
             TeraLogic.CharList.Remove(TeraLogic.CharList.Find(x=>x.Name.Equals(this.Tag)));
 
             /*removes entry from strips array*/
-            TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => Tag.Equals(this.Tag)));
+            TeraMainWindow.ExtendedCharacterStrips.Remove(TeraMainWindow.ExtendedCharacterStrips.Find(x => Tag.Equals(this.Tag)));
 
             /*removes strip from panel after animation*/
             shrink.Completed += (a,b) => (this.Parent as StackPanel).Children.Remove(this);

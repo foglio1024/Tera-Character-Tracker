@@ -45,22 +45,22 @@ namespace TCTMain
                     {
                         var msg = new C_CHECK_VERSION_CUSTOM(new CustomReader(message));
                         DamageMeter.Sniffing.TeraSniffer.Instance.opn = new OpCodeNamer(System.IO.Path.Combine(BasicTeraData.Instance.ResourceDirectory, $"data/opcodes/{msg.Versions[0]}.txt"));
-                        TCTParser.DataParser.OpCodeNamer = DamageMeter.Sniffing.TeraSniffer.Instance.opn;
-                        TCTParser.DataParser.SystemOpCodeNamer = new OpCodeNamer(System.IO.Path.Combine(BasicTeraData.Instance.ResourceDirectory, $"data/opcodes/smt_{msg.Versions[0]}.txt"));
+                        TCTParser.DataRouter.OpCodeNamer = DamageMeter.Sniffing.TeraSniffer.Instance.opn;
+                        TCTParser.DataRouter.SystemOpCodeNamer = new OpCodeNamer(System.IO.Path.Combine(BasicTeraData.Instance.ResourceDirectory, $"data/opcodes/smt_{msg.Versions[0]}.txt"));
                     }
 
-                    TCTParser.DataParser.StoreMessage(message);
+                    TCTParser.DataRouter.StoreMessage(message);
                 };
                 DamageMeter.Sniffing.TeraSniffer.Instance.NewConnection += (server) =>
                 {
-                    TCTNotifier.NotificationProvider.SendNotification(String.Format("Connected to:\n{0} - {1}", server.Region, server.Name), TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, UI.Colors.SolidGreen, true, false, false);
-                    UI.SetLogColor(UI.Colors.SolidGreen);
+                    TCTNotifier.NotificationProvider.SendNotification(String.Format("Connected to:\n{0} - {1}", server.Region, server.Name), TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, TCTData.Colors.BrightGreen, true, false, false);
+                    UI.SetLogColor(TCTData.Colors.SolidGreen);
                     UI.UpdateLog(String.Format("Connected to: {0} - {1}", server.Region, server.Name));
                 };
                 DamageMeter.Sniffing.TeraSniffer.Instance.EndConnection += () =>
                 {
-                    TCTNotifier.NotificationProvider.SendNotification("Connection lost.", TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, UI.Colors.SolidRed, true, false, false);
-                    UI.SetLogColor(UI.Colors.SolidRed);
+                    TCTNotifier.NotificationProvider.SendNotification("Connection lost.", TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, TCTData.Colors.BrightRed, true, false, false);
+                    UI.SetLogColor(TCTData.Colors.SolidRed);
                     UI.UpdateLog("Connection lost.");
 
                 };
@@ -148,7 +148,7 @@ namespace TCTMain
             {
                 try
                 {
-                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running", TCTData.Enums.NotificationImage.Default, TCTData.Enums.NotificationType.Standard, UI.Colors.SolidBaseColor, true, false, false);
+                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running", TCTData.Enums.NotificationImage.Default, TCTData.Enums.NotificationType.Standard, TCTData.Colors.SolidBaseColor, true, false, false);
 
                     Tera.TeraMainWindow w = new Tera.TeraMainWindow();
                     w.InitializeComponent();

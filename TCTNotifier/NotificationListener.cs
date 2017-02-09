@@ -77,6 +77,29 @@ namespace TCTNotifier
                                 NotificationProvider.NotificationDeployer.NotificationHolder.Children.Add(cn);
                                 break;
 
+                            case TCTData.Enums.NotificationType.DungeonCounter:
+                                var dn = new DungeonCounterNotification()
+                                {
+                                    VerticalAlignment = VerticalAlignment.Top,
+                                    Margin = new Thickness(0, NotificationProvider.VerticalOffset, 0, 0)
+                                };
+                                var dgName = n.Content.Split('$')[0];
+                                var dgShortName = n.Content.Split('$')[1];
+                                var dgRuns = Convert.ToInt32(n.Content.Split('$')[2]);
+                                dn.counter.n.Text = dgShortName;
+                                dn.counter.t.Text = dgRuns.ToString();
+                                if(dgRuns > 0)
+                                {
+                                    dn.counter.ell.Fill = new SolidColorBrush(TCTData.Colors.SolidYellow);
+                                }
+                                else
+                                {
+                                    dn.counter.ell.Fill = new SolidColorBrush(TCTData.Colors.SolidRed);
+                                }
+                                dn.txt.Text = dgName + " engaged.";
+                                dn.border.BorderBrush = new SolidColorBrush(n.Color);
+                                NotificationProvider.NotificationDeployer.NotificationHolder.Children.Add(dn);
+                                break;
                             default:
                                 break;
                         }

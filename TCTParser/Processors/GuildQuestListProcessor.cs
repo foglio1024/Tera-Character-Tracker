@@ -38,9 +38,17 @@ namespace TCTParser.Processors
                 {
                     if (questParser.GetQuestSize(quest) == GetGuildSize(p) && questParser.GetZoneID(quest) != 152 && questParser.GetZoneID(quest) != 0)
                     {
+                        try
+                        {
+
                         TCTData.ZoneToRegionID c = new TCTData.ZoneToRegionID();
                         QuestList.Add(new GuildQuest(questParser.GetQuestID(quest), questParser.GetStatus(quest), (int)c.Convert(questParser.GetZoneID(quest), null, null, null)));
                         Console.WriteLine("questID: {0} - status:{1} -- regionID:{2}", QuestList.Last().QuestID, QuestList.Last().Status, QuestList.Last().RegionID);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Error while parsing guild quests");
+                        }
                     }
                 }
                 UpdateUI(); 
@@ -124,7 +132,7 @@ namespace TCTParser.Processors
                     if (quest.Status == GuildQuestStatus.Available)
                     {
                         UI.UpdateLog("You have available guild quests for this dungeon.");
-                        UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                        UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
                     }
                     break;
                 }

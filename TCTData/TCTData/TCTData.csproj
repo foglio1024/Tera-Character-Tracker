@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Colors.cs" />
     <Compile Include="Classes\TCTDatabase.cs" />
     <Compile Include="Converters\RegionIDToName.cs" />
     <Compile Include="Converters\ZoneToRegionID.cs" />

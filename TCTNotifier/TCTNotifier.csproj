@@ -60,6 +60,12 @@
     <Compile Include="CounterNotification.xaml.cs">
       <DependentUpon>CounterNotification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DungeonCounterNotification.xaml.cs">
+      <DependentUpon>DungeonCounterNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DungeonRunsCounter.xaml.cs">
+      <DependentUpon>DungeonRunsCounter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NotificationInfo.cs" />
     <Compile Include="NotificationListener.cs" />
     <Compile Include="NotificationQueue.cs" />
@@ -75,6 +81,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="DungeonCounterNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DungeonRunsCounter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="NotificationDeployer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
