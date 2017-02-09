@@ -85,22 +85,25 @@ namespace TCTParser.Processors
             //update
             foreach (var quest in QuestList)
             {
-                UI.MainWin.Dispatcher.Invoke(() =>
+                if (TeraLogic.DungList.Find(d => d.Id == quest.RegionID) != null)  //check that it is a dungeon quest
                 {
-                    string dgShortName = TeraLogic.DungList.Find(d => d.Id == quest.RegionID).ShortName;
-
-                    foreach (var counter in TeraMainWindow.DungeonCounters)
+                    UI.MainWin.Dispatcher.Invoke(() =>
                     {
-                        if (counter.Name == dgShortName)
+
+                        string dgShortName = TeraLogic.DungList.Find(d => d.Id == quest.RegionID).ShortName;        //get dungeon short name
+
+                        foreach (var counter in TeraMainWindow.DungeonCounters)      //search for right counter 
                         {
-                            counter.SetGquestStatus(quest.Status);
+                            if (counter.Name == dgShortName)
+                            {
+                                counter.SetGquestStatus(quest.Status);     //update counter status
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         }
 
-        //ok
         string GetGuildSize(string p)
         {
             int size = StringUtils.Hex4BStringToInt(p.Substring(GUILD_SIZE_OFFSET));
