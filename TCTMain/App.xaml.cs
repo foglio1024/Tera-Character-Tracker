@@ -148,13 +148,22 @@ namespace TCTMain
             {
                 try
                 {
-                    TCTNotifier.NotificationProvider.SendNotification("TCT " + version + " is running", TCTData.Enums.NotificationImage.Default, TCTData.Enums.NotificationType.Standard, TCTData.Colors.SolidBaseColor, true, false, false);
+                    string v = String.Empty;
+                    if(Assembly.GetExecutingAssembly().GetName().Version.Minor < 10)
+                    {
+                        v = "v" + Assembly.GetExecutingAssembly().GetName().Version.Major + ".0" + Assembly.GetExecutingAssembly().GetName().Version.Minor;
+                    }
+                    else
+                    {
+                        v = version;
+                    }
+                    TCTNotifier.NotificationProvider.SendNotification("TCT " + v + " is running", TCTData.Enums.NotificationImage.Default, TCTData.Enums.NotificationType.Standard, TCTData.Colors.SolidBaseColor, true, false, false);
 
                     Tera.TeraMainWindow w = new Tera.TeraMainWindow();
                     w.InitializeComponent();
 
                     Tera.TeraLogic.TryReset();
-                    w.Title = "Tera Character Tracker " + version;
+                    w.Title = "Tera Character Tracker " + v;
                     UpdateManager.NotifyUpdateFail();
                     w.ShowDialog();
 

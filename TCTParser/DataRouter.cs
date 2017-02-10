@@ -29,7 +29,8 @@ namespace TCTParser
     {
 
         internal static string currentCharName;
-        internal static string currentCharId;
+        internal static string currentCharEntityId;
+        internal static long currentCharId;
 
 
         static CharListProcessor charListProcessor = new CharListProcessor();
@@ -157,13 +158,13 @@ namespace TCTParser
                     break;
 
                 case "S_ABNORMALITY_BEGIN":
-                    crystalbindProcessor.ParseNewBuff(data, currentCharId);
-                    nocteniumProcessor.ParseBegin(data, currentCharId);
+                    crystalbindProcessor.ParseNewBuff(data, currentCharEntityId);
+                    nocteniumProcessor.ParseBegin(data, currentCharEntityId);
                     break;
 
                 case "S_ABNORMALITY_END":
-                    crystalbindProcessor.ParseEndingBuff(data, currentCharId);
-                    nocteniumProcessor.ParseEnd(data, currentCharId);
+                    crystalbindProcessor.ParseEndingBuff(data, currentCharEntityId);
+                    nocteniumProcessor.ParseEnd(data, currentCharEntityId);
                     break;
 
                 case "S_CLEAR_ALL_HOLDED_ABNORMALITY":
@@ -221,7 +222,7 @@ namespace TCTParser
                     break;
 
                 case "S_USER_STATUS":
-                    if(combatParser.GetUserId(data) == currentCharId)
+                    if(combatParser.GetUserId(data) == currentCharEntityId)
                     {
                         combatParser.SetUserStatus(data);
                     }
@@ -253,7 +254,8 @@ namespace TCTParser
         private static void LoginChar(string p)
         {
             currentCharName = charLoginProcessor.GetName(p);
-            currentCharId = charLoginProcessor.GetId(p);
+            currentCharEntityId = charLoginProcessor.GetEntityId(p);
+            currentCharId = charLoginProcessor.GetCharId(p);
 
             UI.UpdateLog(currentCharName + " logged in.");
             UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
