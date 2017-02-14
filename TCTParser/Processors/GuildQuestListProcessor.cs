@@ -96,6 +96,7 @@ namespace TCTParser.Processors
 
         void UpdateUI()
         {
+            ResetUI();
             foreach (var q in GuildQuests.Quests)
             {
                 if (q.QuestType == GuildQuestType.Boss && q.QuestSize == GuildQuests.GuildSize)
@@ -164,10 +165,14 @@ namespace TCTParser.Processors
             var id = StringUtils.Hex2BStringToInt(p.Substring(7 * 2));
             foreach (var quest in GuildQuests.Quests)
             {
-                if (quest.QuestId == id)
+                if (quest.QuestType == GuildQuestType.Boss && quest.QuestSize == GuildQuests.GuildSize)
                 {
-                    quest.QuestStatus = GuildQuestStatus.Taken;
-                    UI.UpdateLog("Guild quest accepted.");
+                    if (quest.QuestId == id)
+                    {
+                        quest.QuestStatus = GuildQuestStatus.Taken;
+                        UI.UpdateLog("Guild quest accepted.");
+                        break;
+                    }
                 }
             }
             UpdateUI();
@@ -298,7 +303,7 @@ namespace TCTParser.Processors
             public uint QuestId { get { return questId; } }
             public GuildSize QuestSize { get { return (GuildSize)guildSize; } }
             public GuildQuestType QuestType { get { return (GuildQuestType)questType; } }
-            public GuildQuestStatus QuestStatus { get { return (GuildQuestStatus)questStatus; } set { QuestStatus = value; } }
+            public GuildQuestStatus QuestStatus { get { return (GuildQuestStatus)questStatus; } set { questStatus = (uint)value; } }
             public int RegionID { get { return (int)conv.Convert(Targets[0].ZoneId, null, null, null); } }
             public GuildQuest(Tera.Game.TeraMessageReader r) : base(r)
             {
