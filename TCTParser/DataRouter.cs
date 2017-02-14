@@ -31,6 +31,7 @@ namespace TCTParser
         internal static string currentCharName;
         internal static string currentCharEntityId;
         internal static long currentCharId;
+        public static uint Version { get; set; }
 
 
         static CharListProcessor charListProcessor = new CharListProcessor();
@@ -60,6 +61,7 @@ namespace TCTParser
             }
         }
 
+
         public static void StoreMessage(Message msg)
         {
             byte[] data = new byte[msg.Data.Count];
@@ -67,11 +69,11 @@ namespace TCTParser
             data[0] = (byte)(((short)msg.Data.Count) & 255);
             data[1] = (byte)(((short)msg.Data.Count) >> 8);
 
-            ParseLastMessage(OpCodeNamer.GetName(msg.OpCode), StringUtils.ByteArrayToString(data).ToUpper());
+            ParseLastMessage(OpCodeNamer.GetName(msg.OpCode), StringUtils.ByteArrayToString(data).ToUpper(), msg);
 
         }
 
-        static void ParseLastMessage(string opCodeName, string data)
+        static void ParseLastMessage(string opCodeName, string data, Message m)
         {
             switch (opCodeName)
             {
@@ -200,7 +202,7 @@ namespace TCTParser
                     break;
 
                 case "S_GUILD_QUEST_LIST":
-                    guildQuestListProcessor.ParseGuildListPacket(data);
+                    guildQuestListProcessor.Parse(m);
                     break;
 
                 case "S_FINISH_GUILD_QUEST":
@@ -381,7 +383,11 @@ namespace TCTParser
                 }
                                                                                             
                 UI.UpdateLog(CurrentChar.Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
+
+
+
                 guildQuestListProcessor.CheckQuestStatus(CurrentChar.LocationId);
+
             }
 
             if (TCTData.TCTProps.CcbNM == CcbNotificationMode.EverySection)

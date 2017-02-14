@@ -46,6 +46,7 @@
     <Compile Include="Classes\Colors.cs" />
     <Compile Include="Classes\TCTDatabase.cs" />
     <Compile Include="Converters\RegionIDToName.cs" />
+    <Compile Include="Converters\ZoneIdToName.cs" />
     <Compile Include="Converters\ZoneToRegionID.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

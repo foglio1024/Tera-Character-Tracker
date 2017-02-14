@@ -16,7 +16,7 @@ namespace TCTParser.Processors
     {
         const int CCB_ID = 4610;
         const int CHAR_ID_OFFSET = 4 * 2;
-        const int CHAR_ID_LENGHT = 12;
+        const int CHAR_ID_LENGHT = 16;
         const int B_BUFF_ID_OFFSET = 20 * 2;
         const int E_BUFF_ID_OFFSET = 12 * 2;
         const int TIME_OFFSET = 24 * 2;

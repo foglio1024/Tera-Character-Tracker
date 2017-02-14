@@ -47,6 +47,7 @@ namespace TCTMain
                         DamageMeter.Sniffing.TeraSniffer.Instance.opn = new OpCodeNamer(System.IO.Path.Combine(BasicTeraData.Instance.ResourceDirectory, $"data/opcodes/{msg.Versions[0]}.txt"));
                         TCTParser.DataRouter.OpCodeNamer = DamageMeter.Sniffing.TeraSniffer.Instance.opn;
                         TCTParser.DataRouter.SystemOpCodeNamer = new OpCodeNamer(System.IO.Path.Combine(BasicTeraData.Instance.ResourceDirectory, $"data/opcodes/smt_{msg.Versions[0]}.txt"));
+                        TCTParser.DataRouter.Version = msg.Versions[0];
                     }
 
                     TCTParser.DataRouter.StoreMessage(message);

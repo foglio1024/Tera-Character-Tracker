@@ -65,6 +65,12 @@ namespace TCTData.Enums
         Medium,
         Big
     }
+    public enum GuildQuestType
+    {
+        Boss = 0,
+        BG = 2,
+        Gathering = 4
+    }
     public enum GuildQuestStatus
     {
         Available,
