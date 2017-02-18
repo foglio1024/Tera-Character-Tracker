@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Tera"
              mc:Ignorable="d" 
-             MinWidth="550"
-             Width="550"
+             Width="500"
              d:DesignHeight="800" d:DesignWidth="566">
     <UserControl.Resources>
         <Thickness x:Key="space">20</Thickness>
@@ -67,7 +66,7 @@
 
 
     </UserControl.Resources>
-    <Grid Background="#fff2f2f2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="infoboxContainer">
+    <Grid HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Name="infoboxContainer">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -81,7 +80,7 @@
 
             <Grid Name="animGrid" Grid.Row="0" Grid.Column="0" Height="Auto" Grid.ColumnSpan="2" Margin="10,10" Background="White" Width="Auto" >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="187"/>
+                    <ColumnDefinition Width="175"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.Effect>
@@ -316,7 +315,7 @@
             </Grid>
         </Grid>
         <!--<Border BorderThickness="0,0,0,1" BorderBrush="Black" Opacity=".1" Grid.Row="1"/>-->
-        <Grid Grid.Row="2" Background="White" Width="310" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,20,20">
+        <Grid Grid.Row="2" Background="White" Width="Auto" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="20,0,20,20">
             <Grid.Effect>
                 <DropShadowEffect Opacity="0.2" ShadowDepth=".5" BlurRadius="4"/>
             </Grid.Effect>

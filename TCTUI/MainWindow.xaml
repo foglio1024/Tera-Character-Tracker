@@ -28,7 +28,7 @@
         VisualEdgeMode="Aliased"
         VisualClearTypeHint="Auto"
         VisualBitmapScalingMode="NearestNeighbor"
-        ResizeMode="CanResize" MouseDown="TeraMainWin_MouseDown" StateChanged="TeraMainWin_StateChanged">
+        ResizeMode="CanResize" MouseDown="TeraMainWin_MouseDown" SizeToContent="Manual" SizeChanged="TeraMainWin_SizeChanged">
     <Window.Resources>
         <Storyboard x:Key="sb">
             <DoubleAnimation Storyboard.TargetName="Win" 
@@ -83,9 +83,9 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-<!--Add views here in row 2-->
-            <local:MainView Grid.Row="2"/>
-            
+            <!--Add views here in row 2-->
+            <local:MainView Grid.Row="2" x:Name="main"/>
+
             <local:leftSlide x:Name="leftSlide1" Height="870"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="400" Margin="-420,0,0,30" Grid.Row="2">
             </local:leftSlide>
             <Grid Name="ToolBar" HorizontalAlignment="Stretch" Margin="0" Background="#FF607D8B" Grid.Row="1" >
@@ -106,14 +106,25 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <!--<Image Name="img" Source="resources/ui_images/ic_add_white_24dp_2x.png" MouseLeftButtonDown="TestButton" Cursor="Hand" Margin="60,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>-->
-                    <Image Name="saveButton"   Style="{StaticResource toolBarButton}"  ToolTip="Save"                Grid.Column="5" VerticalAlignment="Center" Source="resources/ui_images/ic_save_white_24dp_2x.png"       MouseLeftButtonDown="SaveButtonPressed"        />
-                    <Image Name="dgButton"     Style="{StaticResource toolBarButton}"  ToolTip="Show dungeons"       Grid.Column="4" VerticalAlignment="Center" Source="resources/ui_images/dungs.png"                       MouseLeftButtonDown="ShowDungeonOverview"       />
-                    <Image Name="del_button"   Style="{StaticResource toolBarButton}"  ToolTip="Delete character"    Grid.Column="3" VerticalAlignment="Center" Source="resources/ui_images/ic_close_white_24dp_2x.png"      MouseLeftButtonDown="deleteCharButtonClick"/>
-                    <Image Name="resetDaily"   Style="{StaticResource toolBarButton}"  ToolTip="Force daily reset"   Grid.Column="2" VerticalAlignment="Center" Source="resources/ui_images/ic_event_busy_white_24dp_2x.png" MouseLeftButtonDown="resetDailyButtonClick"/>
-                    <Image Name="resetWeekly"  Style="{StaticResource toolBarButton}"  ToolTip="Force weekly reset"  Grid.Column="1" VerticalAlignment="Center" Source="resources/ui_images/ic_event_note_white_24dp_2x.png" MouseLeftButtonDown="resetWeeklyButtonClick"/>
-                    <Image Name="undoButton"   Style="{StaticResource toolBarButton}"  ToolTip="Undo"                Grid.Column="0" VerticalAlignment="Center" Source="resources/ui_images/ic_undo_white_24dp_2x.png"       MouseLeftButtonDown="UndoButtonClick"      />
+                    <Image Name="saveButton"   Style="{StaticResource toolBarButton}"  ToolTip="Save"                Grid.Column="6" VerticalAlignment="Center" Source="resources/ui_images/ic_save_white_24dp_2x.png"       MouseLeftButtonDown="SaveButtonPressed"        />
+                    <Image Name="dgButton"     Style="{StaticResource toolBarButton}"  ToolTip="Show dungeons"       Grid.Column="5" VerticalAlignment="Center" Source="resources/ui_images/dungs.png"                       MouseLeftButtonDown="ShowDungeonOverview"       />
+                    <Image Name="del_button"   Style="{StaticResource toolBarButton}"  ToolTip="Delete character"    Grid.Column="4" VerticalAlignment="Center" Source="resources/ui_images/ic_close_white_24dp_2x.png"      MouseLeftButtonDown="deleteCharButtonClick"/>
+                    <Image Name="resetDaily"   Style="{StaticResource toolBarButton}"  ToolTip="Force daily reset"   Grid.Column="3" VerticalAlignment="Center" Source="resources/ui_images/ic_event_busy_white_24dp_2x.png" MouseLeftButtonDown="resetDailyButtonClick"/>
+                    <Image Name="resetWeekly"  Style="{StaticResource toolBarButton}"  ToolTip="Force weekly reset"  Grid.Column="2" VerticalAlignment="Center" Source="resources/ui_images/ic_event_note_white_24dp_2x.png" MouseLeftButtonDown="resetWeeklyButtonClick"/>
+                    <Image Name="undoButton"   Style="{StaticResource toolBarButton}"  ToolTip="Undo"                Grid.Column="1" VerticalAlignment="Center" Source="resources/ui_images/ic_undo_white_24dp_2x.png"       MouseLeftButtonDown="UndoButtonClick"      />
+                    <Image Name="chViewButton" Style="{StaticResource toolBarButton}"  ToolTip="Show details"        Grid.Column="0" VerticalAlignment="Center" Source="resources/ui_images/ic_keyboard_arrow_down_white_24dp_2x.png"                        MouseLeftButtonDown="chViewButton_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5"     >
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
 
                 </Grid>
 

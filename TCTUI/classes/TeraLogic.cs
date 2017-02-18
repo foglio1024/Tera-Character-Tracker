@@ -543,11 +543,11 @@ namespace Tera
 
                 if (settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value == "EverySection")
                 {
-                    TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
+                    TCTData.TCTProps.CcbNM = NotificationMode.EverySection;
                 }
                 else
                 {
-                    TCTData.TCTProps.CcbNM = CcbNotificationMode.TeleportOnly;
+                    TCTData.TCTProps.CcbNM = NotificationMode.TeleportOnly;
                 }
 
 
@@ -593,7 +593,7 @@ namespace Tera
                 TCTData.TCTProps.Left = 20;
                 TCTData.TCTProps.Width = 1280;
                 TCTData.TCTProps.Height = 930;
-                TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
+                TCTData.TCTProps.CcbNM = NotificationMode.EverySection;
                 TCTData.TCTProps.Console = false;
                 TCTData.TCTProps.NotificationSound = true;
                 TCTData.TCTProps.Notifications = true;

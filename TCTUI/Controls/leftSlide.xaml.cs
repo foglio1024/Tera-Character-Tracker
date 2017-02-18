@@ -46,15 +46,15 @@ namespace Tera
                 NotificationSound_Switch.TurnOff();
             }
 
-            if (TCTData.TCTProps.CcbNM == TCTData.Enums.CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.CcbNM == TCTData.Enums.NotificationMode.EverySection)
             {
                 CrystalbindNotificationType_Switch.TurnOn();
-                CrystalbindNotificationType_Text.Text = "Crystalbind notification: every section";
+                CrystalbindNotificationType_Text.Text = "Notification mode: every section";
             }
             else
             {
                 CrystalbindNotificationType_Switch.TurnOff();
-                CrystalbindNotificationType_Text.Text = "Crystalbind notification: teleport only";
+                CrystalbindNotificationType_Text.Text = "Notification mode: teleport only";
             }
 
             /*new setting here*/
@@ -219,16 +219,16 @@ namespace Tera
         }
         private void SetCrystalbindNotificationType(object sender, MouseButtonEventArgs e)
         {
-            if (TCTData.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.CcbNM == NotificationMode.EverySection)
             {
-                TCTData.TCTProps.CcbNM = CcbNotificationMode.TeleportOnly;
-                CrystalbindNotificationType_Text.Text = "Crystalbind notification: teleport only";
+                TCTData.TCTProps.CcbNM = NotificationMode.TeleportOnly;
+                CrystalbindNotificationType_Text.Text = "Notification mode: teleport only";
             }
 
             else
             {
-                TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
-                CrystalbindNotificationType_Text.Text = "Crystalbind notification: every section";
+                TCTData.TCTProps.CcbNM = NotificationMode.EverySection;
+                CrystalbindNotificationType_Text.Text = "Notification mode: every section";
             }
 
 

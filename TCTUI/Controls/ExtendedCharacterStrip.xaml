@@ -38,13 +38,13 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="65"/>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="120"/>
 
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -71,8 +71,8 @@
             </Grid>
         </Grid>
         <TextBlock Name="nameTB"    AllowDrop="False" Grid.Column="1" Background="{x:Null}" Foreground="#df000000" VerticalAlignment="Center"  FontSize="14" TextAlignment="Left"   HorizontalAlignment="Left"    Margin="0,0,0,0" FontWeight="DemiBold"  Width="150"/>
-        <local:BarGauge x:Name="creditsTB" Width="120" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <local:QuestGauge x:Name="questTB" Grid.Column="3" Width="120"  HorizontalAlignment="Center"/>
+        <local:BarGauge x:Name="creditsTB"  Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <local:QuestGauge x:Name="questTB" Grid.Column="3" HorizontalAlignment="Stretch"/>
         <local:BarGauge x:Name="mvTB" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="4"/>
         <local:BarGauge x:Name="gftTB" Margin="5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="5"/>
         <local:BarGauge x:Name="scTB" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="6"/>

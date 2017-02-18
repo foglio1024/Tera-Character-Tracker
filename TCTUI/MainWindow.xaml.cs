@@ -47,24 +47,28 @@ namespace Tera
             Height = TCTData.TCTProps.Height;
             Width = TCTData.TCTProps.Width;
 
-            NI = new System.Windows.Forms.NotifyIcon();
-            NI.DoubleClick += new EventHandler(notifyIcon_DoubleClick);
-            NI.Icon = Tera.Properties.Resources.tctlogo;
-            NI.Text = "Tera Character Tracker " + TCTData.TCTProps.CurrentVersion;
+            //MinWidth = main.chView.Width + main.accountsColumn.MinWidth;
+
+            //NI = new System.Windows.Forms.NotifyIcon();
+            //NI.DoubleClick += new EventHandler(notifyIcon_DoubleClick);
+            //NI.Icon = Tera.Properties.Resources.tctlogo;
+            //NI.Text = "Tera Character Tracker " + TCTData.TCTProps.CurrentVersion;
+            //UI.NotifyIcon = NI;
             UI.MainWin = this;
-            UI.NotifyIcon = NI;
         }
 
         const int LOG_CAP = 100;
         bool leftSlideIsOpen = false;
         bool isLogExpanded = false;
-        static System.Windows.Forms.NotifyIcon NI;
+        //static System.Windows.Forms.NotifyIcon NI;
         Popup dgWindow = new Popup();
         public DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(500));
         public DoubleAnimation fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(100));
         public DoubleAnimation glowIn = new DoubleAnimation(1, TimeSpan.FromMilliseconds(150));
         public DoubleAnimation glowOut = new DoubleAnimation( .3, TimeSpan.FromMilliseconds(150));
         public DoubleAnimation expand = new DoubleAnimation(40, TimeSpan.FromMilliseconds(100));
+
+        double accountsInitialWidth = 715;
 
         //public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
         public static List<ExtendedCharacterStrip> ExtendedCharacterStrips { get; set; } = new List<ExtendedCharacterStrip>();
@@ -330,6 +334,7 @@ namespace Tera
             this.StatusBar.Background =          new SolidColorBrush(TCTData.Colors.SolidBaseColor);
             Log.BorderThickness = new Thickness(0);
             UI.CharView.guildGrid.Background =   new SolidColorBrush(TCTData.Colors.SolidBaseColor);
+            this.MinWidth = main.accountsColumn.MinWidth + main.chView.Width;
 
             this.Activate();
 
@@ -542,11 +547,12 @@ namespace Tera
             TeraLogic.SaveCharacters(false);
             TeraLogic.SaveAccounts(false);
             TeraLogic.SaveGuildsDB(false);
-            
+
             TCTData.TCTProps.Top = this.Top;
             TCTData.TCTProps.Left = this.Left;
-            TCTData.TCTProps.Height = this.Height;
-            TCTData.TCTProps.Width = this.Width;
+            TCTData.TCTProps.Height = this.ActualHeight;
+            TCTData.TCTProps.Width = this.ActualWidth;
+            TeraLogic.SaveSettings(false);
 
             
         }
@@ -682,15 +688,64 @@ namespace Tera
         }
         private void TeraMainWin_StateChanged(object sender, EventArgs e)
         {
-            if (this.WindowState == WindowState.Minimized)
+            //if (this.WindowState == WindowState.Minimized)
+            //{
+            //    this.ShowInTaskbar = false;
+            //    //NI.Visible = true;
+            //}
+            //else if (this.WindowState == WindowState.Normal)
+            //{
+            //    //NI.Visible = false;
+            //    this.ShowInTaskbar = true;
+            //}
+        }
+
+        private void chViewButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var an = new DoubleAnimationUsingKeyFrames();
+
+            main.ToggleDetails();
+            if (main.DetailsExtended)
             {
-                this.ShowInTaskbar = false;
-                NI.Visible = true;
+                MinWidth = main.accountsColumn.MinWidth + main.chView.Width;
+                var r = new RotateTransform(90);
+                chViewButton.RenderTransform = r;
+                if (isMinSize)
+                {
+                    Width = MinWidth;
+                }
+                else
+                {
+                    Width = accountsInitialWidth + main.chView.Width;
+                }
             }
-            else if (this.WindowState == WindowState.Normal)
+            else
             {
-                NI.Visible = false;
-                this.ShowInTaskbar = true;
+                var r = new RotateTransform(-90);
+                chViewButton.RenderTransform = r;
+
+                MinWidth = accountsInitialWidth + 20;
+                if (isMinSize)
+                {
+                    Width = MinWidth;
+                }
+                else
+                {
+                    Width = MinWidth;
+                }
+            }
+
+        }
+        bool isMinSize = false;
+        private void TeraMainWin_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if(Width == MinWidth)
+            {
+                isMinSize = true;
+            }
+            else
+            {
+                isMinSize = false;
             }
         }
     }

@@ -79,7 +79,7 @@ namespace TCTData.Enums
         NotFound = 9999
     }
 
-    public enum CcbNotificationMode
+    public enum NotificationMode
     {
         TeleportOnly = 0,
         EverySection = 1

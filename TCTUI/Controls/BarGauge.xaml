@@ -17,7 +17,7 @@
 
             <TextBlock x:Name="txt" HorizontalAlignment="Stretch"  TextAlignment="Center" Foreground="#95000000" Margin="0,0,0,1" Width="Auto" Grid.Row="0" FontWeight="DemiBold" FontSize="11">value</TextBlock>
             <Grid HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1">
-                <Rectangle x:Name="base" Height="4" Width="100" Fill="#12000000" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+                <Rectangle x:Name="base" Height="4" Width="80" Fill="#12000000" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
                 <Rectangle x:Name="val"  Height="4" Width="10"  Fill="Black"     VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
 
             </Grid>

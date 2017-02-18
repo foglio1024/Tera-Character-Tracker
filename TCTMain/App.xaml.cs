@@ -168,7 +168,7 @@ namespace TCTMain
                     UpdateManager.NotifyUpdateFail();
                     w.ShowDialog();
 
-                    Tera.TeraLogic.SaveSettings(false);
+                    //Tera.TeraLogic.SaveSettings(false);
                     Environment.Exit(0);
 
 

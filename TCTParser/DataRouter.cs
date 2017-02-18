@@ -376,23 +376,24 @@ namespace TCTParser
             if (CurrentChar.LocationId != sectionProcessor.GetLocationId(p))
             {
                 CurrentChar.LocationId = sectionProcessor.GetLocationId(p);
-                if (TCTData.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
+                if (TCTData.TCTProps.CcbNM == NotificationMode.TeleportOnly)
                 {
 
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
+                    guildQuestListProcessor.CheckQuestStatus(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 }
                                                                                             
                 UI.UpdateLog(CurrentChar.Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
 
 
 
-                guildQuestListProcessor.CheckQuestStatus(CurrentChar.LocationId);
 
             }
 
-            if (TCTData.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.CcbNM == NotificationMode.EverySection)
             {
                 crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
+                guildQuestListProcessor.CheckQuestStatus(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
 
             }
 

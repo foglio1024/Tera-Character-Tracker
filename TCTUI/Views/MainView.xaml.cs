@@ -28,5 +28,37 @@ namespace Tera
             UI.CharView = this.chView;
             UI.CharListContainer = this.accounts;
         }
+        bool detailsExtended = true;
+        public bool DetailsExtended
+        {
+            get
+            {
+                return detailsExtended;
+            }
+            set
+            {
+                detailsExtended = value;
+                if (value)
+                {
+                    chViewDetails.Width = GridLength.Auto;
+                }
+                else
+                {
+                    chViewDetails.Width = new GridLength(0);
+                }
+            }
+        }
+
+        public void ToggleDetails()
+        {
+            if (detailsExtended)
+            {
+                DetailsExtended = false;
+            }
+            else
+            {
+                DetailsExtended = true;
+            }
+        }
     }
 }

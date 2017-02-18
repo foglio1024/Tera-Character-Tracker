@@ -28,8 +28,8 @@ namespace TCTParser.Processors
 
         public void Parse(Message m)
         {
-            GuildQuests = new GuildQuestList(new TeraMessageReader(m,DataRouter.OpCodeNamer, DataRouter.Version, DataRouter.SystemOpCodeNamer));
-            if(GuildQuests.DailiesDone < GuildQuests.DailiesMax)
+            GuildQuests = new GuildQuestList(new TeraMessageReader(m, DataRouter.OpCodeNamer, DataRouter.Version, DataRouter.SystemOpCodeNamer));
+            if (GuildQuests.DailiesDone < GuildQuests.DailiesMax)
             {
                 UpdateUI();
             }
@@ -103,31 +103,37 @@ namespace TCTParser.Processors
                 {
                     var c = new ZoneToRegionID();
 
-                    try
+                    UI.MainWin.Dispatcher.Invoke(() =>
                     {
-                        UI.MainWin.Dispatcher.Invoke(() =>
-                {
-                    string dgShortName = TeraLogic.DungList.Find(d => d.Id == q.RegionID).ShortName;        //get dungeon short name
 
-                        foreach (var counter in TeraMainWindow.DungeonCounters)      //search for right counter 
+                        try
                         {
-                        if (counter.Name == dgShortName)
-                        {
-                            counter.SetGquestStatus(q.QuestStatus);     //update counter status
+                            string dgShortName = TeraLogic.DungList.Find(d => d.Id == q.RegionID).ShortName;        //get dungeon short name
+
+                            foreach (var counter in TeraMainWindow.DungeonCounters)      //search for right counter 
+                            {
+                                if (counter.Name == dgShortName)
+                                {
+                                    counter.SetGquestStatus(q.QuestStatus);     //update counter status
+                                    break;
+                                }
                             }
-                    }
-                });
 
-                    }
-                    catch (Exception)
-                    {
+                        }
+                        catch (Exception)
+                        {
+                            //UI.UpdateLog("Error while updating guild quests. ");
+                        }
 
-                        UI.UpdateLog("Error while updating guild quests.");
-                    }
+                    });
+
                 }
-            }
 
         }
+    }
+
+    
+
 
         //void UpdateUI()
         //{
@@ -178,49 +184,44 @@ namespace TCTParser.Processors
             UpdateUI();
         }
 
-        public void CheckQuestStatus(uint locationId)
+        public void CheckQuestStatus(uint locationId, uint locNameId)
         {
-            int realId = 0;
-            try
+            if (GuildQuests.DailiesDone < GuildQuests.DailiesMax)
             {
-                realId = Convert.ToInt32(TCTDatabase.NewWorldMapData.Descendants().Where(x => x.Name == "Section").Where(x => Convert.ToInt32(x.Attribute("id").Value) == locationId).FirstOrDefault().Attribute("nameId").Value);
-            }
-            catch (Exception)
-            {            
-            }
-            bool found = false;
-            foreach (var quest in GuildQuests.Quests)
-            {
-                if (quest.QuestSize == GuildQuests.GuildSize)
+                bool found = false;
+                foreach (var quest in GuildQuests.Quests)
                 {
-                    if (quest.RegionID == realId)
+                    if (quest.QuestSize == GuildQuests.GuildSize)
                     {
-                        found = true;
-                        if (quest.QuestStatus == GuildQuestStatus.Available)
+                        if (quest.RegionID == locationId)
                         {
-                            UI.UpdateLog("You have available guild quests for this dungeon.");
-                            UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
+                            found = true;
+                            if (quest.QuestStatus == GuildQuestStatus.Available)
+                            {
+                                UI.UpdateLog("You have available guild quests for this dungeon.");
+                                UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
+                            }
+                            break;
                         }
-                        break;
+                        else if (quest.RegionID == locNameId)
+                        {
+                            found = true;
+                            if (quest.QuestStatus == GuildQuestStatus.Available)
+                            {
+                                UI.UpdateLog("You have available guild quests for this dungeon.");
+                                UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
+                            }
+                            break;
+                        }
                     }
-
                 }
-            }
-            if (!found)
-            {
-                //DO NOTHING
+                if (!found)
+                {
+                    //DO NOTHING
+                }
             }
         }
 
-        //int MaxQuests(string p)
-        //{
-        //    return StringUtils.Hex2BStringToInt(p.Substring(GUILD_QUESTS_MAX_OFFSET, 4));
-        //}
-
-        //int CompletedQuests(string p)
-        //{
-        //    return StringUtils.Hex2BStringToInt(p.Substring(GUILD_QUESTS_COMPLETED_OFFSET, 4));
-        //}
 
         class GuildQuestList : ParsedMessage
         {

@@ -68,13 +68,13 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="65"/>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="120"/>
                 
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
                 
                 <ColumnDefinition Width="30"/>
 
@@ -86,14 +86,14 @@
                 </Border.CacheMode>
             </Border>
 
-            <TextBlock Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">Class</TextBlock>
-            <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">Name</TextBlock>
-            <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">Credits</TextBlock>
-            <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">Weeklies / Dailies</TextBlock>
-            <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">Marks of Valor</TextBlock>
-            <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">Goldfinger Tokens</TextBlock>
-            <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">Dragonwing Scales</TextBlock>
-            <TextBlock Grid.Column="7" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="13" Height="17" Margin="0,0,0,0">CCB</TextBlock>
+            <TextBlock Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="0,0,0,0" ToolTip="Character's class">Class</TextBlock>
+            <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="0,0,0,0" ToolTip="Character's name">Name</TextBlock>
+            <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="20,0,0,0" ToolTip="Vanguard credots">Credits</TextBlock>
+            <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="0,0,0,0" ToolTip="Vanguard quests (completed weeklies - dailies left)">Quests</TextBlock>
+            <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="0,0,0,0" ToolTip="Elleon's Marks of Valor amount">Elleon's Marks</TextBlock>
+            <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="0,0,0,0" ToolTip="Goldfinger tokens amount">Goldfinger</TextBlock>
+            <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="0,0,0,0" ToolTip="Dragonwing Scales amount">Dragonwing</TextBlock>
+            <TextBlock Grid.Column="7" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" Background="Transparent" FontSize="12" Height="17" Margin="0,0,0,0" ToolTip="Complete crystalbind indicator">CCB</TextBlock>
 
             <!--<ScrollViewer x:Name="charScroller" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="10" Focusable="False" >
             <StackPanel x:Name="tableGridContent"   VerticalAlignment="Stretch"  AllowDrop="True"  Drop="rejectDrop"  Margin="0,0,0,0" ScrollViewer.CanContentScroll="True">
