@@ -198,8 +198,8 @@ namespace TCTParser.Processors
                             found = true;
                             if (quest.QuestStatus == GuildQuestStatus.Available)
                             {
-                                UI.UpdateLog("You have available guild quests for this dungeon.");
-                                UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
+                                UI.UpdateLog("You have guild quests available for this dungeon.");
+                                UI.SendNotification("You have guild quests available for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
                             }
                             break;
                         }
@@ -208,8 +208,8 @@ namespace TCTParser.Processors
                             found = true;
                             if (quest.QuestStatus == GuildQuestStatus.Available)
                             {
-                                UI.UpdateLog("You have available guild quests for this dungeon.");
-                                UI.SendNotification("You have available guild quests for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
+                                UI.UpdateLog("You have guild quests available for this dungeon.");
+                                UI.SendNotification("You have guild quests available for this dungeon.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
                             }
                             break;
                         }

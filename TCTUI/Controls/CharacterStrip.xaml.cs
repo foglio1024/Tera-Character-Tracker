@@ -317,22 +317,22 @@ namespace Tera
             TeraLogic.IsSaved = false;
 
         }
-        public void setDirty(object sender, MouseButtonEventArgs e)
-        {
-            if (!TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty)
-            {
-                TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = true;
-                TeraLogic.IsSaved = false;
-               // dirtyLed.Fill = new SolidColorBrush(new Color { A = 255, R = 200, B = 0, G = 50 });
-            }
-            else
-            {
-                TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = false;
-                TeraLogic.IsSaved = false;
-                //  dirtyLed.Fill = new SolidColorBrush(new Color { A = 0, R = 200, B = 0, G = 50 });
+        //public void setDirty(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (!TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty)
+        //    {
+        //        TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = true;
+        //        TeraLogic.IsSaved = false;
+        //       // dirtyLed.Fill = new SolidColorBrush(new Color { A = 255, R = 200, B = 0, G = 50 });
+        //    }
+        //    else
+        //    {
+        //        TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = false;
+        //        TeraLogic.IsSaved = false;
+        //        //  dirtyLed.Fill = new SolidColorBrush(new Color { A = 0, R = 200, B = 0, G = 50 });
 
-            }
-        }
+        //    }
+        //}
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetCursorPos(ref Win32Point pt);

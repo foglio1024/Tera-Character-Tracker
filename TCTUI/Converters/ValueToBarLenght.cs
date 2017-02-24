@@ -12,7 +12,17 @@ namespace Tera.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (int)value * (parameter as double[])[0] / (parameter as double[])[1];
+            int val = (int)value;
+            double baseLenght = (parameter as double[])[0];
+            double max = (parameter as double[])[1];
+            if(val > max)
+            {
+                return baseLenght;
+            }
+            else
+            {
+                return val * baseLenght / max;
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

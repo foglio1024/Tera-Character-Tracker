@@ -27,6 +27,20 @@ namespace Tera
 
             UI.CharView = this.chView;
             UI.CharListContainer = this.accounts;
+
+            switch (TCTData.TCTProps.Theme)
+            {
+                case TCTData.Enums.Theme.Light:
+                    accGrid.Background = new SolidColorBrush(TCTData.Colors.LightTheme_Card);
+                    accGrid.Effect = TCTData.Shadows.LightThemeShadow;
+                    break;
+                case TCTData.Enums.Theme.Dark:
+                    accGrid.Background = new SolidColorBrush(TCTData.Colors.DarkTheme_Card);
+                    accGrid.Effect = TCTData.Shadows.DarkThemeShadow;
+                    break;
+                default:
+                    break;
+            }
         }
         bool detailsExtended = true;
         public bool DetailsExtended

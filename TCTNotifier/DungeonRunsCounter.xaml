@@ -15,7 +15,7 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Ellipse x:Name="ell" Opacity="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#20000000" Width="22" Height="22"/>
-        <TextBlock x:Name="t" FontSize="15" Text="0" FontWeight="DemiBold" TextAlignment="Center" VerticalAlignment="Center" Foreground="#fffafafa" Opacity="1" Margin="0,0" Height="22" />
+        <TextBlock x:Name="t" FontSize="15" Text="0" FontWeight="DemiBold" TextAlignment="Center" VerticalAlignment="Center" Foreground="#caffffff" Opacity="1" Margin="0,0" Height="22" />
         <TextBlock x:Name="n" FontSize="12" Text="DGN" FontWeight="DemiBold"  TextAlignment="Center" VerticalAlignment="Stretch" Foreground="LightGray" Opacity="1" Grid.Row="1"/>
     </Grid>
 </UserControl>

@@ -6,14 +6,22 @@
              xmlns:local="clr-namespace:Tera"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="TB1" TargetType="TextBlock" />
+        <Style x:Key="TB2" TargetType="TextBlock" />
+        <Style x:Key="TB3" TargetType="TextBlock" />
+        <Style x:Key="TBo1" TargetType="TextBlock" />
+        <Style x:Key="TBo2" TargetType="TextBlock" />
+        <Style x:Key="TBo3" TargetType="TextBlock" />
+    </UserControl.Resources>
     <Grid Width="30" Height="50">
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Rectangle Name="bgRect" Grid.Row="0" Fill="#20000000" Margin="3,7" Opacity="1"/>
-        <TextBlock Name="clearsText" Foreground="White" TextAlignment="Center" FontWeight="DemiBold" FontSize="13" Text="0" VerticalAlignment="Center" Padding="0" Margin="0,0,0,1"/>
-        <TextBlock Name="dungeonName" Grid.Row="1" Text="---" TextAlignment="Center" Foreground="#91000000"/>
+        <TextBlock Name="clearsText" Style="{DynamicResource TBo1}" TextAlignment="Center" FontWeight="SemiBold" FontSize="13" Text="0" VerticalAlignment="Center" Padding="0" Margin="0,0,0,1"/>
+        <TextBlock Name="dungeonName" Grid.Row="1" Text="---" TextAlignment="Center" Style="{DynamicResource TB2}"/>
 
     </Grid>
 </UserControl>

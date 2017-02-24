@@ -25,6 +25,35 @@ namespace Tera.Controls
         public ExtendedCharacterStrip()
         {
             InitializeComponent();
+            var d = new Style { TargetType = typeof(Border) };
+            var s1 = new Style { TargetType = typeof(TextBlock) };
+            var s2 = new Style { TargetType = typeof(TextBlock) };
+            var s3 = new Style { TargetType = typeof(TextBlock) };
+            var i = new Style { TargetType = typeof(Rectangle) };
+            switch (TCTData.TCTProps.Theme)
+            {
+                case TCTData.Enums.Theme.Light:
+                    s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground1)));
+                    s2.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground2)));
+                    s3.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground3)));
+                    d.Setters.Add(new Setter(BorderBrushProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Dividers)));
+                    i.Setters.Add(new Setter(Shape.FillProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground3)));
+                    break;
+                case TCTData.Enums.Theme.Dark:
+                    s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground1)));
+                    s2.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground2)));
+                    s3.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground3)));
+                    d.Setters.Add(new Setter(BorderBrushProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Dividers)));
+                    i.Setters.Add(new Setter(Shape.FillProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground3)));
+                    break;
+                default:
+                    break;
+            }
+            Resources["stripTB1"] = s1;
+            Resources["stripTB2"] = s2;
+            Resources["stripTB3"] = s3;
+            Resources["divider"] = d;
+            Resources["classImg"] = i;
         }
 
         DoubleAnimationUsingKeyFrames sizeInH = new DoubleAnimationUsingKeyFrames();

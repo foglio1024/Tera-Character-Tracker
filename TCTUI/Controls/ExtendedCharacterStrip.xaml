@@ -13,26 +13,11 @@
              Width="Auto"
              >
     <UserControl.Resources>
-        <Style x:Key="gaugeStackPanel" TargetType="StackPanel">
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="Orientation" Value="Horizontal"/>
-            <Setter Property="Margin" Value="5,0,5,0"/>
-        </Style>
-        <Style x:Key="gaugeTextBlocks" TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="Margin" Value="5,0,0,0"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#91000000"/>
-            <Setter Property="TextAlignment" Value="Left"/>
-        </Style>
-        <Style x:Key="gaugeIcon" TargetType="Ellipse">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="Margin" Value="5,0,5,0"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Width" Value="25"/>
-            <Setter Property="Height" Value="25"/>
-        </Style>
-
+        <Style x:Key="stripTB1" TargetType="TextBlock" />
+        <Style x:Key="stripTB2" TargetType="TextBlock" />
+        <Style x:Key="stripTB3" TargetType="TextBlock" />
+        <Style x:Key="divider" TargetType="Border"/>
+        <Style x:Key="classImg" TargetType="Rectangle"/>
     </UserControl.Resources>
     <Grid Height="40"  Background="Transparent">
 
@@ -51,7 +36,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.ColumnSpan="70" Grid.RowSpan="2" BorderThickness="0,0,0,1" BorderBrush="Black" Opacity=".07"/>
+        <Border Grid.ColumnSpan="70" Grid.RowSpan="2" BorderThickness="0,0,0,1" Style="{DynamicResource divider}"/>
         <Rectangle Grid.ColumnSpan="70" Grid.RowSpan="2" Fill="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Name="select"/>
         <Grid Grid.Column="0" Width="Auto">
             <Grid.ColumnDefinitions>
@@ -59,18 +44,22 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Image Name="classImage" Opacity=".57" Height="26" Width="26" Grid.Column="1" Margin="3,0"/>
-            <Rectangle ToolTip="Laurel" Width="4" Height="Auto"  x:Name="laurelRect" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF607D8B" Grid.Column="0" Margin="0,0,0,0" Opacity="0.8" />
+            <Rectangle Name="classImage" Opacity="1" Style="{DynamicResource classImg}" Height="26" Width="26" Grid.Column="1" Margin="3,0">
+                <Rectangle.OpacityMask>
+                    <ImageBrush/>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+            <Rectangle ToolTip="Laurel" Width="4" Height="Auto"  x:Name="laurelRect" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF607D8B" Grid.Column="0" Margin="0,0,0,0" Opacity="1" />
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="lvlTB" ToolTip="Level" HorizontalAlignment="Stretch" FontWeight="DemiBold" VerticalAlignment="Bottom" Width="20" Margin="0,0,0,0" FontSize="11" TextAlignment="Center" Foreground="#a5000000" Grid.Row="0">--</TextBlock>
-                <TextBlock x:Name="ilvlTB" ToolTip="Item level"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="20" Margin="0,0,0,0" TextAlignment="Center" Foreground="#91000000" Grid.Row="1" FontSize="10">--</TextBlock>
+                <TextBlock x:Name="lvlTB" Style="{DynamicResource stripTB2}" ToolTip="Level" HorizontalAlignment="Stretch" FontWeight="DemiBold" VerticalAlignment="Bottom" Width="20" Margin="0,0,0,0" FontSize="11" TextAlignment="Center" Grid.Row="0">--</TextBlock>
+                <TextBlock x:Name="ilvlTB"  Style="{DynamicResource stripTB3}" ToolTip="Item level"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="20" Margin="0,0,0,0" TextAlignment="Center" Grid.Row="1" FontSize="10">--</TextBlock>
             </Grid>
         </Grid>
-        <TextBlock Name="nameTB"    AllowDrop="False" Grid.Column="1" Background="{x:Null}" Foreground="#df000000" VerticalAlignment="Center"  FontSize="14" TextAlignment="Left"   HorizontalAlignment="Left"    Margin="0,0,0,0" FontWeight="DemiBold"  Width="150"/>
+        <TextBlock Name="nameTB" Style="{DynamicResource stripTB1}"   AllowDrop="False" Grid.Column="1" VerticalAlignment="Center"  FontSize="14" TextAlignment="Left"   HorizontalAlignment="Left"    Margin="0,0,0,0" FontWeight="DemiBold"  Width="120"/>
         <local:BarGauge x:Name="creditsTB"  Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <local:QuestGauge x:Name="questTB" Grid.Column="3" HorizontalAlignment="Stretch"/>
         <local:BarGauge x:Name="mvTB" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="4"/>

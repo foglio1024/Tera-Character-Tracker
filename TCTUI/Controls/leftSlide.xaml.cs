@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TCTData.Enums;
+using TCTData;
 
 namespace Tera
 {
@@ -57,7 +58,47 @@ namespace Tera
                 CrystalbindNotificationType_Text.Text = "Notification mode: teleport only";
             }
 
+            if(TCTProps.Theme == Theme.Dark)
+            {
+                DarkTheme_Switch.TurnOn();
+            }
+            else
+            {
+                DarkTheme_Switch.TurnOff();
+            }
+
             /*new setting here*/
+
+            var d = new Style { TargetType = typeof(Border) };
+            var s1 = new Style { TargetType = typeof(TextBlock) };
+            var s2 = new Style { TargetType = typeof(TextBlock) };
+            var s3 = new Style { TargetType = typeof(TextBlock) };
+
+            switch (TCTData.TCTProps.Theme)
+            {
+                case Theme.Light:
+                    root.Background = new SolidColorBrush(TCTData.Colors.LightTheme_Card);
+                    s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground1)));
+                    s2.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground2)));
+                    s3.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground3)));
+                    d.Setters.Add(new Setter(BorderBrushProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Dividers)));
+
+                    break;
+                case Theme.Dark:
+                    root.Background = new SolidColorBrush(TCTData.Colors.DarkTheme_Card);
+                    s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground1)));
+                    s2.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground2)));
+                    s3.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground3)));
+                    d.Setters.Add(new Setter(BorderBrushProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Dividers)));
+
+                    break;
+                default:
+                    break;
+            }
+            this.Resources["TB1"] = s1;
+            this.Resources["TB2"] = s2;
+            this.Resources["TB3"] = s3;
+            Resources["divider"] = d;
         }
 
         public void rowHighlight(object sender, MouseEventArgs e)
@@ -264,5 +305,19 @@ namespace Tera
         [DllImport("kernel32.dll")]
         public static extern bool FreeConsole();
 
+        private void ToggleDarkTheme(object sender, MouseButtonEventArgs e)
+        {
+            if(TCTData.TCTProps.Theme == Theme.Dark)
+            {
+                TCTData.TCTProps.Theme = Theme.Light;
+            }
+            else
+            {
+                TCTData.TCTProps.Theme = Theme.Dark;
+            }
+
+            TCTNotifier.NotificationProvider.SendNotification("New theme will be applied after restart.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.DarkTheme_Foreground2, true, false, false);
+
+        }
     }
 }

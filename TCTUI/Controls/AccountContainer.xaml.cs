@@ -28,7 +28,32 @@ namespace Tera
         public AccountContainer()
         {
             InitializeComponent();
+            var s = new Style { TargetType = typeof(TextBlock) };
+            s.Setters.Add(new Setter(VerticalAlignmentProperty, VerticalAlignment.Center));
+            s.Setters.Add(new Setter(HorizontalAlignmentProperty, HorizontalAlignment.Center));
+            s.Setters.Add(new Setter(TextBlock.TextAlignmentProperty, TextAlignment.Center));
+            s.Setters.Add(new Setter(TextBlock.FontSizeProperty, 12.0));
+            s.Setters.Add(new Setter(TextBlock.HeightProperty, 17.0));
 
+            var d = new Style { TargetType = typeof(Border) };
+            switch (TCTData.TCTProps.Theme)
+            {
+                case TCTData.Enums.Theme.Light:
+                    s.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground2)));
+                    d.Setters.Add(new Setter(BorderBrushProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Dividers)));
+
+                    break;
+                case TCTData.Enums.Theme.Dark:
+                    s.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground2)));
+                    d.Setters.Add(new Setter(BorderBrushProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Dividers)));
+
+                    break;
+                default:
+                    break;
+            }
+
+            headerGrid.Resources["headerTB"] = s;
+            headerGrid.Resources["divider"] = d;
         }
 
         DoubleAnimation fadeIn = new DoubleAnimation(.5, TimeSpan.FromMilliseconds(150));

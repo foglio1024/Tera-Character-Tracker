@@ -6,24 +6,30 @@
              xmlns:local="clr-namespace:Tera"
              mc:Ignorable="d" 
              d:DesignHeight="870" d:DesignWidth="400">
-    <Grid Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <UserControl.Resources>
+        <Style x:Key="TB1" TargetType="TextBlock" />
+        <Style x:Key="TB2" TargetType="TextBlock" />
+        <Style x:Key="TB3" TargetType="TextBlock" />
+        <Style x:Key="divider" TargetType="Border"/>
 
-        <!--Style="{StaticResource MaterialGrid}"-->
+    </UserControl.Resources>
+    <Grid Name="root" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
 
         <Grid.Effect>
             <DropShadowEffect Opacity="0.2" BlurRadius="15"/>
         </Grid.Effect>
         <StackPanel x:Name="mainSP">
-            <Grid Height="30" Background="#0c000000">
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" FontSize="16" FontWeight="DemiBold" Foreground="#91000000">Settings</TextBlock>
+            <Grid Height="35" Background="#15000000">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" FontSize="16" FontWeight="DemiBold" Style="{DynamicResource TB2}">Settings</TextBlock>
             </Grid>
             <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Border BorderBrush="#15000000" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
-                <TextBlock x:Name="Notifications_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Notifications</TextBlock>
+                <Border Style="{DynamicResource divider}" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
+                <TextBlock x:Name="Notifications_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Style="{DynamicResource TB1}" FontSize="15">Notifications</TextBlock>
                 <local:MaterialSwitch x:Name="Notifications_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetNotificationsOnOff" Margin="0,0,20,0"></local:MaterialSwitch>
             </Grid>
             <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
@@ -31,8 +37,8 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Border BorderBrush="#15000000" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
-                <TextBlock x:Name="NotificationSound_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Notification sounds</TextBlock>
+                <Border Style="{DynamicResource divider}" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
+                <TextBlock x:Name="NotificationSound_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Style="{DynamicResource TB1}" FontSize="15">Notification sounds</TextBlock>
                 <local:MaterialSwitch x:Name="NotificationSound_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetNotificationSoundOnOff" Margin="0,0,20,0"></local:MaterialSwitch>
 
             </Grid>
@@ -41,9 +47,19 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Border BorderBrush="#15000000" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
-                <TextBlock x:Name="CrystalbindNotificationType_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Foreground="#df000000" FontSize="15">Notification frequency</TextBlock>
+                <Border Style="{DynamicResource divider}" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
+                <TextBlock x:Name="CrystalbindNotificationType_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Style="{DynamicResource TB1}" FontSize="15">Notification frequency</TextBlock>
                 <local:MaterialSwitch x:Name="CrystalbindNotificationType_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="SetCrystalbindNotificationType" Margin="0,0,20,0"></local:MaterialSwitch>
+
+            </Grid>
+            <Grid Height="50" MouseEnter="rowHighlight" MouseLeave="rowNormal"  Background="#00000000">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Style="{DynamicResource divider}" BorderThickness="0,0,0,1" Grid.ColumnSpan="2"></Border>
+                <TextBlock x:Name="DarkTheme_Text" HorizontalAlignment="Left" Margin="20,0" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Style="{DynamicResource TB1}" FontSize="15">Dark theme</TextBlock>
+                <local:MaterialSwitch x:Name="DarkTheme_Switch" HorizontalAlignment="Right" Grid.Column="1" MouseLeftButtonDown="ToggleDarkTheme" Margin="0,0,20,0"></local:MaterialSwitch>
 
             </Grid>
 

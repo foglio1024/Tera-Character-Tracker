@@ -18,7 +18,7 @@
         </Rectangle>
         <Ellipse x:Name="switchHead" Fill="#FFFFffff" HorizontalAlignment="Center" Width="20" Height="20" Margin="-20,0,0,0">
             <Ellipse.Effect>
-                <DropShadowEffect ShadowDepth="1" Color="#FFAEAEAE" BlurRadius="4"/>
+                <DropShadowEffect ShadowDepth="2" Opacity=".4" BlurRadius="6"/>
             </Ellipse.Effect>
         </Ellipse>
     </Grid>

@@ -104,6 +104,7 @@
     <Compile Include="Controls\ExtendedCharacterStrip.xaml.cs">
       <DependentUpon>ExtendedCharacterStrip.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\ClassToBrush.cs" />
     <Compile Include="Converters\Dungeon_ClearsToColor.cs" />
     <Compile Include="Classes\TeraLogic.cs" />
     <Compile Include="Converters\TimeToAngle.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Controls\DungeonClearsCounter.xaml.cs">
       <DependentUpon>DungeonClearsCounter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\WeeklyBonusToColor.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -143,7 +145,6 @@
     <Compile Include="Controls\CharView.xaml.cs">
       <DependentUpon>CharView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\CharViewContentProvider.cs" />
     <Compile Include="Converters\ValueToBarLenght.cs" />
     <Compile Include="Converters\ClassToImage.cs" />
     <Compile Include="Converters\Dungeon_RunsToColor.cs" />

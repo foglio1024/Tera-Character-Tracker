@@ -12,11 +12,11 @@ namespace Tera
         {
             if ((int)value >= 5)
             {
-                return new SolidColorBrush(TCTData.Colors.FadedYellow);
+                return new SolidColorBrush(TCTData.Colors.SolidYellow);
             }
             else
             {
-                return new SolidColorBrush(TCTData.Colors.FadedGreen);
+                return new SolidColorBrush(TCTData.Colors.SolidGreen);
             }
         }
 

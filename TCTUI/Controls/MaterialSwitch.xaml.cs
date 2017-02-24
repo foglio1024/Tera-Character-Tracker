@@ -27,8 +27,23 @@ namespace Tera
 
             On = new ThicknessAnimationUsingKeyFrames();
             Off = new ThicknessAnimationUsingKeyFrames();
-            OnFill = new ColorAnimation(Colors.White, TCTData.Colors.SolidAccentColor, TimeSpan.FromMilliseconds(150));
-            OffFill = new ColorAnimation(TCTData.Colors.SolidAccentColor, Colors.White, TimeSpan.FromMilliseconds(150));
+            var col = new Color();
+            switch (TCTData.TCTProps.Theme)
+            {
+                case TCTData.Enums.Theme.Light:
+                    col = TCTData.Colors.LightTheme_Card;
+                    break;
+                case TCTData.Enums.Theme.Dark:
+                    col = TCTData.Colors.DarkTheme_Card;
+
+                    break;
+                default:
+                    break;
+            }
+
+
+            OnFill = new ColorAnimation(col, TCTData.Colors.SolidAccentColor, TimeSpan.FromMilliseconds(150));
+            OffFill = new ColorAnimation(TCTData.Colors.SolidAccentColor, col, TimeSpan.FromMilliseconds(150));
             OnBackFill = new ColorAnimation(TCTData.Colors.FadedGray, TCTData.Colors.FadedAccentColor, TimeSpan.FromMilliseconds(150));
             OffBackFill = new ColorAnimation(TCTData.Colors.FadedAccentColor, TCTData.Colors.FadedGray, TimeSpan.FromMilliseconds(150));
             On.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(20, 0, 0, 0), TimeSpan.FromMilliseconds(220), new KeySpline(.5, 0, .3, 1)));

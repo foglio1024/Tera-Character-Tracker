@@ -26,7 +26,7 @@ namespace Tera.Converters
 
                 else if (val < th)
                 {
-                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);
                 }
                 else
                 {
@@ -48,7 +48,7 @@ namespace Tera.Converters
                 }
                 else
                 {
-                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);
                 }
             }
         }

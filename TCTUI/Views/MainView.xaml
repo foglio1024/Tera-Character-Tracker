@@ -15,9 +15,9 @@
         </Grid.ColumnDefinitions>
         <local:CharView x:Name="chView" Margin="-8,0,0,0" Grid.Column="2" HorizontalAlignment="Stretch"/>
 
-        <Grid Background="White" Margin="0,0,0,0" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Stretch">
+        <Grid Margin="0,0,0,0" x:Name="accGrid" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Stretch">
             <Grid.Effect>
-                <DropShadowEffect Opacity="0.2" ShadowDepth=".5" BlurRadius="4"/>
+                <DropShadowEffect Opacity="0.5" ShadowDepth="1" BlurRadius="8"/>
             </Grid.Effect>
 
             <!--Style="{StaticResource MaterialGrid}"-->

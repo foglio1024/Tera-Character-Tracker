@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace TCTData.Enums
 {
+    public enum Theme
+    {
+        Light,
+        Dark
+    }
+
     public enum DungeonTier
     {
         Solo,

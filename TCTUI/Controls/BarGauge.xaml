@@ -6,6 +6,11 @@
              xmlns:local="clr-namespace:Tera"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="TB1" TargetType="TextBlock" />
+        <Style x:Key="TB2" TargetType="TextBlock" />
+        <Style x:Key="TB3" TargetType="TextBlock" />
+    </UserControl.Resources>
     <Grid>
         <!--<Border BorderThickness="1" BorderBrush="Black"></Border>-->
             <Grid HorizontalAlignment="Center" Margin="0,0,0,3" VerticalAlignment="Center" >
@@ -15,7 +20,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="txt" HorizontalAlignment="Stretch"  TextAlignment="Center" Foreground="#95000000" Margin="0,0,0,1" Width="Auto" Grid.Row="0" FontWeight="DemiBold" FontSize="11">value</TextBlock>
+            <TextBlock x:Name="txt" HorizontalAlignment="Stretch"  TextAlignment="Center" Style="{DynamicResource TB2}" Margin="0,0,0,1" Width="Auto" Grid.Row="0" FontWeight="DemiBold" FontSize="11">value</TextBlock>
             <Grid HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1">
                 <Rectangle x:Name="base" Height="4" Width="80" Fill="#12000000" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
                 <Rectangle x:Name="val"  Height="4" Width="10"  Fill="Black"     VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
