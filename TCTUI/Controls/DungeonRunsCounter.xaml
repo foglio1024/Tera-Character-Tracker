@@ -9,6 +9,13 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <c:Dungeon_RunsToColor x:Key="fillConv"/>
+        <Style x:Key="TB1" TargetType="TextBlock" />
+        <Style x:Key="TB2" TargetType="TextBlock" />
+        <Style x:Key="TB3" TargetType="TextBlock" />
+        <Style x:Key="TBo1" TargetType="TextBlock" />
+        <Style x:Key="TBo2" TargetType="TextBlock" />
+        <Style x:Key="TBo3" TargetType="TextBlock" />
+        <Style x:Key="led" TargetType="Ellipse"/>
     </UserControl.Resources>
     <UserControl.CacheMode>
         <BitmapCache RenderAtScale="2"/>
@@ -18,12 +25,12 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Ellipse x:Name="ell" Opacity="100" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#20000000" Width="22" Height="22"/>
-        <Ellipse x:Name="gQuestLed" x:FieldModifier="public" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Stroke="White" Margin="17,17,0,0" ToolTip="Guild quest status." Opacity="0"/>
+        <Ellipse x:Name="ell" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#1e000000" Width="22" Height="22"/>
+        <Ellipse x:Name="gQuestLed" Style="{DynamicResource led}" StrokeThickness="1.5" x:FieldModifier="public" HorizontalAlignment="Center" VerticalAlignment="Center" Height="9" Width="9" Margin="17,16,0,0" ToolTip="Guild quest status." Opacity="0"/>
 
 
-        <TextBlock x:Name="t" FontSize="15" Text="0" FontWeight="DemiBold" TextAlignment="Center" VerticalAlignment="Center" Foreground="#fffafafa" Opacity="1" Margin="0,0" Height="22" />
+        <TextBlock x:Name="t" FontSize="15" Text="0" FontWeight="SemiBold" TextAlignment="Center" Style="{DynamicResource TBo1}" VerticalAlignment="Center" Opacity="1" Margin="0,0" Height="22" />
 
-        <TextBlock x:Name="n" FontSize="12" Text="DGN"  TextAlignment="Center" VerticalAlignment="Stretch" Foreground="Gray" Opacity="1" Grid.Row="1"/>
+        <TextBlock x:Name="n" FontSize="13" Text="DGN"  TextAlignment="Center" VerticalAlignment="Stretch" Style="{DynamicResource TB2}" SnapsToDevicePixels="False" UseLayoutRounding="False" Opacity="1" Grid.Row="1"/>
     </Grid>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace TCTParser
         public void UpdateClears(string p)
         {
             ClearList.Clear();
+            if(GetCharId(p) != DataRouter.currentCharId)
+            {
+                Console.WriteLine("Current id: {0} -- Received id:{1}", DataRouter.currentCharId, GetCharId(p));
+                return;
+            }
             ParseClearList(p);
 
             foreach (DungClear dgClear in ClearList)
@@ -25,11 +31,20 @@ namespace TCTParser
                 if(Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID) != null)
                 {
                     string dgName = Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID).ShortName; //find this dungeon name
-                    DataParser.CurrentChar.Dungeons.Find(y => y.Name == dgName).Clears = dgClear.Clears; //update clears              
+
+                    DataRouter.CurrentChar.Dungeons.Find(y => y.Name == dgName).Clears = dgClear.Clears; //update clears 
                 }
 
             }
 
+            /* DEBUG
+             * 
+            var filePath = Environment.CurrentDirectory + "/" + DataRouter.CurrentChar.Name + ".txt";
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.WriteLine(p);
+            }
+            */
         }
 
         private void ParseClearList(string p)
@@ -49,7 +64,10 @@ namespace TCTParser
                 clears: StringUtils.Hex2BStringToInt(e.Substring(COUNT_OFFSET))
             );
         }
-
+        private int GetCharId(string p)
+        {
+            return StringUtils.Hex4BStringToInt(p.Substring(16));
+        }
         private class DungClear
         {
             public int ID { get; set; }

@@ -56,48 +56,8 @@ namespace Tera
         DoubleAnimationUsingKeyFrames barExp = new DoubleAnimationUsingKeyFrames();
         DoubleAnimationUsingKeyFrames barShr = new DoubleAnimationUsingKeyFrames();
 
-        public void rowHighlight(object sender, MouseEventArgs e)
-        {
-            var s = sender as CharacterStrip;
-            var an = new ColorAnimation();
-            an.From = Color.FromArgb(0, 0, 0, 0);
-            an.To = Color.FromArgb(30, 155, 155, 155);
-            an.Duration = TimeSpan.FromMilliseconds(0);
-            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an);
-            showArrow(s, e);
-            showDel(s, e);
-        }
 
-        private void rowNormal(object sender, MouseEventArgs e)
-        {
-           // if (classSelPopup.IsOpen == false)
-           // {
-            var s = sender as CharacterStrip;
-            var an = new ColorAnimation();
-            an.From = Color.FromArgb(30, 155, 155, 155);
-            an.To = Color.FromArgb(0, 0, 0, 0);
-            an.Duration = TimeSpan.FromMilliseconds(90);
-            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an); 
-            hideArrow(s, e);
-            hideDel(s, e);
-           // }
-        }
 
-        public void rowSelect(bool state)
-        {
-            Color col;
-
-            if (state)
-            {
-                col = new Color { A = 10, R = 0, G = 0, B = 0 };
-            }
-            else
-            {
-                col = new Color { A = 0, R = 230, G = 245, B = 255 };
-            }
-
-            select.Fill = new SolidColorBrush(col);
-        }
         private void classSelShowMenu(object sender, MouseEventArgs e)
         {
 
@@ -190,7 +150,7 @@ namespace Tera
         private void showDel(object sender, MouseEventArgs e)
         {
 
-            del.BeginAnimation(OpacityProperty, fadeIn_03);
+            //del.BeginAnimation(OpacityProperty, fadeIn_03);
         }
         private void hideArrow(object sender, MouseEventArgs e)
         {
@@ -198,14 +158,7 @@ namespace Tera
         }
         private void hideDel(object sender, MouseEventArgs e)
         {
-            del.BeginAnimation(OpacityProperty, fadeOut);
-        }
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            sizeInH.KeyFrames.Add(new SplineDoubleKeyFrame(260, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
-            sizeInW.KeyFrames.Add(new SplineDoubleKeyFrame(350, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
-            sizeOut.KeyFrames.Add(new SplineDoubleKeyFrame(1, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
-
+            //del.BeginAnimation(OpacityProperty, fadeOut);
         }
         private void dragMD(object sender, MouseButtonEventArgs e)
         {
@@ -248,57 +201,57 @@ namespace Tera
             _visual.Top = w32Mouse.Y +20;
 
         }
-        private void nsDrop(object sender, DragEventArgs e)
-        {
+        //private void nsDrop(object sender, DragEventArgs e)
+        //{
 
-          //  var p = MainWindow.FindChild<overviewPage2>(Application.Current.MainWindow, "ovPage");
-         //   var q = p.FindName("CreditsGraph");
-         //   var r = q as StackPanel;
-            var xt = e.Source.GetType().ToString();
+        //  //  var p = MainWindow.FindChild<overviewPage2>(Application.Current.MainWindow, "ovPage");
+        // //   var q = p.FindName("CreditsGraph");
+        // //   var r = q as StackPanel;
+        //    var xt = e.Source.GetType().ToString();
            
-                if (e.Data.GetDataPresent("UIElement"))
-                {
-                    UIElement droptarget = e.Source as UIElement;
-                    var panel = (droptarget as CharacterStrip).Parent as StackPanel;
-                    int droptargetIndex = -1, i = 0;
-                    foreach (UIElement element in panel.Children)
-                    {
-                        if (element.Equals(droptarget))
-                        {
-                            droptargetIndex = i;
-                            break;
-                        }
-                        i++;
-                    }
-                    var sourceItem = e.Data.GetData("UIElement") as CharacterStrip;
+        //        if (e.Data.GetDataPresent("UIElement"))
+        //        {
+        //            UIElement droptarget = e.Source as UIElement;
+        //            var panel = (droptarget as CharacterStrip).Parent as StackPanel;
+        //            int droptargetIndex = -1, i = 0;
+        //            foreach (UIElement element in panel.Children)
+        //            {
+        //                if (element.Equals(droptarget))
+        //                {
+        //                    droptargetIndex = i;
+        //                    break;
+        //                }
+        //                i++;
+        //            }
+        //            var sourceItem = e.Data.GetData("UIElement") as CharacterStrip;
 
-                    if (droptargetIndex != -1)
-                    {
-                        Character temp = new Character();
-                    CharacterStrip temp2 = new CharacterStrip();
-                        var originIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(sourceItem.Tag)));
-                        temp = TeraLogic.CharList[originIndex];
-                        temp2 = TeraMainWindow.CharacterStrips[originIndex];
-                        panel.Children.Remove(sourceItem);
-                        panel.Children.Insert(droptargetIndex, sourceItem);
-                        (sourceItem.Content as Grid).BeginAnimation(HeightProperty, expand);
-                        TeraLogic.CharList.RemoveAt(originIndex);
-                        TeraLogic.CharList.Insert(droptargetIndex, temp);
-                        TeraMainWindow.CharacterStrips.RemoveAt(originIndex);
-                        TeraMainWindow.CharacterStrips.Insert(droptargetIndex, temp2);
+        //            if (droptargetIndex != -1)
+        //            {
+        //                Character temp = new Character();
+        //            CharacterStrip temp2 = new CharacterStrip();
+        //                var originIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(sourceItem.Tag)));
+        //                temp = TeraLogic.CharList[originIndex];
+        //                temp2 = TeraMainWindow.CharacterStrips[originIndex];
+        //                panel.Children.Remove(sourceItem);
+        //                panel.Children.Insert(droptargetIndex, sourceItem);
+        //                (sourceItem.Content as Grid).BeginAnimation(HeightProperty, expand);
+        //                TeraLogic.CharList.RemoveAt(originIndex);
+        //                TeraLogic.CharList.Insert(droptargetIndex, temp);
+        //                TeraMainWindow.CharacterStrips.RemoveAt(originIndex);
+        //                TeraMainWindow.CharacterStrips.Insert(droptargetIndex, temp2);
 
-                      //  var t = r.Children[originIndex];
-                     //   r.Children.RemoveAt(originIndex);
-                    //    r.Children.Insert(droptargetIndex, t);
-                    }
-                }
+        //              //  var t = r.Children[originIndex];
+        //             //   r.Children.RemoveAt(originIndex);
+        //            //    r.Children.Insert(droptargetIndex, t);
+        //            }
+        //        }
             
             
-            _isDown = false;
-                _drag = false;
-            TeraLogic.IsSaved = false;
+        //    _isDown = false;
+        //        _drag = false;
+        //    TeraLogic.IsSaved = false;
 
-        }
+        //}
         public void CreateDragDropWindow(Visual dragElement, Point xy)
         {
             _visual = new TeraMainWindow();
@@ -352,7 +305,7 @@ namespace Tera
             TeraLogic.CharList.Remove(TeraLogic.CharList.Find(x=>x.Name.Equals(this.Tag)));
 
             /*removes entry from strips array*/
-            TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => Tag.Equals(this.Tag)));
+            TeraMainWindow.ExtendedCharacterStrips.Remove(TeraMainWindow.ExtendedCharacterStrips.Find(x => Tag.Equals(this.Tag)));
 
             /*removes strip from panel after animation*/
             shrink.Completed += (a,b) => (this.Parent as StackPanel).Children.Remove(this);
@@ -364,22 +317,22 @@ namespace Tera
             TeraLogic.IsSaved = false;
 
         }
-        public void setDirty(object sender, MouseButtonEventArgs e)
-        {
-            if (!TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty)
-            {
-                TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = true;
-                TeraLogic.IsSaved = false;
-               // dirtyLed.Fill = new SolidColorBrush(new Color { A = 255, R = 200, B = 0, G = 50 });
-            }
-            else
-            {
-                TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = false;
-                TeraLogic.IsSaved = false;
-                //  dirtyLed.Fill = new SolidColorBrush(new Color { A = 0, R = 200, B = 0, G = 50 });
+        //public void setDirty(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (!TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty)
+        //    {
+        //        TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = true;
+        //        TeraLogic.IsSaved = false;
+        //       // dirtyLed.Fill = new SolidColorBrush(new Color { A = 255, R = 200, B = 0, G = 50 });
+        //    }
+        //    else
+        //    {
+        //        TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(this.Tag)))].IsDirty = false;
+        //        TeraLogic.IsSaved = false;
+        //        //  dirtyLed.Fill = new SolidColorBrush(new Color { A = 0, R = 200, B = 0, G = 50 });
 
-            }
-        }
+        //    }
+        //}
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool GetCursorPos(ref Win32Point pt);
@@ -446,10 +399,6 @@ namespace Tera
             
         }
 
-
-
-
-
         private void selectChar(object sender, MouseButtonEventArgs e)
         {
             try
@@ -496,6 +445,53 @@ namespace Tera
 
 
 
+        }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            sizeInH.KeyFrames.Add(new SplineDoubleKeyFrame(260, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
+            sizeInW.KeyFrames.Add(new SplineDoubleKeyFrame(350, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
+            sizeOut.KeyFrames.Add(new SplineDoubleKeyFrame(1, TimeSpan.FromMilliseconds(350), new KeySpline(.5, 0, .3, 1)));
+
+        }
+        private void rowNormal(object sender, MouseEventArgs e)
+        {
+           // if (classSelPopup.IsOpen == false)
+           // {
+            var s = sender as CharacterStrip;
+            var an = new ColorAnimation();
+            an.From = Color.FromArgb(30, 155, 155, 155);
+            an.To = Color.FromArgb(0, 0, 0, 0);
+            an.Duration = TimeSpan.FromMilliseconds(90);
+            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an); 
+            hideArrow(s, e);
+            hideDel(s, e);
+           // }
+        }
+        public void rowHighlight(object sender, MouseEventArgs e)
+        {
+            var s = sender as CharacterStrip;
+            var an = new ColorAnimation();
+            an.From = Color.FromArgb(0, 0, 0, 0);
+            an.To = Color.FromArgb(30, 155, 155, 155);
+            an.Duration = TimeSpan.FromMilliseconds(0);
+            s.Background.BeginAnimation(SolidColorBrush.ColorProperty, an);
+            showArrow(s, e);
+            showDel(s, e);
+        }
+        public void rowSelect(bool state)
+        {
+            Color col;
+
+            if (state)
+            {
+                col = new Color { A = 10, R = 0, G = 0, B = 0 };
+            }
+            else
+            {
+                col = new Color { A = 0, R = 230, G = 245, B = 255 };
+            }
+
+            select.Fill = new SolidColorBrush(col);
         }
 
 

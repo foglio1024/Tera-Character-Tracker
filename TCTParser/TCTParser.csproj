@@ -56,7 +56,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataParser.cs" />
+    <Compile Include="DataRouter.cs" />
     <Compile Include="Processors\CreditsUpdateProcessor.cs" />
     <Compile Include="Processors\DungeonRunsProcessor.cs" />
     <Compile Include="Processors\GuildLogoProcessor.cs" />
@@ -102,6 +102,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Shinra Meter\DamageMeter.Sniffing\DamageMeter.Sniffing.csproj">
+      <Project>{66bb1685-8ff5-4431-b77f-7f80c92a5da4}</Project>
+      <Name>DamageMeter.Sniffing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Shinra Meter\Data\Data.csproj">
       <Project>{4B6AA9BD-CEC2-4AA6-B35A-1ACB2FA7767B}</Project>
       <Name>Data</Name>

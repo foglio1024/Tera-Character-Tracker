@@ -23,6 +23,36 @@ namespace Tera
         public QuestGauge()
         {
             InitializeComponent();
+            var s = new Style { TargetType = typeof(TextBlock)};
+            s.Setters.Add(new Setter(TextBlock.TextAlignmentProperty, TextAlignment.Right ));
+            s.Setters.Add(new Setter(HorizontalAlignmentProperty, HorizontalAlignment.Stretch));
+            s.Setters.Add(new Setter(WidthProperty, Double.NaN));
+            s.Setters.Add(new Setter(FontWeightProperty, FontWeights.DemiBold));
+            s.Setters.Add(new Setter(FontSizeProperty, 11.0));
+            var s1 = new Style { TargetType = typeof(TextBlock), BasedOn = s };
+            var s2 = new Style { TargetType = typeof(TextBlock), BasedOn = s };
+            var s3 = new Style { TargetType = typeof(TextBlock), BasedOn = s };
+
+            switch (TCTData.TCTProps.Theme)
+            {
+                case TCTData.Enums.Theme.Light:
+                    s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground1)));
+                    s2.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground2)));
+                    s3.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground3)));
+                    break;
+                case TCTData.Enums.Theme.Dark:
+                    s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground1)));
+                    s2.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground2)));
+                    s3.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground3)));
+
+                    break;
+                default:
+                    break;
+            }
+            this.Resources["TB1"] = s1;
+            this.Resources["TB2"] = s2;
+            this.Resources["TB3"] = s3;
+
         }
     }
 }

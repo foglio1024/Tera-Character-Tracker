@@ -21,15 +21,17 @@ using System.Globalization;
 using TCTData.Enums;
 using TCTParser.Processors;
 using Data;
+using TCTUI;
 
 namespace TCTParser
 {
-    public static class DataParser
+    public static class DataRouter
     {
-        static S_GET_USER_GUILD_LOGO mess;
 
         internal static string currentCharName;
-        internal static string currentCharId;
+        internal static string currentCharEntityId;
+        internal static long currentCharId;
+        public static uint Version { get; set; }
 
 
         static CharListProcessor charListProcessor = new CharListProcessor();
@@ -59,6 +61,7 @@ namespace TCTParser
             }
         }
 
+
         public static void StoreMessage(Message msg)
         {
             byte[] data = new byte[msg.Data.Count];
@@ -66,11 +69,11 @@ namespace TCTParser
             data[0] = (byte)(((short)msg.Data.Count) & 255);
             data[1] = (byte)(((short)msg.Data.Count) >> 8);
 
-            ParseLastMessage(OpCodeNamer.GetName(msg.OpCode), StringUtils.ByteArrayToString(data).ToUpper());
+            ParseLastMessage(OpCodeNamer.GetName(msg.OpCode), StringUtils.ByteArrayToString(data).ToUpper(), msg);
 
         }
 
-        static void ParseLastMessage(string opCodeName, string data)
+        static void ParseLastMessage(string opCodeName, string data, Message m)
         {
             switch (opCodeName)
             {
@@ -79,6 +82,12 @@ namespace TCTParser
                     if (!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
                     {
                         TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
+                    }
+                    else
+                    {
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
                     }
                     charListProcessor.CurrentAccountId = accountLoginProcessor.id;
                     SetCharList(data);
@@ -151,13 +160,13 @@ namespace TCTParser
                     break;
 
                 case "S_ABNORMALITY_BEGIN":
-                    crystalbindProcessor.ParseNewBuff(data, currentCharId);
-                    nocteniumProcessor.ParseBegin(data, currentCharId);
+                    crystalbindProcessor.ParseNewBuff(data, currentCharEntityId);
+                    nocteniumProcessor.ParseBegin(data, currentCharEntityId);
                     break;
 
                 case "S_ABNORMALITY_END":
-                    crystalbindProcessor.ParseEndingBuff(data, currentCharId);
-                    nocteniumProcessor.ParseEnd(data, currentCharId);
+                    crystalbindProcessor.ParseEndingBuff(data, currentCharEntityId);
+                    nocteniumProcessor.ParseEnd(data, currentCharEntityId);
                     break;
 
                 case "S_CLEAR_ALL_HOLDED_ABNORMALITY":
@@ -166,10 +175,22 @@ namespace TCTParser
 
                 case "S_LOGIN_ACCOUNT_INFO":
                     accountLoginProcessor.ParseLoginInfo(data);
+
                     break;
 
                 case "S_ACCOUNT_PACKAGE_LIST":
                     accountLoginProcessor.ParsePackageInfo(data);
+                    if (!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
+                    {
+                        TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
+                    }
+                    else
+                    {
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
+                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
+                    }
+
                     break;
 
                 case "S_RETURN_TO_LOBBY":
@@ -181,7 +202,7 @@ namespace TCTParser
                     break;
 
                 case "S_GUILD_QUEST_LIST":
-                    guildQuestListProcessor.ParseGuildListPacket(data);
+                    guildQuestListProcessor.Parse(m);
                     break;
 
                 case "S_FINISH_GUILD_QUEST":
@@ -203,7 +224,7 @@ namespace TCTParser
                     break;
 
                 case "S_USER_STATUS":
-                    if(combatParser.GetUserId(data) == currentCharId)
+                    if(combatParser.GetUserId(data) == currentCharEntityId)
                     {
                         combatParser.SetUserStatus(data);
                     }
@@ -219,9 +240,14 @@ namespace TCTParser
         private static void SetCharList(string p)
         {
             var charList = charListProcessor.ParseCharacters(p);
-            for (int i = 0; i < charList.Count; i++)
+            //for (int i = 0; i < charList.Count; i++)
+            //{
+            //    UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(charList[i])));
+            //}
+
+            foreach (var c in charList)
             {
-                UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(charList[i])));
+                UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(c)));
             }
             charListProcessor.Clear();
 
@@ -230,10 +256,11 @@ namespace TCTParser
         private static void LoginChar(string p)
         {
             currentCharName = charLoginProcessor.GetName(p);
-            currentCharId = charLoginProcessor.GetId(p);
+            currentCharEntityId = charLoginProcessor.GetEntityId(p);
+            currentCharId = charLoginProcessor.GetCharId(p);
 
-            Tera.UI.UpdateLog(currentCharName + " logged in.");
-            Tera.UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
+            UI.UpdateLog(currentCharName + " logged in.");
+            UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
 
             UpdateLastOnline();
         }
@@ -276,8 +303,8 @@ namespace TCTParser
 
                 if (CurrentChar.GoldfingerTokens >= 80)
                 {
-                    Tera.UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
-                    UI.SendNotification("You have " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, System.Windows.Media.Color.FromArgb(255, 0, 255, 100), true, true, false);
+                    UI.UpdateLog("You have " + newGoldfinger + " Goldfinger Tokens.");
+                    UI.SendNotification("You have " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens. You can buy a Laundry Box.", NotificationImage.Goldfinger, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
                 }
                 else
                 {
@@ -293,8 +320,8 @@ namespace TCTParser
 
                 if (CurrentChar.DragonwingScales >= 50)
                 {
-                    Tera.UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
-                    UI.SendNotification("You have " + CurrentChar.DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Scales, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                    UI.UpdateLog("You have " + newDragonScales + " Dragonwing Scales.");
+                    UI.SendNotification("You have " + CurrentChar.DragonwingScales + " Dragonwing Scales. You can buy a Dragon Egg.", NotificationImage.Scales, NotificationType.Standard, TCTData.Colors.BrightGreen, true, true, false);
                 }
                 else
                 {
@@ -305,7 +332,7 @@ namespace TCTParser
 
             if(marks || gft || scales || forceLog)
             {
-                Tera.UI.UpdateLog(currentCharName + " > inventory data updated (" + CurrentChar.MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens, "+CurrentChar.DragonwingScales+" Dragonwing Scales).");
+                UI.UpdateLog(currentCharName + " > inventory data updated (" + CurrentChar.MarksOfValor + " Elleon's Marks of Valor, " + CurrentChar.GoldfingerTokens + " Goldfinger Tokens, "+CurrentChar.DragonwingScales+" Dragonwing Scales).");
             }
 
             UpdateLastOnline();
@@ -315,11 +342,11 @@ namespace TCTParser
         {
             if (oldVal > newVal)
             {
-                return UI.Colors.SolidRed;
+                return TCTData.Colors.BrightRed;
             }
             else
             {
-                return UI.Colors.SolidGreen;
+                return TCTData.Colors.BrightGreen;
             }
         }
         private static void SetVanguardData(string p, bool forceLog)
@@ -349,19 +376,24 @@ namespace TCTParser
             if (CurrentChar.LocationId != sectionProcessor.GetLocationId(p))
             {
                 CurrentChar.LocationId = sectionProcessor.GetLocationId(p);
-                if (TCTData.TCTProps.CcbNM == CcbNotificationMode.TeleportOnly)
+                if (TCTData.TCTProps.CcbNM == NotificationMode.TeleportOnly)
                 {
 
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
+                    guildQuestListProcessor.CheckQuestStatus(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 }
                                                                                             
-                Tera.UI.UpdateLog(CurrentChar.Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
-                guildQuestListProcessor.CheckQuestStatus(CurrentChar.LocationId);
+                UI.UpdateLog(CurrentChar.Name + " moved to " + sectionProcessor.GetLocationName(p) + ".");
+
+
+
+
             }
 
-            if (TCTData.TCTProps.CcbNM == CcbNotificationMode.EverySection)
+            if (TCTData.TCTProps.CcbNM == NotificationMode.EverySection)
             {
                 crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
+                guildQuestListProcessor.CheckQuestStatus(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
 
             }
 

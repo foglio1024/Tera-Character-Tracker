@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
+using TCTUI;
 
 namespace Tera
 {
@@ -11,11 +12,11 @@ namespace Tera
         {
             if ((int)value >= 5)
             {
-                return new SolidColorBrush(UI.Colors.FadedYellow);
+                return new SolidColorBrush(TCTData.Colors.SolidYellow);
             }
             else
             {
-                return new SolidColorBrush(UI.Colors.FadedGreen);
+                return new SolidColorBrush(TCTData.Colors.SolidGreen);
             }
         }
 

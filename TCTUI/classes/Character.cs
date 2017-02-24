@@ -29,7 +29,6 @@ namespace Tera
         int marks_of_valor;
         int goldfinger_tokens;
         int dragonwing_scales;
-        bool isDirty;
         string notes;
         string accountId;
 
@@ -305,20 +304,24 @@ namespace Tera
             }
         }
 
-        [XmlAttribute("IsDirty")]
-        public bool IsDirty
+        [XmlAttribute("WeeklyBonus")]
+        public bool WeeklyBonus
         {
-            get { return isDirty; }
-            set
+            get
             {
-                if (isDirty!=value)
+                if(Weekly + Dailies < TeraLogic.MAX_WEEKLY && DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
                 {
-                    isDirty = value;
-                    NotifyPropertyChanged("IsDirty");
+                    return false;
+                }
+                else
+                {
+                    return true;
                 }
             }
+            set { }
         }
-        //Methods
+
+
         public Character(uint _index, string _name, string _class, string _laurel, uint _lvl, uint _guildId, uint _locationId, long _lastOnline, string _accId)
         {
             name = _name;

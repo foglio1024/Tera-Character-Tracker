@@ -18,6 +18,7 @@ using System.Windows.Media;
 using Tera.Converters;
 using System.Runtime.InteropServices;
 using TCTData.Enums;
+using TCTUI;
 
 namespace Tera
 {
@@ -32,6 +33,7 @@ namespace Tera
         public const int MAX_CREDITS = 9000;
         public const int MAX_MARKS = 100;
         public const int MAX_GF_TOKENS = 80;
+        public const int MAX_DRAGONWING_SCALES = 50;
         private const int DAILY_RESET_HOUR = 5;
 
         public static bool dailyReset = false;
@@ -46,7 +48,7 @@ namespace Tera
         public static Dictionary<uint, string> GuildDictionary { get; set; }
         private static XDocument settings;
         private static DateTime LastClosed;
-        public static CharViewContentProvider cvcp = new CharViewContentProvider();
+        //public static CharViewContentProvider cvcp = new CharViewContentProvider();
 
         public static List<Delegate> UndoList { get; set; }
 
@@ -89,32 +91,29 @@ namespace Tera
                 {
                     if (DungList[j].ShortName == "AH" || DungList[j].ShortName == "EA" || DungList[j].ShortName == "GL" || DungList[j].ShortName == "CA")
                     {
-
                         CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns,0));
                     }
                     else
                     {
                         CharList.Last().Dungeons.Add(new CharDungeon(DungList[j].ShortName, DungList[j].MaxBaseRuns * tc,0));
-
                     }
                 }
 
                 // create and add strip to list
-                UI.MainWin.CreateStrip(CharList.Count - 1);
-
+                UI.MainWin.CreateExtStrip(CharList.Count - 1);
             }
-
         }
+
         public static void SelectCharacter(string name)
         {
 
-            cvcp.SelectedChar = TeraLogic.CharList.Find(x => x.Name.Equals(name));
-            var charIndex = (TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Equals(TeraLogic.cvcp.SelectedChar))));
+            UI.SelectedChar = TeraLogic.CharList.Find(x => x.Name.Equals(name));
+            var charIndex = (TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Equals(UI.SelectedChar))));
             var w = UI.CharView;
 
         // set name and class
-            w.charName.Text = TeraLogic.cvcp.SelectedChar.Name;
-            w.charClassTB.Text = TeraLogic.cvcp.SelectedChar.CharClass;
+            w.charName.Text = UI.SelectedChar.Name;
+            w.charClassTB.Text = UI.SelectedChar.CharClass;
 
         // create binding for class/laurel images
             DataBinder.BindParameterToImageSourceWithConverter(charIndex, "CharClass", w.classImg, "hd", new ClassToImage());
@@ -130,16 +129,16 @@ namespace Tera
             w.guildNameTB.SetBinding(   TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "GuildId", new Guild_IdToName(), null));
             w.locationTB.SetBinding(    TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LocationId" , new LocationIdToName(), null));
             w.lastOnlineTB.SetBinding(  TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "LastOnline", new UnixToDateTime(), null));
-            w.ilvlTB.SetBinding(        TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Ilvl"));
-            w.dragonScalesTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "DragonwingScales"));
-            w.notesTB.SetBinding(       TextBox.TextProperty,   DataBinder.GenericCharBinding(charIndex, "Notes"));
+            //w.ilvlTB.SetBinding(        TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "Ilvl"));
+            //w.dragonScalesTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(charIndex, "DragonwingScales"));
+            //w.notesTB.SetBinding(       TextBox.TextProperty,   DataBinder.GenericCharBinding(charIndex, "Notes"));
             
         // create bindings for dungeon counters
             DataBinder.CreateDgBindings(charIndex, w);
             DataBinder.CreateDgClearsBindings(charIndex, w);
 
         // highlight character row and scroll into view
-            foreach (var ns in Tera.TeraMainWindow.CharacterStrips)
+            foreach (var ns in Tera.TeraMainWindow.ExtendedCharacterStrips)
             {
                 if (ns.Tag != null)
                 {
@@ -165,15 +164,16 @@ namespace Tera
                 }
                 catch
                 {
-                    UI.MainWin.UpdateLog("Error while setting guild image. Using default image.");
+                    UI.UpdateLog("Error while setting guild image. Using default image.");
                 }
             }
             else
             {
-                UI.MainWin.UpdateLog("Guild image not found. Using default image.");
+                UI.UpdateLog("Guild image not found. Using default image.");
                 System.Drawing.Bitmap bmp = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(Environment.CurrentDirectory + "\\content/data/guild_images/" + "0" + ".bmp");
                 UI.MainWin.SetGuildImage(bmp);
             }
+
         }
         public static void ResetDailyData()
         {
@@ -200,11 +200,20 @@ namespace Tera
                         }
 
                     }
+                    else if (d.Name.Equals("HH"))
+                    { 
+                        if(DateTime.Now.DayOfWeek == DayOfWeek.Thursday)
+                        {
+                            if(DungList.Find(x => x.ShortName == d.Name) != null)
+                            {
+                                d.Runs = 0;
+                            }
+                        }
+                    }
                     else
                     {
                         if (DungList.Find(x => x.ShortName == d.Name) != null)
                         {
-
                             d.Runs = DungList.Find(x => x.ShortName == d.Name).MaxBaseRuns * tc;
                         }
                     }
@@ -290,7 +299,7 @@ namespace Tera
             {
                 ResetDailyData();
                 UI.UpdateLog("Daily data has been reset.");
-                UI.SendNotification("Daily data has been reset.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen,true, true, false);
+                UI.SendNotification("Daily data has been reset.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.SolidGreen,true, true, false);
 
                 dailyReset = false;
             }
@@ -298,7 +307,7 @@ namespace Tera
             {
                 ResetWeeklyData();
                 UI.UpdateLog("Weekly data has been reset.");
-                UI.SendNotification("Weekly data has been reset.", NotificationImage.Default, NotificationType.Standard, UI.Colors.SolidGreen, true, true, false);
+                UI.SendNotification("Weekly data has been reset.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.SolidGreen, true, true, false);
 
                 weeklyReset = false;
             }
@@ -473,8 +482,9 @@ namespace Tera
                        new XElement("Width", new XAttribute("value", "")),
                        new XElement("Height", new XAttribute("value", "")),
                        new XElement("NotificationSound", new XAttribute("value", "")),
-                       new XElement("Notifications", new XAttribute("value", ""))
-                       /*new setting here*/
+                       new XElement("Notifications", new XAttribute("value", "")),
+                       new XElement("DarkTheme", new XAttribute("value", ""))
+                    /*new setting here*/
                     )
                 );
 
@@ -487,6 +497,7 @@ namespace Tera
             settings.Descendants().Where(x => x.Name == "Height").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Height.ToString();
             settings.Descendants().Where(x => x.Name == "NotificationSound").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.NotificationSound.ToString();
             settings.Descendants().Where(x => x.Name == "Notifications").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Notifications.ToString();
+            settings.Descendants().Where(x => x.Name == "DarkTheme").FirstOrDefault().Attribute("value").Value = TCTData.TCTProps.Theme.ToString();
             /*new setting here*/
 
             settings.Save(Environment.CurrentDirectory + "\\content/data/settings.xml");
@@ -540,11 +551,11 @@ namespace Tera
 
                 if (settings.Descendants().Where(x => x.Name == "CcbFrequency").FirstOrDefault().Attribute("value").Value == "EverySection")
                 {
-                    TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
+                    TCTData.TCTProps.CcbNM = NotificationMode.EverySection;
                 }
                 else
                 {
-                    TCTData.TCTProps.CcbNM = CcbNotificationMode.TeleportOnly;
+                    TCTData.TCTProps.CcbNM = NotificationMode.TeleportOnly;
                 }
 
 
@@ -552,7 +563,6 @@ namespace Tera
                 {
                     TCTData.TCTProps.NotificationSound = true;
                 }
-
                 else
                 {
                     if (settings.Descendants().Where(x => x.Name == "NotificationSound").FirstOrDefault().Attribute("value").Value == "False")
@@ -564,11 +574,11 @@ namespace Tera
                         TCTData.TCTProps.NotificationSound = true;
                     }
                 }
+
                 if (settings.Descendants().Where(x => x.Name == "Notifications").FirstOrDefault() == null)
                 {
                     TCTData.TCTProps.Notifications = true;
                 }
-
                 else
                 {
                     if (settings.Descendants().Where(x => x.Name == "Notifications").FirstOrDefault().Attribute("value").Value == "False")
@@ -580,6 +590,20 @@ namespace Tera
                         TCTData.TCTProps.Notifications = true;
                     }
                 }
+
+                if(settings.Descendants().Where(x => x.Name == "DarkTheme").FirstOrDefault() != null)
+                {
+                    if (settings.Descendants().Where(x => x.Name == "DarkTheme").FirstOrDefault().Attribute("value").Value == "Dark")
+                {
+                    TCTData.TCTProps.Theme = Theme.Dark;
+                }
+                    else
+                {
+                    TCTData.TCTProps.Theme = Theme.Light;
+                }
+                }
+
+
                 /*new setting here*/
 
             }
@@ -590,10 +614,11 @@ namespace Tera
                 TCTData.TCTProps.Left = 20;
                 TCTData.TCTProps.Width = 1280;
                 TCTData.TCTProps.Height = 930;
-                TCTData.TCTProps.CcbNM = CcbNotificationMode.EverySection;
+                TCTData.TCTProps.CcbNM = NotificationMode.EverySection;
                 TCTData.TCTProps.Console = false;
                 TCTData.TCTProps.NotificationSound = true;
                 TCTData.TCTProps.Notifications = true;
+                TCTData.TCTProps.Theme = Theme.Light;
                 /*new setting here*/
             }
         }

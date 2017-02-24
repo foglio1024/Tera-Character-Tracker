@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using TCTUI;
 
 namespace TCTMain
 {
@@ -16,7 +17,7 @@ namespace TCTMain
     {
         static bool failedUpdate = false;
 
-        static string versionPath = "http://tct.000webhostapp.com/tct-ver.txt";
+        static string versionPath = "https://dl.dropboxusercontent.com/u/52096725/tct-ver.txt";
         static string versionNumberFileName = "tct-last-ver";
 
         internal static void CheckForUpdates()
@@ -75,7 +76,7 @@ namespace TCTMain
             {
                 using (var client = new WebClient())
                 {
-                    client.DownloadFile("http://tct.000webhostapp.com/TCTUpdater.zip", "updater.zip");
+                    client.DownloadFile("https://dl.dropboxusercontent.com/u/52096725/TCTUpdater.zip", "updater.zip");
                 }
                 if (File.Exists("TCTUpdater.exe"))
                 {
@@ -95,7 +96,7 @@ namespace TCTMain
         {
             if (failedUpdate)
             {
-                TCTNotifier.NotificationProvider.SendNotification("Failed to check for updates", TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, Tera.UI.Colors.SolidRed, true, true, false);
+                TCTNotifier.NotificationProvider.SendNotification("Failed to check for updates", TCTData.Enums.NotificationImage.Connected, TCTData.Enums.NotificationType.Standard, TCTData.Colors.SolidRed, true, true, false);
 
             }
         }

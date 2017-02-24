@@ -9,25 +9,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" Drop="rejectDrop" AllowDrop="False" VerticalAlignment="Top" Height="Auto">
     <Control.Resources>
-        <Style x:Key="MaterialGrid" TargetType="Grid">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="RenderTransform">
-                <Setter.Value>
-                    <TranslateTransform X="0" Y="0"/>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect BlurRadius="4"
-                                      Color="Black"
-                                      Opacity=".2"
-                                      x:Name="shadow"
-                                      ShadowDepth=".5"/>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -56,42 +37,50 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="divider" TargetType="Border" />
     </Control.Resources>
     <!--<StackPanel AllowDrop="False" Drop="rejectDrop" VerticalAlignment="Stretch">-->
-        <Grid x:Name="tableGrid" AllowDrop="False" Drop="rejectDrop"  Margin="0" VerticalAlignment="Stretch" HorizontalAlignment="Left" >
+    <Grid x:Name="tableGrid" AllowDrop="False" Drop="rejectDrop"  Margin="0" VerticalAlignment="Stretch" HorizontalAlignment="Left" Width="AUto" >
+
+        <Grid x:Name="headerGrid" Drop="rejectDrop" Margin="0" VerticalAlignment="Stretch">
+            <!--#region -->
+            <Grid.Resources>
+                <Style x:Key="headerTB" TargetType="TextBlock">
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"/>
+                <ColumnDefinition Width="120"/>
+                
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                
+                <ColumnDefinition Width="30"/>
+
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
+            <Border  AllowDrop="False" Style="{DynamicResource divider}" Drop="rejectDrop" Grid.Row="0" Grid.ColumnSpan="11" BorderThickness="0,0,0,1" Width="Auto">
+                <Border.CacheMode>
+                    <BitmapCache/>
+                </Border.CacheMode>
+            </Border>
+
             
-            <Grid x:Name="headerGrid" Drop="rejectDrop" Margin="0" VerticalAlignment="Stretch" >
-                <!--#region -->
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0" />
-                    <ColumnDefinition Width="65"/>
-                    <ColumnDefinition Width="150"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="500*"/>
-                    <ColumnDefinition Width="18"/>
-                    <ColumnDefinition Width="15*"/>
-
-                </Grid.ColumnDefinitions>
-                <!--#endregion-->
-                <Border  AllowDrop="False" Drop="rejectDrop" Grid.Row="0" Grid.ColumnSpan="11" BorderThickness="0,0,0,1" BorderBrush="#19000000">
-                    <Border.CacheMode>
-                        <BitmapCache/>
-                    </Border.CacheMode>
-                </Border>
-
-                <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Class</TextBlock>
-                <TextBlock Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Name</TextBlock>
-                <TextBlock Grid.Column="3" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Credits</TextBlock>
-                <TextBlock Grid.Column="4" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Weeklies - Dailies</TextBlock>
-                <TextBlock Grid.Column="5" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Marks of Valor</TextBlock>
-                <TextBlock Grid.Column="6" TextAlignment="Center" VerticalAlignment="Center" Foreground="#91000000" FontSize="13" Height="17" Margin="0,0,0,0">Goldfinger Tokens</TextBlock>
+            <TextBlock Grid.Column="0" Style="{DynamicResource headerTB}" ToolTip="Character's class">Class</TextBlock>
+            <TextBlock Grid.Column="1" Style="{DynamicResource headerTB}" ToolTip="Character's name">Name</TextBlock>
+            <TextBlock Grid.Column="2" Style="{DynamicResource headerTB}" ToolTip="Vanguard credots">Credits</TextBlock>
+            <TextBlock Grid.Column="3" Style="{DynamicResource headerTB}" ToolTip="Vanguard quests (completed weeklies - dailies left)">Quests</TextBlock>
+            <TextBlock Grid.Column="4" Style="{DynamicResource headerTB}" ToolTip="Elleon's Marks of Valor amount">Elleon's Marks</TextBlock>
+            <TextBlock Grid.Column="5" Style="{DynamicResource headerTB}" ToolTip="Goldfinger tokens amount">Goldfinger</TextBlock>
+            <TextBlock Grid.Column="6" Style="{DynamicResource headerTB}" ToolTip="Dragonwing Scales amount">Dragonwing</TextBlock>
+            <TextBlock Grid.Column="7" Style="{DynamicResource headerTB}" ToolTip="Complete crystalbind indicator">CCB</TextBlock>
 
             <!--<ScrollViewer x:Name="charScroller" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="10" Focusable="False" >
             <StackPanel x:Name="tableGridContent"   VerticalAlignment="Stretch"  AllowDrop="True"  Drop="rejectDrop"  Margin="0,0,0,0" ScrollViewer.CanContentScroll="True">
@@ -100,7 +89,7 @@
                     </StackPanel.CacheMode>
                 </StackPanel>
             </ScrollViewer>-->
-            <ListBox x:Name="chContainer" Grid.Row="1" Grid.ColumnSpan="10" HorizontalAlignment="Stretch" Background="Transparent" Foreground="{x:Null}" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Padding="-1" >
+            <ListBox x:Name="chContainer" Grid.Row="1" Grid.ColumnSpan="10" HorizontalAlignment="Stretch" Background="Transparent" Foreground="{x:Null}" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Padding="-1" Width="Auto" >
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <VirtualizingStackPanel Focusable="False" IsHitTestVisible="True" VerticalAlignment="Top" />
@@ -109,6 +98,6 @@
             </ListBox>
 
         </Grid>
-        </Grid>
+    </Grid>
     <!--</StackPanel>-->
 </UserControl>

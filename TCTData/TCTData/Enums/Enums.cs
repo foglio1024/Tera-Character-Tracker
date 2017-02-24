@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace TCTData.Enums
 {
+    public enum Theme
+    {
+        Light,
+        Dark
+    }
+
     public enum DungeonTier
     {
         Solo,
@@ -29,7 +35,8 @@ namespace TCTData.Enums
     public enum NotificationType
     {
         Standard,
-        Counter
+        Counter,
+        DungeonCounter
     }
 
     public enum Class
@@ -64,6 +71,12 @@ namespace TCTData.Enums
         Medium,
         Big
     }
+    public enum GuildQuestType
+    {
+        Boss = 0,
+        BG = 2,
+        Gathering = 4
+    }
     public enum GuildQuestStatus
     {
         Available,
@@ -72,7 +85,7 @@ namespace TCTData.Enums
         NotFound = 9999
     }
 
-    public enum CcbNotificationMode
+    public enum NotificationMode
     {
         TeleportOnly = 0,
         EverySection = 1

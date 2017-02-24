@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:Tera"
         xmlns:c="clr-namespace:Tera.Converters"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:local1="clr-namespace:Tera.Controls"
         mc:Ignorable="d"
         Title="Tera Character Tracker v1.2" 
         MaxHeight="930"
@@ -23,14 +24,12 @@
         d:DesignHeight="930" 
         d:DesignWidth="1280" 
         WindowStartupLocation="Manual" 
-        MaxWidth="1280"
-        MinWidth="739"
         WindowStyle="SingleBorderWindow" 
         Closing="Win_Closing"
         VisualEdgeMode="Aliased"
         VisualClearTypeHint="Auto"
         VisualBitmapScalingMode="NearestNeighbor"
-        ResizeMode="CanResize" MouseDown="TeraMainWin_MouseDown" StateChanged="TeraMainWin_StateChanged">
+        ResizeMode="CanResize" MouseDown="TeraMainWin_MouseDown" SizeToContent="Manual" SizeChanged="TeraMainWin_SizeChanged">
     <Window.Resources>
         <Storyboard x:Key="sb">
             <DoubleAnimation Storyboard.TargetName="Win" 
@@ -61,7 +60,7 @@
                              Duration="0:0:0.20"/>-->
         </Storyboard>
         <sys:Double x:Key="_Width">1280</sys:Double>
-        <Style x:Key="toolBarButton" TargetType="Image">
+        <!--<Style x:Key="toolBarButton" TargetType="Image">
             <Setter Property="Height" Value="20"/>
             <Setter Property="Width" Value="20"/>
             <Setter Property="Cursor" Value="Hand"/>
@@ -71,23 +70,25 @@
             <EventSetter Event="MouseEnter" Handler="BarButtonHoverIn"/>
             <EventSetter Event="MouseLeave" Handler="BarButtonHoverOut"/>
             <Setter Property="Margin" Value="3,0,0,0"/>
-        </Style>
+        </Style>-->
+        <Style x:Key="toolBarButton" TargetType="Rectangle" />
+
     </Window.Resources>
     <Window.CacheMode>
         <BitmapCache EnableClearType="True" SnapsToDevicePixels="False"/>
     </Window.CacheMode>
     <!--<Border Name="MainBorder" Width="{StaticResource _Width}" Height="900" Grid.RowSpan="5" BorderBrush="#FF506d7b" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">-->
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <Grid Name="MainGrid"  AllowDrop="True"  Margin="0"  Background="#FFf0f0f0" HorizontalAlignment="Stretch">
+        <Grid Name="MainGrid"  AllowDrop="True"  Margin="0"  HorizontalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-<!--Add views here in row 2-->
-            <local:MainView Grid.Row="2"/>
-            
+            <!--Add views here in row 2-->
+            <local:MainView Grid.Row="2" x:Name="main"/>
+
             <local:leftSlide x:Name="leftSlide1" Height="870"  RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="400" Margin="-420,0,0,30" Grid.Row="2">
             </local:leftSlide>
             <Grid Name="ToolBar" HorizontalAlignment="Stretch" Margin="0" Background="#FF607D8B" Grid.Row="1" >
@@ -96,8 +97,12 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Image Margin="5,3,0,3" Height="24" Width="24" Stretch="Uniform" Source="resources/ui_images/ic_menu_white_24dp_2x.png" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" Grid.ColumnSpan="1" MouseLeftButtonDown="LeftSlideToggle"/>
-                <TextBlock FontWeight="DemiBold" Margin="0,2,0,0" Grid.Column="1" HorizontalAlignment="Stretch" Padding="5,0,0,0" VerticalAlignment="Top" FontSize="17" Height="22">Overview</TextBlock>
+                <Rectangle x:Name="leftSlideButton" Margin="5,3,0,3" Height="24" Width="24" Stretch="Uniform" Fill="#ffaaaaaa" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" Grid.ColumnSpan="1" MouseLeftButtonDown="LeftSlideToggle">
+                    <Rectangle.OpacityMask>
+                        <ImageBrush ImageSource="resources/ui_images/ic_menu_white_24dp_2x.png"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <TextBlock x:Name="title" FontWeight="DemiBold" Margin="0,2,0,0" Grid.Column="1" HorizontalAlignment="Stretch" Padding="5,0,0,0" VerticalAlignment="Top" FontSize="17" Height="22" >Overview</TextBlock>
                 <!--<Button Margin="576,0,439,0" Grid.Column="1" Click="Button_Click_1">Test normal</Button>
                 <Button Margin="504,0,546,0" Grid.Column="1" Height="30" VerticalAlignment="Top" Click="Button_Click" >Test small</Button>-->
                 <Grid Grid.Column="3" Margin="5,0">
@@ -108,14 +113,59 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <!--<Image Name="img" Source="resources/ui_images/ic_add_white_24dp_2x.png" MouseLeftButtonDown="TestButton" Cursor="Hand" Margin="60,5" IsHitTestVisible="True" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Height="20" Width="20"/>-->
-                    <Image Name="saveButton"   Style="{StaticResource toolBarButton}"  ToolTip="Save"                Grid.Column="5" VerticalAlignment="Center" Source="resources/ui_images/ic_save_white_24dp_2x.png"       MouseLeftButtonDown="SaveButtonPressed"        />
-                    <Image Name="dgButton"     Style="{StaticResource toolBarButton}"  ToolTip="Show dungeons"       Grid.Column="4" VerticalAlignment="Center" Source="resources/ui_images/dungs.png"                       MouseLeftButtonDown="ShowDungeonOverview"       />
-                    <Image Name="del_button"   Style="{StaticResource toolBarButton}"  ToolTip="Delete character"    Grid.Column="3" VerticalAlignment="Center" Source="resources/ui_images/ic_close_white_24dp_2x.png"      MouseLeftButtonDown="deleteCharButtonClick"/>
-                    <Image Name="resetDaily"   Style="{StaticResource toolBarButton}"  ToolTip="Force daily reset"   Grid.Column="2" VerticalAlignment="Center" Source="resources/ui_images/ic_event_busy_white_24dp_2x.png" MouseLeftButtonDown="resetDailyButtonClick"/>
-                    <Image Name="resetWeekly"  Style="{StaticResource toolBarButton}"  ToolTip="Force weekly reset"  Grid.Column="1" VerticalAlignment="Center" Source="resources/ui_images/ic_event_note_white_24dp_2x.png" MouseLeftButtonDown="resetWeeklyButtonClick"/>
-                    <Image Name="undoButton"   Style="{StaticResource toolBarButton}"  ToolTip="Undo"                Grid.Column="0" VerticalAlignment="Center" Source="resources/ui_images/ic_undo_white_24dp_2x.png"       MouseLeftButtonDown="UndoButtonClick"      />
+                    <Rectangle Name="saveButton"   Style="{DynamicResource toolBarButton}"  ToolTip="Save"                Grid.Column="6" VerticalAlignment="Center"   MouseLeftButtonDown="SaveButtonPressed"        >
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="resources/ui_images/ic_save_white_24dp_2x.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
+                    <Rectangle Name="dgButton"     Style="{DynamicResource toolBarButton}"  ToolTip="Show dungeons"       Grid.Column="5" VerticalAlignment="Center"                  MouseLeftButtonDown="ShowDungeonOverview"       >
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="resources/ui_images/dungs.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
+
+                    <Rectangle Name="del_button"   Style="{DynamicResource toolBarButton}"  ToolTip="Delete character"    Grid.Column="4" VerticalAlignment="Center"       MouseLeftButtonDown="deleteCharButtonClick" >
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="resources/ui_images/ic_close_white_24dp_2x.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
+                    <Rectangle Name="resetDaily"   Style="{DynamicResource toolBarButton}"  ToolTip="Force daily reset"   Grid.Column="3" VerticalAlignment="Center"  MouseLeftButtonDown="resetDailyButtonClick" >
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="resources/ui_images/ic_event_busy_white_24dp_2x.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
+                    <Rectangle Name="resetWeekly"  Style="{DynamicResource toolBarButton}"  ToolTip="Force weekly reset"  Grid.Column="2" VerticalAlignment="Center"  MouseLeftButtonDown="resetWeeklyButtonClick">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="resources/ui_images/ic_event_note_white_24dp_2x.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
+                    <Rectangle Name="undoButton"  Style="{DynamicResource toolBarButton}"  ToolTip="Undo"                 Grid.Column="1" VerticalAlignment="Center"      MouseLeftButtonDown="UndoButtonClick"      >
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="resources/ui_images/ic_undo_white_24dp_2x.png"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <Rectangle Name="chViewButton" Style="{DynamicResource toolBarButton}"  ToolTip="Show details"        Grid.Column="0" VerticalAlignment="Center"                    MouseLeftButtonDown="chViewButton_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5"     >
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="resources/ui_images/ic_keyboard_arrow_down_white_24dp_2x.png"/>
+                        </Rectangle.OpacityMask>
+
+                    </Rectangle>
 
                 </Grid>
 

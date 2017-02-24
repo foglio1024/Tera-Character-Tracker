@@ -6,23 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Tera.Converters
+namespace TCTData
 {
-    class ValueToBarLenght : IValueConverter
+    public class ZoneIdToName : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int val = (int)value;
-            double baseLenght = (parameter as double[])[0];
-            double max = (parameter as double[])[1];
-            if(val > max)
-            {
-                return baseLenght;
-            }
-            else
-            {
-                return val * baseLenght / max;
-            }
+            int zoneId = System.Convert.ToInt32(value);
+            return TCTDatabase.StrSheet_ZoneName.Descendants().Where(x => x.Name == "String").Where(x => System.Convert.ToInt32(x.Attribute("id").Value) == zoneId).First().Attribute("string").Value;
+
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tera;
+using TCTUI;
 
 namespace TCTParser
 {
@@ -24,7 +25,7 @@ namespace TCTParser
             {
                 if(TeraLogic.DungList.Find(x => x.Id == dct.ID) != null)
                 {
-                    DataParser.CurrentChar.Dungeons.Find(x => x.Name == TeraLogic.DungList.Find(y => y.Id == dct.ID).ShortName).Runs = dct.Runs;
+                    DataRouter.CurrentChar.Dungeons.Find(x => x.Name == TeraLogic.DungList.Find(y => y.Id == dct.ID).ShortName).Runs = dct.Runs;
                 }
             }
 

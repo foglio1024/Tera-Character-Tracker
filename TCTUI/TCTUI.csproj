@@ -97,6 +97,14 @@
     <Compile Include="Classes\CharDungeon.cs" />
     <Compile Include="Classes\DataBinder.cs" />
     <Compile Include="Classes\Dungeon.cs" />
+    <Compile Include="Classes\UI.cs" />
+    <Compile Include="Controls\DungeonRunsCounter.xaml.cs">
+      <DependentUpon>DungeonRunsCounter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExtendedCharacterStrip.xaml.cs">
+      <DependentUpon>ExtendedCharacterStrip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ClassToBrush.cs" />
     <Compile Include="Converters\Dungeon_ClearsToColor.cs" />
     <Compile Include="Classes\TeraLogic.cs" />
     <Compile Include="Converters\TimeToAngle.cs" />
@@ -106,6 +114,7 @@
     <Compile Include="Controls\DungeonClearsCounter.xaml.cs">
       <DependentUpon>DungeonClearsCounter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\WeeklyBonusToColor.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -128,7 +137,6 @@
     </Compile>
     <Compile Include="Converters\UnixToDateTime.cs" />
     <Compile Include="Converters\ProgressToColor.cs" />
-    <Compile Include="Classes\UI.cs" />
     <Compile Include="Converters\TicksToTimespan.cs" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -137,15 +145,11 @@
     <Compile Include="Controls\CharView.xaml.cs">
       <DependentUpon>CharView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\CharViewContentProvider.cs" />
     <Compile Include="Converters\ValueToBarLenght.cs" />
     <Compile Include="Converters\ClassToImage.cs" />
     <Compile Include="Converters\Dungeon_RunsToColor.cs" />
     <Compile Include="Converters\IntToString.cs" />
     <Compile Include="Converters\Laurel_GradeToColor.cs" />
-    <Compile Include="Controls\DungeonRunsCounter.xaml.cs">
-      <DependentUpon>DungeonRunsCounter.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\LaurelToImage.cs" />
     <Compile Include="Controls\CharacterStrip.xaml.cs">
       <DependentUpon>CharacterStrip.xaml</DependentUpon>
@@ -161,6 +165,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\DungeonClearsCounter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DungeonRunsCounter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Controls\ExtendedCharacterStrip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,10 +193,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\CharView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\DungeonRunsCounter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -315,6 +323,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\tctlogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\ccbBuff.png" />
+    <Resource Include="resources\images\connected.png" />
+    <Resource Include="resources\images\default.png" />
+    <Resource Include="resources\images\gfin.png" />
+    <Resource Include="resources\images\marks.png" />
+    <Resource Include="resources\images\rep.png" />
+    <Resource Include="resources\images\scale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\ui_images\ic_keyboard_arrow_down_white_24dp_2x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

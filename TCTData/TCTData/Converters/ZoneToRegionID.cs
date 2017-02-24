@@ -13,7 +13,7 @@ namespace TCTData
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int zoneID = (int)value;
+            int zoneID = System.Convert.ToInt32(value);
             if(zoneID != 0)
             {
                 return System.Convert.ToInt32(TCTData.TCTDatabase.ContinentData.Descendants().Where(x => x.Name == "Continent").Descendants().Where(y => (string)y.Attribute("id").Value == zoneID.ToString()).FirstOrDefault().Parent.Attribute("id").Value.ToString());

@@ -37,6 +37,19 @@ namespace Tera
 
             img.SetBinding(System.Windows.Controls.Image.SourceProperty, b);
         }
+        public static void BindParameterToOpacityMaskImageSourceWithConverter(int i, string prop, System.Windows.Shapes.Rectangle img, string definition, IValueConverter conv)
+        {
+            var b = new Binding
+            {
+                Source = TeraLogic.CharList[i],
+                Path = new PropertyPath(prop),
+                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                Converter = conv,
+                ConverterParameter = definition
+            };
+
+            img.SetBinding(Shape.OpacityMaskProperty, b);
+        }
         public static Binding GenericCharBinding(int i, string prop, IValueConverter conv, object par)
         {
             var b = new Binding
@@ -68,12 +81,9 @@ namespace Tera
             t.txtD.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyD));
             t.txtW.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyW));
 
-            if (color)
-            {
-                t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColor(), new object[] { maxValueW, thresholdW, invert }));
-                t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColor(), new object[] { maxValueW, thresholdW, invert }));
-                t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, propertyW, new ProgressToColor(), new object[] { maxValueW, thresholdW, invert }));
-            }
+            t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), TeraLogic.CharList[i].Weekly));
+            t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), TeraLogic.CharList[i].Weekly));
+            t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), TeraLogic.CharList[i].Weekly));
         }
         public static void BindParameterToBarGauge(int i, string property, BarGauge t, int maxValue, int threshold, bool color, bool invert)
         {

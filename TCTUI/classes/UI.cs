@@ -6,22 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using TCTData.Enums;
 using System.Windows.Forms;
+using Tera;
+using System.Windows.Controls;
 
-namespace Tera
+namespace TCTUI
 {
     public static class UI
     {
+
+        const int LOG_CAP = 100;
+
         public static TeraMainWindow MainWin;
         public static CharView CharView;
         internal static AccountContainer CharListContainer;
-        public static CharViewContentProvider cvcp = new CharViewContentProvider();
-
+        public static Character SelectedChar { get; set; }
         public static NotifyIcon NotifyIcon;
 
-        public static void UpdateLog(string data)
-        {
-            MainWin.UpdateLog(data);
-        }
 
         public static void SendNotification(string content, NotificationImage img, NotificationType t, Color col, bool repeat, bool sound, bool right)
         {
@@ -29,9 +29,50 @@ namespace Tera
         }
         public static void SendDefaultNotification(string content)
         {
-            TCTNotifier.NotificationProvider.SendNotification(content, Colors.SolidBaseColor);
+            TCTNotifier.NotificationProvider.SendNotification(content, TCTData.Colors.SolidBaseColor);
         }
 
+        public static void UpdateLog(string txt)
+        {
+            MainWin.Dispatcher.Invoke(new Action(() =>
+            {
+                var li = new ListBoxItem();
+
+                DateTime time = DateTime.Now;
+                string format = "HH:mm";
+                li.Focusable = false;
+                li.IsTabStop = false;
+                li.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+                li.Content = "[" + time.ToString(format) + "]  -  " + txt;
+                if (MainWin.Log.Items.Count > 0)
+                {
+                    ListBoxItem item = MainWin.Log.Items[MainWin.Log.Items.Count - 1] as ListBoxItem;
+                    var tmp = item.Content as string;
+                    tmp = tmp.Substring(12);
+
+                    if (txt != tmp)
+                    {
+                        MainWin.Log.Items.Add(li);
+                        MainWin.Log.ScrollIntoView(li);
+                    }
+                }
+                else
+                {
+                    MainWin.Log.Items.Add(li);
+                    MainWin.Log.ScrollIntoView(li);
+
+                }
+                if (MainWin.Log.Items.Count > LOG_CAP)
+                {
+                    MainWin.Log.Items.RemoveAt(0);
+                }
+
+            }
+
+            ));
+
+
+        }
         public static void SetLogColor(Color c)
         {
             MainWin.Dispatcher.Invoke(() =>
@@ -41,23 +82,6 @@ namespace Tera
         }
 
 
-        public static class Colors
-        {
-            public static Color SolidBaseColor = Color.FromArgb(255, 0, 123, 206);
-            public static Color SolidAccentColor = Color.FromArgb(255, 255, 120, 42);
-            public static Color SolidYellow = Color.FromArgb(255, 255, 166, 77);
-            public static Color SolidGreen = Color.FromArgb(255, 88, 180, 91);
-            public static Color SolidRed = Color.FromArgb(255, 255, 80, 80);
-            public static Color SolidGray = Color.FromArgb(255, 200, 200, 200);
-
-            public static Color FadedBaseColor = Color.FromArgb(150, SolidBaseColor.R, SolidBaseColor.G, SolidBaseColor.B);
-            public static Color FadedAccentColor = Color.FromArgb(150, SolidAccentColor.R, SolidAccentColor.G, SolidAccentColor.B);
-            public static Color FadedYellow = Color.FromArgb(150, SolidYellow.R, SolidYellow.G, SolidYellow.B);
-            public static Color FadedGreen = Color.FromArgb(150, SolidGreen.R, SolidGreen.G, SolidGreen.B);
-            public static Color FadedRed = Color.FromArgb(150, SolidRed.R, SolidRed.G, SolidRed.B);
-            public static Color FadedGray = Color.FromArgb(150, SolidGray.R, SolidGray.G, SolidGray.B);
-            
-        }
 
 
     }

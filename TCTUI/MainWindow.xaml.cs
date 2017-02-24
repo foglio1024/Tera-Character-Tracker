@@ -25,6 +25,8 @@ using System.ComponentModel;
 using Tera.Converters;
 using System.Xml.Linq;
 using TCTData.Enums;
+using Tera.Controls;
+using TCTUI;
 
 namespace Tera
 {
@@ -45,18 +47,49 @@ namespace Tera
             Height = TCTData.TCTProps.Height;
             Width = TCTData.TCTProps.Width;
 
-            NI = new System.Windows.Forms.NotifyIcon();
-            NI.DoubleClick += new EventHandler(notifyIcon_DoubleClick);
-            NI.Icon = Properties.Resources.tctlogo;
-            NI.Text = "Tera Character Tracker " + TCTData.TCTProps.CurrentVersion;
-            UI.MainWin = this;
-            UI.NotifyIcon = NI;
-        }
+            var buttonStyle = new Style { TargetType = typeof(System.Windows.Shapes.Rectangle) };
+            buttonStyle.Setters.Add(new Setter(HeightProperty, 20.0));
+            buttonStyle.Setters.Add(new Setter(WidthProperty, 20.0));
+            buttonStyle.Setters.Add(new Setter(CursorProperty, Cursors.Hand));
+            buttonStyle.Setters.Add(new Setter(VerticalAlignmentProperty, VerticalAlignment.Center));
+            buttonStyle.Setters.Add(new Setter(HorizontalAlignmentProperty, HorizontalAlignment.Center));
+            buttonStyle.Setters.Add(new Setter(OpacityProperty, .3));
+            buttonStyle.Setters.Add(new EventSetter(MouseEnterEvent, new MouseEventHandler(BarButtonHoverIn)));
+            buttonStyle.Setters.Add(new EventSetter(MouseLeaveEvent, new MouseEventHandler(BarButtonHoverOut)));
+            buttonStyle.Setters.Add(new Setter(MarginProperty, new Thickness(3,0,0,0)));
+            switch (TCTData.TCTProps.Theme)
+            {
+                case Theme.Light:
+                    MainGrid.Background = new SolidColorBrush(TCTData.Colors.LightTheme_Background);
+                    ToolBar.Background = new SolidColorBrush(TCTData.Colors.LightTheme_Bar);
+                    ToolBar.Effect = TCTData.Shadows.LightThemeShadow;
+                    title.Foreground = new SolidColorBrush(TCTData.Colors.LightTheme_Foreground1);
+                    buttonStyle.Setters.Add(new Setter(System.Windows.Shapes.Rectangle.FillProperty, new SolidColorBrush(TCTData.Colors.DarkTheme_Card)));
+                    break;
+                case Theme.Dark:
+                    MainGrid.Background = new SolidColorBrush(TCTData.Colors.DarkTheme_Background);
+                    ToolBar.Background = new SolidColorBrush(TCTData.Colors.DarkTheme_Bar);
+                    ToolBar.Effect = TCTData.Shadows.DarkThemeShadow;
+                    title.Foreground = new SolidColorBrush(TCTData.Colors.DarkTheme_Foreground1);
+                    buttonStyle.Setters.Add(new Setter(System.Windows.Shapes.Rectangle.FillProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Card)));
 
-        const int LOG_CAP = 100;
+                    break;
+                default:
+                    break;
+            }
+            this.Resources["toolBarButton"] = buttonStyle;
+            //MinWidth = main.chView.Width + main.accountsColumn.MinWidth;
+
+            //NI = new System.Windows.Forms.NotifyIcon();
+            //NI.DoubleClick += new EventHandler(notifyIcon_DoubleClick);
+            //NI.Icon = Tera.Properties.Resources.tctlogo;
+            //NI.Text = "Tera Character Tracker " + TCTData.TCTProps.CurrentVersion;
+            //UI.NotifyIcon = NI;
+            UI.MainWin = this;
+        }
         bool leftSlideIsOpen = false;
         bool isLogExpanded = false;
-        static System.Windows.Forms.NotifyIcon NI;
+        //static System.Windows.Forms.NotifyIcon NI;
         Popup dgWindow = new Popup();
         public DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(500));
         public DoubleAnimation fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(100));
@@ -64,7 +97,10 @@ namespace Tera
         public DoubleAnimation glowOut = new DoubleAnimation( .3, TimeSpan.FromMilliseconds(150));
         public DoubleAnimation expand = new DoubleAnimation(40, TimeSpan.FromMilliseconds(100));
 
-        public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
+        double accountsInitialWidth = 715;
+
+        //public static List<CharacterStrip> CharacterStrips { get; set; } = new List<CharacterStrip>();
+        public static List<ExtendedCharacterStrip> ExtendedCharacterStrips { get; set; } = new List<ExtendedCharacterStrip>();
         public static List<DungeonRunsCounter> DungeonCounters { get; set; } = new List<DungeonRunsCounter>();
 
         public static T FindChild<T>(DependencyObject parent, string childName)
@@ -110,83 +146,84 @@ namespace Tera
 
             return foundChild;
         }
-        private void CreateStripControlsBindings(int i)
+        //private void CreateStripControlsBindings(int i)
+        //{
+
+        //    /*creates text boxes data bindings*/
+        //    CharacterStrips[i].nameTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Name"));
+        //    CharacterStrips[i].lvlTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Level"));
+        //    DataBinder.BindParameterToBarGauge(i, "Credits", CharacterStrips[i].creditsTB, TeraLogic.MAX_CREDITS, TeraLogic.MAX_CREDITS - 300, true, true);
+        //    DataBinder.BindParameterToBarGauge(i, "MarksOfValor", CharacterStrips[i].mvTB, TeraLogic.MAX_MARKS, TeraLogic.MAX_MARKS-10, true, true);
+        //    DataBinder.BindParameterToBarGauge(i, "GoldfingerTokens", CharacterStrips[i].gftTB, TeraLogic.MAX_GF_TOKENS, TeraLogic.MAX_GF_TOKENS-10, true, true);
+        //    DataBinder.BindParameterToQuestBarGauge(i, "Weekly", "Dailies", CharacterStrips[i].questTB, TeraLogic.MAX_WEEKLY, TeraLogic.MAX_WEEKLY - TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, true, false);
+        //    DataBinder.BindParameterToImageSourceWithConverter(i, "CharClass", CharacterStrips[i].classImage, "sd", new ClassToImage());
+        //    DataBinder.BindCharPropertyToShapeFillColor(i, "Laurel", CharacterStrips[i].laurelRect, new Laurel_GradeToColor());
+        //    DataBinder.BindParameterToArcGauge(i, "Crystalbind", CharacterStrips[i].ccbInd, new TimeToAngle());
+        //    CharacterStrips[i].ccbInd.SetBinding(ToolTipProperty, DataBinder.GenericCharBinding(i, "Crystalbind", new TicksToTimespan(), null));
+        //    CharacterStrips[i].SetBinding(TagProperty, DataBinder.GenericCharBinding(i, "Name"));
+            
+        //}
+        //public void AddStripToContainer(int i)
+        //{
+        //    /*adds strip to panel*/
+        //    (CharacterStrips[i].Content as Grid).Height = 1;
+        //    UI.CharListContainer.chContainer.Items.Add(CharacterStrips[i]);
+        //    (CharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
+        //}
+        //public void CreateStrip(int i)
+        //{
+        //    /*adds strip to array*/
+        //    CharacterStrips.Add(new CharacterStrip());
+
+        //    /*create bindings for controls*/
+        //    CreateStripControlsBindings(i);
+
+        //    /*add strip to container*/
+        //    AddStripToContainer(i);
+
+        //}
+        public void CreateExtStrip(int i)
+        {
+            /*adds strip to array*/
+            ExtendedCharacterStrips.Add(new ExtendedCharacterStrip());
+
+            /*create bindings for controls*/
+            CreateExtendedStripControlsBindings(i);
+
+            /*add strip to container*/
+            AddExtendedStripToContainer(i);
+
+        }
+        public void AddExtendedStripToContainer(int i)
+        {
+            /*adds strip to panel*/
+            //(ExtendedCharacterStrips[i].Content as Grid).Height = 1;
+            UI.CharListContainer.chContainer.Items.Add(ExtendedCharacterStrips[i]);
+            //(ExtendedCharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
+        }
+
+        private void CreateExtendedStripControlsBindings(int i)
         {
 
             /*creates text boxes data bindings*/
-            CharacterStrips[i].nameTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Name"));
-            CharacterStrips[i].lvlTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Level"));
-            DataBinder.BindParameterToBarGauge(i, "Credits", CharacterStrips[i].creditsTB, TeraLogic.MAX_CREDITS, TeraLogic.MAX_CREDITS - 300, true, true);
-            DataBinder.BindParameterToBarGauge(i, "MarksOfValor", CharacterStrips[i].mvTB, TeraLogic.MAX_MARKS, TeraLogic.MAX_MARKS-10, true, true);
-            DataBinder.BindParameterToBarGauge(i, "GoldfingerTokens", CharacterStrips[i].gftTB, TeraLogic.MAX_GF_TOKENS, TeraLogic.MAX_GF_TOKENS-10, true, true);
-            DataBinder.BindParameterToQuestBarGauge(i, "Weekly", "Dailies", CharacterStrips[i].questTB, TeraLogic.MAX_WEEKLY, TeraLogic.MAX_WEEKLY - TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, true, false);
-            DataBinder.BindParameterToImageSourceWithConverter(i, "CharClass", CharacterStrips[i].classImage, "sd", new ClassToImage());
-            DataBinder.BindCharPropertyToShapeFillColor(i, "Laurel", CharacterStrips[i].laurelRect, new Laurel_GradeToColor());
-            DataBinder.BindParameterToArcGauge(i, "Crystalbind", CharacterStrips[i].ccbInd, new TimeToAngle());
-            CharacterStrips[i].ccbInd.SetBinding(ToolTipProperty, DataBinder.GenericCharBinding(i, "Crystalbind", new TicksToTimespan(), null));
-            CharacterStrips[i].SetBinding(TagProperty, DataBinder.GenericCharBinding(i, "Name"));
-            
-        }
-        public void AddStripToContainer(int i)
-        {
-            /*adds strip to panel*/
-            (CharacterStrips[i].Content as Grid).Height = 1;
-            UI.CharListContainer.chContainer.Items.Add(CharacterStrips[i]);
-            (CharacterStrips[i].Content as Grid).BeginAnimation(FrameworkElement.HeightProperty, expand);
-        }
-        public void CreateStrip(int i)
-        {
-            /*adds strip to array*/
-            CharacterStrips.Add(new CharacterStrip());
+            ExtendedCharacterStrips[i].nameTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Name"));
+            ExtendedCharacterStrips[i].lvlTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Level"));
+            ExtendedCharacterStrips[i].ilvlTB.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, "Ilvl"));
 
-            /*create bindings for controls*/
-            CreateStripControlsBindings(i);
+            DataBinder.BindParameterToBarGauge(i, "Credits", ExtendedCharacterStrips[i].creditsTB, TeraLogic.MAX_CREDITS, TeraLogic.MAX_CREDITS - 300, true, true);
+            DataBinder.BindParameterToBarGauge(i, "MarksOfValor", ExtendedCharacterStrips[i].mvTB, TeraLogic.MAX_MARKS, TeraLogic.MAX_MARKS - 10, true, true);
+            DataBinder.BindParameterToBarGauge(i, "GoldfingerTokens", ExtendedCharacterStrips[i].gftTB, TeraLogic.MAX_GF_TOKENS, TeraLogic.MAX_GF_TOKENS - 10, true, true);
+            DataBinder.BindParameterToBarGauge(i, "DragonwingScales", ExtendedCharacterStrips[i].scTB, TeraLogic.MAX_DRAGONWING_SCALES, TeraLogic.MAX_DRAGONWING_SCALES - 5, true, true);
 
-            /*add strip to container*/
-            AddStripToContainer(i);
+            DataBinder.BindParameterToQuestBarGauge(i, "Weekly", "Dailies", ExtendedCharacterStrips[i].questTB, TeraLogic.MAX_WEEKLY, TeraLogic.MAX_WEEKLY - TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, TeraLogic.MAX_DAILY, true, false);
+            DataBinder.BindParameterToOpacityMaskImageSourceWithConverter(i, "CharClass", ExtendedCharacterStrips[i].classImage, "sd", new ClassToBrush());
+            DataBinder.BindCharPropertyToShapeFillColor(i, "Laurel", ExtendedCharacterStrips[i].laurelRect, new Laurel_GradeToColor());
+            DataBinder.BindParameterToArcGauge(i, "Crystalbind", ExtendedCharacterStrips[i].ccbInd, new TimeToAngle());
+            ExtendedCharacterStrips[i].ccbInd.SetBinding(ToolTipProperty, DataBinder.GenericCharBinding(i, "Crystalbind", new TicksToTimespan(), null));
+            ExtendedCharacterStrips[i].SetBinding(TagProperty, DataBinder.GenericCharBinding(i, "Name"));
 
         }
-        public void UpdateLog(string txt)
-        {
-            this.Dispatcher.Invoke(new Action(() =>
-            {
-                var li = new ListBoxItem();
 
-                DateTime time = DateTime.Now;
-                string format = "HH:mm";
-                li.Focusable = false;
-                li.IsTabStop = false;
-                li.HorizontalAlignment = HorizontalAlignment.Stretch;
-                li.Content = "[" + time.ToString(format) + "]  -  " + txt;
-                if (Log.Items.Count > 0)
-                {
-                    ListBoxItem item = Log.Items[Log.Items.Count - 1] as ListBoxItem;
-                    var tmp = item.Content as string;
-                    tmp = tmp.Substring(12);
-
-                    if (txt != tmp)
-                    {
-                        Log.Items.Add(li); 
-                        Log.ScrollIntoView(li);
-                    }
-                }
-                else
-                {
-                    Log.Items.Add(li);
-                    Log.ScrollIntoView(li);
-
-                }
-                if(Log.Items.Count > LOG_CAP)
-                {
-                    Log.Items.RemoveAt(0);
-                }
-
-            }
-
-            ));
-            
-
-        }
         public void SetGuildImage(Bitmap logo)
         {
             this.Dispatcher.Invoke(new Action(() =>
@@ -215,7 +252,8 @@ namespace Tera
             /*creates strips for loaded chars*/
             for (int i = 0; i < TeraLogic.CharList.Count; i++)
             {
-                CreateStrip(i);
+                //CreateStrip(i);
+                CreateExtStrip(i);
             }
                
 
@@ -280,10 +318,10 @@ namespace Tera
                 }
             }
 
-            ToolBar.Background =            new SolidColorBrush(UI.Colors.SolidBaseColor);
-            StatusBar.Background =          new SolidColorBrush(UI.Colors.SolidBaseColor);
+            this.StatusBar.Background =          new SolidColorBrush(TCTData.Colors.SolidBaseColor);
             Log.BorderThickness = new Thickness(0);
-            UI.CharView.guildGrid.Background =   new SolidColorBrush(UI.Colors.SolidBaseColor);
+            UI.CharView.guildGrid.Background =   new SolidColorBrush(TCTData.Colors.SolidBaseColor);
+            this.MinWidth = main.accountsColumn.MinWidth + main.chView.Width;
 
             this.Activate();
 
@@ -496,11 +534,12 @@ namespace Tera
             TeraLogic.SaveCharacters(false);
             TeraLogic.SaveAccounts(false);
             TeraLogic.SaveGuildsDB(false);
-            
+
             TCTData.TCTProps.Top = this.Top;
             TCTData.TCTProps.Left = this.Left;
-            TCTData.TCTProps.Height = this.Height;
-            TCTData.TCTProps.Width = this.Width;
+            TCTData.TCTProps.Height = this.ActualHeight;
+            TCTData.TCTProps.Width = this.ActualWidth;
+            TeraLogic.SaveSettings(false);
 
             
         }
@@ -556,14 +595,14 @@ namespace Tera
 
         private void deleteCharButtonClick(object sender, MouseButtonEventArgs e)
         {
-            if (TeraLogic.cvcp.SelectedChar != null)
+            if (UI.SelectedChar != null)
             {
-                int ind = TeraLogic.CharList.IndexOf(TeraLogic.cvcp.SelectedChar);
+                int ind = TeraLogic.CharList.IndexOf(UI.SelectedChar);
                 TeraLogic.DeletedChars.Add(TeraLogic.CharList[ind]);
-                TeraLogic.CharList.Remove(TeraLogic.cvcp.SelectedChar);
-                TeraLogic.cvcp.SelectedChar = null;
+                TeraLogic.CharList.Remove(UI.SelectedChar);
+                UI.SelectedChar = null;
                 UI.CharListContainer.chContainer.Items.RemoveAt(ind);
-                TeraMainWindow.CharacterStrips.Remove(TeraMainWindow.CharacterStrips.Find(x => (string)x.Tag == TeraLogic.DeletedChars.Last().Name));
+                TeraMainWindow.ExtendedCharacterStrips.Remove(TeraMainWindow.ExtendedCharacterStrips.Find(x => (string)x.Tag == TeraLogic.DeletedChars.Last().Name));
 
                 UI.MainWin.undoButton.Opacity = 1;
 
@@ -575,12 +614,12 @@ namespace Tera
 
         private void BarButtonHoverIn(object sender, MouseEventArgs e)
         {
-            (sender as System.Windows.Controls.Image).BeginAnimation(OpacityProperty, BarButtonFadeIn);
+            (sender as System.Windows.Shapes.Rectangle).BeginAnimation(OpacityProperty, BarButtonFadeIn);
         }
 
         private void BarButtonHoverOut(object sender, MouseEventArgs e)
         {
-            (sender as System.Windows.Controls.Image).BeginAnimation(OpacityProperty, BarButtonFadeOut);
+            (sender as System.Windows.Shapes.Rectangle).BeginAnimation(OpacityProperty, BarButtonFadeOut);
         }
 
 
@@ -628,23 +667,72 @@ namespace Tera
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, UI.Colors.FadedAccentColor, true, false, true);
+            UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Counter, TCTData.Colors.FadedAccentColor, true, false, true);
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Standard, UI.Colors.SolidAccentColor, true, false, false);
+            UI.SendNotification(TeraLogic.CharList[0].GoldfingerTokens.ToString(), NotificationImage.Goldfinger, NotificationType.Standard, TCTData.Colors.SolidAccentColor, true, false, false);
         }
         private void TeraMainWin_StateChanged(object sender, EventArgs e)
         {
-            if (this.WindowState == WindowState.Minimized)
+            //if (this.WindowState == WindowState.Minimized)
+            //{
+            //    this.ShowInTaskbar = false;
+            //    //NI.Visible = true;
+            //}
+            //else if (this.WindowState == WindowState.Normal)
+            //{
+            //    //NI.Visible = false;
+            //    this.ShowInTaskbar = true;
+            //}
+        }
+
+        private void chViewButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var an = new DoubleAnimationUsingKeyFrames();
+
+            main.ToggleDetails();
+            if (main.DetailsExtended)
             {
-                this.ShowInTaskbar = false;
-                NI.Visible = true;
+                MinWidth = main.accountsColumn.MinWidth + main.chView.Width;
+                var r = new RotateTransform(90);
+                chViewButton.RenderTransform = r;
+                if (isMinSize)
+                {
+                    Width = MinWidth;
+                }
+                else
+                {
+                    Width = accountsInitialWidth + main.chView.Width;
+                }
             }
-            else if (this.WindowState == WindowState.Normal)
+            else
             {
-                NI.Visible = false;
-                this.ShowInTaskbar = true;
+                var r = new RotateTransform(-90);
+                chViewButton.RenderTransform = r;
+
+                MinWidth = accountsInitialWidth + 20;
+                if (isMinSize)
+                {
+                    Width = MinWidth;
+                }
+                else
+                {
+                    Width = MinWidth;
+                }
+            }
+
+        }
+        bool isMinSize = false;
+        private void TeraMainWin_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if(Width == MinWidth)
+            {
+                isMinSize = true;
+            }
+            else
+            {
+                isMinSize = false;
             }
         }
     }

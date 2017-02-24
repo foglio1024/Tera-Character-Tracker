@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
+using TCTUI;
 
 namespace Tera.Converters
 {
@@ -25,11 +26,11 @@ namespace Tera.Converters
 
                 else if (val < th)
                 {
-                    return new SolidColorBrush(UI.Colors.SolidAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);
                 }
                 else
                 {
-                    return new SolidColorBrush(UI.Colors.SolidBaseColor);
+                    return new SolidColorBrush(TCTData.Colors.SolidBaseColor);
 
                 }
             }
@@ -43,11 +44,11 @@ namespace Tera.Converters
 
                 else if (val < th)
                 {
-                    return new SolidColorBrush(UI.Colors.SolidBaseColor);
+                    return new SolidColorBrush(TCTData.Colors.SolidBaseColor);
                 }
                 else
                 {
-                    return new SolidColorBrush(UI.Colors.SolidAccentColor);//new Color { A = 0xa0, R = 255, G = 120, B = 42 });
+                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);
                 }
             }
         }

@@ -6,12 +6,44 @@
              xmlns:local="clr-namespace:Tera"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="TB1" TargetType="TextBlock" />
+        <Style x:Key="TB2" TargetType="TextBlock" />
+        <Style x:Key="TB3" TargetType="TextBlock" />
+    </UserControl.Resources>
+
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-            <TextBlock x:Name="txtW" HorizontalAlignment="Center" TextAlignment="Right" Foreground="#a0000000" Margin="0,0,4,0" Width="17">ww</TextBlock>
-            <Grid>
-                <Rectangle x:Name="base" Height="4" Width="70" Fill="#00000000" VerticalAlignment="Center" Margin="0,0" Grid.Row="0"/>
-                <StackPanel Orientation="Horizontal" MaxWidth="70">
+        <!--<Border BorderThickness="1" BorderBrush="Black"></Border>-->
+        <Grid Margin="0,0,0,3" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style x:Key="text" TargetType="TextBlock">
+                    <Setter Property="TextAlignment" Value="Right"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Foreground" Value="#ffaaaaaa"/>
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+                    <Setter Property="FontSize" Value="11"/>
+                </Style>
+            </Grid.Resources>
+            <Grid Width="Auto" HorizontalAlignment="Center" Margin="0,0,0,1" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="12"/>
+                    <ColumnDefinition Width="12"/>
+                </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="txtW" Style="{DynamicResource TB2}" Grid.Column="0">ww</TextBlock>
+                <TextBlock x:Name="sep"  Style="{DynamicResource TB3}" Grid.Column="1">-</TextBlock>
+            <TextBlock x:Name="txtD" Style="{DynamicResource TB2}" Grid.Column="2">d</TextBlock>
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <Rectangle x:Name="base" Height="4" Width="80" Fill="#00000000" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="0,0" Grid.Row="0"/>
+                <StackPanel Orientation="Horizontal" MaxWidth="80">
                     <Rectangle x:Name="barW" Height="4" Width="10" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0"/>
                     <Border x:Name="borD" Height="4" BorderThickness="0,0,1,0" BorderBrush="#40000000" Opacity=".7">
                         <Rectangle x:Name="barD" Height="4" Width="10" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0" Opacity=".5"/>
@@ -20,9 +52,9 @@
                 </StackPanel>
 
             </Grid>
-            <TextBlock x:Name="txtD" HorizontalAlignment="Center" TextAlignment="Right" Foreground="#a0000000" Margin="4,0,0,0" Width="8">d</TextBlock>
 
-        </StackPanel>
+        </Grid>
+
 
     </Grid>
 </UserControl>
