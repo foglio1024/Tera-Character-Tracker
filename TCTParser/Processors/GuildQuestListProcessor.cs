@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
-using System.Windows.Media;
-using TCTData.Enums;
-using Tera;
-using Tera.Converters;
-using TCTUI;
-using Tera.Game.Messages;
-using Tera.Game;
 using TCTData;
+using TCTData.Enums;
+using TCTUI;
+using Tera;
+using Tera.Game;
+using Tera.Game.Messages;
 
 namespace TCTParser.Processors
 {
@@ -108,7 +101,7 @@ namespace TCTParser.Processors
 
                         try
                         {
-                            string dgShortName = TeraLogic.DungList.Find(d => d.Id == q.RegionID).ShortName;        //get dungeon short name
+                            string dgShortName = TCTData.Data.DungList.Find(d => d.Id == q.RegionID).ShortName;        //get dungeon short name
 
                             foreach (var counter in TeraMainWindow.DungeonCounters)      //search for right counter 
                             {

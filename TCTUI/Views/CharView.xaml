@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Tera.CharView"
+﻿<UserControl x:Class="TCTUI.Views.CharView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Tera"
+             xmlns:local="clr-namespace:TCTUI.Views"
              mc:Ignorable="d" 
              Width="500"
              d:DesignHeight="800" d:DesignWidth="566">
@@ -33,9 +33,6 @@
             <Setter Property="Foreground" Value="#ffaaaaaa"/>
             <Setter Property="Grid.Column" Value="1"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <EventSetter Event="GotKeyboardFocus" Handler="gotKbFocus"/>
-            <EventSetter Event="GotMouseCapture" Handler="leftClick"/>
-            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="leftClick"/>
         </Style>
         <Style x:Key="TBlock" TargetType="TextBlock">
             <Setter Property="FontSize" Value="12"/>

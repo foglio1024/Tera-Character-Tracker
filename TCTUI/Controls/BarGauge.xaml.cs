@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Tera
+namespace TCTUI.Controls
 {
     /// <summary>
     /// Logica di interazione per BarGauge.xaml
@@ -26,7 +26,7 @@ namespace Tera
             var s1 = new Style { TargetType = typeof(TextBlock) };
             var s2 = new Style { TargetType = typeof(TextBlock) };
             var s3 = new Style { TargetType = typeof(TextBlock) };
-            switch (TCTData.TCTProps.Theme)
+            switch (TCTData.Settings.Theme)
             {
                 case TCTData.Enums.Theme.Light:
                     s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground1)));

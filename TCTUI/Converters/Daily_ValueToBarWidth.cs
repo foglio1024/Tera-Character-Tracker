@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using TCTData;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     internal class Daily_ValueToBarWidth : IValueConverter
     {
@@ -12,12 +13,12 @@ namespace Tera.Converters
             double maxLenght = pars[0];
             double weeklyLeft = pars[1];
             int dailiesLeft = (int)value;
-            int dailiesDone = TeraLogic.MAX_DAILY - dailiesLeft;
+            int dailiesDone = TCTConstants.MAX_DAILY - dailiesLeft;
             double offset = dailiesLeft - weeklyLeft;
             if(offset < 0) { offset = 0; }
-            double unitLenght = maxLenght/Tera.TeraLogic.MAX_WEEKLY;
+            double unitLenght = maxLenght/ TCTConstants.MAX_WEEKLY;
 
-            double lenght = unitLenght * (Tera.TeraLogic.MAX_DAILY - dailiesDone - offset);
+            double lenght = unitLenght * (TCTConstants.MAX_DAILY - dailiesDone - offset);
             return lenght;
 
 

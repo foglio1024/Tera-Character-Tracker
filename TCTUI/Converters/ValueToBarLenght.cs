@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     class ValueToBarLenght : IValueConverter
     {

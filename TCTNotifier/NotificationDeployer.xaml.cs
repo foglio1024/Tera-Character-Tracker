@@ -62,7 +62,7 @@ namespace TCTNotifier
                 ThicknessAnimationUsingKeyFrames open = new ThicknessAnimationUsingKeyFrames();
                 open.KeyFrames.Add(new SplineThicknessKeyFrame(new Thickness(EndThickness), TimeSpan.FromMilliseconds(300), new KeySpline(.5, 0, .3, 1)));
                 NotificationHolder.BeginAnimation(Grid.MarginProperty, open);
-                if (TCTData.TCTProps.NotificationSound)
+                if (TCTData.Settings.NotificationSound)
                 {
                     if (ni.Sound)
                     {

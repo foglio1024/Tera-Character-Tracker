@@ -13,8 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TCTUI;
+using Tera;
 
-namespace Tera
+namespace TCTUI.Views
 {
     /// <summary>
     /// Logica di interazione per MainView.xaml
@@ -28,7 +29,7 @@ namespace Tera
             UI.CharView = this.chView;
             UI.CharListContainer = this.accounts;
 
-            switch (TCTData.TCTProps.Theme)
+            switch (TCTData.Settings.Theme)
             {
                 case TCTData.Enums.Theme.Light:
                     accGrid.Background = new SolidColorBrush(TCTData.Colors.LightTheme_Card);

@@ -13,9 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TCTUI;
 
-namespace Tera
+namespace TCTUI.Controls
 {
     /// <summary>
     /// Logica di interazione per CrystalbindIndicator.xaml

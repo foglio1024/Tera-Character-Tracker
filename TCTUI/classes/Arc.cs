@@ -6,9 +6,8 @@ using System.Windows.Shapes;
 using System.Windows.Media;
 using System.Windows;
 
-namespace Tera
+namespace TCTUI
 {
-
     public class Arc : Shape
     {
         public double StartAngle

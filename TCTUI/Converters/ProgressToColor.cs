@@ -5,7 +5,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using TCTUI;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     internal class ProgressToColor : IValueConverter
     {

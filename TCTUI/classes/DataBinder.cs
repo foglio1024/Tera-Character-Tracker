@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Shapes;
-using Tera.Converters;
+using TCTUI.Converters;
+using TCTUI.Controls;
+using TCTUI.Views;
+using TCTData;
 
-namespace Tera
+namespace TCTUI
 {
     public static class DataBinder
     {
         public static void BindCharPropertyToShapeFillColor(int i, string property, Shape t, IValueConverter conv)
         {
             var b = new Binding {
-                Source = TeraLogic.CharList[i],
+                Source = TCTData.Data.CharList[i],
                 Path = new PropertyPath(property),
                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                 Converter = conv
@@ -28,7 +26,7 @@ namespace Tera
         {
             var b = new Binding
             {
-                Source = TeraLogic.CharList[i],
+                Source = Data.CharList[i],
                 Path = new PropertyPath(prop),
                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                 Converter = conv,
@@ -41,7 +39,7 @@ namespace Tera
         {
             var b = new Binding
             {
-                Source = TeraLogic.CharList[i],
+                Source = Data.CharList[i],
                 Path = new PropertyPath(prop),
                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                 Converter = conv,
@@ -54,7 +52,7 @@ namespace Tera
         {
             var b = new Binding
             {
-                Source = TeraLogic.CharList[i],
+                Source = Data.CharList[i],
                 Path = new PropertyPath(prop),
                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                 Converter = conv,
@@ -67,7 +65,7 @@ namespace Tera
         {
             var b = new Binding
             {
-                Source = TeraLogic.CharList[i],
+                Source = Data.CharList[i],
                 Path = new PropertyPath(prop),
                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
             };
@@ -76,14 +74,14 @@ namespace Tera
         public static void BindParameterToQuestBarGauge(int i, string propertyW, string propertyD, QuestGauge t, int maxValueW, int thresholdW, int maxValueD, int thresholdD, bool color, bool invert)
         {
 
-            t.barD.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyD, new Daily_ValueToBarWidth(), new double[] { t.@base.Width, TeraLogic.MAX_WEEKLY - TeraLogic.CharList[i].Weekly }));
+            t.barD.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyD, new Daily_ValueToBarWidth(), new double[] { t.@base.Width, TCTConstants.MAX_WEEKLY - Data.CharList[i].Weekly }));
             t.barW.SetBinding(Shape.WidthProperty, DataBinder.GenericCharBinding(i, propertyW, new ValueToBarLenght(), new double[] { t.@base.Width, maxValueW }));
             t.txtD.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyD));
             t.txtW.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyW));
 
-            t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), TeraLogic.CharList[i].Weekly));
-            t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), TeraLogic.CharList[i].Weekly));
-            t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), TeraLogic.CharList[i].Weekly));
+            t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), Data.CharList[i].Weekly));
+            t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), Data.CharList[i].Weekly));
+            t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), Data.CharList[i].Weekly));
         }
         public static void BindParameterToBarGauge(int i, string property, BarGauge t, int maxValue, int threshold, bool color, bool invert)
         {
@@ -110,7 +108,7 @@ namespace Tera
             {
                 var counterText = new Binding
                 {
-                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
+                    Source = Data.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
                     Path = new PropertyPath("Clears"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,
@@ -119,7 +117,7 @@ namespace Tera
 
                 var fill = new Binding
                 {
-                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
+                    Source = Data.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
                     Path = new PropertyPath("Clears"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,
@@ -138,14 +136,14 @@ namespace Tera
             {
                 int tc = 1;
 
-                if (TeraLogic.AccountList.Find(a => a.Id == TeraLogic.CharList[charIndex].AccountId).TeraClub)
+                if (Data.AccountList.Find(a => a.Id == Data.CharList[charIndex].AccountId).TeraClub)
                 {
                     tc = 2;
                 }
 
                 var counterText = new Binding
                 {
-                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
+                    Source = Data.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
                     Path = new PropertyPath("Runs"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,
@@ -155,15 +153,15 @@ namespace Tera
                 int p = 0;
                 if (dc.n.Text == "AH" || dc.n.Text == "EA" || dc.n.Text == "GL" || dc.n.Text == "CA")
                 {
-                    p = TeraLogic.DungList.Find(d => d.ShortName == dc.Name).MaxBaseRuns;
+                    p = Data.DungList.Find(d => d.ShortName == dc.Name).MaxBaseRuns;
                 }
                 else
                 {
-                    p = TeraLogic.DungList.Find(d => d.ShortName == dc.Name).MaxBaseRuns * tc;
+                    p = Data.DungList.Find(d => d.ShortName == dc.Name).MaxBaseRuns * tc;
                 }
                 var ellipseFill = new Binding
                 {
-                    Source = TeraLogic.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
+                    Source = Data.CharList[charIndex].Dungeons.Find(d => d.Name == dc.Name),
                     Path = new PropertyPath("Runs"),
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Mode = BindingMode.OneWay,

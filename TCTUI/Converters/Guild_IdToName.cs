@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
    public class Guild_IdToName : IValueConverter
     {
@@ -10,7 +10,7 @@ namespace Tera.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var id = (uint)value;
-            return TeraLogic.GuildDictionary[id];
+            return TCTData.Data.GuildDictionary[id];
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

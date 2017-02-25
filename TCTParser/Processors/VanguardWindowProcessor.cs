@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tera;
+﻿using TCTData;
 
 namespace TCTParser.Processors
 {
@@ -18,7 +13,7 @@ namespace TCTParser.Processors
         public int GetWeekly(string content)
         {
             int w = StringUtils.Hex4BStringToInt(content.Substring(WEEKLY_OFFSET));
-            if (w > TeraLogic.MAX_WEEKLY) { w = TeraLogic.MAX_WEEKLY; }
+            if (w > TCTConstants.MAX_WEEKLY) { w = TCTConstants.MAX_WEEKLY; }
             return w;
         }
         public int GetCredits(string content)

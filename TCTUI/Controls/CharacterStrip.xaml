@@ -1,57 +1,71 @@
-﻿<UserControl x:Class="Tera.CharacterStrip"
+﻿<UserControl x:Class="TCTUI.Controls.CharacterStrip"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:c="clr-namespace:Tera.Converters"
-             xmlns:local="clr-namespace:Tera"
+             xmlns:controls="clr-namespace:TCTUI.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="50" d:DesignWidth="960" MouseEnter="rowHighlight" MouseLeave="rowNormal" Background="#00ffffff" Loaded="UserControl_Loaded" AllowDrop="False" 
-             GiveFeedback="mainGF"
-             Cursor="Hand"
-             MouseLeftButtonDown="selectChar">
-    <Grid Height="40" Background="Transparent">
+             d:DesignHeight="100" d:DesignWidth="867"
+             MouseEnter="rowHighlight" MouseLeave="rowNormal"
+             Loaded="UserControl_Loaded"
+             MouseLeftButtonDown="selectChar"
+             Background="#00ffffff"
+             Width="Auto"
+             >
+    <UserControl.Resources>
+        <Style x:Key="stripTB1" TargetType="TextBlock" />
+        <Style x:Key="stripTB2" TargetType="TextBlock" />
+        <Style x:Key="stripTB3" TargetType="TextBlock" />
+        <Style x:Key="divider" TargetType="Border"/>
+        <Style x:Key="classImg" TargetType="Rectangle"/>
+    </UserControl.Resources>
+    <Grid Height="40"  Background="Transparent">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="60"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition Width="120"/>
 
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="500*"/>
-            <ColumnDefinition Width="0"/>
-            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Border Grid.ColumnSpan="12" BorderThickness="0,0,0,1" BorderBrush="Black" Opacity=".07"/>
-        <Rectangle Grid.ColumnSpan="12" Fill="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Name="select"/>
-        <!--<Image x:Name="del" ToolTip="Delete character." Grid.Column="8" Source="resources/ic_close_black_24dp_2x.png" Opacity="0" Width="18" Height="18" Stretch="Uniform" HorizontalAlignment="Right" Margin="0,0,0,0" Cursor="Hand" MouseLeftButtonDown="delStrip"/>-->
-        <Grid Grid.Column="1">
+        <Border Grid.ColumnSpan="70" Grid.RowSpan="2" BorderThickness="0,0,0,1" Style="{DynamicResource divider}"/>
+        <Rectangle Grid.ColumnSpan="70" Grid.RowSpan="2" Fill="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Name="select"/>
+        <Grid Grid.Column="0" Width="Auto">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0*"/>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Image Name="classImage" Opacity=".57" Height="24" Width="24" Grid.Column="1"/>
-            <Rectangle ToolTip="Laurel" Width="20" Height="3"  x:Name="laurelRect" HorizontalAlignment="Center" VerticalAlignment="Bottom" Fill="#FF607D8B" Grid.Column="1" Margin="0,0,0,5" Opacity="0.8" />
+            <Rectangle Name="classImage" Opacity="1" Style="{DynamicResource classImg}" Height="26" Width="26" Grid.Column="1" Margin="3,0">
+                <Rectangle.OpacityMask>
+                    <ImageBrush/>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+            <Rectangle ToolTip="Laurel" Width="4" Height="Auto"  x:Name="laurelRect" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF607D8B" Grid.Column="0" Margin="0,0,0,0" Opacity="1" />
             <Grid Grid.Column="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock x:Name="lvlTB" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Margin="0,0,0,0" TextAlignment="Center" Foreground="#91000000" Grid.Column="0">--</TextBlock>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="lvlTB" Style="{DynamicResource stripTB2}" ToolTip="Level" HorizontalAlignment="Stretch" FontWeight="DemiBold" VerticalAlignment="Bottom" Width="20" Margin="0,0,0,0" FontSize="11" TextAlignment="Center" Grid.Row="0">--</TextBlock>
+                <TextBlock x:Name="ilvlTB"  Style="{DynamicResource stripTB3}" ToolTip="Item level"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="20" Margin="0,0,0,0" TextAlignment="Center" Grid.Row="1" FontSize="10">--</TextBlock>
             </Grid>
         </Grid>
-        <TextBlock Name="nameTB"    AllowDrop="False" MinWidth="82" Grid.Column="2" Background="{x:Null}" Foreground="#df000000" VerticalAlignment="Center"  FontSize="14" TextAlignment="Left"   HorizontalAlignment="Left"    Margin="0,0,0,0" FontWeight="DemiBold"  Width="150"/>
-        <local:BarGauge x:Name="creditsTB" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-        <local:QuestGauge Grid.Column="5" x:Name="questTB" HorizontalAlignment="Center"/>
-        <local:BarGauge x:Name="gftTB" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="7"/>
-        <local:BarGauge x:Name="mvTB" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="6"/>
-        <local:CrystalbindIndicator x:Name="ccbInd" Grid.Column="8" Width="15" Height="15" Margin="5,0" HorizontalAlignment="Center"/>
+        <TextBlock Name="nameTB" Style="{DynamicResource stripTB1}"   AllowDrop="False" Grid.Column="1" VerticalAlignment="Center"  FontSize="14" TextAlignment="Left"   HorizontalAlignment="Left"    Margin="0,0,0,0" FontWeight="DemiBold"  Width="120"/>
+        <controls:BarGauge x:Name="creditsTB"  Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <controls:QuestGauge x:Name="questTB" Grid.Column="3" HorizontalAlignment="Stretch"/>
+        <controls:BarGauge x:Name="mvTB" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="4"/>
+        <controls:BarGauge x:Name="gftTB" Margin="5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="5"/>
+        <controls:BarGauge x:Name="scTB" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="6"/>
+        <controls:CrystalbindIndicator x:Name="ccbInd" Grid.Column="7" Width="15" Height="15" Margin="5,0"/>
 
 
 

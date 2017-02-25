@@ -5,7 +5,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using TCTUI;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     internal class Dungeon_RunsToColor : IValueConverter
     {

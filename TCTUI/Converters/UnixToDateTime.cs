@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     public class UnixToDateTime : IValueConverter
     {

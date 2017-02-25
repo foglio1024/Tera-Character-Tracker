@@ -7,7 +7,7 @@ using TCTData.Enums;
 
 namespace TCTData
 {
-    public static class TCTProps
+    public static class Settings
     {
         public static bool Reset { get; set; }
         public static bool FirstLaunchAfterReset { get; set; }

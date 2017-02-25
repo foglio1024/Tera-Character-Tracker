@@ -14,7 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TCTUI;
-namespace Tera
+using Tera;
+
+namespace TCTUI.Controls
 {
     /// <summary>
     /// Logica di interazione per MaterialSwitch.xaml
@@ -28,7 +30,7 @@ namespace Tera
             On = new ThicknessAnimationUsingKeyFrames();
             Off = new ThicknessAnimationUsingKeyFrames();
             var col = new Color();
-            switch (TCTData.TCTProps.Theme)
+            switch (TCTData.Settings.Theme)
             {
                 case TCTData.Enums.Theme.Light:
                     col = TCTData.Colors.LightTheme_Card;

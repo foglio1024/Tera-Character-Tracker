@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Data;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
 
     public class ValueToAngle : IValueConverter

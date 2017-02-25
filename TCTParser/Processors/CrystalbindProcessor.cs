@@ -7,6 +7,7 @@ using System.Windows.Media;
 using TCTData.Enums;
 using Tera;
 using TCTUI;
+using TCTData;
 
 
 namespace TCTParser.Processors
@@ -52,16 +53,16 @@ namespace TCTParser.Processors
 
             if (!Status)
             {
-                if (TeraLogic.DungList.Find(x => x.Id == locId) != null)
+                if (TCTData.Data.DungList.Find(x => x.Id == locId) != null)
                 {
-                    if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
+                    if (TCTData.Data.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
                     {
                         UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, TCTData.Colors.BrightRed, true, true, false);
                     }
                 }
-                else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
+                else if (TCTData.Data.DungList.Find(x => x.Id == locNameId) != null)
                 {
-                    if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
+                    if (TCTData.Data.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
                     {
                         UI.SendNotification("Your Complete Crystalbind is off.", NotificationImage.Crystalbind, NotificationType.Standard, TCTData.Colors.BrightRed, true, true, false);
                     }
@@ -70,18 +71,18 @@ namespace TCTParser.Processors
 
             else if (Time <= 1800000 && Time > 0)
             {
-                if (TeraLogic.DungList.Find(x => x.Id == locId) != null)
+                if (TCTData.Data.DungList.Find(x => x.Id == locId) != null)
                 {
-                    if (TeraLogic.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
+                    if (TCTData.Data.DungList.Find(x => x.Id == locId).Tier >= DungeonTier.Tier3)
                     {
-                        UI.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Orange, true, true, false);
+                        UI.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, NotificationType.Standard, TCTData.Colors.SolidOrange, true, true, false);
                     }
                 }
-                else if (TeraLogic.DungList.Find(x => x.Id == locNameId) != null)
+                else if (TCTData.Data.DungList.Find(x => x.Id == locNameId) != null)
                 {
-                    if (TeraLogic.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
+                    if (TCTData.Data.DungList.Find(x => x.Id == locNameId).Tier >= DungeonTier.Tier3)
                     {
-                        UI.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, NotificationType.Standard, Colors.Orange, true, true, false);
+                        UI.SendNotification("Your Complete Crystalbind will expire soon.", NotificationImage.Crystalbind, NotificationType.Standard, TCTData.Colors.SolidOrange, true, true, false);
                     }
                 }
             }

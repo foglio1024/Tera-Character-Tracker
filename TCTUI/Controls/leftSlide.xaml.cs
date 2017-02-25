@@ -17,19 +17,20 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TCTData.Enums;
 using TCTData;
+using TCTUI;
 
-namespace Tera
+namespace TCTUI.Controls
 {
     /// <summary>
     /// Logica di interazione per leftSlide.xaml
     /// </summary>
-    public partial class leftSlide : UserControl
+    public partial class LeftSlide : UserControl
     {
-        public leftSlide()
+        public LeftSlide()
         {
             InitializeComponent();
 
-            if (TCTData.TCTProps.Notifications)
+            if (TCTData.Settings.Notifications)
             {
                 Notifications_Switch.TurnOn();
             }
@@ -38,7 +39,7 @@ namespace Tera
                 Notifications_Switch.TurnOff();
             }
 
-            if (TCTData.TCTProps.NotificationSound)
+            if (TCTData.Settings.NotificationSound)
             {
                 NotificationSound_Switch.TurnOn();
             }
@@ -47,7 +48,7 @@ namespace Tera
                 NotificationSound_Switch.TurnOff();
             }
 
-            if (TCTData.TCTProps.CcbNM == TCTData.Enums.NotificationMode.EverySection)
+            if (TCTData.Settings.CcbNM == TCTData.Enums.NotificationMode.EverySection)
             {
                 CrystalbindNotificationType_Switch.TurnOn();
                 CrystalbindNotificationType_Text.Text = "Notification mode: every section";
@@ -58,7 +59,7 @@ namespace Tera
                 CrystalbindNotificationType_Text.Text = "Notification mode: teleport only";
             }
 
-            if(TCTProps.Theme == Theme.Dark)
+            if(Settings.Theme == Theme.Dark)
             {
                 DarkTheme_Switch.TurnOn();
             }
@@ -74,7 +75,7 @@ namespace Tera
             var s2 = new Style { TargetType = typeof(TextBlock) };
             var s3 = new Style { TargetType = typeof(TextBlock) };
 
-            switch (TCTData.TCTProps.Theme)
+            switch (TCTData.Settings.Theme)
             {
                 case Theme.Light:
                     root.Background = new SolidColorBrush(TCTData.Colors.LightTheme_Card);
@@ -175,7 +176,7 @@ namespace Tera
         }
         private void resetDungs()
         {
-            foreach (var c in TeraLogic.CharList)
+            foreach (var c in Data.CharList)
             {
                 foreach (var d in c.Dungeons)
                 {
@@ -246,29 +247,29 @@ namespace Tera
         }
         private void SetConsole(object sender, MouseButtonEventArgs e)
         {
-            if (TCTData.TCTProps.Console)
+            if (TCTData.Settings.Console)
             {
-                TCTData.TCTProps.Console = false;
+                TCTData.Settings.Console = false;
                 FreeConsole();
             }
 
             else
             {
-                TCTData.TCTProps.Console = true;
+                TCTData.Settings.Console = true;
                 AllocConsole();
             }
         }
         private void SetCrystalbindNotificationType(object sender, MouseButtonEventArgs e)
         {
-            if (TCTData.TCTProps.CcbNM == NotificationMode.EverySection)
+            if (TCTData.Settings.CcbNM == NotificationMode.EverySection)
             {
-                TCTData.TCTProps.CcbNM = NotificationMode.TeleportOnly;
+                TCTData.Settings.CcbNM = NotificationMode.TeleportOnly;
                 CrystalbindNotificationType_Text.Text = "Notification mode: teleport only";
             }
 
             else
             {
-                TCTData.TCTProps.CcbNM = NotificationMode.EverySection;
+                TCTData.Settings.CcbNM = NotificationMode.EverySection;
                 CrystalbindNotificationType_Text.Text = "Notification mode: every section";
             }
 
@@ -276,24 +277,24 @@ namespace Tera
         }
         private void SetNotificationSoundOnOff(object sender, MouseButtonEventArgs e)
         {
-            if (TCTData.TCTProps.NotificationSound)
+            if (TCTData.Settings.NotificationSound)
             {
-                TCTData.TCTProps.NotificationSound = false;
+                TCTData.Settings.NotificationSound = false;
             }
             else
             {
-                TCTData.TCTProps.NotificationSound = true;
+                TCTData.Settings.NotificationSound = true;
             }
         }
         private void SetNotificationsOnOff(object sender, MouseButtonEventArgs e)
         {
-            if (TCTData.TCTProps.Notifications)
+            if (TCTData.Settings.Notifications)
             {
-                TCTData.TCTProps.Notifications = false;
+                TCTData.Settings.Notifications = false;
             }
             else
             {
-                TCTData.TCTProps.Notifications = true;
+                TCTData.Settings.Notifications = true;
             }
         }
 
@@ -307,13 +308,13 @@ namespace Tera
 
         private void ToggleDarkTheme(object sender, MouseButtonEventArgs e)
         {
-            if(TCTData.TCTProps.Theme == Theme.Dark)
+            if(TCTData.Settings.Theme == Theme.Dark)
             {
-                TCTData.TCTProps.Theme = Theme.Light;
+                TCTData.Settings.Theme = Theme.Light;
             }
             else
             {
-                TCTData.TCTProps.Theme = Theme.Dark;
+                TCTData.Settings.Theme = Theme.Dark;
             }
 
             TCTNotifier.NotificationProvider.SendNotification("New theme will be applied after restart.", NotificationImage.Default, NotificationType.Standard, TCTData.Colors.DarkTheme_Foreground2, true, false, false);

@@ -43,14 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Character.cs" />
+    <Compile Include="Classes\CharDungeon.cs" />
     <Compile Include="Classes\Colors.cs" />
+    <Compile Include="Classes\Dungeon.cs" />
     <Compile Include="Classes\TCTDatabase.cs" />
     <Compile Include="Converters\RegionIDToName.cs" />
     <Compile Include="Converters\ZoneIdToName.cs" />
     <Compile Include="Converters\ZoneToRegionID.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="FileManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TCTProps.cs" />
+    <Compile Include="Classes\TCTConstants.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,8 +17,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TCTData;
 
-namespace Tera
+namespace TCTUI.Controls
 {
     /// <summary>
     /// Logica di interazione per overviewPage2.xaml
@@ -36,7 +37,7 @@ namespace Tera
             s.Setters.Add(new Setter(TextBlock.HeightProperty, 17.0));
 
             var d = new Style { TargetType = typeof(Border) };
-            switch (TCTData.TCTProps.Theme)
+            switch (TCTData.Settings.Theme)
             {
                 case TCTData.Enums.Theme.Light:
                     s.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground2)));
@@ -81,7 +82,7 @@ namespace Tera
 
         private void resetDailies(object sender, MouseButtonEventArgs e)
         {
-            foreach (var character in TeraLogic.CharList)
+            foreach (var character in Data.CharList)
             {
                 //TO DO: confirmation popup
                 character.Weekly = 0;

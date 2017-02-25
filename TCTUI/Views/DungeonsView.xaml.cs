@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TCTUI.Views
 {
     /// <summary>
-    /// Logica di interazione per DungeonsWindow.xaml
+    /// Logica di interazione per DungeonsView.xaml
     /// </summary>
-    public partial class DungeonsWindow : UserControl
+    public partial class DungeonsView : UserControl
     {
-        public DungeonsWindow()
+        public DungeonsView()
         {
             InitializeComponent();
         }

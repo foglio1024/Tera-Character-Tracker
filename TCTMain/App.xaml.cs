@@ -30,7 +30,7 @@ namespace TCTMain
     public partial class App : System.Windows.Application
     {
         static string version = "v"+Assembly.GetExecutingAssembly().GetName().Version.Major+"."+Assembly.GetExecutingAssembly().GetName().Version.Minor;
-
+        static Mutex m;
 
         public class Threads
         {
@@ -144,7 +144,6 @@ namespace TCTMain
 
             }
 
-
             public static void UIThread()
             {
                 try
@@ -160,10 +159,10 @@ namespace TCTMain
                     }
                     TCTNotifier.NotificationProvider.SendNotification("TCT " + v + " is running", TCTData.Enums.NotificationImage.Default, TCTData.Enums.NotificationType.Standard, TCTData.Colors.SolidBaseColor, true, false, false);
 
-                    Tera.TeraMainWindow w = new Tera.TeraMainWindow();
+                    TCTUI.TeraMainWindow w = new TCTUI.TeraMainWindow();
                     w.InitializeComponent();
 
-                    Tera.TeraLogic.TryReset();
+                    TCTMain.ResetManager.TryReset();
                     w.Title = "Tera Character Tracker " + v;
                     UpdateManager.NotifyUpdateFail();
                     w.ShowDialog();
@@ -182,9 +181,9 @@ namespace TCTMain
                            "" + Environment.NewLine + "Date :" + DateTime.Now.ToString());
                         writer.WriteLine(Environment.NewLine + "-----------------------------------------------------------------------------" + Environment.NewLine);
                     }
-                    Tera.TeraLogic.SaveAccounts(false);
-                    Tera.TeraLogic.SaveSettings(false);
-                    Tera.TeraLogic.SaveCharacters(false);
+                    TCTData.FileManager.SaveAccounts();
+                    TCTData.FileManager.SaveSettings();
+                    TCTData.FileManager.SaveCharacters();
                     System.Windows.MessageBox.Show("An error occured. Check error.txt for more info");
                     Environment.Exit(-1);
                 }
@@ -193,7 +192,6 @@ namespace TCTMain
         }
             
 
-        static Mutex m;
 
         static void AppStartup()
         {
@@ -219,7 +217,7 @@ namespace TCTMain
         [STAThread]
         public static void Main()
         {
-            TCTData.TCTProps.CurrentVersion = version;
+            TCTData.Settings.CurrentVersion = version;
             UpdateManager.CheckForUpdates();
             AppStartup();
             DeleteOldExe();
@@ -227,9 +225,9 @@ namespace TCTMain
 
 
             //load settings
-            Tera.TeraLogic.LoadSettings();
-            Tera.TeraLogic.ResetCheck();
-            Tera.TeraLogic.LoadData();
+            TCTData.FileManager.LoadSettings();
+            ResetManager.ResetCheck();
+            TCTData.FileManager.LoadData();
             TCTData.TCTDatabase.LoadTeraDB();
 
             Thread uiThread = new Thread(new ThreadStart(Threads.UIThread));

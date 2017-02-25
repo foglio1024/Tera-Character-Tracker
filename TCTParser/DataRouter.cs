@@ -15,13 +15,14 @@ using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media.Imaging;
-using Tera.Converters;
+using TCTUI.Converters;
 using System.Windows.Data;
 using System.Globalization;
 using TCTData.Enums;
 using TCTParser.Processors;
 using Data;
 using TCTUI;
+using TCTData;
 
 namespace TCTParser
 {
@@ -57,7 +58,7 @@ namespace TCTParser
         public static Character CurrentChar
         { get
             {
-                return TeraLogic.CharList[TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(c => c.Name == currentCharName))];
+                return TCTData.Data.CharList[TCTData.Data.CharList.IndexOf(TCTData.Data.CharList.Find(c => c.Name == currentCharName))];
             }
         }
 
@@ -79,20 +80,20 @@ namespace TCTParser
             {
                 case "S_GET_USER_LIST":
                     crystalbindProcessor.Clear();
-                    if (!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
+                    if (!TCTData.Data.AccountList.Contains(TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
                     {
-                        TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
+                        TCTData.Data.AccountList.Add(new TCTData.Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
                     }
                     else
                     {
-                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
-                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
-                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
+                        TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
+                        TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
+                        TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
                     }
                     charListProcessor.CurrentAccountId = accountLoginProcessor.id;
                     SetCharList(data);
-                    TeraLogic.SaveAccounts(false);
-                    TeraLogic.SaveCharacters(false);
+                    TCTData.FileManager.SaveAccounts();
+                    TCTData.FileManager.SaveCharacters();
                     UI.UpdateLog("Data saved.");
                     break;
 
@@ -180,22 +181,22 @@ namespace TCTParser
 
                 case "S_ACCOUNT_PACKAGE_LIST":
                     accountLoginProcessor.ParsePackageInfo(data);
-                    if (!TeraLogic.AccountList.Contains(TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
+                    if (!TCTData.Data.AccountList.Contains(TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id)))
                     {
-                        TeraLogic.AccountList.Add(new Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
+                        TCTData.Data.AccountList.Add(new TCTData.Account(accountLoginProcessor.id, accountLoginProcessor.tc, accountLoginProcessor.vet, accountLoginProcessor.tcTime));
                     }
                     else
                     {
-                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
-                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
-                        TeraLogic.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
+                        TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClub = accountLoginProcessor.tc;
+                        TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id).Veteran = accountLoginProcessor.vet;
+                        TCTData.Data.AccountList.Find(x => x.Id == accountLoginProcessor.id).TeraClubDate = accountLoginProcessor.tcTime;
                     }
 
                     break;
 
                 case "S_RETURN_TO_LOBBY":
-                    TeraLogic.SaveAccounts(false);
-                    TeraLogic.SaveCharacters(false);
+                    TCTData.FileManager.SaveAccounts();
+                    TCTData.FileManager.SaveCharacters();
                     UI.UpdateLog("Data saved.");
                     inventoryProcessor.justLoggedIn = true;
                     vanguardWindowProcessor.justLoggedIn = true;
@@ -242,12 +243,12 @@ namespace TCTParser
             var charList = charListProcessor.ParseCharacters(p);
             //for (int i = 0; i < charList.Count; i++)
             //{
-            //    UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(charList[i])));
+            //    UI.MainWin.Dispatcher.Invoke(new Action(() => TCTData.Data.AddCharacter(charList[i])));
             //}
 
             foreach (var c in charList)
             {
-                UI.MainWin.Dispatcher.Invoke(new Action(() => TeraLogic.AddCharacter(c)));
+                UI.MainWin.Dispatcher.Invoke(new Action(() => TCTData.Data.AddCharacter(c)));
             }
             charListProcessor.Clear();
 
@@ -260,7 +261,7 @@ namespace TCTParser
             currentCharId = charLoginProcessor.GetCharId(p);
 
             UI.UpdateLog(currentCharName + " logged in.");
-            UI.MainWin.Dispatcher.Invoke(new Action(() => Tera.TeraLogic.SelectCharacter(currentCharName)));
+            UI.MainWin.Dispatcher.Invoke(new Action(() => UIManager.SelectCharacter(currentCharName)));
 
             UpdateLastOnline();
         }
@@ -286,7 +287,7 @@ namespace TCTParser
                 if (CurrentChar.MarksOfValor > 82)
                 {
                     UI.UpdateLog("You've almost reached the maximum amount of Elleon's Marks of Valor.");
-                    UI.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar.MarksOfValor + ").", NotificationImage.Marks, NotificationType.Standard, Colors.Orange, true, true, false);
+                    UI.SendNotification("Your Elleon's Marks of Valor amount is close to the maximum (" + CurrentChar.MarksOfValor + ").", NotificationImage.Marks, NotificationType.Standard, TCTData.Colors.SolidOrange, true, true, false);
                 }
                 else
                 {
@@ -354,7 +355,7 @@ namespace TCTParser
             int weekly = vanguardWindowProcessor.GetWeekly(p); //Convert.ToInt32(wCforVGData[7 * 8].ToString() + wCforVGData[7 * 8 + 1].ToString(), 16);
             int credits = vanguardWindowProcessor.GetCredits(p); //Convert.ToInt32(wCforVGData[8 * 8 + 2].ToString() + wCforVGData[8 * 8 + 3].ToString()+ wCforVGData[8 * 8 + 0].ToString() + wCforVGData[8 * 8 + 1].ToString() , 16);
             int completed_dailies = vanguardWindowProcessor.GetDaily(p); //Convert.ToInt32(wCforVGData.Substring(3 * 8, 2).ToString(), 16);
-            int remaining_dailies = Tera.TeraLogic.MAX_DAILY - completed_dailies;
+            int remaining_dailies = TCTData.TCTConstants.MAX_DAILY - completed_dailies;
 
             if (CurrentChar.Weekly != weekly ||
                 CurrentChar.Credits != credits ||
@@ -376,7 +377,7 @@ namespace TCTParser
             if (CurrentChar.LocationId != sectionProcessor.GetLocationId(p))
             {
                 CurrentChar.LocationId = sectionProcessor.GetLocationId(p);
-                if (TCTData.TCTProps.CcbNM == NotificationMode.TeleportOnly)
+                if (TCTData.Settings.CcbNM == NotificationMode.TeleportOnly)
                 {
 
                     crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
@@ -390,7 +391,7 @@ namespace TCTParser
 
             }
 
-            if (TCTData.TCTProps.CcbNM == NotificationMode.EverySection)
+            if (TCTData.Settings.CcbNM == NotificationMode.EverySection)
             {
                 crystalbindProcessor.CheckCcb(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));
                 guildQuestListProcessor.CheckQuestStatus(sectionProcessor.GetLocationId(p), sectionProcessor.GetLocationNameId(p));

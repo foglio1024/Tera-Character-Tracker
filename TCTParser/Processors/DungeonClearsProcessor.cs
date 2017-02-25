@@ -28,9 +28,9 @@ namespace TCTParser
             foreach (DungClear dgClear in ClearList)
             {
 
-                if(Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID) != null)
+                if(TCTData.Data.DungList.Find(x => x.Id == dgClear.ID) != null)
                 {
-                    string dgName = Tera.TeraLogic.DungList.Find(x => x.Id == dgClear.ID).ShortName; //find this dungeon name
+                    string dgName = TCTData.Data.DungList.Find(x => x.Id == dgClear.ID).ShortName; //find this dungeon name
 
                     DataRouter.CurrentChar.Dungeons.Find(y => y.Name == dgName).Clears = dgClear.Clears; //update clears 
                 }

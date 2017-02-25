@@ -13,8 +13,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tera;
 
-namespace Tera
+namespace TCTUI.Views
 {
     /// <summary>
     /// Logica di interazione per CharView.xaml
@@ -32,7 +33,7 @@ namespace Tera
             var s3 = new Style { TargetType = typeof(TextBlock) };
             var sx = new Style { TargetType = typeof(TextBox) };
 
-            switch (TCTData.TCTProps.Theme)
+            switch (TCTData.Settings.Theme)
             {
                 case TCTData.Enums.Theme.Light:
                     //Add setters

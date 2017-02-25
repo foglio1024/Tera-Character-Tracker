@@ -23,9 +23,9 @@ namespace TCTParser
 
             foreach (DungCoolTime dct in CoolTimeList)
             {
-                if(TeraLogic.DungList.Find(x => x.Id == dct.ID) != null)
+                if(TCTData.Data.DungList.Find(x => x.Id == dct.ID) != null)
                 {
-                    DataRouter.CurrentChar.Dungeons.Find(x => x.Name == TeraLogic.DungList.Find(y => y.Id == dct.ID).ShortName).Runs = dct.Runs;
+                    DataRouter.CurrentChar.Dungeons.Find(x => x.Name == TCTData.Data.DungList.Find(y => y.Id == dct.ID).ShortName).Runs = dct.Runs;
                 }
             }
 

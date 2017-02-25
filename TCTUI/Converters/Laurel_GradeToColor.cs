@@ -5,7 +5,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     internal class Laurel_GradeToColor : IValueConverter
     {

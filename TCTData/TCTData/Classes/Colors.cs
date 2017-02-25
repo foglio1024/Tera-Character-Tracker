@@ -16,6 +16,7 @@ namespace TCTData
         public static Color SolidGreen = Color.FromArgb(255, 90, 180, 110);
         public static Color SolidRed = Color.FromArgb(255, 255, 80, 80);
         public static Color SolidGray = Color.FromArgb(255, 200, 200, 200);
+        public static Color SolidOrange = Color.FromArgb(255, 255, 140, 0);
 
         static byte alpha = 150;
         public static Color FadedBaseColor = Color.FromArgb(alpha, SolidBaseColor.R, SolidBaseColor.G, SolidBaseColor.B);

@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TCTData.Enums;
 using Tera;
-using Tera.Converters;
+using TCTUI.Converters;
+using TCTData;
 
 namespace TCTParser.Processors
 {
@@ -225,9 +226,9 @@ namespace TCTParser.Processors
                 var c = StringToCharacter(str);
                 _charList.Add(c);
 
-                if (!Tera.TeraLogic.GuildDictionary.ContainsKey(c.GuildId))
+                if (!TCTData.Data.GuildDictionary.ContainsKey(c.GuildId))
                 {
-                    TeraLogic.GuildDictionary.Add(c.GuildId, GetGuildName(str));
+                    TCTData.Data.GuildDictionary.Add(c.GuildId, GetGuildName(str));
                 }
 
                 Console.WriteLine(("Found character: " + c.Name + " lv." + c.Level + " " + c.CharClass.ToLower() + ", logged out in " + lcc.Convert(c.LocationId, null, null, null) + " on " + timeConverter.Convert(c.LastOnline, null, null, null) + "."));

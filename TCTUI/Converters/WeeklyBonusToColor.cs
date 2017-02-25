@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
+using TCTData;
 
-namespace Tera
+namespace TCTUI.Converters
 {
     class WeeklyBonusToColor : IValueConverter
     {
@@ -15,7 +16,7 @@ namespace Tera
         {
             bool canGetBonus = (bool)value;
             int weeklies = (int)parameter;
-            if (weeklies == TeraLogic.MAX_WEEKLY)
+            if (weeklies == TCTConstants.MAX_WEEKLY)
             {
                 return new SolidColorBrush(TCTData.Colors.SolidGreen);
             }

@@ -4,7 +4,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using TCTUI;
 
-namespace Tera
+namespace TCTUI.Converters
 {
     internal class Dungeon_ClearsToColor : IValueConverter
     {

@@ -8,6 +8,9 @@ using TCTData.Enums;
 using System.Windows.Forms;
 using Tera;
 using System.Windows.Controls;
+using TCTUI.Controls;
+using TCTUI.Views;
+using TCTData;
 
 namespace TCTUI
 {

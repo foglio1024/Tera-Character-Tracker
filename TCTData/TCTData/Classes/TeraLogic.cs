@@ -2,39 +2,20 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
-using System.Collections.ObjectModel;
 using Tera;
-using System.Windows;
-using System.Windows.Data;
 using System.Windows.Controls;
-using System.ComponentModel;
-using System.Windows.Shapes;
-using System.Xml;
 using System.Xml.Linq;
-using System.Windows.Media;
-using Tera.Converters;
 using System.Runtime.InteropServices;
 using TCTData.Enums;
-using TCTUI;
+using TCTData;
 
-namespace Tera
+
+namespace TCTUI
 {
 
     public static class TeraLogic
     {
-
-
-
-        public const int MAX_WEEKLY = 15;
-        public const int MAX_DAILY = 8;
-        public const int MAX_CREDITS = 9000;
-        public const int MAX_MARKS = 100;
-        public const int MAX_GF_TOKENS = 80;
-        public const int MAX_DRAGONWING_SCALES = 50;
-        private const int DAILY_RESET_HOUR = 5;
 
         public static bool dailyReset = false;
         public static bool weeklyReset = false;
@@ -48,7 +29,6 @@ namespace Tera
         public static Dictionary<uint, string> GuildDictionary { get; set; }
         private static XDocument settings;
         private static DateTime LastClosed;
-        //public static CharViewContentProvider cvcp = new CharViewContentProvider();
 
         public static List<Delegate> UndoList { get; set; }
 
@@ -138,7 +118,7 @@ namespace Tera
             DataBinder.CreateDgClearsBindings(charIndex, w);
 
         // highlight character row and scroll into view
-            foreach (var ns in Tera.TeraMainWindow.ExtendedCharacterStrips)
+            foreach (var ns in TCTUI.TeraMainWindow.ExtendedCharacterStrips)
             {
                 if (ns.Tag != null)
                 {
@@ -315,14 +295,14 @@ namespace Tera
         public static void ResetCheck()
         {
             DateTime lastReset;
-            if (DateTime.Now.Hour >= DAILY_RESET_HOUR)
+            if (DateTime.Now.Hour >= TCTConstants.DAILY_RESET_HOUR)
             {
-                lastReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DAILY_RESET_HOUR, 0, 0);
+                lastReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, TCTConstants.DAILY_RESET_HOUR, 0, 0);
             }
 
             else
             {
-                lastReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day - 1, DAILY_RESET_HOUR, 0, 0);
+                lastReset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day - 1, TCTConstants.DAILY_RESET_HOUR, 0, 0);
             }
 
             if (LastClosed < lastReset)
@@ -357,8 +337,6 @@ namespace Tera
             }
             CharList = sortedList;
         }
-
-
     #region File Management
         public static void SaveCharacters(bool log)
         {

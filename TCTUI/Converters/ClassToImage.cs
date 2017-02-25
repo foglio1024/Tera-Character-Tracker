@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using Tera;
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     internal class ClassToImage : IValueConverter
     {

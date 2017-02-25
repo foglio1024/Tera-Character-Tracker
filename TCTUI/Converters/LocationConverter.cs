@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Data;
 using System.Xml.Linq;
 
-namespace Tera.Converters
+namespace TCTUI.Converters
 {
     public class LocationIdToName : IValueConverter
     {

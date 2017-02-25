@@ -14,8 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TCTData.Enums;
 using TCTUI;
+using TCTData;
 
-namespace Tera
+namespace TCTUI.Controls
 {
     /// <summary>
     /// Logica di interazione per dgCounter.xaml
@@ -34,7 +35,7 @@ namespace Tera
 
             var e = new Style { TargetType = typeof(Ellipse) };
 
-            switch (TCTData.TCTProps.Theme)
+            switch (TCTData.Settings.Theme)
             {
                 case TCTData.Enums.Theme.Light:
                     s1.Setters.Add(new Setter(ForegroundProperty, new SolidColorBrush(TCTData.Colors.LightTheme_Foreground1)));
@@ -80,34 +81,33 @@ namespace Tera
                     tc = 2;
                 }
                 var charName = UI.SelectedChar.Name;
-                var charIndex = TeraLogic.CharList.IndexOf(TeraLogic.CharList.Find(x => x.Name.Equals(charName)));
+                var charIndex = Data.CharList.IndexOf(Data.CharList.Find(x => x.Name.Equals(charName)));
 
                 var dgName = n.Text;
-                var dgIndex = TeraLogic.CharList[charIndex].Dungeons.IndexOf(TeraLogic.CharList[charIndex].Dungeons.Find(x => x.Name.Equals(dgName)));
+                var dgIndex = Data.CharList[charIndex].Dungeons.IndexOf(Data.CharList[charIndex].Dungeons.Find(x => x.Name.Equals(dgName)));
                 if(dgName == "EA" || dgName == "CA" || dgName == "AH" || dgName == "GL")
                 {
-                    if (TeraLogic.CharList[charIndex].Dungeons[dgIndex].Runs > 0)
+                    if (Data.CharList[charIndex].Dungeons[dgIndex].Runs > 0)
                     {
-                        TeraLogic.CharList[charIndex].Dungeons[dgIndex].Runs--;
+                        Data.CharList[charIndex].Dungeons[dgIndex].Runs--;
                     }
                     else
                     {
-                        TeraLogic.CharList[charIndex].Dungeons[dgIndex].Runs = TeraLogic.DungList[dgIndex].MaxBaseRuns;
+                        Data.CharList[charIndex].Dungeons[dgIndex].Runs = Data.DungList[dgIndex].MaxBaseRuns;
                     }
                 }
                 else
                 {
-                    if (TeraLogic.CharList[charIndex].Dungeons[dgIndex].Runs > 0)
+                    if (Data.CharList[charIndex].Dungeons[dgIndex].Runs > 0)
                     {
-                        TeraLogic.CharList[charIndex].Dungeons[dgIndex].Runs--;
+                        Data.CharList[charIndex].Dungeons[dgIndex].Runs--;
                     }
                     else
                     {
-                        TeraLogic.CharList[charIndex].Dungeons[dgIndex].Runs = TeraLogic.DungList[dgIndex].MaxBaseRuns * tc;
+                        Data.CharList[charIndex].Dungeons[dgIndex].Runs = Data.DungList[dgIndex].MaxBaseRuns * tc;
                     }
                 }
           
-                TeraLogic.IsSaved = false; 
             }
 
         }
