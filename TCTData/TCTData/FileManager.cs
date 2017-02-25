@@ -161,15 +161,15 @@ namespace TCTData
 
             else
             {
-                TCTData.Settings.Top = 20;
-                TCTData.Settings.Left = 20;
-                TCTData.Settings.Width = 1280;
-                TCTData.Settings.Height = 930;
-                TCTData.Settings.CcbNM = NotificationMode.EverySection;
-                TCTData.Settings.Console = false;
-                TCTData.Settings.NotificationSound = true;
-                TCTData.Settings.Notifications = true;
-                TCTData.Settings.Theme = Theme.Light;
+                Settings.Top = 20;
+                Settings.Left = 20;
+                Settings.Width = 1280;
+                Settings.Height = 930;
+                Settings.CcbNM = NotificationMode.EverySection;
+                Settings.Console = false;
+                Settings.NotificationSound = true;
+                Settings.Notifications = true;
+                Settings.Theme = Theme.Light;
                 /*new setting here*/
             }
         }
