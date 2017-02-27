@@ -79,9 +79,9 @@ namespace TCTUI
             t.txtD.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyD));
             t.txtW.SetBinding(TextBlock.TextProperty, DataBinder.GenericCharBinding(i, propertyW));
 
-            t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), Data.CharList[i].Weekly));
-            t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), Data.CharList[i].Weekly));
-            t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, "WeeklyBonus", new WeeklyBonusToColor(), Data.CharList[i].Weekly));
+            t.barW.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new WeeklyBonusToColor(),         TCTData.Data.CharList[i].Dailies));
+            t.barD.SetBinding(Shape.FillProperty, DataBinder.GenericCharBinding(i, propertyW, new WeeklyBonusToColor(),         TCTData.Data.CharList[i].Dailies));
+            t.borD.SetBinding(Border.BorderBrushProperty, DataBinder.GenericCharBinding(i, propertyW, new WeeklyBonusToColor(), TCTData.Data.CharList[i].Dailies));
         }
         public static void BindParameterToBarGauge(int i, string property, BarGauge t, int maxValue, int threshold, bool color, bool invert)
         {

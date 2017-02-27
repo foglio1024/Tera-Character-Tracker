@@ -14,21 +14,41 @@ namespace TCTUI.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool canGetBonus = (bool)value;
-            int weeklies = (int)parameter;
+            int weeklies = (int)value;
+            int dailies = (int)parameter;
+            bool bonus = true;
+
+            if ((DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && DateTime.Now.Hour >= TCTConstants.DAILY_RESET_HOUR) ||
+                (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && DateTime.Now.Hour < TCTConstants.DAILY_RESET_HOUR) &&
+                weeklies + dailies < TCTConstants.MAX_WEEKLY)
+                    {
+                        bonus = false;
+                    }
+
             if (weeklies == TCTConstants.MAX_WEEKLY)
             {
                 return new SolidColorBrush(TCTData.Colors.SolidGreen);
             }
             else
             {
-                if (canGetBonus)
+                if (bonus)
                 {
-                    return new SolidColorBrush(TCTData.Colors.SolidBaseColor);
+                    if ( //if time is between MON 5AM and TUE 5AM (one day left before reset)
+                        ((DateTime.Now.DayOfWeek == DayOfWeek.Monday && DateTime.Now.Hour > TCTData.TCTConstants.DAILY_RESET_HOUR) ||
+                        (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && DateTime.Now.Hour < TCTData.TCTConstants.DAILY_RESET_HOUR)) &&
+                        weeklies < TCTConstants.MAX_WEEKLY - TCTConstants.MAX_DAILY
+                       )
+                            {
+                                return new SolidColorBrush(TCTData.Colors.SolidAccentColor); //warning, last chance to do weekly bonus
+                            }
+                    else
+                            {
+                                return new SolidColorBrush(TCTData.Colors.SolidBaseColor); //ok, still few days left to do weekly bonus
+                            }
                 }
                 else
                 {
-                    return new SolidColorBrush(TCTData.Colors.SolidAccentColor);
+                        return new SolidColorBrush(TCTData.Colors.SolidRed); //no bonus
                 }
             }
         }

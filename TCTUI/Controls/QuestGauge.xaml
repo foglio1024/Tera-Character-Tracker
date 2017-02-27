@@ -48,7 +48,7 @@
                     <Border x:Name="borD" Height="4" BorderThickness="0,0,1,0" BorderBrush="#40000000" Opacity=".7">
                         <Rectangle x:Name="barD" Height="4" Width="10" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0" Opacity=".5"/>
                     </Border>
-                    <Rectangle x:Name="valL" Height="4" Width="70" Fill="#12000000" VerticalAlignment="Center" Margin="0,0" Grid.Row="0" />
+                    <Rectangle x:Name="valL" Height="4" Width="70" Fill="#20000000" VerticalAlignment="Center" Margin="0,0" Grid.Row="0" />
                 </StackPanel>
 
             </Grid>

@@ -31,6 +31,7 @@ namespace TCTData
         int dragonwing_scales;
         string notes;
         string accountId;
+        bool weeklyBonus;
 
         List<CharDungeon> dg = new List<CharDungeon>();
 
@@ -243,7 +244,7 @@ namespace TCTData
                 {
                     weekly = value;
                     NotifyPropertyChanged("Weekly");
-                };
+                }
             }
         }
 
@@ -292,33 +293,15 @@ namespace TCTData
         [XmlAttribute("DragonwingScales")]
         public int DragonwingScales
         {
-            get { return dragonwing_scales; }
+            get => dragonwing_scales;
             set
             {
-
                 if (dragonwing_scales != value)
                 {
                     dragonwing_scales = value;
                     NotifyPropertyChanged("DragonwingScales");
                 }
             }
-        }
-
-        [XmlAttribute("WeeklyBonus")]
-        public bool WeeklyBonus
-        {
-            get
-            {
-                if(Weekly + Dailies < TCTConstants.MAX_WEEKLY && DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            set { }
         }
 
 

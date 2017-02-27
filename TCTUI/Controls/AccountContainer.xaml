@@ -74,10 +74,10 @@
             
             <TextBlock Grid.Column="0" Style="{DynamicResource headerTB}" ToolTip="Character's class">Class</TextBlock>
             <TextBlock Grid.Column="1" Style="{DynamicResource headerTB}" ToolTip="Character's name">Name</TextBlock>
-            <TextBlock Grid.Column="2" Style="{DynamicResource headerTB}" ToolTip="Vanguard credots">Credits</TextBlock>
+            <TextBlock Grid.Column="2" Style="{DynamicResource headerTB}" ToolTip="Vanguard credits">Credits</TextBlock>
             <TextBlock Grid.Column="3" Style="{DynamicResource headerTB}" ToolTip="Vanguard quests (completed weeklies - dailies left)">Quests</TextBlock>
             <TextBlock Grid.Column="4" Style="{DynamicResource headerTB}" ToolTip="Elleon's Marks of Valor amount">Elleon's Marks</TextBlock>
-            <TextBlock Grid.Column="5" Style="{DynamicResource headerTB}" ToolTip="Goldfinger tokens amount">Goldfinger</TextBlock>
+            <TextBlock Grid.Column="5" Style="{DynamicResource headerTB}" ToolTip="Goldfinger Tokens amount">Goldfinger</TextBlock>
             <TextBlock Grid.Column="6" Style="{DynamicResource headerTB}" ToolTip="Dragonwing Scales amount">Dragonwing</TextBlock>
             <TextBlock Grid.Column="7" Style="{DynamicResource headerTB}" ToolTip="Complete crystalbind indicator">CCB</TextBlock>
 
