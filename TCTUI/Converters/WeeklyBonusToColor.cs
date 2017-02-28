@@ -18,8 +18,8 @@ namespace TCTUI.Converters
             int dailies = (int)parameter;
             bool bonus = true;
 
-            if ((DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && DateTime.Now.Hour >= TCTConstants.DAILY_RESET_HOUR) ||
-                (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && DateTime.Now.Hour < TCTConstants.DAILY_RESET_HOUR) &&
+            if (((DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && DateTime.Now.Hour >= TCTConstants.DAILY_RESET_HOUR) ||
+                (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && DateTime.Now.Hour < TCTConstants.DAILY_RESET_HOUR)) &&
                 weeklies + dailies < TCTConstants.MAX_WEEKLY)
                     {
                         bonus = false;
@@ -34,7 +34,7 @@ namespace TCTUI.Converters
                 if (bonus)
                 {
                     if ( //if time is between MON 5AM and TUE 5AM (one day left before reset)
-                        ((DateTime.Now.DayOfWeek == DayOfWeek.Monday && DateTime.Now.Hour > TCTData.TCTConstants.DAILY_RESET_HOUR) ||
+                        ((DateTime.Now.DayOfWeek == DayOfWeek.Monday && DateTime.Now.Hour >= TCTData.TCTConstants.DAILY_RESET_HOUR) ||
                         (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && DateTime.Now.Hour < TCTData.TCTConstants.DAILY_RESET_HOUR)) &&
                         weeklies < TCTConstants.MAX_WEEKLY - TCTConstants.MAX_DAILY
                        )
